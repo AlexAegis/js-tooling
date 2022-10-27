@@ -1,0 +1,47 @@
+{
+	"name": "@alexaegis/eslint-config-svelte",
+	"description": "ESLint setup for svelte projects",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"link",
+		"symlink",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": true
+	},
+	"sideEffects": false,
+	"type": "module",
+	"main": "./index.cjs",
+	"exports": {
+		".": "./index.cjs"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"test": "vitest --passWithNoTests --coverage --run",
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check ."
+	},
+	"dependencies": {
+		"@alexaegis/eslint-config-core": "*"
+	},
+	"devDependencies": {}
+}

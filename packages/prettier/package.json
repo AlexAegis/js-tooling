@@ -1,0 +1,65 @@
+{
+	"name": "@alexaegis/prettier",
+	"description": "My prettier config",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"prettier",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": false
+	},
+	"scripts": {
+		"build": "vite build",
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check .",
+		"ncu": "ncu -u",
+		"postinstall": ""
+	},
+	"sideEffects": false,
+	"main": "./src/index.ts",
+	"module": "./src/index.ts",
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"prettier": "2.7.1",
+		"@alexaegis/tools": "*"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "*",
+		"typescript": "4.8.4",
+		"@types/prettier": "2.7.1"
+	},
+	"exports": {
+		"./config": {
+			"types": "./dist/config.d.ts",
+			"default": "./dist/config.js",
+			"require": "./dist/config.cjs",
+			"import": "./dist/config.js"
+		},
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.js"
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"name": "@alexaegis/vitest",
+	"description": "My vitest config",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"vitest",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": false
+	},
+	"scripts": {
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check ."
+	},
+	"sideEffects": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"vitest": "^0.24.3",
+		"@vitest/coverage-c8": "^0.24.3",
+		"@vitest/ui": "^0.24.3"
+	},
+	"devDependencies": {}
+}

@@ -1,0 +1,55 @@
+{
+	"name": "@alexaegis/nuke",
+	"description": "Nuke stuff",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"nuke",
+		"clean",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": false
+	},
+	"scripts": {
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check ."
+	},
+	"sideEffects": false,
+	"main": "./index.js",
+	"module": "./index.es.js",
+	"exports": {
+		".": {
+			"types": "./index.d.ts",
+			"node": "./index.js",
+			"require": "./index.js",
+			"import": "./index.es.js",
+			"default": "./index.es.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"yargs": "17.6.0"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "*",
+		"typescript": "4.8.4"
+	}
+}

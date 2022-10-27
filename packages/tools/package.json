@@ -1,0 +1,62 @@
+{
+	"name": "@alexaegis/tools",
+	"description": "Stuff",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"link",
+		"symlink",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": true
+	},
+	"sideEffects": false,
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"bin": "ts-node-esm ./src/bin/index.ts",
+		"build": "vite build",
+		"test": "vitest --passWithNoTests --coverage --run",
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check ."
+	},
+	"dependencies": {
+		"globby": "~13.1.2"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "*",
+		"@alexaegis/vitest": "*",
+		"@alexaegis/eslint-config-core": "*",
+		"@schemastore/package": "^0.0.6",
+		"@types/node": "^18.11.7",
+		"typescript": "^4.8.4",
+		"ts-node": "^10.9.1",
+		"sort-package-json": "2.0.0"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.js"
+		}
+	}
+}

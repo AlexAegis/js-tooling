@@ -1,0 +1,11 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"composite": true,
+		"noEmit": true,
+		"allowJs": true,
+		"types": []
+	},
+	"include": ["**/*.ts", "src/index.ts"],
+	"exclude": ["**/*.spec.ts"]
+}

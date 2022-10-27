@@ -1,0 +1,56 @@
+{
+	"name": "@alexaegis/eslint-config-core",
+	"description": "ESLint setup",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"link",
+		"symlink",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": true
+	},
+	"sideEffects": false,
+	"type": "module",
+	"main": "./index.cjs",
+	"exports": {
+		".": "./index.cjs"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"test": "vitest --passWithNoTests --coverage --run",
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check ."
+	},
+	"dependencies": {
+		"eslint": "^8.26.0",
+		"eslint-config-next": "^13.0.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-react": "^7.31.10",
+		"eslint-config-turbo": "^0.0.4",
+		"eslint-plugin-unicorn": "^44.0.2",
+		"@typescript-eslint/eslint-plugin": "^5.41.0"
+	},
+	"devDependencies": {
+		"@types/node": "^18.11.7",
+		"typescript": "^4.8.4"
+	}
+}

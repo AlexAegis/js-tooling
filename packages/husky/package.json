@@ -1,0 +1,62 @@
+{
+	"name": "@alexaegis/husky",
+	"description": "Husky, lint-staged and commitlint stuff",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"husky",
+		"lint-staged",
+		"commitlint",
+		"link",
+		"symlink",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": false
+	},
+	"scripts": {
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check .",
+		"ncu": "ncu -u",
+		"postinstall": ""
+	},
+	"sideEffects": false,
+	"main": "./index.js",
+	"module": "./index.es.js",
+	"exports": {
+		".": {
+			"types": "./index.d.ts",
+			"node": "./index.js",
+			"require": "./index.js",
+			"import": "./index.es.js",
+			"default": "./index.es.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@alexaegis/tools": "*"
+	},
+	"devDependencies": {
+		"typescript": "4.8.4",
+		"vite": "3.2.1",
+		"vite-plugin-dts": "1.6.6",
+		"vite-plugin-static-copy": "0.11.0"
+	}
+}

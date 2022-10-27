@@ -1,0 +1,192 @@
+name: ci
+
+on:
+  push:
+    branches: '**'
+  pull_request:
+    branches: '**'
+
+env:
+  NPM_PACKAGE_ORG_PREFIX: '@alexaegis/'
+  DEPLOY_ARTIFACT_DIR: false # 'apps/example/dist'
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_REMOTE_ONLY: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: cache
+        id: cache-packages
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: setup node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install
+        if: steps.cache-packages.outputs.cache-hit != 'true'
+        run: npm install
+      - name: lint
+        run: npm run lint
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: cache
+        id: cache-packages
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: setup node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install
+        if: steps.cache-packages.outputs.cache-hit != 'true'
+        run: npm install
+      - name: test
+        run: npm run test
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: cache
+        id: cache-packages
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: setup node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install
+        if: steps.cache-packages.outputs.cache-hit != 'true'
+        run: npm install
+      - name: build
+        run: BASE_HREF="/${{ github.event.repository.name }}/" npm run build
+      - name: prepare pages (use index.html as 404.html)
+        if: |
+          env.DEPLOY_ARTIFACT_DIR &&
+          github.ref_name == ${{ github.event.repository.default_branch }} &&
+          github.event_name != 'pull_request'
+        run: |
+          cp ${{ env.DEPLOY_ARTIFACT_DIR }}/index.html ${{ env.DEPLOY_ARTIFACT_DIR }}/404.html
+      - name: setup pages
+        uses: actions/configure-pages@v2
+        if: |
+          env.DEPLOY_ARTIFACT_DIR &&
+          github.ref_name == ${{ github.event.repository.default_branch }} &&
+          github.event_name != 'pull_request'
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: |
+          env.DEPLOY_ARTIFACT_DIR && 
+          github.ref_name == ${{ github.event.repository.default_branch }} && 
+          github.event_name != 'pull_request'
+        with:
+          path: ${{ env.DEPLOY_ARTIFACT_DIR }}
+  deploy:
+    name: deploy
+    if: |
+      env.DEPLOY_ARTIFACT_DIR && 
+      github.ref_name == ${{ github.event.repository.default_branch }} && 
+      github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    needs: [build, test, lint]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+  release:
+    name: release
+    if: |
+      github.ref_name == ${{ github.event.repository.default_branch }} && 
+      github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    needs: [build, test, lint]
+    strategy:
+      matrix:
+        artifact: ['link']
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: cache Packages
+        id: cache-packages
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Check if ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} is already deployed
+        run: |
+          VERSION=$(cat ".github/version.txt")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          IS_ON_NPM=$(if [ ! -z "$(npm view ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@$VERSION 2> /dev/null)" ]; then echo 'true'; else echo 'false'; fi)
+          echo "IS_ON_NPM=$IS_ON_NPM" >> $GITHUB_ENV
+          echo "was ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@$VERSION already on npm: $IS_ON_NPM"
+      - name: install
+        if: env.IS_ON_NPM != 'true'
+        run: npm install
+      - name: verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} builds
+        if: env.IS_ON_NPM != 'true'
+        run: |
+          npx turbo run build --scope="${{ matrix.artifact }}"
+      - name: verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} lints are succeeding
+        if: env.IS_ON_NPM != 'true'
+        run: |
+          npx turbo run lint --scope="${{ matrix.artifact }}"
+      - name: verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} tests are succeeding
+        if: env.IS_ON_NPM != 'true'
+        run: |
+          npx turbo run test --scope="${{ matrix.artifact }}"
+      - name: release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} on npm
+        if: env.IS_ON_NPM != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          npm publish packages/${{ matrix.artifact }}/package/ --access public

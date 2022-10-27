@@ -1,0 +1,11 @@
+{
+	"name": "@alexaegis/internal",
+	"main": "./src/index.js",
+	"type": "module",
+	"dependencies": {
+		"prettier": "^2.7.1"
+	},
+	"devDependencies": {
+		"typescript": "4.8.4"
+	}
+}

@@ -1,0 +1,4 @@
+# @alexaegis/git
+
+* text=auto eol=lf
+core.autocrlf=false
