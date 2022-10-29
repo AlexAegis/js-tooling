@@ -4,6 +4,6 @@
 		"composite": true,
 		"types": []
 	},
-	"include": ["**/*.ts"],
+	"include": ["**/*.ts", "../tools/src/functions/distribute.function.ts"],
 	"exclude": ["**/*.spec.ts"]
 }

@@ -1,8 +1,15 @@
 import { collectWorkspacePackageDirectoriesWithPackageJson } from './collect-workspace-package-directories.function';
 
+/**
+ *
+ * @param path
+ * @param dependencyCriteria
+ * @returns workspace folders that contain a set of dependencies or all of them
+ * if none is specified
+ */
 export const collectWorkspacePageDirectoriesByDependency = (
 	path: string,
-	dependencies: string[]
+	dependencyCriteria: string[] = []
 ): string[] => {
 	const packages = collectWorkspacePackageDirectoriesWithPackageJson(path);
 	return packages
@@ -12,7 +19,10 @@ export const collectWorkspacePageDirectoriesByDependency = (
 				...Object.keys(relativePackage.packageJson.devDependencies ?? {}),
 			]);
 
-			return dependencies.some((dependency) => packageDependencies.has(dependency));
+			return (
+				dependencyCriteria.length === 0 ||
+				dependencyCriteria.some((dependency) => packageDependencies.has(dependency))
+			);
 		})
 		.map((relativePackage) => relativePackage.path);
 };

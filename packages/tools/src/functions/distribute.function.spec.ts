@@ -3,11 +3,11 @@ import type { Options } from 'globby';
 import type { PathLike } from 'node:fs';
 import { join } from 'node:path';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
-import { linkToWorkspace } from './link-to-workspace.function';
+import { distribute } from './distribute.function';
 
 const symlinkMock = vi.fn();
 
-describe('linkToWorkspace', () => {
+describe('distribute', () => {
 	const infoMock = vi.fn();
 	const errorMock = vi.fn();
 
@@ -77,7 +77,7 @@ describe('linkToWorkspace', () => {
 
 	it('should symlink to all folders', async () => {
 		const filename = 'rcfile';
-		await linkToWorkspace(filename, '/foo/bar/packages');
+		await distribute(filename, [], '/foo/bar/packages');
 
 		expect(symlinkMock).toHaveBeenCalledWith(filename, join('/foo/bar', filename));
 		expect(symlinkMock).toHaveBeenCalledTimes(1);
@@ -87,7 +87,7 @@ describe('linkToWorkspace', () => {
 
 	it('should refuse to link something thats nonexistent', async () => {
 		const filename = 'nonexistent';
-		await linkToWorkspace(filename, '/foo/bar/packages');
+		await distribute(filename, [], '/foo/bar/packages');
 
 		expect(symlinkMock).toHaveBeenCalledTimes(0);
 		expect(infoMock).toHaveBeenCalledTimes(0);
@@ -96,7 +96,7 @@ describe('linkToWorkspace', () => {
 
 	it('should refuse to link something thats not a file', async () => {
 		const filename = 'nonfile';
-		await linkToWorkspace(filename, '/foo/bar/packages');
+		await distribute(filename, ['@dep'], '/foo/bar/packages');
 
 		expect(symlinkMock).toHaveBeenCalledTimes(0);
 		expect(infoMock).toHaveBeenCalledTimes(0);

@@ -2,7 +2,7 @@ import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemasto
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { Plugin } from 'vite';
+import { Plugin } from 'vite';
 import { prettify } from '../helpers';
 
 export interface UpdatePackageJsonPluginOptions {
@@ -14,6 +14,7 @@ export interface UpdatePackageJsonPluginOptions {
 
 export const updatePackageJsonPlugin = (options: UpdatePackageJsonPluginOptions): Plugin => ({
 	name: 'update-package-json',
+	apply: 'build',
 	buildEnd: (error) => {
 		if (!error) {
 			const cwd = options.cwd ?? process.cwd();
