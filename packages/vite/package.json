@@ -28,7 +28,8 @@
 		"prebuild": "vite build",
 		"format": "prettier --write .",
 		"lint:es": "eslint --max-warnings=0 .",
-		"lint:format": "prettier --check ."
+		"lint:format": "prettier --check .",
+		"postinstall": "spread-vite-config"
 	},
 	"sideEffects": false,
 	"publishConfig": {
@@ -36,47 +37,43 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@alexaegis/internal": "*",
 		"vite": "3.2.1",
 		"vite-plugin-static-copy": "0.11.0",
-		"@sveltejs/vite-plugin-svelte": "^1.1.0"
+		"@sveltejs/vite-plugin-svelte": "^1.1.0",
+		"fs-extra": "^10.1.0"
+	},
+	"peerDependencies": {
+		"@alexaegis/tsconfig": "*"
 	},
 	"devDependencies": {
+		"@types/fs-extra": "^9.0.13",
 		"typescript": "4.8.4",
 		"@schemastore/package": "^0.0.6"
 	},
-	"directories": {
-		"bin": "./dist/bin"
-	},
+	"directories": {},
 	"exports": {
 		"./base-vite.config": {
 			"types": "./dist/base-vite.config.d.ts",
-			"default": "./dist/base-vite.config.js",
 			"require": "./dist/base-vite.config.cjs",
 			"import": "./dist/base-vite.config.js"
 		},
 		".": {
 			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js",
 			"require": "./dist/index.cjs",
 			"import": "./dist/index.js"
 		},
 		"./library-vite.config": {
 			"types": "./dist/library-vite.config.d.ts",
-			"default": "./dist/library-vite.config.js",
 			"require": "./dist/library-vite.config.cjs",
 			"import": "./dist/library-vite.config.js"
 		},
 		"./svelte-vite.config": {
 			"types": "./dist/svelte-vite.config.d.ts",
-			"default": "./dist/svelte-vite.config.js",
 			"require": "./dist/svelte-vite.config.cjs",
 			"import": "./dist/svelte-vite.config.js"
 		}
 	},
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
 	"bin": {
-		"spread-vite-config": "./dist/bin/spread-vite-config.cjs"
+		"spread-vite-config": "./dist/bin/spread-vite-config.js"
 	}
 }

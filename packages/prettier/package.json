@@ -46,21 +46,18 @@
 		"typescript": "4.8.4",
 		"@types/prettier": "2.7.1"
 	},
+	"directories": {},
 	"exports": {
 		"./config": {
 			"types": "./dist/config.d.ts",
-			"default": "./dist/config.js",
 			"require": "./dist/config.cjs",
 			"import": "./dist/config.js"
 		},
 		".": {
 			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js",
 			"require": "./dist/index.cjs",
 			"import": "./dist/index.js"
 		}
 	},
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
 	"bin": {}
 }

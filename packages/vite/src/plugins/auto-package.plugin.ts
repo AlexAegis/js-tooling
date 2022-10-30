@@ -4,8 +4,9 @@ import type { BuildOptions, LibraryFormats, Plugin } from 'vite';
 import { dirname, join } from 'node:path/posix';
 import { DEFAULT_OUT_DIR } from '../configs';
 import {
-	augmentPackageJson,
+	autoBin,
 	AutoBinOptions,
+	autoExport,
 	AutoExportOptions,
 	collectFileNamePathEntries,
 	DEFAULT_BIN_DIR,
@@ -13,9 +14,15 @@ import {
 	DEFAULT_EXPORT_FROM_DIR,
 	DEFAULT_SRC_DIR,
 	offsetPathRecord,
+	PackageJsonExportConditions,
 	WriteJsonOptions,
 	writeJsonSync,
 } from '../helpers';
+import {
+	AutoExportStaticOptions,
+	autoStaticExport,
+	DEFAULT_STATIC_EXPORT_DIR,
+} from '../helpers/auto-export-static.function';
 import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function';
 import { offsetRelativePathPosix } from '../helpers/offset-relative-path.function';
 import { readPackageJson } from '../helpers/read-package-json.function';
@@ -61,6 +68,12 @@ export interface AutoPackagerPluginOptions extends WriteJsonOptions {
 	autoExportDirectory?: string | false;
 
 	/**
+	 * Automatically export the content of a directory as is
+	 *
+	 * @default 'export'
+	 */
+	autoExportStaticDirectory?: string | false;
+	/**
 	 * Generates bin entries from files under `srcDir` + `autoBinDirectory`
 	 *
 	 * @default 'bin'
@@ -70,6 +83,8 @@ export interface AutoPackagerPluginOptions extends WriteJsonOptions {
 
 /**
  * Packaged formats are defined in config.build.lib.formats, defaults to es and cjs
+ *
+ * TODO: This plugin will be moved to a different repo
  * @param options
  * @returns
  */
@@ -88,6 +103,10 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 			? undefined
 			: options?.autoExportDirectory ?? DEFAULT_EXPORT_FROM_DIR;
 
+	const autoExportStaticDirectory =
+		options?.autoExportStaticDirectory === false
+			? undefined
+			: options?.autoExportStaticDirectory ?? DEFAULT_STATIC_EXPORT_DIR;
 	// At the end of these definitions as these will only settle once
 	// `configResolved` ran
 	let formats: LibraryFormats[];
@@ -97,6 +116,8 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 
 	let libraryInputs: Record<string, string>;
 	let autoExportOptions: AutoExportOptions | undefined;
+	let autoExportStaticOptions: AutoExportStaticOptions | undefined;
+
 	let autoBinOptions: AutoBinOptions | undefined;
 
 	const pluginName = 'autopackage';
@@ -151,8 +172,6 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 
 				const rawBinEntry = collectFileNamePathEntries(sourceDirectory, autoBinDirectory);
 				entry = offsetPathRecord(rawBinEntry, binDirectory);
-				console.log('bin binInputs', autoBinOptions.binInputs);
-				console.log('bin entry', entry);
 			}
 
 			if (autoExportDirectory) {
@@ -161,9 +180,17 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 					formats,
 					libraryInputs,
 					exportFromDir: autoExportDirectory,
+					outDir: outDirectory,
 				};
 
 				entry = { ...entry, ...offsetPathRecord(libraryInputs, sourceDirectory) };
+			}
+
+			if (autoExportStaticDirectory) {
+				autoExportStaticOptions = {
+					outDir: outDirectory,
+					staticExportDirectory: autoExportStaticDirectory,
+				};
 			}
 
 			if (entry) {
@@ -175,7 +202,6 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 					},
 				};
 			}
-			console.log('libraryInputs', entry);
 
 			return { build: buildOptions };
 		},
@@ -197,38 +223,44 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 				return;
 			}
 
+			let processedExports: Record<string, PackageJsonExportConditions> = {};
 			if (autoExportOptions) {
-				delete packageJson.exports;
-				delete packageJson.main;
-				delete packageJson.module;
+				delete packageJson.exports; // Reset
+				delete packageJson.main; // Legacy option
+				delete packageJson.module; // Legacy option
+
+				processedExports = autoExport(packageJson, autoExportOptions);
+				packageJson.exports = processedExports;
+			}
+
+			let unprocessedExports: Record<string, string> = {};
+
+			if (autoExportStaticOptions) {
+				unprocessedExports = autoStaticExport(autoExportStaticOptions);
+				packageJson.exports = { ...unprocessedExports, ...packageJson.exports };
 			}
 
 			if (autoBinOptions) {
 				delete packageJson.bin;
-			}
-			console.log('autoBinOptions', autoBinOptions);
 
-			const augmentedForArtifact = augmentPackageJson(packageJson, {
-				autoExport: autoExportOptions,
-				autoBin: autoBinOptions,
+				delete packageJson.directories?.bin;
+
+				packageJson.bin = autoBin(packageJson, autoBinOptions);
+			}
+
+			writeJsonSync(packageJson, join(packageRootPath, outDirectory, 'package.json'), {
+				autoPrettier,
+				dry,
 			});
 
-			writeJsonSync(
-				augmentedForArtifact,
-				join(packageRootPath, outDirectory, 'package.json'),
-				{
-					autoPrettier,
-					dry,
-				}
-			);
-
 			if (editSourcePackageJson) {
-				const augmentedForSource = cloneJsonSerializable(augmentedForArtifact);
+				const augmentedForSource = cloneJsonSerializable(packageJson);
 				if (augmentedForSource.exports) {
-					augmentedForSource.exports = offsetPathRecord(
-						augmentedForSource.exports,
-						outDirectory
-					);
+					const offsetProcessedExports = offsetPathRecord(processedExports, outDirectory);
+					augmentedForSource.exports = {
+						...unprocessedExports,
+						...offsetProcessedExports,
+					};
 				}
 				if (augmentedForSource.bin) {
 					if (typeof augmentedForSource.bin === 'object') {

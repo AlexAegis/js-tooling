@@ -1,8 +1,8 @@
 # js
 
 Base repo for common stuff in my other js projects, the solutions these provide
-are mostly pretty rigid and heavily opinionated but the concept is not. This
-is not a template repository!
+are mostly pretty rigid and heavily opinionated but the concept is not. This is
+not a template repository!
 
 > If you wish to have something like this yourself, fork this repo!
 

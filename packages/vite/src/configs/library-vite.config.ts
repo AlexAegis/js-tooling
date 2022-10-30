@@ -15,6 +15,10 @@ export const libraryViteConfig = mergeConfig(
 						src: '*.md',
 						dest: '.',
 					},
+					{
+						src: 'assets/*',
+						dest: './assets',
+					},
 				],
 			}),
 			dts({

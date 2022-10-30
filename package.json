@@ -52,8 +52,8 @@
 		"postinstall": "turbo run prebuild",
 		"_root#lint:format": "prettier --check .",
 		"ncu": "ncu --deep --peer --upgrade",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"nuke": "rimraf node_modules **/node_modules .turbo **/.turbo dist **/dist coverage **/coverage package-lock.json"
+		"format": "prettier --write .",
+		"nuke": "nuke"
 	},
 	"dependencies": {
 		"@alexaegis/editorconfig": "*",

@@ -51,17 +51,15 @@
 		"ts-node": "^10.9.1",
 		"sort-package-json": "2.0.0"
 	},
+	"directories": {},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js",
 			"require": "./dist/index.cjs",
 			"import": "./dist/index.js"
 		}
 	},
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
 	"bin": {
-		"distribute": "./dist/bin/distribute.ts"
+		"distribute": "./dist/bin/distribute.js"
 	}
 }

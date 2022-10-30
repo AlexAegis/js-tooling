@@ -1,10 +1,59 @@
 {
 	"name": "@alexaegis/tsconfig",
-	"version": "0.0.0",
-	"private": true,
+	"description": "my tsconfigs",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"nuke",
+		"clean",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": false
+	},
+	"scripts": {
+		"build": "vite build",
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 .",
+		"lint:format": "prettier --check ."
+	},
+	"sideEffects": false,
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@alexaegis/tools": "*"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "*"
+	},
 	"files": [
-		"base.json",
-		"nextjs.json",
-		"react-library.json"
-	]
+		"./export/base.json",
+		"./export/libinternal.json"
+	],
+	"exports": {
+		"./base": "./export/base.json",
+		"./libinternal": "./export/libinternal.json",
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.js"
+		}
+	},
+	"bin": {}
 }
