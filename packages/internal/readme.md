@@ -1,8 +1,8 @@
 # internal
 
-This is a non-published, non-buildable library intended to house some
-utility functions (that are all re-exported in publishable libraries like
-`tools` and `prettier`)
+This is a non-published, non-buildable library intended to house some utility
+functions (that are all re-exported in publishable libraries like `tools` and
+`prettier`)
 
 The point is to resolve some circular dependencies between `vite` and
 `prettier`.

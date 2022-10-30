@@ -21,7 +21,7 @@ import {
 import {
 	AutoExportStaticOptions,
 	autoStaticExport,
-	DEFAULT_STATIC_EXPORT_DIR,
+	DEFAULT_STATIC_EXPORT_GLOB,
 } from '../helpers/auto-export-static.function';
 import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function';
 import { offsetRelativePathPosix } from '../helpers/offset-relative-path.function';
@@ -70,9 +70,9 @@ export interface AutoPackagerPluginOptions extends WriteJsonOptions {
 	/**
 	 * Automatically export the content of a directory as is
 	 *
-	 * @default 'export'
+	 * @default '["export", *.md]'
 	 */
-	autoExportStaticDirectory?: string | false;
+	autoExportStaticGlobs?: string[] | false;
 	/**
 	 * Generates bin entries from files under `srcDir` + `autoBinDirectory`
 	 *
@@ -103,10 +103,10 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 			? undefined
 			: options?.autoExportDirectory ?? DEFAULT_EXPORT_FROM_DIR;
 
-	const autoExportStaticDirectory =
-		options?.autoExportStaticDirectory === false
+	const autoExportStaticExportGlobs =
+		options?.autoExportStaticGlobs === false
 			? undefined
-			: options?.autoExportStaticDirectory ?? DEFAULT_STATIC_EXPORT_DIR;
+			: options?.autoExportStaticGlobs ?? DEFAULT_STATIC_EXPORT_GLOB;
 	// At the end of these definitions as these will only settle once
 	// `configResolved` ran
 	let formats: LibraryFormats[];
@@ -186,10 +186,10 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 				entry = { ...entry, ...offsetPathRecord(libraryInputs, sourceDirectory) };
 			}
 
-			if (autoExportStaticDirectory) {
+			if (autoExportStaticExportGlobs) {
 				autoExportStaticOptions = {
 					outDir: outDirectory,
-					staticExportDirectory: autoExportStaticDirectory,
+					staticExportGlobs: autoExportStaticExportGlobs,
 				};
 			}
 

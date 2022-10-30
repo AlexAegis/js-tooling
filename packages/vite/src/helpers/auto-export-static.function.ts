@@ -1,9 +1,9 @@
-import { cpSync, mkdirSync } from 'node:fs';
+import { globbySync } from 'globby';
+import { cpSync, existsSync } from 'node:fs';
 import { join, posix } from 'node:path';
-import { collectImmediate, stripExtension } from './collect-export-entries.function';
-import { existsDirectory } from './exists-directory.function';
+import { stripExtension } from './collect-export-entries.function';
 
-export const DEFAULT_STATIC_EXPORT_DIR = 'export';
+export const DEFAULT_STATIC_EXPORT_GLOB = ['exports', '*.md'];
 
 export interface AutoExportStaticOptions {
 	outDir: string;
@@ -12,32 +12,28 @@ export interface AutoExportStaticOptions {
 	 * `outDir` and made available using simple, additional export statements.
 	 * Make sure their names don't overlap with other exports!
 	 *
-	 * @default 'exports'
+	 * @default '["exports", "*.md"]'
 	 */
-	staticExportDirectory?: string;
+	staticExportGlobs?: string[];
 }
 
-const collectStaticExports = (path: string): Record<string, string> => {
-	return collectImmediate(path).reduce((accumulator, next) => {
+const collectStaticExports = (globs: string[]): Record<string, string> => {
+	return globbySync(globs).reduce((accumulator, next) => {
 		const name = stripExtension(next);
-		accumulator[`.${posix.sep}${name}`] = `.${posix.sep}${posix.join(path, next)}`;
+		accumulator[`.${posix.sep}${name}`] = `.${posix.sep}${next}`;
 		return accumulator;
 	}, {} as Record<string, string>);
 };
 
-const copyStaticExports = (exportDirectory: string, outDirectory: string): void => {
-	console.log(
-		'copyStaticExports copyStaticExports',
-		exportDirectory,
-		existsDirectory(exportDirectory),
-		outDirectory
-	);
-	if (existsDirectory(exportDirectory)) {
-		const targetDirectory = join(outDirectory, exportDirectory);
+const copyStaticExports = (filesToCopy: string[], outDirectory: string): void => {
+	for (const fileToCopy of filesToCopy) {
+		const targetFile = join(outDirectory, fileToCopy);
+		if (existsSync(targetFile)) {
+			console.warn(`can't write ${targetFile}, already exists`);
+			continue;
+		}
 
-		mkdirSync(targetDirectory, { recursive: true });
-
-		cpSync(exportDirectory, join(outDirectory, exportDirectory), {
+		cpSync(fileToCopy, targetFile, {
 			preserveTimestamps: true,
 			recursive: true,
 		});
@@ -45,9 +41,9 @@ const copyStaticExports = (exportDirectory: string, outDirectory: string): void 
 };
 
 export const autoStaticExport = (options: AutoExportStaticOptions): Record<string, string> => {
-	const staticExportDirectory = options.staticExportDirectory ?? DEFAULT_STATIC_EXPORT_DIR;
+	const staticExportDirectory = options.staticExportGlobs ?? DEFAULT_STATIC_EXPORT_GLOB;
 	const staticExports = collectStaticExports(staticExportDirectory);
-	copyStaticExports(staticExportDirectory, options.outDir);
+	copyStaticExports(Object.values(staticExports), options.outDir);
 
 	return staticExports;
 };

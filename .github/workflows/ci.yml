@@ -160,7 +160,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Check if ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} is already deployed
+      - name:
+          Check if ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} is
+          already deployed
         run: |
           VERSION=$(cat ".github/version.txt")
           echo "VERSION=$VERSION" >> $GITHUB_ENV
@@ -170,19 +172,26 @@ jobs:
       - name: install
         if: env.IS_ON_NPM != 'true'
         run: npm install
-      - name: verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} builds
+      - name:
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
+          builds
         if: env.IS_ON_NPM != 'true'
         run: |
           npx turbo run build --scope="${{ matrix.artifact }}"
-      - name: verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} lints are succeeding
+      - name:
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
+          lints are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
           npx turbo run lint --scope="${{ matrix.artifact }}"
-      - name: verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} tests are succeeding
+      - name:
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
+          tests are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
           npx turbo run test --scope="${{ matrix.artifact }}"
-      - name: release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} on npm
+      - name:
+          release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} on npm
         if: env.IS_ON_NPM != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

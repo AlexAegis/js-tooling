@@ -53,6 +53,7 @@
 	},
 	"directories": {},
 	"exports": {
+		"./readme": "./readme.md",
 		".": {
 			"types": "./dist/index.d.ts",
 			"require": "./dist/index.cjs",

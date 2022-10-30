@@ -22,8 +22,9 @@ export const libraryViteConfig = mergeConfig(
 				],
 			}),
 			dts({
+				copyDtsFiles: true,
 				insertTypesEntry: true,
-				tsConfigFilePath: 'tsconfig.lib.json',
+				tsConfigFilePath: 'tsconfig.json',
 				entryRoot: 'src',
 			}),
 		],

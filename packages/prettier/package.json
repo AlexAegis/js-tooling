@@ -48,6 +48,7 @@
 	},
 	"directories": {},
 	"exports": {
+		"./readme": "./readme.md",
 		"./config": {
 			"types": "./dist/config.d.ts",
 			"require": "./dist/config.cjs",

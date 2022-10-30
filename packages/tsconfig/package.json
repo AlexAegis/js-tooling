@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/tsconfig",
-	"description": "my tsconfigs",
+	"description": "my typescript configurations",
 	"version": "0.0.1",
 	"license": "MIT",
 	"author": {
@@ -42,13 +42,9 @@
 	"devDependencies": {
 		"@alexaegis/vite": "*"
 	},
-	"files": [
-		"./export/base.json",
-		"./export/libinternal.json"
-	],
 	"exports": {
-		"./base": "./export/base.json",
-		"./libinternal": "./export/libinternal.json",
+		"./base": "./base.json",
+		"./libinternal": "./libinternal.json",
 		".": {
 			"types": "./dist/index.d.ts",
 			"require": "./dist/index.cjs",

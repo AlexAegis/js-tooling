@@ -6,5 +6,5 @@ definitions. Upon installing it it will symlink `.prettierrc` and
 also be symlinked to all your workspace folders where there isn't. If any of
 these files are already defined, it won't overwrite them.
 
-If you wish to override some settings you can define an actual file, import
-this there and extend it.
+If you wish to override some settings you can define an actual file, import this
+there and extend it.

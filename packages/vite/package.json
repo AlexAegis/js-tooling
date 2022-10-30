@@ -52,6 +52,7 @@
 	},
 	"directories": {},
 	"exports": {
+		"./readme": "./readme.md",
 		"./base-vite.config": {
 			"types": "./dist/base-vite.config.d.ts",
 			"require": "./dist/base-vite.config.cjs",
