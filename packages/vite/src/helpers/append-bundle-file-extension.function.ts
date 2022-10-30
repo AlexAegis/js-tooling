@@ -8,7 +8,7 @@ import type { ModuleFormat } from 'rollup';
  * @param entryName
  * @returns
  */
-export const bundleFileNameFormatter = (
+export const appendBundleFileExtension = (
 	format: ModuleFormat,
 	entryName: string,
 	packageType: 'module' | 'commonjs' = 'commonjs'

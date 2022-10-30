@@ -1,18 +1,26 @@
-import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
+import type { InputOption } from 'rollup';
+import type { BuildOptions, LibraryFormats, Plugin } from 'vite';
 
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import type { LibraryFormats, Plugin } from 'vite';
+import { dirname, join } from 'node:path/posix';
 import { DEFAULT_OUT_DIR } from '../configs';
 import {
 	augmentPackageJson,
+	AutoBinOptions,
+	AutoExportOptions,
+	collectFileNamePathEntries,
 	DEFAULT_BIN_DIR,
-	PackageJsonAugmentOptions,
+	DEFAULT_EXPORT_FORMATS,
+	DEFAULT_EXPORT_FROM_DIR,
+	DEFAULT_SRC_DIR,
+	offsetPathRecord,
 	WriteJsonOptions,
 	writeJsonSync,
 } from '../helpers';
+import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function';
+import { offsetRelativePathPosix } from '../helpers/offset-relative-path.function';
+import { readPackageJson } from '../helpers/read-package-json.function';
 
-export interface AutoPackagerPluginOptions extends PackageJsonAugmentOptions, WriteJsonOptions {
+export interface AutoPackagerPluginOptions extends WriteJsonOptions {
 	/**
 	 * source root
 	 * @default 'src'
@@ -20,12 +28,13 @@ export interface AutoPackagerPluginOptions extends PackageJsonAugmentOptions, Wr
 	src?: string;
 
 	/**
+	 * The directory of the package
 	 * @default process.cwd()
 	 */
-	cwd?: string;
+	packageRootPath?: string;
 
 	/**
-	 * packageJson to modify and put in the artifact
+	 * packageJson to modify and put in the artifact, relative to `packageRootPath`
 	 * @default './package.json'
 	 */
 	sourcePackageJson?: string;
@@ -38,6 +47,25 @@ export interface AutoPackagerPluginOptions extends PackageJsonAugmentOptions, Wr
 	 * @default true
 	 */
 	editSourcePackageJson?: boolean;
+
+	/**
+	 * Generates exports entries form rollup inputs, from a directory relative
+	 * to `srcDir`
+	 *
+	 * If autoExport is disabled, the plugin expects you to either set
+	 * `build.lib.entry` yourself or have a `src/index.ts` file as the entry
+	 * point
+	 *
+	 * @default '.'
+	 */
+	autoExportDirectory?: string | false;
+
+	/**
+	 * Generates bin entries from files under `srcDir` + `autoBinDirectory`
+	 *
+	 * @default 'bin'
+	 */
+	autoBinDirectory?: string | false;
 }
 
 /**
@@ -46,74 +74,167 @@ export interface AutoPackagerPluginOptions extends PackageJsonAugmentOptions, Wr
  * @returns
  */
 export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin => {
-	let formats: LibraryFormats[] = ['es', 'cjs'];
-	let targetDirectory = DEFAULT_OUT_DIR;
+	const sourcePackageJson = options?.sourcePackageJson ?? 'package.json';
+	const packageRootPath = options?.packageRootPath ?? process.cwd();
+	const dry = options?.dry ?? false;
+	const autoPrettier = options?.autoPrettier ?? true;
+	const editSourcePackageJson = options?.editSourcePackageJson ?? true;
+	const autoBinDirectory =
+		options?.autoBinDirectory === false
+			? undefined
+			: options?.autoBinDirectory ?? DEFAULT_BIN_DIR;
+	const autoExportDirectory =
+		options?.autoExportDirectory === false
+			? undefined
+			: options?.autoExportDirectory ?? DEFAULT_EXPORT_FROM_DIR;
 
-	let isLibrary = false;
+	// At the end of these definitions as these will only settle once
+	// `configResolved` ran
+	let formats: LibraryFormats[];
+	let outDirectory: string;
+
+	let sourceDirectory: string;
+
+	let libraryInputs: Record<string, string>;
+	let autoExportOptions: AutoExportOptions | undefined;
+	let autoBinOptions: AutoBinOptions | undefined;
+
+	const pluginName = 'autopackage';
 	return {
-		name: 'auto-package-json',
+		name: pluginName,
 		apply: 'build',
 		config: (config) => {
-			if (config.build?.lib) {
-				isLibrary = true;
+			formats =
+				config.build?.lib && config.build?.lib.formats
+					? config.build?.lib.formats
+					: DEFAULT_EXPORT_FORMATS;
 
-				if (typeof config.build.lib === 'object' && config.build.lib.formats) {
-					formats = config.build.lib.formats;
-				}
-				if (config.build.outDir) {
-					targetDirectory = config.build.outDir;
-				}
+			if (options?.src) {
+				sourceDirectory = options.src;
+			} else if (config.build?.lib && typeof config.build?.lib?.entry === 'string') {
+				sourceDirectory = dirname(config.build?.lib?.entry);
+			} else {
+				sourceDirectory = DEFAULT_SRC_DIR;
 			}
+
+			if (autoBinDirectory) {
+				autoBinOptions = {
+					srcDir: sourceDirectory,
+					binDir: autoBinDirectory,
+				};
+			}
+
+			let buildOptions: BuildOptions = {
+				...config.build,
+				sourcemap: true,
+				manifest: true,
+				ssr: true,
+				lib: {
+					entry: join(sourceDirectory, 'index.ts'),
+					formats,
+					...config.build?.lib,
+				},
+			};
+
+			if (autoExportDirectory) {
+				libraryInputs = collectFileNamePathEntries(sourceDirectory, autoExportDirectory);
+				autoExportOptions = {
+					formats,
+					libraryInputs,
+					exportFromDir: autoExportDirectory,
+				};
+
+				buildOptions = {
+					...buildOptions,
+					lib: {
+						...buildOptions.lib,
+						entry: offsetPathRecord(libraryInputs, sourceDirectory) as InputOption,
+					},
+				};
+			}
+
+			return { build: buildOptions };
+		},
+		configResolved: (config) => {
+			outDirectory = config.build.outDir ?? DEFAULT_OUT_DIR;
 		},
 		buildEnd: (error) => {
-			if (!isLibrary) {
-				console.warn('autoPackagePlugin cant run, not a library');
-				return;
-			}
 			if (error) {
-				console.warn('autoPackagePlugin didnt run, error happened during build');
+				console.warn(`${pluginName} didnt run, error happened during build`);
 				return;
 			}
-			const sourcePackageJson = options?.sourcePackageJson ?? 'package.json';
-			const cwd = options?.cwd ?? process.cwd();
-			const dry = options?.dry ?? false;
-			const autoPrettier = options?.autoPrettier ?? true;
-			const editSourcePackageJson = options?.editSourcePackageJson ?? true;
-			const sourcePackageJsonLocation = join(cwd, sourcePackageJson);
-			const targetPackageJsonLocation = join(targetDirectory, sourcePackageJson);
 
-			const rawPackageJson = readFileSync(sourcePackageJsonLocation, {
-				encoding: 'utf8',
-			});
-			const packageJson = JSON.parse(rawPackageJson) as PackageJson;
+			const sourcePackageJsonLocation = join(packageRootPath, sourcePackageJson);
+			const packageJson = readPackageJson(sourcePackageJsonLocation);
+			if (!packageJson) {
+				console.warn(
+					`${pluginName} didn't find packageJson at ${sourcePackageJsonLocation}!`
+				);
+				return;
+			}
 
-			if (editSourcePackageJson) {
-				const augmentedForSource = augmentPackageJson(packageJson, {
-					autoExport: {
-						...options?.autoExport,
-						formats,
-						exportDir: join(
-							targetDirectory,
-							options?.autoExport?.exportDir ?? DEFAULT_BIN_DIR
-						),
-					},
-					autoBin: {
-						...options?.autoBin,
-						binDir: join(targetDirectory, options?.autoBin?.binDir ?? DEFAULT_BIN_DIR),
-					},
-				});
-				writeJsonSync(augmentedForSource, sourcePackageJsonLocation, { autoPrettier, dry });
+			if (autoExportOptions) {
+				delete packageJson.exports;
+				delete packageJson.main;
+				delete packageJson.module;
+			}
+
+			if (autoBinOptions) {
+				delete packageJson.bin;
 			}
 
 			const augmentedForArtifact = augmentPackageJson(packageJson, {
-				autoExport: {
-					...options?.autoExport,
-					formats,
-				},
-				autoBin: options?.autoBin,
+				autoExport: autoExportOptions,
+				autoBin: autoBinOptions,
 			});
 
-			writeJsonSync(augmentedForArtifact, targetPackageJsonLocation, { autoPrettier, dry });
+			writeJsonSync(
+				augmentedForArtifact,
+				join(packageRootPath, outDirectory, 'package.json'),
+				{
+					autoPrettier,
+					dry,
+				}
+			);
+
+			if (editSourcePackageJson) {
+				const augmentedForSource = cloneJsonSerializable(augmentedForArtifact);
+				if (augmentedForSource.exports) {
+					augmentedForSource.exports = offsetPathRecord(
+						augmentedForSource.exports,
+						outDirectory
+					);
+				}
+				if (augmentedForSource.bin) {
+					if (typeof augmentedForSource.bin === 'object') {
+						augmentedForSource.bin = offsetPathRecord(
+							augmentedForSource.bin,
+							outDirectory
+						);
+					} else if (typeof augmentedForSource.bin === 'string') {
+						augmentedForSource.bin = offsetRelativePathPosix(
+							outDirectory,
+							augmentedForSource.bin
+						);
+					}
+				}
+				if (augmentedForSource.main) {
+					augmentedForSource.main = offsetRelativePathPosix(
+						outDirectory,
+						augmentedForSource.main
+					);
+				}
+				if (augmentedForSource.module) {
+					augmentedForSource.module = offsetRelativePathPosix(
+						outDirectory,
+						augmentedForSource.module
+					);
+				}
+				writeJsonSync(augmentedForSource, sourcePackageJsonLocation, {
+					autoPrettier,
+					dry,
+				});
+			}
 		},
 	};
 };

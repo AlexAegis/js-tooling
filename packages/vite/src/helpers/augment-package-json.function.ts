@@ -1,29 +1,43 @@
 import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
-import { sep } from 'node:path/posix';
+import { join, sep } from 'node:path/posix';
+import type { InputOption } from 'rollup';
 import type { LibraryFormats } from 'vite';
-import { bundleFileNameFormatter } from './bundlefilename-formatter.function';
+import { appendBundleFileExtension } from './append-bundle-file-extension.function';
+import { cloneJsonSerializable } from './clone-json-serializable.function';
 import { collectFileNamePathEntries } from './collect-export-entries.function';
 
+export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
 export const DEFAULT_SRC_DIR = 'src';
 export const DEFAULT_BIN_DIR = 'bin';
-export const DEFAULT_EXPORTS_DIR = '.';
+export const DEFAULT_EXPORT_FROM_DIR = '.';
+export const DEFAULT_EXPORT_TO_DIR = 'dist';
 
 export interface AutoExportOptions {
-	formats: LibraryFormats[];
 	/**
-	 * @default 'src'
+	 * the same input config used by vite/rollup
 	 */
-	srcDir?: string;
+	libraryInputs: InputOption;
+
+	formats: LibraryFormats[];
 
 	/**
 	 * The directory from which the exports are exported from relative from
-	 * the srcDir.
-	 * It's usually `.` from a built package artifact and `./dist`
-	 * from the source. Do not end it with a `/` !
+	 * the `srcDir` directory.
+	 * It's usually `.` meaning files directly in `src` are considered the
+	 * entry points of the library
 	 *
 	 * @default '.'
 	 */
-	exportDir?: string;
+	exportFromDir?: string;
+
+	//	/**
+	//	 * The directory to which exports are moved to, relative to the resulting
+	//	 * package.json file. From the target packageJson it's `.` and from the
+	//	 * source packageJson it would be `./dist` or whatever the `outDir` is.
+	//	 *
+	//	 * @default '.'
+	//	 */
+	//	exportToDir?: string;
 }
 
 export interface AutoBinOptions {
@@ -42,10 +56,14 @@ export interface AutoBinOptions {
 export interface PackageJsonAugmentOptions {
 	/**
 	 * Generates exports entries form rollup inputs
+	 *
+	 * @default undefined
 	 */
 	autoExport?: AutoExportOptions;
 	/**
 	 * Generates bin entries
+	 *
+	 * @default undefined
 	 */
 	autoBin?: AutoBinOptions;
 }
@@ -89,47 +107,40 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 	const hasEs = options.formats.includes('es');
 	const hasUmd = options.formats.includes('umd');
 
-	const exportDirectory = options.exportDir ?? DEFAULT_EXPORTS_DIR;
-	const sourceDirectory = options.srcDir ?? DEFAULT_SRC_DIR;
-
-	const inputs = collectFileNamePathEntries(sourceDirectory, exportDirectory);
-
-	packageJson.exports = Object.keys(inputs)
-		.filter((inputBasename) => !!inputBasename)
-		.map((inputBasename) => {
+	const exportFromDirectory = options.exportFromDir ?? DEFAULT_EXPORT_FROM_DIR;
+	packageJson.exports = Object.keys(options.libraryInputs)
+		.map((input) => {
+			const typesPath = `.${sep}${join(exportFromDirectory, `${input}.d.ts`)}`;
 			const exportConditions: PackageJsonExportConditions = {
-				types: `${exportDirectory}${sep}${inputBasename}.d.ts`,
+				types: typesPath,
 			};
 
 			if (hasCjs) {
-				const bundlePath = `${exportDirectory}${sep}${bundleFileNameFormatter(
-					'cjs',
-					inputBasename,
-					packageJson.type
+				const bundlePath = `.${sep}${join(
+					exportFromDirectory,
+					appendBundleFileExtension('cjs', input, packageJson.type)
 				)}`;
 				exportConditions.default = bundlePath;
 				exportConditions.require = bundlePath;
 			}
 
 			if (hasEs) {
-				const bundlePath = `${exportDirectory}${sep}${bundleFileNameFormatter(
-					'es',
-					inputBasename,
-					packageJson.type
+				const bundlePath = `.${sep}${join(
+					exportFromDirectory,
+					appendBundleFileExtension('es', input, packageJson.type)
 				)}`;
 				exportConditions.default = bundlePath;
 				exportConditions.import = bundlePath;
 			}
 
 			if (hasUmd) {
-				exportConditions.default = `${exportDirectory}${sep}${bundleFileNameFormatter(
-					'umd',
-					inputBasename,
-					packageJson.type
+				exportConditions.default = `.${sep}${join(
+					exportFromDirectory,
+					appendBundleFileExtension('umd', input, packageJson.type)
 				)}`;
 			}
 
-			return { inputBasename, exportConditions };
+			return { inputBasename: input, exportConditions };
 		})
 		.reduce((accumulator, { exportConditions, inputBasename }) => {
 			if (inputBasename === 'index') {
@@ -139,29 +150,39 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 			}
 			return accumulator;
 		}, {} as Record<string, PackageJsonExportConditions>);
+
+	// Fallback entries
+	const rootExport: PackageJsonExportConditions | undefined = packageJson.exports['.'];
+	if (rootExport) {
+		if (rootExport.default) {
+			packageJson.main = rootExport.require ?? rootExport.default;
+		}
+		if (rootExport.import) {
+			packageJson.module = rootExport.import ?? rootExport.default;
+		}
+	}
+
 	return packageJson;
 };
 
 const autoBin = (packageJson: PackageJson, options: AutoBinOptions): PackageJson => {
-	const binDirectory = options.binDir ?? DEFAULT_BIN_DIR;
 	const sourceDirectory = options.srcDir ?? DEFAULT_SRC_DIR;
+	const binDirectory = options.binDir ?? DEFAULT_BIN_DIR;
 	const binEntries = collectFileNamePathEntries(sourceDirectory, binDirectory);
 	packageJson.bin = binEntries;
 	return packageJson;
 };
 
-/**
- * @param packageJson will be mutated!
- */
 export const augmentPackageJson = (
 	packageJson: PackageJson,
 	options?: PackageJsonAugmentOptions
 ): PackageJson => {
+	let clone = cloneJsonSerializable(packageJson);
 	if (options?.autoExport) {
-		packageJson = autoExport(packageJson, options.autoExport);
+		clone = autoExport(clone, options.autoExport);
 	}
 	if (options?.autoBin) {
-		packageJson = autoBin(packageJson, options.autoBin);
+		clone = autoBin(clone, options.autoBin);
 	}
-	return packageJson;
+	return clone;
 };

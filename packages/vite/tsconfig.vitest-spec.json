@@ -6,5 +6,5 @@
 		"module": "commonjs",
 		"types": ["vitest/globals", "node"]
 	},
-	"include": ["**/*.test.{ts,tsx,js,jsx}", "**/*.spec.{ts,tsx,js,jsx}", "**/*.d.ts"]
+	"include": ["src/**/*.spec.{ts,tsx,js,jsx}", "**/*.d.ts"]
 }

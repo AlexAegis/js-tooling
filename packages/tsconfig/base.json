@@ -9,6 +9,7 @@
 		"declaration": true,
 		"declarationMap": true,
 		"noUnusedLocals": false,
+		//todo: nodenext
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"emitDecoratorMetadata": true,

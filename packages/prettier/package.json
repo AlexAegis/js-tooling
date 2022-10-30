@@ -33,8 +33,6 @@
 		"postinstall": ""
 	},
 	"sideEffects": false,
-	"main": "./src/index.ts",
-	"module": "./src/index.ts",
 	"type": "module",
 	"publishConfig": {
 		"access": "public"
@@ -61,5 +59,8 @@
 			"require": "./dist/index.cjs",
 			"import": "./dist/index.js"
 		}
-	}
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"bin": {}
 }

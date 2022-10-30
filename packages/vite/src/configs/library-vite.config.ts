@@ -8,7 +8,7 @@ export const libraryViteConfig = mergeConfig(
 	baseViteConfig,
 	defineConfig({
 		plugins: [
-			autoPackagePlugin({ dry: true }),
+			autoPackagePlugin({}),
 			viteStaticCopy({
 				targets: [
 					{
@@ -23,14 +23,5 @@ export const libraryViteConfig = mergeConfig(
 				entryRoot: 'src',
 			}),
 		],
-		build: {
-			sourcemap: true,
-			manifest: true,
-			ssr: true,
-			lib: {
-				entry: 'src/index.ts',
-				formats: ['es', 'cjs'],
-			},
-		},
 	})
 );

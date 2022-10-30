@@ -1,9 +1,10 @@
 import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { Plugin } from 'vite';
+import type { Plugin } from 'vite';
 import { prettify } from '../helpers';
+import { readPackageJson } from '../helpers/read-package-json.function';
 
 export interface UpdatePackageJsonPluginOptions {
 	filename?: string;
@@ -19,10 +20,14 @@ export const updatePackageJsonPlugin = (options: UpdatePackageJsonPluginOptions)
 		if (!error) {
 			const cwd = options.cwd ?? process.cwd();
 			const packageJsonLocation = join(cwd, options.filename ?? 'package.json');
-			const rawPackageJson = readFileSync(packageJsonLocation, {
-				encoding: 'utf8',
-			});
-			const packageJson = JSON.parse(rawPackageJson) as PackageJson;
+
+			const packageJson = readPackageJson(packageJsonLocation);
+			if (!packageJson) {
+				console.warn(
+					`updatePackageJsonPlugin didn't find packageJson at ${packageJsonLocation}!`
+				);
+				return;
+			}
 			const augmentedPackageJson = options.updater(packageJson);
 			const rawAugmentedPackageJson = JSON.stringify(augmentedPackageJson);
 
