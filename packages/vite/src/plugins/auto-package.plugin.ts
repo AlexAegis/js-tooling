@@ -100,6 +100,8 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 	let autoBinOptions: AutoBinOptions | undefined;
 
 	const pluginName = 'autopackage';
+
+	let error: Error | undefined;
 	return {
 		name: pluginName,
 		apply: 'build',
@@ -117,12 +119,7 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 				sourceDirectory = DEFAULT_SRC_DIR;
 			}
 
-			if (autoBinDirectory) {
-				autoBinOptions = {
-					srcDir: sourceDirectory,
-					binDir: autoBinDirectory,
-				};
-			}
+			outDirectory = config.build?.outDir ?? DEFAULT_OUT_DIR;
 
 			let buildOptions: BuildOptions = {
 				...config.build,
@@ -136,6 +133,28 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 				},
 			};
 
+			let entry: Record<string, unknown> | undefined;
+
+			if (autoBinDirectory) {
+				const binDirectory = join(sourceDirectory, autoBinDirectory);
+				const rawBinInputs = collectFileNamePathEntries(binDirectory);
+
+				autoBinOptions = {
+					binInputs: offsetPathRecord(rawBinInputs, autoBinDirectory) as Record<
+						string,
+						string
+					>,
+					binDirectory: autoBinDirectory,
+					formats,
+					outDir: outDirectory,
+				};
+
+				const rawBinEntry = collectFileNamePathEntries(sourceDirectory, autoBinDirectory);
+				entry = offsetPathRecord(rawBinEntry, binDirectory);
+				console.log('bin binInputs', autoBinOptions.binInputs);
+				console.log('bin entry', entry);
+			}
+
 			if (autoExportDirectory) {
 				libraryInputs = collectFileNamePathEntries(sourceDirectory, autoExportDirectory);
 				autoExportOptions = {
@@ -144,21 +163,26 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 					exportFromDir: autoExportDirectory,
 				};
 
+				entry = { ...entry, ...offsetPathRecord(libraryInputs, sourceDirectory) };
+			}
+
+			if (entry) {
 				buildOptions = {
 					...buildOptions,
 					lib: {
 						...buildOptions.lib,
-						entry: offsetPathRecord(libraryInputs, sourceDirectory) as InputOption,
+						entry: entry as InputOption,
 					},
 				};
 			}
+			console.log('libraryInputs', entry);
 
 			return { build: buildOptions };
 		},
-		configResolved: (config) => {
-			outDirectory = config.build.outDir ?? DEFAULT_OUT_DIR;
+		buildEnd: (buildError) => {
+			error = buildError;
 		},
-		buildEnd: (error) => {
+		writeBundle: () => {
 			if (error) {
 				console.warn(`${pluginName} didnt run, error happened during build`);
 				return;
@@ -182,6 +206,7 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 			if (autoBinOptions) {
 				delete packageJson.bin;
 			}
+			console.log('autoBinOptions', autoBinOptions);
 
 			const augmentedForArtifact = augmentPackageJson(packageJson, {
 				autoExport: autoExportOptions,
@@ -228,6 +253,12 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 					augmentedForSource.module = offsetRelativePathPosix(
 						outDirectory,
 						augmentedForSource.module
+					);
+				}
+				if (augmentedForSource.directories && augmentedForSource.directories.bin) {
+					augmentedForSource.directories.bin = offsetRelativePathPosix(
+						outDirectory,
+						augmentedForSource.directories.bin
 					);
 				}
 				writeJsonSync(augmentedForSource, sourcePackageJsonLocation, {

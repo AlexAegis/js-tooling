@@ -45,6 +45,9 @@
 		"typescript": "4.8.4",
 		"@schemastore/package": "^0.0.6"
 	},
+	"directories": {
+		"bin": "./dist/bin"
+	},
 	"exports": {
 		"./base-vite.config": {
 			"types": "./dist/base-vite.config.d.ts",
@@ -73,5 +76,7 @@
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
-	"bin": {}
+	"bin": {
+		"spread-vite-config": "./dist/bin/spread-vite-config.cjs"
+	}
 }

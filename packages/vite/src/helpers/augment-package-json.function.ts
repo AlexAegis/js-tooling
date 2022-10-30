@@ -1,10 +1,13 @@
 import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
-import { join, sep } from 'node:path/posix';
+import { readdirSync } from 'node:fs';
+
+import { join, posix } from 'node:path';
 import type { InputOption } from 'rollup';
 import type { LibraryFormats } from 'vite';
 import { appendBundleFileExtension } from './append-bundle-file-extension.function';
 import { cloneJsonSerializable } from './clone-json-serializable.function';
-import { collectFileNamePathEntries } from './collect-export-entries.function';
+import { stripExtension } from './collect-export-entries.function';
+import { turnIntoExecutable } from './turn-into-executable.function';
 
 export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
 export const DEFAULT_SRC_DIR = 'src';
@@ -29,28 +32,25 @@ export interface AutoExportOptions {
 	 * @default '.'
 	 */
 	exportFromDir?: string;
-
-	//	/**
-	//	 * The directory to which exports are moved to, relative to the resulting
-	//	 * package.json file. From the target packageJson it's `.` and from the
-	//	 * source packageJson it would be `./dist` or whatever the `outDir` is.
-	//	 *
-	//	 * @default '.'
-	//	 */
-	//	exportToDir?: string;
 }
 
 export interface AutoBinOptions {
 	/**
-	 * @default 'src'
+	 * the same input config used by vite/rollup
 	 */
-	srcDir?: string;
+	binInputs: InputOption;
 	/**
-	 * The directory relative to srcDir from which the bins are exported from.
-	 * Every file directly here is considered an executable
-	 * @default  `bin`.
+	 * relative to src
 	 */
-	binDir?: string;
+	binDirectory: string;
+	formats: LibraryFormats[];
+
+	/**
+	 * Relative to the package.json, usually './dist'
+	 *
+	 * used to mark the built scripts as executable
+	 */
+	outDir: string;
 }
 
 export interface PackageJsonAugmentOptions {
@@ -110,13 +110,13 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 	const exportFromDirectory = options.exportFromDir ?? DEFAULT_EXPORT_FROM_DIR;
 	packageJson.exports = Object.keys(options.libraryInputs)
 		.map((input) => {
-			const typesPath = `.${sep}${join(exportFromDirectory, `${input}.d.ts`)}`;
+			const typesPath = `.${posix.sep}${posix.join(exportFromDirectory, `${input}.d.ts`)}`;
 			const exportConditions: PackageJsonExportConditions = {
 				types: typesPath,
 			};
 
 			if (hasCjs) {
-				const bundlePath = `.${sep}${join(
+				const bundlePath = `.${posix.sep}${posix.join(
 					exportFromDirectory,
 					appendBundleFileExtension('cjs', input, packageJson.type)
 				)}`;
@@ -125,7 +125,7 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 			}
 
 			if (hasEs) {
-				const bundlePath = `.${sep}${join(
+				const bundlePath = `.${posix.sep}${posix.join(
 					exportFromDirectory,
 					appendBundleFileExtension('es', input, packageJson.type)
 				)}`;
@@ -134,7 +134,7 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 			}
 
 			if (hasUmd) {
-				exportConditions.default = `.${sep}${join(
+				exportConditions.default = `.${posix.sep}${posix.join(
 					exportFromDirectory,
 					appendBundleFileExtension('umd', input, packageJson.type)
 				)}`;
@@ -146,7 +146,7 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 			if (inputBasename === 'index') {
 				accumulator['.'] = exportConditions;
 			} else {
-				accumulator[`.${sep}${inputBasename}`] = exportConditions;
+				accumulator[`.${posix.sep}${inputBasename}`] = exportConditions;
 			}
 			return accumulator;
 		}, {} as Record<string, PackageJsonExportConditions>);
@@ -166,10 +166,34 @@ const autoExport = (packageJson: PackageJson, options: AutoExportOptions): Packa
 };
 
 const autoBin = (packageJson: PackageJson, options: AutoBinOptions): PackageJson => {
-	const sourceDirectory = options.srcDir ?? DEFAULT_SRC_DIR;
-	const binDirectory = options.binDir ?? DEFAULT_BIN_DIR;
-	const binEntries = collectFileNamePathEntries(sourceDirectory, binDirectory);
-	packageJson.bin = binEntries;
+	const hasCjs = options.formats.includes('cjs');
+	const hasEs = options.formats.includes('es');
+	const hasUmd = options.formats.includes('umd');
+
+	packageJson.bin = Object.entries(options.binInputs).reduce((result, [key, value]) => {
+		const fileName = stripExtension(value);
+		if (hasCjs) {
+			result[key] = appendBundleFileExtension('cjs', fileName, packageJson.type);
+		} else if (hasUmd) {
+			result[key] = appendBundleFileExtension('umd', fileName, packageJson.type);
+		} else if (hasEs) {
+			result[key] = appendBundleFileExtension('es', fileName, packageJson.type);
+		} else {
+			result[key] = `${fileName}.js`;
+		}
+		return result;
+	}, {} as Record<string, string>);
+
+	packageJson.directories = { ...packageJson.directories, bin: options.binDirectory };
+
+	const binOutputDirectory = join(options.outDir, options.binDirectory);
+	const executables = readdirSync(binOutputDirectory)
+		.map((bin) => join(binOutputDirectory, bin))
+		.filter((bin) => bin.endsWith('js') || bin.endsWith('cjs') || bin.endsWith('mjs'));
+	for (const executable of executables) {
+		turnIntoExecutable(executable);
+	}
+
 	return packageJson;
 };
 

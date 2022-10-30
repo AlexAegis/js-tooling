@@ -13,6 +13,9 @@ export const collectImmediateFiles = (path: string = process.cwd()): string[] =>
 	}
 };
 
+export const stripExtension = (name: string): string =>
+	name.replace(new RegExp(`${extname(name)}$`), '');
+
 /**
  * @param rootPath path entry will be relative to this
  * @param exportPath path from which files are collected
@@ -24,8 +27,8 @@ export const collectFileNamePathEntries = (
 	const collectPath = join(rootPath, exportPath);
 	return collectImmediateFiles(collectPath).reduce((accumulator, next) => {
 		const fileName = basename(next);
-		const namestub = fileName.replace(new RegExp(`${extname(next)}$`), '');
-		accumulator[namestub] = offsetRelativePathPosix(exportPath, fileName);
+		const namestub = stripExtension(next);
+		accumulator[join(exportPath, namestub)] = fileName;
 		return accumulator;
 	}, {} as Record<string, string>);
 };
