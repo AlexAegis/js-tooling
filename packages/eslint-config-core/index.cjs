@@ -7,7 +7,7 @@ module.exports = {
 		'prettier',
 	],
 	plugins: ['@typescript-eslint'],
-	ignorePatterns: ['node_modules', 'dist'],
+	ignorePatterns: ['node_modules', 'dist', 'coverage', '.turbo', 'tmp'],
 	overrides: [],
 	settings: {
 		next: {
