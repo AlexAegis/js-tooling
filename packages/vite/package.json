@@ -29,7 +29,7 @@
 		"format": "prettier --write .",
 		"lint:es": "eslint --max-warnings=0 .",
 		"lint:format": "prettier --check .",
-		"postinstall": "spread-vite-config"
+		"postinstall": "npx distribute-vite-config"
 	},
 	"sideEffects": false,
 	"publishConfig": {
