@@ -5,4 +5,4 @@
  *
  * https://vitejs.dev/config/
  */
-export { default } from './src/library-vite.config';
+export { default } from './src/library-vite.config.js';

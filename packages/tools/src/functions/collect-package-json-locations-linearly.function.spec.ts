@@ -6,8 +6,9 @@ describe('collectPackageJsonLocationsLinearly', () => {
 	const testPath = '/foo/bar/zed';
 	beforeEach(() => {
 		vi.mock('node:fs', async () => {
+			// Don't use it in the case of fs, don't do actual fs calls even by accident
+			// ...(await vi.importActual<typeof import('node:fs')>('node:fs')),
 			return {
-				...(await vi.importActual<typeof import('node:fs')>('node:fs')),
 				existsSync: vi.fn(
 					(path: PathLike) =>
 						path === '/foo/bar/zed/package.json' || path === '/foo/bar/package.json'

@@ -26,24 +26,10 @@ describe('distribute', () => {
 		});
 		vi.mock('node:fs', async () => {
 			return {
-				existsSync: vi.fn(
-					(path: PathLike) =>
-						path === '/foo/bar/packages/zed/package.json' ||
-						path === '/foo/bar/packages/zed/rcfile' ||
-						path === '/foo/bar/packages/zod/package.json' ||
-						path === '/foo/bar/packages/zod/rcfile' ||
-						path === '/foo/bar/packages/readme.md' ||
-						path === '/foo/bar/packages/rcfile' ||
-						path === '/foo/bar/packages/nonfile' ||
-						path === '/foo/bar/package.json'
-				),
-			};
-		});
-		vi.mock('node:fs/promises', async () => {
-			return {
-				stat: vi.fn((path: string) => {
+				lstatSync: vi.fn((path: string) => {
 					switch (path) {
 						case 'rcfile':
+						case '/foo/bar/packages/rcfile':
 						case '/foo/bar/packages/zed/rcfile': {
 							return { isFile: () => true, isSymbolicLink: () => false };
 						}
@@ -58,14 +44,24 @@ describe('distribute', () => {
 						}
 					}
 				}),
-				symlink: vi.fn((path: string, target: string) => symlinkMock(path, target)),
-				readFile: vi.fn(
-					async (path: PathLike): Promise<string> =>
+				existsSync: vi.fn(
+					(path: PathLike) =>
+						path === '/foo/bar/packages/zed/package.json' ||
+						path === '/foo/bar/packages/zed/rcfile' ||
+						path === '/foo/bar/packages/zod/package.json' ||
+						path === '/foo/bar/packages/zod/rcfile' ||
+						path === '/foo/bar/packages/readme.md' ||
+						path === '/foo/bar/packages/rcfile' ||
+						path === '/foo/bar/packages/nonfile' ||
 						path === '/foo/bar/package.json'
-							? JSON.stringify({
-									workspaces: ['apps/*', 'libs/*', 'packages/*'],
-							  } as PackageJson)
-							: JSON.stringify({} as PackageJson)
+				),
+				symlinkSync: vi.fn((path: string, target: string) => symlinkMock(path, target)),
+				readFileSync: vi.fn((path: PathLike): string =>
+					path === '/foo/bar/package.json'
+						? JSON.stringify({
+								workspaces: ['apps/*', 'libs/*', 'packages/*'],
+						  } as PackageJson)
+						: JSON.stringify({} as PackageJson)
 				),
 			};
 		});

@@ -2,19 +2,7 @@
 	"extends": "./tsconfig.lib.json",
 	"compilerOptions": {
 		"composite": true,
-		"outDir": "./dist/out-tsc",
-		"module": "commonjs",
 		"types": ["vitest/globals", "node"]
 	},
-	"include": [
-		"**/*.test.ts",
-		"**/*.spec.ts",
-		"**/*.test.tsx",
-		"**/*.spec.tsx",
-		"**/*.test.js",
-		"**/*.spec.js",
-		"**/*.test.jsx",
-		"**/*.spec.jsx",
-		"**/*.d.ts"
-	]
+	"include": ["src/**/*.spec.{ts,tsx,js,jsx}", "**/*.d.ts"]
 }

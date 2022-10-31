@@ -4,10 +4,10 @@ import { join, normalize } from 'node:path';
 export const packageJsonName = 'package.json';
 
 export const collectPackageJsonLocationsLinearly = (
-	rawPath: string,
+	cwd: string = process.cwd(),
 	collection: string[] = []
 ): string[] => {
-	const path = normalize(rawPath);
+	const path = normalize(cwd);
 	if (existsSync(join(path, packageJsonName))) {
 		collection.unshift(path);
 	}

@@ -62,15 +62,14 @@
 		"@alexaegis/git": "*",
 		"@alexaegis/husky": "*",
 		"@alexaegis/nuke": "*",
-		"@alexaegis/prettier": "*",
+		"@alexaegis/prettier": "^0.0.1",
 		"@alexaegis/stylelint": "*",
+		"@alexaegis/tools": "*",
 		"@alexaegis/tsconfig": "*",
 		"@alexaegis/turbo": "*",
-		"@alexaegis/tools": "*",
 		"@alexaegis/vitest": "*"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*"
-	},
-	"peerDependencies": {}
+	}
 }

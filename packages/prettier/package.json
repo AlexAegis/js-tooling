@@ -30,7 +30,7 @@
 		"lint:es": "eslint --max-warnings=0 .",
 		"lint:format": "prettier --check .",
 		"ncu": "ncu -u",
-		"postinstall": ""
+		"postinstall": "npx distribute-prettier-config"
 	},
 	"sideEffects": false,
 	"type": "module",
@@ -49,6 +49,8 @@
 	"directories": {},
 	"exports": {
 		"./readme": "./readme.md",
+		"./static/.prettierignore": "./static/.prettierignore",
+		"./static/.prettierrc": "./static/.prettierrc.cjs",
 		"./config": {
 			"types": "./dist/config.d.ts",
 			"require": "./dist/config.cjs",
@@ -60,5 +62,7 @@
 			"import": "./dist/index.js"
 		}
 	},
-	"bin": {}
+	"bin": {
+		"distribute-prettier-config": "./dist/bin/distribute-prettier-config.js"
+	}
 }

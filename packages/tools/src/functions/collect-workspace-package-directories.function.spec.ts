@@ -25,7 +25,7 @@ describe('collectWorkspacePackageDirectories with a workspace', () => {
 						path === '/foo/bar/packages/readme.md' ||
 						path === '/foo/bar/package.json'
 				),
-				readFile: vi.fn((path: PathLike): string =>
+				readFileSync: vi.fn((path: PathLike): string =>
 					path === '/foo/bar/package.json'
 						? JSON.stringify({
 								workspaces: ['apps/*', 'libs/*', 'packages/*'],

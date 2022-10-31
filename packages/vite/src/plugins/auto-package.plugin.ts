@@ -188,6 +188,7 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 
 			if (autoExportStaticExportGlobs) {
 				autoExportStaticOptions = {
+					cwd: packageRootPath,
 					outDir: outDirectory,
 					staticExportGlobs: autoExportStaticExportGlobs,
 				};
@@ -208,7 +209,7 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 		buildEnd: (buildError) => {
 			error = buildError;
 		},
-		writeBundle: () => {
+		writeBundle: async () => {
 			if (error) {
 				console.warn(`${pluginName} didnt run, error happened during build`);
 				return;
@@ -236,7 +237,7 @@ export const autoPackagePlugin = (options?: AutoPackagerPluginOptions): Plugin =
 			let unprocessedExports: Record<string, string> = {};
 
 			if (autoExportStaticOptions) {
-				unprocessedExports = autoStaticExport(autoExportStaticOptions);
+				unprocessedExports = await autoStaticExport(autoExportStaticOptions);
 				packageJson.exports = { ...unprocessedExports, ...packageJson.exports };
 			}
 

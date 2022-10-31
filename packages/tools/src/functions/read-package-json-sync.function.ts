@@ -4,8 +4,7 @@ import { join } from 'node:path';
 import { packageJsonName } from './collect-package-json-locations-linearly.function.js';
 
 export const readPackageJsonSync = (packagePath: string): PackageJson | undefined => {
-	const packageJsonLocation = join(packagePath, packageJsonName);
-	if (existsSync(packageJsonLocation)) {
+	if (packagePath && existsSync(join(packagePath, packageJsonName))) {
 		const rawPackageJson = readFileSync(join(packagePath, packageJsonName), {
 			encoding: 'utf8',
 		});

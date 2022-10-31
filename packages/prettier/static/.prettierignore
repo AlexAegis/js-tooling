@@ -1,0 +1,19 @@
+# ! Do not edit !
+# ! This file is a symlink, your changes will be lost!
+# ! If you wish to edit this file, copy its content to a real file (Doing so
+# ! will stop you from receiving upstream changes, you can resume receiving them
+# ! by reinstalling @alexaegis/prettier or by running
+# ! `npx distribute-prettier-config`
+# ! Or you can suggest changes upstream at https://github.com/alexaegis/js
+
+node_modules
+package-lock.json
+yarn.lock
+dist
+coverage
+.cache
+.vscode/chrome
+CHANGELOG.md
+.svelte-kit
+public/build
+.nyc_output
