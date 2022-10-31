@@ -1,1 +1,1 @@
-export * from './nuke.function';
+export * from './nuke.function.js';

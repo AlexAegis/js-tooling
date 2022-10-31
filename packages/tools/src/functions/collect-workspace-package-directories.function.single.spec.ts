@@ -2,7 +2,7 @@ import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemasto
 import type { Options } from 'globby';
 import type { PathLike } from 'node:fs';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
-import { collectWorkspacePackageDirectories } from './collect-workspace-package-directories.function';
+import { collectWorkspacePackageDirectories } from './collect-workspace-package-directories.function.js';
 
 describe('collectWorkspacePackageDirectories with a single package', () => {
 	beforeAll(async () => {

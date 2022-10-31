@@ -1,5 +1,5 @@
 import { writeFileSync } from 'node:fs';
-import { prettify } from './prettify.function';
+import { prettify } from './prettify.function.js';
 
 export interface WriteJsonOptions {
 	/**

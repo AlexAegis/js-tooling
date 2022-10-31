@@ -3,7 +3,7 @@ import type { Options } from 'globby';
 import type { PathLike } from 'node:fs';
 import { join } from 'node:path';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
-import { distribute } from './distribute.function';
+import { distribute } from './distribute.function.js';
 
 const symlinkMock = vi.fn();
 

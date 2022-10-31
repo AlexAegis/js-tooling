@@ -3,8 +3,8 @@ import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemasto
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Plugin } from 'vite';
-import { prettify } from '../helpers';
-import { readPackageJson } from '../helpers/read-package-json.function';
+import { prettify } from '../helpers/index.js';
+import { readPackageJson } from '../helpers/read-package-json.function.js';
 
 export interface UpdatePackageJsonPluginOptions {
 	filename?: string;

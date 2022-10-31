@@ -2,7 +2,13 @@ import type { InputOption } from 'rollup';
 import type { BuildOptions, LibraryFormats, Plugin } from 'vite';
 
 import { dirname, join } from 'node:path/posix';
-import { DEFAULT_OUT_DIR } from '../configs';
+import { DEFAULT_OUT_DIR } from '../configs/index.js';
+import {
+	AutoExportStaticOptions,
+	autoStaticExport,
+	DEFAULT_STATIC_EXPORT_GLOB,
+} from '../helpers/auto-export-static.function.js';
+import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function.js';
 import {
 	autoBin,
 	AutoBinOptions,
@@ -17,15 +23,9 @@ import {
 	PackageJsonExportConditions,
 	WriteJsonOptions,
 	writeJsonSync,
-} from '../helpers';
-import {
-	AutoExportStaticOptions,
-	autoStaticExport,
-	DEFAULT_STATIC_EXPORT_GLOB,
-} from '../helpers/auto-export-static.function';
-import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function';
-import { offsetRelativePathPosix } from '../helpers/offset-relative-path.function';
-import { readPackageJson } from '../helpers/read-package-json.function';
+} from '../helpers/index.js';
+import { offsetRelativePathPosix } from '../helpers/offset-relative-path.function.js';
+import { readPackageJson } from '../helpers/read-package-json.function.js';
 
 export interface AutoPackagerPluginOptions extends WriteJsonOptions {
 	/**

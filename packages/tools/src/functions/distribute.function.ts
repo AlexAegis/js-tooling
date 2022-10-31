@@ -1,6 +1,6 @@
 import { existsSync, statSync } from 'node:fs';
 import { basename, join, relative } from 'node:path';
-import { collectWorkspacePageDirectoriesByDependency } from './collect-workspace-package-directories-by-dependency.function';
+import { collectWorkspacePageDirectoriesByDependency } from './collect-workspace-package-directories-by-dependency.function.js';
 
 export const distribute = (
 	file: string,

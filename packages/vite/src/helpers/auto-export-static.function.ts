@@ -1,7 +1,7 @@
 import { globbySync } from 'globby';
 import { cpSync, existsSync } from 'node:fs';
 import { join, posix } from 'node:path';
-import { stripExtension } from './collect-export-entries.function';
+import { stripExtension } from './collect-export-entries.function.js';
 
 export const DEFAULT_STATIC_EXPORT_GLOB = ['exports', '*.md'];
 

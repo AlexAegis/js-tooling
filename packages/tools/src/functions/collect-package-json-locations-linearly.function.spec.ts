@@ -1,6 +1,6 @@
 import type { PathLike } from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { collectPackageJsonLocationsLinearly } from './collect-package-json-locations-linearly.function';
+import { collectPackageJsonLocationsLinearly } from './collect-package-json-locations-linearly.function.js';
 
 describe('collectPackageJsonLocationsLinearly', () => {
 	const testPath = '/foo/bar/zed';

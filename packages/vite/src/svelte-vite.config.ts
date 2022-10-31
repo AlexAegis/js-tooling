@@ -1,1 +1,1 @@
-export { svelteViteConfig as default } from './configs';
+export { svelteViteConfig as default } from './configs/index.js';

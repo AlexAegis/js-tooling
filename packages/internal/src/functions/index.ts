@@ -1,1 +1,1 @@
-export * from './example.function';
+export * from './example.function.js';

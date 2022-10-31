@@ -4,9 +4,9 @@ import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import type { InputOption } from 'rollup';
 import type { LibraryFormats } from 'vite';
-import { appendBundleFileExtension } from './append-bundle-file-extension.function';
-import { stripExtension } from './collect-export-entries.function';
-import { turnIntoExecutable } from './turn-into-executable.function';
+import { appendBundleFileExtension } from './append-bundle-file-extension.function.js';
+import { stripExtension } from './collect-export-entries.function.js';
+import { turnIntoExecutable } from './turn-into-executable.function.js';
 
 export interface AutoBinOptions {
 	/**

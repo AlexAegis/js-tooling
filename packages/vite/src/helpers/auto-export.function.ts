@@ -3,8 +3,8 @@ import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemasto
 import { posix } from 'node:path';
 import type { InputOption } from 'rollup';
 import type { LibraryFormats } from 'vite';
-import { appendBundleFileExtension } from './append-bundle-file-extension.function';
-import type { PackageJsonExportConditions } from './package-json-export-conditions.type';
+import { appendBundleFileExtension } from './append-bundle-file-extension.function.js';
+import type { PackageJsonExportConditions } from './package-json-export-conditions.type.js';
 
 export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
 export const DEFAULT_SRC_DIR = 'src';

@@ -1,1 +1,1 @@
-export { baseViteConfig as default } from './configs';
+export { baseViteConfig as default } from './configs/index.js';

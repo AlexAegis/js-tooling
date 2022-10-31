@@ -1,4 +1,4 @@
-import { distribute } from '../functions/distribute.function';
+import { distribute } from '../functions/distribute.function.js';
 
 if (process.argv[2]) {
 	console.log('!DISTRIBUTE!');

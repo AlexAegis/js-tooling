@@ -1,6 +1,6 @@
 import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
 import { readFileSync } from 'node:fs';
-import { existsFile } from './exists-file.function';
+import { existsFile } from './exists-file.function.js';
 
 export const readPackageJson = (path: string): PackageJson | undefined => {
 	if (existsFile(path)) {

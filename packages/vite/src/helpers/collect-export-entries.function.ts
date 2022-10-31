@@ -1,9 +1,9 @@
 import { readdirSync } from 'node:fs';
 
 import { basename, extname, join } from 'node:path';
-import { isObject } from './deep-merge.function';
-import { existsDirectory } from './exists-directory.function';
-import { offsetRelativePathPosix } from './offset-relative-path.function';
+import { isObject } from './deep-merge.function.js';
+import { existsDirectory } from './exists-directory.function.js';
+import { offsetRelativePathPosix } from './offset-relative-path.function.js';
 
 export const collectImmediate = (
 	path: string = process.cwd(),

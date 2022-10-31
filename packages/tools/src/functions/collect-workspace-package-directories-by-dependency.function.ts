@@ -1,4 +1,4 @@
-import { collectWorkspacePackageDirectoriesWithPackageJson } from './collect-workspace-package-directories.function';
+import { collectWorkspacePackageDirectoriesWithPackageJson } from './collect-workspace-package-directories.function.js';
 
 /**
  *

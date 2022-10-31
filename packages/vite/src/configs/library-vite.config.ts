@@ -1,8 +1,8 @@
 import { defineConfig, mergeConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import { autoPackagePlugin } from '../plugins';
-import { baseViteConfig } from './base-vite.config';
+import { autoPackagePlugin } from '../plugins/index.js';
+import { baseViteConfig } from './base-vite.config.js';
 
 export const libraryViteConfig = mergeConfig(
 	baseViteConfig,
