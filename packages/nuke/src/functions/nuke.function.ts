@@ -1,6 +1,7 @@
 import { collectWorkspacePackageDirectoriesWithPackageJson } from '@alexaegis/tools';
-import { remove } from 'fs-extra';
+import { rm } from 'node:fs/promises';
 import { join } from 'node:path';
+
 export interface NukeOptions {
 	/**
 	 * Don't remove `node_modules` directories but try to clean them up
@@ -50,22 +51,20 @@ export const nuke = async (path: string, options?: NukeOptions): Promise<void> =
 
 	const nukeList = [...(options?.nukeList ?? DEFAULT_NUKE_LIST), ...(options?.nukeMore ?? [])];
 	const skipPackages = options?.dontNukeIn ?? [];
-	for (const packageDirectory of packageDirectories) {
-		if (
-			skipPackages.some((skip) =>
-				typeof skip === 'string'
-					? skip === packageDirectory.path
-					: skip.test(packageDirectory.path)
+
+	await Promise.all(
+		packageDirectories
+			.filter(
+				(packageDirectory) =>
+					!skipPackages.some((skip) =>
+						typeof skip === 'string'
+							? skip === packageDirectory.path
+							: skip.test(packageDirectory.path)
+					)
 			)
-		) {
-			console.info(`[nuke ${packageDirectory.packageJson.name}]: skip...`);
-			continue;
-		}
-		for (const toNuke of nukeList) {
-			console.info(`[nuke ${packageDirectory.packageJson.name}]: removing ${toNuke}...`);
-			if (!options?.dry) {
-				remove(join(packageDirectory.path, toNuke));
-			}
-		}
-	}
+			.flatMap((packageDirectory) =>
+				nukeList.map((toNuke) => join(packageDirectory.path, toNuke))
+			)
+			.map((nukeTarget) => rm(nukeTarget, { recursive: true }))
+	);
 };

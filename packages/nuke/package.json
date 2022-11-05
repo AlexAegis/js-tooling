@@ -38,8 +38,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/tools": "*",
-		"fs-extra": "^10.1.0",
-		"yargs": "^17.6.0"
+		"yargs": "^17.6.2"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
@@ -56,6 +55,9 @@
 		}
 	},
 	"bin": {
-		"nuke": "./dist/bin/nuke.js"
+		"bin": {
+			"nuke": "./dist/bin/nuke.js"
+		},
+		"scripts": {}
 	}
 }

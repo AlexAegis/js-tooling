@@ -1,16 +1,17 @@
-import { readdirSync } from 'node:fs';
+import { readdir } from 'node:fs/promises';
 
-import { basename, extname, join } from 'node:path';
-import { isObject } from './deep-merge.function.js';
+import { basename, join } from 'node:path';
+import { enterPathPosix } from './enter-path.function.js';
 import { existsDirectory } from './exists-directory.function.js';
-import { offsetRelativePathPosix } from './offset-relative-path.function.js';
+import { offsetRelativePathPosix } from './offset-relative-path-posix.function.js';
+import { stripFileExtension } from './strip-file-extension.function.js';
 
-export const collectImmediate = (
+export const collectImmediate = async (
 	path: string = process.cwd(),
 	kind?: 'file' | 'directory'
-): string[] => {
+): Promise<string[]> => {
 	if (existsDirectory(path)) {
-		const entries = readdirSync(path, { withFileTypes: true });
+		const entries = await readdir(path, { withFileTypes: true });
 		return entries
 			.filter((entry) =>
 				kind
@@ -24,32 +25,59 @@ export const collectImmediate = (
 	}
 };
 
-export const stripExtension = (name: string): string =>
-	name.replace(new RegExp(`${extname(name)}$`), '');
-
 /**
  * @param rootPath path entry will be relative to this
  * @param exportPath path from which files are collected
  */
-export const collectFileNamePathEntries = (
+export const collectFileNamePathEntries = async (
 	rootPath: string,
 	exportPath = '.'
-): Record<string, string> => {
+): Promise<Record<string, string>> => {
 	const collectPath = join(rootPath, exportPath);
-	return collectImmediate(collectPath, 'file').reduce((accumulator, next) => {
+	const immediateFileNames = await collectImmediate(collectPath, 'file');
+	return immediateFileNames.reduce((accumulator, next) => {
 		const fileName = basename(next);
-		const namestub = stripExtension(next);
+		const namestub = stripFileExtension(next);
 		accumulator[join(exportPath, namestub)] = fileName;
 		return accumulator;
 	}, {} as Record<string, string>);
 };
 
-export const offsetPathRecord = (
-	pathRecord: Record<string, unknown>,
+export const offsetPathArray = (
+	pathArray: string[],
 	offsetPath: string,
 	skipOffset?: string[]
-): Record<string, unknown> => {
+): string[] => {
+	return pathArray.map((path) =>
+		skipOffset?.includes(path) ? path : offsetRelativePathPosix(offsetPath, path)
+	);
+};
+
+export const offsetPathRecordValues = (
+	pathRecord: Record<string, string>,
+	offsetPath: string,
+	enterCount = 0,
+	skipOffset: string[] = []
+): Record<string, string> => {
 	return Object.entries(pathRecord).reduce((result, [key, path]) => {
+		if (path) {
+			const enteredPath = enterPathPosix(path, enterCount);
+			if (skipOffset.includes(path)) {
+				result[key] = enteredPath;
+			} else {
+				result[key] = offsetRelativePathPosix(offsetPath, enteredPath);
+			}
+		}
+		return result;
+	}, {} as Record<string, string>);
+};
+/*
+export const offsetPackageJsonExports = (
+	packageJsonExports: PackageJsonExports,
+	offsetPath: string,
+	skipOffset?: string[]
+): PackageJsonExports => {
+	return Object.entries(packageJsonExports).reduce((result, [key, path]) => {
 		if (typeof path === 'string') {
 			if (skipOffset?.includes(path)) {
 				result[key] = path;
@@ -57,8 +85,9 @@ export const offsetPathRecord = (
 				result[key] = offsetRelativePathPosix(offsetPath, path);
 			}
 		} else if (isObject(path)) {
-			result[key] = offsetPathRecord(path, offsetPath);
+			result[key] = offsetPathRecordValues(path, offsetPath);
 		}
 		return result;
-	}, {} as Record<string, unknown>);
+	}, {} as PackageJsonExports);
 };
+*/

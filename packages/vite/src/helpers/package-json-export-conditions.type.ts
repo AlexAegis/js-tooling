@@ -3,7 +3,7 @@
  * There are some community conditions that are not indluded. Check here for
  * more: https://nodejs.org/api/packages.html#community-conditions-definitions
  */
-export type PackageJsonExportConditions = {
+export type PackageJsonExportConditions = Record<string, string> & {
 	/**
 	 * Community condition.
 	 * Can be used by typing systems to resolve the typing file for the given export.

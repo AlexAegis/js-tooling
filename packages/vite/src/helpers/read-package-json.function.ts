@@ -1,14 +1,14 @@
-import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
-import { readFileSync } from 'node:fs';
-import { existsFile } from './exists-file.function.js';
+import { readFile } from 'node:fs/promises';
+import type { PackageJson } from './package-json.type.js';
 
-export const readPackageJson = (path: string): PackageJson | undefined => {
-	if (existsFile(path)) {
-		const rawPackageJson = readFileSync(path, {
+export const readPackageJson = async (path: string): Promise<PackageJson | undefined> => {
+	try {
+		const rawPackageJson = await readFile(path, {
 			encoding: 'utf8',
 		});
+		console.log('parsing packageJSON...');
 		return JSON.parse(rawPackageJson) as PackageJson;
-	} else {
+	} catch {
 		return undefined;
 	}
 };

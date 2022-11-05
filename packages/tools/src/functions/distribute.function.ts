@@ -1,4 +1,6 @@
-import { existsSync, lstatSync, statSync, symlinkSync } from 'node:fs';
+import { existsSync } from 'node:fs';
+import { lstat, symlink } from 'node:fs/promises';
+
 import { basename, dirname, isAbsolute, join, relative } from 'node:path';
 import { collectWorkspacePageDirectoriesByDependency } from './collect-workspace-package-directories-by-dependency.function.js';
 
@@ -24,7 +26,7 @@ export interface DistributeOptions {
 	skipWorkspaceRoot?: boolean;
 }
 
-export const distribute = (file: string, options?: DistributeOptions): void => {
+export const distribute = async (file: string, options?: DistributeOptions): Promise<void> => {
 	const cwd = options?.cwd ?? process.cwd();
 	const dependencyCriteria = options?.dependencyCriteria ?? [];
 	const onlyWorkspaceRoot = options?.onlyWorkspaceRoot ?? false;
@@ -36,7 +38,7 @@ export const distribute = (file: string, options?: DistributeOptions): void => {
 		console.error(`couldn't link '${file}', it doesn't exist`);
 		return;
 	}
-	const fileStats = statSync(filePath);
+	const fileStats = await lstat(filePath);
 
 	if (!fileStats.isFile()) {
 		console.error(`couldn't link '${file}', it's not a file`);
@@ -59,13 +61,13 @@ export const distribute = (file: string, options?: DistributeOptions): void => {
 
 	for (const targetPackage of targetPackages) {
 		const targetFilepath = join(targetPackage, fileName);
-		const linkStats = lstatSync(targetFilepath, { throwIfNoEntry: false });
+		const linkStats = await lstat(targetFilepath);
 		if (linkStats?.isSymbolicLink() === false) {
 			console.warn(`can't link ${file}, ${targetFilepath} already exists!`);
 		} else if (linkStats === undefined) {
 			const relativeFromTargetBackToFile = relative(dirname(targetFilepath), filePath);
 			console.info(`symlinking ${targetFilepath} to ${relativeFromTargetBackToFile}`);
-			symlinkSync(relativeFromTargetBackToFile, targetFilepath);
+			await symlink(relativeFromTargetBackToFile, targetFilepath);
 		}
 	}
 };

@@ -55,8 +55,32 @@ describe('distribute', () => {
 						path === '/foo/bar/packages/nonfile' ||
 						path === '/foo/bar/package.json'
 				),
-				symlinkSync: vi.fn((path: string, target: string) => symlinkMock(path, target)),
-				readFileSync: vi.fn((path: PathLike): string =>
+			};
+		});
+
+		vi.mock('node:fs/promises', async () => {
+			return {
+				lstat: vi.fn((path: string) => {
+					switch (path) {
+						case 'rcfile':
+						case '/foo/bar/packages/rcfile':
+						case '/foo/bar/packages/zed/rcfile': {
+							return { isFile: () => true, isSymbolicLink: () => false };
+						}
+						case '/foo/bar/packages/zod/rcfile': {
+							return { isFile: () => true, isSymbolicLink: () => true };
+						}
+						case '/foo/bar/packages/nonfile': {
+							return { isFile: () => false, isSymbolicLink: () => true };
+						}
+						default: {
+							return { isFile: () => false, isSymbolicLink: () => false };
+						}
+					}
+				}),
+
+				symlink: vi.fn((path: string, target: string) => symlinkMock(path, target)),
+				readFile: vi.fn((path: PathLike): string =>
 					path === '/foo/bar/package.json'
 						? JSON.stringify({
 								workspaces: ['apps/*', 'libs/*', 'packages/*'],
@@ -73,7 +97,7 @@ describe('distribute', () => {
 
 	it('should symlink to all folders', async () => {
 		const filename = 'rcfile';
-		await distribute(filename, [], '/foo/bar/packages');
+		await distribute(filename, { cwd: '/foo/bar/packages' });
 
 		expect(symlinkMock).toHaveBeenCalledWith(filename, join('/foo/bar', filename));
 		expect(symlinkMock).toHaveBeenCalledTimes(1);
@@ -83,7 +107,7 @@ describe('distribute', () => {
 
 	it('should refuse to link something thats nonexistent', async () => {
 		const filename = 'nonexistent';
-		await distribute(filename, [], '/foo/bar/packages');
+		await distribute(filename, { cwd: '/foo/bar/packages' });
 
 		expect(symlinkMock).toHaveBeenCalledTimes(0);
 		expect(infoMock).toHaveBeenCalledTimes(0);
@@ -92,7 +116,7 @@ describe('distribute', () => {
 
 	it('should refuse to link something thats not a file', async () => {
 		const filename = 'nonfile';
-		await distribute(filename, ['@dep'], '/foo/bar/packages');
+		await distribute(filename, { dependencyCriteria: ['@dep'], cwd: '/foo/bar/packages' });
 
 		expect(symlinkMock).toHaveBeenCalledTimes(0);
 		expect(infoMock).toHaveBeenCalledTimes(0);

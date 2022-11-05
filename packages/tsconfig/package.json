@@ -51,5 +51,8 @@
 			"import": "./dist/index.js"
 		}
 	},
-	"bin": {}
+	"bin": {
+		"bin": {},
+		"scripts": {}
+	}
 }

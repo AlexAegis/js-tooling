@@ -1,4 +1,4 @@
-import { statSync } from 'node:fs';
+import { lstatSync } from 'node:fs';
 
 export const existsSymlink = (path: string): boolean =>
-	statSync(path, { throwIfNoEntry: false })?.isSymbolicLink() ?? false;
+	lstatSync(path, { throwIfNoEntry: false })?.isSymbolicLink() ?? false;

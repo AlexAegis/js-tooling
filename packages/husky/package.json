@@ -31,9 +31,7 @@
 	"scripts": {
 		"format": "prettier --write .",
 		"lint:es": "eslint --max-warnings=0 .",
-		"lint:format": "prettier --check .",
-		"ncu": "ncu -u",
-		"postinstall": ""
+		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
 	"main": "./index.js",
@@ -55,8 +53,6 @@
 	},
 	"devDependencies": {
 		"typescript": "4.8.4",
-		"vite": "3.2.1",
-		"vite-plugin-dts": "1.6.6",
-		"vite-plugin-static-copy": "0.11.0"
+		"@alexaegis/vite": "*"
 	}
 }

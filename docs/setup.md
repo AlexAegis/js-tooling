@@ -33,3 +33,10 @@ mention them as a `dependency` and not touching existing files.
 ### A note about using a vite package to build itself
 
 See [vite/readme.md](../packages/vite/readme.md)
+
+### In-repo postinstall scripts
+
+A monorepos package can't have a `postinstall` script that is defined by itself
+as `build` can only happen after `install`, but `postinstall` is the first that
+happens after `install`. But to run the `build` step, you need to have
+everything installed.

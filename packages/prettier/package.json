@@ -28,9 +28,7 @@
 		"build": "vite build",
 		"format": "prettier --write .",
 		"lint:es": "eslint --max-warnings=0 .",
-		"lint:format": "prettier --check .",
-		"ncu": "ncu -u",
-		"postinstall": "npx distribute-prettier-config"
+		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
 	"type": "module",
@@ -63,6 +61,9 @@
 		}
 	},
 	"bin": {
-		"distribute-prettier-config": "./dist/bin/distribute-prettier-config.js"
+		"bin": {
+			"distribute-prettier-config": "./dist/bin/distribute-prettier-config.js"
+		},
+		"scripts": {}
 	}
 }

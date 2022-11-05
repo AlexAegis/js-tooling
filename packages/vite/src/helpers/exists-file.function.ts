@@ -1,4 +1,4 @@
-import { statSync } from 'node:fs';
+import { lstatSync } from 'node:fs';
 
 export const existsFile = (path: string): boolean =>
-	statSync(path, { throwIfNoEntry: false })?.isFile() ?? false;
+	lstatSync(path, { throwIfNoEntry: false })?.isFile() ?? false;

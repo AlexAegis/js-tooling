@@ -1,2 +1,2 @@
-export * from './auto-package.plugin.js';
+export * from './autolib.plugin.js';
 export * from './update-package-json.plugin.js';

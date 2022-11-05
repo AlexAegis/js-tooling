@@ -34,6 +34,17 @@
 		// For Stylelint
 		"source.fixAll.stylelint": true
 	},
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}*",
+		"*.js": "${capture}*",
+		"*.jsx": "${capture}*",
+		"*.tsx": "${capture}*",
+		"*.json": "${capture}*",
+		".eslintrc.*": ".eslintignore",
+		".prettierrc.*": ".prettierignore",
+		".gitignore": ".gitattributes"
+	},
 	"editor.fontLigatures": true,
 	"editor.mouseWheelZoom": true,
 	"files.exclude": {
@@ -52,5 +63,5 @@
 		}
 	],
 	"vitest.enable": true,
-	"vitest.commandLine": "npx vitest"
+	"vitest.commandLine": "npx vitest --coverage"
 }

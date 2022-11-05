@@ -1,5 +1,5 @@
-import { writeFileSync } from 'node:fs';
-import { prettify } from './prettify.function.js';
+import { writeFile } from 'node:fs/promises';
+import { tryPrettify } from './try-prettify.function.js';
 
 export interface WriteJsonOptions {
 	/**
@@ -19,35 +19,25 @@ export interface WriteJsonOptions {
 	dry?: boolean;
 }
 
-export const writeJsonSync = (
+export const writeJson = async (
 	record: Record<string, unknown>,
 	path: string,
 	options?: WriteJsonOptions
-): void => {
+): Promise<void> => {
 	const raw = JSON.stringify(record);
 	const dry = options?.dry ?? false;
 	const autoPrettier = options?.autoPrettier ?? true;
 
 	if (autoPrettier) {
-		prettify(raw)
-			.then((formatted) => {
-				if (!dry) {
-					writeFileSync(path, formatted);
-				} else {
-					console.log('dry pretty write to', path, 'file content:', formatted);
-				}
-			})
-			.catch((error) => {
-				console.error('error during json prettify', error);
-				if (!dry) {
-					writeFileSync(path, raw);
-				} else {
-					console.log('dry write to', path, 'file content:', raw);
-				}
-			});
+		const formatted = await tryPrettify(raw);
+		if (!dry) {
+			await writeFile(path, formatted);
+		} else {
+			console.log('dry write to', path, 'file content:', formatted);
+		}
 	} else {
 		if (!dry) {
-			writeFileSync(path, raw);
+			await writeFile(path, raw);
 		} else {
 			console.log('dry, unformatted write to', path, 'file content:', raw);
 		}

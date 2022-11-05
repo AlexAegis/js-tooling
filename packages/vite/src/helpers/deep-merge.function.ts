@@ -1,20 +1,14 @@
-export type ObjectKey = string | number | symbol;
+import { isObject, ObjectKey } from './is-object.function.js';
 
-/**
- * Simple object check.
- * @param item
- * @returns {boolean}
- */
-export function isObject(item: unknown): item is Record<ObjectKey, unknown> {
-	return item !== null && item !== undefined && typeof item === 'object' && !Array.isArray(item);
-}
-
-export const deepMerge = <T extends Record<ObjectKey, unknown>>(
+export const deepMerge = <
+	T extends Record<ObjectKey, unknown>,
+	S extends T | Record<ObjectKey, unknown>
+>(
 	target: T,
-	...sources: Partial<T>[]
-): T => {
+	...sources: (S | undefined)[]
+): T & S => {
 	if (sources.length === 0) {
-		return target;
+		return target as T & S;
 	}
 	const source = sources.shift();
 

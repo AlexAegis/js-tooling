@@ -8,7 +8,7 @@ describe('collectWorkspacePackageDirectories with a workspace', () => {
 	beforeAll(() => {
 		vi.mock('globby', () => {
 			return {
-				globbySync: (_patterns: string[], options: Options): string[] => {
+				globby: (_patterns: string[], options: Options): string[] => {
 					expect(options.absolute).toBeTruthy();
 					expect(options.onlyDirectories).toBeTruthy();
 					expect(options.cwd).toBe('/foo/bar');
@@ -25,7 +25,11 @@ describe('collectWorkspacePackageDirectories with a workspace', () => {
 						path === '/foo/bar/packages/readme.md' ||
 						path === '/foo/bar/package.json'
 				),
-				readFileSync: vi.fn((path: PathLike): string =>
+			};
+		});
+		vi.mock('node:fs/promises', async () => {
+			return {
+				readFile: vi.fn((path: PathLike): string =>
 					path === '/foo/bar/package.json'
 						? JSON.stringify({
 								workspaces: ['apps/*', 'libs/*', 'packages/*'],

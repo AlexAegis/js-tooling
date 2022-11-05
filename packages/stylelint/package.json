@@ -34,11 +34,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"stylelint": "14.14.0"
+		"stylelint": "14.14.1"
 	},
 	"devDependencies": {
 		"typescript": "4.8.4",
-		"vite": "3.2.1",
-		"vite-plugin-static-copy": "0.11.0"
+		"@alexaegis/vite": "*"
 	}
 }

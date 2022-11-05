@@ -1,6 +1,6 @@
 export * from './append-bundle-file-extension.function.js';
-export * from './auto-bin.function.js';
-export * from './auto-export.function.js';
+export * from './auto-bin.class.js';
+export * from './auto-entry.class.js';
 export * from './clone-json-serializable.function.js';
 export * from './collect-export-entries.function.js';
 export * from './deep-merge.function.js';
@@ -8,6 +8,6 @@ export * from './exists-directory.function.js';
 export * from './exists-file.function.js';
 export * from './exists-symlink.function.js';
 export * from './package-json-export-conditions.type.js';
-export * from './prettify.function.js';
+export * from './try-prettify.function.js';
 export * from './turn-into-executable.function.js';
 export * from './write-json.function.js';

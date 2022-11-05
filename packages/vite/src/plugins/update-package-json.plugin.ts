@@ -1,9 +1,8 @@
-import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
-
-import { writeFileSync } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Plugin } from 'vite';
-import { prettify } from '../helpers/index.js';
+import { tryPrettify } from '../helpers/index.js';
+import type { PackageJson } from '../helpers/package-json.type.js';
 import { readPackageJson } from '../helpers/read-package-json.function.js';
 
 export interface UpdatePackageJsonPluginOptions {
@@ -16,12 +15,12 @@ export interface UpdatePackageJsonPluginOptions {
 export const updatePackageJsonPlugin = (options: UpdatePackageJsonPluginOptions): Plugin => ({
 	name: 'update-package-json',
 	apply: 'build',
-	buildEnd: (error) => {
+	buildEnd: async (error) => {
 		if (!error) {
 			const cwd = options.cwd ?? process.cwd();
 			const packageJsonLocation = join(cwd, options.filename ?? 'package.json');
 
-			const packageJson = readPackageJson(packageJsonLocation);
+			const packageJson = await readPackageJson(packageJsonLocation);
 			if (!packageJson) {
 				console.warn(
 					`updatePackageJsonPlugin didn't find packageJson at ${packageJsonLocation}!`
@@ -29,19 +28,13 @@ export const updatePackageJsonPlugin = (options: UpdatePackageJsonPluginOptions)
 				return;
 			}
 			const augmentedPackageJson = options.updater(packageJson);
-			const rawAugmentedPackageJson = JSON.stringify(augmentedPackageJson);
+			let rawAugmentedPackageJson = JSON.stringify(augmentedPackageJson);
 
 			if (options.autoPrettier ?? true) {
-				prettify(rawAugmentedPackageJson)
-					.then((formatted) => {
-						writeFileSync(packageJsonLocation, formatted);
-					})
-					.catch((_error) => {
-						writeFileSync(packageJsonLocation, rawAugmentedPackageJson);
-					});
-			} else {
-				writeFileSync(packageJsonLocation, rawAugmentedPackageJson);
+				rawAugmentedPackageJson = await tryPrettify(rawAugmentedPackageJson);
 			}
+
+			await writeFile(packageJsonLocation, rawAugmentedPackageJson);
 		}
 	},
 });

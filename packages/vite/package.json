@@ -28,8 +28,7 @@
 		"prebuild": "vite build",
 		"format": "prettier --write .",
 		"lint:es": "eslint --max-warnings=0 .",
-		"lint:format": "prettier --check .",
-		"postinstall": "npx distribute-vite-config"
+		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
 	"publishConfig": {
@@ -37,8 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"vite": "3.2.1",
-		"vite-plugin-static-copy": "0.11.0",
+		"vite": "3.2.2",
+		"vite-plugin-static-copy": "0.11.1",
 		"vite-plugin-dts": "^1.6.6",
 		"@sveltejs/vite-plugin-svelte": "^1.1.0",
 		"fs-extra": "^10.1.0"
@@ -51,9 +50,7 @@
 		"typescript": "4.8.4",
 		"@schemastore/package": "^0.0.6"
 	},
-	"directories": {},
 	"exports": {
-		"./readme": "./readme.md",
 		"./base-vite.config": {
 			"types": "./dist/base-vite.config.d.ts",
 			"require": "./dist/base-vite.config.cjs",
@@ -74,8 +71,5 @@
 			"require": "./dist/svelte-vite.config.cjs",
 			"import": "./dist/svelte-vite.config.js"
 		}
-	},
-	"bin": {
-		"spread-vite-config": "./dist/bin/spread-vite-config.js"
 	}
 }
