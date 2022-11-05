@@ -6,7 +6,7 @@ export const copyAllInto = async (sourceFiles: string[], outDirectory: string): 
 	await Promise.all(
 		sourceFiles
 			.map((sourceFile) => ({ sourceFile, targetFile: join(outDirectory, sourceFile) }))
-			.filter(({ targetFile }) => existsSync(targetFile))
+			.filter(({ targetFile }) => !existsSync(targetFile))
 			.map(({ sourceFile, targetFile }) =>
 				cp(sourceFile, targetFile, {
 					preserveTimestamps: true,

@@ -20,8 +20,11 @@ export type PackageJsonExportConditions = Record<string, string> & {
 	import?: string;
 	/**
 	 * Used by NodeJS
+	 *
+	 * This can also be an object like { import?: string; require?: string }
+	 * But I'm not using it so I keep it simple
 	 */
-	node?: string | { import?: string; require?: string };
+	node?: string;
 	/**
 	 * Used by NodeJS
 	 */

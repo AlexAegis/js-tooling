@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 import {
 	AutoExportStaticOptions,
 	normalizeAutoExportStaticOptions,
@@ -6,7 +7,6 @@ import { collectFileMap } from './collect-export-map.function.js';
 import { copyAllInto } from './copy-all-into.function.js';
 import type { PackageJson } from './package-json.type.js';
 import type { PreparedBuildUpdate } from './prepared-build-update.type.js';
-
 export class AutoExportStatic implements PreparedBuildUpdate {
 	private options: Required<AutoExportStaticOptions>;
 	private staticExports: Record<string, string> = {};
@@ -21,13 +21,21 @@ export class AutoExportStatic implements PreparedBuildUpdate {
 	}
 
 	async update(packageJson: PackageJson): Promise<PackageJson> {
-		const staticExports = await collectFileMap(
-			this.options.cwd,
-			this.options.staticExportGlobs
-		);
-		await copyAllInto(Object.values(this.staticExports), this.options.outDir);
+		this.staticExports = await collectFileMap(this.options.cwd, this.options.staticExportGlobs);
 
-		packageJson.exports = { ...staticExports, ...packageJson.exports };
+		console.log('CWDF', this.options.cwd);
+		console.log(
+			'asd',
+			this.options.outDir,
+			this.options.staticExportGlobs,
+			JSON.stringify(this.staticExports)
+		);
+		await copyAllInto(
+			Object.values(this.staticExports),
+			join(this.options.cwd, this.options.outDir)
+		);
+
+		packageJson.exports = { ...this.staticExports, ...packageJson.exports };
 		return packageJson;
 	}
 }

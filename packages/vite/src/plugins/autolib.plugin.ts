@@ -3,8 +3,9 @@ import { LibraryFormats, mergeConfig, Plugin, UserConfig } from 'vite';
 import { dirname, join } from 'node:path/posix';
 import { DEFAULT_OUT_DIR } from '../configs/index.js';
 import { DEFAULT_ENTRY_DIR, DEFAULT_EXPORT_FORMATS } from '../helpers/auto-entry.class.options.js';
+import { AutoExportStatic } from '../helpers/auto-export-static.class.js';
 import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function.js';
-import { AutoEntry, deepMerge, writeJson } from '../helpers/index.js';
+import { AutoBin, AutoEntry, deepMerge, writeJson } from '../helpers/index.js';
 import type { PackageJson } from '../helpers/package-json.type.js';
 import type { PreparedBuildUpdate } from '../helpers/prepared-build-update.type.js';
 import { readPackageJson } from '../helpers/read-package-json.function.js';
@@ -59,17 +60,17 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 
 			outDirectory = config.build?.outDir ?? DEFAULT_OUT_DIR;
 
-			//if (options.autoBinGlobs) {
-			//	buildUpdates.push(
-			//		new AutoBin({
-			//			binGlobs: options.autoBinGlobs,
-			//			cwd: options.cwd,
-			//			formats,
-			//			outDir: outDirectory,
-			//			sourceDirectory,
-			//		})
-			//	);
-			//}
+			if (options.autoBinGlobs) {
+				buildUpdates.push(
+					new AutoBin({
+						binGlobs: options.autoBinGlobs,
+						cwd: options.cwd,
+						formats,
+						outDir: outDirectory,
+						sourceDirectory,
+					})
+				);
+			}
 
 			if (options.autoEntryDir) {
 				buildUpdates.push(
@@ -83,15 +84,15 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 				);
 			}
 
-			//if (options.autoExportStaticGlobs) {
-			//	buildUpdates.push(
-			//		new AutoExportStatic({
-			//			cwd: options.cwd,
-			//			outDir: outDirectory,
-			//			staticExportGlobs: options.autoExportStaticGlobs,
-			//		})
-			//	);
-			//}
+			if (options.autoExportStaticGlobs) {
+				buildUpdates.push(
+					new AutoExportStatic({
+						cwd: options.cwd,
+						outDir: outDirectory,
+						staticExportGlobs: options.autoExportStaticGlobs,
+					})
+				);
+			}
 
 			const sourcePackageJsonLocation = join(options.cwd, options.sourcePackageJson);
 			const rawPackageJson = await readPackageJson(sourcePackageJsonLocation);

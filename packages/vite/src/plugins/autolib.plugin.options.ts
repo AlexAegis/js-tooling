@@ -98,7 +98,7 @@ export const normalizeAutolibOptions = (
 		cwd: options?.cwd ?? process.cwd(),
 		dry: options?.dry ?? false,
 		autoPrettier: options?.autoPrettier ?? true,
-		editSourcePackageJson: options?.editSourcePackageJson ?? 'source-to-build',
+		editSourcePackageJson: options?.editSourcePackageJson ?? 'source-to-source',
 		src: options?.src ?? DEFAULT_SRC_DIR,
 	};
 };
