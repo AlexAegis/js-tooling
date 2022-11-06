@@ -1,5 +1,6 @@
 import { collectWorkspacePackageDirectoriesWithPackageJson } from '@alexaegis/tools';
-import { globby } from 'globby';
+import { red, yellow } from 'kolorist';
+import { existsSync } from 'node:fs';
 import { rm } from 'node:fs/promises';
 import { join } from 'node:path';
 
@@ -17,7 +18,7 @@ export interface NukeOptions {
 	 */
 	dry?: boolean;
 	/**
-	 * A list of relative globs this script will remove in every package
+	 * A list of relative paths this script will remove in every package
 	 * in the workspace. If you define this, the default are not applied.
 	 * If you only wish to extend or remove parts of it use the `nukeMore`
 	 * and `dontNuke` fields and leave this alone.
@@ -42,66 +43,35 @@ export interface NukeOptions {
 
 export const DEFAULT_NUKE_LIST: string[] = ['node_modules', 'dist', '.turbo', 'coverage'];
 
+const nukeLogger = (message: string) => console.log(red('[☢ nuke]'), yellow(message));
+
 /**
  * Removes a bunch of stuff from packages for cleaning.
  * @param path
  * @param options
  */
 export const nuke = async (path: string, options?: NukeOptions): Promise<void> => {
-	const allPackageDirectories = await collectWorkspacePackageDirectoriesWithPackageJson(path);
-
+	const packageDirectories = await collectWorkspacePackageDirectoriesWithPackageJson(path);
 	const nukeList = [...(options?.nukeList ?? DEFAULT_NUKE_LIST), ...(options?.nukeMore ?? [])];
 	const skipPackages = options?.dontNukeIn ?? [];
-
-	const packageDirectories = allPackageDirectories.filter(
-		(packageDirectory) =>
-			!skipPackages.some((skip) =>
-				typeof skip === 'string'
-					? skip === packageDirectory.path
-					: skip.test(packageDirectory.path)
-			)
-	);
-
-	const packageNukeTargets = await Promise.all(
-		packageDirectories.map((packageDirectory) =>
-			globby(nukeList, {
-				cwd: packageDirectory.path,
-				dot: true,
-				followSymbolicLinks: false,
-				expandDirectories: false,
-			}).then((paths) => ({
-				cwd: packageDirectory.path,
-				paths,
-			}))
-		)
-	);
-	const nukeTargets = packageNukeTargets.flatMap(({ cwd, paths }) =>
-		paths.map((path) => join(cwd, path))
-	);
-
 	await Promise.all(
-		nukeTargets.map((nukeTarget) => {
-			if (options?.dry) {
-				console.log('removing...', nukeTarget);
-				return false;
-			} else {
-				return rm(nukeTarget, { recursive: true }).catch(() => false);
-			}
-		})
-	);
-
-	/*await Promise.all(
 		packageDirectories
+			.filter(
+				(packageDirectory) =>
+					!skipPackages.some((skip) =>
+						typeof skip === 'string'
+							? skip === packageDirectory.path
+							: skip.test(packageDirectory.path)
+					)
+			)
 			.flatMap((packageDirectory) =>
 				nukeList.map((toNuke) => join(packageDirectory.path, toNuke))
 			)
+			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {
-				if (options?.dry) {
-					console.log('removing...', nukeTarget);
-					return;
-				} else {
-					return rm(nukeTarget, { recursive: true }).catch(() => false);
-				}
+				nukeLogger('obliterating: ' + nukeTarget);
+				const dry = true; // options?.dry
+				return dry ? false : rm(nukeTarget, { recursive: true }).catch(() => false);
 			})
-	);*/
+	);
 };
