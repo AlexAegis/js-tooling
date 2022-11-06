@@ -47,7 +47,7 @@
 		"kolorist": "^1.6.0"
 	},
 	"peerDependencies": {
-		"@alexaegis/tsconfig": "*"
+		"@alexaegis/tsconfig": "file:../tsconfig"
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^9.0.13",

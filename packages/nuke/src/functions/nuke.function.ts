@@ -41,7 +41,13 @@ export interface NukeOptions {
 	dontNukeIn?: (string | RegExp)[];
 }
 
-export const DEFAULT_NUKE_LIST: string[] = ['node_modules', 'dist', '.turbo', 'coverage'];
+export const DEFAULT_NUKE_LIST: string[] = [
+	'node_modules',
+	'dist',
+	'.turbo',
+	'coverage',
+	'package-lock.json',
+];
 
 const nukeLogger = (message: string) => console.log(red('[☢ nuke]'), yellow(message));
 
@@ -70,8 +76,9 @@ export const nuke = async (path: string, options?: NukeOptions): Promise<void> =
 			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {
 				nukeLogger('obliterating: ' + nukeTarget);
-				const dry = true; // options?.dry
-				return dry ? false : rm(nukeTarget, { recursive: true }).catch(() => false);
+				return options?.dry
+					? false
+					: rm(nukeTarget, { recursive: true }).catch(() => false);
 			})
 	);
 };

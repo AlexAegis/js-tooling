@@ -37,10 +37,10 @@
 	},
 	"dependencies": {
 		"prettier": "2.7.1",
-		"@alexaegis/tools": "*"
+		"@alexaegis/tools": "file:../tools"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "*",
+		"@alexaegis/vite": "file:../vite",
 		"typescript": "4.8.4",
 		"@types/prettier": "2.7.1"
 	},

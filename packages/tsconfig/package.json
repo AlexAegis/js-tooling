@@ -37,10 +37,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@alexaegis/tools": "*"
+		"@alexaegis/tools": "file:../tools"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "*"
+		"@alexaegis/vite": "file:../vite"
 	},
 	"exports": {
 		"./base": "./base.json",

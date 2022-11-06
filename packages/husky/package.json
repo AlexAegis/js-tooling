@@ -49,10 +49,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@alexaegis/tools": "*"
+		"@alexaegis/tools": "file:../tools"
 	},
 	"devDependencies": {
 		"typescript": "4.8.4",
-		"@alexaegis/vite": "*"
+		"@alexaegis/vite": "file:../vite"
 	}
 }
