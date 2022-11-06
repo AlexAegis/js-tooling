@@ -38,6 +38,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/tools": "*",
+		"globby": "~13.1.2",
 		"yargs": "^17.6.2"
 	},
 	"devDependencies": {
