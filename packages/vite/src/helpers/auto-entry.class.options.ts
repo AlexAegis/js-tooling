@@ -1,6 +1,7 @@
 import type { LibraryFormats } from 'vite';
 import { DEFAULT_OUT_DIR } from '../index.js';
 import { DEFAULT_SRC_DIR } from '../plugins/autolib.plugin.options.js';
+import { Logger, noopLogger } from './create-vite-plugin-logger.function.js';
 
 export const DEFAULT_ENTRY_DIR = './';
 export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
@@ -35,6 +36,11 @@ export interface AutoEntryOptions {
 	 * @default '.'
 	 */
 	entryDir?: string;
+
+	/**
+	 * An optional logger
+	 */
+	logger?: Logger;
 }
 
 export const normalizeAutoEntryOptions = (
@@ -46,5 +52,6 @@ export const normalizeAutoEntryOptions = (
 		formats: options.formats ?? DEFAULT_EXPORT_FORMATS,
 		outDir: options.outDir ?? DEFAULT_OUT_DIR,
 		sourceDirectory: options.sourceDirectory ?? DEFAULT_SRC_DIR,
+		logger: options.logger ?? noopLogger,
 	};
 };

@@ -82,7 +82,7 @@ export class AutoBin implements PreparedBuildUpdate {
 		this.entryMap = offsetPathRecordValues(this.binPathsFromSrc, this.options.sourceDirectory);
 	}
 
-	async update(packageJson: PackageJson) {
+	update(packageJson: PackageJson) {
 		const hasCjs = this.options.formats.includes('cjs');
 		const hasEs = this.options.formats.includes('es');
 		const hasUmd = this.options.formats.includes('umd');
@@ -157,7 +157,10 @@ export class AutoBin implements PreparedBuildUpdate {
 
 		await makeJavascriptFilesExecutable(
 			this.outputFiles.map((path) => enterPathPosix(path, 1)),
-			this.options.outDir
+			{
+				cwd: this.options.outDir,
+				logger: this.options.logger,
+			}
 		);
 
 		for (const scriptName in packageJson.scripts) {
@@ -223,7 +226,9 @@ export class AutoBin implements PreparedBuildUpdate {
 			await Promise.all(
 				data
 					.filter(({ binPath }) => existsSync(binPath))
-					.map(({ binPath, newBinPath }) => rename(binPath, newBinPath))
+					.map(({ binPath, newBinPath }) =>
+						rename(binPath, newBinPath).catch(() => false)
+					)
 			);
 
 			return data.reduce((accumulator, { binName, newBinPath }) => {
@@ -247,9 +252,11 @@ export class AutoBin implements PreparedBuildUpdate {
 
 		await Promise.all(
 			symlinksToMake.map(({ targetFilePath, relativeFromTargetBackToFile }) => {
-				console.info(`symlinking ${targetFilePath} to ${relativeFromTargetBackToFile}`);
+				this.options.logger.log?.(
+					`symlinking ${targetFilePath} to ${relativeFromTargetBackToFile}`
+				);
 				return symlink(relativeFromTargetBackToFile, targetFilePath).catch(() => {
-					console.info(`${targetFilePath} is already present`);
+					this.options.logger.log?.(`${targetFilePath} is already present`);
 				});
 			})
 		);

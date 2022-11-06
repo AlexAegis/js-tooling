@@ -1,4 +1,5 @@
 import { DEFAULT_OUT_DIR } from '../index.js';
+import { Logger, noopLogger } from './create-vite-plugin-logger.function.js';
 
 export const DEFAULT_STATIC_EXPORT_GLOBS = ['static/**/*', 'export/**/*'];
 
@@ -22,14 +23,20 @@ export interface AutoExportStaticOptions {
 	 * @default '["static/**", "export/**"]'
 	 */
 	staticExportGlobs?: string[];
+
+	/**
+	 * An optional logger
+	 */
+	logger?: Logger;
 }
 
 export const normalizeAutoExportStaticOptions = (
-	rawOptions: AutoExportStaticOptions
+	options: AutoExportStaticOptions
 ): Required<AutoExportStaticOptions> => {
 	return {
-		cwd: rawOptions.cwd ?? process.cwd(),
-		outDir: rawOptions.outDir ?? DEFAULT_OUT_DIR,
-		staticExportGlobs: rawOptions.staticExportGlobs ?? DEFAULT_STATIC_EXPORT_GLOBS,
+		cwd: options.cwd ?? process.cwd(),
+		outDir: options.outDir ?? DEFAULT_OUT_DIR,
+		staticExportGlobs: options.staticExportGlobs ?? DEFAULT_STATIC_EXPORT_GLOBS,
+		logger: options.logger ?? noopLogger,
 	};
 };

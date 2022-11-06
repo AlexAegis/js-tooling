@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { extname, isAbsolute, join } from 'node:path';
 
 import { chmod, lstat, readFile, writeFile } from 'node:fs/promises';
+import type { Logger } from './create-vite-plugin-logger.function.js';
 
 export const SHEBANG_SEQUENCE = '#!';
 export const SHELL_SHEBANG = '#!/usr/bin/env sh';
@@ -18,6 +19,18 @@ export const shebangs: Record<string, string> = {
 	['.sh']: SHELL_SHEBANG,
 };
 
+export interface TurnIntoExecutableOptions {
+	/**
+	 * @default process.cwd()
+	 */
+	cwd?: string;
+
+	/**
+	 * @default undefined
+	 */
+	logger?: Logger;
+}
+
 /**
  * Marks a file as executable for its user, and only readable for everyone else
  * If an appropriate shebang is found, it's also prefixed to the top of the
@@ -25,16 +38,17 @@ export const shebangs: Record<string, string> = {
  */
 export const turnIntoExecutable = async (
 	file: string,
-	cwd: string = process.cwd()
+	options?: TurnIntoExecutableOptions
 ): Promise<void> => {
+	const cwd = options?.cwd ?? process.cwd();
 	const filePath = isAbsolute(file) ? file : join(cwd, file);
 	if (!existsSync(filePath)) {
-		console.error(`can't turn ${file} into executable, doesn't exist in ${cwd}`);
+		options?.logger?.error(`can't turn ${file} into executable, doesn't exist in ${cwd}`);
 		return;
 	}
 	const fileStats = await lstat(filePath);
 	if (!fileStats.isFile()) {
-		console.error(`can't turn ${file} into executable, not a file`);
+		options?.logger?.error(`can't turn ${file} into executable, not a file`);
 		return;
 	}
 
@@ -46,7 +60,7 @@ export const turnIntoExecutable = async (
 			encoding: 'utf8',
 		});
 		if (!rawFile.startsWith(SHEBANG_SEQUENCE)) {
-			console.log(`prepending ${file} with shebang: ${shebang}`);
+			options?.logger?.log(`prepending ${file} with shebang: ${shebang}`);
 
 			const rawFileWithShebang = `${shebang}\n\n${rawFile}`;
 			await writeFile(filePath, rawFileWithShebang);
@@ -54,7 +68,7 @@ export const turnIntoExecutable = async (
 	}
 
 	if (!(fileStats.mode & 0o111)) {
-		console.log(`marking ${file} as executable...`);
+		options?.logger?.log(`marking ${file} as executable...`);
 		await chmod(filePath, 0o744);
 	}
 };

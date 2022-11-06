@@ -4,6 +4,7 @@ import { DEFAULT_OUT_DIR } from '../configs/index.js';
 import { DEFAULT_ENTRY_DIR, DEFAULT_EXPORT_FORMATS } from '../helpers/auto-entry.class.options.js';
 import { AutoExportStatic } from '../helpers/auto-export-static.class.js';
 import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function.js';
+import { createVitePluginLogger } from '../helpers/create-vite-plugin-logger.function.js';
 import { AutoBin, AutoEntry, deepMerge, writeJson } from '../helpers/index.js';
 import type { PackageJson } from '../helpers/package-json.type.js';
 import type { PreparedBuildUpdate } from '../helpers/prepared-build-update.type.js';
@@ -29,6 +30,10 @@ import {
 export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 	const options = normalizeAutolibOptions(rawOptions);
 	const pluginName = 'autolib';
+	const logger = createVitePluginLogger({
+		pluginName,
+	});
+	logger.log('starting');
 
 	// At the end of these definitions as these will only settle once
 	// `configResolved` ran
@@ -47,6 +52,8 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 		name: pluginName,
 		apply: 'build',
 		config: async (config) => {
+			const startTime = performance.now();
+
 			formats =
 				config.build?.lib && config.build?.lib.formats
 					? config.build?.lib.formats
@@ -67,6 +74,7 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 						formats,
 						outDir: outDirectory,
 						sourceDirectory,
+						logger,
 					})
 				);
 			}
@@ -79,6 +87,7 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 						formats,
 						outDir: outDirectory,
 						sourceDirectory,
+						logger,
 					})
 				);
 			}
@@ -89,6 +98,7 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 						cwd: options.cwd,
 						outDir: outDirectory,
 						staticExportGlobs: options.autoExportStaticGlobs,
+						logger,
 					})
 				);
 			}
@@ -130,6 +140,10 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 					(accumulator, next) => mergeConfig(accumulator, next),
 					baseViteConfigUpdates
 				);
+			logger.log(
+				`prepare phase took ${Math.floor(performance.now() - startTime)}ms to finish`
+			);
+
 			return updates;
 		},
 		buildEnd: (buildError) => {
@@ -137,12 +151,17 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 		},
 		closeBundle: async () => {
 			if (error) {
-				console.warn(`${pluginName} didn't run, error happened during build!`, error);
+				logger.error("didn't run, error happened during build!");
 				return;
 			}
+
 			const updates = await Promise.all(
 				buildUpdates.map((buildUpdate) => buildUpdate.update?.(packageJson))
 			);
+			// I have to cheat a little bit because other plugins will steal the
+			// thread during an async copy step
+			const startTime = performance.now();
+
 			deepMerge(packageJson, ...updates);
 
 			const packageJsonTargets: PackageJsonTarget[] = ['dist'];
@@ -175,13 +194,10 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 					);
 				})
 			);
+
+			logger.log(
+				`update phase took ~${Math.floor(performance.now() - startTime)}ms to finish`
+			);
 		},
-		//generateBundle: async () => {
-		//	// const distribution = await readdir('./dist');
-		//	// console.log('distribution', distribution);
-		//	// const postWrites = await Promise.all(
-		//	// 	buildUpdates.map((buildUpdate) => buildUpdate.postWrite?.(packageJson))
-		//	// );
-		//},
 	};
 };

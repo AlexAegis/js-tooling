@@ -6,7 +6,6 @@ export const readPackageJson = async (path: string): Promise<PackageJson | undef
 		const rawPackageJson = await readFile(path, {
 			encoding: 'utf8',
 		});
-		console.log('parsing packageJSON...');
 		return JSON.parse(rawPackageJson) as PackageJson;
 	} catch {
 		return undefined;

@@ -39,7 +39,7 @@ export class AutoEntry implements PreparedBuildUpdate {
 		this.entryMap = offsetPathRecordValues(this.entryMap, fullEntryPath);
 	}
 
-	async update(packageJson: PackageJson) {
+	update(packageJson: PackageJson) {
 		const hasUmd = this.options.formats.includes('umd');
 		const hasEsm = this.options.formats.includes('es');
 		const hasCjs = this.options.formats.includes('cjs');
