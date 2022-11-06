@@ -47,7 +47,6 @@
 	},
 	"directories": {},
 	"exports": {
-		"./readme": "./readme.md",
 		".": {
 			"types": "./dist/index.d.ts",
 			"require": "./dist/index.cjs",
@@ -55,9 +54,6 @@
 		}
 	},
 	"bin": {
-		"bin": {
-			"nuke": "./dist/bin/nuke.js"
-		},
-		"scripts": {}
+		"nuke": "./dist/bin/nuke.js"
 	}
 }

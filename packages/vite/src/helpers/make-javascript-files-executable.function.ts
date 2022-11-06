@@ -10,5 +10,5 @@ export const makeJavascriptFilesExecutable = async (
 	const executables = dirtectoryContent.filter(
 		(bin) => bin.endsWith('js') || bin.endsWith('cjs') || bin.endsWith('mjs')
 	);
-	await Promise.all(executables.map((executable) => turnIntoExecutable(executable)));
+	await Promise.all(executables.map((executable) => turnIntoExecutable(executable, cwd)));
 };

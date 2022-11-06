@@ -5,7 +5,8 @@ import type { WriteJsonOptions } from '../helpers/write-json.function.js';
 
 export const DEFAULT_SRC_DIR = 'src';
 
-export type PackageJsonTarget = 'source-to-source' | 'source-to-build' | 'build-to-build';
+export type SourcePackageJsonTarget = 'source' | 'build';
+export type PackageJsonTarget = SourcePackageJsonTarget | 'dist';
 
 export interface AutolibPluginOptions extends WriteJsonOptions {
 	/**
@@ -42,9 +43,9 @@ export interface AutolibPluginOptions extends WriteJsonOptions {
 	 * using node with tsnode registered. This is useful when you want a local
 	 * library with hooks to act during installation.
 	 *
-	 * @default 'build'
+	 * @default 'source'
 	 */
-	editSourcePackageJson?: PackageJsonTarget | false;
+	packageJsonTarget?: SourcePackageJsonTarget | false;
 
 	/**
 	 * Generates exports entries form rollup inputs, from a directory relative
@@ -98,7 +99,7 @@ export const normalizeAutolibOptions = (
 		cwd: options?.cwd ?? process.cwd(),
 		dry: options?.dry ?? false,
 		autoPrettier: options?.autoPrettier ?? true,
-		editSourcePackageJson: options?.editSourcePackageJson ?? 'source-to-source',
+		packageJsonTarget: options?.packageJsonTarget ?? 'source',
 		src: options?.src ?? DEFAULT_SRC_DIR,
 	};
 };

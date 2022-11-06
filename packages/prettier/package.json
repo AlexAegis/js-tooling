@@ -46,7 +46,6 @@
 	},
 	"directories": {},
 	"exports": {
-		"./readme": "./readme.md",
 		"./static/.prettierignore": "./static/.prettierignore",
 		"./static/.prettierrc": "./static/.prettierrc.cjs",
 		"./config": {
@@ -61,9 +60,6 @@
 		}
 	},
 	"bin": {
-		"bin": {
-			"distribute-prettier-config": "./dist/bin/distribute-prettier-config.js"
-		},
-		"scripts": {}
+		"distribute-prettier-config": "./dist/bin/distribute-prettier-config.js"
 	}
 }

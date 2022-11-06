@@ -32,7 +32,6 @@ export class AutoEntry implements PreparedBuildUpdate {
 		packageJson.module = undefined;
 
 		const fullEntryPath = join(this.options.sourceDirectory, this.options.entryDir);
-		console.log('fullEntryDir', fullEntryPath);
 		this.entryFiles = await collectImmediate(fullEntryPath, 'file');
 
 		this.entryMap = createPathRecordFromPaths(this.entryFiles, { keyOnlyFilename: true });
@@ -49,11 +48,9 @@ export class AutoEntry implements PreparedBuildUpdate {
 		const esmExtension = getBundledFileExtension('es', packageJson.type);
 		const cjsExtension = getBundledFileExtension('cjs', packageJson.type);
 
-		console.log('entryMap', JSON.stringify(this.entryMap));
 		this.entryExports = Object.entries(this.entryMap).reduce(
 			(accumulator, [key, entryFile]) => {
 				const extensionlessPath = stripFileExtension(entryFile);
-				console.log('extensionlessPath', extensionlessPath);
 				// Assume there will be a `.d.ts` generated
 				const typesPath = `.${posix.sep}${posix.normalize(`${extensionlessPath}.d.ts`)}`;
 				const exportConditions: PackageJsonExportConditions = {
@@ -100,15 +97,15 @@ export class AutoEntry implements PreparedBuildUpdate {
 			(accumulator, [key, exportCondition]) => {
 				if (key in this.entryExports && typeof exportCondition === 'object') {
 					switch (packageJsonTarget) {
-						case 'source-to-build': {
+						case 'dist': {
 							exportCondition.default = undefined;
 							break;
 						}
-						case 'build-to-build': {
+						case 'build': {
 							exportCondition.default = undefined;
 							break;
 						}
-						case 'source-to-source': {
+						case 'source': {
 							exportCondition.types = undefined;
 							exportCondition.require = undefined;
 							exportCondition.import = undefined;

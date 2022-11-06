@@ -7,11 +7,11 @@ import { collectWorkspacePackageDirectoriesWithPackageJson } from './collect-wor
  * @returns workspace folders that contain a set of dependencies or all of them
  * if none is specified
  */
-export const collectWorkspacePageDirectoriesByDependency = (
+export const collectWorkspacePageDirectoriesByDependency = async (
 	path: string,
 	dependencyCriteria: string[] = []
-): string[] => {
-	const packages = collectWorkspacePackageDirectoriesWithPackageJson(path);
+): Promise<string[]> => {
+	const packages = await collectWorkspacePackageDirectoriesWithPackageJson(path);
 	return packages
 		.filter((relativePackage) => {
 			const packageDependencies = new Set([

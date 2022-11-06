@@ -45,7 +45,10 @@ export const distribute = async (file: string, options?: DistributeOptions): Pro
 		return;
 	}
 
-	const targetPackages = collectWorkspacePageDirectoriesByDependency(cwd, dependencyCriteria);
+	const targetPackages = await collectWorkspacePageDirectoriesByDependency(
+		cwd,
+		dependencyCriteria
+	);
 
 	if (targetPackages.length === 0) {
 		console.warn(`can't distribute at ${cwd}, not in a workspace`);

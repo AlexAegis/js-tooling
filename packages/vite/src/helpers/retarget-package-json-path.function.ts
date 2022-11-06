@@ -9,17 +9,17 @@ export const retargetPackageJsonPath = (
 	let offsetPath = '';
 	let enterCount = 0;
 	switch (packageJsonTarget) {
-		case 'source-to-build': {
-			offsetPath = 'dist';
-			enterCount = 1;
-			break;
-		}
-		case 'build-to-build': {
+		case 'dist': {
 			offsetPath = '';
 			enterCount = 1;
 			break;
 		}
-		case 'source-to-source': {
+		case 'build': {
+			offsetPath = 'dist';
+			enterCount = 1;
+			break;
+		}
+		case 'source': {
 			offsetPath = '';
 			enterCount = 0;
 			break;

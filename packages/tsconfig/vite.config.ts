@@ -1,11 +1,11 @@
-import { autoPackagePlugin, baseViteConfig } from '@alexaegis/vite';
+import { autolib, DEFAULT_VITE_CONFIG } from '@alexaegis/vite';
 import { defineConfig, mergeConfig } from 'vite';
 
 export default mergeConfig(
-	baseViteConfig,
+	DEFAULT_VITE_CONFIG,
 	defineConfig({
 		plugins: [
-			autoPackagePlugin({
+			autolib({
 				autoExportStaticGlobs: ['base.json', 'libinternal.json'],
 			}),
 		],

@@ -46,13 +46,8 @@
 		"./base": "./base.json",
 		"./libinternal": "./libinternal.json",
 		".": {
-			"types": "./dist/index.d.ts",
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.js"
+			"default": "./src/index.ts"
 		}
 	},
-	"bin": {
-		"bin": {},
-		"scripts": {}
-	}
+	"bin": {}
 }

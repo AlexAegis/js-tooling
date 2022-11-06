@@ -131,13 +131,6 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 					(accumulator, next) => mergeConfig(accumulator, next),
 					baseViteConfigUpdates
 				);
-			console.log(
-				'viteConfigUpdates',
-				JSON.stringify(viteConfigUpdates),
-				'\n',
-				JSON.stringify(updates)
-			);
-
 			return updates;
 		},
 		buildEnd: (buildError) => {
@@ -154,9 +147,9 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 			);
 			deepMerge(packageJson, ...updates);
 
-			const packageJsonTargets: PackageJsonTarget[] = ['build-to-build'];
-			if (options.editSourcePackageJson) {
-				packageJsonTargets.push(options.editSourcePackageJson);
+			const packageJsonTargets: PackageJsonTarget[] = ['dist'];
+			if (options.packageJsonTarget) {
+				packageJsonTargets.push(options.packageJsonTarget);
 			}
 
 			await Promise.all(
@@ -170,7 +163,7 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 					deepMerge(packageJsonForArtifact, ...pathOffsets);
 
 					const destination =
-						packageJsonTarget === 'build-to-build'
+						packageJsonTarget === 'dist'
 							? join(options.cwd, outDirectory, 'package.json')
 							: join(options.cwd, 'package.json');
 

@@ -22,19 +22,10 @@ export class AutoExportStatic implements PreparedBuildUpdate {
 
 	async update(packageJson: PackageJson): Promise<PackageJson> {
 		this.staticExports = await collectFileMap(this.options.cwd, this.options.staticExportGlobs);
-
-		console.log('CWDF', this.options.cwd);
-		console.log(
-			'asd',
-			this.options.outDir,
-			this.options.staticExportGlobs,
-			JSON.stringify(this.staticExports)
-		);
 		await copyAllInto(
 			Object.values(this.staticExports),
 			join(this.options.cwd, this.options.outDir)
 		);
-
 		packageJson.exports = { ...this.staticExports, ...packageJson.exports };
 		return packageJson;
 	}

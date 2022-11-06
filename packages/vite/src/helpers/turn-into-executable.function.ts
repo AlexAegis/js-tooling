@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { extname } from 'node:path';
+import { extname, isAbsolute, join } from 'node:path';
 
 import { chmod, lstat, readFile, writeFile } from 'node:fs/promises';
 
@@ -9,13 +9,13 @@ export const NODE_SHEBANG = '#!/usr/bin/env node';
 export const TSNODE_SHEBANG = '#!/usr/bin/env node --require ts-node/register';
 
 export const shebangs: Record<string, string> = {
-	js: NODE_SHEBANG,
-	cjs: NODE_SHEBANG,
-	mjs: NODE_SHEBANG,
-	ts: TSNODE_SHEBANG,
-	mts: TSNODE_SHEBANG,
-	cts: TSNODE_SHEBANG,
-	sh: SHELL_SHEBANG,
+	['.js']: NODE_SHEBANG,
+	['.cjs']: NODE_SHEBANG,
+	['.mjs']: NODE_SHEBANG,
+	['.ts']: TSNODE_SHEBANG,
+	['.mts']: TSNODE_SHEBANG,
+	['.cts']: TSNODE_SHEBANG,
+	['.sh']: SHELL_SHEBANG,
 };
 
 /**
@@ -23,34 +23,38 @@ export const shebangs: Record<string, string> = {
  * If an appropriate shebang is found, it's also prefixed to the top of the
  * file, unless it's already starting with a shebang
  */
-export const turnIntoExecutable = async (file: string): Promise<void> => {
-	if (!existsSync(file)) {
-		console.error(`can't turn ${file} into executable, doesn't exist`);
+export const turnIntoExecutable = async (
+	file: string,
+	cwd: string = process.cwd()
+): Promise<void> => {
+	const filePath = isAbsolute(file) ? file : join(cwd, file);
+	if (!existsSync(filePath)) {
+		console.error(`can't turn ${file} into executable, doesn't exist in ${cwd}`);
 		return;
 	}
-	const fileStats = await lstat(file);
+	const fileStats = await lstat(filePath);
 	if (!fileStats.isFile()) {
 		console.error(`can't turn ${file} into executable, not a file`);
 		return;
 	}
 
-	const extension = extname(file);
+	const extension = extname(filePath);
 
-	if (extension in shebangs) {
+	if (Object.hasOwn(shebangs, extension)) {
 		const shebang = shebangs[extension];
-		const rawFile = await readFile(file, {
+		const rawFile = await readFile(filePath, {
 			encoding: 'utf8',
 		});
 		if (!rawFile.startsWith(SHEBANG_SEQUENCE)) {
 			console.log(`prepending ${file} with shebang: ${shebang}`);
 
 			const rawFileWithShebang = `${shebang}\n\n${rawFile}`;
-			await writeFile(file, rawFileWithShebang);
+			await writeFile(filePath, rawFileWithShebang);
 		}
 	}
 
 	if (!(fileStats.mode & 0o111)) {
 		console.log(`marking ${file} as executable...`);
-		await chmod(file, 0o744);
+		await chmod(filePath, 0o744);
 	}
 };
