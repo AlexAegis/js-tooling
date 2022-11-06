@@ -1,4 +1,5 @@
-import { symlink } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { rename, symlink } from 'node:fs/promises';
 import { basename, dirname, join, relative } from 'node:path';
 import { searchForWorkspaceRoot, UserConfig } from 'vite';
 import type { PackageJsonTarget } from '../plugins/autolib.plugin.options.js';
@@ -152,7 +153,7 @@ export class AutoBin implements PreparedBuildUpdate {
 		packageJsonTarget: PackageJsonTarget
 	): Promise<PackageJson> {
 		const scriptsUpdate: Record<string, string> = {};
-		let binUpdate: Record<string, string> | string = {};
+		let binUpdate: Record<string, string> = {};
 
 		await makeJavascriptFilesExecutable(
 			this.outputFiles.map((path) => enterPathPosix(path, 1)),
@@ -175,11 +176,16 @@ export class AutoBin implements PreparedBuildUpdate {
 				}
 				script = script.replace(this.markComment, '');
 				packageJson.scripts[scriptName] =
-					prefix + retargetPackageJsonPath(script, scriptTarget) + this.markComment;
+					prefix +
+					this.normalizePathToMjsForEsm(
+						retargetPackageJsonPath(script, scriptTarget),
+						packageJson.type
+					) +
+					this.markComment;
 			}
 		}
 
-		if (typeof packageJson.bin === 'object') {
+		if (packageJson.bin) {
 			const offsetBins = Object.entries(packageJson.bin).reduce(
 				(accumulator, [key, binPath]) => {
 					// bins always point to the build artifact
@@ -189,21 +195,51 @@ export class AutoBin implements PreparedBuildUpdate {
 				{} as Record<string, string>
 			);
 			binUpdate = offsetBins;
+			// TODO: Only need to do this when generating the es target
+			binUpdate = await this.renameEsmBinEntries(binUpdate, packageJson.type);
 			this.preLink(binUpdate);
-		} else if (packageJson.bin) {
-			// bins always point to the build artifact
-			binUpdate = retargetPackageJsonPath(packageJson.bin, 'build');
-			this.preLink({ [normalizePackageName(packageJson.name)]: binUpdate });
 		}
 
 		return { bin: binUpdate, scripts: scriptsUpdate };
 	}
 
-	private async preLink(binUpdate: Record<string, string>): Promise<void> {
+	private normalizePathToMjsForEsm(path: string, packageType: PackageJson['type']): string {
+		return packageType === 'module' ? path.replace(/.js$/, '.mjs') : path;
+	}
+
+	private async renameEsmBinEntries(
+		binRecord: Record<string, string>,
+		packageType?: PackageJson['type']
+	): Promise<Record<string, string>> {
+		if (packageType === 'module') {
+			const data = Object.entries(binRecord).map(([binName, binPath]) => {
+				return {
+					binName,
+					binPath,
+					newBinPath: this.normalizePathToMjsForEsm(binPath, packageType),
+				};
+			});
+
+			await Promise.all(
+				data
+					.filter(({ binPath }) => existsSync(binPath))
+					.map(({ binPath, newBinPath }) => rename(binPath, newBinPath))
+			);
+
+			return data.reduce((accumulator, { binName, newBinPath }) => {
+				accumulator[binName] = newBinPath;
+				return accumulator;
+			}, {} as Record<string, string>);
+		} else {
+			return binRecord;
+		}
+	}
+
+	private async preLink(binRecord: Record<string, string>): Promise<void> {
 		const workspaceRoot = searchForWorkspaceRoot(this.options.cwd);
 		const workspaceBinDirectoryPath = join(workspaceRoot, 'node_modules', '.bin');
 
-		const symlinksToMake = Object.entries(binUpdate).map(([binName, binPath]) => {
+		const symlinksToMake = Object.entries(binRecord).map(([binName, binPath]) => {
 			const targetFilePath = join(workspaceBinDirectoryPath, binName);
 			const relativeFromTargetBackToFile = relative(dirname(targetFilePath), binPath);
 			return { relativeFromTargetBackToFile, targetFilePath };

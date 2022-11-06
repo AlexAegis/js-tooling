@@ -81,7 +81,7 @@
 		}
 	},
 	"bin": {
-		"distribute-vite-config": "./dist/bin/distribute-vite-config.js",
-		"alexaegis-vite-postinstall": "./dist/bin/postinstall.js"
+		"distribute-vite-config": "./dist/bin/distribute-vite-config.mjs",
+		"alexaegis-vite-postinstall": "./dist/bin/postinstall.mjs"
 	}
 }

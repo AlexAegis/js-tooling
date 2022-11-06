@@ -5,5 +5,6 @@ export type PackageJsonExports = Record<string, PackageJsonExportConditions | st
 
 export type PackageJson = Omit<JSONSchemaForNPMPackageJsonFiles, 'bin' | 'exports'> & {
 	exports?: PackageJsonExports;
-	bin?: Record<string, string> | string;
+	bin?: Record<string, string>;
+	type?: 'commonjs' | 'module';
 };

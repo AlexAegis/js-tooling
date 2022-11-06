@@ -47,7 +47,7 @@ export const DEFAULT_NUKE_LIST: string[] = ['node_modules', 'dist', '.turbo'];
  * @param options
  */
 export const nuke = async (path: string, options?: NukeOptions): Promise<void> => {
-	const packageDirectories = collectWorkspacePackageDirectoriesWithPackageJson(path);
+	const packageDirectories = await collectWorkspacePackageDirectoriesWithPackageJson(path);
 
 	const nukeList = [...(options?.nukeList ?? DEFAULT_NUKE_LIST), ...(options?.nukeMore ?? [])];
 	const skipPackages = options?.dontNukeIn ?? [];

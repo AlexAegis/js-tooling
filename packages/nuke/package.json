@@ -54,6 +54,6 @@
 		}
 	},
 	"bin": {
-		"nuke": "./dist/bin/nuke.js"
+		"nuke": "./dist/bin/nuke.mjs"
 	}
 }

@@ -1,6 +1,5 @@
-import { LibraryFormats, mergeConfig, Plugin, UserConfig } from 'vite';
-
 import { dirname, join } from 'node:path/posix';
+import { LibraryFormats, mergeConfig, Plugin, UserConfig } from 'vite';
 import { DEFAULT_OUT_DIR } from '../configs/index.js';
 import { DEFAULT_ENTRY_DIR, DEFAULT_EXPORT_FORMATS } from '../helpers/auto-entry.class.options.js';
 import { AutoExportStatic } from '../helpers/auto-export-static.class.js';
@@ -136,12 +135,11 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 		buildEnd: (buildError) => {
 			error = buildError;
 		},
-		writeBundle: async () => {
+		closeBundle: async () => {
 			if (error) {
 				console.warn(`${pluginName} didn't run, error happened during build!`, error);
 				return;
 			}
-
 			const updates = await Promise.all(
 				buildUpdates.map((buildUpdate) => buildUpdate.update?.(packageJson))
 			);
@@ -178,5 +176,12 @@ export const autolib = (rawOptions?: AutolibPluginOptions): Plugin => {
 				})
 			);
 		},
+		//generateBundle: async () => {
+		//	// const distribution = await readdir('./dist');
+		//	// console.log('distribution', distribution);
+		//	// const postWrites = await Promise.all(
+		//	// 	buildUpdates.map((buildUpdate) => buildUpdate.postWrite?.(packageJson))
+		//	// );
+		//},
 	};
 };

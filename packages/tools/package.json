@@ -61,7 +61,7 @@
 		}
 	},
 	"bin": {
-		"distribute": "./dist/bin/distribute.js",
-		"alexaegis-tools-postinstall": "./dist/bin/postinstall.js"
+		"distribute": "./dist/bin/distribute.mjs",
+		"alexaegis-tools-postinstall": "./dist/bin/postinstall.mjs"
 	}
 }
