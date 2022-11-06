@@ -1,5 +1,6 @@
-import { basename } from 'node:path';
-import type { UserConfig } from 'vite';
+import { symlink } from 'node:fs/promises';
+import { basename, dirname, join, relative } from 'node:path';
+import { searchForWorkspaceRoot, UserConfig } from 'vite';
 import type { PackageJsonTarget } from '../plugins/autolib.plugin.options.js';
 import { getBundledFileExtension } from './append-bundle-file-extension.function.js';
 
@@ -150,9 +151,8 @@ export class AutoBin implements PreparedBuildUpdate {
 		packageJson: PackageJson,
 		packageJsonTarget: PackageJsonTarget
 	): Promise<PackageJson> {
-		const scriptsUpdate = {};
-		let binUpdate = {};
-		// TODO: add targeting options source-to-build-keep-bin-to-source
+		const scriptsUpdate: Record<string, string> = {};
+		let binUpdate: Record<string, string> | string = {};
 
 		await makeJavascriptFilesExecutable(
 			this.outputFiles.map((path) => enterPathPosix(path, 1)),
@@ -182,24 +182,40 @@ export class AutoBin implements PreparedBuildUpdate {
 		if (typeof packageJson.bin === 'object') {
 			const offsetBins = Object.entries(packageJson.bin).reduce(
 				(accumulator, [key, binPath]) => {
-					if (packageJsonTarget === 'source') {
-						binPath = this.tsBinMap[key];
-					}
-					accumulator[key] = retargetPackageJsonPath(binPath, packageJsonTarget);
+					// bins always point to the build artifact
+					accumulator[key] = retargetPackageJsonPath(binPath, 'build');
 					return accumulator;
 				},
 				{} as Record<string, string>
 			);
 			binUpdate = offsetBins;
+			this.preLink(binUpdate);
 		} else if (packageJson.bin) {
-			let binPath = packageJson.bin;
-
-			if (packageJsonTarget === 'source') {
-				binPath = this.tsSingleBinPath;
-			}
-			binUpdate = retargetPackageJsonPath(binPath, packageJsonTarget);
+			// bins always point to the build artifact
+			binUpdate = retargetPackageJsonPath(packageJson.bin, 'build');
+			this.preLink({ [normalizePackageName(packageJson.name)]: binUpdate });
 		}
 
 		return { bin: binUpdate, scripts: scriptsUpdate };
+	}
+
+	private async preLink(binUpdate: Record<string, string>): Promise<void> {
+		const workspaceRoot = searchForWorkspaceRoot(this.options.cwd);
+		const workspaceBinDirectoryPath = join(workspaceRoot, 'node_modules', '.bin');
+
+		const symlinksToMake = Object.entries(binUpdate).map(([binName, binPath]) => {
+			const targetFilePath = join(workspaceBinDirectoryPath, binName);
+			const relativeFromTargetBackToFile = relative(dirname(targetFilePath), binPath);
+			return { relativeFromTargetBackToFile, targetFilePath };
+		});
+
+		await Promise.all(
+			symlinksToMake.map(({ targetFilePath, relativeFromTargetBackToFile }) => {
+				console.info(`symlinking ${targetFilePath} to ${relativeFromTargetBackToFile}`);
+				return symlink(relativeFromTargetBackToFile, targetFilePath).catch(() => {
+					console.info(`${targetFilePath} is already present`);
+				});
+			})
+		);
 	}
 }
