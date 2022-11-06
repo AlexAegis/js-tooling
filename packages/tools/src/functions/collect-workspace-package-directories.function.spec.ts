@@ -29,12 +29,16 @@ describe('collectWorkspacePackageDirectories with a workspace', () => {
 		});
 		vi.mock('node:fs/promises', async () => {
 			return {
-				readFile: vi.fn((path: PathLike): string =>
-					path === '/foo/bar/package.json'
-						? JSON.stringify({
-								workspaces: ['apps/*', 'libs/*', 'packages/*'],
-						  } as PackageJson)
-						: JSON.stringify({} as PackageJson)
+				readFile: vi.fn(
+					async (path: PathLike): Promise<string | undefined> =>
+						path === '/foo/bar/package.json'
+							? JSON.stringify({
+									workspaces: ['apps/*', 'libs/*', 'packages/*'],
+							  } as PackageJson)
+							: path === '/foo/bar/packages/zed/package.json' ||
+							  path === '/foo/bar/packages/zod/package.json'
+							? JSON.stringify({} as PackageJson)
+							: undefined
 				),
 			};
 		});

@@ -158,7 +158,7 @@ export class AutoBin implements PreparedBuildUpdate {
 		await makeJavascriptFilesExecutable(
 			this.outputFiles.map((path) => enterPathPosix(path, 1)),
 			{
-				cwd: this.options.outDir,
+				cwd: join(this.options.cwd, this.options.outDir),
 				logger: this.options.logger,
 			}
 		);

@@ -33,11 +33,14 @@ export const distribute = async (file: string, options?: DistributeOptions): Pro
 	const skipWorkspaceRoot = options?.dependencyCriteria ?? false;
 
 	const filePath = isAbsolute(file) ? file : join(cwd, file);
+
 	const fileName = basename(filePath);
+
 	if (!existsSync(filePath)) {
 		console.error(`couldn't link '${file}', it doesn't exist`);
 		return;
 	}
+
 	const fileStats = await lstat(filePath);
 
 	if (!fileStats.isFile()) {
@@ -52,6 +55,7 @@ export const distribute = async (file: string, options?: DistributeOptions): Pro
 
 	if (targetPackages.length === 0) {
 		console.warn(`can't distribute at ${cwd}, not in a workspace`);
+		return;
 	}
 
 	if (onlyWorkspaceRoot) {
@@ -62,15 +66,20 @@ export const distribute = async (file: string, options?: DistributeOptions): Pro
 		targetPackages.shift();
 	}
 
-	for (const targetPackage of targetPackages) {
-		const targetFilepath = join(targetPackage, fileName);
-		const linkStats = await lstat(targetFilepath);
-		if (linkStats?.isSymbolicLink() === false) {
-			console.warn(`can't link ${file}, ${targetFilepath} already exists!`);
-		} else if (linkStats === undefined) {
+	const emptyTargets = targetPackages
+		.map((targetPackage) => join(targetPackage, fileName))
+		.filter((targetFilePath) => !existsSync(targetFilePath));
+
+	await Promise.all(
+		emptyTargets.map((targetFilepath) => {
 			const relativeFromTargetBackToFile = relative(dirname(targetFilepath), filePath);
-			console.info(`symlinking ${targetFilepath} to ${relativeFromTargetBackToFile}`);
-			await symlink(relativeFromTargetBackToFile, targetFilepath);
-		}
-	}
+			return symlink(relativeFromTargetBackToFile, targetFilepath)
+				.then(() => {
+					console.info(`symlinked ${targetFilepath} to ${relativeFromTargetBackToFile}`);
+				})
+				.catch((error) => {
+					console.warn(`can't link ${file}, error happened`, error);
+				});
+		})
+	);
 };

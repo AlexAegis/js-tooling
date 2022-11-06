@@ -6,8 +6,8 @@ import { basename, join } from 'node:path';
  * Links this packages prettierrc file to the root of the repo, and the ignore
  * file to every package
  */
-const distributePrettierConfig = () => {
-	const workspaceRoot = getWorkspaceRoot();
+const distributePrettierConfig = (cwd: string = process.cwd()) => {
+	const workspaceRoot = getWorkspaceRoot(cwd);
 	const packageName = '@alexaegis/prettier';
 
 	if (!workspaceRoot) {
@@ -19,7 +19,7 @@ const distributePrettierConfig = () => {
 
 	const prettierIgnorePath = join(packageDirectory, 'static', '.prettierignore');
 	if (existsFile(prettierIgnorePath)) {
-		distribute(prettierIgnorePath);
+		distribute(prettierIgnorePath, { cwd });
 	} else {
 		console.warn(
 			`can't distribute ${basename(
@@ -30,7 +30,7 @@ const distributePrettierConfig = () => {
 
 	const prettierrcPath = join(packageDirectory, 'static', '.prettierrc.cjs');
 	if (existsFile(prettierrcPath)) {
-		distribute(prettierrcPath, { onlyWorkspaceRoot: true });
+		distribute(prettierrcPath, { onlyWorkspaceRoot: true, cwd });
 	} else {
 		console.warn(
 			`can't distribute ${basename(prettierrcPath)}, it's not present at ${prettierrcPath}!`

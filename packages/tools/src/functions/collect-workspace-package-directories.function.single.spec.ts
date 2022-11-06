@@ -23,7 +23,12 @@ describe('collectWorkspacePackageDirectories with a single package', () => {
 		});
 		vi.mock('node:fs/promises', async () => {
 			return {
-				readFile: vi.fn((_path: PathLike): string => JSON.stringify({} as PackageJson)),
+				readFile: vi.fn(
+					async (path: PathLike): Promise<string | undefined> =>
+						path === '/foo/bar/package.json'
+							? JSON.stringify({} as PackageJson)
+							: undefined
+				),
 			};
 		});
 	});

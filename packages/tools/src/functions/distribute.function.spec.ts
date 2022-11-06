@@ -1,7 +1,7 @@
 import type { JSONSchemaForNPMPackageJsonFiles as PackageJson } from '@schemastore/package';
 import type { Options } from 'globby';
 import type { PathLike } from 'node:fs';
-import { join } from 'node:path';
+import { join, sep } from 'node:path';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { distribute } from './distribute.function.js';
 
@@ -40,7 +40,7 @@ describe('distribute', () => {
 							return { isFile: () => false, isSymbolicLink: () => true };
 						}
 						default: {
-							return { isFile: () => false, isSymbolicLink: () => false };
+							return undefined;
 						}
 					}
 				}),
@@ -60,7 +60,7 @@ describe('distribute', () => {
 
 		vi.mock('node:fs/promises', async () => {
 			return {
-				lstat: vi.fn((path: string) => {
+				lstat: vi.fn(async (path: string) => {
 					switch (path) {
 						case 'rcfile':
 						case '/foo/bar/packages/rcfile':
@@ -74,18 +74,21 @@ describe('distribute', () => {
 							return { isFile: () => false, isSymbolicLink: () => true };
 						}
 						default: {
-							return { isFile: () => false, isSymbolicLink: () => false };
+							return undefined;
 						}
 					}
 				}),
-
-				symlink: vi.fn((path: string, target: string) => symlinkMock(path, target)),
-				readFile: vi.fn((path: PathLike): string =>
-					path === '/foo/bar/package.json'
-						? JSON.stringify({
-								workspaces: ['apps/*', 'libs/*', 'packages/*'],
-						  } as PackageJson)
-						: JSON.stringify({} as PackageJson)
+				symlink: vi.fn(async (path: string, target: string) => symlinkMock(path, target)),
+				readFile: vi.fn(
+					async (path: PathLike): Promise<string | undefined> =>
+						path === '/foo/bar/package.json'
+							? JSON.stringify({
+									workspaces: ['apps/*', 'libs/*', 'packages/*'],
+							  } as PackageJson)
+							: path === '/foo/bar/packages/zed/package.json' ||
+							  path === '/foo/bar/packages/zod/package.json'
+							? JSON.stringify({} as PackageJson)
+							: undefined
 				),
 			};
 		});
@@ -99,7 +102,10 @@ describe('distribute', () => {
 		const filename = 'rcfile';
 		await distribute(filename, { cwd: '/foo/bar/packages' });
 
-		expect(symlinkMock).toHaveBeenCalledWith(filename, join('/foo/bar', filename));
+		expect(symlinkMock).toHaveBeenCalledWith(
+			`packages${sep}${filename}`,
+			join('/foo/bar', filename)
+		);
 		expect(symlinkMock).toHaveBeenCalledTimes(1);
 		expect(infoMock).toHaveBeenCalledTimes(1);
 		expect(errorMock).toHaveBeenCalledTimes(0);
