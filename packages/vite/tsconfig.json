@@ -6,6 +6,5 @@
 		"rootDir": ".",
 		"outDir": "./dist/out-tsc"
 	},
-	"include": ["**/*.ts"],
 	"exclude": ["node_modules", "dist", "src/**/*.spec.{ts,tsx,js,jsx}"]
 }

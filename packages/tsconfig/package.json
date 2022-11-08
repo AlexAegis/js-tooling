@@ -36,9 +36,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"dependencies": {
-		"@alexaegis/tools": "file:../tools"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@alexaegis/vite": "file:../vite"
 	},

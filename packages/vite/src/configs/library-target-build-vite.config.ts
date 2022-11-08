@@ -3,12 +3,12 @@ import dts from 'vite-plugin-dts';
 import { autolib } from '../plugins/index.js';
 import { DEFAULT_VITE_CONFIG } from './base-vite.config.js';
 
-export const libraryTargetSourceViteConfig = mergeConfig(
+export const libraryTargetBuildViteConfig = mergeConfig(
 	DEFAULT_VITE_CONFIG,
 	defineConfig({
 		plugins: [
 			autolib({
-				packageJsonTarget: 'source',
+				packageJsonTarget: 'build',
 			}),
 			dts({
 				copyDtsFiles: true,

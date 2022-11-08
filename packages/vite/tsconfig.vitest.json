@@ -4,6 +4,5 @@
 		"composite": true,
 		"types": ["vitest/globals", "node"]
 	},
-	"include": ["src/**/*.spec.{ts,tsx,js,jsx}", "**/*.d.ts"],
 	"exclude": ["node_modules", "dist"]
 }

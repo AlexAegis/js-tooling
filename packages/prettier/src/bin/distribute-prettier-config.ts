@@ -1,41 +1,15 @@
-import { distribute, getWorkspaceRoot } from '@alexaegis/tools';
-import { existsFile } from '@alexaegis/vite';
-import { basename, join } from 'node:path';
+import { addDistributeOptionsToYargs, DistributeOptions } from '@alexaegis/tools';
+import yargs, { Argv } from 'yargs';
+import { distributePrettierConfig } from '../functions/index.js';
 
-/**
- * Links this packages prettierrc file to the root of the repo, and the ignore
- * file to every package
- */
-const distributePrettierConfig = (cwd: string = process.cwd()) => {
-	const workspaceRoot = getWorkspaceRoot(cwd);
-	const packageName = '@alexaegis/prettier';
+import packageJson from '../../package.json';
 
-	if (!workspaceRoot) {
-		console.warn("can't distribute prettier config, not in a workspace!");
-		return;
-	}
+const yarguments: Argv<DistributeOptions> = addDistributeOptionsToYargs(
+	yargs(process.argv.splice(2))
+		.version(packageJson.version)
+		.epilogue(`${packageJson.name}@${packageJson.version} home: ${packageJson.homepage}`)
+		.help()
+		.completion()
+);
 
-	const packageDirectory = join(workspaceRoot, 'node_modules', packageName);
-
-	const prettierIgnorePath = join(packageDirectory, 'static', '.prettierignore');
-	if (existsFile(prettierIgnorePath)) {
-		distribute(prettierIgnorePath, { cwd });
-	} else {
-		console.warn(
-			`can't distribute ${basename(
-				prettierIgnorePath
-			)}, it's not present at ${prettierIgnorePath}!`
-		);
-	}
-
-	const prettierrcPath = join(packageDirectory, 'static', '.prettierrc.cjs');
-	if (existsFile(prettierrcPath)) {
-		distribute(prettierrcPath, { onlyWorkspaceRoot: true, cwd });
-	} else {
-		console.warn(
-			`can't distribute ${basename(prettierrcPath)}, it's not present at ${prettierrcPath}!`
-		);
-	}
-};
-
-distributePrettierConfig();
+(async () => distributePrettierConfig(await yarguments.parseAsync()))();

@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/prettier",
-	"description": "My prettier config",
+	"description": "My prettier config distributor",
 	"version": "0.0.1",
 	"license": "MIT",
 	"author": {
@@ -48,11 +48,6 @@
 	"exports": {
 		"./static/.prettierignore": "./static/.prettierignore",
 		"./static/.prettierrc": "./static/.prettierrc.cjs",
-		"./config": {
-			"types": "./dist/config.d.ts",
-			"require": "./dist/config.cjs",
-			"import": "./dist/config.js"
-		},
 		".": {
 			"types": "./dist/index.d.ts",
 			"require": "./dist/index.cjs",

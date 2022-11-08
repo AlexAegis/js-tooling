@@ -29,6 +29,5 @@
 		"forceConsistentCasingInFileNames": true,
 		"importsNotUsedAsValues": "error"
 	},
-	"include": [],
 	"exclude": ["node_modules", "tmp", "dist", "coverage"]
 }

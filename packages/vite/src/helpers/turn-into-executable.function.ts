@@ -1,4 +1,3 @@
-import { existsSync } from 'node:fs';
 import { extname, isAbsolute, join } from 'node:path';
 
 import { chmod, lstat, readFile, writeFile } from 'node:fs/promises';
@@ -42,12 +41,12 @@ export const turnIntoExecutable = async (
 ): Promise<void> => {
 	const cwd = options?.cwd ?? process.cwd();
 	const filePath = isAbsolute(file) ? file : join(cwd, file);
-	if (!existsSync(filePath)) {
+	const fileStats = await lstat(filePath).catch(() => undefined);
+
+	if (!fileStats) {
 		options?.logger?.error(`can't turn ${file} into executable, doesn't exist in ${cwd}`);
 		return;
-	}
-	const fileStats = await lstat(filePath);
-	if (!fileStats.isFile()) {
+	} else if (!fileStats.isFile()) {
 		options?.logger?.error(`can't turn ${file} into executable, not a file`);
 		return;
 	}
@@ -58,17 +57,23 @@ export const turnIntoExecutable = async (
 		const shebang = shebangs[extension];
 		const rawFile = await readFile(filePath, {
 			encoding: 'utf8',
-		});
-		if (!rawFile.startsWith(SHEBANG_SEQUENCE)) {
-			options?.logger?.log(`prepending ${file} with shebang: ${shebang}`);
+		}).catch(() => undefined);
 
+		if (rawFile !== undefined && !rawFile.startsWith(SHEBANG_SEQUENCE)) {
 			const rawFileWithShebang = `${shebang}\n\n${rawFile}`;
-			await writeFile(filePath, rawFileWithShebang);
+			await writeFile(filePath, rawFileWithShebang)
+				.then(() => {
+					options?.logger?.log(`prefixed ${file} with shebang: ${shebang}`);
+				})
+				.catch(() => undefined);
 		}
 	}
 
 	if (!(fileStats.mode & 0o111)) {
-		options?.logger?.log(`marking ${file} as executable...`);
-		await chmod(filePath, 0o744);
+		await chmod(filePath, 0o744)
+			.then(() => {
+				options?.logger?.log(`marked ${file} as executable`);
+			})
+			.catch(() => undefined);
 	}
 };
