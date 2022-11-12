@@ -8,7 +8,7 @@ on:
 
 env:
   NPM_PACKAGE_ORG_PREFIX: '@alexaegis/'
-  DEPLOY_ARTIFACT_DIR: false # 'apps/example/dist'
+  DEPLOY_ARTIFACT_DIR: '' # 'apps/example/dist'
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   TURBO_REMOTE_ONLY: true
@@ -34,18 +34,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: cache
-        id: cache-packages
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: pnpm setup
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+      - name: output pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: cache
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            **/.turbo
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name: install
-        if: steps.cache-packages.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint
         run: pnpm run lint
@@ -60,18 +72,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: cache
-        id: cache-packages
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: pnpm setup
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+      - name: output pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: cache
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            **/.turbo
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name: install
-        if: steps.cache-packages.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: test
         run: pnpm run test
@@ -86,24 +110,36 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: cache
-        id: cache-packages
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: pnpm setup
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+      - name: output pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: cache
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            **/.turbo
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name: install
-        if: steps.cache-packages.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: build
         run: BASE_HREF="/${{ github.event.repository.name }}/" pnpm run build
       - name: prepare pages (use index.html as 404.html)
         if: |
-          env.DEPLOY_ARTIFACT_DIR &&
+          env.DEPLOY_ARTIFACT_DIR != '' &&
           github.ref_name == ${{ github.event.repository.default_branch }} &&
           github.event_name != 'pull_request'
         run: |
@@ -111,13 +147,13 @@ jobs:
       - name: setup pages
         uses: actions/configure-pages@v2
         if: |
-          env.DEPLOY_ARTIFACT_DIR &&
+          env.DEPLOY_ARTIFACT_DIR != '' &&
           github.ref_name == ${{ github.event.repository.default_branch }} &&
           github.event_name != 'pull_request'
       - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         if: |
-          env.DEPLOY_ARTIFACT_DIR && 
+          env.DEPLOY_ARTIFACT_DIR != '' && 
           github.ref_name == ${{ github.event.repository.default_branch }} && 
           github.event_name != 'pull_request'
         with:
@@ -125,7 +161,7 @@ jobs:
   deploy:
     name: deploy
     if: |
-      env.DEPLOY_ARTIFACT_DIR && 
+      env.DEPLOY_ARTIFACT_DIR != '' && 
       github.ref_name == ${{ github.event.repository.default_branch }} && 
       github.event_name != 'pull_request'
     runs-on: ubuntu-latest
@@ -150,16 +186,28 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: cache Packages
-        id: cache-packages
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: pnpm setup
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+      - name: output pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: cache
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            **/.turbo
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name:
           Check if ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} is
           already deployed
