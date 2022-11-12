@@ -17,8 +17,6 @@
 	"type": "module",
 	"private": true,
 	"workspaces": [
-		"apps/*",
-		"libs/*",
 		"packages/*"
 	],
 	"keywords": [
@@ -34,10 +32,8 @@
 		"engine-strict": true
 	},
 	"engines": {
-		"node": ">=16.0.0",
-		"npm": ">=8.0.0"
+		"node": ">=16.10.0"
 	},
-	"packageManager": "npm@8.19.2",
 	"scripts": {
 		"build": "turbo run build",
 		"start": "turbo run start --parallel",
@@ -49,8 +45,8 @@
 		"lint:md": "turbo run lint:md --parallel",
 		"lint:rmd": "turbo run lint:rmd --parallel",
 		"lint:format": "turbo run lint:format --parallel",
-		"postinstall": "turbo run build",
 		"_root#lint:format": "prettier --check .",
+		"postinstall": "turbo run build",
 		"ncu": "ncu --deep --peer --upgrade",
 		"format": "prettier --write .",
 		"nuke": "nuke"
@@ -66,10 +62,11 @@
 		"@alexaegis/stylelint": "file:packages/stylelint",
 		"@alexaegis/tools": "file:packages/tools",
 		"@alexaegis/tsconfig": "file:packages/tsconfig",
-		"@alexaegis/turbo": "file:packages/turbo",
-		"@alexaegis/vitest": "file:packages/vitest"
+		"@alexaegis/turbo": "file:packages/turbo"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "file:packages/vite"
+		"@alexaegis/vite": "file:packages/vite",
+		"@alexaegis/vitest": "file:packages/vitest",
+		"vitest": "*"
 	}
 }

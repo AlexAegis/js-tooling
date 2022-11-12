@@ -36,8 +36,9 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"dependencies": {},
-	"devDependencies": {
+	"dependencies": {
+		"vite": "^3.2.3",
+		"@types/node": "^18.11.9",
 		"@alexaegis/vite": "file:../vite"
 	},
 	"exports": {

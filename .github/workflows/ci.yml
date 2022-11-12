@@ -39,16 +39,16 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: install
         if: steps.cache-packages.outputs.cache-hit != 'true'
-        run: npm install
+        run: pnpm install
       - name: lint
-        run: npm run lint
+        run: pnpm run lint
   test:
     name: test
     runs-on: ubuntu-latest
@@ -72,9 +72,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install
         if: steps.cache-packages.outputs.cache-hit != 'true'
-        run: npm install
+        run: pnpm install
       - name: test
-        run: npm run test
+        run: pnpm run test
   build:
     name: build
     runs-on: ubuntu-latest
@@ -98,9 +98,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install
         if: steps.cache-packages.outputs.cache-hit != 'true'
-        run: npm install
+        run: pnpm install
       - name: build
-        run: BASE_HREF="/${{ github.event.repository.name }}/" npm run build
+        run: BASE_HREF="/${{ github.event.repository.name }}/" pnpm run build
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.DEPLOY_ARTIFACT_DIR &&
@@ -171,7 +171,7 @@ jobs:
           echo "was ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@$VERSION already on npm: $IS_ON_NPM"
       - name: install
         if: env.IS_ON_NPM != 'true'
-        run: npm install
+        run: pnpm install
       - name:
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
           builds
@@ -197,5 +197,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-          npm publish packages/${{ matrix.artifact }}/package/ --access public
+          pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          pnpm publish packages/${{ matrix.artifact }}/package/ --access public

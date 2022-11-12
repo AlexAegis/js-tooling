@@ -49,9 +49,11 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@alexaegis/tools": "file:../tools"
+		"@alexaegis/tools": "file:../tools",
+		"husky": "^8.0.2"
 	},
 	"devDependencies": {
+		"@types/node": "^18.11.9",
 		"typescript": "4.8.4",
 		"@alexaegis/vite": "file:../vite"
 	}

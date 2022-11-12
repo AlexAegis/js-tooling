@@ -35,7 +35,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"test": "vitest --passWithNoTests --coverage --run",
 		"format": "prettier --write .",
 		"lint:es": "eslint --max-warnings=0 .",
 		"lint:format": "prettier --check ."
@@ -43,5 +42,7 @@
 	"dependencies": {
 		"@alexaegis/eslint-config-core": "file:../eslint-config-core"
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"@types/node": "^18.11.9"
+	}
 }
