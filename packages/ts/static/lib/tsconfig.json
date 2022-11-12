@@ -1,0 +1,10 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@alexaegis/ts/base",
+	"references": [{ "path": "./tsconfig.vitest-spec.json" }],
+	"compilerOptions": {
+		"rootDir": ".",
+		"outDir": "./dist/out-tsc"
+	},
+	"exclude": ["node_modules", "dist", "coverage", "**/*.spec.ts"]
+}

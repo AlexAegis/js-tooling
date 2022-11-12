@@ -17,7 +17,9 @@
 	"type": "module",
 	"private": true,
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"apps/*",
+		"libs/*"
 	],
 	"keywords": [
 		"turbo",
@@ -48,14 +50,15 @@
 		"lint:rmd": "turbo run lint:rmd --parallel",
 		"lint:format": "turbo run lint:format --parallel",
 		"_root#lint:format": "prettier --check .",
-		"preinstall": "corepack enable",
 		"postinstall": "turbo run build",
 		"ncu": "ncu --deep --peer --upgrade",
 		"format": "prettier --write .",
 		"nuke": "nuke"
 	},
 	"devDependencies": {
-		"@alexaegis/tsconfig": "*",
-		"turbo": "^1.6.3"
+		"@alexaegis/prettier": "*",
+		"@alexaegis/ts": "*",
+		"@alexaegis/turbo": "*",
+		"@alexaegis/eslint-config-core": "*"
 	}
 }

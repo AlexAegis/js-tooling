@@ -1,7 +1,7 @@
 import { dirname, join } from 'node:path/posix';
 import { LibraryFormats, mergeConfig, Plugin, UserConfig } from 'vite';
-import { DEFAULT_OUT_DIR } from '../configs/index.js';
-import { DEFAULT_ENTRY_DIR, DEFAULT_EXPORT_FORMATS } from '../helpers/auto-entry.class.options.js';
+import { DEFAULT_EXPORT_FORMATS, DEFAULT_OUT_DIR } from '../configs/index.js';
+import { DEFAULT_ENTRY_DIR } from '../helpers/auto-entry.class.options.js';
 import { AutoExportStatic } from '../helpers/auto-export-static.class.js';
 import { cloneJsonSerializable } from '../helpers/clone-json-serializable.function.js';
 import { createVitePluginLogger } from '../helpers/create-vite-plugin-logger.function.js';

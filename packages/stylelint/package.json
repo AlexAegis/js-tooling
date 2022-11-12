@@ -26,7 +26,7 @@
 	},
 	"scripts": {
 		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 .",
+		"lint:es": "eslint --max-warnings=0 --fix .",
 		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
@@ -37,7 +37,6 @@
 		"stylelint": "14.14.1"
 	},
 	"devDependencies": {
-		"vite": "^3.2.3",
 		"@types/node": "^18.11.9",
 		"typescript": "4.8.4",
 		"@alexaegis/vite": "*"

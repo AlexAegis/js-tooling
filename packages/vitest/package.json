@@ -25,7 +25,7 @@
 		"engine-strict": false
 	},
 	"scripts": {
-		"lint:es": "eslint --max-warnings=0 .",
+		"lint:es": "eslint --max-warnings=0 --fix .",
 		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
@@ -39,5 +39,8 @@
 	},
 	"devDependencies": {
 		"vite": "^3.2.3"
+	},
+	"bin": {
+		"vitest": "node_modules/vitest/vitest.mjs"
 	}
 }

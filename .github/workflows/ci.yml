@@ -8,7 +8,7 @@ on:
 
 env:
   NPM_PACKAGE_ORG_PREFIX: '@alexaegis/'
-  DEPLOY_ARTIFACT_DIR: '' # 'apps/example/dist'
+  DEPLOY_ARTIFACT_DIR: 'apps/svelte/dist'
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   TURBO_REMOTE_ONLY: true
