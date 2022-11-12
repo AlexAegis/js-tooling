@@ -51,11 +51,15 @@
 		"kolorist": "^1.6.0",
 		"svelte": "^3.53.1"
 	},
+	"peerDependencies": {
+		"vite": "^3.2.3"
+	},
 	"optionalDependencies": {
 		"prettier": "^2.7.1"
 	},
 	"devDependencies": {
-		"@alexaegis/vitest": "file:../vitest",
+		"vitest": "^0.25.1",
+		"@alexaegis/vitest": "*",
 		"@types/fs-extra": "^9.0.13",
 		"@schemastore/package": "^0.0.6"
 	},
@@ -93,7 +97,6 @@
 		}
 	},
 	"bin": {
-		"vite": "node_modules/.bin/vite",
 		"distribute-vite-config": "./shims/distribute-vite-config.mjs",
 		"alexaegis-vite-postinstall": "./shims/postinstall.mjs"
 	}

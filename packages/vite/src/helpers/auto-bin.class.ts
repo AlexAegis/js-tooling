@@ -97,9 +97,10 @@ export class AutoBin implements PreparedBuildUpdate {
 		this.oldBins = packageJson.bin;
 		this.packageType = packageJson.type ?? 'commonjs';
 
+		// Making sure removed bins and scripts will be dropped at the end
 		packageJson.bin = undefined;
 		for (const script in packageJson.scripts) {
-			if (packageJson.scripts[script].endsWith(this.markComment)) {
+			if (packageJson.scripts && packageJson.scripts[script]?.endsWith(this.markComment)) {
 				packageJson.scripts[script] = undefined;
 			}
 		}
@@ -186,16 +187,19 @@ export class AutoBin implements PreparedBuildUpdate {
 
 			const manualBins: Record<string, string> = Object.fromEntries(
 				Object.entries(this.oldBins ?? {}).filter(
-					([, path]) => !path.startsWith('.' + posix.sep + this.options.shimDir)
+					([, path]) =>
+						!path.startsWith('.' + posix.sep + this.options.shimDir) ||
+						!path.endsWith('js') ||
+						path.includes('manual')
 				)
 			);
 
 			const update = Object.entries(this.pathMap).reduce(
 				(result, [key, value]) => {
-					if (this.options.enabledHooks.includes(key)) {
+					if (result.scripts && this.options.enabledHooks.includes(key)) {
 						if (
-							!packageJson.scripts[key] ||
-							packageJson.scripts[key].endsWith(this.markComment)
+							!packageJson.scripts?.[key] ||
+							packageJson.scripts?.[key]?.endsWith(this.markComment)
 						) {
 							if (packageJsonTarget === 'out-to-out') {
 								result.scripts[key] = value.outToOutPath[format] + this.markComment; // before update
@@ -214,7 +218,12 @@ export class AutoBin implements PreparedBuildUpdate {
 						key = packageName + '-' + key;
 					}
 
+					if (!result.bin) {
+						result.bin = {};
+					}
+
 					if (packageJsonTarget === 'out-to-out') {
+						// the build artifacts bins point to the built bins
 						result.bin[key] = '.' + posix.sep + value.outToOutPath[format];
 					} else {
 						// The bins are pointing to their shims otherwise
@@ -224,10 +233,16 @@ export class AutoBin implements PreparedBuildUpdate {
 				},
 				{
 					bin: manualBins,
-					scripts: {} as Record<string, string>,
-				}
+					scripts: {},
+				} as PackageJson
 			);
+			if (typeof update.bin === 'object' && Object.keys(update.bin).length === 0) {
+				delete update.bin;
+			}
 
+			if (typeof update.scripts === 'object' && Object.keys(update.scripts).length === 0) {
+				delete update.scripts;
+			}
 			return update;
 		}
 		return {};

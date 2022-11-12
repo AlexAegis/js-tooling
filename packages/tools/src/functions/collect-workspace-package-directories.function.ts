@@ -33,7 +33,6 @@ export const collectWorkspacePackageDirectoriesWithPackageJson = async (
 			workspaces = [...workspaces, ...pnpmWorkspace.workspaces];
 		}
 
-		console.log('WORKSPACES', workspaces);
 		if (workspaces.length > 0) {
 			const paths = await globby(workspaces, {
 				gitignore: true,
@@ -42,8 +41,6 @@ export const collectWorkspacePackageDirectoriesWithPackageJson = async (
 				absolute: true,
 				cwd: rootWorkspace,
 			});
-
-			console.log('paths', paths);
 
 			const potentialSubPackages = await Promise.all(
 				paths.map((path) =>

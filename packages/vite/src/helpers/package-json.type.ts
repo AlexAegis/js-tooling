@@ -7,4 +7,5 @@ export type PackageJson = Omit<JSONSchemaForNPMPackageJsonFiles, 'bin' | 'export
 	exports?: PackageJsonExports;
 	bin?: Record<string, string>;
 	type?: 'commonjs' | 'module';
+	scripts?: Record<string, string | undefined>;
 };

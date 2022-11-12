@@ -37,13 +37,14 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@alexaegis/tools": "file:../tools",
+		"@alexaegis/tools": "*",
 		"yargs": "^17.6.2",
 		"kolorist": "^1.6.0"
 	},
 	"devDependencies": {
+		"vite": "^3.2.3",
 		"@types/node": "^18.11.9",
-		"@alexaegis/vite": "file:../vite",
+		"@alexaegis/vite": "*",
 		"@types/yargs": "17.0.13",
 		"typescript": "^4.8.4"
 	},

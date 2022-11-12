@@ -37,19 +37,20 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@alexaegis/editorconfig": "file:../editorconfig",
-		"@alexaegis/eslint-config-core": "file:../eslint-config-core",
-		"@alexaegis/git": "file:../git",
-		"@alexaegis/husky": "file:../husky",
-		"@alexaegis/nuke": "file:../nuke",
-		"@alexaegis/prettier": "file:../prettier",
-		"@alexaegis/stylelint": "file:../stylelint",
-		"@alexaegis/tsconfig": "file:../tsconfig",
-		"@alexaegis/turbo": "file:../turbo"
+		"@alexaegis/editorconfig": "*",
+		"@alexaegis/eslint-config-core": "*",
+		"@alexaegis/git": "*",
+		"@alexaegis/husky": "*",
+		"@alexaegis/nuke": "*",
+		"@alexaegis/prettier": "*",
+		"@alexaegis/stylelint": "*",
+		"@alexaegis/tsconfig": "*",
+		"@alexaegis/turbo": "*"
 	},
 	"devDependencies": {
+		"vite": "^3.2.3",
 		"@types/node": "^18.11.9",
 		"typescript": "4.8.4",
-		"@alexaegis/vite": "file:../vite"
+		"@alexaegis/vite": "*"
 	}
 }

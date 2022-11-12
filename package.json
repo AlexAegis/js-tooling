@@ -32,8 +32,10 @@
 		"engine-strict": true
 	},
 	"engines": {
-		"node": ">=16.10.0"
+		"node": ">=16.10.0",
+		"vscode": "^1.73.1"
 	},
+	"packageManager": "pnpm@7.15.0",
 	"scripts": {
 		"build": "turbo run build",
 		"start": "turbo run start --parallel",
@@ -46,27 +48,14 @@
 		"lint:rmd": "turbo run lint:rmd --parallel",
 		"lint:format": "turbo run lint:format --parallel",
 		"_root#lint:format": "prettier --check .",
+		"preinstall": "corepack enable",
 		"postinstall": "turbo run build",
 		"ncu": "ncu --deep --peer --upgrade",
 		"format": "prettier --write .",
 		"nuke": "nuke"
 	},
-	"dependencies": {
-		"@alexaegis/editorconfig": "file:packages/editorconfig",
-		"@alexaegis/eslint-config-core": "file:packages/eslint-config-core",
-		"@alexaegis/eslint-config-svelte": "file:packages/eslint-config-svelte",
-		"@alexaegis/git": "file:packages/git",
-		"@alexaegis/husky": "file:packages/husky",
-		"@alexaegis/nuke": "file:packages/nuke",
-		"@alexaegis/prettier": "file:packages/prettier",
-		"@alexaegis/stylelint": "file:packages/stylelint",
-		"@alexaegis/tools": "file:packages/tools",
-		"@alexaegis/tsconfig": "file:packages/tsconfig",
-		"@alexaegis/turbo": "file:packages/turbo"
-	},
 	"devDependencies": {
-		"@alexaegis/vite": "file:packages/vite",
-		"@alexaegis/vitest": "file:packages/vitest",
-		"vitest": "*"
+		"@alexaegis/tsconfig": "*",
+		"turbo": "^1.6.3"
 	}
 }
