@@ -47,16 +47,21 @@
 		"lint:svelte": "turbo run lint:svelte --parallel",
 		"lint:style": "turbo run lint:style --parallel",
 		"lint:md": "turbo run lint:md --parallel",
+		"lint:md:workspace": "markdownlint --ignore-path '.gitignore' --ignore CHANGELOG.md *.md",
 		"lint:rmd": "turbo run lint:rmd --parallel",
 		"lint:format": "turbo run lint:format --parallel",
-		"_root#lint:format": "prettier --check .",
+		"lint:format:workspace": "prettier --check *.{json,ts,js,mjs,,md,yml,yaml}",
 		"postinstall": "turbo run build",
 		"ncu": "ncu --deep --peer --upgrade",
 		"format": "prettier --write .",
 		"nuke": "nuke"
 	},
+	"dependencies": {
+		"@alexaegis/common": "*"
+	},
 	"devDependencies": {
 		"@alexaegis/prettier": "*",
+		"@alexaegis/md": "*",
 		"@alexaegis/ts": "*",
 		"@alexaegis/turbo": "*",
 		"@alexaegis/eslint-config-core": "*"

@@ -48,13 +48,13 @@
 		"yargs": "^17.6.2"
 	},
 	"devDependencies": {
-		"typescript": "^4.8.4",
-		"@types/yargs": "^17.0.13",
-		"@types/js-yaml": "^4.0.5",
 		"@alexaegis/ts": "*",
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
 		"@alexaegis/eslint-config-core": "*",
+		"typescript": "^4.8.4",
+		"@types/yargs": "^17.0.13",
+		"@types/js-yaml": "^4.0.5",
 		"@schemastore/package": "^0.0.6",
 		"@types/node": "^18.11.9",
 		"ts-node": "^10.9.1",

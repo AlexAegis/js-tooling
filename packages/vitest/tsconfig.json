@@ -3,8 +3,8 @@
 	"extends": "@alexaegis/ts/base",
 	"compilerOptions": {
 		"rootDir": ".",
-		"outDir": "dist/out-tsc"
+		"outDir": "./dist/out-tsc"
 	},
-	"include": ["*.ts", "*.mjs", "*.cjs", ".eslintrc.cjs"],
-	"exclude": ["node_modules", "coverage", "dist"]
+	"include": ["**/*"],
+	"exclude": ["node_modules", "dist", "shims"]
 }

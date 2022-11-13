@@ -1,1 +1,1 @@
-export { libraryViteConfig as default } from '@alexaegis/vite';
+export { libraryTargetSourceViteConfig as default } from '@alexaegis/vite';

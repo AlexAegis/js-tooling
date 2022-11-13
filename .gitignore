@@ -140,6 +140,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# typedoc
+typedoc
+
 # turbo
 .turbo
 

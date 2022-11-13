@@ -1,3 +1,1 @@
-export const createVitest = () => {
-	console.log('createVitest');
-};
+export * from './configs/index.js';

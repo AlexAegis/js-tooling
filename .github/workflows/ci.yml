@@ -43,6 +43,7 @@ jobs:
         with:
           run_install: false
       - name: output pnpm store directory
+        id: pnpm-store
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
@@ -50,9 +51,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            **/node_modules
-            **/.turbo
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            ${{ steps.pnpm-store.outputs.STORE_PATH }}
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -81,6 +80,7 @@ jobs:
         with:
           run_install: false
       - name: output pnpm store directory
+        id: pnpm-store
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
@@ -88,9 +88,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            **/node_modules
-            **/.turbo
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            ${{ steps.pnpm-store.outputs.STORE_PATH }}
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -119,6 +117,7 @@ jobs:
         with:
           run_install: false
       - name: output pnpm store directory
+        id: pnpm-store
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
@@ -126,9 +125,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            **/node_modules
-            **/.turbo
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            ${{ steps.pnpm-store.outputs.STORE_PATH }}
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -195,6 +192,7 @@ jobs:
         with:
           run_install: false
       - name: output pnpm store directory
+        id: pnpm-store
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
@@ -202,9 +200,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            **/node_modules
-            **/.turbo
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            ${{ steps.pnpm-store.outputs.STORE_PATH }}
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -246,4 +242,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-          pnpm publish packages/${{ matrix.artifact }}/package/ --access public
+          pnpm publish packages/${{ matrix.artifact }}/dist/ --access public
