@@ -5,4 +5,5 @@ export const vitestReporters: CoverageReporter[] = ['text', 'json', 'html', 'lco
 export const vitestCoverage: CoverageOptions = {
 	provider: 'c8',
 	reporter: vitestReporters,
+	reportsDirectory: '../../coverage',
 };

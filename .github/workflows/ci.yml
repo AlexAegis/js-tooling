@@ -51,7 +51,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ steps.pnpm-store.outputs.STORE_PATH }}
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            **/node_modules
+            **/.turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -59,7 +61,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint
-        run: pnpm run lint
+        run: pnpm lint
   test:
     name: test
     runs-on: ubuntu-latest
@@ -88,7 +90,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ steps.pnpm-store.outputs.STORE_PATH }}
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            **/node_modules
+            **/.turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -96,7 +100,17 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: test
-        run: pnpm run test
+        run: pnpm test
+      - name: upload coverage result to codacy
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info
+      - name: upload coverage result to codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage
   build:
     name: build
     runs-on: ubuntu-latest
@@ -125,7 +139,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ steps.pnpm-store.outputs.STORE_PATH }}
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            **/node_modules
+            **/.turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -133,7 +149,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: build
-        run: BASE_HREF="/${{ github.event.repository.name }}/" pnpm run build
+        run: BASE_HREF="/${{ github.event.repository.name }}/" pnpm build
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.DEPLOY_ARTIFACT_DIR != '' &&
@@ -200,7 +216,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{ steps.pnpm-store.outputs.STORE_PATH }}
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            **/node_modules
+            **/.turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
