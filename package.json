@@ -37,7 +37,7 @@
 		"node": ">=16.10.0",
 		"vscode": "^1.73.1"
 	},
-	"packageManager": "pnpm@7.15.0",
+	"packageManager": "pnpm@7.17.0",
 	"scripts": {
 		"build": "turbo run build",
 		"start": "turbo run start --parallel",
@@ -64,6 +64,7 @@
 		"@alexaegis/md": "*",
 		"@alexaegis/ts": "*",
 		"@alexaegis/turbo": "*",
-		"@alexaegis/eslint-config-core": "*"
+		"@alexaegis/eslint-config-core": "*",
+		"npm-check-updates": "^16.4.1"
 	}
 }

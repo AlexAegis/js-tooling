@@ -37,9 +37,9 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"typescript": "^4.8.4",
+		"typescript": "^4.9.3",
 		"ts-node": "^10.9.1",
-		"vite": "^3.2.3",
+		"vite": "^3.2.4",
 		"@types/node": "^18.11.9",
 		"@alexaegis/vite": "*"
 	},
