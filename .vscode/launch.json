@@ -1,24 +1,36 @@
 {
+	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Current TS File",
+			"name": "[JS] Current File",
 			"type": "node",
 			"request": "launch",
-			"env": {
-				"TS_NODE_PROJECT": "./tsconfig.json",
-				"TS_NODE_TRANSPILE_ONLY": "true",
-				"TS_NODE_FILES": "true"
-			},
+
 			"args": ["${relativeFile}"],
-			"runtimeArgs": [
-				"-r",
-				"ts-node/register",
-				"-r",
-				"tsconfig-paths/register",
-				"--max-old-space-size=8192"
-			],
+			"runtimeArgs": ["--max-old-space-size=8192"],
 			"cwd": "${workspaceRoot}",
 			"internalConsoleOptions": "openOnSessionStart"
+		},
+		{
+			"name": "[TS-ESM] Current File",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceRoot}",
+			"env": {
+				"TS_NODE_PROJECT": "${workspaceRoot}/tsconfig.json",
+				"TS_NODE_TRANSPILE_ONLY": "true",
+				"TS_NODE_FILES": "true",
+				"RUN": "true"
+			},
+			"runtimeArgs": [
+				"--loader",
+				"ts-node/esm",
+				"--max-old-space-size=8192",
+				"--no-warnings"
+			],
+			"args": ["${relativeFile}"],
+			"internalConsoleOptions": "openOnSessionStart",
+			"resolveSourceMapLocations": ["${workspaceFolder}/", "!/node_modules/**"]
 		}
 	]
 }

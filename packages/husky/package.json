@@ -30,7 +30,8 @@
 	},
 	"scripts": {
 		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix .",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:tsc": "tsc --noEmit",
 		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
@@ -50,11 +51,14 @@
 	},
 	"dependencies": {
 		"@alexaegis/tools": "*",
-		"husky": "^8.0.2"
+		"husky": "^8.0.3"
 	},
 	"devDependencies": {
-		"@types/node": "^18.11.9",
-		"typescript": "4.9.3",
+		"@types/node": "^18.11.18",
+		"typescript": "4.9.4",
 		"@alexaegis/vite": "*"
+	},
+	"bin": {
+		"husky": "node_modules/husky/lib/bin.js"
 	}
 }

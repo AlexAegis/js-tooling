@@ -3,6 +3,7 @@
 	"description": "My vitest config",
 	"version": "0.0.1",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -14,40 +15,48 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"vitest",
+		"javascript",
+		"js",
 		"ts",
 		"typescript",
-		"js",
-		"javascript"
+		"vitest"
 	],
-	"private": false,
 	"type": "module",
+	"sideEffects": false,
 	"config": {
 		"engine-strict": false
 	},
-	"scripts": {
-		"lint:es": "eslint --max-warnings=0 --fix .",
-		"lint:format": "prettier --check ."
-	},
-	"sideEffects": false,
 	"publishConfig": {
 		"access": "public"
 	},
-	"dependencies": {
-		"vitest": "^0.25.2",
-		"@vitest/coverage-c8": "^0.25.2",
-		"@vitest/ui": "^0.25.2"
-	},
-	"devDependencies": {
-		"tslib": "^2.4.1",
-		"vite": "^3.2.4"
+	"scripts": {
+		"build": "vite build",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "prettier --check .",
+		"lint:tsc": "tsc --noEmit"
 	},
 	"exports": {
 		".": {
-			"default": "./src/index.ts"
-		}
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"vitest": "node_modules/vitest/vitest.mjs"
+	},
+	"dependencies": {
+		"@vitest/coverage-c8": "^0.27.1",
+		"@vitest/ui": "^0.27.1",
+		"vitest": "^0.27.1"
+	},
+	"peerDependencies": {
+		"vite": "^3.2.4",
+		"vitest": "^0.27.1"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "*",
+		"tslib": "^2.4.1"
 	}
 }

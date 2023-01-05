@@ -14,5 +14,13 @@ module.exports = {
 				proseWrap: 'always',
 			},
 		},
+		{
+			files: '*.{py}',
+			options: {
+				useTabs: false,
+				useTabs: false,
+				printWidth: 80,
+			},
+		},
 	],
 };

@@ -30,7 +30,8 @@
 	},
 	"scripts": {
 		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix .",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:tsc": "tsc --noEmit",
 		"lint:format": "prettier --check ."
 	},
 	"sideEffects": false,
@@ -39,8 +40,8 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@types/node": "^18.11.9",
-		"typescript": "4.9.3",
+		"@types/node": "^18.11.18",
+		"typescript": "4.9.4",
 		"@alexaegis/vite": "*"
 	}
 }

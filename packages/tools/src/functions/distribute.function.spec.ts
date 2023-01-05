@@ -5,15 +5,11 @@ import { join, sep } from 'node:path';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { distribute } from './distribute.function.js';
 
+const cpMock = vi.fn();
 const symlinkMock = vi.fn();
 
 describe('distribute', () => {
-	const infoMock = vi.fn();
-	const errorMock = vi.fn();
-
 	beforeAll(async () => {
-		console.info = infoMock;
-		console.error = errorMock;
 		vi.mock('globby', () => {
 			return {
 				globby: async (_patterns: string[], options: Options): Promise<string[]> => {
@@ -78,6 +74,7 @@ describe('distribute', () => {
 						}
 					}
 				}),
+				cp: vi.fn(async (path: string, target: string) => cpMock(path, target)),
 				symlink: vi.fn(async (path: string, target: string) => symlinkMock(path, target)),
 				readFile: vi.fn(
 					async (path: PathLike): Promise<string | undefined> =>
@@ -98,34 +95,34 @@ describe('distribute', () => {
 		vi.clearAllMocks();
 	});
 
-	it('should symlink to all folders', async () => {
-		const filename = 'rcfile';
-		await distribute(filename, { cwd: '/foo/bar/packages' });
+	describe('symlinking', () => {
+		it('should symlink to all folders', async () => {
+			const filename = 'rcfile';
+			await distribute(filename, { cwd: '/foo/bar/packages', symlinkInsteadOfCopy: true });
 
-		expect(symlinkMock).toHaveBeenCalledWith(
-			`packages${sep}${filename}`,
-			join('/foo/bar', filename)
-		);
-		expect(symlinkMock).toHaveBeenCalledTimes(1);
-		expect(infoMock).toHaveBeenCalledTimes(1);
-		expect(errorMock).toHaveBeenCalledTimes(0);
-	});
+			expect(symlinkMock).toHaveBeenCalledWith(
+				`packages${sep}${filename}`,
+				join('/foo/bar', filename)
+			);
+			expect(symlinkMock).toHaveBeenCalledTimes(1);
+		});
 
-	it('should refuse to link something thats nonexistent', async () => {
-		const filename = 'nonexistent';
-		await distribute(filename, { cwd: '/foo/bar/packages' });
+		it('should refuse to link something thats nonexistent', async () => {
+			const filename = 'nonexistent';
+			await distribute(filename, { cwd: '/foo/bar/packages', symlinkInsteadOfCopy: true });
 
-		expect(symlinkMock).toHaveBeenCalledTimes(0);
-		expect(infoMock).toHaveBeenCalledTimes(0);
-		expect(errorMock).toHaveBeenCalledTimes(1);
-	});
+			expect(symlinkMock).toHaveBeenCalledTimes(0);
+		});
 
-	it('should refuse to link something thats not a file', async () => {
-		const filename = 'nonfile';
-		await distribute(filename, { dependencyCriteria: ['@dep'], cwd: '/foo/bar/packages' });
+		it('should refuse to link something thats not a file', async () => {
+			const filename = 'nonfile';
+			await distribute(filename, {
+				dependencyCriteria: ['@dep'],
+				cwd: '/foo/bar/packages',
+				symlinkInsteadOfCopy: true,
+			});
 
-		expect(symlinkMock).toHaveBeenCalledTimes(0);
-		expect(infoMock).toHaveBeenCalledTimes(0);
-		expect(errorMock).toHaveBeenCalledTimes(1);
+			expect(symlinkMock).toHaveBeenCalledTimes(0);
+		});
 	});
 });

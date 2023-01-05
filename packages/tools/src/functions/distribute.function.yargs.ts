@@ -1,6 +1,6 @@
 import type { Argv } from 'yargs';
 import type { DistributeOptions } from './distribute.function.options.js';
-
+//
 export const addDistributeOptionsToYargs = (
 	yargs: Argv
 ): Argv<Omit<DistributeOptions, 'logger'>> => {
@@ -40,8 +40,9 @@ export const addDistributeOptionsToYargs = (
 				'Only distribute to the root of the workspace. (Skip all workspace packages)',
 		})
 		.option('dependencyCriteria', {
-			array: true,
 			default: [],
+			coerce: (v) => v as string[],
+			type: 'array',
 			description:
 				'Only distribute to workspace packages that have this dependency listed ' +
 				'in their package.json file. Empty means no filtering is applied.',

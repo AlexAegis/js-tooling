@@ -15,53 +15,57 @@ export const collectWorkspacePackageDirectoriesWithPackageJson = async (
 ): Promise<RelativePackage[]> => {
 	const packages = collectPackageJsonLocationsLinearly(path);
 	const rootWorkspace = packages[0];
+
+	if (!rootWorkspace) {
+		return [];
+	}
+
 	const packageJson = await readJson<PackageJson>(join(rootWorkspace, 'package.json'));
 
-	if (packageJson) {
-		const rootPackage: RelativePackage = {
-			path: rootWorkspace,
-			packageJson,
-		};
+	if (!packageJson) {
+		return [];
+	}
 
-		const pnpmWorkspace = await readYaml<{ workspaces?: string[] }>(
-			join(rootWorkspace, 'pnpm-workspace.yaml')
+	const rootPackage: RelativePackage = {
+		path: rootWorkspace,
+		packageJson,
+	};
+
+	const pnpmWorkspace = await readYaml<{ workspaces?: string[] }>(
+		join(rootWorkspace, 'pnpm-workspace.yaml')
+	);
+
+	let workspaces = packageJson.workspaces ?? [];
+
+	if (pnpmWorkspace?.workspaces) {
+		workspaces = [...workspaces, ...pnpmWorkspace.workspaces];
+	}
+
+	if (workspaces.length > 0) {
+		const paths = await globby(workspaces, {
+			gitignore: true,
+			onlyDirectories: true,
+			ignore: ['node_modules'],
+			absolute: true,
+			cwd: rootWorkspace,
+		});
+
+		const potentialSubPackages = await Promise.all(
+			paths.map((path) =>
+				readJson<PackageJson>(join(path, 'package.json')).then((packageJson) => ({
+					packageJson,
+					path,
+				}))
+			)
 		);
 
-		let workspaces = packageJson.workspaces ?? [];
+		const subPackages = potentialSubPackages.filter(
+			(relativePackage): relativePackage is RelativePackage => !!relativePackage.packageJson
+		);
 
-		if (pnpmWorkspace?.workspaces) {
-			workspaces = [...workspaces, ...pnpmWorkspace.workspaces];
-		}
-
-		if (workspaces.length > 0) {
-			const paths = await globby(workspaces, {
-				gitignore: true,
-				onlyDirectories: true,
-				ignore: ['node_modules'],
-				absolute: true,
-				cwd: rootWorkspace,
-			});
-
-			const potentialSubPackages = await Promise.all(
-				paths.map((path) =>
-					readJson(join(path, 'package.json')).then((packageJson) => ({
-						packageJson,
-						path,
-					}))
-				)
-			);
-
-			const subPackages = potentialSubPackages.filter(
-				(relativePackage): relativePackage is RelativePackage =>
-					!!relativePackage.packageJson
-			);
-
-			return [rootPackage, ...subPackages];
-		} else {
-			return [rootPackage];
-		}
+		return [rootPackage, ...subPackages];
 	} else {
-		return [];
+		return [rootPackage];
 	}
 };
 

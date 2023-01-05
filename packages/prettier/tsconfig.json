@@ -4,8 +4,10 @@
 	"references": [{ "path": "./tsconfig.vitest-spec.json" }],
 	"compilerOptions": {
 		"types": ["node"],
-		"rootDir": "../..",
+		"rootDir": "../../",
 		"outDir": "./dist/out-tsc"
 	},
+	"files": [".eslintrc.cjs", "package.json"],
+	"include": ["**/*.d.ts", "**/*.ts", "**/*.js"],
 	"exclude": ["node_modules", "dist", "coverage", "**/*.spec.ts"]
 }

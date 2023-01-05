@@ -32,6 +32,21 @@
 - Go to <https://vercel.com/account/tokens> and create a new token
 - Go to <https://github.com/AlexAegis/js/settings/secrets/actions> and add this
   token as `TURBO_TOKEN` and your vercel username as `TURBO_TEAM`
+- GitHub action workflow should contain these environmental variables:
+
+  ```yml
+  env:
+    TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    TURBO_REMOTE_ONLY: true
+  ```
+
+- Log into vercel locally to enable remote caching
+
+  ```sh
+  npx turbo login
+  npx turbo link
+  ```
 
 ### Codacy
 

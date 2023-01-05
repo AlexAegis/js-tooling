@@ -36,13 +36,14 @@
 	},
 	"scripts": {
 		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix .",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:tsc": "tsc --noEmit",
 		"lint:format": "prettier --check ."
 	},
 	"dependencies": {
 		"@alexaegis/eslint-config-core": "*"
 	},
 	"devDependencies": {
-		"@types/node": "^18.11.9"
+		"@types/node": "^18.11.18"
 	}
 }

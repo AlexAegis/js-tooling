@@ -2,8 +2,10 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "@alexaegis/ts/libinternal",
 	"references": [{ "path": "./tsconfig.lib.json" }, { "path": "./tsconfig.vitest-spec.json" }],
+	"files": [".eslintrc.cjs"],
+	"include": ["**/*.ts"],
 	"compilerOptions": {
-		"rootDir": ".",
+		"rootDir": "../../",
 		"outDir": "./dist/out-tsc"
 	}
 }

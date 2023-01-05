@@ -1,6 +1,5 @@
 {
 	"name": "@alexaegis/workspace",
-	"displayName": "js",
 	"description": "base repo for common stuff in my other js projects",
 	"version": "0.0.1",
 	"license": "mit",
@@ -10,6 +9,10 @@
 		"url": "https://github.com/AlexAegis"
 	},
 	"homepage": "https://github.com/AlexAegis/js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AlexAegis/js"
+	},
 	"bugs": {
 		"email": "alexaegis@gmail.com",
 		"url": "https://github.com/AlexAegis/js/issues"
@@ -34,24 +37,25 @@
 		"engine-strict": true
 	},
 	"engines": {
-		"node": ">=16.10.0",
-		"vscode": "^1.73.1"
+		"node": ">=18.12.1"
 	},
-	"packageManager": "pnpm@7.17.0",
+	"packageManager": "pnpm@7.22.0",
 	"scripts": {
 		"build": "turbo run build",
 		"start": "turbo run start --parallel",
 		"test": "turbo run test",
-		"lint": "turbo run lint --parallel",
-		"lint:es": "turbo run lint:es --parallel",
-		"lint:svelte": "turbo run lint:svelte --parallel",
-		"lint:style": "turbo run lint:style --parallel",
-		"lint:md": "turbo run lint:md --parallel",
+		"lint": "pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format:workspace && pnpm lint:md && pnpm lint:md:workspace && pnpm lint:rmd && pnpm lint:rmd:workspace",
+		"lint:es": "turbo run lint:es --concurrency 6",
+		"lint:tsc": "turbo run lint:es --concurrency 6",
+		"lint:svelte": "turbo run lint:svelte --concurrency 6",
+		"lint:style": "turbo run lint:style --concurrency 6",
+		"lint:md": "turbo run lint:md --concurrency 6",
 		"lint:md:workspace": "markdownlint --ignore-path '.gitignore' --ignore CHANGELOG.md *.md",
-		"lint:rmd": "turbo run lint:rmd --parallel",
-		"lint:format": "turbo run lint:format --parallel",
-		"lint:format:workspace": "prettier --check *.{json,ts,js,mjs,,md,yml,yaml}",
-		"postinstall": "turbo run build",
+		"lint:rmd": "turbo run lint:rmd --concurrency 6",
+		"lint:rmd:workspace": "remark --frail --quiet --no-stdout *.md",
+		"lint:format": "turbo run lint:format --concurrency 6",
+		"lint:format:workspace": "prettier --check *.{json,ts,js,mjs,md,yml,yaml}",
+		"postinstall": "husky install && turbo run build",
 		"ncu": "ncu --deep --peer --upgrade",
 		"format": "prettier --write .",
 		"nuke": "nuke"
@@ -60,11 +64,13 @@
 		"@alexaegis/common": "*"
 	},
 	"devDependencies": {
-		"@alexaegis/prettier": "*",
+		"@alexaegis/eslint-config-core": "*",
+		"@alexaegis/husky": "*",
 		"@alexaegis/md": "*",
+		"@alexaegis/prettier": "*",
 		"@alexaegis/ts": "*",
 		"@alexaegis/turbo": "*",
-		"@alexaegis/eslint-config-core": "*",
-		"npm-check-updates": "^16.4.1"
+		"@types/node": "^18.11.18",
+		"npm-check-updates": "^16.6.2"
 	}
 }

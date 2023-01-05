@@ -3,6 +3,7 @@
 	"description": "Common stuff",
 	"version": "0.0.1",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -14,40 +15,41 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
+		"javascript",
+		"js",
 		"link",
 		"symlink",
 		"ts",
-		"typescript",
-		"js",
-		"javascript"
+		"typescript"
 	],
-	"private": false,
+	"type": "module",
+	"sideEffects": false,
 	"config": {
 		"engine-strict": true
 	},
-	"sideEffects": false,
-	"type": "module",
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
 		"build": "vite build",
-		"test": "vitest --passWithNoTests --coverage --run",
 		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix .",
-		"lint:format": "prettier --check ."
-	},
-	"devDependencies": {
-		"typescript": "^4.9.3",
-		"@types/node": "^18.11.9",
-		"@alexaegis/ts": "*",
-		"@alexaegis/vite": "*",
-		"@alexaegis/vitest": "*",
-		"@alexaegis/eslint-config-core": "*"
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "prettier --check .",
+		"lint:tsc": "tsc --noEmit",
+		"test": "vitest --passWithNoTests --coverage --run"
 	},
 	"exports": {
 		".": {
 			"default": "./src/index.ts"
 		}
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-core": "*",
+		"@alexaegis/ts": "*",
+		"@alexaegis/vite": "*",
+		"@alexaegis/vitest": "*",
+		"@types/node": "^18.11.18",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.4"
 	}
 }

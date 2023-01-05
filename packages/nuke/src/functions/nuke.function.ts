@@ -102,6 +102,14 @@ export const nuke = async (path: string, options?: NukeOptions): Promise<void> =
 					: skip.test(packageDirectory.path)
 			)
 	);
+
+	const rootPackageDirectory = allPackageDirectories[0];
+
+	if (!rootPackageDirectory) {
+		nukeLogger('Not inside a workspace!');
+		return;
+	}
+
 	const packageFlatNukeTargets = packageDirectories.flatMap((packageDirectory) =>
 		nukeList.map((toNuke) => join(packageDirectory.path, toNuke))
 	);
@@ -123,7 +131,7 @@ export const nuke = async (path: string, options?: NukeOptions): Promise<void> =
 		everyNukeTarget
 			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {
-				nukeLogger('obliterating: ' + relative(allPackageDirectories[0].path, nukeTarget));
+				nukeLogger('obliterating: ' + relative(rootPackageDirectory.path, nukeTarget));
 				return options?.dry
 					? false
 					: rm(nukeTarget, { recursive: true }).catch(() => false);

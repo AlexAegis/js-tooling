@@ -23,4 +23,5 @@ vite.config.ts.*
 
 # others
 .cache
+.benchmark
 CHANGELOG.md

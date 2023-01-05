@@ -3,6 +3,7 @@
 	"description": "my typescript configurations",
 	"version": "0.0.1",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -14,49 +15,50 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"nuke",
 		"clean",
-		"ts",
-		"typescript",
+		"javascript",
 		"js",
-		"javascript"
+		"nuke",
+		"ts",
+		"typescript"
 	],
-	"private": false,
+	"type": "module",
+	"sideEffects": false,
 	"config": {
 		"engine-strict": false
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"scripts": {
 		"build": "vite build",
 		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix .",
-		"lint:format": "prettier --check ."
-	},
-	"sideEffects": false,
-	"type": "module",
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"typescript": "^4.9.3",
-		"ts-node": "^10.9.1",
-		"vite": "^3.2.4",
-		"@types/node": "^18.11.9",
-		"@alexaegis/vite": "*"
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "prettier --check .",
+		"lint:tsc": "tsc --noEmit"
 	},
 	"exports": {
-		"./base": "./base.json",
-		"./libinternal": "./libinternal.json",
 		".": {
 			"default": "./src/index.ts"
-		}
+		},
+		"./base": "./base.json",
+		"./libinternal": "./libinternal.json"
 	},
 	"bin": {
-		"tsc": "node_modules/typescript/bin/tsc",
-		"tsserver": "node_modules/typescript/bin/tsserver",
 		"ts-node": "node_modules/ts-node/dist/bin.js",
 		"ts-node-cwd": "node_modules/ts-node/dist/bin-cwd.js",
 		"ts-node-esm": "node_modules/ts-node/dist/bin-esm.js",
 		"ts-node-script": "node_modules/ts-node/dist/bin-script.js",
-		"ts-node-transpile-only": "node_modules/ts-node/dist/bin-transpile.js"
+		"ts-node-transpile-only": "node_modules/ts-node/dist/bin-transpile.js",
+		"tsc": "node_modules/typescript/bin/tsc",
+		"tsserver": "node_modules/typescript/bin/tsserver"
+	},
+	"dependencies": {
+		"@alexaegis/vite": "*",
+		"@tsconfig/svelte": "*",
+		"@types/node": "^18.11.18",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.4"
 	}
 }

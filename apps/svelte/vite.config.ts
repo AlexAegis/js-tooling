@@ -1,1 +1,1 @@
-export { default } from '@alexaegis/vite/app-svelte-vite.config';
+export { appSvelteViteConfig as default } from '@alexaegis/vite';

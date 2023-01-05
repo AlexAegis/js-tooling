@@ -3,8 +3,6 @@
 	"editor.autoIndent": "full",
 	"editor.tabCompletion": "off",
 	"liveServer.settings.root": "apps/demo/dist",
-	"stylelint.enable": true,
-	"stylelint.validate": ["css", "scss", "postcss"],
 	"editor.rulers": [
 		{
 			"color": "#bdbdbd11",
@@ -34,6 +32,8 @@
 		// For Stylelint
 		"source.fixAll.stylelint": true
 	},
+	"editor.fontLigatures": true,
+	"editor.mouseWheelZoom": true,
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
 		"*.ts": "${capture}*",
@@ -45,8 +45,6 @@
 		".prettierrc.*": ".prettierignore",
 		".gitignore": ".gitattributes"
 	},
-	"editor.fontLigatures": true,
-	"editor.mouseWheelZoom": true,
 	"files.exclude": {
 		"**/.git": true,
 		"**/.DS_Store": true
@@ -62,6 +60,8 @@
 			"url": "https://json.schemastore.org/typedoc"
 		}
 	],
+	"stylelint.enable": true,
+	"stylelint.validate": ["css", "scss", "postcss"],
 	"vitest.enable": true,
 	"vitest.commandLine": "npx vitest --coverage"
 }

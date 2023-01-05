@@ -3,8 +3,10 @@
 	"extends": "@alexaegis/ts/base",
 	"references": [{ "path": "./tsconfig.vitest-spec.json" }],
 	"compilerOptions": {
-		"rootDir": "../..",
-		"outDir": "./dist/out-tsc"
+		"rootDir": "../../",
+		"outDir": "./dist/out-tsc",
+		"types": ["node"]
 	},
+	"files": [".eslintrc.cjs"],
 	"exclude": ["node_modules", "dist", "coverage", "**/*.spec.ts"]
 }
