@@ -47,9 +47,9 @@
 		"vitest": "node_modules/vitest/vitest.mjs"
 	},
 	"dependencies": {
-		"@vitest/coverage-c8": "^0.27.1",
-		"@vitest/ui": "^0.27.1",
-		"vitest": "^0.27.1"
+		"@vitest/coverage-c8": "^0.27.3",
+		"@vitest/ui": "^0.27.3",
+		"vitest": "^0.27.3"
 	},
 	"peerDependencies": {
 		"vite": "^3.2.4",

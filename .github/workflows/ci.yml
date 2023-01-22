@@ -398,7 +398,7 @@ jobs:
     needs: [build, test, lint]
     strategy:
       matrix:
-        artifact: ['tools', 'vite', 'nuke', 'tsconfig']
+        artifact: ['tools', 'vite', 'vitest', 'prettier', 'nuke', 'tsconfig']
     steps:
       - name: checkout
         uses: actions/checkout@v3

@@ -44,7 +44,7 @@ export interface NukeOptions {
 	/**
 	 * Additional globs to nuke if you don't want to overwrite the default ones
 	 */
-	nukeMoreGlobs?: string[];
+	nukeMoreGlobs?: string[] | undefined;
 
 	/**
 	 * These will be nuked too. Same role as `nukeList` but defining this
@@ -52,14 +52,14 @@ export interface NukeOptions {
 	 *
 	 * @default []
 	 */
-	nukeMore?: string[];
+	nukeMore?: string[] | undefined;
 
 	/**
 	 * If it shouldn't nuke a specific package, add them here.
 	 *
 	 * @default []
 	 */
-	dontNukeIn?: (string | RegExp)[];
+	dontNukeIn?: (string | RegExp)[] | undefined;
 }
 
 export const DEFAULT_NUKE_LIST: string[] = [

@@ -13,7 +13,7 @@
 		},
 		"build": {
 			"env": ["BASE_HREF"],
-			"dependsOn": ["prebuild"],
+			"dependsOn": ["^prebuild", "^build"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
