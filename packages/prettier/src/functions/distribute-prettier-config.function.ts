@@ -1,4 +1,9 @@
-import { createLogger, distribute, DistributeOptions, getWorkspaceRoot } from '@alexaegis/tools';
+import {
+	createLogger,
+	distributeFile,
+	DistributeOptions,
+	getWorkspaceRoot,
+} from '@alexaegis/tools';
 import { join } from 'node:path';
 
 /**
@@ -21,13 +26,13 @@ export const distributePrettierConfig = async (options?: DistributeOptions): Pro
 	const prettierrcPath = join(packageDirectory, 'static', '.prettierrc.cjs');
 
 	await Promise.all([
-		distribute(prettierrcPath, {
+		distributeFile(prettierrcPath, {
 			...options,
 			cwd,
 			logger: createLogger({ prefix: 'distribute:prettierrc' }),
 			onlyWorkspaceRoot: true,
 		}),
-		distribute(prettierIgnorePath, {
+		distributeFile(prettierIgnorePath, {
 			...options,
 			cwd,
 			logger: createLogger({ prefix: 'distribute:prettierignore' }),

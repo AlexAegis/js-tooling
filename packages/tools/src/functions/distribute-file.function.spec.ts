@@ -3,12 +3,12 @@ import type { Options } from 'globby';
 import type { PathLike } from 'node:fs';
 import { join, sep } from 'node:path';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
-import { distribute } from './distribute.function.js';
+import { distributeFile } from './distribute-file.function.js';
 
 const cpMock = vi.fn();
 const symlinkMock = vi.fn();
 
-describe('distribute', () => {
+describe('distributeFile', () => {
 	beforeAll(async () => {
 		vi.mock('globby', () => {
 			return {
@@ -22,24 +22,24 @@ describe('distribute', () => {
 		});
 		vi.mock('node:fs', async () => {
 			return {
-				lstatSync: vi.fn((path: string) => {
-					switch (path) {
-						case 'rcfile':
-						case '/foo/bar/packages/rcfile':
-						case '/foo/bar/packages/zed/rcfile': {
-							return { isFile: () => true, isSymbolicLink: () => false };
-						}
-						case '/foo/bar/packages/zod/rcfile': {
-							return { isFile: () => true, isSymbolicLink: () => true };
-						}
-						case '/foo/bar/packages/nonfile': {
-							return { isFile: () => false, isSymbolicLink: () => true };
-						}
-						default: {
-							return undefined;
-						}
-					}
-				}),
+				// lstatSync: vi.fn((path: string) => {
+				// 	switch (path) {
+				// 		case 'rcfile':
+				// 		case '/foo/bar/packages/rcfile':
+				// 		case '/foo/bar/packages/zed/rcfile': {
+				// 			return { isFile: () => true, isSymbolicLink: () => false };
+				// 		}
+				// 		case '/foo/bar/packages/zod/rcfile': {
+				// 			return { isFile: () => true, isSymbolicLink: () => true };
+				// 		}
+				// 		case '/foo/bar/packages/nonfile': {
+				// 			return { isFile: () => false, isSymbolicLink: () => true };
+				// 		}
+				// 		default: {
+				// 			return undefined;
+				// 		}
+				// 	}
+				// }),
 				existsSync: vi.fn(
 					(path: PathLike) =>
 						path === '/foo/bar/packages/zed/package.json' ||
@@ -98,7 +98,10 @@ describe('distribute', () => {
 	describe('symlinking', () => {
 		it('should symlink to all folders', async () => {
 			const filename = 'rcfile';
-			await distribute(filename, { cwd: '/foo/bar/packages', symlinkInsteadOfCopy: true });
+			await distributeFile(filename, {
+				cwd: '/foo/bar/packages',
+				symlinkInsteadOfCopy: true,
+			});
 
 			expect(symlinkMock).toHaveBeenCalledWith(
 				`packages${sep}${filename}`,
@@ -109,14 +112,17 @@ describe('distribute', () => {
 
 		it('should refuse to link something thats nonexistent', async () => {
 			const filename = 'nonexistent';
-			await distribute(filename, { cwd: '/foo/bar/packages', symlinkInsteadOfCopy: true });
+			await distributeFile(filename, {
+				cwd: '/foo/bar/packages',
+				symlinkInsteadOfCopy: true,
+			});
 
 			expect(symlinkMock).toHaveBeenCalledTimes(0);
 		});
 
 		it('should refuse to link something thats not a file', async () => {
 			const filename = 'nonfile';
-			await distribute(filename, {
+			await distributeFile(filename, {
 				dependencyCriteria: ['@dep'],
 				cwd: '/foo/bar/packages',
 				symlinkInsteadOfCopy: true,

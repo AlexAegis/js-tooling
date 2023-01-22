@@ -1,5 +1,5 @@
 import type { Argv } from 'yargs';
-import type { DistributeOptions } from './distribute.function.options.js';
+import type { DistributeOptions } from './distribute-file.function.options.js';
 //
 export const addDistributeOptionsToYargs = (
 	yargs: Argv

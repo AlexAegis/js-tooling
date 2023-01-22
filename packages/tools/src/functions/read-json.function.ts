@@ -7,6 +7,10 @@ export const readJson = async <T>(path: string | undefined): Promise<T | undefin
 
 	const rawJson = await readFile(path, {
 		encoding: 'utf8',
-	}).catch(() => undefined);
+	}).catch((error) => {
+		console.error('error reading json', error);
+		return undefined;
+	});
+
 	return rawJson ? JSON.parse(rawJson) : undefined;
 };
