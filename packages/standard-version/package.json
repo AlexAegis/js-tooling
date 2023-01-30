@@ -1,9 +1,8 @@
 {
-	"name": "@alexaegis/common",
-	"description": "Common stuff",
+	"name": "@alexaegis/standard-version",
+	"description": "Exports custom updaters for standard-version",
 	"version": "0.0.1",
 	"license": "MIT",
-	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -15,41 +14,30 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"javascript",
-		"js",
-		"link",
-		"symlink",
+		"turbo",
 		"ts",
-		"typescript"
+		"typescript",
+		"js",
+		"javascript"
 	],
-	"type": "module",
-	"sideEffects": false,
+	"private": false,
 	"config": {
-		"engine-strict": true
+		"engine-strict": false
 	},
+	"scripts": {
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:tsc": "tsc --noEmit",
+		"lint:format": "prettier --check ."
+	},
+	"sideEffects": false,
 	"publishConfig": {
 		"access": "public"
 	},
-	"scripts": {
-		"build": "vite build",
-		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "prettier --check .",
-		"lint:tsc": "tsc --noEmit",
-		"test": "vitest --passWithNoTests --coverage --run"
-	},
-	"exports": {
-		".": {
-			"default": "./src/index.ts"
-		}
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"@alexaegis/eslint-config-core": "*",
-		"@alexaegis/ts": "*",
-		"@alexaegis/vite": "*",
-		"@alexaegis/vitest": "*",
+		"typescript": "4.9.5",
 		"@types/node": "^18.11.18",
-		"typescript": "^4.9.4",
-		"vite": "^4.0.4"
+		"@alexaegis/vite": "*"
 	}
 }

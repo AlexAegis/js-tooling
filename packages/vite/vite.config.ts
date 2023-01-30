@@ -9,4 +9,4 @@
  *
  * https://vitejs.dev/config/
  */
-export { default } from './src/library-target-build-vite.config.js';
+export { default } from './src/library-vite.config.js';

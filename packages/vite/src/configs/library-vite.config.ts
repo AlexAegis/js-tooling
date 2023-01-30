@@ -7,9 +7,7 @@ export const libraryViteConfig = mergeConfig(
 	DEFAULT_VITE_LIB_CONFIG,
 	defineConfig({
 		plugins: [
-			autolib({
-				packageJsonTarget: 'out',
-			}),
+			autolib(),
 			dts({
 				copyDtsFiles: true,
 				insertTypesEntry: true,

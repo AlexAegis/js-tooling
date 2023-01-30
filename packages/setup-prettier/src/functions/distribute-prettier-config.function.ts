@@ -1,20 +1,23 @@
+import { Logger } from '@alexaegis/logging';
 import {
-	createLogger,
-	distributeFile,
-	DistributeOptions,
+	distributeFileInWorkspace,
+	DistributeInWorkspaceOptions,
 	getWorkspaceRoot,
-} from '@alexaegis/tools';
+	normalizeDistributeInWorkspaceOptions,
+} from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
 
 /**
  * Links this packages prettierrc file to the root of the repo, and the ignore
  * file to every package
  */
-export const distributePrettierConfig = async (options?: DistributeOptions): Promise<void> => {
+export const distributePrettierConfig = async (
+	rawOptions?: DistributeInWorkspaceOptions
+): Promise<void> => {
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
-	const cwd = options?.cwd ?? process.cwd();
-	const workspaceRoot = getWorkspaceRoot(cwd);
-	const logger = createLogger({ prefix: 'distribute:prettier' });
+	const workspaceRoot = getWorkspaceRoot(options.cwd);
+	const logger = new Logger({ domain: 'distribute:prettier' });
 
 	if (!workspaceRoot) {
 		console.warn("can't distribute prettier config, not in a workspace!");
@@ -26,16 +29,14 @@ export const distributePrettierConfig = async (options?: DistributeOptions): Pro
 	const prettierrcPath = join(packageDirectory, 'static', '.prettierrc.cjs');
 
 	await Promise.all([
-		distributeFile(prettierrcPath, {
+		distributeFileInWorkspace(prettierrcPath, {
 			...options,
-			cwd,
-			logger: createLogger({ prefix: 'distribute:prettierrc' }),
+			logger: logger.subDomain('rc'),
 			onlyWorkspaceRoot: true,
 		}),
-		distributeFile(prettierIgnorePath, {
+		distributeFileInWorkspace(prettierIgnorePath, {
 			...options,
-			cwd,
-			logger: createLogger({ prefix: 'distribute:prettierignore' }),
+			logger: logger.subDomain('ignore'),
 		}),
 	]);
 

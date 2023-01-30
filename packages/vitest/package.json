@@ -37,7 +37,7 @@
 	},
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
+			"types": "./src/index.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
@@ -47,9 +47,9 @@
 		"vitest": "node_modules/vitest/vitest.mjs"
 	},
 	"dependencies": {
-		"@vitest/coverage-c8": "^0.27.3",
-		"@vitest/ui": "^0.27.3",
-		"vitest": "^0.27.3"
+		"@vitest/coverage-c8": "^0.28.3",
+		"@vitest/ui": "^0.28.3",
+		"vitest": "^0.28.3"
 	},
 	"peerDependencies": {
 		"vite": "^3.2.4",
@@ -57,6 +57,6 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
-		"tslib": "^2.4.1"
+		"tslib": "^2.5.0"
 	}
 }

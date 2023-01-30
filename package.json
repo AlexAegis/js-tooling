@@ -39,7 +39,7 @@
 	"engines": {
 		"node": ">=18.13.0"
 	},
-	"packageManager": "pnpm@7.25.1",
+	"packageManager": "pnpm@7.26.2",
 	"scripts": {
 		"build": "turbo run build",
 		"start": "turbo run start --parallel",
@@ -67,10 +67,10 @@
 		"@alexaegis/eslint-config-core": "*",
 		"@alexaegis/husky": "*",
 		"@alexaegis/md": "*",
-		"@alexaegis/prettier": "*",
+		"@alexaegis/setup-prettier": "*",
 		"@alexaegis/ts": "*",
 		"@alexaegis/turbo": "*",
 		"@types/node": "^18.11.18",
-		"npm-check-updates": "^16.6.2"
+		"npm-check-updates": "^16.6.3"
 	}
 }
