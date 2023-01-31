@@ -13,7 +13,6 @@
 		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"dependencies": {
-		"@alexaegis/internal": "*",
 		"@alexaegis/common": "*"
 	},
 	"devDependencies": {

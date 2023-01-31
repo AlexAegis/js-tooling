@@ -6,29 +6,30 @@ importers:
     specifiers:
       '@alexaegis/common': '*'
       '@alexaegis/eslint-config-core': '*'
-      '@alexaegis/husky': '*'
-      '@alexaegis/md': '*'
+      '@alexaegis/setup-husky': '*'
+      '@alexaegis/setup-md': '*'
       '@alexaegis/setup-prettier': '*'
+      '@alexaegis/setup-ts': '*'
+      '@alexaegis/setup-turbo': '*'
       '@alexaegis/ts': '*'
-      '@alexaegis/turbo': '*'
       '@types/node': ^18.11.18
       npm-check-updates: ^16.6.3
     dependencies:
       '@alexaegis/common': 0.0.2
     devDependencies:
       '@alexaegis/eslint-config-core': link:packages/eslint-config-core
-      '@alexaegis/husky': link:packages/husky
-      '@alexaegis/md': link:packages/md
+      '@alexaegis/setup-husky': link:packages/setup-husky
+      '@alexaegis/setup-md': link:packages/setup-md
       '@alexaegis/setup-prettier': link:packages/setup-prettier
+      '@alexaegis/setup-ts': link:packages/setup-ts
+      '@alexaegis/setup-turbo': link:packages/setup-turbo
       '@alexaegis/ts': link:packages/ts
-      '@alexaegis/turbo': link:packages/turbo
       '@types/node': 18.11.18
       npm-check-updates: 16.6.3
 
   apps/svelte:
     specifiers:
       '@alexaegis/common': '*'
-      '@alexaegis/internal': '*'
       '@alexaegis/ts': '*'
       '@alexaegis/vite': '*'
       '@sveltejs/vite-plugin-svelte': ^2.0.2
@@ -41,7 +42,6 @@ importers:
       vite: ^4.0.4
     dependencies:
       '@alexaegis/common': 0.0.2
-      '@alexaegis/internal': link:../../packages/internal
     devDependencies:
       '@alexaegis/ts': link:../../packages/ts
       '@alexaegis/vite': link:../../packages/vite
@@ -53,16 +53,6 @@ importers:
       tslib: 2.5.0
       typescript: 4.9.5
       vite: 4.0.4
-
-  packages/editorconfig:
-    specifiers:
-      '@alexaegis/vite': '*'
-      '@types/node': ^18.11.18
-      typescript: 4.9.5
-    devDependencies:
-      '@alexaegis/vite': link:../vite
-      '@types/node': 18.11.18
-      typescript: 4.9.5
 
   packages/eslint-config-core:
     specifiers:
@@ -98,58 +88,6 @@ importers:
     devDependencies:
       '@types/node': 18.11.18
 
-  packages/git:
-    specifiers:
-      '@alexaegis/vite': '*'
-      '@types/node': ^18.11.18
-      typescript: 4.9.5
-    devDependencies:
-      '@alexaegis/vite': link:../vite
-      '@types/node': 18.11.18
-      typescript: 4.9.5
-
-  packages/husky:
-    specifiers:
-      '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.4
-      '@types/node': ^18.11.18
-      husky: ^8.0.3
-      typescript: 4.9.5
-    dependencies:
-      '@alexaegis/workspace-tools': 0.0.4
-      husky: 8.0.3
-    devDependencies:
-      '@alexaegis/vite': link:../vite
-      '@types/node': 18.11.18
-      typescript: 4.9.5
-
-  packages/internal:
-    specifiers:
-      '@types/node': ^18.11.18
-      prettier: ^2.8.3
-      typescript: 4.9.5
-    dependencies:
-      prettier: 2.8.3
-    devDependencies:
-      '@types/node': 18.11.18
-      typescript: 4.9.5
-
-  packages/md:
-    specifiers:
-      markdownlint-cli: ^0.33.0
-      remark-cli: ^11.0.0
-      remark-lint: ^9.1.1
-      remark-lint-maximum-line-length: ^3.1.2
-      remark-preset-lint-consistent: ^5.1.1
-      remark-preset-lint-recommended: ^6.1.2
-    dependencies:
-      markdownlint-cli: 0.33.0
-      remark-cli: 11.0.0
-      remark-lint: 9.1.1
-      remark-lint-maximum-line-length: 3.1.2
-      remark-preset-lint-consistent: 5.1.1
-      remark-preset-lint-recommended: 6.1.2
-
   packages/nuke:
     specifiers:
       '@alexaegis/common': 0.0.4
@@ -177,6 +115,67 @@ importers:
       '@types/yargs': 17.0.20
       typescript: 4.9.5
 
+  packages/setup-editorconfig:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-eslint:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-git:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-husky:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@alexaegis/workspace-tools': 0.0.4
+      '@types/node': ^18.11.18
+      husky: ^8.0.3
+      typescript: 4.9.5
+    dependencies:
+      '@alexaegis/workspace-tools': 0.0.4
+      husky: 8.0.3
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-md:
+    specifiers:
+      markdownlint-cli: ^0.33.0
+      remark-cli: ^11.0.0
+      remark-lint: ^9.1.1
+      remark-lint-maximum-line-length: ^3.1.2
+      remark-preset-lint-consistent: ^5.1.1
+      remark-preset-lint-recommended: ^6.1.2
+    dependencies:
+      markdownlint-cli: 0.33.0
+      remark-cli: 11.0.0
+      remark-lint: 9.1.1
+      remark-lint-maximum-line-length: 3.1.2
+      remark-preset-lint-consistent: 5.1.1
+      remark-preset-lint-recommended: 6.1.2
+
   packages/setup-prettier:
     specifiers:
       '@alexaegis/logging': 0.0.4
@@ -202,7 +201,7 @@ importers:
       '@types/yargs': 17.0.20
       typescript: 4.9.5
 
-  packages/standard-version:
+  packages/setup-standard-version:
     specifiers:
       '@alexaegis/vite': '*'
       '@types/node': ^18.11.18
@@ -212,7 +211,7 @@ importers:
       '@types/node': 18.11.18
       typescript: 4.9.5
 
-  packages/stylelint:
+  packages/setup-stylelint:
     specifiers:
       '@alexaegis/vite': '*'
       '@types/node': ^18.11.18
@@ -220,6 +219,59 @@ importers:
       typescript: 4.9.5
     dependencies:
       stylelint: 14.16.1
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-ts:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-turbo:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      turbo: ^1.7.0
+      typescript: 4.9.5
+    dependencies:
+      turbo: 1.7.0
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-vite:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/setup-vitest:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@types/node': 18.11.18
+      typescript: 4.9.5
+
+  packages/standard-version:
+    specifiers:
+      '@alexaegis/vite': '*'
+      '@types/node': ^18.11.18
+      typescript: 4.9.5
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@types/node': 18.11.18
@@ -240,19 +292,6 @@ importers:
       ts-node: 10.9.1_bdgp3l2zgaopogaavxusmetvge
       typescript: 4.9.5
       vite: 4.0.4_@types+node@18.11.18
-
-  packages/turbo:
-    specifiers:
-      '@alexaegis/vite': '*'
-      '@types/node': ^18.11.18
-      turbo: ^1.7.0
-      typescript: 4.9.5
-    dependencies:
-      turbo: 1.7.0
-    devDependencies:
-      '@alexaegis/vite': link:../vite
-      '@types/node': 18.11.18
-      typescript: 4.9.5
 
   packages/vite:
     specifiers:

@@ -1,0 +1,48 @@
+{
+	"name": "@alexaegis/setup-turbo",
+	"description": "My turbo config",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"email": "alexaegis@gmail.com",
+		"name": "AlexAegis",
+		"url": "https://www.github.com/AlexAegis"
+	},
+	"homepage": "https://www.github.com/AlexAegis/js#readme",
+	"repository": "github:AlexAegis/js",
+	"bugs": {
+		"url": "https://www.github.com/AlexAegis/js/issues"
+	},
+	"keywords": [
+		"turbo",
+		"ts",
+		"typescript",
+		"js",
+		"javascript"
+	],
+	"private": false,
+	"config": {
+		"engine-strict": false
+	},
+	"scripts": {
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:tsc": "tsc --noEmit",
+		"lint:format": "prettier --check ."
+	},
+	"sideEffects": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"turbo": "^1.7.0"
+	},
+	"devDependencies": {
+		"typescript": "4.9.5",
+		"@types/node": "^18.11.18",
+		"@alexaegis/vite": "*"
+	},
+	"bin": {
+		"turbo": "node_modules/turbo/bin/turbo"
+	}
+}

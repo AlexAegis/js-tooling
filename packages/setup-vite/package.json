@@ -1,0 +1,22 @@
+{
+	"name": "@alexaegis/setup-vite",
+	"description": "Setup vite",
+	"version": "0.0.1",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"format": "prettier --write .",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:tsc": "tsc --noEmit",
+		"lint:format": "prettier --check ."
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"typescript": "4.9.5",
+		"@types/node": "^18.11.18",
+		"@alexaegis/vite": "*"
+	}
+}
