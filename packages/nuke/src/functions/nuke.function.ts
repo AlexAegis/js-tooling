@@ -1,5 +1,4 @@
 import { dry } from '@alexaegis/common';
-import { Logger } from '@alexaegis/logging';
 import { collectWorkspacePackages } from '@alexaegis/workspace-tools';
 import { globby } from 'globby';
 import { existsSync } from 'node:fs';
@@ -14,7 +13,6 @@ import { normalizeNukeOptions, NukeOptions } from './nuke.function.options.js';
  */
 export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	const options = normalizeNukeOptions(rawOptions);
-	const logger = new Logger(options);
 
 	const allPackageDirectories = await collectWorkspacePackages(options);
 
@@ -37,7 +35,7 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	const rootPackageDirectory = allPackageDirectories[0];
 
 	if (!rootPackageDirectory) {
-		logger.error('Not inside a workspace!');
+		options.logger.error('Not inside a workspace!');
 		return;
 	}
 
@@ -63,7 +61,9 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 		everyNukeTarget
 			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {
-				logger.warning('obliterating: ' + relative(rootPackageDirectory.path, nukeTarget));
+				options.logger.warn(
+					'obliterating: ' + relative(rootPackageDirectory.path, nukeTarget)
+				);
 				return dryRm(nukeTarget, { recursive: true }).catch(() => false);
 			})
 	);

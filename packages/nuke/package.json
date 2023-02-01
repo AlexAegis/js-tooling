@@ -9,7 +9,6 @@
 		"name": "AlexAegis",
 		"url": "https://www.github.com/AlexAegis"
 	},
-	"homepage": "https://www.github.com/AlexAegis/js#readme",
 	"repository": "github:AlexAegis/js",
 	"bugs": {
 		"url": "https://www.github.com/AlexAegis/js/issues"
@@ -50,10 +49,11 @@
 		"nuke": "./shims/nuke.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/common": "0.0.4",
-		"@alexaegis/fs": "0.0.4",
-		"@alexaegis/logging": "0.0.4",
-		"@alexaegis/workspace-tools": "0.0.4",
+		"@alexaegis/cli-tools": "0.0.6",
+		"@alexaegis/common": "0.0.6",
+		"@alexaegis/fs": "0.0.6",
+		"@alexaegis/logging": "0.0.6",
+		"@alexaegis/workspace-tools": "0.0.6",
 		"globby": "^13.1.3",
 		"kolorist": "^1.6.0",
 		"yargs": "^17.6.2"
@@ -61,7 +61,7 @@
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@types/node": "^18.11.18",
-		"@types/yargs": "17.0.20",
+		"@types/yargs": "17.0.22",
 		"typescript": "^4.9.5"
 	}
 }

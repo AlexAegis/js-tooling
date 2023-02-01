@@ -55,7 +55,7 @@
 		"lint:rmd:workspace": "remark --frail --quiet --no-stdout *.md",
 		"lint:format": "turbo run lint:format --concurrency 6",
 		"lint:format:workspace": "prettier --check *.{json,ts,js,mjs,md,yml,yaml}",
-		"postinstall": "husky install && turbo run build",
+		"postinstall": "husky install",
 		"ncu": "ncu --deep --peer --upgrade",
 		"format": "prettier --write .",
 		"nuke": "nuke"

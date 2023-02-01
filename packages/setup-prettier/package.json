@@ -54,8 +54,8 @@
 		"prettier": "node_modules/prettier/bin-prettier.js"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "0.0.4",
-		"@alexaegis/workspace-tools": "0.0.4",
+		"@alexaegis/logging": "0.0.6",
+		"@alexaegis/workspace-tools": "0.0.6",
 		"prettier": "^2.8.3",
 		"yargs": "^17.6.2"
 	},
@@ -64,7 +64,7 @@
 		"@alexaegis/vite": "*",
 		"@types/node": "^18.11.18",
 		"@types/prettier": "2.7.2",
-		"@types/yargs": "17.0.20",
+		"@types/yargs": "17.0.22",
 		"typescript": "4.9.5"
 	}
 }

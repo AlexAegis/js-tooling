@@ -74,7 +74,7 @@
 		"svelte": "^3.55.1",
 		"vite": "4.0.4",
 		"vite-plugin-autolib": "^0.0.6",
-		"vite-plugin-dts": "^1.7.1",
+		"vite-plugin-dts": "^1.7.2",
 		"vite-plugin-static-copy": "0.13.0"
 	},
 	"devDependencies": {

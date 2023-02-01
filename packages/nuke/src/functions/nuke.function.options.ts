@@ -1,8 +1,9 @@
-import { DryOption, normalizeDryOption } from '@alexaegis/common';
-import { LoggerOptions, NormalizedLoggerOptions, normalizeLoggerOptions } from '@alexaegis/logging';
+import { DryOption, NormalizedDryOption, normalizeDryOption } from '@alexaegis/common';
+import { LoggerOption, NormalizedLoggerOption, normalizeLoggerOption } from '@alexaegis/logging';
 import {
 	CollectWorkspacePackagesOptions,
 	normalizeCollectWorkspacePackagesOptions,
+	NormalizedCollectWorkspacePackagesOptions,
 } from '@alexaegis/workspace-tools';
 
 export const DEFAULT_NUKE_LIST: string[] = [
@@ -16,10 +17,7 @@ export const DEFAULT_NUKE_LIST: string[] = [
 
 export const DEFAULT_NUKE_GLOBS: string[] = ['./vite.config.ts.timestamp*'];
 
-export interface NukeOptions
-	extends DryOption,
-		CollectWorkspacePackagesOptions,
-		Omit<LoggerOptions, 'domain'> {
+interface NukeOptionsOnly {
 	/**
 	 * Don't remove `node_modules` directories but try to clean them up
 	 *
@@ -36,7 +34,7 @@ export interface NukeOptions
 	 *
 	 * @default DEFAULT_NUKE_LIST
 	 */
-	nukeList?: string[];
+	nukeList?: string[] | undefined;
 
 	/**
 	 * Globs to also remove.
@@ -46,14 +44,14 @@ export interface NukeOptions
 	 *
 	 * @default DEFAULT_NUKE_GLOBS
 	 */
-	nukeGlobs?: string[];
+	nukeGlobs?: string[] | undefined;
 
 	/**
 	 * Additional globs to nuke if you don't want to overwrite the default ones
 	 *
 	 * @default undefined
 	 */
-	nukeMoreGlobs?: string[];
+	nukeMoreGlobs?: string[] | undefined;
 
 	/**
 	 * These will be nuked too. Same role as `nukeList` but defining this
@@ -61,23 +59,36 @@ export interface NukeOptions
 	 *
 	 * @default []
 	 */
-	nukeMore?: string[];
+	nukeMore?: string[] | undefined;
 
 	/**
 	 * If it shouldn't nuke a specific package, add them here.
 	 *
 	 * @default []
 	 */
-	dontNukeIn?: (string | RegExp)[];
+	dontNukeIn?: (string | RegExp)[] | undefined;
 }
+export type NukeOptions = NukeOptionsOnly &
+	DryOption &
+	CollectWorkspacePackagesOptions &
+	LoggerOption;
 
-export type NormalizedNukeOptions = Required<NukeOptions> & NormalizedLoggerOptions;
+/**
+ * TODO: use core
+ * @deprecated use core
+ */
+type Defined<T> = { [P in keyof T]-?: NonNullable<T[P]> };
+
+export type NormalizedNukeOptions = Defined<NukeOptionsOnly> &
+	NormalizedDryOption &
+	NormalizedCollectWorkspacePackagesOptions &
+	NormalizedLoggerOption;
 
 export const normalizeNukeOptions = (options?: NukeOptions): NormalizedNukeOptions => {
 	return {
 		...normalizeCollectWorkspacePackagesOptions(options),
 		...normalizeDryOption(options),
-		...normalizeLoggerOptions({ ...options, domain: '☢ nuke' }),
+		...normalizeLoggerOption(options),
 		skipNodeModules: options?.skipNodeModules ?? false,
 		nukeList: options?.nukeList ?? DEFAULT_NUKE_LIST,
 		nukeGlobs: options?.nukeGlobs ?? DEFAULT_NUKE_GLOBS,

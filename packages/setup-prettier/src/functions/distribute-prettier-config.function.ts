@@ -1,4 +1,4 @@
-import { Logger } from '@alexaegis/logging';
+import { createLogger } from '@alexaegis/logging';
 import {
 	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
@@ -17,7 +17,7 @@ export const distributePrettierConfig = async (
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
-	const logger = new Logger({ domain: 'distribute:prettier' });
+	const logger = createLogger({ name: 'distribute:prettier' });
 
 	if (!workspaceRoot) {
 		console.warn("can't distribute prettier config, not in a workspace!");
@@ -31,14 +31,14 @@ export const distributePrettierConfig = async (
 	await Promise.all([
 		distributeFileInWorkspace(prettierrcPath, {
 			...options,
-			logger: logger.subDomain('rc'),
+			logger: logger.getSubLogger({ name: 'rc' }),
 			onlyWorkspaceRoot: true,
 		}),
 		distributeFileInWorkspace(prettierIgnorePath, {
 			...options,
-			logger: logger.subDomain('ignore'),
+			logger: logger.getSubLogger({ name: 'ignore' }),
 		}),
 	]);
 
-	logger.log(`finished in ${Math.floor(performance.now() - startTime)}ms`);
+	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);
 };
