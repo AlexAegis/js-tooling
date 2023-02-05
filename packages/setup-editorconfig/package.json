@@ -51,14 +51,14 @@
 		"./static/.editorconfig": "./static/.editorconfig"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.11",
-		"@alexaegis/logging": "0.0.11",
+		"@alexaegis/cli-tools": "0.0.12",
+		"@alexaegis/logging": "0.0.12",
 		"@alexaegis/setup-eslint": "*",
 		"@alexaegis/setup-prettier": "*",
 		"@alexaegis/setup-ts": "*",
 		"@alexaegis/setup-vite": "*",
 		"@alexaegis/vite": "*",
-		"@alexaegis/workspace-tools": "0.0.11"
+		"@alexaegis/workspace-tools": "0.0.12"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

@@ -52,11 +52,11 @@
 		"nuke": "./shims/nuke.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.11",
-		"@alexaegis/common": "0.0.11",
-		"@alexaegis/fs": "0.0.11",
-		"@alexaegis/logging": "0.0.11",
-		"@alexaegis/workspace-tools": "0.0.11",
+		"@alexaegis/cli-tools": "0.0.12",
+		"@alexaegis/common": "0.0.12",
+		"@alexaegis/fs": "0.0.12",
+		"@alexaegis/logging": "0.0.12",
+		"@alexaegis/workspace-tools": "0.0.12",
 		"globby": "^13.1.3",
 		"kolorist": "^1.7.0",
 		"yargs": "^17.6.2"

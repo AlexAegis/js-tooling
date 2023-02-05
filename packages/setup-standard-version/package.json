@@ -46,9 +46,9 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.11",
-		"@alexaegis/logging": "0.0.11",
-		"@alexaegis/workspace-tools": "0.0.11"
+		"@alexaegis/cli-tools": "0.0.12",
+		"@alexaegis/logging": "0.0.12",
+		"@alexaegis/workspace-tools": "0.0.12"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

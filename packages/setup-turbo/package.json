@@ -48,9 +48,9 @@
 		"turbo": "node_modules/turbo/bin/turbo"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.11",
-		"@alexaegis/logging": "0.0.11",
-		"@alexaegis/workspace-tools": "0.0.11",
+		"@alexaegis/cli-tools": "0.0.12",
+		"@alexaegis/logging": "0.0.12",
+		"@alexaegis/workspace-tools": "0.0.12",
 		"turbo": "^1.7.3"
 	},
 	"devDependencies": {
