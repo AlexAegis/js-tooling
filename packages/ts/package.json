@@ -23,7 +23,6 @@
 		"typescript"
 	],
 	"type": "module",
-	"sideEffects": false,
 	"config": {
 		"engine-strict": false
 	},
@@ -31,11 +30,13 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "vite build",
-		"format": "prettier --write .",
+		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/ts",
+		"build_": "vite build",
 		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "prettier --check .",
-		"lint:tsc": "tsc --noEmit"
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/ts",
+		"lint:format_": "prettier --check .",
+		"lint:tsc": "tsc --noEmit",
+		"format": "prettier --write ."
 	},
 	"exports": {
 		".": {
@@ -58,9 +59,9 @@
 	"dependencies": {
 		"@alexaegis/vite": "*",
 		"@tsconfig/svelte": "*",
-		"@types/node": "^18.11.18",
+		"@types/node": "^18.11.19",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.9.5",
-		"vite": "^4.0.4"
+		"vite": "^4.1.1"
 	}
 }

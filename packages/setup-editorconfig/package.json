@@ -3,6 +3,7 @@
 	"description": "My editorconfig",
 	"version": "0.0.1",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -14,34 +15,54 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"repo",
-		"turbo",
 		"eslint",
-		"tsconfig",
-		"prettier",
-		"ts",
-		"typescript",
+		"javascript",
 		"js",
-		"javascript"
+		"prettier",
+		"repo",
+		"ts",
+		"tsconfig",
+		"turbo",
+		"typescript"
 	],
-	"private": false,
+	"type": "module",
 	"config": {
 		"engine-strict": false
 	},
-	"scripts": {
-		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:tsc": "tsc --noEmit",
-		"lint:format": "prettier --check ."
-	},
-	"sideEffects": false,
 	"publishConfig": {
 		"access": "public"
 	},
-	"dependencies": {},
+	"scripts": {
+		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/editorconfig",
+		"build_": "vite build",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/editorconfig",
+		"lint:format_": "prettier --check .",
+		"lint:tsc": "tsc --noEmit",
+		"format": "prettier --write ."
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./readme": "./readme.md",
+		"./static/.editorconfig": "./static/.editorconfig"
+	},
+	"dependencies": {
+		"@alexaegis/cli-tools": "0.0.11",
+		"@alexaegis/logging": "0.0.11",
+		"@alexaegis/setup-eslint": "*",
+		"@alexaegis/setup-prettier": "*",
+		"@alexaegis/setup-ts": "*",
+		"@alexaegis/setup-vite": "*",
+		"@alexaegis/vite": "*",
+		"@alexaegis/workspace-tools": "0.0.11"
+	},
 	"devDependencies": {
-		"@types/node": "^18.11.18",
-		"typescript": "4.9.5",
-		"@alexaegis/vite": "*"
+		"@alexaegis/vite": "*",
+		"@types/node": "^18.11.19",
+		"typescript": "4.9.5"
 	}
 }

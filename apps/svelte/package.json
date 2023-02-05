@@ -1,22 +1,25 @@
 {
 	"name": "svelte",
-	"private": true,
 	"version": "0.0.0",
+	"private": true,
 	"type": "module",
 	"scripts": {
-		"start": "vite",
 		"build": "vite build",
-		"preview": "vite preview",
 		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter svelte",
+		"lint:format_": "prettier --check .",
+		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json",
 		"lint:tsc": "tsc --noEmit",
-		"lint:format": "prettier --check .",
-		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json"
+		"format": "prettier --write .",
+		"preview": "vite preview",
+		"start": "vite"
 	},
 	"dependencies": {
 		"@alexaegis/common": "*"
 	},
 	"devDependencies": {
-		"vite": "^4.0.4",
+		"@alexaegis/ts": "*",
+		"@alexaegis/vite": "*",
 		"@sveltejs/vite-plugin-svelte": "^2.0.2",
 		"@tsconfig/svelte": "^3.0.0",
 		"svelte": "^3.55.1",
@@ -24,7 +27,6 @@
 		"svelte-preprocess": "^5.0.1",
 		"tslib": "^2.5.0",
 		"typescript": "^4.9.5",
-		"@alexaegis/ts": "*",
-		"@alexaegis/vite": "*"
+		"vite": "^4.1.1"
 	}
 }

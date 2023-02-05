@@ -5,7 +5,6 @@
 		"rootDir": "../../",
 		"outDir": "./dist/out-tsc"
 	},
-	"files": [".eslintrc.cjs"],
 	"include": ["**/*"],
 	"exclude": ["node_modules", "dist", "shims"]
 }

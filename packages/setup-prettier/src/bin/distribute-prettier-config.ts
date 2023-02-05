@@ -1,18 +1,13 @@
-import {
-	DistributeInWorkspaceOptions,
-	yargsForDistributeInWorkspaceOptions,
-} from '@alexaegis/workspace-tools';
-import yargs, { Argv } from 'yargs';
+import { YargsBuilder, yargsForDistributeInWorkspaceOptions } from '@alexaegis/cli-tools';
+import type { DistributeInWorkspaceOptions, PackageJson } from '@alexaegis/workspace-tools';
+import type { Argv } from 'yargs';
+import packageJson from '../../package.json';
 import { distributePrettierConfig } from '../functions/index.js';
 
-import packageJson from '../../package.json';
-
-const yarguments: Argv<DistributeInWorkspaceOptions> = yargsForDistributeInWorkspaceOptions(
-	yargs(process.argv.splice(2))
-		.version(packageJson.version)
-		.epilogue(`${packageJson.name}@${packageJson.version} home: ${packageJson.homepage}`)
-		.help()
-		.completion()
-);
+const yarguments: Argv<DistributeInWorkspaceOptions> = YargsBuilder.withDefaults(
+	packageJson as PackageJson
+)
+	.add(yargsForDistributeInWorkspaceOptions)
+	.build();
 
 (async () => await distributePrettierConfig(await yarguments.parseAsync()))();

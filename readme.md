@@ -12,6 +12,13 @@ not a template repository!
 
 > If you wish to have something like this yourself, fork this repo!
 
+## setup and non-setup packages
+
+Every `setup-*` package's job is to distribute files and `package.json` entries
+in the workspace on `postinstall`. If a setup has some unique dependencies like
+an `eslint` or `ts` config, those are from a separate package, so they can be
+used without the "auto-distributor".
+
 ## config providers
 
 - [editorconfig](packages/editorconfig/)

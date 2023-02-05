@@ -22,7 +22,6 @@
 		"vitest"
 	],
 	"type": "module",
-	"sideEffects": false,
 	"config": {
 		"engine-strict": false
 	},
@@ -30,10 +29,13 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "vite build",
+		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/vitest",
+		"build_": "vite build",
 		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "prettier --check .",
-		"lint:tsc": "tsc --noEmit"
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vitest",
+		"lint:format_": "prettier --check .",
+		"lint:tsc": "tsc --noEmit",
+		"format": "prettier --write ."
 	},
 	"exports": {
 		".": {
@@ -47,15 +49,19 @@
 		"vitest": "node_modules/vitest/vitest.mjs"
 	},
 	"dependencies": {
-		"@vitest/coverage-c8": "^0.28.3",
-		"@vitest/ui": "^0.28.3",
-		"vitest": "^0.28.3"
+		"@vitest/coverage-c8": "^0.28.4",
+		"@vitest/ui": "^0.28.4",
+		"vitest": "^0.28.4"
 	},
 	"peerDependencies": {
 		"vite": "^3.2.4",
 		"vitest": "^0.27.1"
 	},
 	"devDependencies": {
+		"@alexaegis/setup-eslint": "*",
+		"@alexaegis/setup-prettier": "*",
+		"@alexaegis/setup-ts": "*",
+		"@alexaegis/setup-vite": "*",
 		"@alexaegis/vite": "*",
 		"tslib": "^2.5.0"
 	}

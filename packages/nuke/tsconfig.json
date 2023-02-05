@@ -6,7 +6,7 @@
 		"rootDir": "../../",
 		"outDir": "./dist/out-tsc"
 	},
-	"files": [".eslintrc.cjs", "package.json"],
+	"files": ["package.json"],
 	"include": ["**/*.ts"],
 	"exclude": ["node_modules", "dist", "coverage"]
 }

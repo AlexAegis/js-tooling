@@ -3,6 +3,7 @@
 	"description": "Husky, lint-staged and commitlint stuff",
 	"version": "0.0.1",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -14,51 +15,56 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"husky",
-		"lint-staged",
 		"commitlint",
+		"husky",
+		"javascript",
+		"js",
 		"link",
+		"lint-staged",
 		"symlink",
 		"ts",
-		"typescript",
-		"js",
-		"javascript"
+		"typescript"
 	],
-	"private": false,
+	"type": "module",
 	"config": {
 		"engine-strict": false
-	},
-	"scripts": {
-		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:tsc": "tsc --noEmit",
-		"lint:format": "prettier --check ."
-	},
-	"sideEffects": false,
-	"main": "./index.js",
-	"module": "./index.es.js",
-	"exports": {
-		".": {
-			"types": "./index.d.ts",
-			"node": "./index.js",
-			"require": "./index.js",
-			"import": "./index.es.js",
-			"default": "./index.es.js"
-		}
 	},
 	"publishConfig": {
 		"access": "public"
 	},
-	"dependencies": {
-		"@alexaegis/workspace-tools": "0.0.6",
-		"husky": "^8.0.3"
+	"scripts": {
+		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/setup-husky",
+		"build_": "vite build",
+		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/setup-husky",
+		"lint:format_": "prettier --check .",
+		"lint:tsc": "tsc --noEmit",
+		"format": "prettier --write ."
 	},
-	"devDependencies": {
-		"@types/node": "^18.11.18",
-		"typescript": "4.9.5",
-		"@alexaegis/vite": "*"
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"husky": "node_modules/husky/lib/bin.js"
+	},
+	"dependencies": {
+		"@alexaegis/cli-tools": "0.0.11",
+		"@alexaegis/logging": "0.0.11",
+		"@alexaegis/setup-eslint": "*",
+		"@alexaegis/setup-prettier": "*",
+		"@alexaegis/setup-ts": "*",
+		"@alexaegis/setup-vite": "*",
+		"@alexaegis/workspace-tools": "0.0.11",
+		"husky": "^8.0.3"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "*",
+		"@types/node": "^18.11.19",
+		"typescript": "4.9.5"
 	}
 }

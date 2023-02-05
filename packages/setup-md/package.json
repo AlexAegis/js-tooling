@@ -3,6 +3,7 @@
 	"description": "My markdown config",
 	"version": "0.0.1",
 	"license": "MIT",
+	"private": false,
 	"author": {
 		"email": "alexaegis@gmail.com",
 		"name": "AlexAegis",
@@ -14,22 +15,43 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
+		"javascript",
+		"js",
 		"markdown",
 		"ts",
-		"typescript",
-		"js",
-		"javascript"
+		"typescript"
 	],
-	"private": false,
 	"type": "module",
-	"scripts": {
-		"lint:format": "prettier --check ."
-	},
-	"sideEffects": false,
 	"publishConfig": {
 		"access": "public"
 	},
+	"scripts": {
+		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/setup-md",
+		"build_": "vite build",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/setup-md",
+		"lint:format_": "prettier --check .",
+		"format": "prettier --write ."
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./readme": "./readme.md"
+	},
+	"bin": {
+		"markdownlint": "node_modules/markdownlint-cli/markdownlint.js",
+		"remark": "node_modules/remark-cli/cli.js"
+	},
 	"dependencies": {
+		"@alexaegis/cli-tools": "0.0.11",
+		"@alexaegis/logging": "0.0.11",
+		"@alexaegis/setup-eslint": "*",
+		"@alexaegis/setup-prettier": "*",
+		"@alexaegis/setup-ts": "*",
+		"@alexaegis/setup-vite": "*",
+		"@alexaegis/workspace-tools": "0.0.11",
 		"markdownlint-cli": "^0.33.0",
 		"remark-cli": "^11.0.0",
 		"remark-lint": "^9.1.1",
@@ -37,8 +59,7 @@
 		"remark-preset-lint-consistent": "^5.1.1",
 		"remark-preset-lint-recommended": "^6.1.2"
 	},
-	"bin": {
-		"markdownlint": "node_modules/markdownlint-cli/markdownlint.js",
-		"remark": "node_modules/remark-cli/cli.js"
+	"devDependencies": {
+		"@alexaegis/vite": "*"
 	}
 }

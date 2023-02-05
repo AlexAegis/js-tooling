@@ -22,7 +22,6 @@
 		"typescript"
 	],
 	"type": "module",
-	"sideEffects": false,
 	"config": {
 		"engine-strict": false
 	},
@@ -31,11 +30,15 @@
 	},
 	"directories": {},
 	"scripts": {
-		"build": "vite build",
-		"format": "prettier --write .",
-		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "prettier --check .",
-		"lint:tsc": "tsc --noEmit"
+		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/nuke",
+		"build_": "vite build",
+		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/nuke",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/nuke",
+		"lint:format_": "prettier --check .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/nuke",
+		"lint:tsc_": "tsc --noEmit",
+		"format": "prettier --write ."
 	},
 	"exports": {
 		".": {
@@ -49,18 +52,22 @@
 		"nuke": "./shims/nuke.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.6",
-		"@alexaegis/common": "0.0.6",
-		"@alexaegis/fs": "0.0.6",
-		"@alexaegis/logging": "0.0.6",
-		"@alexaegis/workspace-tools": "0.0.6",
+		"@alexaegis/cli-tools": "0.0.11",
+		"@alexaegis/common": "0.0.11",
+		"@alexaegis/fs": "0.0.11",
+		"@alexaegis/logging": "0.0.11",
+		"@alexaegis/workspace-tools": "0.0.11",
 		"globby": "^13.1.3",
-		"kolorist": "^1.6.0",
+		"kolorist": "^1.7.0",
 		"yargs": "^17.6.2"
 	},
 	"devDependencies": {
+		"@alexaegis/setup-eslint": "*",
+		"@alexaegis/setup-prettier": "*",
+		"@alexaegis/setup-ts": "*",
+		"@alexaegis/setup-vite": "*",
 		"@alexaegis/vite": "*",
-		"@types/node": "^18.11.18",
+		"@types/node": "^18.11.19",
 		"@types/yargs": "17.0.22",
 		"typescript": "^4.9.5"
 	}

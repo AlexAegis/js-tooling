@@ -30,7 +30,6 @@
 		"forceConsistentCasingInFileNames": true,
 		"importsNotUsedAsValues": "error"
 	},
-	"files": [".eslintrc.cjs"],
 	"include": [],
 	"exclude": ["node_modules", "tmp", "dist", "coverage"]
 }
