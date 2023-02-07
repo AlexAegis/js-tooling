@@ -52,22 +52,18 @@
 		"nuke": "./shims/nuke.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.12",
-		"@alexaegis/common": "0.0.12",
-		"@alexaegis/fs": "0.0.12",
-		"@alexaegis/logging": "0.0.12",
-		"@alexaegis/workspace-tools": "0.0.12",
+		"@alexaegis/cli-tools": "0.0.15",
+		"@alexaegis/common": "0.0.15",
+		"@alexaegis/fs": "0.0.15",
+		"@alexaegis/logging": "0.0.15",
+		"@alexaegis/workspace-tools": "0.0.15",
 		"globby": "^13.1.3",
 		"kolorist": "^1.7.0",
 		"yargs": "^17.6.2"
 	},
 	"devDependencies": {
-		"@alexaegis/setup-eslint": "*",
-		"@alexaegis/setup-prettier": "*",
-		"@alexaegis/setup-ts": "*",
-		"@alexaegis/setup-vite": "*",
 		"@alexaegis/vite": "*",
-		"@types/node": "^18.11.19",
+		"@types/node": "^18.13.0",
 		"@types/yargs": "17.0.22",
 		"typescript": "^4.9.5"
 	}

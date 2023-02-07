@@ -54,7 +54,7 @@ const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 	)
 	.add(yargsForLogLevelOption);
 
-(async () => {
+void (async () => {
 	const options = await yarguments.build().parseAsync();
 	const logger = createLogger({ name: 'nuke ☢', minLevel: options.logLevel ?? LogLevel.INFO });
 	await nuke({ ...options, logger });

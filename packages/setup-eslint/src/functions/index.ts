@@ -1,1 +1,1 @@
-export * from './distribute-eslint-config.function.js';
+export * from './setup-eslint.function.js';

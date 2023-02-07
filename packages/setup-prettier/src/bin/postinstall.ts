@@ -1,1 +1,1 @@
-export * from './distribute-prettier-config.js';
+export * from './setup-prettier.js';

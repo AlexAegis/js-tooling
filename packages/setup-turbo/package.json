@@ -48,14 +48,14 @@
 		"turbo": "node_modules/turbo/bin/turbo"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.12",
-		"@alexaegis/logging": "0.0.12",
-		"@alexaegis/workspace-tools": "0.0.12",
+		"@alexaegis/cli-tools": "0.0.15",
+		"@alexaegis/logging": "0.0.15",
+		"@alexaegis/workspace-tools": "0.0.15",
 		"turbo": "^1.7.3"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
-		"@types/node": "^18.11.19",
+		"@types/node": "^18.13.0",
 		"typescript": "4.9.5"
 	}
 }

@@ -3,7 +3,8 @@ import { defineConfig, LibraryFormats, mergeConfig } from 'vite';
 export const DEFAULT_OUT_DIR = './dist';
 export const DEFAULT_ENTRY = './src/index.ts';
 export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
-export const DEFAULT_BUILD_TARGET = 'es2020';
+export const DEFAULT_BUILD_TARGET = 'es2022';
+
 /**
  * https://vitejs.dev/config/
  */

@@ -58,10 +58,6 @@
 		"vitest": "^0.27.1"
 	},
 	"devDependencies": {
-		"@alexaegis/setup-eslint": "*",
-		"@alexaegis/setup-prettier": "*",
-		"@alexaegis/setup-ts": "*",
-		"@alexaegis/setup-vite": "*",
 		"@alexaegis/vite": "*",
 		"tslib": "^2.5.0"
 	}

@@ -53,6 +53,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
-		"@types/node": "^18.11.19"
+		"@types/eslint": "^8.21.0",
+		"@types/node": "^18.13.0"
 	}
 }

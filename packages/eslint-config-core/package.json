@@ -52,8 +52,8 @@
 		"eslint": "node_modules/eslint/bin/eslint.js"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.50.0",
-		"@typescript-eslint/parser": "^5.50.0",
+		"@typescript-eslint/eslint-plugin": "^5.51.0",
+		"@typescript-eslint/parser": "^5.51.0",
 		"eslint": "^8.33.0",
 		"eslint-config-next": "^13.1.6",
 		"eslint-config-prettier": "^8.6.0",
@@ -64,6 +64,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
-		"@types/node": "^18.11.19"
+		"@types/eslint": "^8.21.0",
+		"@types/node": "^18.13.0"
 	}
 }

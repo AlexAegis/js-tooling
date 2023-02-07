@@ -1,1 +1,1 @@
-export const distributeEditorConfig = () => console.log('editorconfig');
+export * from './functions/index.js';
