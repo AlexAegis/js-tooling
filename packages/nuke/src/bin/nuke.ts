@@ -5,7 +5,7 @@ import {
 	yargsForCollectWorkspacePackagesOptions,
 	yargsForLogLevelOption,
 } from '@alexaegis/cli-tools';
-import { createLogger, LogLevel } from '@alexaegis/logging';
+import { createLogger } from '@alexaegis/logging';
 import type { PackageJson } from '@alexaegis/workspace-tools';
 
 import packageJson from '../../package.json';
@@ -56,6 +56,6 @@ const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 
 void (async () => {
 	const options = await yarguments.build().parseAsync();
-	const logger = createLogger({ name: 'nuke ☢', minLevel: options.logLevel ?? LogLevel.INFO });
+	const logger = createLogger({ name: 'nuke ☢', minLevel: options.logLevel });
 	await nuke({ ...options, logger });
 })();

@@ -5,7 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
-		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:es": "turbo run lint:es_ --concurrency 6 --filter svelte",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter svelte",
 		"lint:format_": "prettier --check .",
 		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json",

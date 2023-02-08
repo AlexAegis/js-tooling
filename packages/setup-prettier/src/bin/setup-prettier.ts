@@ -10,4 +10,4 @@ const yarguments: Argv<DistributeInWorkspaceOptions> = YargsBuilder.withDefaults
 	.add(yargsForDistributeInWorkspaceOptions)
 	.build();
 
-(async () => await distributePrettierConfig(await yarguments.parseAsync()))();
+void (async () => await distributePrettierConfig(await yarguments.parseAsync()))();

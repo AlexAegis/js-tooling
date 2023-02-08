@@ -8,4 +8,4 @@ const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 	.add(yargsForDistributeInWorkspaceOptions)
 	.build();
 
-(async () => await distributeTsConfig(await yarguments.parseAsync()))();
+void (async () => await distributeTsConfig(await yarguments.parseAsync()))();

@@ -66,10 +66,10 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-core": "*",
+		"@alexaegis/setup-eslint": "*",
 		"@alexaegis/setup-husky": "*",
 		"@alexaegis/setup-md": "*",
 		"@alexaegis/setup-prettier": "*",
-		"@alexaegis/setup-eslint": "*",
 		"@alexaegis/setup-ts": "*",
 		"@alexaegis/setup-turbo": "*",
 		"@alexaegis/ts": "*",

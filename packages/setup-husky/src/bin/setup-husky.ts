@@ -7,4 +7,4 @@ const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 	.add(yargsForDistributeInWorkspaceOptions)
 	.build();
 
-(async () => await setupHusky(await yarguments.parseAsync()))();
+void (async () => await setupHusky(await yarguments.parseAsync()))();

@@ -2,7 +2,7 @@ import { YargsBuilder, yargsForDistributeInWorkspaceOptions } from '@alexaegis/c
 import type { PackageJson } from '@alexaegis/workspace-tools';
 
 import packageJson from '../../package.json';
-import { distributeEslintConfig } from '../functions/index.js';
+import { setupEslint } from '../functions/index.js';
 
 const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 	.add(yargsForDistributeInWorkspaceOptions)
@@ -10,5 +10,5 @@ const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 
 void (async () => {
 	const args = await yarguments.parseAsync();
-	await distributeEslintConfig(args);
+	await setupEslint(args);
 })();

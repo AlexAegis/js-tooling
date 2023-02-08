@@ -14,9 +14,7 @@ import packageJson from '../../package.json';
  * Links this packages prettierrc file to the root of the repo, and the ignore
  * file to every package
  */
-export const distributeEslintConfig = async (
-	rawOptions?: DistributeInWorkspaceOptions
-): Promise<void> => {
+export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions({
 		...rawOptions,
 		dependencyCriteria: [packageJson.name],

@@ -6,6 +6,6 @@ export default {
 	ignorePatterns: ['*.cjs'],
 	overrides: [{ files: ['*.svelte'], processor: 'svelte/svelte' }],
 	settings: {
-		'svelte3/typescript': () => require('typescript'),
+		'svelte3/typescript': true,
 	},
 } as Linter.Config;

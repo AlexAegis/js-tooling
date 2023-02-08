@@ -2,5 +2,5 @@
 
 /** @type {import('@alexaegis/setup-eslint').Linter.Config} */
 module.exports = {
-	extends: ['${relativePathFromPackageToRoot}/.eslintrc.cjs'],
+	extends: ['../../.eslintrc.cjs'],
 };

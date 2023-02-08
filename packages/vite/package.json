@@ -32,7 +32,8 @@
 		"prettier": "^2.8.3"
 	},
 	"scripts": {
-		"lint:es": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/vite",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:format_": "prettier --check .",
 		"lint:tsc": "tsc --noEmit",

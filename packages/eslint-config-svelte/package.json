@@ -51,6 +51,9 @@
 	"dependencies": {
 		"@alexaegis/eslint-config-core": "*"
 	},
+	"peerDependencies": {
+		"typescript": "*"
+	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@types/eslint": "^8.21.0",
