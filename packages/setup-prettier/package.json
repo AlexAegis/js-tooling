@@ -56,10 +56,10 @@
 		"setup-prettier": "./shims/setup-prettier.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.15",
-		"@alexaegis/logging": "0.0.15",
-		"@alexaegis/workspace-tools": "0.0.15",
-		"prettier": "^2.8.3",
+		"@alexaegis/cli-tools": "0.0.16",
+		"@alexaegis/logging": "0.0.16",
+		"@alexaegis/workspace-tools": "0.0.16",
+		"prettier": "^2.8.4",
 		"yargs": "^17.6.2"
 	},
 	"devDependencies": {

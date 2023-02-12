@@ -21,7 +21,7 @@ interface NukeOptionsOnly {
 	/**
 	 * Don't remove `node_modules` directories but try to clean them up
 	 *
-	 * @default false
+	 * @defaultValue false
 	 */
 	skipNodeModules?: boolean;
 
@@ -32,7 +32,7 @@ interface NukeOptionsOnly {
 	 * If you only wish to extend or remove parts of it use the `nukeMore`
 	 * and `dontNuke` fields and leave this one alone.
 	 *
-	 * @default DEFAULT_NUKE_LIST
+	 * @defaultValue DEFAULT_NUKE_LIST
 	 */
 	nukeList?: string[] | undefined;
 
@@ -42,14 +42,14 @@ interface NukeOptionsOnly {
 	 * If you only wish to extend or remove parts of it use the `nukeMoreGlobs`
 	 * and `dontNuke` fields and leave this one alone.
 	 *
-	 * @default DEFAULT_NUKE_GLOBS
+	 * @defaultValue DEFAULT_NUKE_GLOBS
 	 */
 	nukeGlobs?: string[] | undefined;
 
 	/**
 	 * Additional globs to nuke if you don't want to overwrite the default ones
 	 *
-	 * @default undefined
+	 * @defaultValue undefined
 	 */
 	nukeMoreGlobs?: string[] | undefined;
 
@@ -57,14 +57,14 @@ interface NukeOptionsOnly {
 	 * These will be nuked too. Same role as `nukeList` but defining this
 	 * won't get rid of the built in nukelist
 	 *
-	 * @default []
+	 * @defaultValue []
 	 */
 	nukeMore?: string[] | undefined;
 
 	/**
 	 * If it shouldn't nuke a specific package, add them here.
 	 *
-	 * @default []
+	 * @defaultValue []
 	 */
 	dontNukeIn?: (string | RegExp)[] | undefined;
 }

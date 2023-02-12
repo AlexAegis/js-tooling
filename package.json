@@ -75,6 +75,6 @@
 		"@alexaegis/ts": "*",
 		"@types/eslint": "^8.21.0",
 		"@types/node": "^18.13.0",
-		"npm-check-updates": "^16.6.5"
+		"npm-check-updates": "^16.7.4"
 	}
 }
