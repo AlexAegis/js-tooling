@@ -42,7 +42,7 @@
 	],
 	"scripts": {
 		"build": "turbo run build_",
-		"lint": "pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format:workspace && pnpm lint:md && pnpm lint:md:workspace && pnpm lint:rmd && pnpm lint:rmd:workspace",
+		"lint": "pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format_ && pnpm lint:md && pnpm lint:md_ && pnpm lint:rmd && pnpm lint:rmd_",
 		"lint:es_:chain": "turbo run build_ --concurrency 6 --filter @alexaegis/eslint-config-core",
 		"lint:es": "turbo run lint:es_ --concurrency 6",
 		"lint:format": "turbo run lint:format_ --concurrency 6",
@@ -54,13 +54,14 @@
 		"lint:style": "turbo run lint:style_ --concurrency 6",
 		"lint:svelte": "turbo run lint:svelte_ --concurrency 6",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6",
+		"typedoc": "turbo run typedoc_",
 		"ci": "pnpm lint && pnpm build && pnpm test && pnpm typedoc",
 		"format": "prettier --write .",
 		"ncu": "ncu --deep --peer --upgrade",
 		"nuke": "nuke",
 		"postinstall": "husky install",
-		"start": "turbo run start --parallel",
-		"test": "turbo run test"
+		"start": "turbo run start_ --parallel",
+		"test": "turbo run test_"
 	},
 	"dependencies": {
 		"@alexaegis/common": "*"

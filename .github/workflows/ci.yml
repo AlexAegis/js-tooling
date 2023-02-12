@@ -138,10 +138,8 @@ jobs:
       - name: install
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
-      - name: lint:format
-        run: pnpm lint:format
-      - name: lint:format:workspace
-        run: pnpm lint:format:workspace
+      - name: lint:format (workspace)
+        run: pnpm lint:format_
   lint-style:
     name: lint:style
     runs-on: ubuntu-latest
@@ -259,12 +257,12 @@ jobs:
         run: pnpm install
       - name: lint:md
         run: pnpm lint:md
-      - name: lint:md:workspace
-        run: pnpm lint:md:workspace
+      - name: lint:md (workspace)
+        run: pnpm lint:md_
       - name: lint:rmd
         run: pnpm lint:rmd
-      - name: lint:rmd:workspace
-        run: pnpm lint:rmd:workspace
+      - name: lint:rmd (workspace)
+        run: pnpm lint:rmd_
   test:
     name: test
     runs-on: ubuntu-latest
