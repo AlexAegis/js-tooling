@@ -1,5 +1,6 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
+
 	"pipeline": {
 		"prebuild_": {
 			"outputs": ["dist/**"],
@@ -39,13 +40,26 @@
 			"outputs": [],
 			"outputMode": "new-only"
 		},
+		"lint:es_:chain": {
+			"cache": false,
+			"outputMode": "new-only"
+		},
+		"//#lint:es_:chain": {
+			"cache": false,
+			"outputMode": "new-only"
+		},
+		"lint:es_:pre": {
+			"outputMode": "new-only"
+		},
+		"//#lint:es_:pre": {
+			"outputMode": "new-only"
+		},
 		"lint:es_": {
-			"outputs": [],
-			"dependsOn": [],
+			"dependsOn": ["//#lint:es_", "//#lint:es_"],
 			"outputMode": "new-only"
 		},
 		"//#lint:es_": {
-			"dependsOn": [],
+			"dependsOn": ["//#lint:es_:chain", "//#lint:es_:pre"],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
