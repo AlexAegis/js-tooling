@@ -29,6 +29,9 @@
 		"access": "public"
 	},
 	"directories": {},
+	"optionalDependencies": {
+		"svelte": "^3.55.1"
+	},
 	"scripts": {
 		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/setup-prettier",
 		"build_": "vite build",
@@ -46,9 +49,9 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./readme": "./readme.md",
-		"./static/.prettierignore": "./static/.prettierignore",
-		"./static/.prettierrc": "./static/.prettierrc.cjs"
+		"./.prettierignore": "./static/.prettierignore",
+		"./.prettierrc": "./static/.prettierrc.cjs",
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"alexaegis-setup-prettier-postinstall": "./shims/postinstall.mjs",
@@ -60,6 +63,7 @@
 		"@alexaegis/logging": "0.0.16",
 		"@alexaegis/workspace-tools": "0.0.16",
 		"prettier": "^2.8.4",
+		"prettier-plugin-svelte": "2.9.0",
 		"yargs": "^17.6.2"
 	},
 	"devDependencies": {

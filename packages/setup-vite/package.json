@@ -24,7 +24,7 @@
 	},
 	"bin": {
 		"alexaegis-setup-vite-postinstall": "./shims/postinstall.mjs",
-		"distribute-vite-config": "./shims/distribute-vite-config.mjs"
+		"setup-vite": "./shims/setup-vite.mjs"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.16",

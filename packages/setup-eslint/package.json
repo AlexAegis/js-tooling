@@ -25,10 +25,10 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./package-eslintrc": "./static/package-eslintrc.cjs",
 		"./readme": "./readme.md",
-		"./static/package-eslintrc": "./static/package-eslintrc.cjs",
-		"./static/workspace-eslintignore": "./static/workspace-eslintignore",
-		"./static/workspace-eslintrc": "./static/workspace-eslintrc.cjs"
+		"./workspace-eslintignore": "./static/workspace-eslintignore",
+		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"bin": {
 		"alexaegis-setup-eslint-postinstall": "./shims/postinstall.mjs",

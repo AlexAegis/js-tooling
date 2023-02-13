@@ -1,11 +1,10 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"display": "base",
 	"compileOnSave": false,
 	"compilerOptions": {
 		"composite": false,
 		"target": "es2022",
-		"module": "nodenext",
+		"module": "ES2022",
 		"moduleResolution": "nodenext",
 		"lib": ["es2022"],
 		"sourceMap": true,

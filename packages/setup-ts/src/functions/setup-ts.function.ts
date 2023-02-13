@@ -1,5 +1,6 @@
 import { createLogger } from '@alexaegis/logging';
 import {
+	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
@@ -13,13 +14,11 @@ import packageJson from '../../package.json';
  * Links this packages prettierrc file to the root of the repo, and the ignore
  * file to every package
  */
-export const distributeTsConfig = async (
-	rawOptions?: DistributeInWorkspaceOptions
-): Promise<void> => {
+export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions({
 		...rawOptions,
-		dependencyCriteria: [packageJson.name],
 	});
+
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'distribute:ts' });
@@ -60,6 +59,33 @@ export const distributeTsConfig = async (
 				...options,
 				onlyWorkspaceRoot: true,
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'workspace-tsconfig.json'),
+			'tsconfig.json',
+			{
+				...options,
+				logger: logger.getSubLogger({ name: 'workspaceTsConfig' }),
+				onlyWorkspaceRoot: true,
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'package-tsconfig.json'),
+			'tsconfig.json',
+			{
+				...options,
+				logger: logger.getSubLogger({ name: 'packageTsConfig' }),
+				skipWorkspaceRoot: true,
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'package-tsconfig.spec.json'),
+			'tsconfig.spec.json',
+			{
+				...options,
+				logger: logger.getSubLogger({ name: 'packageSpecTsConfig' }),
+				skipWorkspaceRoot: true,
 			}
 		),
 	]);

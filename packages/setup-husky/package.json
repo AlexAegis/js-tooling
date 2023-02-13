@@ -49,11 +49,9 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./readme": "./readme.md",
-		"./static/.husky/commit-msg": "./static/.husky/commit-msg",
-		"./static/.husky/pre-commit": "./static/.husky/pre-commit",
-		"./static/commit-msg": "./static/commit-msg",
-		"./static/pre-commit": "./static/pre-commit"
+		"./commit-msg": "./static/.husky/commit-msg",
+		"./pre-commit": "./static/.husky/pre-commit",
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"alexaegis-setup-husky-postinstall": "./shims/postinstall.mjs",

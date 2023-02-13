@@ -46,9 +46,9 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./readme": "./readme.md",
-		"./static/.gitattributes": "./static/.gitattributes",
-		"./static/.gitignore": "./static/.gitignore"
+		"./.gitattributes": "./static/.gitattributes",
+		"./.gitignore": "./static/.gitignore",
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"alexaegis-setup-git-postinstall": "./shims/postinstall.mjs",

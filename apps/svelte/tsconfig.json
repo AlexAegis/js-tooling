@@ -1,13 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "@alexaegis/ts/base",
-	"references": [{ "path": "./tsconfig.vitest-spec.json" }],
+	"extends": "@alexaegis/ts/svelte",
 	"compilerOptions": {
-		"types": ["node", "vite/client", "svelte"],
 		"rootDir": "../../",
-		"lib": ["dom"],
-		"moduleResolution": "NodeNext",
-
 		"outDir": "./dist/out-tsc"
 	},
 	"include": ["**/*.d.ts", "**/*.ts", "**/*.js", "**/*.svelte"],

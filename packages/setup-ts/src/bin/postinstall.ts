@@ -1,1 +1,1 @@
-export * from './distribute-ts-config.js';
+export * from './setup-ts.js';

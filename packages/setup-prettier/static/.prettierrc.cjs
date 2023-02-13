@@ -4,6 +4,8 @@ module.exports = {
 	useTabs: true,
 	singleQuote: true,
 	printWidth: 100,
+
+	plugins: ['prettier-plugin-svelte'],
 	overrides: [
 		{
 			files: '*.{md,yml,yaml}',
@@ -20,6 +22,13 @@ module.exports = {
 				useTabs: false,
 				useTabs: false,
 				printWidth: 80,
+			},
+		},
+		{
+			files: '*.svelte',
+			options: {
+				svelteSortOrder: 'options-scripts-markup-styles',
+				svelteStrictMode: true,
 			},
 		},
 	],

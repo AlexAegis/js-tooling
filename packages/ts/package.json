@@ -46,7 +46,9 @@
 			"require": "./dist/index.cjs"
 		},
 		"./base": "./base.json",
-		"./libinternal": "./libinternal.json"
+		"./libnode": "./libnode.json",
+		"./libweb": "./libweb.json",
+		"./libweb-svelte": "./libweb-svelte.json"
 	},
 	"bin": {
 		"ts-node": "node_modules/ts-node/dist/bin.js",

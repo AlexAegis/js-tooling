@@ -45,6 +45,7 @@
 		".prettierrc.*": ".prettierignore",
 		".gitignore": ".gitattributes"
 	},
+
 	"files.exclude": {
 		"**/.git": true,
 		"**/.DS_Store": true
@@ -60,6 +61,10 @@
 			"url": "https://json.schemastore.org/typedoc"
 		}
 	],
+	"svelte.enable-ts-plugin": true,
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
 	"stylelint.enable": true,
 	"stylelint.validate": ["css", "scss", "postcss"],
 	"vitest.enable": true,

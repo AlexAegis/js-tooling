@@ -61,16 +61,16 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
-		await distributeFileInWorkspace(
+		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'package-eslintrc.cjs'),
 			'.eslintrc.cjs',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'pacakgeEslintRc' }),
+				logger: logger.getSubLogger({ name: 'packageEslintRc' }),
 				skipWorkspaceRoot: true,
 			}
 		),
-		await distributeFileInWorkspace(
+		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'workspace-eslintrc.cjs'),
 			'.eslintrc.cjs',
 			{
@@ -79,7 +79,7 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				onlyWorkspaceRoot: true,
 			}
 		),
-		await distributeFileInWorkspace(
+		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'workspace-eslintignore'),
 			'.eslintignore',
 			{

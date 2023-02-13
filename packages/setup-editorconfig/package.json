@@ -49,8 +49,8 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./readme": "./readme.md",
-		"./static/.editorconfig": "./static/.editorconfig"
+		"./.editorconfig": "./static/.editorconfig",
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"alexaegis-editorconfig-postinstall": "./shims/postinstall.mjs",

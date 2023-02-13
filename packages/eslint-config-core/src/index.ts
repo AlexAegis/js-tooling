@@ -7,21 +7,26 @@ export default {
 		'plugin:unicorn/recommended', // 'plugin:unicorn/all'
 		'prettier',
 	],
-
 	ignorePatterns: ['node_modules', 'dist', 'coverage', '.turbo', 'tmp', 'shims'],
 	overrides: [
 		{
-			files: ['*.ts'],
+			files: ['*.ts', '*.svelte'],
 			plugins: ['@typescript-eslint'],
 			extends: [
 				'plugin:@typescript-eslint/recommended', // 'plugin:@typescript-eslint/all',
 				'plugin:@typescript-eslint/recommended-requiring-type-checking',
 				'plugin:@typescript-eslint/strict',
 			],
-			parserOptions: { project: ['./tsconfig.json'] },
+		},
+		{
+			files: ['*.svelte'],
+			plugins: ['svelte3', '@typescript-eslint'],
+			processor: 'svelte3/svelte3',
+			settings: {
+				'svelte3/typescript': true,
+			},
 		},
 	],
-
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2022,

@@ -2,7 +2,8 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "./base.json",
 	"compilerOptions": {
-		"rootDir": "../../",
-		"outDir": "./dist/out-tsc"
+		"types": ["node", "vite/client", "svelte"],
+		"lib": ["dom"],
+		"preserveValueImports": true
 	}
 }

@@ -1,1 +1,1 @@
-export * from './distribute-vite-config.function.js';
+export * from './setup-vite.function.js';
