@@ -15,9 +15,7 @@ import packageJson from '../../package.json';
  * file to every package
  */
 export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
@@ -35,6 +33,34 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
+	const forFlavour = (flavour?: string): Promise<void>[] => {
+		const fileSuffix = flavour ? `-${flavour}` : '';
+		const loggerSuffix = flavour ? `:${flavour}` : ':base';
+
+		return [
+			distributeFileInWorkspace(
+				join(packageDirectory, 'static', `package-tsconfig${fileSuffix}.json`),
+				'tsconfig.json',
+				{
+					...options,
+					skipWorkspaceRoot: true,
+					keywordCriteria: [`${packageJson.name}${fileSuffix}`],
+					logger: logger.getSubLogger({ name: `packageTsConfig${loggerSuffix}` }),
+				}
+			),
+			distributeFileInWorkspace(
+				join(packageDirectory, 'static', 'package-tsconfig-vitest.json'),
+				'tsconfig.spec.json',
+				{
+					...options,
+					skipWorkspaceRoot: true,
+					keywordCriteria: [`${packageJson.name}${fileSuffix}`],
+					logger: logger.getSubLogger({ name: `packageTsConfig${loggerSuffix}-vitest` }),
+				}
+			),
+		];
+	};
+
 	await Promise.all([
 		distributePackageJsonItemsInWorkspace(
 			{
@@ -46,6 +72,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 			{
 				...options,
 				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson' }),
 			}
 		),
@@ -58,6 +85,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 			{
 				...options,
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
@@ -66,28 +94,15 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 			'tsconfig.json',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'workspaceTsConfig' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'workspaceTsConfig' }),
 			}
 		),
-		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'package-tsconfig.json'),
-			'tsconfig.json',
-			{
-				...options,
-				logger: logger.getSubLogger({ name: 'packageTsConfig' }),
-				skipWorkspaceRoot: true,
-			}
-		),
-		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'package-tsconfig.spec.json'),
-			'tsconfig.spec.json',
-			{
-				...options,
-				logger: logger.getSubLogger({ name: 'packageSpecTsConfig' }),
-				skipWorkspaceRoot: true,
-			}
-		),
+		...forFlavour(), // base
+		...forFlavour('node'),
+		...forFlavour('web'),
+		...forFlavour('svelte'),
 	]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);

@@ -75,8 +75,9 @@
 		"@alexaegis/setup-ts": "*",
 		"@alexaegis/setup-turbo": "*",
 		"@alexaegis/ts": "*",
-		"@types/eslint": "^8.21.0",
+		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.13.0",
-		"npm-check-updates": "^16.7.4"
+		"npm-check-updates": "^16.7.4",
+		"vitest": "^0.28.5"
 	}
 }

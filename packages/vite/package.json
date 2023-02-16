@@ -15,10 +15,11 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"javascript",
-		"js",
-		"ts",
-		"typescript",
+		"@alexaegis/setup-eslint",
+		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-ts-node",
+		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vitest",
 		"vite"
 	],
 	"type": "module",
@@ -36,7 +37,8 @@
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:format_": "prettier --check .",
-		"lint:tsc": "tsc --noEmit",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/vite",
+		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
 		"prebuild": "turbo run prebuild_ --concurrency 6 --filter @alexaegis/vite",
 		"prebuild_": "vite build",
@@ -74,7 +76,7 @@
 		"svelte": "^3.55.1",
 		"vite": "4.1.1",
 		"vite-plugin-autolib": "^0.0.9",
-		"vite-plugin-dts": "^1.7.2",
+		"vite-plugin-dts": "^1.7.3",
 		"vite-plugin-static-copy": "0.13.0"
 	},
 	"devDependencies": {

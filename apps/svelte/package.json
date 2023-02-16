@@ -2,6 +2,14 @@
 	"name": "svelte",
 	"version": "0.0.0",
 	"private": true,
+	"keywords": [
+		"@alexaegis/setup-eslint",
+		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-ts-svelte",
+		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vitest",
+		"svelte"
+	],
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
@@ -10,7 +18,8 @@
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter svelte",
 		"lint:format_": "prettier --check .",
 		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json",
-		"lint:tsc": "tsc --noEmit",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter svelte",
+		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
 		"preview": "vite preview",
 		"start": "vite"

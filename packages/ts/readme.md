@@ -7,7 +7,11 @@
 These are base shared `tsconfig.json`s from which all other `tsconfig.json`'s
 inherit from.
 
-TODO: Create a tsconfig.json at the root of the repo at postinstall
+> The exposed `tsconfig.json` files are in the root of this package and not
+> inside `src` or `static` because I want to use them in the host repository of
+> this project too. And typescript doesn't care if I expose these using
+> `exports`. No, the `extends` field in `tsconfig` is just a path from the
+> package, so they have to match in the source and the distributed package too.
 
 ## Info about some options
 

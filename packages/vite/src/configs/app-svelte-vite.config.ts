@@ -1,11 +1,7 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { defineConfig, mergeConfig } from 'vite';
-import { DEFAULT_VITE_CONFIG } from './base-vite.config.js';
+import { defineConfigWithDefaults } from './define-config-with-defaults.function.js';
 
-export const appSvelteViteConfig = mergeConfig(
-	DEFAULT_VITE_CONFIG,
-	defineConfig({
-		plugins: [svelte()],
-		appType: 'spa',
-	})
-);
+export const appSvelteViteConfig = defineConfigWithDefaults({
+	plugins: [svelte()],
+	appType: 'spa',
+});

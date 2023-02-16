@@ -14,12 +14,13 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
+		"@alexaegis/setup-eslint",
+		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-ts-node",
+		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vitest",
 		"clean",
-		"javascript",
-		"js",
-		"nuke",
-		"ts",
-		"typescript"
+		"nuke"
 	],
 	"type": "module",
 	"config": {

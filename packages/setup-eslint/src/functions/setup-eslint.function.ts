@@ -8,6 +8,7 @@ import {
 	normalizeDistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
 import { join, posix } from 'node:path';
+import workspacePackageJson from '../../../../package.json';
 import packageJson from '../../package.json';
 
 /**
@@ -15,10 +16,7 @@ import packageJson from '../../package.json';
  * file to every package
  */
 export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-		dependencyCriteria: [packageJson.name],
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'distribute:eslint' });
@@ -46,6 +44,7 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			{
 				...options,
 				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson' }),
 			}
 		),
@@ -54,10 +53,14 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				scripts: {
 					'lint:es': 'turbo run lint:es_ --concurrency 6',
 				},
+				devDependencies: {
+					'@types/eslint': workspacePackageJson.devDependencies['@types/eslint'],
+				},
 			},
 			{
 				...options,
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
@@ -66,8 +69,9 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			'.eslintrc.cjs',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'packageEslintRc' }),
 				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'packageEslintRc' }),
 			}
 		),
 		distributeFileInWorkspace(
@@ -75,8 +79,9 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			'.eslintrc.cjs',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'workspaceEslintRc' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'workspaceEslintRc' }),
 			}
 		),
 		distributeFileInWorkspace(
@@ -84,8 +89,9 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			'.eslintignore',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'workspaceEslintIgnore' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'workspaceEslintIgnore' }),
 			}
 		),
 	]);

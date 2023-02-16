@@ -14,10 +14,7 @@ import packageJson from '../../package.json';
  * file to every package
  */
 export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-		dependencyCriteria: [packageJson.name],
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'distribute:vite' });
@@ -48,6 +45,7 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 			{
 				...options,
 				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson' }),
 			}
 		),
@@ -60,6 +58,7 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 			{
 				...options,
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),

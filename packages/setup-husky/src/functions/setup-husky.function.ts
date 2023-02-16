@@ -14,10 +14,7 @@ import packageJson from '../../package.json';
  * file to every package
  */
 export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-		dependencyCriteria: [packageJson.name],
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'setup:husky' });
@@ -40,8 +37,9 @@ export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 			join('.husky', 'commit-msg'),
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'commit-msg' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'commit-msg' }),
 				markAsExecutable: true,
 			}
 		),
@@ -50,8 +48,9 @@ export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 			join('.husky', 'pre-commit'),
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'pre-commit' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'pre-commit' }),
 				markAsExecutable: true,
 			}
 		),

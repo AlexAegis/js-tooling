@@ -15,11 +15,12 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"clean",
-		"javascript",
-		"js",
-		"nuke",
-		"ts",
+		"@alexaegis/setup-eslint",
+		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-ts-node",
+		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vitest",
+		"tsconfig",
 		"typescript"
 	],
 	"type": "module",
@@ -36,7 +37,8 @@
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/ts",
 		"lint:format_": "prettier --check .",
-		"lint:tsc": "tsc --noEmit",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/ts",
+		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write ."
 	},
 	"exports": {
@@ -46,9 +48,9 @@
 			"require": "./dist/index.cjs"
 		},
 		"./base": "./base.json",
-		"./libnode": "./libnode.json",
-		"./libweb": "./libweb.json",
-		"./libweb-svelte": "./libweb-svelte.json"
+		"./node": "./node.json",
+		"./svelte": "./svelte.json",
+		"./web": "./web.json"
 	},
 	"bin": {
 		"ts-node": "node_modules/ts-node/dist/bin.js",

@@ -1,4 +1,5 @@
-import { defineConfig, LibraryFormats, mergeConfig } from 'vite';
+import type { LibraryFormats } from 'vite';
+import { defineConfig, mergeConfig } from 'vite';
 
 export const DEFAULT_OUT_DIR = './dist';
 export const DEFAULT_ENTRY = './src/index.ts';

@@ -1,9 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "./base.json",
+	"extends": "./web.json",
 	"compilerOptions": {
-		"types": ["node", "vite/client", "svelte"],
-		"lib": ["dom"],
+		"types": ["svelte", "vite/client"],
 		"preserveValueImports": true
 	}
 }

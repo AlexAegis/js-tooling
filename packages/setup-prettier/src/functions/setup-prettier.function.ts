@@ -17,10 +17,7 @@ import packageJson from '../../package.json';
 export const distributePrettierConfig = async (
 	rawOptions?: DistributeInWorkspaceOptions
 ): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-		dependencyCriteria: [packageJson.name],
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'distribute:prettier' });
@@ -43,8 +40,9 @@ export const distributePrettierConfig = async (
 			'.prettierrc.cjs',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'rc' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'rc' }),
 			}
 		),
 		distributeFileInWorkspace(
@@ -52,6 +50,18 @@ export const distributePrettierConfig = async (
 			'.prettierignore',
 			{
 				...options,
+				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'ignore' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', '.prettierignore'),
+			'.prettierignore',
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'ignore' }),
 			}
 		),
@@ -70,6 +80,7 @@ export const distributePrettierConfig = async (
 		{
 			...options,
 			skipWorkspaceRoot: true,
+			keywordCriteria: [packageJson.name],
 			logger: logger.getSubLogger({ name: 'packageJson' }),
 		}
 	);
@@ -87,6 +98,7 @@ export const distributePrettierConfig = async (
 		{
 			...options,
 			onlyWorkspaceRoot: true,
+			dependencyCriteria: [packageJson.name],
 			logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 		}
 	);

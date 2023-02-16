@@ -14,10 +14,7 @@ import packageJson from '../../package.json';
  * file to every package
  */
 export const setupGit = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-		dependencyCriteria: [packageJson.name],
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'setup:git' });
@@ -37,16 +34,18 @@ export const setupGit = async (rawOptions?: DistributeInWorkspaceOptions): Promi
 	await Promise.all([
 		distributeFileInWorkspace(join(packageDirectory, 'static', '.gitignore'), '.gitignore', {
 			...options,
-			logger: logger.getSubLogger({ name: 'gitignore' }),
 			onlyWorkspaceRoot: true,
+			dependencyCriteria: [packageJson.name],
+			logger: logger.getSubLogger({ name: 'gitignore' }),
 		}),
 		distributeFileInWorkspace(
 			join(packageDirectory, 'static', '.gitattributes'),
 			'.gitattributes',
 			{
 				...options,
-				logger: logger.getSubLogger({ name: 'gitattributes' }),
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'gitattributes' }),
 			}
 		),
 	]);

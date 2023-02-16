@@ -16,10 +16,7 @@ import packageJson from '../../package.json';
 export const setupEditorConfig = async (
 	rawOptions?: DistributeInWorkspaceOptions
 ): Promise<void> => {
-	const options = normalizeDistributeInWorkspaceOptions({
-		...rawOptions,
-		dependencyCriteria: [packageJson.name],
-	});
+	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
 	const logger = createLogger({ name: 'setup:editorconfig' });
@@ -41,8 +38,9 @@ export const setupEditorConfig = async (
 		'.editorconfig',
 		{
 			...options,
-			logger: logger.getSubLogger({ name: 'editorConfig' }),
 			onlyWorkspaceRoot: true,
+			dependencyCriteria: [packageJson.name],
+			logger: logger.getSubLogger({ name: 'editorConfig' }),
 		}
 	);
 

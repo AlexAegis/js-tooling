@@ -15,12 +15,12 @@
 		"url": "https://www.github.com/AlexAegis/js/issues"
 	},
 	"keywords": [
-		"javascript",
-		"js",
-		"link",
-		"symlink",
-		"ts",
-		"typescript"
+		"@alexaegis/setup-eslint",
+		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-ts-node",
+		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vitest",
+		"eslint"
 	],
 	"type": "module",
 	"config": {
@@ -71,7 +71,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
-		"@types/eslint": "^8.21.0",
+		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.13.0"
 	}
 }

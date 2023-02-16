@@ -4,9 +4,9 @@
 	"extends": "@alexaegis/ts/base",
 	"references": [{ "path": "./tsconfig.spec.json" }],
 	"compilerOptions": {
-		"types": ["node"],
-		"rootDir": "${relativePathFromPackageToRoot}",
+		"rootDir": "${relativePathFromPackageToRoot}/",
 		"outDir": "./dist/out-tsc"
 	},
-	"exclude": ["node_modules", "tmp", "dist", "coverage", "**/*.spec.ts"]
+	"include": ["**/*"],
+	"exclude": ["node_modules", "dist", "coverage", "shims", "**/*.spec.ts"]
 }
