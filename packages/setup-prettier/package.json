@@ -19,7 +19,7 @@
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite",
-		"@alexaegis/setup-vitest",
+		"@alexaegis/setup-vitest-node",
 		"prettier"
 	],
 	"type": "module",
@@ -74,6 +74,7 @@
 	"devDependencies": {
 		"@alexaegis/ts": "*",
 		"@alexaegis/vite": "*",
+		"@alexaegis/vitest": "*",
 		"@types/node": "^18.13.0",
 		"@types/prettier": "2.7.2",
 		"@types/yargs": "17.0.22",

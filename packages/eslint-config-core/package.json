@@ -19,7 +19,7 @@
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite",
-		"@alexaegis/setup-vitest",
+		"@alexaegis/setup-vitest-node",
 		"eslint"
 	],
 	"type": "module",
@@ -74,6 +74,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
+		"@alexaegis/vitest": "*",
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.13.0"
 	}

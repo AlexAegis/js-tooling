@@ -19,7 +19,7 @@
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite",
-		"@alexaegis/setup-vitest",
+		"@alexaegis/setup-vitest-node",
 		"markdown"
 	],
 	"type": "module",
@@ -64,6 +64,7 @@
 		"remark-preset-lint-recommended": "^6.1.2"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "*"
+		"@alexaegis/vite": "*",
+		"@alexaegis/vitest": "*"
 	}
 }

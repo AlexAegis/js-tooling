@@ -48,7 +48,17 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./readme": "./readme.md"
+		"./readme": "./readme.md",
+		"./vitest-node.config": {
+			"types": "./src/vitest-node.config.ts",
+			"import": "./dist/vitest-node.config.js",
+			"require": "./dist/vitest-node.config.cjs"
+		},
+		"./vitest-web.config": {
+			"types": "./src/vitest-web.config.ts",
+			"import": "./dist/vitest-web.config.js",
+			"require": "./dist/vitest-web.config.cjs"
+		}
 	},
 	"bin": {
 		"vitest": "node_modules/vitest/vitest.mjs"
@@ -56,6 +66,7 @@
 	"dependencies": {
 		"@vitest/coverage-c8": "^0.28.5",
 		"@vitest/ui": "^0.28.5",
+		"jsdom": "21.1.0",
 		"vitest": "^0.28.5"
 	},
 	"peerDependencies": {

@@ -1,5 +1,6 @@
 import { createLogger } from '@alexaegis/logging';
 import {
+	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
@@ -31,25 +32,45 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
+	const forFlavour = (flavour?: string): Promise<void>[] => {
+		const fileSuffix = flavour ? `-${flavour}` : '';
+		const loggerSuffix = flavour ? `:${flavour}` : ':base';
+
+		return [
+			distributePackageJsonItemsInWorkspace(
+				{
+					scripts: {
+						test: 'turbo run test_ --concurrency 6 --filter ${packageName}',
+						test_: 'vitest --passWithNoTests --coverage --run',
+						'test:watch': 'vitest --passWithNoTests --coverage --run',
+					},
+					devDependencies: {
+						['@alexaegis/vitest']: packageJson.devDependencies['@alexaegis/vitest'],
+					},
+				},
+				{
+					...options,
+					skipWorkspaceRoot: true,
+					keywordCriteria: [`${packageJson.name}${fileSuffix}`],
+					logger: logger.getSubLogger({ name: 'packageJson' }),
+				}
+			),
+			distributeFileInWorkspace(
+				join(packageDirectory, 'static', `package${fileSuffix}-vitest.config.ts`),
+				'vitest.config.ts',
+				{
+					...options,
+					skipWorkspaceRoot: true,
+					keywordCriteria: [`${packageJson.name}${fileSuffix}`],
+					logger: logger.getSubLogger({ name: `packageVitestConfig${loggerSuffix}` }),
+				}
+			),
+		];
+	};
+
 	await Promise.all([
-		distributePackageJsonItemsInWorkspace(
-			{
-				scripts: {
-					test: 'turbo run test_ --concurrency 6 --filter ${packageName}',
-					test_: 'vitest --passWithNoTests --coverage --run',
-					'test:watch': 'vitest --passWithNoTests --coverage --run',
-				},
-				devDependencies: {
-					['@alexaegis/vitest']: packageJson.devDependencies['@alexaegis/vitest'],
-				},
-			},
-			{
-				...options,
-				skipWorkspaceRoot: true,
-				keywordCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'packageJson' }),
-			}
-		),
+		...forFlavour('node'),
+		...forFlavour('web'),
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {

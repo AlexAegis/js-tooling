@@ -7,7 +7,7 @@
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-svelte",
 		"@alexaegis/setup-vite",
-		"@alexaegis/setup-vitest",
+		"@alexaegis/setup-vitest-web",
 		"svelte"
 	],
 	"type": "module",
@@ -33,6 +33,7 @@
 	"devDependencies": {
 		"@alexaegis/ts": "*",
 		"@alexaegis/vite": "*",
+		"@alexaegis/vitest": "*",
 		"@sveltejs/vite-plugin-svelte": "^2.0.2",
 		"@tsconfig/svelte": "^3.0.0",
 		"svelte": "^3.55.1",

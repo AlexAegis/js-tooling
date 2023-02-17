@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import { vitestCoverage } from './base-vitest.config.js';
 
-export const vitestDomConfig = defineConfig({
+export const vitestWebConfig = defineConfig({
 	plugins: [],
 	test: {
 		globals: true,
