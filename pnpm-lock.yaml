@@ -12,6 +12,8 @@ importers:
       '@alexaegis/setup-prettier': '*'
       '@alexaegis/setup-ts': '*'
       '@alexaegis/setup-turbo': '*'
+      '@alexaegis/setup-vite': '*'
+      '@alexaegis/setup-vitest': '*'
       '@alexaegis/ts': '*'
       '@types/eslint': ^8.21.1
       '@types/node': ^18.13.0
@@ -27,6 +29,8 @@ importers:
       '@alexaegis/setup-prettier': link:packages/setup-prettier
       '@alexaegis/setup-ts': link:packages/setup-ts
       '@alexaegis/setup-turbo': link:packages/setup-turbo
+      '@alexaegis/setup-vite': link:packages/setup-vite
+      '@alexaegis/setup-vitest': link:packages/setup-vitest
       '@alexaegis/ts': link:packages/ts
       '@types/eslint': 8.21.1
       '@types/node': 18.13.0
@@ -96,12 +100,12 @@ importers:
 
   packages/nuke:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/common': 0.0.16
-      '@alexaegis/fs': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/fs': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       '@types/yargs': 17.0.22
       globby: ^13.1.3
@@ -109,11 +113,11 @@ importers:
       typescript: ^4.9.5
       yargs: ^17.7.0
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/common': 0.0.16
-      '@alexaegis/fs': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/fs': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       globby: 13.1.3
       kolorist: 1.7.0
       yargs: 17.7.0
@@ -125,36 +129,34 @@ importers:
 
   packages/setup-editorconfig:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/vitest': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': link:../vite
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
     devDependencies:
-      '@alexaegis/vitest': link:../vitest
       '@types/node': 18.13.0
       typescript: 4.9.5
 
   packages/setup-eslint:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/eslint': ^8.21.1
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@types/eslint': 8.21.1
@@ -163,16 +165,16 @@ importers:
 
   packages/setup-git:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@types/node': 18.13.0
@@ -180,17 +182,17 @@ importers:
 
   packages/setup-husky:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       husky: ^8.0.3
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       husky: 8.0.3
     devDependencies:
       '@alexaegis/vite': link:../vite
@@ -199,10 +201,10 @@ importers:
 
   packages/setup-md:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       markdownlint-cli: ^0.33.0
       remark-cli: ^11.0.0
       remark-lint: ^9.1.1
@@ -210,9 +212,9 @@ importers:
       remark-preset-lint-consistent: ^5.1.1
       remark-preset-lint-recommended: ^6.1.2
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       markdownlint-cli: 0.33.0
       remark-cli: 11.0.0
       remark-lint: 9.1.1
@@ -224,11 +226,11 @@ importers:
 
   packages/setup-prettier:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/ts': '*'
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       '@types/prettier': 2.7.2
       '@types/yargs': 17.0.22
@@ -238,9 +240,9 @@ importers:
       typescript: 4.9.5
       yargs: ^17.7.0
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       prettier: 2.8.4
       prettier-plugin-svelte: 2.9.0_jrsxveqmsx2uadbqiuq74wlc4u
       yargs: 17.7.0
@@ -256,16 +258,16 @@ importers:
 
   packages/setup-standard-version:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@types/node': 18.13.0
@@ -273,17 +275,17 @@ importers:
 
   packages/setup-stylelint:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       stylelint: 15.1.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       stylelint: 15.1.0
     devDependencies:
       '@alexaegis/vite': link:../vite
@@ -292,16 +294,16 @@ importers:
 
   packages/setup-ts:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@types/node': 18.13.0
@@ -309,17 +311,17 @@ importers:
 
   packages/setup-turbo:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       turbo: ^1.7.4
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       turbo: 1.7.4
     devDependencies:
       '@alexaegis/vite': link:../vite
@@ -328,16 +330,16 @@ importers:
 
   packages/setup-vite:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@types/node': 18.13.0
@@ -345,17 +347,21 @@ importers:
 
   packages/setup-vitest:
     specifiers:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/coverage-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
       '@alexaegis/vite': '*'
       '@alexaegis/vitest': '*'
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/workspace-tools': 0.0.17
+      '@lcov-viewer/cli': ^1.3.0
       '@types/node': ^18.13.0
       typescript: 4.9.5
     dependencies:
-      '@alexaegis/cli-tools': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/cli-tools': 0.0.17
+      '@alexaegis/coverage-tools': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
+      '@lcov-viewer/cli': 1.3.0
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@alexaegis/vitest': link:../vitest
@@ -427,13 +433,14 @@ importers:
 
 packages:
 
-  /@alexaegis/cli-tools/0.0.16:
-    resolution: {integrity: sha512-vkAiK2lf29FEcO6oNlqJ6uBt14rU1VCuDJyTpUrqG544au+Hcd3pg/SlOadaoPmyYn2b4o0/xFtSRX5NTy/wIg==}
+  /@alexaegis/cli-tools/0.0.17:
+    resolution: {integrity: sha512-LG5GVYh+BxD1iwSCN8glEqB+vo7/+vMHO6yqy5EIjm7RMoB+n09nepDhVdvvNynBv9jxgRjYDoaKtl12LPGjGQ==}
+    engines: {node: '>=18.13.0'}
     dependencies:
-      '@alexaegis/common': 0.0.16
-      '@alexaegis/fs': 0.0.16
-      '@alexaegis/logging': 0.0.16
-      '@alexaegis/workspace-tools': 0.0.16
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/fs': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
       yargs: 17.7.0
     dev: false
 
@@ -441,11 +448,38 @@ packages:
     resolution: {integrity: sha512-ji/9RGtj8lpvytff5zEtT6pfJ0Wn57KvH55xK5Q7GSzcIhGrKNGRSGBYTlodLLJ0VAXKw8uNSJXTH4lvBmwhIQ==}
     dev: false
 
+  /@alexaegis/common/0.0.17:
+    resolution: {integrity: sha512-WnnO+pO+YuaiaHjA/rf6b2PcRa1DW4bL8tSXZ12RT3rPpgHrBxiNZqk2hO7hn5NF747g/2Od9A83jDGxOCu8Ew==}
+    engines: {node: '>=18.13.0'}
+    dev: false
+
+  /@alexaegis/coverage-tools/0.0.17:
+    resolution: {integrity: sha512-zGKiXhwthEacw1pPTuVKKW2O7XsUXMQl6p97vXQOLrZGJrbSl4La9ZX0tFOWV8DyVLemKkWNHMWR9b/w7XbROQ==}
+    engines: {node: '>=18.13.0'}
+    hasBin: true
+    dependencies:
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      '@alexaegis/workspace-tools': 0.0.17
+      globby: 13.1.3
+    dev: false
+
   /@alexaegis/fs/0.0.16:
     resolution: {integrity: sha512-wa7UgvYG42orrqHDoDuuJHaA3xqIWVUI0Mq8fBUpsCXi2EfBaDJy1sNV/TSvhZWAfIWit24RW/fcCW9kDTMmQg==}
     dependencies:
-      '@alexaegis/common': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      js-yaml: 4.1.0
+    optionalDependencies:
+      prettier: 2.8.4
+    dev: false
+
+  /@alexaegis/fs/0.0.17:
+    resolution: {integrity: sha512-06vevRkPuhtch6ogDD/WWjmR5Fm6kqBeYUWN2rOtZhgJbRh6Zm+WB0SUpjSnYwPjIS9R21hCnBGYf5hR9CukSw==}
+    engines: {node: '>=18.13.0'}
+    dependencies:
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/logging': 0.0.17
       js-yaml: 4.1.0
     optionalDependencies:
       prettier: 2.8.4
@@ -454,16 +488,35 @@ packages:
   /@alexaegis/logging/0.0.16:
     resolution: {integrity: sha512-0pEpGOJdz9GaM0kt/vtSoz1CZFycL5nlOcGUmask1t7v2l1ayTgR1Ysu5Q7tKU3w6GOio0rx2ZL8Vma/X5CPpg==}
     dependencies:
-      '@alexaegis/common': 0.0.16
+      '@alexaegis/common': 0.0.17
+      tslog: 4.7.2
+    dev: false
+
+  /@alexaegis/logging/0.0.17:
+    resolution: {integrity: sha512-vV0htBrPB5cOjWuvMDkloI4IkD2Zu9902qcMl9UMdm5IIHNlIqTgS2ZZy/ZmNKe0hfdRHD3HM1Zg6XVqQOyd2g==}
+    engines: {node: '>=18.13.0'}
+    dependencies:
+      '@alexaegis/common': 0.0.17
       tslog: 4.7.2
     dev: false
 
   /@alexaegis/workspace-tools/0.0.16:
     resolution: {integrity: sha512-rMqI0R55PxRhFeTtM/to7bWGcAHkIlWbCSQ4Hr6Qw1gH+7aSs2L4Z8+gk5wQUx2BzcRMQLdUJCnubvrLmdw4sA==}
     dependencies:
-      '@alexaegis/common': 0.0.16
-      '@alexaegis/fs': 0.0.16
-      '@alexaegis/logging': 0.0.16
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/fs': 0.0.17
+      '@alexaegis/logging': 0.0.17
+      globby: 13.1.3
+      prettier: 2.8.4
+    dev: false
+
+  /@alexaegis/workspace-tools/0.0.17:
+    resolution: {integrity: sha512-KWgEJFsPDGrSyvvQv0dwmENA2Iqa8BQSHXtf0SVhAl+2IkHD4UCtJLlHrAWfHmzO2FiydbCCdzXBxaTBQZojFA==}
+    engines: {node: '>=18.13.0'}
+    dependencies:
+      '@alexaegis/common': 0.0.17
+      '@alexaegis/fs': 0.0.17
+      '@alexaegis/logging': 0.0.17
       globby: 13.1.3
       prettier: 2.8.4
     dev: false
@@ -792,6 +845,13 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@lcov-viewer/cli/1.3.0:
+    resolution: {integrity: sha512-A9altXh2ZyeuagYZsJqVja6WMlgGJGcV+SHOOgIZB+CA2bfk78vgOqrPJrWg+IflFpoEzo1QeqwH4WbKSM4d9A==}
+    hasBin: true
+    dependencies:
+      commander: 9.5.0
+    dev: false
 
   /@microsoft/api-extractor-model/7.26.4_@types+node@18.13.0:
     resolution: {integrity: sha512-PDCgCzXDo+SLY5bsfl4bS7hxaeEtnXj7XtuzEE+BtALp7B5mK/NrS2kHWU69pohgsRmEALycQdaQPXoyT2i5MQ==}
@@ -2034,7 +2094,6 @@ packages:
     engines: {node: ^12.20.0 || >=14}
     requiresBuild: true
     dev: false
-    optional: true
 
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}

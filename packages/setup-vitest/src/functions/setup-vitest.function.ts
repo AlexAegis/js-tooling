@@ -35,7 +35,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					test: 'turbo run test_ --concurrency 6 --filter  ${packageName}',
+					test: 'turbo run test_ --concurrency 6 --filter ${packageName}',
 					test_: 'vitest --passWithNoTests --coverage --run',
 					'test:watch': 'vitest --passWithNoTests --coverage --run',
 				},
@@ -53,7 +53,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					test: 'turbo run test_',
+					test: 'turbo run test_ --concurrency 6 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
 				},
 			},
 			{

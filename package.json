@@ -60,7 +60,7 @@
 		"nuke": "nuke",
 		"postinstall": "husky install",
 		"start": "turbo run start_ --parallel",
-		"test": "turbo run test_",
+		"test": "turbo run test_ --concurrency 6 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
 		"typedoc": "turbo run typedoc_"
 	},
 	"dependencies": {
@@ -74,6 +74,8 @@
 		"@alexaegis/setup-prettier": "*",
 		"@alexaegis/setup-ts": "*",
 		"@alexaegis/setup-turbo": "*",
+		"@alexaegis/setup-vite": "*",
+		"@alexaegis/setup-vitest": "*",
 		"@alexaegis/ts": "*",
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.13.0",

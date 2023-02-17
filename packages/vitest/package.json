@@ -19,7 +19,6 @@
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite",
-		"@alexaegis/setup-vitest",
 		"vitest"
 	],
 	"type": "module",
@@ -38,7 +37,10 @@
 		"lint:format_": "prettier --check .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/vitest",
 		"lint:tsc_": "tsc --noEmit",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "turbo run test_ --concurrency 6 --filter  @alexaegis/vitest && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
 	"exports": {
 		".": {

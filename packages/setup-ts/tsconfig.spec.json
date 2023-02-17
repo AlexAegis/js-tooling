@@ -6,6 +6,6 @@
 		"composite": true,
 		"types": ["node", "vitest"]
 	},
-	"include": ["**/*.spec.ts"],
+	"include": ["**/*"],
 	"exclude": ["node_modules", "dist", "coverage", "shims"]
 }

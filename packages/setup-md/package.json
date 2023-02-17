@@ -35,7 +35,10 @@
 		"lint:format_": "prettier --check .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/setup-md",
 		"lint:tsc_": "tsc --noEmit",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/setup-md",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
 	"exports": {
 		".": {
@@ -50,9 +53,9 @@
 		"remark": "node_modules/remark-cli/cli.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.16",
-		"@alexaegis/logging": "0.0.16",
-		"@alexaegis/workspace-tools": "0.0.16",
+		"@alexaegis/cli-tools": "0.0.17",
+		"@alexaegis/logging": "0.0.17",
+		"@alexaegis/workspace-tools": "0.0.17",
 		"markdownlint-cli": "^0.33.0",
 		"remark-cli": "^11.0.0",
 		"remark-lint": "^9.1.1",

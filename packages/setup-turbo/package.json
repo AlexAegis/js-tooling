@@ -37,7 +37,10 @@
 		"lint:format_": "prettier --check .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/setup-turbo",
 		"lint:tsc_": "tsc --noEmit",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
 	"exports": {
 		".": {
@@ -51,9 +54,9 @@
 		"turbo": "node_modules/turbo/bin/turbo"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.16",
-		"@alexaegis/logging": "0.0.16",
-		"@alexaegis/workspace-tools": "0.0.16",
+		"@alexaegis/cli-tools": "0.0.17",
+		"@alexaegis/logging": "0.0.17",
+		"@alexaegis/workspace-tools": "0.0.17",
 		"turbo": "^1.7.4"
 	},
 	"devDependencies": {

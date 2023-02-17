@@ -22,7 +22,10 @@
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
 		"preview": "vite preview",
-		"start": "vite"
+		"start": "vite",
+		"test": "turbo run test_ --concurrency 6 --filter svelte",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
 	"dependencies": {
 		"@alexaegis/common": "*"
