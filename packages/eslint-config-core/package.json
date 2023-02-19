@@ -63,7 +63,7 @@
 		"eslint": "^8.34.0",
 		"eslint-config-next": "^13.1.6",
 		"eslint-config-prettier": "^8.6.0",
-		"eslint-config-turbo": "^0.0.7",
+		"eslint-config-turbo": "^0.0.8",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint-plugin-unicorn": "^45.0.2",
@@ -76,6 +76,6 @@
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
 		"@types/eslint": "^8.21.1",
-		"@types/node": "^18.13.0"
+		"@types/node": "^18.14.0"
 	}
 }

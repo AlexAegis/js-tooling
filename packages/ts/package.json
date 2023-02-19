@@ -67,10 +67,10 @@
 	"dependencies": {
 		"@alexaegis/vite": "*",
 		"@tsconfig/svelte": "*",
-		"@types/node": "^18.13.0",
+		"@types/node": "^18.14.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.9.5",
-		"vite": "^4.1.1"
+		"vite": "^4.1.2"
 	},
 	"devDependencies": {
 		"@alexaegis/vitest": "*"

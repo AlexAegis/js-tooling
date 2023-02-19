@@ -8,6 +8,6 @@
 		"outDir": "./dist/out-tsc"
 	},
 	"files": ["package.json", "../../package.json"],
-	"include": ["**/*", ".*.js", ".*.cjs", ".*.mjs"],
+	"include": [".*.js", ".*.cjs", ".*.mjs"],
 	"exclude": ["node_modules", "dist", "coverage", "shims", "**/*.spec.ts"]
 }
