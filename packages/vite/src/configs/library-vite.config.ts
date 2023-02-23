@@ -7,6 +7,7 @@ export const libraryViteConfig = defineConfigWithDefaults({
 		autolib(),
 		dts({
 			entryRoot: 'src',
+			copyDtsFiles: true,
 		}),
 	],
 });

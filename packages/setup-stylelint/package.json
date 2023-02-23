@@ -55,12 +55,12 @@
 		"@alexaegis/cli-tools": "0.0.17",
 		"@alexaegis/logging": "0.0.17",
 		"@alexaegis/workspace-tools": "0.0.17",
-		"stylelint": "15.1.0"
+		"stylelint": "15.2.0"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
-		"@types/node": "^18.14.0",
+		"@types/node": "^18.14.1",
 		"typescript": "4.9.5"
 	}
 }
