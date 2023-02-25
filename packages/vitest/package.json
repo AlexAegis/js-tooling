@@ -64,10 +64,10 @@
 		"vitest": "node_modules/vitest/vitest.mjs"
 	},
 	"dependencies": {
-		"@vitest/coverage-c8": "^0.28.5",
-		"@vitest/ui": "^0.28.5",
+		"@vitest/coverage-c8": "^0.29.1",
+		"@vitest/ui": "^0.29.1",
 		"jsdom": "21.1.0",
-		"vitest": "^0.28.5"
+		"vitest": "^0.29.1"
 	},
 	"peerDependencies": {
 		"vite": "^3.2.4",

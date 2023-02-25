@@ -6,6 +6,7 @@ import {
 	getWorkspaceRoot,
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
+	removeInWorkspace,
 } from '@alexaegis/workspace-tools';
 import { join, posix } from 'node:path';
 import packageJson from '../../package.json';
@@ -33,33 +34,41 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	const forFlavour = (flavour?: string): Promise<void>[] => {
-		const fileSuffix = flavour ? `-${flavour}` : '';
-		const loggerSuffix = flavour ? `:${flavour}` : ':base';
+	const forFlavour = (flavour: string): Promise<void>[] => {
+		const flavourCriteria = flavour === 'base' ? '' : `-${flavour}`;
+
+		const commonOptions = {
+			...options,
+			skipWorkspaceRoot: true,
+			keywordCriteria: [`${packageJson.name}${flavourCriteria}`],
+			logger: logger.getSubLogger({ name: `packageTsConfig:${flavour}` }),
+		};
 
 		return [
 			distributeFileInWorkspace(
-				join(packageDirectory, 'static', `package-tsconfig${fileSuffix}.json`),
+				join(packageDirectory, 'static', 'package-composing-tsconfig.json'),
 				'tsconfig.json',
 				{
-					...options,
-					skipWorkspaceRoot: true,
-					keywordCriteria: [`${packageJson.name}${fileSuffix}`],
-					logger: logger.getSubLogger({ name: `packageTsConfig${loggerSuffix}` }),
+					...commonOptions,
+					templateVariables: {
+						flavour,
+					},
 				}
 			),
 			distributeFileInWorkspace(
-				join(packageDirectory, 'static', 'package-tsconfig-vitest.json'),
+				join(packageDirectory, 'static', 'package-source-tsconfig.json'),
+				`tsconfig.${flavour}.json`,
+				commonOptions
+			),
+			distributeFileInWorkspace(
+				join(packageDirectory, 'static', 'package-spec-vitest-tsconfig.json'),
 				'tsconfig.spec.json',
-				{
-					...options,
-					skipWorkspaceRoot: true,
-					keywordCriteria: [`${packageJson.name}${fileSuffix}`],
-					logger: logger.getSubLogger({ name: `packageTsConfig${loggerSuffix}-vitest` }),
-				}
+				commonOptions
 			),
 		];
 	};
+
+	await removeInWorkspace('tsconfig*', options);
 
 	await Promise.all([
 		distributePackageJsonItemsInWorkspace(
@@ -99,7 +108,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 				logger: logger.getSubLogger({ name: 'workspaceTsConfig' }),
 			}
 		),
-		...forFlavour(), // base
+		...forFlavour('base'),
 		...forFlavour('node'),
 		...forFlavour('web'),
 		...forFlavour('svelte'),

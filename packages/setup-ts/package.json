@@ -51,11 +51,9 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./package-tsconfig": "./static/package-tsconfig.json",
-		"./package-tsconfig-node": "./static/package-tsconfig-node.json",
-		"./package-tsconfig-svelte": "./static/package-tsconfig-svelte.json",
-		"./package-tsconfig-vitest": "./static/package-tsconfig-vitest.json",
-		"./package-tsconfig-web": "./static/package-tsconfig-web.json",
+		"./package-composing-tsconfig": "./static/package-composing-tsconfig.json",
+		"./package-source-tsconfig": "./static/package-source-tsconfig.json",
+		"./package-spec-vitest-tsconfig": "./static/package-spec-vitest-tsconfig.json",
 		"./readme": "./readme.md",
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
@@ -64,9 +62,9 @@
 		"setup-ts": "./shims/setup-ts.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.17",
-		"@alexaegis/logging": "0.0.17",
-		"@alexaegis/workspace-tools": "0.0.17"
+		"@alexaegis/cli-tools": "0.0.19",
+		"@alexaegis/logging": "0.0.19",
+		"@alexaegis/workspace-tools": "0.0.19"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

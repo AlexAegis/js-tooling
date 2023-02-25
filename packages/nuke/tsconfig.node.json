@@ -3,9 +3,9 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"composite": true,
-		"types": ["node"]
+		"composite": true
 	},
-	"include": ["src/**/*", "*"],
+	"files": ["package.json", "../../package.json"],
+	"include": ["**/*", ".*.js", ".*.cjs", ".*.mjs"],
 	"exclude": ["node_modules", "dist", "coverage", "shims", "**/*.spec.ts"]
 }

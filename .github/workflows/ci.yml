@@ -495,5 +495,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          pnpm config --location project set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           pnpm publish packages/${{ matrix.artifact }}/dist/ --access public

@@ -60,9 +60,9 @@
 		"setup-husky": "./shims/setup-husky.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.17",
-		"@alexaegis/logging": "0.0.17",
-		"@alexaegis/workspace-tools": "0.0.17",
+		"@alexaegis/cli-tools": "0.0.19",
+		"@alexaegis/logging": "0.0.19",
+		"@alexaegis/workspace-tools": "0.0.19",
 		"husky": "^8.0.3"
 	},
 	"devDependencies": {

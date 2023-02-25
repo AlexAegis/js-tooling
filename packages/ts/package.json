@@ -73,6 +73,7 @@
 		"vite": "^4.1.4"
 	},
 	"devDependencies": {
-		"@alexaegis/vitest": "*"
+		"@alexaegis/vitest": "*",
+		"vitest": "*"
 	}
 }

@@ -34,7 +34,7 @@
 	"engines": {
 		"node": ">=18.13.0"
 	},
-	"packageManager": "pnpm@7.27.1",
+	"packageManager": "pnpm@7.28.0",
 	"workspaces": [
 		"apps/*",
 		"libs/*",
@@ -80,6 +80,6 @@
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.14.1",
 		"npm-check-updates": "^16.7.9",
-		"vitest": "^0.28.5"
+		"vitest": "^0.29.1"
 	}
 }

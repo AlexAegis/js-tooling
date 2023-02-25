@@ -49,9 +49,9 @@
 		"setup-git": "./shims/setup-git.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.17",
-		"@alexaegis/logging": "0.0.17",
-		"@alexaegis/workspace-tools": "0.0.17"
+		"@alexaegis/cli-tools": "0.0.19",
+		"@alexaegis/logging": "0.0.19",
+		"@alexaegis/workspace-tools": "0.0.19"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
