@@ -396,6 +396,7 @@ jobs:
   release:
     name: release
     if: |
+      github.event_name == 'disabled' &&
       github.ref_name == ${{ github.event.repository.default_branch }} && 
       github.event_name != 'pull_request'
     runs-on: ubuntu-latest
