@@ -57,7 +57,7 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	const everyNukeTarget = [...packageFlatNukeTargets, ...packageGlobNukeTargets.flat()].sort();
 	const dryRm = dry(options.dry, rm);
 
-	await Promise.all(
+	await Promise.allSettled(
 		everyNukeTarget
 			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {

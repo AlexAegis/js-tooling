@@ -19,9 +19,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"optionalDependencies": {
-		"svelte": "^3.55.1"
-	},
 	"scripts": {
 		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/lint-staged",
 		"build_": "vite build",
@@ -53,6 +50,9 @@
 	},
 	"peerDependencies": {
 		"typescript": "^4.9.5"
+	},
+	"optionalDependencies": {
+		"svelte": "^3.55.1"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

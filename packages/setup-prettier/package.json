@@ -20,9 +20,6 @@
 		"access": "public"
 	},
 	"directories": {},
-	"optionalDependencies": {
-		"svelte": "^3.55.1"
-	},
 	"scripts": {
 		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/setup-prettier",
 		"build_": "vite build",
@@ -45,7 +42,12 @@
 			"require": "./dist/index.cjs"
 		},
 		"./.prettierignore": "./static/.prettierignore",
-		"./.prettierrc": "./static/.prettierrc.cjs",
+		"./.prettierrc.cjs": "./static/.prettierrc.cjs.txt",
+		"./prettier-config": {
+			"types": "./src/prettier-config.ts",
+			"import": "./dist/prettier-config.js",
+			"require": "./dist/prettier-config.cjs"
+		},
 		"./readme": "./readme.md"
 	},
 	"bin": {
@@ -54,19 +56,21 @@
 		"setup-prettier": "./shims/setup-prettier.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.20",
-		"@alexaegis/logging": "0.0.20",
-		"@alexaegis/workspace-tools": "0.0.20",
+		"@alexaegis/cli-tools": "0.0.21",
+		"@alexaegis/logging": "0.0.21",
+		"@alexaegis/prettier-config": "*",
+		"@alexaegis/workspace-tools": "0.0.21",
 		"prettier": "^2.8.4",
-		"prettier-plugin-svelte": "2.9.0",
 		"yargs": "^17.7.1"
+	},
+	"optionalDependencies": {
+		"svelte": "^3.55.1"
 	},
 	"devDependencies": {
 		"@alexaegis/ts": "*",
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
 		"@types/node": "^18.14.1",
-		"@types/prettier": "2.7.2",
 		"@types/yargs": "17.0.22",
 		"typescript": "4.9.5"
 	}

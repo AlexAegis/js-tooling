@@ -32,7 +32,7 @@ export const distributePrettierConfig = async (
 
 	await Promise.all([
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', '.prettierrc.cjs'),
+			join(packageDirectory, 'static', '.prettierrc.cjs.txt'),
 			'.prettierrc.cjs',
 			{
 				...options,

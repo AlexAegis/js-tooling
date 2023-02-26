@@ -12,39 +12,45 @@ not a template repository!
 
 > If you wish to have something like this yourself, fork this repo!
 
-## setup and non-setup packages
-
-Every `setup-*` package's job is to distribute files and `package.json` entries
-in the workspace on `postinstall`. If a setup has some unique dependencies like
-an `eslint` or `ts` config, those are from a separate package, so they can be
-used without the "auto-distributor".
-
 ## config providers
 
-- [editorconfig](packages/editorconfig/)
+These packages only contain configurations and they don't do anything automatic
+like the `setup-*` packages.
+
 - [eslint-config-core](packages/eslint-config-core/)
-- [eslint-config-svelte](packages/eslint-config-svelte/)
-- [git](packages/git/)
-- [husky](packages/husky/)
-- [prettier](packages/prettier/)
-- [stylelint](packages/stylelint/)
-- [tsconfig](packages/tsconfig/)
-- [turbo](packages/turbo/)
+- [ts](packages/ts/)
 - [vite](packages/vite/)
 - [vitest](packages/vitest/)
+
+## auto-setup providers
+
+Every `setup-*` package's job is to distribute files and `package.json` entries
+in the workspace on `postinstall`.
+
+- [setup-editorconfig](packages/setup-editorconfig/)
+- [setup-eslint](packages/setup-eslint/)
+- [setup-git](packages/setup-git/)
+- [setup-husky](packages/setup-husky/)
+- [setup-prettier](packages/setup-prettier/)
+- [setup-remark](packages/setup-remark/)
+- [setup-standard-version](packages/setup-standard-version/)
+- [setup-stylelint](packages/setup-stylelint/)
+- [setup-ts](packages/setup-ts/)
+- [setup-turbo](packages/setup-turbo/)
+- [setup-vite](packages/setup-vite/)
+- [setup-vitest](packages/setup-vitest/)
+
+### bundles
+
+Packages bundling other packages together
+
+- [setup-workspace](packages/setup-workspace/)
 
 ## cli tools
 
 These are either help config providers function or help manage a workspace
 
-- [tools](packages/tools/)
 - [nuke](packages/nuke/)
-
-## bundles
-
-Packages bundling other packages together
-
-- [dev](packages/dev/)
 
 ## Assumptions
 
@@ -57,10 +63,10 @@ Packages bundling other packages together
 
 ## Repository setup guide
 
-1. Put it together
-2. Done
+1.  Put it together
+2.  Done
 
-### When using [`turbo`](packages/turbo/)
+### When using [`turbo`](packages/setup-turbo/)
 
 ```sh
 npx turbo link

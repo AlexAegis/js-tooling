@@ -42,15 +42,13 @@
 	],
 	"scripts": {
 		"build": "turbo run build_",
-		"lint": "pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format_ && pnpm lint:md && pnpm lint:md_ && pnpm lint:rmd && pnpm lint:rmd_",
+		"lint": "pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format_ && pnpm lint:md && pnpm lint:md_",
 		"lint:es": "turbo run lint:es_ --concurrency 6",
 		"lint:es_:chain": "turbo run build_ --concurrency 6 --filter @alexaegis/eslint-config-core",
 		"lint:format": "turbo run lint:format_ --concurrency 6",
 		"lint:format_": "prettier --check *.{json,ts,js,mjs,md,yml,yaml}",
 		"lint:md": "turbo run lint:md_ --concurrency 6",
-		"lint:md_": "markdownlint --ignore-path '.gitignore' --ignore CHANGELOG.md *.md",
-		"lint:rmd": "turbo run lint:rmd_ --concurrency 6",
-		"lint:rmd_": "remark --frail --quiet --no-stdout *.md",
+		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
 		"lint:style": "turbo run lint:style_ --concurrency 6",
 		"lint:svelte": "turbo run lint:svelte_ --concurrency 6",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6",
@@ -63,17 +61,14 @@
 		"test": "turbo run test_ --concurrency 6 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
 		"typedoc": "turbo run typedoc_"
 	},
-	"dependencies": {
-		"@alexaegis/common": "*"
-	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-core": "*",
 		"@alexaegis/setup-editorconfig": "*",
 		"@alexaegis/setup-eslint": "*",
 		"@alexaegis/setup-git": "*",
 		"@alexaegis/setup-husky": "*",
-		"@alexaegis/setup-md": "*",
 		"@alexaegis/setup-prettier": "*",
+		"@alexaegis/setup-remark": "*",
 		"@alexaegis/setup-ts": "*",
 		"@alexaegis/setup-turbo": "*",
 		"@alexaegis/setup-vite": "*",
@@ -82,6 +77,11 @@
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.14.1",
 		"npm-check-updates": "^16.7.9",
+		"prettier-plugin-svelte": "^2.9.0",
+		"svelte": "^3.55.1",
+		"prettier": "^2.8.4",
+		"remark": "^14.0.2",
+		"remark-lint": "^9.1.1",
 		"vitest": "^0.29.1"
 	}
 }

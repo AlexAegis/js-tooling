@@ -7,7 +7,8 @@ export default {
 		'plugin:unicorn/recommended', // 'plugin:unicorn/all'
 		'prettier',
 	],
-	ignorePatterns: ['node_modules', 'dist', 'coverage', '.turbo', 'tmp', 'shims'],
+	// The first entry here throws away all ignores coming from other configs
+	ignorePatterns: ['!**/*', 'node_modules', 'dist', 'coverage', '.turbo', 'tmp', 'shims'],
 	overrides: [
 		{
 			files: ['*.{ts,js,cts,cjs,mts,mjs,tsx,jsx,svelte}'],

@@ -19,9 +19,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"optionalDependencies": {
-		"svelte": "^3.55.1"
-	},
 	"scripts": {
 		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/eslint-config-core",
 		"build_": "vite build",
@@ -50,7 +47,7 @@
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.53.0",
 		"@typescript-eslint/parser": "^5.53.0",
-		"eslint": "^8.34.0",
+		"eslint": "^8.35.0",
 		"eslint-config-next": "^13.2.1",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-config-turbo": "^0.0.8",
@@ -61,6 +58,9 @@
 	},
 	"peerDependencies": {
 		"typescript": "^4.9.5"
+	},
+	"optionalDependencies": {
+		"svelte": "^3.55.1"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

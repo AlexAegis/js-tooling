@@ -17,9 +17,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"optionalDependencies": {
-		"prettier": "^2.8.4"
-	},
 	"scripts": {
 		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/vite",
 		"build_": "vite build",
@@ -67,9 +64,12 @@
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"svelte": "^3.55.1",
 		"vite": "4.1.4",
-		"vite-plugin-autolib": "^0.0.9",
+		"vite-plugin-autolib": "^0.0.10",
 		"vite-plugin-dts": "^2.0.2",
-		"vite-plugin-static-copy": "0.13.0"
+		"vite-plugin-static-copy": "0.13.1"
+	},
+	"optionalDependencies": {
+		"prettier": "^2.8.4"
 	},
 	"devDependencies": {
 		"@schemastore/package": "^0.0.8",

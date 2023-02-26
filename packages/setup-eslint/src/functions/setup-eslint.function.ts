@@ -81,13 +81,23 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			}
 		),
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'workspace-eslintignore'),
+			join(packageDirectory, 'static', 'eslintignore.txt'),
 			'.eslintignore',
 			{
 				...options,
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'workspaceEslintIgnore' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'eslintignore.txt'),
+			'.eslintignore',
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'packageEslintIgnore' }),
 			}
 		),
 	]);

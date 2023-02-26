@@ -65,6 +65,10 @@
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
+	"[markdown]": {
+		"editor.defaultFormatter": "unifiedjs.vscode-remark"
+	},
+
 	"stylelint.enable": true,
 	"stylelint.validate": ["css", "scss", "postcss"],
 	"vitest.enable": true,

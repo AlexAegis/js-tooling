@@ -25,14 +25,7 @@
 		},
 		"lint_": {
 			"outputs": [],
-			"dependsOn": [
-				"lint:es_",
-				"lint:svelte_",
-				"lint:style_",
-				"lint:md_",
-				"lint:rmd_",
-				"lint:format_"
-			],
+			"dependsOn": ["lint:es_", "lint:svelte_", "lint:style_", "lint:md_", "lint:format_"],
 			"outputMode": "new-only"
 		},
 		"//#lint_": {
@@ -99,18 +92,6 @@
 			"outputMode": "new-only"
 		},
 		"//#lint:md_": {
-			"dependsOn": [],
-			"outputs": [],
-			"outputMode": "new-only"
-		},
-		"lint:rmd_": {
-			"env": [],
-			"outputs": [],
-			"dependsOn": [],
-			"outputMode": "new-only"
-		},
-		"//#lint:rmd_": {
-			"env": [],
 			"dependsOn": [],
 			"outputs": [],
 			"outputMode": "new-only"

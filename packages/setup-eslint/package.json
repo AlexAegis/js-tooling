@@ -37,9 +37,9 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./eslintignore": "./static/eslintignore.txt",
 		"./package-eslintrc": "./static/package-eslintrc.cjs",
 		"./readme": "./readme.md",
-		"./workspace-eslintignore": "./static/workspace-eslintignore",
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"bin": {
@@ -47,9 +47,9 @@
 		"setup-eslint": "./shims/setup-eslint.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.20",
-		"@alexaegis/logging": "0.0.20",
-		"@alexaegis/workspace-tools": "0.0.20"
+		"@alexaegis/cli-tools": "0.0.21",
+		"@alexaegis/logging": "0.0.21",
+		"@alexaegis/workspace-tools": "0.0.21"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

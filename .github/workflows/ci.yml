@@ -257,8 +257,6 @@ jobs:
         run: pnpm install
       - name: lint:md
         run: pnpm lint:md
-      - name: lint:rmd
-        run: pnpm lint:rmd
   test:
     name: test
     runs-on: ubuntu-latest
