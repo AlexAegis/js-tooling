@@ -68,6 +68,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-core": "*",
+		"@alexaegis/setup-editorconfig": "*",
 		"@alexaegis/setup-eslint": "*",
 		"@alexaegis/setup-husky": "*",
 		"@alexaegis/setup-md": "*",

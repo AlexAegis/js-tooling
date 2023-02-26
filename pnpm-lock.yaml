@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@alexaegis/common': '*'
       '@alexaegis/eslint-config-core': '*'
+      '@alexaegis/setup-editorconfig': '*'
       '@alexaegis/setup-eslint': '*'
       '@alexaegis/setup-husky': '*'
       '@alexaegis/setup-md': '*'
@@ -23,6 +24,7 @@ importers:
       '@alexaegis/common': 0.0.16
     devDependencies:
       '@alexaegis/eslint-config-core': link:packages/eslint-config-core
+      '@alexaegis/setup-editorconfig': link:packages/setup-editorconfig
       '@alexaegis/setup-eslint': link:packages/setup-eslint
       '@alexaegis/setup-husky': link:packages/setup-husky
       '@alexaegis/setup-md': link:packages/setup-md

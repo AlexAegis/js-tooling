@@ -1,5 +1,5 @@
 {
-	"name": "@alexaegis/editorconfig",
+	"name": "@alexaegis/setup-editorconfig",
 	"description": "My editorconfig",
 	"version": "0.0.1",
 	"license": "MIT",
@@ -54,7 +54,7 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-editorconfig-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-editorconfig-postinstall": "./shims/postinstall.mjs",
 		"setup-editorconfig": "./shims/setup-editorconfig.mjs"
 	},
 	"dependencies": {
