@@ -5,6 +5,7 @@
 	"keywords": [
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-remark",
 		"@alexaegis/setup-ts-svelte",
 		"@alexaegis/setup-vite-svelte",
 		"@alexaegis/setup-vitest-web",
@@ -18,6 +19,8 @@
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter svelte",
 		"lint:format_": "prettier --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 6 --filter svelte",
+		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
 		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter svelte",
 		"lint:tsc_": "tsc --noEmit",

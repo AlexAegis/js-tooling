@@ -7,6 +7,7 @@
 	"keywords": [
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-remark",
 		"@alexaegis/setup-ts-node",
 		"vite"
 	],
@@ -24,6 +25,8 @@
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:format_": "prettier --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/vite",
+		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",

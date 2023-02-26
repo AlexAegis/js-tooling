@@ -148,5 +148,6 @@ typedoc
 # turbo
 .turbo
 
+# vite & vitest temporary configs
 vite.config.ts.*
 vitest.config.ts.*

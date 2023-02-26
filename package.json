@@ -77,11 +77,11 @@
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.14.1",
 		"npm-check-updates": "^16.7.9",
-		"prettier-plugin-svelte": "^2.9.0",
-		"svelte": "^3.55.1",
 		"prettier": "^2.8.4",
+		"prettier-plugin-svelte": "^2.9.0",
 		"remark": "^14.0.2",
 		"remark-lint": "^9.1.1",
+		"svelte": "^3.55.1",
 		"vitest": "^0.29.1"
 	}
 }
