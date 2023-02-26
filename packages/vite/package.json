@@ -37,7 +37,7 @@
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:format_": "prettier --check .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/vite",
-		"lint:tsc_": "tsc --noEmit --project tsconfig.json",
+		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
 		"prebuild": "turbo run prebuild_ --concurrency 6 --filter @alexaegis/vite",
 		"prebuild_": "vite build",

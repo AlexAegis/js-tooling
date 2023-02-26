@@ -64,9 +64,9 @@
 		"setup-prettier": "./shims/setup-prettier.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.19",
-		"@alexaegis/logging": "0.0.19",
-		"@alexaegis/workspace-tools": "0.0.19",
+		"@alexaegis/cli-tools": "0.0.20",
+		"@alexaegis/logging": "0.0.20",
+		"@alexaegis/workspace-tools": "0.0.20",
 		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "2.9.0",
 		"yargs": "^17.7.1"

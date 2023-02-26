@@ -6,7 +6,7 @@ import {
 	getWorkspaceRoot,
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
-	removeInWorkspace,
+	removeFilesInWorkspace,
 } from '@alexaegis/workspace-tools';
 import { join, posix } from 'node:path';
 import packageJson from '../../package.json';
@@ -46,7 +46,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 
 		return [
 			distributeFileInWorkspace(
-				join(packageDirectory, 'static', 'package-composing-tsconfig.json'),
+				join(packageDirectory, 'static', 'package-simple-tsconfig.json'),
 				'tsconfig.json',
 				{
 					...commonOptions,
@@ -55,20 +55,14 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 					},
 				}
 			),
-			distributeFileInWorkspace(
-				join(packageDirectory, 'static', 'package-source-tsconfig.json'),
-				`tsconfig.${flavour}.json`,
-				commonOptions
-			),
-			distributeFileInWorkspace(
-				join(packageDirectory, 'static', 'package-spec-vitest-tsconfig.json'),
-				'tsconfig.spec.json',
-				commonOptions
-			),
 		];
 	};
 
-	await removeInWorkspace('tsconfig*', options);
+	await removeFilesInWorkspace('tsconfig*', {
+		...options,
+		keywordCriteria: [`${packageJson.name}.*`],
+		logger: logger.getSubLogger({ name: 'packageJson' }),
+	});
 
 	await Promise.all([
 		distributePackageJsonItemsInWorkspace(
