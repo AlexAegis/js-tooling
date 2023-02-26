@@ -41,19 +41,26 @@
 			"require": "./dist/index.cjs"
 		},
 		"./commit-msg": "./static/.husky/commit-msg",
+		"./lint-staged.config": "./static/lint-staged.config.mjs",
 		"./pre-commit": "./static/.husky/pre-commit",
 		"./readme": "./readme.md"
 	},
 	"bin": {
 		"alexaegis-setup-husky-postinstall": "./shims/postinstall.mjs",
 		"husky": "node_modules/husky/lib/bin.js",
-		"setup-husky": "./shims/setup-husky.mjs"
+		"lint-staged": "./node_modules/lint-staged/bin/lint-staged.js",
+		"setup-husky": "./shims/setup-husky.mjs",
+		"commitlint": "./node_modules/commitlint/cli.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.20",
+		"@alexaegis/lint-staged": "*",
 		"@alexaegis/logging": "0.0.20",
 		"@alexaegis/workspace-tools": "0.0.20",
-		"husky": "^8.0.3"
+		"@commitlint/config-conventional": "^17.4.4",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.2",
+		"commitlint": "^17.4.4"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

@@ -29,6 +29,16 @@ export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 
 	await Promise.all([
 		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'lint-staged.config.mjs'),
+			'lint-staged.config.mjs',
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'lint-staged' }),
+			}
+		),
+		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'commit-msg'),
 			join('.husky', 'commit-msg'),
 			{

@@ -6,7 +6,7 @@
 		"rootDir": "${relativePathFromPackageToRoot}/",
 		"outDir": "./dist/out-tsc"
 	},
-	"files": ["package.json", "../../package.json", ".eslintrc.cjs"],
-	"include": ["**/*"],
+	"files": ["package.json", "../../package.json"],
+	"include": ["**/*", "**/*.json", "*.cjs"],
 	"exclude": ["node_modules", "dist", "coverage", "shims", "vite.config.ts.timestamp*"]
 }

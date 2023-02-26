@@ -10,6 +10,12 @@ export default {
 	ignorePatterns: ['node_modules', 'dist', 'coverage', '.turbo', 'tmp', 'shims'],
 	overrides: [
 		{
+			files: ['*.{ts,js,cts,cjs,mts,mjs,tsx,jsx,svelte}'],
+			rules: {
+				quotes: ['error', 'single', { avoidEscape: true }],
+			},
+		},
+		{
 			files: ['*.ts', '*.svelte'],
 			plugins: ['@typescript-eslint'],
 			extends: [
@@ -39,7 +45,6 @@ export default {
 	rules: {
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-		quotes: ['error', 'single', { avoidEscape: true }],
 		'unicorn/no-array-reduce': 'off',
 		'unicorn/no-array-callback-reference': 'off', // needed for easy nullish checks
 		'unicorn/prevent-abbreviations': 'off', // no thanks
