@@ -8,5 +8,5 @@
 	},
 	"files": ["package.json", "../../package.json", ".eslintrc.cjs"],
 	"include": ["**/*"],
-	"exclude": ["node_modules", "dist", "coverage", "shims"]
+	"exclude": ["node_modules", "dist", "coverage", "shims", "vite.config.ts.timestamp*"]
 }

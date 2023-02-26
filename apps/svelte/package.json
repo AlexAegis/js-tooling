@@ -6,13 +6,14 @@
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-svelte",
-		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vite-svelte",
 		"@alexaegis/setup-vitest-web",
 		"svelte"
 	],
 	"type": "module",
 	"scripts": {
-		"build": "vite build",
+		"build": "turbo run build_ --concurrency 6 --filter svelte",
+		"build_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter svelte",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter svelte",

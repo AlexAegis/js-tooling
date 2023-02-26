@@ -1,5 +1,6 @@
 import { createLogger } from '@alexaegis/logging';
 import {
+	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
@@ -9,10 +10,6 @@ import {
 import { join, posix } from 'node:path';
 import packageJson from '../../package.json';
 
-/**
- * Links this packages prettierrc file to the root of the repo, and the ignore
- * file to every package
- */
 export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
@@ -31,7 +28,27 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
+	const forFlavour = (flavour: string): Promise<void> => {
+		const flavourCriteria = flavour === 'base' ? '' : `-${flavour}`;
+
+		return distributeFileInWorkspace(
+			join(packageDirectory, 'static', `vite${flavourCriteria}.config.ts`),
+			'vite.config.ts',
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [`${packageJson.name}${flavourCriteria}`],
+				logger: logger.getSubLogger({ name: `viteConfig:${flavour}` }),
+				templateVariables: {
+					flavour,
+				},
+			}
+		);
+	};
+
 	await Promise.all([
+		forFlavour('svelte'),
+		forFlavour('lib'),
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
@@ -45,7 +62,7 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 			{
 				...options,
 				skipWorkspaceRoot: true,
-				keywordCriteria: [packageJson.name],
+				keywordCriteria: [`${packageJson.name}.*`],
 				logger: logger.getSubLogger({ name: 'packageJson' }),
 			}
 		),

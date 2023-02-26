@@ -9,14 +9,14 @@
 		"name": "Alex Aegis",
 		"url": "https://github.com/AlexAegis"
 	},
-	"homepage": "https://github.com/AlexAegis/js",
+	"homepage": "https://github.com/AlexAegis/js-tooling",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AlexAegis/js"
+		"url": "https://github.com/AlexAegis/js-tooling"
 	},
 	"bugs": {
 		"email": "alexaegis@gmail.com",
-		"url": "https://github.com/AlexAegis/js/issues"
+		"url": "https://github.com/AlexAegis/js-tooling/issues"
 	},
 	"keywords": [
 		"eslint",
@@ -70,6 +70,7 @@
 		"@alexaegis/eslint-config-core": "*",
 		"@alexaegis/setup-editorconfig": "*",
 		"@alexaegis/setup-eslint": "*",
+		"@alexaegis/setup-git": "*",
 		"@alexaegis/setup-husky": "*",
 		"@alexaegis/setup-md": "*",
 		"@alexaegis/setup-prettier": "*",

@@ -4,20 +4,11 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"private": false,
-	"author": {
-		"email": "alexaegis@gmail.com",
-		"name": "AlexAegis",
-		"url": "https://www.github.com/AlexAegis"
-	},
-	"repository": "github:AlexAegis/js",
-	"bugs": {
-		"url": "https://www.github.com/AlexAegis/js/issues"
-	},
 	"keywords": [
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-node",
-		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
 		"turbo"
 	],

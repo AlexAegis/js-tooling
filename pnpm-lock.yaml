@@ -8,6 +8,7 @@ importers:
       '@alexaegis/eslint-config-core': '*'
       '@alexaegis/setup-editorconfig': '*'
       '@alexaegis/setup-eslint': '*'
+      '@alexaegis/setup-git': '*'
       '@alexaegis/setup-husky': '*'
       '@alexaegis/setup-md': '*'
       '@alexaegis/setup-prettier': '*'
@@ -26,6 +27,7 @@ importers:
       '@alexaegis/eslint-config-core': link:packages/eslint-config-core
       '@alexaegis/setup-editorconfig': link:packages/setup-editorconfig
       '@alexaegis/setup-eslint': link:packages/setup-eslint
+      '@alexaegis/setup-git': link:packages/setup-git
       '@alexaegis/setup-husky': link:packages/setup-husky
       '@alexaegis/setup-md': link:packages/setup-md
       '@alexaegis/setup-prettier': link:packages/setup-prettier
@@ -392,6 +394,21 @@ importers:
       '@alexaegis/logging': 0.0.20
       '@alexaegis/workspace-tools': 0.0.20
       '@lcov-viewer/cli': 1.3.0
+    devDependencies:
+      '@alexaegis/vite': link:../vite
+      '@alexaegis/vitest': link:../vitest
+      '@types/node': 18.14.1
+      typescript: 4.9.5
+
+  packages/setup-workspace:
+    specifiers:
+      '@alexaegis/setup-editorconfig': '*'
+      '@alexaegis/vite': '*'
+      '@alexaegis/vitest': '*'
+      '@types/node': ^18.14.1
+      typescript: 4.9.5
+    dependencies:
+      '@alexaegis/setup-editorconfig': link:../setup-editorconfig
     devDependencies:
       '@alexaegis/vite': link:../vite
       '@alexaegis/vitest': link:../vitest

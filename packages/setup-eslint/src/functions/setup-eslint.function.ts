@@ -11,10 +11,6 @@ import { join, posix } from 'node:path';
 import workspacePackageJson from '../../../../package.json';
 import packageJson from '../../package.json';
 
-/**
- * Links this packages prettierrc file to the root of the repo, and the ignore
- * file to every package
- */
 export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();

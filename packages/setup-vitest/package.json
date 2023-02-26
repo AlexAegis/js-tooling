@@ -8,7 +8,7 @@
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-ts-node",
-		"@alexaegis/setup-vite",
+		"@alexaegis/setup-vite-lib",
 		"vitest"
 	],
 	"type": "module",

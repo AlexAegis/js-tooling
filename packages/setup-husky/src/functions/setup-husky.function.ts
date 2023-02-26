@@ -9,10 +9,6 @@ import {
 import { join, posix } from 'node:path';
 import packageJson from '../../package.json';
 
-/**
- * Links this packages prettierrc file to the root of the repo, and the ignore
- * file to every package
- */
 export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
