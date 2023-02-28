@@ -2,7 +2,7 @@
 
 const prettierCommand = 'prettier --check';
 const eslintCommand = 'eslint --max-warnings=0 --no-ignore';
-const markdownCommand = 'remark --frail --no-stdout';
+const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
 
 export const lintStagedConfig = {
 	'*.(ts|js)': [eslintCommand, prettierCommand],

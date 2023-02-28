@@ -1,5 +1,5 @@
 {
-	"name": "svelte",
+	"name": "@alexaegis/svelte-example-app",
 	"version": "0.0.0",
 	"private": true,
 	"keywords": [

@@ -48,12 +48,12 @@
 		"eslint": "node_modules/eslint/bin/eslint.js"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.53.0",
-		"@typescript-eslint/parser": "^5.53.0",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
 		"eslint": "^8.35.0",
 		"eslint-config-next": "^13.2.1",
 		"eslint-config-prettier": "^8.6.0",
-		"eslint-config-turbo": "^0.0.8",
+		"eslint-config-turbo": "^0.0.9",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint-plugin-unicorn": "^45.0.2",
@@ -69,6 +69,6 @@
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
 		"@types/eslint": "^8.21.1",
-		"@types/node": "^18.14.1"
+		"@types/node": "^18.14.2"
 	}
 }

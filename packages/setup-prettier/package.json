@@ -73,7 +73,7 @@
 		"@alexaegis/ts": "*",
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
-		"@types/node": "^18.14.1",
+		"@types/node": "^18.14.2",
 		"@types/yargs": "17.0.22",
 		"typescript": "4.9.5"
 	}
