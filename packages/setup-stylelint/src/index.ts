@@ -1,1 +1,1 @@
-export const distributeStylelintConfig = () => console.log('stylelint');
+export * from './functions/index.js';

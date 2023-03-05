@@ -1,1 +1,1 @@
-export const distributeTurboConfig = () => console.log('turbo');
+export * from './functions/index.js';

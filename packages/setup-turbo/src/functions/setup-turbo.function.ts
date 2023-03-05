@@ -9,11 +9,11 @@ import {
 import { join } from 'node:path';
 import packageJson from '../../package.json';
 
-export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
+export const setupTurbo = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
-	const logger = createLogger({ name: 'setup:stylelint' });
+	const logger = createLogger({ name: 'setup:turbo' });
 
 	if (!workspaceRoot) {
 		console.warn("can't distribute config, not in a workspace!");
@@ -28,16 +28,12 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 	logger.info(`distributing config from ${packageDirectory}`);
 
 	await Promise.all([
-		distributeFileInWorkspace(
-			join(packageDirectory, 'static', '.stylelintrc.cjs'),
-			'.stylelintrc.cjs',
-			{
-				...options,
-				onlyWorkspaceRoot: true,
-				dependencyCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'stylelintrc' }),
-			}
-		),
+		distributeFileInWorkspace(join(packageDirectory, 'static', 'turbo.json'), 'turbo.json', {
+			...options,
+			onlyWorkspaceRoot: true,
+			dependencyCriteria: [packageJson.name],
+			logger: logger.getSubLogger({ name: 'turbojson' }),
+		}),
 	]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);
