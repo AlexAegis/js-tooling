@@ -18,9 +18,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"optionalDependencies": {
-		"prettier": "^2.8.4"
-	},
 	"scripts": {
 		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/vite",
 		"build-lib_": "vite build",
@@ -77,6 +74,9 @@
 		"vite-plugin-autolib": "^0.0.10",
 		"vite-plugin-dts": "^2.0.2",
 		"vite-plugin-static-copy": "0.13.1"
+	},
+	"optionalDependencies": {
+		"prettier": "^2.8.4"
 	},
 	"devDependencies": {
 		"@schemastore/package": "^0.0.8",

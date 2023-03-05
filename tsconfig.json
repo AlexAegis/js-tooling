@@ -8,5 +8,6 @@
 		"rootDir": ".",
 		"outDir": "dist/out-tsc"
 	},
-	"exclude": ["node_modules", "coverage", "dist", "packages", "apps", "libs"]
+	"include": [".*", "*.json", "**/*.json"],
+	"exclude": ["node_modules", "dist", "coverage", "packages", "apps", "libs"]
 }

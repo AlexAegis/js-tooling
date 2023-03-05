@@ -6,22 +6,7 @@
 		"rootDir": "${relativePathFromPackageToRoot}/",
 		"outDir": "./dist/out-tsc"
 	},
-	"files": ["package.json", "../../package.json"],
-	"include": [
-		"**/*",
-		"**/*.json",
-		"**/.*.cjs",
-		"**/.*.mjs",
-		"**/.*.js",
-		"**/.*.cts",
-		"**/.*.mts",
-		"**/.*.ts"
-	],
-	"exclude": [
-		"**/node_modules",
-		"**/dist",
-		"**/coverage",
-		"**/vite.config.ts.timestamp-*",
-		"**/vitest.config.ts.timestamp-*"
-	]
+	"files": ["package.json", "${relativePathFromPackageToRoot}/package.json"],
+	"include": ["src/**/*", ".*", "*.json", "**/*.json"],
+	"exclude": ["node_modules", "dist", "coverage", "vite*.config.ts.timestamp-*"]
 }

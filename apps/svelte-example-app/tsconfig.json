@@ -7,21 +7,6 @@
 		"outDir": "./dist/out-tsc"
 	},
 	"files": ["package.json", "../../package.json"],
-	"include": [
-		"**/*",
-		"**/*.json",
-		"**/.*.cjs",
-		"**/.*.mjs",
-		"**/.*.js",
-		"**/.*.cts",
-		"**/.*.mts",
-		"**/.*.ts"
-	],
-	"exclude": [
-		"**/node_modules",
-		"**/dist",
-		"**/coverage",
-		"**/vite.config.ts.timestamp-*",
-		"**/vitest.config.ts.timestamp-*"
-	]
+	"include": ["src/**/*", ".*", "*.json", "**/*.json"],
+	"exclude": ["node_modules", "dist", "coverage", "vite*.config.ts.timestamp-*"]
 }
