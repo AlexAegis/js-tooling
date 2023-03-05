@@ -43,7 +43,7 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./.stylelintrc": "./static/.stylelintrc.cjs",
+		"./dot-stylelintrc": "./static/dot-stylelintrc.cjs",
 		"./readme": "./readme.md"
 	},
 	"bin": {

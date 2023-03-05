@@ -32,7 +32,7 @@ export const distributeRemarkConfig = async (
 
 	await Promise.all([
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', '.remarkrc.js'),
+			join(packageDirectory, 'static', 'dot-remarkrc.js'),
 			'.remarkrc.js',
 			{
 				...options,
@@ -42,7 +42,7 @@ export const distributeRemarkConfig = async (
 			}
 		),
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', '.remarkignore'),
+			join(packageDirectory, 'static', 'dot-remarkignore'),
 			'.remarkignore',
 			{
 				...options,

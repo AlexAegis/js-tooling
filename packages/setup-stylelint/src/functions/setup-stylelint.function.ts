@@ -29,7 +29,7 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 
 	await Promise.all([
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', '.stylelintrc.cjs'),
+			join(packageDirectory, 'static', 'dot-stylelintrc.cjs'),
 			'.stylelintrc.cjs',
 			{
 				...options,

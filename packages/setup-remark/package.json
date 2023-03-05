@@ -40,8 +40,8 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./.remarkignore": "./static/.remarkignore",
-		"./.remarkrc": "./static/.remarkrc.js",
+		"./dot-remarkignore": "./static/dot-remarkignore",
+		"./dot-remarkrc": "./static/dot-remarkrc.js",
 		"./readme": "./readme.md",
 		"./remark-preset": {
 			"types": "./src/remark-preset.ts",
