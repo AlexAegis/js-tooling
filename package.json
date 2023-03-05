@@ -45,7 +45,7 @@
 		"build-lib": "turbo run build-lib_",
 		"lint": "pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format_ && pnpm lint:md && pnpm lint:md_",
 		"lint:es": "turbo run lint:es_ --concurrency 6",
-		"lint:es_:chain": "turbo run build_ --concurrency 6 --filter @alexaegis/eslint-config-core",
+		"lint:es_:chain": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/eslint-config-core",
 		"lint:format": "turbo run lint:format_ --concurrency 6",
 		"lint:format_": "prettier --check *.{json,ts,js,mjs,md,yml,yaml}",
 		"lint:md": "turbo run lint:md_ --concurrency 6",

@@ -119,7 +119,7 @@
 		},
 		"test_": {
 			"env": ["VITEST"],
-			"dependsOn": ["^build_"],
+			"dependsOn": ["^build-lib_"],
 			"outputs": ["coverage"],
 			"outputMode": "new-only"
 		},
