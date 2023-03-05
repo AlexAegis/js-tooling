@@ -22,7 +22,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-ts",
+		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-ts",
 		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/setup-ts",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",

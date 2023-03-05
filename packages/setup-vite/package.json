@@ -18,7 +18,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-vite",
+		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-vite",
 		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/setup-vite",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
@@ -40,6 +40,7 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./nodemon": "./static/nodemon.json",
 		"./readme": "./readme.md",
 		"./vite-lib.config": "./static/vite-lib.config.ts",
 		"./vite-svelte.config": "./static/vite-svelte.config.ts"

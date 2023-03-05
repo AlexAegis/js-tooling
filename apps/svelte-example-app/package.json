@@ -13,7 +13,7 @@
 	],
 	"type": "module",
 	"scripts": {
-		"build-app": "turbo run build-app_ --concurrency 6 --filter @alexaegis/svelte-example-app",
+		"build": "turbo run build-app_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"build-app_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",

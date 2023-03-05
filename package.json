@@ -80,6 +80,7 @@
 		"@alexaegis/setup-turbo": "*",
 		"@alexaegis/setup-vite": "*",
 		"@alexaegis/setup-vitest": "*",
+		"@alexaegis/stylelint-config": "*",
 		"@alexaegis/ts": "*",
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.14.6",

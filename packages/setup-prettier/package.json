@@ -21,8 +21,11 @@
 		"access": "public"
 	},
 	"directories": {},
+	"optionalDependencies": {
+		"svelte": "^3.55.1"
+	},
 	"scripts": {
-		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-prettier",
+		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-prettier",
 		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/setup-prettier",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
@@ -65,9 +68,6 @@
 		"@alexaegis/workspace-tools": "0.0.21",
 		"prettier": "^2.8.4",
 		"yargs": "^17.7.1"
-	},
-	"optionalDependencies": {
-		"svelte": "^3.55.1"
 	},
 	"devDependencies": {
 		"@alexaegis/ts": "*",

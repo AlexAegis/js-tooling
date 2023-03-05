@@ -23,7 +23,7 @@
 	},
 	"directories": {},
 	"scripts": {
-		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/nuke",
+		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/nuke",
 		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/nuke",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",

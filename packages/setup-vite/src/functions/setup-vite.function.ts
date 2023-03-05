@@ -52,9 +52,9 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					build: undefined,
+					build: 'turbo run build-lib_ --concurrency 6 --filter ${packageName}',
 					build_: undefined,
-					'build-lib': 'turbo run build-lib_ --concurrency 6 --filter ${packageName}',
+					'build-lib': undefined,
 					'build-lib_': 'vite build',
 				},
 				devDependencies: {
@@ -71,9 +71,9 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					build: undefined,
+					build: 'turbo run build-app_ --concurrency 6 --filter ${packageName}',
 					build_: undefined,
-					'build-app': 'turbo run build-app_ --concurrency 6 --filter ${packageName}',
+					'build-app': undefined,
 					'build-app_': 'vite build',
 					dev: 'concurrently npm:watch-deps npm:start',
 					'watch-deps':

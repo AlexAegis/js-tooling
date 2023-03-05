@@ -20,8 +20,11 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"optionalDependencies": {
+		"prettier": "*"
+	},
 	"scripts": {
-		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/remark-preset",
+		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/remark-preset",
 		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/remark-preset",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
@@ -61,9 +64,6 @@
 		"remark-validate-links": "^12.1.0"
 	},
 	"peerDependencies": {
-		"prettier": "*"
-	},
-	"optionalDependencies": {
 		"prettier": "*"
 	},
 	"devDependencies": {
