@@ -20,9 +20,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"optionalDependencies": {
-		"svelte": "^3.55.1"
-	},
 	"scripts": {
 		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/prettier-config",
 		"build-lib_": "vite build",
@@ -50,6 +47,9 @@
 	"dependencies": {
 		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "^2.9.0"
+	},
+	"optionalDependencies": {
+		"svelte": "^3.55.1"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

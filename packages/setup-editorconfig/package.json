@@ -51,10 +51,10 @@
 		"setup-editorconfig": "./shims/setup-editorconfig.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.21",
-		"@alexaegis/logging": "0.0.21",
+		"@alexaegis/cli-tools": "0.0.22",
+		"@alexaegis/logging": "0.0.22",
 		"@alexaegis/vite": "*",
-		"@alexaegis/workspace-tools": "0.0.21"
+		"@alexaegis/workspace-tools": "0.0.22"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

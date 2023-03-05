@@ -46,17 +46,13 @@
 	},
 	"bin": {
 		"alexaegis-setup-workspace-postinstall": "./shims/postinstall.mjs",
-		"concurrently": "node_modules/concurrently/index.js",
-		"nodemon": "node_modules/nodemon/bin/nodemon.js",
 		"setup-workspace": "./shims/setup-workspace.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.21",
-		"@alexaegis/logging": "0.0.21",
+		"@alexaegis/cli-tools": "0.0.22",
+		"@alexaegis/logging": "0.0.22",
 		"@alexaegis/setup-editorconfig": "*",
-		"@alexaegis/workspace-tools": "0.0.21",
-		"concurrently": "^7.6.0",
-		"nodemon": "^2.0.21"
+		"@alexaegis/workspace-tools": "0.0.22"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

@@ -77,7 +77,7 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 					'build-app_': 'vite build',
 					dev: 'concurrently npm:watch-deps npm:start',
 					'watch-deps':
-						"nodemon --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build_ --concurrency 6 --filter ${packageName}'",
+						"nodemon --config ${relativePathFromPackageToRoot}/node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 6 --filter ${packageName}'",
 					start: 'vite',
 				},
 				devDependencies: {

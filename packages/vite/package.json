@@ -64,10 +64,14 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
+		"concurrently": "node_modules/concurrently/index.js",
+		"nodemon": "node_modules/nodemon/bin/nodemon.js",
 		"vite": "node_modules/vite/bin/vite.js"
 	},
 	"dependencies": {
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
+		"concurrently": "^7.6.0",
+		"nodemon": "^2.0.21",
 		"svelte": "^3.55.1",
 		"vite": "4.1.4",
 		"vite-plugin-autolib": "^0.0.10",

@@ -57,10 +57,10 @@
 		"setup-standard-version": "./shims/setup-standard-version.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.21",
-		"@alexaegis/logging": "0.0.21",
+		"@alexaegis/cli-tools": "0.0.22",
+		"@alexaegis/logging": "0.0.22",
 		"@alexaegis/standard-version": "*",
-		"@alexaegis/workspace-tools": "0.0.21",
+		"@alexaegis/workspace-tools": "0.0.22",
 		"commit-and-tag-version": "^11.1.0"
 	},
 	"devDependencies": {

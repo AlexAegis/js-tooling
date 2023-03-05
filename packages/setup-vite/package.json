@@ -47,12 +47,16 @@
 	},
 	"bin": {
 		"alexaegis-setup-vite-postinstall": "./shims/postinstall.mjs",
+		"concurrently": "node_modules/concurrently/index.js",
+		"nodemon": "node_modules/nodemon/bin/nodemon.js",
 		"setup-vite": "./shims/setup-vite.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.21",
-		"@alexaegis/logging": "0.0.21",
-		"@alexaegis/workspace-tools": "0.0.21"
+		"@alexaegis/cli-tools": "0.0.22",
+		"@alexaegis/logging": "0.0.22",
+		"@alexaegis/workspace-tools": "0.0.22",
+		"concurrently": "^7.6.0",
+		"nodemon": "^2.0.21"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

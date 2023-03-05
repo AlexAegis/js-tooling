@@ -31,7 +31,7 @@
 		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage --run",
-		"watch-deps": "nodemon --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build_ --concurrency 6 --filter @alexaegis/svelte-example-app'"
+		"watch-deps": "nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 6 --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
 		"@alexaegis/common": "*",
@@ -43,8 +43,6 @@
 		"@alexaegis/vitest": "*",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@tsconfig/svelte": "^3.0.0",
-		"concurrently": "^7.6.0",
-		"nodemon": "^2.0.21",
 		"svelte": "^3.55.1",
 		"svelte-check": "^3.0.4",
 		"svelte-preprocess": "^5.0.1",
