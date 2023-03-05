@@ -12,15 +12,15 @@
 			"dependsOn": [],
 			"outputMode": "new-only"
 		},
-		"build_": {
-			"env": ["BASE_HREF"],
-			"dependsOn": ["^prebuild_", "^build_"],
+		"build-lib_": {
+			"dependsOn": ["^prebuild_", "^build-lib_"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"//#build_": {
-			"dependsOn": [],
-			"outputs": [],
+		"build-app_": {
+			"env": ["BASE_HREF"],
+			"dependsOn": ["^prebuild_", "^build-lib_"],
+			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
 		"lint_": {

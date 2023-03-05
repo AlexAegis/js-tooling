@@ -20,8 +20,8 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/vitest",
-		"build_": "vite build",
+		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/vitest",
+		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/vitest",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vitest",

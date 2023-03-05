@@ -8,7 +8,7 @@ import {
 	normalizeDistributeInWorkspaceOptions,
 	removeFilesInWorkspace,
 } from '@alexaegis/workspace-tools';
-import { join, posix } from 'node:path';
+import { join } from 'node:path';
 import packageJson from '../../package.json';
 
 export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
@@ -26,7 +26,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 	const packageDirectory = join(
 		workspaceRoot,
 		NODE_MODULES_DIRECTORY_NAME,
-		...packageJson.name.split(posix.sep)
+		...packageJson.name.split('/')
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 

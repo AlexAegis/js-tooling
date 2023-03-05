@@ -13,26 +13,29 @@
 	],
 	"type": "module",
 	"scripts": {
-		"build": "turbo run build_ --concurrency 6 --filter svelte",
-		"build_": "vite build",
-		"lint:es": "turbo run lint:es_ --concurrency 6 --filter svelte",
+		"build-app": "turbo run build-app_ --concurrency 6 --filter @alexaegis/svelte-example-app",
+		"build-app_": "vite build",
+		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 6 --filter svelte",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 6 --filter svelte",
+		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
 		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter svelte",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"lint:tsc_": "tsc --noEmit",
+		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "prettier --write .",
 		"preview": "vite preview",
 		"start": "vite",
-		"test": "turbo run test_ --concurrency 6 --filter svelte",
+		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage --run"
+		"test:watch": "vitest --passWithNoTests --coverage --run",
+		"watch-deps": "nodemon --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build_ --concurrency 6 --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
-		"@alexaegis/common": "*"
+		"@alexaegis/common": "*",
+		"@alexaegis/example": "*"
 	},
 	"devDependencies": {
 		"@alexaegis/ts": "*",
@@ -40,6 +43,8 @@
 		"@alexaegis/vitest": "*",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@tsconfig/svelte": "^3.0.0",
+		"concurrently": "^7.6.0",
+		"nodemon": "^2.0.21",
 		"svelte": "^3.55.1",
 		"svelte-check": "^3.0.4",
 		"svelte-preprocess": "^5.0.1",

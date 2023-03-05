@@ -21,8 +21,8 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/setup-stylelint",
-		"build_": "vite build",
+		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-stylelint",
+		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/setup-stylelint",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/setup-stylelint",
@@ -44,6 +44,9 @@
 		},
 		"./readme": "./readme.md"
 	},
+	"bin": {
+		"stylelint": "node_modules/stylelint/bin/stylelint.js"
+	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.21",
 		"@alexaegis/logging": "0.0.21",
@@ -53,7 +56,7 @@
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
-		"@types/node": "^18.14.2",
+		"@types/node": "^18.14.6",
 		"typescript": "4.9.5"
 	}
 }

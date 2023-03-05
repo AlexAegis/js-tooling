@@ -7,7 +7,7 @@ import {
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
-import { join, posix } from 'node:path';
+import { join } from 'node:path';
 import packageJson from '../../package.json';
 
 export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
@@ -24,7 +24,7 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 	const packageDirectory = join(
 		workspaceRoot,
 		NODE_MODULES_DIRECTORY_NAME,
-		...packageJson.name.split(posix.sep)
+		...packageJson.name.split('/')
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
@@ -52,8 +52,10 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					build: 'turbo run build_ --concurrency 6 --filter ${packageName}',
-					build_: 'vite build',
+					build: undefined,
+					build_: undefined,
+					'build-lib': 'turbo run build-lib_ --concurrency 6 --filter ${packageName}',
+					'build-lib_': 'vite build',
 				},
 				devDependencies: {
 					['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
@@ -62,14 +64,38 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 			{
 				...options,
 				skipWorkspaceRoot: true,
-				keywordCriteria: [`${packageJson.name}.*`],
-				logger: logger.getSubLogger({ name: 'packageJson' }),
+				keywordCriteria: [`${packageJson.name}-lib`],
+				logger: logger.getSubLogger({ name: 'packageJson:libraries' }),
 			}
 		),
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					build: 'turbo run build_',
+					build: undefined,
+					build_: undefined,
+					'build-app': 'turbo run build-app_ --concurrency 6 --filter ${packageName}',
+					'build-app_': 'vite build',
+					dev: 'concurrently npm:watch-deps npm:start',
+					'watch-deps':
+						"nodemon --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build_ --concurrency 6 --filter ${packageName}'",
+					start: 'vite',
+				},
+				devDependencies: {
+					['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
+				},
+			},
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [`${packageJson.name}-(?!lib).*`],
+				logger: logger.getSubLogger({ name: 'packageJson:applications' }),
+			}
+		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				scripts: {
+					build: 'turbo run build-lib_ build-app_',
+					'build-lib': 'turbo run build-lib_',
 				},
 			},
 			{

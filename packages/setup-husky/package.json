@@ -21,8 +21,8 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build_ --concurrency 6 --filter @alexaegis/setup-husky",
-		"build_": "vite build",
+		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-husky",
+		"build-lib_": "vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/setup-husky",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/setup-husky",
@@ -69,7 +69,7 @@
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
-		"@types/node": "^18.14.2",
+		"@types/node": "^18.14.6",
 		"typescript": "4.9.5"
 	}
 }

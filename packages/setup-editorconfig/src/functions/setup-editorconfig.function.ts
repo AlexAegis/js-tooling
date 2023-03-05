@@ -6,7 +6,7 @@ import {
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
-import { join, posix } from 'node:path';
+import { join } from 'node:path';
 import packageJson from '../../package.json';
 
 export const setupEditorConfig = async (
@@ -25,7 +25,7 @@ export const setupEditorConfig = async (
 	const packageDirectory = join(
 		workspaceRoot,
 		NODE_MODULES_DIRECTORY_NAME,
-		...packageJson.name.split(posix.sep)
+		...packageJson.name.split('/')
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 

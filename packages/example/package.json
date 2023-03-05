@@ -1,9 +1,9 @@
 {
-	"name": "@alexaegis/setup-turbo",
-	"description": "My turbo config",
+	"name": "@alexaegis/example",
+	"description": "Example package to be used in an app",
 	"version": "0.0.1",
 	"license": "MIT",
-	"private": false,
+	"private": true,
 	"keywords": [
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
@@ -11,28 +11,28 @@
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
-		"turbo"
+		"eslint"
 	],
 	"type": "module",
 	"config": {
-		"engine-strict": false
+		"engine-strict": true
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
-		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"build-lib": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/example",
 		"build-lib_": "vite build",
-		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/example",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/example",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/example",
 		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/example",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/setup-turbo",
+		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/example",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
@@ -44,19 +44,13 @@
 		},
 		"./readme": "./readme.md"
 	},
-	"bin": {
-		"turbo": "node_modules/turbo/bin/turbo"
-	},
-	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.21",
-		"@alexaegis/logging": "0.0.21",
-		"@alexaegis/workspace-tools": "0.0.21",
-		"turbo": "^1.8.3"
+	"peerDependencies": {
+		"typescript": "^4.9.5"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
-		"@types/node": "^18.14.6",
-		"typescript": "4.9.5"
+		"@types/eslint": "^8.21.1",
+		"@types/node": "^18.14.6"
 	}
 }
