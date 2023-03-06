@@ -34,7 +34,7 @@
 	"engines": {
 		"node": ">=18.13.0"
 	},
-	"packageManager": "pnpm@7.28.0",
+	"packageManager": "pnpm@7.29.0",
 	"workspaces": [
 		"apps/*",
 		"libs/*",
