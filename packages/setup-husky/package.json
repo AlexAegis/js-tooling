@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-husky",
 	"description": "Husky, lint-staged and commitlint stuff",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
