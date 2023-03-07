@@ -151,3 +151,8 @@ typedoc
 # vite & vitest temporary configs
 vite.config.ts.*
 vitest.config.ts.*
+
+# parcel
+dist*
+tmp*
+.parcel-cache

@@ -1,6 +1,5 @@
 import { createLogger } from '@alexaegis/logging';
 import {
-	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
@@ -34,6 +33,7 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 			{
 				scripts: {
 					nuke: 'nuke',
+					lint: 'pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format_ && pnpm lint:md && pnpm lint:md_',
 					ci: 'pnpm lint && pnpm build && pnpm test && pnpm typedoc',
 					ncu: 'ncu --deep --peer --upgrade',
 				},
@@ -43,16 +43,6 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
-			}
-		),
-		distributeFileInWorkspace(
-			join(packageDirectory, 'static', '.versionrc.cjs.txt'),
-			'.versionrc.cjs',
-			{
-				...options,
-				onlyWorkspaceRoot: true,
-				dependencyCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'standard-version' }),
 			}
 		),
 	]);
