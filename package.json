@@ -50,7 +50,7 @@
 		"lint:format_": "prettier --check *.{json,ts,js,mjs,md,yml,yaml}",
 		"lint:md": "turbo run lint:md_ --concurrency 6",
 		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
-		"lint:md:require_": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/remark-preset",
+		"lint:md:require_": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/setup-remark",
 		"lint:style": "turbo run lint:style_ --concurrency 6",
 		"lint:svelte": "turbo run lint:svelte_ --concurrency 6",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6",
