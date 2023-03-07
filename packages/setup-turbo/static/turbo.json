@@ -22,6 +22,23 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
+		"full-suite_": {
+			"outputs": [],
+			"dependsOn": ["lint_", "build-app_", "build-lib_", "test_", "typedoc_"],
+			"outputMode": "new-only"
+		},
+		"lint_": {
+			"outputs": [],
+			"dependsOn": [
+				"lint:es_",
+				"lint:tsc_",
+				"lint:svelte_",
+				"lint:style_",
+				"lint:md_",
+				"lint:format_"
+			],
+			"outputMode": "new-only"
+		},
 		"lint:es_": {
 			"dependsOn": ["//#lint:es:require_", "lint:es:require_"],
 			"outputMode": "new-only"

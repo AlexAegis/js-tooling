@@ -33,8 +33,6 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 			{
 				scripts: {
 					nuke: 'nuke',
-					lint: 'pnpm lint:tsc && pnpm lint:es && pnpm lint:svelte && pnpm lint:style && pnpm lint:format && pnpm lint:format_ && pnpm lint:md && pnpm lint:md_',
-					ci: 'pnpm lint && pnpm build && pnpm test && pnpm typedoc',
 					ncu: 'ncu --deep --peer --upgrade',
 				},
 			},

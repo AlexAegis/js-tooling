@@ -91,20 +91,6 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 				logger: logger.getSubLogger({ name: 'packageJson:applications' }),
 			}
 		),
-		distributePackageJsonItemsInWorkspace(
-			{
-				scripts: {
-					build: 'turbo run build-lib_ build-app_',
-					'build-lib': 'turbo run build-lib_',
-				},
-			},
-			{
-				...options,
-				onlyWorkspaceRoot: true,
-				dependencyCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
-			}
-		),
 	]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);

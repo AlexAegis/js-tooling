@@ -2,6 +2,7 @@ import { createLogger } from '@alexaegis/logging';
 import {
 	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
+	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
@@ -28,6 +29,22 @@ export const setupTurbo = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 	logger.info(`distributing config from ${packageDirectory}`);
 
 	await Promise.all([
+		distributePackageJsonItemsInWorkspace(
+			{
+				scripts: {
+					build: 'turbo run build-lib_ build-app_',
+					'build-lib': 'turbo run build-lib_',
+					'full-suite': 'turbo run full-suite_',
+					lint: 'turbo run lint_',
+				},
+			},
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
+			}
+		),
 		distributeFileInWorkspace(join(packageDirectory, 'static', 'turbo.json'), 'turbo.json', {
 			...options,
 			onlyWorkspaceRoot: true,
