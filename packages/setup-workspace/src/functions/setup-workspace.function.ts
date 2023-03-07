@@ -28,26 +28,14 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	// TODO: once release add `nuke` to the dependencies and it's bin to this packages bin
+	// TODO: once released, add `nuke` to the dependencies and its bin to this packages bin
 	await Promise.allSettled([
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
 					nuke: 'nuke',
-				},
-				devDependencies: {
-					'@alexaegis/setup-editorconfig': `${packageJson.version}`,
-					'@alexaegis/setup-eslint': `${packageJson.version}`,
-					'@alexaegis/setup-git': `${packageJson.version}`,
-					'@alexaegis/setup-husky': `${packageJson.version}`,
-					'@alexaegis/setup-prettier': `${packageJson.version}`,
-					'@alexaegis/setup-remark': `${packageJson.version}`,
-					'@alexaegis/setup-standard-version': `${packageJson.version}`,
-					'@alexaegis/setup-stylelint': `${packageJson.version}`,
-					'@alexaegis/setup-ts': `${packageJson.version}`,
-					'@alexaegis/setup-turbo': `${packageJson.version}`,
-					'@alexaegis/setup-vite': `${packageJson.version}`,
-					'@alexaegis/setup-vitest': `${packageJson.version}`,
+					ci: 'pnpm lint && pnpm build && pnpm test && pnpm typedoc',
+					ncu: 'ncu --deep --peer --upgrade',
 				},
 			},
 			{
@@ -55,20 +43,6 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
-			}
-		),
-		distributePackageJsonItemsInWorkspace(
-			{
-				scripts: {
-					'watch-deps':
-						'nodemon --config node_modules/@alexaegis/workspace-tools/static/nodemon-dep-watch.json',
-				},
-			},
-			{
-				...options,
-				skipWorkspaceRoot: true,
-				keywordCriteria: [/@alexaegis\/setup-vite.*/g],
-				logger: logger.getSubLogger({ name: 'packageJson:subPackages' }),
 			}
 		),
 		distributeFileInWorkspace(

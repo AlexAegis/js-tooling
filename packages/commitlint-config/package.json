@@ -1,6 +1,6 @@
 {
-	"name": "@alexaegis/lint-staged",
-	"description": "Lint staged config",
+	"name": "@alexaegis/commitlint-config",
+	"description": "My commitlint config",
 	"version": "0.0.1",
 	"license": "MIT",
 	"private": false,
@@ -11,28 +11,28 @@
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
-		"eslint"
+		"stylelint"
 	],
 	"type": "module",
 	"config": {
-		"engine-strict": true
+		"engine-strict": false
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/lint-staged",
+		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/commitlint-config",
 		"build-lib_": "vite build",
-		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/lint-staged",
+		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/commitlint-config",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/lint-staged",
+		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/commitlint-config",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/lint-staged",
+		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/commitlint-config",
 		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/lint-staged",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/commitlint-config",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/lint-staged",
+		"test": "turbo run test_ --concurrency 6 --filter @alexaegis/commitlint-config",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
@@ -42,25 +42,23 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./internal": {
+			"types": "./src/internal.ts",
+			"import": "./dist/internal.js",
+			"require": "./dist/internal.cjs"
+		},
 		"./readme": "./readme.md"
 	},
-	"bin": {
-		"lint-staged": "./node_modules/lint-staged/bin/lint-staged.js"
-	},
 	"dependencies": {
-		"lint-staged": "13.1.2",
-		"typescript": "^4.9.5"
-	},
-	"peerDependencies": {
-		"typescript": "^4.9.5"
-	},
-	"optionalDependencies": {
-		"svelte": "^3.55.1"
+		"@alexaegis/cli-tools": "0.0.23",
+		"@alexaegis/logging": "0.0.23",
+		"@alexaegis/standard-version": "*"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",
 		"@alexaegis/vitest": "*",
-		"@types/eslint": "^8.21.1",
-		"@types/node": "^18.14.6"
+		"@commitlint/types": "^17.4.4",
+		"@types/node": "^18.14.6",
+		"typescript": "4.9.5"
 	}
 }

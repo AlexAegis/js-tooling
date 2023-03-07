@@ -23,10 +23,6 @@ export const createStandardVersionConfig = () => {
 				filename: join(p.path, 'readme.md'),
 				updater,
 			})),
-			{
-				filename: '.github/version.txt',
-				type: 'plain-text',
-			},
 		],
 	};
 };

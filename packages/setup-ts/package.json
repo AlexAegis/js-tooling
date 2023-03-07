@@ -56,9 +56,9 @@
 		"setup-ts": "./shims/setup-ts.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.22",
-		"@alexaegis/logging": "0.0.22",
-		"@alexaegis/workspace-tools": "0.0.22"
+		"@alexaegis/cli-tools": "0.0.23",
+		"@alexaegis/logging": "0.0.23",
+		"@alexaegis/workspace-tools": "0.0.23"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

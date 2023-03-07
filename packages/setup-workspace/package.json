@@ -46,13 +46,15 @@
 	},
 	"bin": {
 		"alexaegis-setup-workspace-postinstall": "./shims/postinstall.mjs",
+		"ncu": "node_modules/npm-check-updates/build/src/bin/cli.js",
 		"setup-workspace": "./shims/setup-workspace.mjs"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.22",
-		"@alexaegis/logging": "0.0.22",
+		"@alexaegis/cli-tools": "0.0.23",
+		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/setup-editorconfig": "*",
-		"@alexaegis/workspace-tools": "0.0.22"
+		"@alexaegis/workspace-tools": "0.0.23",
+		"npm-check-updates": "^16.7.10"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "*",

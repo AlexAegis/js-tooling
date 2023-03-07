@@ -457,15 +457,18 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
-      - name:
-          Check if ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} is
-          already deployed
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: 'packages/${{ matrix.artifact }}/package.json'
+          prop_path: 'version'
+      - name: |
+          Check if ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{matrix.artifact}}@${{steps.version.outputs.prop}} is already deployed
         run: |
-          VERSION=$(cat ".github/version.txt")
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-          IS_ON_NPM=$(if [ ! -z "$(npm view ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@$VERSION 2> /dev/null)" ]; then echo 'true'; else echo 'false'; fi)
+          IS_ON_NPM=$(if [ ! -z "$(npm view ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}  2> /dev/null)" ]; then echo 'true'; else echo 'false'; fi)
           echo "IS_ON_NPM=$IS_ON_NPM" >> $GITHUB_ENV
-          echo "was ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@$VERSION already on npm: $IS_ON_NPM"
+          echo "was ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} already on npm: $IS_ON_NPM"
       - name: install
         if: env.IS_ON_NPM != 'true'
         run: pnpm install
