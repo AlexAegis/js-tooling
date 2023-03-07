@@ -36,7 +36,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 		const commonOptions = {
 			...options,
 			skipWorkspaceRoot: true,
-			keywordCriteria: [`${packageJson.name}${flavourCriteria}`],
+			keywordCriteria: [`^${packageJson.name}${flavourCriteria}$`],
 			logger: logger.getSubLogger({ name: `packageTsConfig:${flavour}` }),
 		};
 
@@ -54,7 +54,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 		];
 	};
 
-	await removeFilesInWorkspace('tsconfig*', {
+	await removeFilesInWorkspace('tsconfig.!(json)', {
 		...options,
 		keywordCriteria: [`${packageJson.name}.*`],
 		logger: logger.getSubLogger({ name: 'packageJson' }),
