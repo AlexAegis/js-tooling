@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/vitest",
 	"description": "My vitest config",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -67,7 +67,7 @@
 		"vitest": "^0.27.1"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "*",
+		"@alexaegis/vite": "0.0.1",
 		"tslib": "^2.5.0"
 	}
 }

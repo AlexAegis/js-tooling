@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/remark-preset",
 	"description": "Remark config preset",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -67,8 +67,8 @@
 		"prettier": "*"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "*",
-		"@alexaegis/vitest": "*",
+		"@alexaegis/vite": "0.0.1",
+		"@alexaegis/vitest": "0.0.1",
 		"unified": "^10.1.2"
 	}
 }

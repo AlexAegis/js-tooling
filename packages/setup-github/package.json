@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-github",
 	"description": "My stylelint config",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -59,8 +59,8 @@
 		"@alexaegis/workspace-tools": "0.0.23"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "*",
-		"@alexaegis/vitest": "*",
+		"@alexaegis/vite": "0.0.1",
+		"@alexaegis/vitest": "0.0.1",
 		"@types/node": "^18.14.6",
 		"typescript": "4.9.5"
 	}
