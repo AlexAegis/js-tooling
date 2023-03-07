@@ -28,7 +28,7 @@
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/setup-workspace",
 		"lint:format_": "prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/setup-workspace",
-		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/setup-workspace",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",

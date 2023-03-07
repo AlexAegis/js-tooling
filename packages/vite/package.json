@@ -26,7 +26,7 @@
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:format_": "prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 6 --filter @alexaegis/vite",
-		"lint:md_": "remark --frail --no-stdout *.md docs/**/*.md",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --filter @alexaegis/vite",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",

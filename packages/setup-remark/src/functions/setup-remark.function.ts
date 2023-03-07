@@ -58,7 +58,7 @@ export const distributeRemarkConfig = async (
 		{
 			scripts: {
 				'lint:md': 'turbo run lint:md_ --concurrency 6 --filter ${packageName}',
-				'lint:md_': 'remark --frail --no-stdout *.md docs/**/*.md',
+				'lint:md_': 'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
 			},
 		},
 		{
@@ -74,7 +74,7 @@ export const distributeRemarkConfig = async (
 		{
 			scripts: {
 				'lint:md': 'turbo run lint:md_ --concurrency 6',
-				'lint:md_': 'remark --frail --no-stdout *.md docs/**/*.md',
+				'lint:md_': 'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
 			},
 		},
 		{
