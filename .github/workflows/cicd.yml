@@ -393,9 +393,8 @@ jobs:
         uses: actions/deploy-pages@v1
   release:
     name: release
-    if: |
-      github.event_name == 'disabled' &&
-      github.ref_name == ${{ github.event.repository.default_branch }} && 
+    if:
+      github.ref_name == ${{ github.event.repository.default_branch }} &&
       github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs:
@@ -481,24 +480,22 @@ jobs:
       - name: install
         if: env.IS_ON_NPM != 'true'
         run: pnpm install
-      - name:
-          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
-          builds
+      - name: build ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run build --scope="${{ matrix.artifact }}"
+          npx turbo run build-lib_ --scope="${{ matrix.artifact }}"
       - name:
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
           lints are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run lint --scope="${{ matrix.artifact }}"
+          npx turbo run lint_ --scope="${{ matrix.artifact }}"
       - name:
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
           tests are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run test --scope="${{ matrix.artifact }}"
+          npx turbo run test_ --scope="${{ matrix.artifact }}"
       - name:
           release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} on npm
         if: env.IS_ON_NPM != 'true'
