@@ -22,47 +22,39 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"lint_": {
-			"outputs": [],
-			"dependsOn": ["lint:es_", "lint:svelte_", "lint:style_", "lint:md_", "lint:format_"],
-			"outputMode": "new-only"
-		},
-		"//#lint_": {
-			"dependsOn": [],
-			"outputs": [],
-			"outputMode": "new-only"
-		},
-		"lint:es_:chain": {
-			"cache": false,
-			"outputMode": "new-only"
-		},
-		"//#lint:es_:chain": {
-			"cache": false,
-			"outputMode": "new-only"
-		},
-		"lint:es_:pre": {
-			"outputMode": "new-only"
-		},
-		"//#lint:es_:pre": {
-			"outputMode": "new-only"
-		},
 		"lint:es_": {
-			"dependsOn": ["//#lint:es_", "//#lint:es_"],
+			"dependsOn": ["//#lint:es:require_", "lint:es:require_"],
 			"outputMode": "new-only"
 		},
 		"//#lint:es_": {
-			"dependsOn": ["//#lint:es_:chain", "//#lint:es_:pre"],
+			"dependsOn": ["//#lint:es:require_"],
 			"outputs": [],
+			"outputMode": "new-only"
+		},
+		"lint:es:require_": {
+			"cache": false,
+			"outputMode": "new-only"
+		},
+		"//#lint:es:require_": {
+			"cache": false,
 			"outputMode": "new-only"
 		},
 		"lint:tsc_": {
+			"dependsOn": ["//#lint:tsc:require_", "lint:tsc:require_"],
 			"outputs": [],
-			"dependsOn": [],
 			"outputMode": "new-only"
 		},
 		"//#lint:tsc_": {
+			"dependsOn": ["//#lint:tsc:require_"],
 			"outputs": [],
-			"dependsOn": [],
+			"outputMode": "new-only"
+		},
+		"lint:tsc:require_": {
+			"cache": false,
+			"outputMode": "new-only"
+		},
+		"//#lint:tsc:require_": {
+			"cache": false,
 			"outputMode": "new-only"
 		},
 		"lint:svelte_": {
@@ -76,22 +68,42 @@
 			"outputMode": "new-only"
 		},
 		"lint:style_": {
+			"dependsOn": ["//#lint:style:require_", "lint:style:require_"],
 			"outputs": [],
-			"dependsOn": [],
 			"outputMode": "new-only"
 		},
 		"//#lint:style_": {
-			"dependsOn": [],
+			"dependsOn": ["//#lint:style:require_"],
+			"outputs": [],
+			"outputMode": "new-only"
+		},
+		"lint:style:require_": {
+			"cache": false,
+			"outputs": [],
+			"outputMode": "new-only"
+		},
+		"//#lint:style:require_": {
+			"cache": false,
 			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"lint:md_": {
+			"dependsOn": ["//#lint:md:require_", "lint:md:require_"],
 			"outputs": [],
-			"dependsOn": [],
 			"outputMode": "new-only"
 		},
 		"//#lint:md_": {
-			"dependsOn": [],
+			"dependsOn": ["//#lint:md:require_"],
+			"outputs": [],
+			"outputMode": "new-only"
+		},
+		"lint:md:require_": {
+			"cache": false,
+			"outputs": [],
+			"outputMode": "new-only"
+		},
+		"//#lint:md:require_": {
+			"cache": false,
 			"outputs": [],
 			"outputMode": "new-only"
 		},
