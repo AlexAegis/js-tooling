@@ -61,7 +61,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:es
-        run: pnpm lint:es
+        run: pnpm run lint:es --cache-dir=.turbo
   lint-format:
     name: lint:format
     runs-on: ubuntu-latest
@@ -100,7 +100,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:format
-        run: pnpm lint:format
+        run: pnpm run lint:format --cache-dir=.turbo
   lint-md:
     name: lint:md
     runs-on: ubuntu-latest
@@ -139,7 +139,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:md
-        run: pnpm lint:md
+        run: pnpm run lint:md --cache-dir=.turbo
   lint-style:
     name: lint:style
     runs-on: ubuntu-latest
@@ -178,7 +178,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:style
-        run: pnpm lint:style
+        run: pnpm run lint:style --cache-dir=.turbo
   lint-svelte:
     name: lint:svelte
     runs-on: ubuntu-latest
@@ -217,7 +217,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:svelte
-        run: pnpm lint:svelte
+        run: pnpm run lint:svelte --cache-dir=.turbo
   lint-tsc:
     name: lint:tsc
     runs-on: ubuntu-latest
@@ -256,7 +256,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:tsc
-        run: pnpm lint:tsc
+        run: pnpm run lint:tsc --cache-dir=.turbo
   test:
     name: test
     runs-on: ubuntu-latest
@@ -295,7 +295,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: test
-        run: pnpm test
+        run: pnpm run test --cache-dir=.turbo
+      - name: merge lcov reports
+        run: pnpm run merge-coverage
       - name: upload coverage result to codacy
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
@@ -344,7 +346,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: build
-        run: BASE_HREF="/${{ github.event.repository.name }}/" pnpm build
+        env:
+          BASE_HREF: '/${{ github.event.repository.name }}/'
+        run: pnpm run build --cache-dir=.turbo
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.DEPLOY_ARTIFACT_DIR != '' &&
@@ -455,17 +459,6 @@ jobs:
         id: pnpm-store
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-      - name: cache
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
       - name: get version
         id: version
         uses: notiz-dev/github-action-json-property@release
@@ -478,27 +471,38 @@ jobs:
           IS_ON_NPM=$(if [ ! -z "$(npm view ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}  2> /dev/null)" ]; then echo 'true'; else echo 'false'; fi)
           echo "IS_ON_NPM=$IS_ON_NPM" >> $GITHUB_ENV
           echo "was ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} already on npm: $IS_ON_NPM"
+      - name: cache
+        id: cache
+        uses: actions/cache@v3
+        if: env.IS_ON_NPM != 'true'
+        with:
+          path: |
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            **/node_modules
+            **/.turbo
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name: install
         if: env.IS_ON_NPM != 'true'
         run: pnpm install
-      - name: build ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
+      - name: |
+          build ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run build-lib_ --scope="${{ matrix.artifact }}"
-      - name:
-          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
-          lints are succeeding
+          npx turbo run build-lib_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
+      - name: |
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} lints are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run lint_ --scope="${{ matrix.artifact }}"
-      - name:
-          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
-          tests are succeeding
+          npx turbo run lint_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
+      - name: |
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} tests are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run test_ --scope="${{ matrix.artifact }}"
-      - name:
-          release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} on npm
+          npx turbo run test_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
+      - name: |
+          release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} on npm
         if: env.IS_ON_NPM != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

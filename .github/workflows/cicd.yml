@@ -492,14 +492,12 @@ jobs:
         run: |
           npx turbo run build-lib_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
       - name: |
-          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}
-          lints are succeeding
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} lints are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
           npx turbo run lint_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
       - name: |
-          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}
-          tests are succeeding
+          verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} tests are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
           npx turbo run test_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
