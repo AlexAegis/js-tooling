@@ -52,13 +52,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:es
         run: pnpm run lint:es --cache-dir=.turbo
@@ -91,13 +89,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:format
         run: pnpm run lint:format --cache-dir=.turbo
@@ -130,13 +126,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:md
         run: pnpm run lint:md --cache-dir=.turbo
@@ -169,13 +163,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:style
         run: pnpm run lint:style --cache-dir=.turbo
@@ -208,13 +200,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:svelte
         run: pnpm run lint:svelte --cache-dir=.turbo
@@ -247,13 +237,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:tsc
         run: pnpm run lint:tsc --cache-dir=.turbo
@@ -286,13 +274,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: test
         run: pnpm run test --cache-dir=.turbo
@@ -337,13 +323,11 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: build
         env:
@@ -478,8 +462,7 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            **/node_modules
-            **/.turbo
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
