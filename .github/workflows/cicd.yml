@@ -61,7 +61,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:es
-        run: pnpm lint:es
+        run: pnpm run lint:es --cache-dir=.turbo
   lint-format:
     name: lint:format
     runs-on: ubuntu-latest
@@ -100,7 +100,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:format
-        run: pnpm lint:format
+        run: pnpm run lint:format --cache-dir=.turbo
   lint-md:
     name: lint:md
     runs-on: ubuntu-latest
@@ -139,7 +139,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:md
-        run: pnpm lint:md
+        run: pnpm run lint:md --cache-dir=.turbo
   lint-style:
     name: lint:style
     runs-on: ubuntu-latest
@@ -178,7 +178,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:style
-        run: pnpm lint:style
+        run: pnpm run lint:style --cache-dir=.turbo
   lint-svelte:
     name: lint:svelte
     runs-on: ubuntu-latest
@@ -217,7 +217,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:svelte
-        run: pnpm lint:svelte
+        run: pnpm run lint:svelte --cache-dir=.turbo
   lint-tsc:
     name: lint:tsc
     runs-on: ubuntu-latest
@@ -256,7 +256,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: lint:tsc
-        run: pnpm lint:tsc
+        run: pnpm run lint:tsc --cache-dir=.turbo
   test:
     name: test
     runs-on: ubuntu-latest
@@ -295,7 +295,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: test
-        run: pnpm test
+        run: pnpm run test --cache-dir=.turbo
+      - name: merge lcov reports
+        run: pnpm run merge-coverage
       - name: upload coverage result to codacy
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
@@ -344,7 +346,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
       - name: build
-        run: BASE_HREF="/${{ github.event.repository.name }}/" pnpm build
+        env:
+          BASE_HREF: '/${{ github.event.repository.name }}/'
+        run: pnpm run build --cache-dir=.turbo
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.DEPLOY_ARTIFACT_DIR != '' &&
@@ -484,19 +488,19 @@ jobs:
       - name: build ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run build-lib_ --scope="${{ matrix.artifact }}"
+          npx turbo run build-lib_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
       - name:
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
           lints are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run lint_ --scope="${{ matrix.artifact }}"
+          npx turbo run lint_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
       - name:
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}
           tests are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run test_ --scope="${{ matrix.artifact }}"
+          npx turbo run test_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
       - name:
           release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }} on npm
         if: env.IS_ON_NPM != 'true'

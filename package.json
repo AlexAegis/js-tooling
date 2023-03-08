@@ -64,7 +64,8 @@
 		"release:minor": "commit-and-tag-version --sign --release-as minor",
 		"release:patch": "commit-and-tag-version --sign --release-as patch",
 		"start": "turbo run start_ --parallel",
-		"test": "turbo run test_ --concurrency 6 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
+		"test": "turbo run test_ --concurrency 6",
+		"merge-coverage": "merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
 		"typedoc": "turbo run typedoc_"
 	},
 	"devDependencies": {

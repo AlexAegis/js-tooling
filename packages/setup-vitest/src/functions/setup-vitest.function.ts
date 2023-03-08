@@ -70,7 +70,9 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					test: 'turbo run test_ --concurrency 6 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
+					test: 'turbo run test_ --concurrency 6',
+					'merge-coverage':
+						'merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
 				},
 			},
 			{
