@@ -69,10 +69,10 @@
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"concurrently": "^7.6.0",
 		"nodemon": "^2.0.21",
-		"svelte": "^3.55.1",
+		"svelte": "^3.56.0",
 		"vite": "4.1.4",
 		"vite-plugin-autolib": "^0.0.12",
-		"vite-plugin-dts": "^2.0.2",
+		"vite-plugin-dts": "^2.1.0",
 		"vite-plugin-static-copy": "0.13.1"
 	},
 	"optionalDependencies": {
@@ -81,7 +81,7 @@
 	"devDependencies": {
 		"@schemastore/package": "^0.0.8",
 		"@types/fs-extra": "^11.0.1",
-		"@types/node": "^18.14.6",
+		"@types/node": "^18.15.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.9.5",
 		"vitest": "^0.29.2"
