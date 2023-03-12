@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": true,
 	"keywords": [
 		"@alexaegis/setup-eslint",
@@ -35,12 +35,12 @@
 	},
 	"dependencies": {
 		"@alexaegis/common": "*",
-		"@alexaegis/example": "0.0.1"
+		"@alexaegis/example": "0.0.2"
 	},
 	"devDependencies": {
-		"@alexaegis/ts": "0.0.1",
-		"@alexaegis/vite": "0.0.1",
-		"@alexaegis/vitest": "0.0.1",
+		"@alexaegis/ts": "0.0.2",
+		"@alexaegis/vite": "0.0.2",
+		"@alexaegis/vitest": "0.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"@tsconfig/svelte": "^3.0.0",
 		"svelte": "^3.56.0",

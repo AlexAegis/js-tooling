@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-eslint",
 	"description": "Setup eslint",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -55,8 +55,8 @@
 		"@alexaegis/workspace-tools": "0.0.23"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.1",
-		"@alexaegis/vitest": "0.0.1",
+		"@alexaegis/vite": "0.0.2",
+		"@alexaegis/vitest": "0.0.2",
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.15.0",
 		"typescript": "4.9.5"

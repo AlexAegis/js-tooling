@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/ts",
 	"description": "my typescript configurations",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -58,7 +58,7 @@
 		"tsserver": "node_modules/typescript/bin/tsserver"
 	},
 	"dependencies": {
-		"@alexaegis/vite": "0.0.1",
+		"@alexaegis/vite": "0.0.2",
 		"@tsconfig/svelte": "*",
 		"@types/node": "^18.15.0",
 		"ts-node": "^10.9.1",
@@ -66,8 +66,8 @@
 		"vite": "^4.1.4"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.1",
-		"@alexaegis/vitest": "0.0.1",
+		"@alexaegis/vite": "0.0.2",
+		"@alexaegis/vitest": "0.0.2",
 		"vitest": "*"
 	}
 }

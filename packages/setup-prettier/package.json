@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-prettier",
 	"description": "My prettier config distributor",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -61,7 +61,7 @@
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",
 		"@alexaegis/logging": "0.0.23",
-		"@alexaegis/prettier-config": "0.0.1",
+		"@alexaegis/prettier-config": "0.0.2",
 		"@alexaegis/workspace-tools": "0.0.23",
 		"prettier": "^2.8.4",
 		"yargs": "^17.7.1"
@@ -70,9 +70,9 @@
 		"svelte": "^3.56.0"
 	},
 	"devDependencies": {
-		"@alexaegis/ts": "0.0.1",
-		"@alexaegis/vite": "0.0.1",
-		"@alexaegis/vitest": "0.0.1",
+		"@alexaegis/ts": "0.0.2",
+		"@alexaegis/vite": "0.0.2",
+		"@alexaegis/vitest": "0.0.2",
 		"@types/node": "^18.15.0",
 		"@types/yargs": "17.0.22",
 		"typescript": "4.9.5"
