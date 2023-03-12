@@ -47,7 +47,7 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"nuke": "./shims/nuke.mjs"
+		"nuke": "./shims/nuke.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

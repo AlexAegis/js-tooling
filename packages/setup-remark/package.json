@@ -50,10 +50,10 @@
 		}
 	},
 	"bin": {
-		"alexaegis-setup-remark-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-remark-postinstall": "./shims/postinstall.js",
 		"markdownlint": "node_modules/markdownlint-cli/markdownlint.js",
 		"remark": "node_modules/remark-cli/cli.js",
-		"setup-remark": "./shims/setup-remark.mjs"
+		"setup-remark": "./shims/setup-remark.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

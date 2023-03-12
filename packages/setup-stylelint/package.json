@@ -47,8 +47,8 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-stylelint-postinstall": "./shims/postinstall.mjs",
-		"setup-stylelint": "./shims/setup-stylelint.mjs",
+		"alexaegis-setup-stylelint-postinstall": "./shims/postinstall.js",
+		"setup-stylelint": "./shims/setup-stylelint.js",
 		"stylelint": "node_modules/stylelint/bin/stylelint.js"
 	},
 	"dependencies": {

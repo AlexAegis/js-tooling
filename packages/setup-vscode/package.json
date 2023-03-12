@@ -50,8 +50,8 @@
 		"./tasks": "./static/tasks.json"
 	},
 	"bin": {
-		"alexaegis-setup-vscode-postinstall": "./shims/postinstall.mjs",
-		"setup-vscode": "./shims/setup-vscode.mjs"
+		"alexaegis-setup-vscode-postinstall": "./shims/postinstall.js",
+		"setup-vscode": "./shims/setup-vscode.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

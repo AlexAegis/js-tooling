@@ -46,10 +46,10 @@
 		"./vite-svelte.config": "./static/vite-svelte.config.ts"
 	},
 	"bin": {
-		"alexaegis-setup-vite-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-vite-postinstall": "./shims/postinstall.js",
 		"concurrently": "node_modules/concurrently/index.js",
 		"nodemon": "node_modules/nodemon/bin/nodemon.js",
-		"setup-vite": "./shims/setup-vite.mjs"
+		"setup-vite": "./shims/setup-vite.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

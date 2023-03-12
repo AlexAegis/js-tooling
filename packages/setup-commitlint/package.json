@@ -52,9 +52,9 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-commitlint-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-commitlint-postinstall": "./shims/postinstall.js",
 		"commitlint": "node_modules/commitlint/cli.js",
-		"setup-commitlint": "./shims/setup-commitlint.mjs"
+		"setup-commitlint": "./shims/setup-commitlint.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

@@ -47,8 +47,8 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-editorconfig-postinstall": "./shims/postinstall.mjs",
-		"setup-editorconfig": "./shims/setup-editorconfig.mjs"
+		"alexaegis-setup-editorconfig-postinstall": "./shims/postinstall.js",
+		"setup-editorconfig": "./shims/setup-editorconfig.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

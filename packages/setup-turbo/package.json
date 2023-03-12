@@ -47,8 +47,8 @@
 		"./turbo": "./static/turbo.json"
 	},
 	"bin": {
-		"alexaegis-setup-turbo-postinstall": "./shims/postinstall.mjs",
-		"setup-turbo": "./shims/setup-turbo.mjs",
+		"alexaegis-setup-turbo-postinstall": "./shims/postinstall.js",
+		"setup-turbo": "./shims/setup-turbo.js",
 		"turbo": "node_modules/turbo/bin/turbo"
 	},
 	"dependencies": {

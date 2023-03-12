@@ -45,10 +45,10 @@
 		"./workspace-vitest.config": "./static/workspace-vitest.config.ts"
 	},
 	"bin": {
-		"alexaegis-setup-vitest-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-vitest-postinstall": "./shims/postinstall.js",
 		"lcov-viewer": "node_modules/@lcov-viewer/cli/lib/index.js",
 		"merge-workspace-lcov-reports": "node_modules/@alexaegis/coverage-tools/bin/merge-workspace-lcov-reports.mjs",
-		"setup-vitest": "./shims/setup-vitest.mjs"
+		"setup-vitest": "./shims/setup-vitest.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

@@ -52,8 +52,8 @@
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
 	"bin": {
-		"alexaegis-setup-ts-postinstall": "./shims/postinstall.mjs",
-		"setup-ts": "./shims/setup-ts.mjs"
+		"alexaegis-setup-ts-postinstall": "./shims/postinstall.js",
+		"setup-ts": "./shims/setup-ts.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

@@ -46,8 +46,8 @@
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"bin": {
-		"alexaegis-setup-eslint-postinstall": "./shims/postinstall.mjs",
-		"setup-eslint": "./shims/setup-eslint.mjs"
+		"alexaegis-setup-eslint-postinstall": "./shims/postinstall.js",
+		"setup-eslint": "./shims/setup-eslint.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

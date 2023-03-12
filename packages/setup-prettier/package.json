@@ -54,9 +54,9 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-prettier-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-prettier-postinstall": "./shims/postinstall.js",
 		"prettier": "node_modules/prettier/bin-prettier.js",
-		"setup-prettier": "./shims/setup-prettier.mjs"
+		"setup-prettier": "./shims/setup-prettier.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

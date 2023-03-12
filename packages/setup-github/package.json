@@ -50,8 +50,8 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-github-postinstall": "./shims/postinstall.mjs",
-		"setup-github": "./shims/setup-github.mjs"
+		"alexaegis-setup-github-postinstall": "./shims/postinstall.js",
+		"setup-github": "./shims/setup-github.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

@@ -50,11 +50,11 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-husky-postinstall": "./shims/postinstall.mjs",
+		"alexaegis-setup-husky-postinstall": "./shims/postinstall.js",
 		"commitlint": "./node_modules/commitlint/cli.js",
 		"husky": "node_modules/husky/lib/bin.js",
 		"lint-staged": "./node_modules/lint-staged/bin/lint-staged.js",
-		"setup-husky": "./shims/setup-husky.mjs"
+		"setup-husky": "./shims/setup-husky.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",
