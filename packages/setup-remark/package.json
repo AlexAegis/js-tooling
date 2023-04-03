@@ -51,8 +51,6 @@
 	},
 	"bin": {
 		"alexaegis-setup-remark-postinstall": "./shims/postinstall.js",
-		"markdownlint": "node_modules/markdownlint-cli/markdownlint.js",
-		"remark": "node_modules/remark-cli/cli.js",
 		"setup-remark": "./shims/setup-remark.js"
 	},
 	"dependencies": {
@@ -60,7 +58,6 @@
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/remark-preset": "0.0.2",
 		"@alexaegis/workspace-tools": "0.0.23",
-		"markdownlint-cli": "^0.33.0",
 		"remark-cli": "^11.0.0",
 		"yargs": "^17.7.1"
 	},

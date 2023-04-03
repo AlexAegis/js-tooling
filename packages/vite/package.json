@@ -60,11 +60,6 @@
 		},
 		"./readme": "./readme.md"
 	},
-	"bin": {
-		"concurrently": "node_modules/concurrently/index.js",
-		"nodemon": "node_modules/nodemon/bin/nodemon.js",
-		"vite": "node_modules/vite/bin/vite.js"
-	},
 	"dependencies": {
 		"@sveltejs/vite-plugin-svelte": "^2.0.3",
 		"concurrently": "^7.6.0",
@@ -83,7 +78,7 @@
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "^18.15.0",
 		"ts-node": "^10.9.1",
-		"typescript": "^4.9.5",
+		"typescript": "4.9.5",
 		"vitest": "^0.29.2"
 	}
 }

@@ -35,6 +35,9 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					nuke: 'nuke',
 					ncu: 'ncu --deep --peer --upgrade',
 				},
+				devDependencies: {
+					'npm-check-updates': packageJson.dependencies['npm-check-updates'],
+				},
 			},
 			{
 				...options,

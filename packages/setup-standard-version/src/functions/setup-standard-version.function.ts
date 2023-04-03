@@ -39,6 +39,9 @@ export const setupStandardVersion = async (
 					'release:minor': 'commit-and-tag-version --sign --release-as minor',
 					'release:major': 'commit-and-tag-version --sign --release-as major',
 				},
+				devDependencies: {
+					'commit-and-tag-version': packageJson.dependencies['commit-and-tag-version'],
+				},
 			},
 			{
 				...options,

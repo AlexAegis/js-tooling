@@ -34,7 +34,7 @@
 	"engines": {
 		"node": ">=18.13.0"
 	},
-	"packageManager": "pnpm@7.29.1",
+	"packageManager": "pnpm@8.1.0",
 	"workspaces": [
 		"apps/*",
 		"libs/*",
@@ -56,6 +56,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6",
 		"format": "prettier --write .",
 		"full-suite": "turbo run full-suite_",
+		"merge-coverage": "merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
 		"ncu": "ncu --deep --peer --upgrade",
 		"nuke": "nuke",
 		"postinstall": "husky install",
@@ -65,11 +66,11 @@
 		"release:patch": "commit-and-tag-version --sign --release-as patch",
 		"start": "turbo run start_ --parallel",
 		"test": "turbo run test_ --concurrency 6",
-		"merge-coverage": "merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
 		"typedoc": "turbo run typedoc_"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-core": "0.0.2",
+		"@alexaegis/nuke": "0.0.2",
 		"@alexaegis/setup-commitlint": "0.0.2",
 		"@alexaegis/setup-editorconfig": "0.0.2",
 		"@alexaegis/setup-eslint": "0.0.2",
@@ -90,13 +91,18 @@
 		"@alexaegis/ts": "0.0.2",
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.15.0",
+		"commitlint": "^17.4.4",
+		"eslint": "^8.36.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.0",
 		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "^2.9.0",
 		"remark": "^14.0.2",
 		"remark-lint": "^9.1.1",
 		"svelte": "^3.56.0",
 		"ts-node": "^10.9.1",
-		"typescript": "^4.9.5",
+		"turbo": "^1.8.3",
+		"typescript": "4.9.5",
 		"vitest": "^0.29.2"
 	}
 }

@@ -51,9 +51,6 @@
 	},
 	"bin": {
 		"alexaegis-setup-husky-postinstall": "./shims/postinstall.js",
-		"commitlint": "./node_modules/commitlint/cli.js",
-		"husky": "node_modules/husky/lib/bin.js",
-		"lint-staged": "./node_modules/lint-staged/bin/lint-staged.js",
 		"setup-husky": "./shims/setup-husky.js"
 	},
 	"dependencies": {
@@ -62,9 +59,11 @@
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/workspace-tools": "0.0.23",
 		"@commitlint/config-conventional": "^17.4.4",
-		"commitlint": "^17.4.4",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.0"
+	},
+	"peerDependencies": {
+		"@alexaegis/setup-commitlint": "0.0.2"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "0.0.2",

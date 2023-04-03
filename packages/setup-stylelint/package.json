@@ -48,8 +48,7 @@
 	},
 	"bin": {
 		"alexaegis-setup-stylelint-postinstall": "./shims/postinstall.js",
-		"setup-stylelint": "./shims/setup-stylelint.js",
-		"stylelint": "node_modules/stylelint/bin/stylelint.js"
+		"setup-stylelint": "./shims/setup-stylelint.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

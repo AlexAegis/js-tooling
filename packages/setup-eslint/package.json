@@ -55,10 +55,12 @@
 		"@alexaegis/workspace-tools": "0.0.23"
 	},
 	"devDependencies": {
+		"@alexaegis/eslint-config-core": "0.0.2",
 		"@alexaegis/vite": "0.0.2",
 		"@alexaegis/vitest": "0.0.2",
 		"@types/eslint": "^8.21.1",
 		"@types/node": "^18.15.0",
+		"eslint": "^8.36.0",
 		"typescript": "4.9.5"
 	}
 }

@@ -55,7 +55,6 @@
 	},
 	"bin": {
 		"alexaegis-setup-prettier-postinstall": "./shims/postinstall.js",
-		"prettier": "node_modules/prettier/bin-prettier.js",
 		"setup-prettier": "./shims/setup-prettier.js"
 	},
 	"dependencies": {

@@ -48,21 +48,12 @@
 		"./svelte": "./svelte.json",
 		"./web": "./web.json"
 	},
-	"bin": {
-		"ts-node": "node_modules/ts-node/dist/bin.js",
-		"ts-node-cwd": "node_modules/ts-node/dist/bin-cwd.js",
-		"ts-node-esm": "node_modules/ts-node/dist/bin-esm.js",
-		"ts-node-script": "node_modules/ts-node/dist/bin-script.js",
-		"ts-node-transpile-only": "node_modules/ts-node/dist/bin-transpile.js",
-		"tsc": "node_modules/typescript/bin/tsc",
-		"tsserver": "node_modules/typescript/bin/tsserver"
-	},
 	"dependencies": {
 		"@alexaegis/vite": "0.0.2",
 		"@tsconfig/svelte": "*",
 		"@types/node": "^18.15.0",
 		"ts-node": "^10.9.1",
-		"typescript": "^4.9.5",
+		"typescript": "4.9.5",
 		"vite": "^4.1.4"
 	},
 	"devDependencies": {

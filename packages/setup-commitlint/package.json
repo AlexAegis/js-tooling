@@ -53,7 +53,6 @@
 	},
 	"bin": {
 		"alexaegis-setup-commitlint-postinstall": "./shims/postinstall.js",
-		"commitlint": "node_modules/commitlint/cli.js",
 		"setup-commitlint": "./shims/setup-commitlint.js"
 	},
 	"dependencies": {

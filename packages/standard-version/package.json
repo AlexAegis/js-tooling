@@ -40,10 +40,6 @@
 		},
 		"./readme": "./readme.md"
 	},
-	"bin": {
-		"lcov-viewer": "node_modules/@lcov-viewer/cli/lib/index.js",
-		"merge-workspace-lcov-reports": "node_modules/@alexaegis/coverage-tools/bin/merge-workspace-lcov-reports.mjs"
-	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",
 		"@alexaegis/common": "0.0.23",

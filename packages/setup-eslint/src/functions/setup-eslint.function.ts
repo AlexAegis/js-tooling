@@ -8,7 +8,6 @@ import {
 	normalizeDistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
-import workspacePackageJson from '../../../../package.json';
 import packageJson from '../../package.json';
 
 export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
@@ -50,13 +49,15 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 					'lint:es': 'turbo run lint:es_ --concurrency 6',
 				},
 				devDependencies: {
-					'@types/eslint': workspacePackageJson.devDependencies['@types/eslint'],
+					'@alexaegis/eslint-config-core':
+						packageJson.devDependencies['@alexaegis/eslint-config-core'],
+					eslint: packageJson.devDependencies.eslint,
+					'@types/eslint': packageJson.devDependencies['@types/eslint'],
 				},
 			},
 			{
 				...options,
 				onlyWorkspaceRoot: true,
-				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),

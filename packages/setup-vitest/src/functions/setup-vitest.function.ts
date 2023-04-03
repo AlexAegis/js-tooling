@@ -74,6 +74,10 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 					'merge-coverage':
 						'merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
 				},
+				devDependencies: {
+					'@lcov-viewer/cli': packageJson.dependencies['@lcov-viewer/cli'],
+					'@alexaegis/': packageJson.dependencies['@alexaegis/coverage-tools'],
+				},
 			},
 			{
 				...options,

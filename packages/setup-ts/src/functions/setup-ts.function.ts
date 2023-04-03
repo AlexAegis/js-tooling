@@ -80,11 +80,14 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 				scripts: {
 					'lint:tsc': 'turbo run lint:tsc_ --concurrency 6',
 				},
+				devDependencies: {
+					typescript: packageJson.dependencies.typescript,
+					'ts-node': packageJson.peerDependencies['ts-node'],
+				},
 			},
 			{
 				...options,
 				onlyWorkspaceRoot: true,
-				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),

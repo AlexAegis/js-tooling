@@ -37,6 +37,9 @@ export const setupTurbo = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 					'full-suite': 'turbo run full-suite_',
 					lint: 'turbo run lint_',
 				},
+				devDependencies: {
+					turbo: packageJson.dependencies.turbo,
+				},
 			},
 			{
 				...options,

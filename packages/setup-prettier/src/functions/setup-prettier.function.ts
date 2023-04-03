@@ -90,11 +90,13 @@ export const distributePrettierConfig = async (
 				'lint:format_': 'prettier --check *.{json,ts,js,mjs,md,yml,yaml}',
 				'lint:format': 'turbo run lint:format_ --concurrency 6',
 			},
+			devDependencies: {
+				prettier: packageJson.dependencies.prettier,
+			},
 		},
 		{
 			...options,
 			onlyWorkspaceRoot: true,
-			dependencyCriteria: [packageJson.name],
 			logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 		}
 	);

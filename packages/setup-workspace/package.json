@@ -46,7 +46,6 @@
 	},
 	"bin": {
 		"alexaegis-setup-workspace-postinstall": "./shims/postinstall.js",
-		"ncu": "node_modules/npm-check-updates/build/src/bin/cli.js",
 		"setup-workspace": "./shims/setup-workspace.js"
 	},
 	"dependencies": {

@@ -47,8 +47,6 @@
 	},
 	"bin": {
 		"alexaegis-setup-vite-postinstall": "./shims/postinstall.js",
-		"concurrently": "node_modules/concurrently/index.js",
-		"nodemon": "node_modules/nodemon/bin/nodemon.js",
 		"setup-vite": "./shims/setup-vite.js"
 	},
 	"dependencies": {
@@ -56,7 +54,8 @@
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/workspace-tools": "0.0.23",
 		"concurrently": "^7.6.0",
-		"nodemon": "^2.0.21"
+		"nodemon": "^2.0.21",
+		"vite": "4.1.4"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "0.0.2",

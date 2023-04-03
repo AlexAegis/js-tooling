@@ -76,6 +76,9 @@ export const distributeRemarkConfig = async (
 				'lint:md': 'turbo run lint:md_ --concurrency 6',
 				'lint:md_': 'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
 			},
+			devDependencies: {
+				'remark-cli': packageJson.dependencies['remark-cli'],
+			},
 		},
 		{
 			...options,

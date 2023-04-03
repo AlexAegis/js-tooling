@@ -48,8 +48,7 @@
 	},
 	"bin": {
 		"alexaegis-setup-turbo-postinstall": "./shims/postinstall.js",
-		"setup-turbo": "./shims/setup-turbo.js",
-		"turbo": "node_modules/turbo/bin/turbo"
+		"setup-turbo": "./shims/setup-turbo.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",

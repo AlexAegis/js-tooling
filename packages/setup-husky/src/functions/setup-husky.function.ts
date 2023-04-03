@@ -2,6 +2,7 @@ import { createLogger } from '@alexaegis/logging';
 import {
 	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
+	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
@@ -58,6 +59,18 @@ export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'pre-commit' }),
 				markAsExecutable: true,
+			}
+		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				devDependencies: {
+					husky: packageJson.dependencies.husky,
+					'lint-staged': packageJson.dependencies['lint-staged'],
+				},
+			},
+			{
+				onlyWorkspaceRoot: true,
+				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
 	]);

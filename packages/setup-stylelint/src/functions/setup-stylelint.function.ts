@@ -2,6 +2,7 @@ import { createLogger } from '@alexaegis/logging';
 import {
 	distributeFileInWorkspace,
 	DistributeInWorkspaceOptions,
+	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
@@ -36,6 +37,18 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'stylelintrc' }),
+			}
+		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				devDependencies: {
+					stylelint: packageJson.dependencies.stylelint,
+				},
+			},
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
 	]);
