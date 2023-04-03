@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/prettier-config",
 	"description": "Prettier configuration",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -52,8 +52,8 @@
 		"svelte": "^3.58.0"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.2",
-		"@alexaegis/vitest": "0.0.2",
+		"@alexaegis/vite": "0.0.3",
+		"@alexaegis/vitest": "0.0.3",
 		"@vitest/coverage-c8": "^0.29.8",
 		"unified": "^10.1.2",
 		"vite": "4.2.1",

@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-ts",
 	"description": "Exports custom updaters for standard-version",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -65,8 +65,8 @@
 		"ts-node": "^10.9.1"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.2",
-		"@alexaegis/vitest": "0.0.2",
+		"@alexaegis/vite": "0.0.3",
+		"@alexaegis/vitest": "0.0.3",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",
 		"vite": "4.2.1",
