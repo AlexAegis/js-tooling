@@ -405,6 +405,7 @@ jobs:
             'lint-staged-config',
             'nuke',
             'prettier-config',
+            'remark-preset',
             'setup-commitlint',
             'setup-editorconfig',
             'setup-eslint',
