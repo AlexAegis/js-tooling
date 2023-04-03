@@ -7,6 +7,6 @@
 		"outDir": "./dist/out-tsc"
 	},
 	"files": ["package.json", "${relativePathFromPackageToRoot}/package.json"],
-	"include": ["src/**/*", "static/**/*", ".*", "*", "*.json", "**/*.json"],
+	"include": ["src/**/*", "static/**/*", "__mocks__/**/*", ".*", "*", "*.json", "**/*.json"],
 	"exclude": ["node_modules", "dist", "coverage", "vite*.config.ts.timestamp-*"]
 }

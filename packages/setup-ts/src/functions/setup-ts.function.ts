@@ -67,6 +67,9 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 					'lint:tsc': 'turbo run lint:tsc_ --concurrency 6 --filter ${packageName}',
 					'lint:tsc_': 'tsc --noEmit',
 				},
+				devDependencies: {
+					'@alexaegis/ts': packageJson.version,
+				},
 			},
 			{
 				...options,
