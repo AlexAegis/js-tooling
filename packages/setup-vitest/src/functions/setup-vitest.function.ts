@@ -1,11 +1,11 @@
 import { createLogger } from '@alexaegis/logging';
 import {
+	NODE_MODULES_DIRECTORY_NAME,
 	distributeFileInWorkspace,
-	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
-	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
+	type DistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
 import packageJson from '../../package.json';
@@ -41,7 +41,9 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 						'test:watch': 'vitest --passWithNoTests --coverage --run',
 					},
 					devDependencies: {
-						['@alexaegis/vitest']: packageJson.devDependencies['@alexaegis/vitest'],
+						'@alexaegis/vitest': packageJson.devDependencies['@alexaegis/vitest'],
+						vitest: packageJson.devDependencies.vitest,
+						'@vitest/coverage-c8': packageJson.devDependencies['@vitest/coverage-c8'],
 					},
 				},
 				{
@@ -76,7 +78,8 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				},
 				devDependencies: {
 					'@lcov-viewer/cli': packageJson.dependencies['@lcov-viewer/cli'],
-					'@alexaegis/': packageJson.dependencies['@alexaegis/coverage-tools'],
+					'@alexaegis/coverage-tools':
+						packageJson.dependencies['@alexaegis/coverage-tools'],
 				},
 			},
 			{

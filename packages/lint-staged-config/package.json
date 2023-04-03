@@ -47,18 +47,21 @@
 	"dependencies": {
 		"@alexaegis/fs": "0.0.23",
 		"lint-staged": "13.2.0",
-		"typescript": "4.9.5"
+		"typescript": "5.0.3"
 	},
 	"peerDependencies": {
-		"typescript": "4.9.5"
+		"typescript": "5.0.3"
 	},
 	"optionalDependencies": {
-		"svelte": "^3.56.0"
+		"svelte": "^3.58.0"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "0.0.2",
 		"@alexaegis/vitest": "0.0.2",
-		"@types/eslint": "^8.21.1",
-		"@types/node": "^18.15.0"
+		"@types/eslint": "^8.37.0",
+		"@types/node": "^18.15.11",
+		"@vitest/coverage-c8": "^0.29.8",
+		"vite": "4.2.1",
+		"vitest": "^0.29.8"
 	}
 }

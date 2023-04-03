@@ -64,6 +64,9 @@
 	"devDependencies": {
 		"@alexaegis/vite": "0.0.2",
 		"@alexaegis/vitest": "0.0.2",
-		"@types/yargs": "17.0.22"
+		"@types/yargs": "17.0.24",
+		"@vitest/coverage-c8": "^0.29.8",
+		"vite": "4.2.1",
+		"vitest": "^0.29.8"
 	}
 }

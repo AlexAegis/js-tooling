@@ -16,7 +16,6 @@
 		"experimentalDecorators": true,
 		"importHelpers": true,
 		"inlineSources": false,
-		"isolatedModules": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
@@ -35,7 +34,7 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true,
-		"importsNotUsedAsValues": "error"
+		"verbatimModuleSyntax": true
 	},
 	"include": [],
 	"exclude": ["node_modules", "tmp", "dist", "coverage"]

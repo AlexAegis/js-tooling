@@ -54,12 +54,15 @@
 		"@alexaegis/cli-tools": "0.0.23",
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/workspace-tools": "0.0.23",
-		"stylelint": "15.2.0"
+		"stylelint": "15.4.0"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "0.0.2",
 		"@alexaegis/vitest": "0.0.2",
-		"@types/node": "^18.15.0",
-		"typescript": "4.9.5"
+		"@types/node": "^18.15.11",
+		"@vitest/coverage-c8": "^0.29.8",
+		"typescript": "5.0.3",
+		"vite": "4.2.1",
+		"vitest": "^0.29.8"
 	}
 }

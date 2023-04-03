@@ -22,7 +22,7 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"full-suite_": {
+		"ce_": {
 			"outputs": [],
 			"dependsOn": ["lint_", "build-app_", "build-lib_", "test_", "typedoc_"],
 			"outputMode": "new-only"

@@ -1,9 +1,13 @@
-import { DryOption, NormalizedDryOption, normalizeDryOption } from '@alexaegis/common';
-import { LoggerOption, NormalizedLoggerOption, normalizeLoggerOption } from '@alexaegis/logging';
+import { normalizeDryOption, type DryOption, type NormalizedDryOption } from '@alexaegis/common';
 import {
-	CollectWorkspacePackagesOptions,
+	normalizeLoggerOption,
+	type LoggerOption,
+	type NormalizedLoggerOption,
+} from '@alexaegis/logging';
+import {
 	normalizeCollectWorkspacePackagesOptions,
-	NormalizedCollectWorkspacePackagesOptions,
+	type CollectWorkspacePackagesOptions,
+	type NormalizedCollectWorkspacePackagesOptions,
 } from '@alexaegis/workspace-tools';
 
 export const DEFAULT_NUKE_LIST: string[] = [

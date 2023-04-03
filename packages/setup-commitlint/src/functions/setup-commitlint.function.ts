@@ -1,11 +1,11 @@
 import { createLogger } from '@alexaegis/logging';
 import {
+	NODE_MODULES_DIRECTORY_NAME,
 	distributeFileInWorkspace,
-	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
-	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
+	type DistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
 import packageJson from '../../package.json';

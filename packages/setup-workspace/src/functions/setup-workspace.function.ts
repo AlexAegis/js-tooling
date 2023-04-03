@@ -1,10 +1,10 @@
 import { createLogger } from '@alexaegis/logging';
 import {
-	DistributeInWorkspaceOptions,
+	NODE_MODULES_DIRECTORY_NAME,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
-	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
+	type DistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
 import packageJson from '../../package.json';
@@ -27,15 +27,17 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	// TODO: once released, add `nuke` to the dependencies and its bin to this packages bin
 	await Promise.allSettled([
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
 					nuke: 'nuke',
 					ncu: 'ncu --deep --peer --upgrade',
+					'setup-all':
+						'npx setup-prettier && npx setup-editorconfig && npx setup-husky && npx setup-git && npx setup-commitlint && npx setup-eslint && npx setup-github && npx setup-ts && npx setup-remark && npx setup-standard-version && npx setup-stylelint && npx setup-turbo && npx setup-vite && npx setup-vitest && npx setup-workspace',
 				},
 				devDependencies: {
+					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
 					'npm-check-updates': packageJson.dependencies['npm-check-updates'],
 				},
 			},

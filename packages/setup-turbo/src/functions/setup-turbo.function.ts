@@ -1,11 +1,11 @@
 import { createLogger } from '@alexaegis/logging';
 import {
+	NODE_MODULES_DIRECTORY_NAME,
 	distributeFileInWorkspace,
-	DistributeInWorkspaceOptions,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
-	NODE_MODULES_DIRECTORY_NAME,
 	normalizeDistributeInWorkspaceOptions,
+	type DistributeInWorkspaceOptions,
 } from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
 import packageJson from '../../package.json';
@@ -34,7 +34,7 @@ export const setupTurbo = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 				scripts: {
 					build: 'turbo run build-lib_ build-app_',
 					'build-lib': 'turbo run build-lib_',
-					'full-suite': 'turbo run full-suite_',
+					ce: 'turbo run ce_',
 					lint: 'turbo run lint_',
 				},
 				devDependencies: {
