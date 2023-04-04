@@ -6,6 +6,10 @@ export const createStandardVersionConfig = () => {
 	const { workspacePackage, subPackages } = collectPackages();
 	const updater = createUpdater(subPackages);
 	return {
+		scripts: {
+			postbump: 'pnpm install',
+			prechangelog: 'git add pnpm-lock.yaml',
+		},
 		bumpFiles: [
 			{
 				filename: join(workspacePackage.path, 'package.json'),

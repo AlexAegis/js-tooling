@@ -34,10 +34,13 @@ export const setupStandardVersion = async (
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					release: 'commit-and-tag-version --sign',
-					'release:patch': 'commit-and-tag-version --sign --release-as patch',
-					'release:minor': 'commit-and-tag-version --sign --release-as minor',
-					'release:major': 'commit-and-tag-version --sign --release-as major',
+					release: 'commit-and-tag-version --sign --commit-all',
+					'release:patch':
+						'commit-and-tag-version --sign --commit-all --release-as patch',
+					'release:minor':
+						'commit-and-tag-version --sign --commit-all --release-as minor',
+					'release:major':
+						'commit-and-tag-version --sign --commit-all --release-as major',
 					precommit: 'pnpm install',
 				},
 				devDependencies: {
