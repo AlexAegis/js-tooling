@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.5](https://github.com/AlexAegis/js-tooling/compare/v0.0.4...v0.0.5) (2023-04-04)
+
+
+### Bug Fixes
+
+* add a precommit install for version bumps ([4576979](https://github.com/AlexAegis/js-tooling/commit/4576979950dc366eeb58848a123e017e1ef5e2b7))
+* moved precommit hook to a git hook ([4749337](https://github.com/AlexAegis/js-tooling/commit/474933749a7b2d7ba409e8f7060091a804b1a82d))
+
 ## [0.0.4](https://github.com/AlexAegis/js-tooling/compare/v0.0.3...v0.0.4) (2023-04-04)
 
 

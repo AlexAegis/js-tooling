@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/standard-version",
 	"description": "Standard version",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -51,8 +51,8 @@
 		"js-yaml": "^4.1.0"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.4",
-		"@alexaegis/vitest": "0.0.4",
+		"@alexaegis/vite": "0.0.5",
+		"@alexaegis/vitest": "0.0.5",
 		"@types/js-yaml": "^4.0.5",
 		"@types/node": "^18.15.11",
 		"typescript": "5.0.3",
