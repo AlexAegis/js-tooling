@@ -34,7 +34,7 @@
 	"engines": {
 		"node": ">=18.13.0"
 	},
-	"packageManager": "pnpm@8.1.0",
+	"packageManager": "pnpm@8.1.1",
 	"workspaces": [
 		"apps/*",
 		"libs/*",
@@ -57,6 +57,7 @@
 		"merge-coverage": "merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
 		"ncu": "ncu --deep --peer --upgrade",
 		"nuke": "nuke",
+		"precommit": "pnpm install",
 		"postinstall": "husky install && turbo run build-lib_ --concurrency 6 --filter @alexaegis/eslint-config-core --filter @alexaegis/setup-remark",
 		"release": "commit-and-tag-version --sign",
 		"release:major": "commit-and-tag-version --sign --release-as major",
