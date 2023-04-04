@@ -1,6 +1,3 @@
 #!/bin/sh
 
-pnpm i
 git add pnpm-lock.yaml
-npx lint-staged
-

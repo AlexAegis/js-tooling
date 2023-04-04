@@ -40,7 +40,7 @@ export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 			}
 		),
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'commit-msg'),
+			join(packageDirectory, 'static', '.husky', 'commit-msg'),
 			join('.husky', 'commit-msg'),
 			{
 				...options,
@@ -51,7 +51,7 @@ export const setupHusky = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 			}
 		),
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'pre-commit'),
+			join(packageDirectory, 'static', '.husky', 'pre-commit'),
 			join('.husky', 'pre-commit'),
 			{
 				...options,
