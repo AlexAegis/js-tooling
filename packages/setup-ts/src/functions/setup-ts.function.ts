@@ -84,6 +84,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 					'lint:tsc': 'turbo run lint:tsc_ --concurrency 6',
 				},
 				devDependencies: {
+					'@alexaegis/ts': packageJson.version, // For the root tsConfig
 					typescript: packageJson.dependencies.typescript,
 					'ts-node': packageJson.peerDependencies['ts-node'],
 				},

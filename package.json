@@ -98,7 +98,7 @@
 		"eslint": "^8.37.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.0",
-		"npm-check-updates": "^16.10.0",
+		"npm-check-updates": "^16.10.1",
 		"prettier": "^2.8.7",
 		"prettier-plugin-svelte": "^2.10.0",
 		"remark": "^14.0.2",
