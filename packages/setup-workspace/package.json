@@ -53,7 +53,7 @@
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/setup-editorconfig": "0.0.5",
 		"@alexaegis/workspace-tools": "0.0.23",
-		"npm-check-updates": "^16.10.1"
+		"npm-check-updates": "^16.10.2"
 	},
 	"devDependencies": {
 		"@alexaegis/nuke": "0.0.5",
