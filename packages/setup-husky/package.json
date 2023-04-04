@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-husky",
 	"description": "Husky, lint-staged and commitlint stuff",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -55,7 +55,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",
-		"@alexaegis/lint-staged-config": "0.0.3",
+		"@alexaegis/lint-staged-config": "0.0.4",
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/workspace-tools": "0.0.23",
 		"@commitlint/config-conventional": "^17.4.4",
@@ -63,11 +63,11 @@
 		"lint-staged": "^13.2.0"
 	},
 	"peerDependencies": {
-		"@alexaegis/setup-commitlint": "0.0.3"
+		"@alexaegis/setup-commitlint": "0.0.4"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.3",
-		"@alexaegis/vitest": "0.0.3",
+		"@alexaegis/vite": "0.0.4",
+		"@alexaegis/vitest": "0.0.4",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",
 		"typescript": "5.0.3",

@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/commitlint-config",
 	"description": "My commitlint config",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -52,11 +52,11 @@
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",
 		"@alexaegis/logging": "0.0.23",
-		"@alexaegis/standard-version": "0.0.3"
+		"@alexaegis/standard-version": "0.0.4"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.3",
-		"@alexaegis/vitest": "0.0.3",
+		"@alexaegis/vite": "0.0.4",
+		"@alexaegis/vitest": "0.0.4",
 		"@commitlint/types": "^17.4.4",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",

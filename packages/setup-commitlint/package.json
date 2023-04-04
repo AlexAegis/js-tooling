@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-commitlint",
 	"description": "My stylelint config",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -57,15 +57,15 @@
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "0.0.23",
-		"@alexaegis/commitlint-config": "0.0.3",
+		"@alexaegis/commitlint-config": "0.0.4",
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/workspace-tools": "0.0.23",
 		"@commitlint/types": "^17.4.4",
 		"commitlint": "^17.5.1"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.3",
-		"@alexaegis/vitest": "0.0.3",
+		"@alexaegis/vite": "0.0.4",
+		"@alexaegis/vitest": "0.0.4",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",
 		"typescript": "5.0.3",

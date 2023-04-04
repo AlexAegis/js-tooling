@@ -8,64 +8,64 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/eslint-config-core':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/eslint-config-core
       '@alexaegis/nuke':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/nuke
       '@alexaegis/setup-commitlint':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-commitlint
       '@alexaegis/setup-editorconfig':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-editorconfig
       '@alexaegis/setup-eslint':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-eslint
       '@alexaegis/setup-git':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-git
       '@alexaegis/setup-github':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-github
       '@alexaegis/setup-husky':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-husky
       '@alexaegis/setup-prettier':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-prettier
       '@alexaegis/setup-remark':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-remark
       '@alexaegis/setup-standard-version':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-standard-version
       '@alexaegis/setup-stylelint':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-stylelint
       '@alexaegis/setup-ts':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-ts
       '@alexaegis/setup-turbo':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-turbo
       '@alexaegis/setup-vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-vite
       '@alexaegis/setup-vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-vitest
       '@alexaegis/setup-vscode':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-vscode
       '@alexaegis/setup-workspace':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/setup-workspace
       '@alexaegis/stylelint-config':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/stylelint-config
       '@alexaegis/ts':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:packages/ts
       '@lcov-viewer/cli':
         specifier: ^1.3.0
@@ -95,8 +95,8 @@ importers:
         specifier: ^13.2.0
         version: 13.2.0
       npm-check-updates:
-        specifier: ^16.10.0
-        version: 16.10.0
+        specifier: ^16.10.1
+        version: 16.10.1
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
@@ -137,17 +137,17 @@ importers:
         specifier: '*'
         version: 0.0.23
       '@alexaegis/example':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../../packages/example
     devDependencies:
       '@alexaegis/ts':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../../packages/ts
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../../packages/vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../../packages/vitest
       '@sveltejs/vite-plugin-svelte':
         specifier: ^2.0.4
@@ -195,14 +195,14 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/standard-version':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../standard-version
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@commitlint/types':
         specifier: ^17.4.4
@@ -261,10 +261,10 @@ importers:
         version: 3.58.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.37.0
@@ -289,10 +289,10 @@ importers:
         version: 5.0.3
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.37.0
@@ -327,10 +327,10 @@ importers:
         version: 3.58.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.37.0
@@ -376,10 +376,10 @@ importers:
         version: 17.7.1
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -414,10 +414,10 @@ importers:
         version: 3.58.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@vitest/coverage-c8':
         specifier: ^0.29.8
@@ -482,10 +482,10 @@ importers:
         version: 2.8.7
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@vitest/coverage-c8':
         specifier: ^0.29.8
@@ -506,7 +506,7 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/commitlint-config':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../commitlint-config
       '@alexaegis/logging':
         specifier: 0.0.23
@@ -522,10 +522,10 @@ importers:
         version: 17.5.1
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -552,14 +552,14 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/workspace-tools':
         specifier: 0.0.23
         version: 0.0.23
     devDependencies:
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -590,13 +590,13 @@ importers:
         version: 0.0.23
     devDependencies:
       '@alexaegis/eslint-config-core':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../eslint-config-core
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.37.0
@@ -633,10 +633,10 @@ importers:
         version: 0.0.23
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -667,10 +667,10 @@ importers:
         version: 0.0.23
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -694,13 +694,13 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/lint-staged-config':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../lint-staged-config
       '@alexaegis/logging':
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/setup-commitlint':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../setup-commitlint
       '@alexaegis/workspace-tools':
         specifier: 0.0.23
@@ -716,10 +716,10 @@ importers:
         version: 13.2.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -746,7 +746,7 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/prettier-config':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../prettier-config
       '@alexaegis/workspace-tools':
         specifier: 0.0.23
@@ -763,13 +763,13 @@ importers:
         version: 3.58.0
     devDependencies:
       '@alexaegis/ts':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../ts
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -799,7 +799,7 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/remark-preset':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../remark-preset
       '@alexaegis/workspace-tools':
         specifier: 0.0.23
@@ -812,10 +812,10 @@ importers:
         version: 17.7.1
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/yargs':
         specifier: 17.0.24
@@ -839,7 +839,7 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/standard-version':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../standard-version
       '@alexaegis/workspace-tools':
         specifier: 0.0.23
@@ -849,10 +849,10 @@ importers:
         version: 11.2.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -886,10 +886,10 @@ importers:
         version: 15.4.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -926,10 +926,10 @@ importers:
         version: 5.0.3
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -960,10 +960,10 @@ importers:
         version: 1.8.8
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -1003,10 +1003,10 @@ importers:
         version: 4.2.1(@types/node@18.15.11)
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -1040,10 +1040,10 @@ importers:
         version: 1.3.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -1074,10 +1074,10 @@ importers:
         version: 0.0.23
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -1104,23 +1104,23 @@ importers:
         specifier: 0.0.23
         version: 0.0.23
       '@alexaegis/setup-editorconfig':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../setup-editorconfig
       '@alexaegis/workspace-tools':
         specifier: 0.0.23
         version: 0.0.23
       npm-check-updates:
-        specifier: ^16.10.0
-        version: 16.10.0
+        specifier: ^16.10.1
+        version: 16.10.1
     devDependencies:
       '@alexaegis/nuke':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../nuke
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -1166,10 +1166,10 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/js-yaml':
         specifier: ^4.0.5
@@ -1191,10 +1191,10 @@ importers:
         version: 32.0.0(stylelint@15.4.0)
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@types/node':
         specifier: ^18.15.11
@@ -1218,7 +1218,7 @@ importers:
   packages/ts:
     dependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       '@tsconfig/svelte':
         specifier: '*'
@@ -1237,7 +1237,7 @@ importers:
         version: 4.2.1(@types/node@18.15.11)
     devDependencies:
       '@alexaegis/vitest':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vitest
       '@vitest/coverage-c8':
         specifier: ^0.29.8
@@ -1312,7 +1312,7 @@ importers:
         version: 0.29.8(@vitest/ui@0.29.8)(jsdom@21.1.1)
     devDependencies:
       '@alexaegis/vite':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../vite
       tslib:
         specifier: ^2.5.0
@@ -6248,8 +6248,8 @@ packages:
     dependencies:
       npm-normalize-package-bin: 3.0.0
 
-  /npm-check-updates@16.10.0:
-    resolution: {integrity: sha512-xtTm38/94u9BhFbIuq1yxjKs+lmXQK+RnzxgfMVzRhz9vRXgcuC9ZsSw8hormmrmVtIZ8yG0At80d1R5vRf6rQ==}
+  /npm-check-updates@16.10.1:
+    resolution: {integrity: sha512-s5CNxtaCjiFR8ns4DkZJuukMaiXodeYyoHQ4XYp0WfRuqU+NfSODbW9jQDTtwZFIhrzX0d4/YJXL32BteX+ujw==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:

@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/example",
 	"description": "Example package to be used in an app",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
 	"private": true,
 	"keywords": [
@@ -49,8 +49,8 @@
 		"typescript": "5.0.3"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.3",
-		"@alexaegis/vitest": "0.0.3",
+		"@alexaegis/vite": "0.0.4",
+		"@alexaegis/vitest": "0.0.4",
 		"@types/eslint": "^8.37.0",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.4](https://github.com/AlexAegis/js-tooling/compare/v0.0.3...v0.0.4) (2023-04-04)
+
+
+### Features
+
+* add all setup packages to workspace package ([62f0a66](https://github.com/AlexAegis/js-tooling/commit/62f0a66099311496e647d4837d813eea2b0d6df3))
+* added mocks folder to the tsconfig scope ([052bd1b](https://github.com/AlexAegis/js-tooling/commit/052bd1bb4c9793ada80b53771d34b7021f02edb7))
+
+
+### Bug Fixes
+
+* added the ts package as a devDep of root packageJsons ([4415781](https://github.com/AlexAegis/js-tooling/commit/441578142c43af7f10fca9d099019d0e16da4b32))
+
 ## [0.0.3](https://github.com/AlexAegis/js-tooling/compare/v0.0.2...v0.0.3) (2023-04-03)
 
 ## [0.0.2](https://github.com/AlexAegis/js-tooling/compare/v0.0.1...v0.0.2) (2023-03-12)
