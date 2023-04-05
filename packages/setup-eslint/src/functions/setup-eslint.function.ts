@@ -67,7 +67,17 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			{
 				...options,
 				skipWorkspaceRoot: true,
-				keywordCriteria: [packageJson.name],
+				keywordCriteria: [packageJson.name, /^(?!.*(?:vitest|jest)).*$/gm], // list every other flavour to let this be the fallback
+				logger: logger.getSubLogger({ name: 'packageEslintRc' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'package-eslintrc-vitest.cjs'),
+			'.eslintrc.cjs',
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name, /.*vitest.*/g],
 				logger: logger.getSubLogger({ name: 'packageEslintRc' }),
 			}
 		),

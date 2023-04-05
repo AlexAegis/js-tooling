@@ -60,7 +60,7 @@
 		"@alexaegis/logging": "0.0.23",
 		"@alexaegis/standard-version": "0.0.5",
 		"@alexaegis/workspace-tools": "0.0.23",
-		"commit-and-tag-version": "^11.2.0"
+		"commit-and-tag-version": "^11.2.1"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "0.0.5",

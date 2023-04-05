@@ -1,7 +1,7 @@
 import { createLogger } from '@alexaegis/logging';
 import {
 	NODE_MODULES_DIRECTORY_NAME,
-	distributeFileInWorkspace,
+	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	normalizeDistributeInWorkspaceOptions,
 	type DistributeInWorkspaceOptions,
@@ -9,11 +9,11 @@ import {
 import { join } from 'node:path';
 import packageJson from '../../package.json';
 
-export const setupGit = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
+export const setupTypedoc = async (rawOptions?: DistributeInWorkspaceOptions): Promise<void> => {
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
-	const logger = createLogger({ name: 'setup:git' });
+	const logger = createLogger({ name: 'setup:turbo' });
 
 	if (!workspaceRoot) {
 		console.warn("can't distribute config, not in a workspace!");
@@ -27,21 +27,36 @@ export const setupGit = async (rawOptions?: DistributeInWorkspaceOptions): Promi
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	await Promise.all([
-		distributeFileInWorkspace(join(packageDirectory, 'static', 'gitignore'), '.gitignore', {
-			...options,
-			onlyWorkspaceRoot: true,
-			dependencyCriteria: [packageJson.name],
-			logger: logger.getSubLogger({ name: 'gitignore' }),
-		}),
-		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'gitattributes'),
-			'.gitattributes',
+	// TODO: If typedoc can do the entire monorepo in one go, it could be called at the root only
+	await Promise.allSettled([
+		distributePackageJsonItemsInWorkspace(
+			{
+				scripts: {
+					typedoc: 'turbo run typedoc_',
+				},
+				devDependencies: {
+					typedoc: packageJson.dependencies.typedoc,
+				},
+			},
 			{
 				...options,
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'gitattributes' }),
+				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
+			}
+		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				scripts: {
+					typedoc: 'turbo run typedoc_ --concurrency 6 --filter ${packageName}',
+					typedoc_: 'typedoc',
+				},
+			},
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'packageJson:package' }),
 			}
 		),
 	]);

@@ -43,8 +43,8 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./.gitattributes": "./static/.gitattributes",
-		"./.gitignore": "./static/.gitignore",
+		"./gitattributes": "./static/gitattributes",
+		"./gitignore": "./static/gitignore",
 		"./readme": "./readme.md"
 	},
 	"bin": {

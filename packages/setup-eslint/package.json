@@ -42,6 +42,7 @@
 		},
 		"./eslintignore": "./static/eslintignore.txt",
 		"./package-eslintrc": "./static/package-eslintrc.cjs",
+		"./package-eslintrc-vitest": "./static/package-eslintrc-vitest.cjs",
 		"./readme": "./readme.md",
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},

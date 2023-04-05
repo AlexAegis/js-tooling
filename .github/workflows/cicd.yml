@@ -402,6 +402,7 @@ jobs:
           [
             'commitlint-config',
             'eslint-config-core',
+            'eslint-config-vitest',
             'lint-staged-config',
             'nuke',
             'prettier-config',
@@ -418,6 +419,7 @@ jobs:
             'setup-stylelint',
             'setup-ts',
             'setup-turbo',
+            'setup-typedoc',
             'setup-vite',
             'setup-vitest',
             'setup-vscode',
