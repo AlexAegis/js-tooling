@@ -55,6 +55,7 @@
 		"@alexaegis/standard-version": "0.0.5"
 	},
 	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "0.0.5",
 		"@alexaegis/vite": "0.0.5",
 		"@alexaegis/vitest": "0.0.5",
 		"@commitlint/types": "^17.4.4",

@@ -5,7 +5,6 @@
 	"license": "MIT",
 	"private": false,
 	"keywords": [
-		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-ts-node",

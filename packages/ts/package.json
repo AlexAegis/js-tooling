@@ -57,6 +57,7 @@
 		"vite": "^4.2.1"
 	},
 	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "0.0.5",
 		"@alexaegis/vite": "0.0.5",
 		"@alexaegis/vitest": "0.0.5",
 		"@vitest/coverage-c8": "^0.29.8",

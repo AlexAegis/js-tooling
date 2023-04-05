@@ -9,8 +9,7 @@
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-ts-node",
-		"@alexaegis/setup-vite-lib",
-		"vitest"
+		"@alexaegis/setup-vite-lib"
 	],
 	"type": "module",
 	"config": {

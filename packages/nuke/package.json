@@ -60,6 +60,7 @@
 		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "0.0.5",
 		"@alexaegis/vite": "0.0.5",
 		"@alexaegis/vitest": "0.0.5",
 		"@types/node": "^18.15.11",

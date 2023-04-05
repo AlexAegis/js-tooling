@@ -57,6 +57,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-core": "0.0.5",
+		"@alexaegis/eslint-config-vitest": "0.0.5",
 		"@alexaegis/vite": "0.0.5",
 		"@alexaegis/vitest": "0.0.5",
 		"@types/eslint": "^8.37.0",

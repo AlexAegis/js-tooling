@@ -28,7 +28,18 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	await Promise.all([
+	await distributeFileInWorkspace(
+		join(packageDirectory, 'static', 'package-eslintrc.cjs'),
+		'.eslintrc.cjs',
+		{
+			...options,
+			skipWorkspaceRoot: true,
+			keywordCriteria: [packageJson.name], // TODO: it would be nice to exclude all libs that are not covered by a specific eslint config and let this fallback only fall back when needed
+			logger: logger.getSubLogger({ name: 'packageEslintRc' }),
+		}
+	);
+
+	await Promise.allSettled([
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
@@ -61,16 +72,7 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
-		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'package-eslintrc.cjs'),
-			'.eslintrc.cjs',
-			{
-				...options,
-				skipWorkspaceRoot: true,
-				keywordCriteria: [packageJson.name, /^(?!.*(?:vitest|jest)).*$/gm], // list every other flavour to let this be the fallback
-				logger: logger.getSubLogger({ name: 'packageEslintRc' }),
-			}
-		),
+
 		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'package-eslintrc-vitest.cjs'),
 			'.eslintrc.cjs',
@@ -112,6 +114,21 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			}
 		),
 	]);
+
+	await distributePackageJsonItemsInWorkspace(
+		{
+			devDependencies: {
+				'@alexaegis/eslint-config-vitest':
+					packageJson.devDependencies['@alexaegis/eslint-config-vitest'],
+			},
+		},
+		{
+			...options,
+			skipWorkspaceRoot: true,
+			keywordCriteria: [packageJson.name, /.*vitest.*/g],
+			logger: logger.getSubLogger({ name: 'packageJson' }),
+		}
+	);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);
 };
