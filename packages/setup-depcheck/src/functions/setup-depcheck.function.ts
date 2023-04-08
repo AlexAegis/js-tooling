@@ -57,6 +57,7 @@ export const setupDepcheck = async (rawOptions?: DistributeInWorkspaceOptions): 
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
+					'lint:depcheck': 'turbo run lint:depcheck_ --concurrency 6',
 					'lint:depcheck_': 'depcheck',
 				},
 				devDependencies: {
