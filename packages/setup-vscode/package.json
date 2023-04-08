@@ -57,9 +57,9 @@
 		"setup-vscode": "./shims/setup-vscode.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.0.24",
-		"@alexaegis/logging": "^0.0.24",
-		"@alexaegis/workspace-tools": "^0.0.24"
+		"@alexaegis/cli-tools": "^0.0.25",
+		"@alexaegis/logging": "^0.0.25",
+		"@alexaegis/workspace-tools": "^0.0.25"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.1.0",

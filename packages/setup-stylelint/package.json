@@ -54,9 +54,9 @@
 		"setup-stylelint": "./shims/setup-stylelint.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.0.24",
-		"@alexaegis/logging": "^0.0.24",
-		"@alexaegis/workspace-tools": "^0.0.24",
+		"@alexaegis/cli-tools": "^0.0.25",
+		"@alexaegis/logging": "^0.0.25",
+		"@alexaegis/workspace-tools": "^0.0.25",
 		"stylelint": "15.4.0"
 	},
 	"devDependencies": {

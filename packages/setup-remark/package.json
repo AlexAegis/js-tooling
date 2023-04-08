@@ -57,10 +57,10 @@
 		"setup-remark": "./shims/setup-remark.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.0.24",
-		"@alexaegis/logging": "^0.0.24",
+		"@alexaegis/cli-tools": "^0.0.25",
+		"@alexaegis/logging": "^0.0.25",
 		"@alexaegis/remark-preset": "^0.1.0",
-		"@alexaegis/workspace-tools": "^0.0.24",
+		"@alexaegis/workspace-tools": "^0.0.25",
 		"remark-cli": "^11.0.0",
 		"yargs": "^17.7.1"
 	},
