@@ -143,7 +143,7 @@ importers:
         specifier: '*'
         version: 0.0.24
       '@alexaegis/example':
-        specifier: 0.0.5
+        specifier: workspace:*
         version: link:../../packages/example
     devDependencies:
       '@alexaegis/eslint-config-vitest':

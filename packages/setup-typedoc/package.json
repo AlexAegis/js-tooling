@@ -48,8 +48,7 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./readme": "./readme.md",
-		"./turbo": "./static/turbo.json"
+		"./readme": "./readme.md"
 	},
 	"bin": {
 		"alexaegis-setup-typedoc-postinstall": "./shims/postinstall.js",
