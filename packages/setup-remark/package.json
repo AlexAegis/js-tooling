@@ -57,20 +57,20 @@
 		"setup-remark": "./shims/setup-remark.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "0.0.23",
-		"@alexaegis/logging": "0.0.23",
-		"@alexaegis/remark-preset": "0.0.5",
-		"@alexaegis/workspace-tools": "0.0.23",
+		"@alexaegis/cli-tools": "^0.0.24",
+		"@alexaegis/logging": "^0.0.24",
+		"@alexaegis/remark-preset": "^0.0.5",
+		"@alexaegis/workspace-tools": "^0.0.24",
 		"remark-cli": "^11.0.0",
 		"yargs": "^17.7.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "0.0.5",
-		"@alexaegis/vite": "0.0.5",
-		"@alexaegis/vitest": "0.0.5",
+		"@alexaegis/eslint-config-vitest": "^0.0.5",
+		"@alexaegis/vite": "^0.0.5",
+		"@alexaegis/vitest": "^0.0.5",
 		"@types/yargs": "17.0.24",
 		"@vitest/coverage-c8": "^0.29.8",
-		"vite": "4.2.1",
+		"vite": "^4.2.1",
 		"vitest": "^0.29.8"
 	}
 }

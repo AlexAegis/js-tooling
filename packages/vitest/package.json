@@ -65,12 +65,12 @@
 		"vitest": "^0.29.8"
 	},
 	"peerDependencies": {
-		"vite": "4.2.1",
+		"vite": "^4.2.1",
 		"vitest": "^0.29.8"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "0.0.5",
+		"@alexaegis/vite": "^0.0.5",
 		"tslib": "^2.5.0",
-		"vite": "4.2.1"
+		"vite": "^4.2.1"
 	}
 }
