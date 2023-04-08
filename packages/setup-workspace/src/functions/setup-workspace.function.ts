@@ -38,23 +38,23 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				},
 				devDependencies: {
 					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
-					'@alexaegis/setup-commitlint': packageJson.version, // versioned together
-					'@alexaegis/setup-depcheck': packageJson.version, // versioned together
-					'@alexaegis/setup-editorconfig': packageJson.version, // versioned together
-					'@alexaegis/setup-eslint': packageJson.version, // versioned together
-					'@alexaegis/setup-git': packageJson.version, // versioned together
-					'@alexaegis/setup-github': packageJson.version, // versioned together
-					'@alexaegis/setup-husky': packageJson.version, // versioned together
-					'@alexaegis/setup-prettier': packageJson.version, // versioned together
-					'@alexaegis/setup-remark': packageJson.version, // versioned together
-					'@alexaegis/setup-standard-version': packageJson.version, // versioned together
-					'@alexaegis/setup-stylelint': packageJson.version, // versioned together
-					'@alexaegis/setup-ts': packageJson.version, // versioned together
-					'@alexaegis/setup-turbo': packageJson.version, // versioned together
-					'@alexaegis/setup-vite': packageJson.version, // versioned together
-					'@alexaegis/setup-vitest': packageJson.version, // versioned together
-					'@alexaegis/setup-vscode': packageJson.version, // versioned together
-					'@alexaegis/setup-workspace': packageJson.version, // versioned together
+					'@alexaegis/setup-commitlint': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-depcheck': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-editorconfig': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-eslint': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-git': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-github': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-husky': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-prettier': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-remark': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-standard-version': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-stylelint': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-ts': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-turbo': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-vite': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-vitest': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-vscode': `^${packageJson.version}`, // versioned together
+					'@alexaegis/setup-workspace': `^${packageJson.version}`, // versioned together
 					'npm-check-updates': packageJson.dependencies['npm-check-updates'],
 				},
 			},
