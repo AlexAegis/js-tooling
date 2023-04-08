@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/ts",
 	"description": "My typescript configurations",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -51,7 +51,7 @@
 		"./web": "./web.json"
 	},
 	"dependencies": {
-		"@alexaegis/vite": "^0.1.0",
+		"@alexaegis/vite": "^0.1.1",
 		"@tsconfig/svelte": "^4.0.1",
 		"@types/node": "^18.15.11",
 		"ts-node": "^10.9.1",
@@ -59,9 +59,9 @@
 		"vite": "^4.2.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.0",
-		"@alexaegis/vite": "^0.1.0",
-		"@alexaegis/vitest": "^0.1.0",
+		"@alexaegis/eslint-config-vitest": "^0.1.1",
+		"@alexaegis/vite": "^0.1.1",
+		"@alexaegis/vitest": "^0.1.1",
 		"@vitest/coverage-c8": "^0.29.8",
 		"vite": "^4.2.1",
 		"vitest": "^0.29.8"

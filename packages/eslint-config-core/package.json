@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/eslint-config-core",
 	"description": "ESLint setup",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -66,10 +66,10 @@
 		"svelte": "^3.58.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.0",
-		"@alexaegis/ts": "^0.1.0",
-		"@alexaegis/vite": "^0.1.0",
-		"@alexaegis/vitest": "^0.1.0",
+		"@alexaegis/eslint-config-vitest": "^0.1.1",
+		"@alexaegis/ts": "^0.1.1",
+		"@alexaegis/vite": "^0.1.1",
+		"@alexaegis/vitest": "^0.1.1",
 		"@types/eslint": "^8.37.0",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",

@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.1](https://github.com/AlexAegis/js-tooling/compare/v0.1.0...v0.1.1) (2023-04-08)
+
+
+### Features
+
+* add a version range to setup-workspace deps ([9f081fc](https://github.com/AlexAegis/js-tooling/commit/9f081fc1e0f54847d6fd0450071a98e90eec4edf))
+* add setup-depcheck to setup-all ([bba9d73](https://github.com/AlexAegis/js-tooling/commit/bba9d73e8d90f1c3812a482155d86ff6080d4862))
+* update vscode extensions and settings ([a02a6b9](https://github.com/AlexAegis/js-tooling/commit/a02a6b9719aa56082f5366e6099b496851c85186))
+
+
+### Bug Fixes
+
+* **setup-depcheck:** add missing workspace level script ([d54d9a7](https://github.com/AlexAegis/js-tooling/commit/d54d9a7b7b10f38024c724787bece13b39c2eb15))
+* **setup-turbo:** add depcheck to the lint group ([9caa1c3](https://github.com/AlexAegis/js-tooling/commit/9caa1c346fb8d0ef27b80793d5d191c415873c13))
+
 ## [0.1.0](https://github.com/AlexAegis/js-tooling/compare/v0.0.5...v0.1.0) (2023-04-08)
 
 

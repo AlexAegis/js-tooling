@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"private": true,
 	"keywords": [
 		"@alexaegis/setup-depcheck",
@@ -37,13 +37,13 @@
 		"watch-deps": "nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 6 --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
-		"@alexaegis/example": "workspace:^0.1.0"
+		"@alexaegis/example": "workspace:^0.1.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.0",
-		"@alexaegis/ts": "^0.1.0",
-		"@alexaegis/vite": "^0.1.0",
-		"@alexaegis/vitest": "^0.1.0",
+		"@alexaegis/eslint-config-vitest": "^0.1.1",
+		"@alexaegis/ts": "^0.1.1",
+		"@alexaegis/vite": "^0.1.1",
+		"@alexaegis/vitest": "^0.1.1",
 		"@tsconfig/svelte": "^4.0.1",
 		"@vitest/coverage-c8": "^0.29.8",
 		"concurrently": "^8.0.1",

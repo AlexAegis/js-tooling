@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-workspace",
 	"description": "This package contains generic workspace tools and scripts",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -54,16 +54,16 @@
 	"dependencies": {
 		"@alexaegis/cli-tools": "^0.1.1",
 		"@alexaegis/logging": "^0.1.1",
-		"@alexaegis/setup-editorconfig": "^0.1.0",
+		"@alexaegis/setup-editorconfig": "^0.1.1",
 		"@alexaegis/workspace-tools": "^0.1.1",
 		"npm-check-updates": "^16.10.7"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.0",
-		"@alexaegis/nuke": "^0.1.0",
-		"@alexaegis/ts": "^0.1.0",
-		"@alexaegis/vite": "^0.1.0",
-		"@alexaegis/vitest": "^0.1.0",
+		"@alexaegis/eslint-config-vitest": "^0.1.1",
+		"@alexaegis/nuke": "^0.1.1",
+		"@alexaegis/ts": "^0.1.1",
+		"@alexaegis/vite": "^0.1.1",
+		"@alexaegis/vitest": "^0.1.1",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",
 		"typescript": "^5.0.4",
