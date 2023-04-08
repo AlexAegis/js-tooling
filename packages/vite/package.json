@@ -68,7 +68,7 @@
 		"nodemon": "^2.0.22",
 		"svelte": "^3.58.0",
 		"vite": "^4.2.1",
-		"vite-plugin-autolib": "^0.0.14",
+		"vite-plugin-autolib": "^0.1.0",
 		"vite-plugin-dts": "^2.2.0"
 	},
 	"optionalDependencies": {
