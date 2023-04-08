@@ -23,8 +23,8 @@ export const createUpdater = (packages: WorkspacePackage[]) => {
 					(r, localPackageName) =>
 						r
 							.replaceAll(
-								new RegExp(`"${localPackageName}": ".*"`, 'g'),
-								`"${localPackageName}": "${version}"`
+								new RegExp(`"${localPackageName}": "(.*:)?[~^]?.*"`, 'g'),
+								`"${localPackageName}": "$1^${version}"`
 							)
 							.replaceAll(
 								new RegExp(`${localPackageName}@([^s\t\n\r]+)`, 'g'),
