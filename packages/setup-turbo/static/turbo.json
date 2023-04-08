@@ -31,6 +31,7 @@
 			"outputs": [],
 			"dependsOn": [
 				"lint:es_",
+				"lint:depcheck_",
 				"lint:tsc_",
 				"lint:svelte_",
 				"lint:style_",
