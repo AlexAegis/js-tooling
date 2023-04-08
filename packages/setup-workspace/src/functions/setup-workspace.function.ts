@@ -34,11 +34,12 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					nuke: 'nuke',
 					ncu: 'ncu --deep --peer --upgrade',
 					'setup-all':
-						'npx setup-prettier && npx setup-editorconfig && npx setup-husky && npx setup-git && npx setup-commitlint && npx setup-eslint && npx setup-github && npx setup-ts && npx setup-remark && npx setup-standard-version && npx setup-stylelint && npx setup-turbo && npx setup-vite && npx setup-vitest && npx setup-workspace',
+						'npx setup-prettier && npx setup-editorconfig && npx setup-husky && npx setup-git && npx setup-commitlint && npx setup-eslint && npx setup-github && npx setup-ts && npx setup-remark && npx setup-standard-version && npx setup-stylelint && npx setup-depcheck && npx setup-turbo && npx setup-vite && npx setup-vitest && npx setup-workspace',
 				},
 				devDependencies: {
 					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
 					'@alexaegis/setup-commitlint': packageJson.version, // versioned together
+					'@alexaegis/setup-depcheck': packageJson.version, // versioned together
 					'@alexaegis/setup-editorconfig': packageJson.version, // versioned together
 					'@alexaegis/setup-eslint': packageJson.version, // versioned together
 					'@alexaegis/setup-git': packageJson.version, // versioned together
