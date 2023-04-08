@@ -1,4 +1,9 @@
-import { normalizeDryOption, type DryOption, type NormalizedDryOption } from '@alexaegis/common';
+import {
+	normalizeDryOption,
+	type Defined,
+	type DryOption,
+	type NormalizedDryOption,
+} from '@alexaegis/common';
 import {
 	normalizeLoggerOption,
 	type LoggerOption,
@@ -77,12 +82,6 @@ export type NukeOptions = NukeOptionsOnly &
 	DryOption &
 	CollectWorkspacePackagesOptions &
 	LoggerOption;
-
-/**
- * TODO: use core
- * @deprecated use core
- */
-type Defined<T> = { [P in keyof T]-?: NonNullable<T[P]> };
 
 export type NormalizedNukeOptions = Defined<NukeOptionsOnly> &
 	NormalizedDryOption &
