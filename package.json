@@ -64,7 +64,7 @@
 		"release:major": "commit-and-tag-version --sign --commit-all --release-as major",
 		"release:minor": "commit-and-tag-version --sign --commit-all --release-as minor",
 		"release:patch": "commit-and-tag-version --sign --commit-all --release-as patch",
-		"setup-all": "npx setup-prettier && npx setup-editorconfig && npx setup-husky && npx setup-git && npx setup-commitlint && npx setup-eslint && npx setup-github && npx setup-ts && npx setup-remark && npx setup-standard-version && npx setup-stylelint && npx setup-turbo && npx setup-vite && npx setup-vitest && npx setup-workspace",
+		"setup-all": "npx setup-prettier && npx setup-editorconfig && npx setup-husky && npx setup-git && npx setup-commitlint && npx setup-eslint && npx setup-github && npx setup-ts && npx setup-remark && npx setup-standard-version && npx setup-stylelint && npx setup-depcheck && npx setup-turbo && npx setup-vite && npx setup-vitest && npx setup-workspace",
 		"start": "turbo run start_ --parallel",
 		"test": "turbo run test_ --concurrency 6",
 		"typedoc": "turbo run typedoc_"
@@ -74,6 +74,7 @@
 		"@alexaegis/eslint-config-core": "^0.1.1",
 		"@alexaegis/nuke": "^0.1.1",
 		"@alexaegis/setup-commitlint": "^0.1.1",
+		"@alexaegis/setup-depcheck": "^0.1.1",
 		"@alexaegis/setup-editorconfig": "^0.1.1",
 		"@alexaegis/setup-eslint": "^0.1.1",
 		"@alexaegis/setup-git": "^0.1.1",

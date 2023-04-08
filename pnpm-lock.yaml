@@ -16,6 +16,9 @@ importers:
       '@alexaegis/setup-commitlint':
         specifier: ^0.1.1
         version: link:packages/setup-commitlint
+      '@alexaegis/setup-depcheck':
+        specifier: ^0.1.1
+        version: link:packages/setup-depcheck
       '@alexaegis/setup-editorconfig':
         specifier: ^0.1.1
         version: link:packages/setup-editorconfig

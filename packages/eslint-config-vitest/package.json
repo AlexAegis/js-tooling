@@ -7,7 +7,6 @@
 	"keywords": [
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
-		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
 		"eslint"
