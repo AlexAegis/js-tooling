@@ -53,12 +53,11 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.0.25",
-		"@alexaegis/logging": "^0.0.25",
 		"@alexaegis/standard-version": "^0.1.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.1.0",
+		"@alexaegis/ts": "^0.1.0",
 		"@alexaegis/vite": "^0.1.0",
 		"@alexaegis/vitest": "^0.1.0",
 		"@commitlint/types": "^17.4.4",

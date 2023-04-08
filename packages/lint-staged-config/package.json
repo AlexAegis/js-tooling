@@ -48,7 +48,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.0.25",
+		"@alexaegis/fs": "^0.1.1",
 		"lint-staged": "13.2.1",
 		"typescript": "^5.0.4"
 	},
@@ -60,6 +60,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.1.0",
+		"@alexaegis/ts": "^0.1.0",
 		"@alexaegis/vite": "^0.1.0",
 		"@alexaegis/vitest": "^0.1.0",
 		"@types/eslint": "^8.37.0",

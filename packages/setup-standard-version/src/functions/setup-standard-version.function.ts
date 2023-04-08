@@ -41,7 +41,6 @@ export const setupStandardVersion = async (
 						'commit-and-tag-version --sign --commit-all --release-as minor',
 					'release:major':
 						'commit-and-tag-version --sign --commit-all --release-as major',
-					precommit: 'pnpm install',
 				},
 				devDependencies: {
 					'commit-and-tag-version': packageJson.dependencies['commit-and-tag-version'],

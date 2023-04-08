@@ -57,10 +57,10 @@
 		"setup-husky": "./shims/setup-husky.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.0.25",
+		"@alexaegis/cli-tools": "^0.1.1",
 		"@alexaegis/lint-staged-config": "^0.1.0",
-		"@alexaegis/logging": "^0.0.25",
-		"@alexaegis/workspace-tools": "^0.0.25",
+		"@alexaegis/logging": "^0.1.1",
+		"@alexaegis/workspace-tools": "^0.1.1",
 		"@commitlint/config-conventional": "^17.4.4",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.1"
@@ -70,6 +70,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.1.0",
+		"@alexaegis/ts": "^0.1.0",
 		"@alexaegis/vite": "^0.1.0",
 		"@alexaegis/vitest": "^0.1.0",
 		"@types/node": "^18.15.11",
