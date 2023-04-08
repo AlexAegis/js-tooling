@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/remark-preset",
 	"description": "Remark config preset",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -70,9 +70,9 @@
 		"prettier": "*"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.0.5",
-		"@alexaegis/vite": "^0.0.5",
-		"@alexaegis/vitest": "^0.0.5",
+		"@alexaegis/eslint-config-vitest": "^0.1.0",
+		"@alexaegis/vite": "^0.1.0",
+		"@alexaegis/vitest": "^0.1.0",
 		"@vitest/coverage-c8": "^0.29.8",
 		"unified": "^10.1.2",
 		"vite": "^4.2.1",

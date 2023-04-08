@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.0](https://github.com/AlexAegis/js-tooling/compare/v0.0.5...v0.1.0) (2023-04-08)
+
+
+### Features
+
+* add setup-typedoc and eslint-config-vitest ([558c9b6](https://github.com/AlexAegis/js-tooling/commit/558c9b660d641140796b157e62dde7d02175b940))
+* added dynamic test requirement chaining ([6b59e81](https://github.com/AlexAegis/js-tooling/commit/6b59e81bb96fa9b8a5f0c03c43a3f73e48526641))
+* added setup-depcheck ([e7aec7b](https://github.com/AlexAegis/js-tooling/commit/e7aec7bf82c6c873f471fa146856681ddbcd699b))
+* extend eslint config with the vitest preset ([45e9089](https://github.com/AlexAegis/js-tooling/commit/45e9089e9e8cf99371a00e24b19f9684c0812746))
+* respect protocol and version range while updating versions ([6ea629f](https://github.com/AlexAegis/js-tooling/commit/6ea629f4970f4cf25e47592b9f5ad95f642ff557))
+* switch to standard-version style hooks ([032513a](https://github.com/AlexAegis/js-tooling/commit/032513a8f85d90b34fbb1ded10cf1207263070bc))
+
 ## [0.0.5](https://github.com/AlexAegis/js-tooling/compare/v0.0.4...v0.0.5) (2023-04-04)
 
 
