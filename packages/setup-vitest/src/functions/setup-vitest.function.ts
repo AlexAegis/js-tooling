@@ -43,7 +43,6 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 					devDependencies: {
 						'@alexaegis/vitest': packageJson.devDependencies['@alexaegis/vitest'],
 						vitest: packageJson.devDependencies.vitest,
-						'@vitest/coverage-c8': packageJson.devDependencies['@vitest/coverage-c8'],
 					},
 				},
 				{
@@ -77,6 +76,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 						'merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
 				},
 				devDependencies: {
+					'@vitest/coverage-c8': packageJson.devDependencies['@vitest/coverage-c8'],
 					'@lcov-viewer/cli': packageJson.dependencies['@lcov-viewer/cli'],
 					'@alexaegis/coverage-tools':
 						packageJson.dependencies['@alexaegis/coverage-tools'],

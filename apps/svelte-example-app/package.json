@@ -3,6 +3,7 @@
 	"version": "0.0.5",
 	"private": true,
 	"keywords": [
+		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
@@ -15,6 +16,8 @@
 	"scripts": {
 		"build": "turbo run build-app_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"build-app_": "vite build",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 6 --filter @alexaegis/svelte-example-app",
+		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/svelte-example-app",
@@ -51,7 +54,7 @@
 		"svelte-check": "^3.2.0",
 		"svelte-preprocess": "^5.0.3",
 		"tslib": "^2.5.0",
-		"typescript": "5.0.3",
+		"typescript": "^5.0.4",
 		"vite": "^4.2.1",
 		"vitest": "^0.29.8"
 	}

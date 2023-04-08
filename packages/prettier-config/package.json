@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"private": false,
 	"keywords": [
+		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
@@ -23,6 +24,8 @@
 	"scripts": {
 		"build": "turbo run build-lib_ --concurrency 6 --filter @alexaegis/prettier-config",
 		"build-lib_": "vite build",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 6 --filter @alexaegis/prettier-config",
+		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 6 --filter @alexaegis/prettier-config",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 6 --filter @alexaegis/prettier-config",

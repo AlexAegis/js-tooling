@@ -72,7 +72,6 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
-
 		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'package-eslintrc-vitest.cjs'),
 			'.eslintrc.cjs',

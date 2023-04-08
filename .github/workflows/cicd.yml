@@ -408,6 +408,7 @@ jobs:
             'prettier-config',
             'remark-preset',
             'setup-commitlint',
+            'setup-depcheck',
             'setup-editorconfig',
             'setup-eslint',
             'setup-git',

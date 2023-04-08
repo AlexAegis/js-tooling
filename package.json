@@ -44,6 +44,8 @@
 		"build": "turbo run build-lib_ build-app_",
 		"build-lib": "turbo run build-lib_",
 		"lint": "turbo run lint_",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 6",
+		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 6",
 		"lint:format": "turbo run lint:format_ --concurrency 6",
 		"lint:format_": "prettier --check *.{json,ts,js,mjs,md,yml,yaml}",
@@ -95,6 +97,7 @@
 		"@vitest/coverage-c8": "^0.29.8",
 		"commit-and-tag-version": "^11.2.1",
 		"commitlint": "^17.5.1",
+		"depcheck": "^1.4.3",
 		"eslint": "^8.37.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.0",
@@ -109,7 +112,7 @@
 		"ts-node": "^10.9.1",
 		"turbo": "^1.8.8",
 		"typedoc": "^0.23.28",
-		"typescript": "5.0.3",
+		"typescript": "^5.0.4",
 		"vitest": "^0.29.8"
 	}
 }
