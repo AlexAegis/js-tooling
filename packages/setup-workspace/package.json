@@ -45,7 +45,8 @@
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
-		}
+		},
+		"./pnpm-workspace": "./static/pnpm-workspace.yaml"
 	},
 	"bin": {
 		"alexaegis-setup-workspace-postinstall": "./shims/postinstall.js",

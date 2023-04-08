@@ -1,6 +1,7 @@
 import { createLogger } from '@alexaegis/logging';
 import {
 	NODE_MODULES_DIRECTORY_NAME,
+	distributeFileInWorkspace,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	normalizeDistributeInWorkspaceOptions,
@@ -63,6 +64,16 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'pnpm-workspace.yaml'),
+			'pnpm-workspace.yaml',
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'pnpm-workspace' }),
 			}
 		),
 	]);
