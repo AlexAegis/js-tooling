@@ -12,8 +12,19 @@
 			"outputMode": "new-only"
 		},
 		"build-lib_": {
-			"dependsOn": ["^prebuild_", "^build-lib_"],
+			"dependsOn": [
+				"^prebuild_",
+				"^build-lib_",
+				"^build-lib:require:typedoc_",
+				"build-lib:require:typedoc_"
+			],
 			"outputs": ["dist/**"],
+			"outputMode": "new-only"
+		},
+		"build-lib:require:typedoc_": {
+			"env": [],
+			"dependsOn": ["typedoc_"],
+			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"build-app_": {
