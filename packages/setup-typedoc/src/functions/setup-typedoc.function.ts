@@ -32,7 +32,7 @@ export const setupTypedoc = async (rawOptions?: DistributeInWorkspaceOptions): P
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					typedoc: 'turbo run typedoc_',
+					typedoc: 'turbo run typedoc_ --concurrency 6 --cache-dir .cache/turbo',
 				},
 				devDependencies: {
 					typedoc: packageJson.dependencies.typedoc,
@@ -48,7 +48,8 @@ export const setupTypedoc = async (rawOptions?: DistributeInWorkspaceOptions): P
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					typedoc: 'turbo run typedoc_ --concurrency 6 --filter ${packageName}',
+					typedoc:
+						'turbo run typedoc_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
 					typedoc_: 'typedoc',
 				},
 			},

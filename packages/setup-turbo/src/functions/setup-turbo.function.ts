@@ -32,10 +32,10 @@ export const setupTurbo = async (rawOptions?: DistributeInWorkspaceOptions): Pro
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					build: 'turbo run build-lib_ build-app_',
-					'build-lib': 'turbo run build-lib_',
-					ce: 'turbo run ce_',
-					lint: 'turbo run lint_',
+					build: 'turbo run build-lib_ build-app_ --concurrency 6 --cache-dir .cache/turbo',
+					'build-lib': 'turbo run build-lib_ --concurrency 6 --cache-dir .cache/turbo',
+					ce: 'turbo run ce_ --concurrency 6 --cache-dir .cache/turbo',
+					lint: 'turbo run lint_ --concurrency 6 --cache-dir .cache/turbo',
 				},
 				devDependencies: {
 					turbo: packageJson.dependencies.turbo,

@@ -16,15 +16,20 @@ import {
 } from '@alexaegis/workspace-tools';
 
 export const DEFAULT_NUKE_LIST: string[] = [
+	'.cache',
 	'node_modules',
 	'dist',
 	'.turbo',
 	'coverage',
 	'package-lock.json',
 	'pnpm-lock.yaml',
+	'typedoc',
 ];
 
-export const DEFAULT_NUKE_GLOBS: string[] = ['./vite.config.ts.timestamp*'];
+export const DEFAULT_NUKE_GLOBS: string[] = [
+	'./vite.config.ts.timestamp*',
+	'./vitest.config.ts.timestamp*',
+];
 
 interface NukeOptionsOnly {
 	/**

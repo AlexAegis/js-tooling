@@ -64,7 +64,8 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					'lint:tsc': 'turbo run lint:tsc_ --concurrency 6 --filter ${packageName}',
+					'lint:tsc':
+						'turbo run lint:tsc_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:tsc_': 'tsc --noEmit',
 				},
 				devDependencies: {
@@ -81,7 +82,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					'lint:tsc': 'turbo run lint:tsc_ --concurrency 6',
+					'lint:tsc': 'turbo run lint:tsc_ --concurrency 6 --cache-dir .cache/turbo',
 				},
 				devDependencies: {
 					'@alexaegis/ts': `^${packageJson.version}`, // For the root tsConfig

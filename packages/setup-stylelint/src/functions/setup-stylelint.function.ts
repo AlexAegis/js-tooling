@@ -30,24 +30,71 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 
 	await Promise.all([
 		distributeFileInWorkspace(
-			join(packageDirectory, 'static', 'dot-stylelintrc.cjs'),
+			join(packageDirectory, 'static', 'stylelint.config.cjs'),
 			'.stylelintrc.cjs',
 			{
 				...options,
-				onlyWorkspaceRoot: true,
+				skipWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'stylelintrc' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'stylelintignore'),
+			'.stylelintignore',
+			{
+				...options,
+				skipWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'stylelintrc' }),
 			}
 		),
 		distributePackageJsonItemsInWorkspace(
 			{
+				scripts: {
+					'lint:style': 'turbo run lint:style_ --concurrency 6 --cache-dir .cache/turbo',
+					'lint:style:css':
+						'turbo run lint:style:css_ --concurrency 6 --cache-dir .cache/turbo',
+					'lint:style:scss':
+						'turbo run lint:style:scss_ --concurrency 6 --cache-dir .cache/turbo',
+				},
 				devDependencies: {
-					stylelint: packageJson.dependencies.stylelint,
+					'@alexaegis/stylelint-config': `^${packageJson.version}`,
+					stylelint: packageJson.devDependencies.stylelint,
+					'postcss-scss': packageJson.devDependencies['postcss-scss'],
 				},
 			},
 			{
 				...options,
 				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
+			}
+		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				scripts: {
+					'lint:style':
+						'turbo run lint:style_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
+					'lint:style:css':
+						'turbo run lint:style:css_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
+					'lint:style:css_':
+						'stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css ./**/*.css',
+					'lint:style:scss':
+						'turbo run lint:style:scss_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
+					'lint:style:scss_':
+						'stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss ./**/*.scss',
+				},
+				devDependencies: {
+					'@alexaegis/stylelint-config': `^${packageJson.version}`,
+					stylelint: packageJson.devDependencies.stylelint,
+					'postcss-scss': packageJson.devDependencies['postcss-scss'],
+				},
+			},
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),

@@ -45,27 +45,19 @@
 				"lint:depcheck_",
 				"lint:tsc_",
 				"lint:svelte_",
-				"lint:style_",
+				"lint:style:css_",
 				"lint:md_",
 				"lint:format_"
 			],
 			"outputMode": "new-only"
 		},
 		"lint:es_": {
-			"dependsOn": ["//#lint:es:require_", "lint:es:require_"],
+			"dependsOn": [],
 			"outputMode": "new-only"
 		},
 		"//#lint:es_": {
-			"dependsOn": ["//#lint:es:require_"],
+			"dependsOn": [],
 			"outputs": [],
-			"outputMode": "new-only"
-		},
-		"lint:es:require_": {
-			"cache": false,
-			"outputMode": "new-only"
-		},
-		"//#lint:es:require_": {
-			"cache": false,
 			"outputMode": "new-only"
 		},
 		"lint:depcheck_": {
@@ -79,21 +71,13 @@
 			"outputMode": "new-only"
 		},
 		"lint:tsc_": {
-			"dependsOn": ["//#lint:tsc:require_", "lint:tsc:require_"],
+			"dependsOn": [],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"//#lint:tsc_": {
-			"dependsOn": ["//#lint:tsc:require_"],
+			"dependsOn": [],
 			"outputs": [],
-			"outputMode": "new-only"
-		},
-		"lint:tsc:require_": {
-			"cache": false,
-			"outputMode": "new-only"
-		},
-		"//#lint:tsc:require_": {
-			"cache": false,
 			"outputMode": "new-only"
 		},
 		"lint:svelte_": {
@@ -107,42 +91,43 @@
 			"outputMode": "new-only"
 		},
 		"lint:style_": {
-			"dependsOn": ["//#lint:style:require_", "lint:style:require_"],
+			"dependsOn": ["lint:style:css_", "lint:style:scss_"],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
-		"//#lint:style_": {
-			"dependsOn": ["//#lint:style:require_"],
+		"lint:style:require:build-lib_": {
+			"env": [],
+			"dependsOn": ["build-lib_"],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
-		"lint:style:require_": {
-			"cache": false,
+		"lint:style:css_": {
+			"dependsOn": ["^lint:style:require:build-lib_", "lint:style:require:build-lib_"],
+			"outputs": [".cache/stylelintcache-css"],
+			"outputMode": "new-only"
+		},
+		"//#lint:style:css_": {
+			"dependsOn": [],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
-		"//#lint:style:require_": {
-			"cache": false,
+		"lint:style:scss_": {
+			"dependsOn": ["^lint:style:require:build-lib_", "lint:style:require:build-lib_"],
+			"outputs": [".cache/stylelintcache-scss"],
+			"outputMode": "new-only"
+		},
+		"//#lint:style:scss_": {
+			"dependsOn": [],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"lint:md_": {
-			"dependsOn": ["//#lint:md:require_", "lint:md:require_"],
+			"dependsOn": [],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"//#lint:md_": {
-			"dependsOn": ["//#lint:md:require_"],
-			"outputs": [],
-			"outputMode": "new-only"
-		},
-		"lint:md:require_": {
-			"cache": false,
-			"outputs": [],
-			"outputMode": "new-only"
-		},
-		"//#lint:md:require_": {
-			"cache": false,
+			"dependsOn": [],
 			"outputs": [],
 			"outputMode": "new-only"
 		},

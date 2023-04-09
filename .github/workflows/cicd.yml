@@ -53,14 +53,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: lint:es
-        run: pnpm run lint:es --cache-dir=.turbo
+        run: pnpm run lint:es --cache-dir=.cache/turbo
   lint-format:
     name: lint:format
     runs-on: ubuntu-latest
@@ -90,14 +90,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: lint:format
-        run: pnpm run lint:format --cache-dir=.turbo
+        run: pnpm run lint:format --cache-dir=.cache/turbo
   lint-md:
     name: lint:md
     runs-on: ubuntu-latest
@@ -127,14 +127,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: lint:md
-        run: pnpm run lint:md --cache-dir=.turbo
+        run: pnpm run lint:md --cache-dir=.cache/turbo
   lint-style:
     name: lint:style
     runs-on: ubuntu-latest
@@ -164,14 +164,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: lint:style
-        run: pnpm run lint:style --cache-dir=.turbo
+        run: pnpm run lint:style --cache-dir=.cache/turbo
   lint-svelte:
     name: lint:svelte
     runs-on: ubuntu-latest
@@ -201,14 +201,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: lint:svelte
-        run: pnpm run lint:svelte --cache-dir=.turbo
+        run: pnpm run lint:svelte --cache-dir=.cache/turbo
   lint-tsc:
     name: lint:tsc
     runs-on: ubuntu-latest
@@ -238,14 +238,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: lint:tsc
-        run: pnpm run lint:tsc --cache-dir=.turbo
+        run: pnpm run lint:tsc --cache-dir=.cache/turbo
   test:
     name: test
     runs-on: ubuntu-latest
@@ -275,14 +275,14 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
       - name: install
         run: pnpm install
       - name: test
-        run: pnpm run test --cache-dir=.turbo
+        run: pnpm run test --cache-dir=.cache/turbo
       - name: merge lcov reports
         run: pnpm run merge-coverage
       - name: upload coverage result to codacy
@@ -348,7 +348,7 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -357,7 +357,7 @@ jobs:
       - name: build
         env:
           BASE_HREF: '/${{ github.event.repository.name }}/'
-        run: pnpm run build --cache-dir=.turbo
+        run: pnpm run build --cache-dir=.cache/turbo
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'build' &&
@@ -496,7 +496,7 @@ jobs:
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            .turbo
+            .cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -507,17 +507,17 @@ jobs:
           build ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run build-lib_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
+          npx turbo run build-lib_ --scope="${{ matrix.artifact }}" --concurrency 6 --cache-dir=.cache/turbo
       - name: |
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} lints are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run lint_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
+          npx turbo run lint_ --scope="${{ matrix.artifact }}" --concurrency 6 --cache-dir=.cache/turbo
       - name: |
           verify that ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} tests are succeeding
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run test_ --scope="${{ matrix.artifact }}" --cache-dir=.turbo
+          npx turbo run test_ --scope="${{ matrix.artifact }}" --concurrency 6 --cache-dir=.cache/turbo
       - name: |
           release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} on npm
         if: env.IS_ON_NPM != 'true'

@@ -68,7 +68,8 @@
 		"*.tsx": "${capture}*",
 		".eslintrc.*": ".eslintignore",
 		".gitignore": ".gitattributes",
-		".prettierrc.*": ".prettierignore"
+		".prettierrc.*": ".prettierignore",
+		".stylelintrc.*": ".stylelintignore"
 	},
 	"files.associations": {
 		"*.json": "jsonc",

@@ -17,6 +17,7 @@
 		"stylelint-config-standard",
 		"npm-check-updates",
 		"stylelint",
+		"postcss-scss",
 		"concurrently",
 		"nodemon",
 		"husky",

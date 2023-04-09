@@ -57,7 +57,8 @@ export const distributeRemarkConfig = async (
 	await distributePackageJsonItemsInWorkspace(
 		{
 			scripts: {
-				'lint:md': 'turbo run lint:md_ --concurrency 6 --filter ${packageName}',
+				'lint:md':
+					'turbo run lint:md_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
 				'lint:md_': 'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
 			},
 		},
@@ -73,7 +74,7 @@ export const distributeRemarkConfig = async (
 	await distributePackageJsonItemsInWorkspace(
 		{
 			scripts: {
-				'lint:md': 'turbo run lint:md_ --concurrency 6',
+				'lint:md': 'turbo run lint:md_ --concurrency 6 --cache-dir .cache/turbo',
 				'lint:md_': 'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
 			},
 			devDependencies: {
