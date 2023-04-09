@@ -1,6 +1,7 @@
 import { createLogger } from '@alexaegis/logging';
 import {
 	NODE_MODULES_DIRECTORY_NAME,
+	distributeFileInWorkspace,
 	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	normalizeDistributeInWorkspaceOptions,
@@ -27,12 +28,12 @@ export const setupTypedoc = async (rawOptions?: DistributeInWorkspaceOptions): P
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	// TODO: If typedoc can do the entire monorepo in one go, it could be called at the root only
 	await Promise.allSettled([
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
 					typedoc: 'turbo run typedoc_ --concurrency 6 --cache-dir .cache/turbo',
+					typedoc_: 'typedoc',
 				},
 				devDependencies: {
 					typedoc: packageJson.dependencies.typedoc,
@@ -45,19 +46,33 @@ export const setupTypedoc = async (rawOptions?: DistributeInWorkspaceOptions): P
 				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
 			}
 		),
-		distributePackageJsonItemsInWorkspace(
-			{
-				scripts: {
-					typedoc:
-						'turbo run typedoc_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
-					typedoc_: 'typedoc',
-				},
-			},
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'package-typedoc.json'),
+			'typedoc.json',
 			{
 				...options,
 				skipWorkspaceRoot: true,
-				keywordCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'packageJson:package' }),
+				logger: logger.getSubLogger({ name: 'packageTypedocJson' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'workspace-typedoc.json'),
+			'typedoc.json',
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'workspaceTypedocJson' }),
+			}
+		),
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'typedoc.base.json'),
+			join('.config', 'typedoc.json'),
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				dependencyCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'workspaceTypedocJson' }),
 			}
 		),
 	]);

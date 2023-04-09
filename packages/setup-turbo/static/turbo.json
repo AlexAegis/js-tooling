@@ -12,19 +12,8 @@
 			"outputMode": "new-only"
 		},
 		"build-lib_": {
-			"dependsOn": [
-				"^prebuild_",
-				"^build-lib_",
-				"^build-lib:require:typedoc_",
-				"build-lib:require:typedoc_"
-			],
+			"dependsOn": ["^prebuild_", "^build-lib_"],
 			"outputs": ["dist/**"],
-			"outputMode": "new-only"
-		},
-		"build-lib:require:typedoc_": {
-			"env": [],
-			"dependsOn": ["typedoc_"],
-			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"build-app_": {
@@ -145,12 +134,12 @@
 		},
 		"typedoc_": {
 			"dependsOn": [],
-			"outputs": ["typedoc/**"],
+			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"//#typedoc_": {
 			"dependsOn": [],
-			"outputs": ["typedoc/**"],
+			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"test_": {
