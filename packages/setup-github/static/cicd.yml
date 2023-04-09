@@ -466,6 +466,7 @@ jobs:
         lint-style,
         lint-svelte,
         lint-md,
+        typedoc,
       ]
     environment:
       name: github-pages
@@ -493,6 +494,7 @@ jobs:
         lint-style,
         lint-svelte,
         lint-tsc,
+        typedoc,
       ]
     strategy:
       matrix:
