@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.3](https://github.com/AlexAegis/js-tooling/compare/v0.1.2...v0.1.3) (2023-04-09)
+
+
+### Features
+
+* **setup-typedoc:** set up monorepo strategy ([bb9f1a1](https://github.com/AlexAegis/js-tooling/commit/bb9f1a191312e0acf36c13553c4e18a83104cffa))
+
 ## [0.1.2](https://github.com/AlexAegis/js-tooling/compare/v0.1.1...v0.1.2) (2023-04-09)
 
 

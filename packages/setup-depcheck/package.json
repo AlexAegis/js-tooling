@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-depcheck",
 	"description": "My depcheck setup",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -58,10 +58,10 @@
 		"@alexaegis/workspace-tools": "^0.1.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.2",
-		"@alexaegis/ts": "^0.1.2",
-		"@alexaegis/vite": "^0.1.2",
-		"@alexaegis/vitest": "^0.1.2",
+		"@alexaegis/eslint-config-vitest": "^0.1.3",
+		"@alexaegis/ts": "^0.1.3",
+		"@alexaegis/vite": "^0.1.3",
+		"@alexaegis/vitest": "^0.1.3",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.29.8",
 		"depcheck": "^1.4.3",
