@@ -60,7 +60,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: lint:es
-        run: pnpm run lint:es --cache-dir=.cache/turbo
+        run: pnpm run lint:es
   lint-format:
     name: lint:format
     runs-on: ubuntu-latest
@@ -97,7 +97,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: lint:format
-        run: pnpm run lint:format --cache-dir=.cache/turbo
+        run: pnpm run lint:format
   lint-md:
     name: lint:md
     runs-on: ubuntu-latest
@@ -134,7 +134,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: lint:md
-        run: pnpm run lint:md --cache-dir=.cache/turbo
+        run: pnpm run lint:md
   lint-style:
     name: lint:style
     runs-on: ubuntu-latest
@@ -171,7 +171,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: lint:style
-        run: pnpm run lint:style --cache-dir=.cache/turbo
+        run: pnpm run lint:style
   lint-svelte:
     name: lint:svelte
     runs-on: ubuntu-latest
@@ -208,7 +208,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: lint:svelte
-        run: pnpm run lint:svelte --cache-dir=.cache/turbo
+        run: pnpm run lint:svelte
   lint-tsc:
     name: lint:tsc
     runs-on: ubuntu-latest
@@ -245,7 +245,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: lint:tsc
-        run: pnpm run lint:tsc --cache-dir=.cache/turbo
+        run: pnpm run lint:tsc
   test:
     name: test
     runs-on: ubuntu-latest
@@ -282,7 +282,7 @@ jobs:
       - name: install
         run: pnpm install
       - name: test
-        run: pnpm run test --cache-dir=.cache/turbo
+        run: pnpm run test
       - name: merge lcov reports
         run: pnpm run merge-coverage
       - name: upload coverage result to codacy
@@ -357,7 +357,7 @@ jobs:
       - name: build
         env:
           BASE_HREF: '/${{ github.event.repository.name }}/'
-        run: pnpm run build --cache-dir=.cache/turbo
+        run: pnpm run build
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'build' &&
