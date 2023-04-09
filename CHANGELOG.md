@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.2](https://github.com/AlexAegis/js-tooling/compare/v0.1.1...v0.1.2) (2023-04-09)
+
+
+### Features
+
+* added setup-depcheck ([4f1c981](https://github.com/AlexAegis/js-tooling/commit/4f1c981d7ffc558d30f687e634834fe5ee1668cf))
+* build-lib typedoc require chain ([854613f](https://github.com/AlexAegis/js-tooling/commit/854613f823fd1a9ca2a00ddd0d14abfa9eb740c5))
+* ignore typedoc output ([0ddf5b3](https://github.com/AlexAegis/js-tooling/commit/0ddf5b36f18c8dce52b539f078ea71b69682b39c))
+* **setup-workspace:** add pnpm workspace file ([06c3b41](https://github.com/AlexAegis/js-tooling/commit/06c3b414d4cc403f9b44af496af3c4c3c8dcc302))
+* stylelint, turbo caching ([da1e597](https://github.com/AlexAegis/js-tooling/commit/da1e5975b6b7719a17ed790a64350b612b6aca11))
+
+
+### Bug Fixes
+
+* **setup-husky:** added marks to hooks ([da158a8](https://github.com/AlexAegis/js-tooling/commit/da158a8de09ba0755df77124f094eb8a5e0ad23d))
+
 ## [0.1.1](https://github.com/AlexAegis/js-tooling/compare/v0.1.0...v0.1.1) (2023-04-08)
 
 
