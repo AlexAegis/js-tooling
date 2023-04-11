@@ -38,7 +38,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 					scripts: {
 						test: 'turbo run test_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
 						test_: 'vitest --passWithNoTests --coverage --run',
-						'test:watch': 'vitest --passWithNoTests --coverage --run',
+						'test:watch': 'vitest --passWithNoTests --coverage',
 					},
 					devDependencies: {
 						'@alexaegis/vitest': packageJson.devDependencies['@alexaegis/vitest'],
