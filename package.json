@@ -34,7 +34,7 @@
 	"engines": {
 		"node": ">=18.13.0"
 	},
-	"packageManager": "pnpm@8.1.1",
+	"packageManager": "pnpm@8.2.0",
 	"workspaces": [
 		"apps/*",
 		"libs/*",
@@ -73,7 +73,7 @@
 		"typedoc_": "typedoc"
 	},
 	"devDependencies": {
-		"@alexaegis/coverage-tools": "^0.1.1",
+		"@alexaegis/coverage-tools": "^0.1.2",
 		"@alexaegis/eslint-config-core": "^0.1.3",
 		"@alexaegis/nuke": "^0.1.3",
 		"@alexaegis/setup-commitlint": "^0.1.3",
@@ -98,14 +98,14 @@
 		"@lcov-viewer/cli": "^1.3.0",
 		"@types/eslint": "^8.37.0",
 		"@types/node": "^18.15.11",
-		"@vitest/coverage-c8": "^0.29.8",
+		"@vitest/coverage-c8": "^0.30.1",
 		"commit-and-tag-version": "^11.2.1",
 		"commitlint": "^17.5.1",
 		"depcheck": "^1.4.3",
 		"eslint": "^8.38.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.1",
-		"npm-check-updates": "^16.10.7",
+		"npm-check-updates": "^16.10.8",
 		"postcss-scss": "^4.0.6",
 		"prettier": "^2.8.7",
 		"remark": "^14.0.2",
@@ -115,9 +115,9 @@
 		"svelte": "^3.58.0",
 		"svelte-check": "^3.2.0",
 		"ts-node": "^10.9.1",
-		"turbo": "^1.8.8",
+		"turbo": "^1.9.0",
 		"typedoc": "^0.24.1",
 		"typescript": "^5.0.4",
-		"vitest": "^0.29.8"
+		"vitest": "^0.30.1"
 	}
 }

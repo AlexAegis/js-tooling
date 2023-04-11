@@ -59,9 +59,9 @@
 		"setup-ts": "./shims/setup-ts.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.1",
-		"@alexaegis/logging": "^0.1.1",
-		"@alexaegis/workspace-tools": "^0.1.1",
+		"@alexaegis/cli-tools": "^0.1.2",
+		"@alexaegis/logging": "^0.1.2",
+		"@alexaegis/workspace-tools": "^0.1.2",
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {
@@ -73,8 +73,8 @@
 		"@alexaegis/vite": "^0.1.3",
 		"@alexaegis/vitest": "^0.1.3",
 		"@types/node": "^18.15.11",
-		"@vitest/coverage-c8": "^0.29.8",
+		"@vitest/coverage-c8": "^0.30.1",
 		"vite": "^4.2.1",
-		"vitest": "^0.29.8"
+		"vitest": "^0.30.1"
 	}
 }
