@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/lint-staged-config",
 	"description": "Lint staged config",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -59,10 +59,10 @@
 		"svelte": "^3.58.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.4",
-		"@alexaegis/ts": "^0.1.4",
-		"@alexaegis/vite": "^0.1.4",
-		"@alexaegis/vitest": "^0.1.4",
+		"@alexaegis/eslint-config-vitest": "^0.1.5",
+		"@alexaegis/ts": "^0.1.5",
+		"@alexaegis/vite": "^0.1.5",
+		"@alexaegis/vitest": "^0.1.5",
 		"@types/eslint": "^8.37.0",
 		"@types/node": "^18.15.11",
 		"@vitest/coverage-c8": "^0.30.1",

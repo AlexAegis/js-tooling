@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.5](https://github.com/AlexAegis/js-tooling/compare/v0.1.4...v0.1.5) (2023-04-11)
+
+
+### Bug Fixes
+
+* **setup-vitest:** watch mode ([eb1e9ea](https://github.com/AlexAegis/js-tooling/commit/eb1e9ea458a4aa421e212d613b5fef20a560ae49))
+
 ## [0.1.4](https://github.com/AlexAegis/js-tooling/compare/v0.1.3...v0.1.4) (2023-04-11)
 
 ## [0.1.3](https://github.com/AlexAegis/js-tooling/compare/v0.1.2...v0.1.3) (2023-04-09)
