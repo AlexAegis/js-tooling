@@ -40,6 +40,25 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 			logger: logger.getSubLogger({ name: `packageTsConfig:${flavour}` }),
 		};
 
+		const extraDistributors: Promise<void>[] = [];
+		if (flavour === 'node') {
+			extraDistributors.push(
+				distributePackageJsonItemsInWorkspace(
+					{
+						devDependencies: {
+							'@types/node': `^${packageJson.devDependencies['@types/node']}`,
+						},
+					},
+					{
+						...options,
+						skipWorkspaceRoot: true,
+						keywordCriteria: [`^${packageJson.name}-node$`],
+						logger: logger.getSubLogger({ name: 'packageJson' }),
+					}
+				)
+			);
+		}
+
 		return [
 			distributeFileInWorkspace(
 				join(packageDirectory, 'static', 'package-simple-tsconfig.json'),
@@ -51,6 +70,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 					},
 				}
 			),
+			...extraDistributors,
 		];
 	};
 
@@ -59,6 +79,13 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 		keywordCriteria: [`${packageJson.name}.*`],
 		logger: logger.getSubLogger({ name: 'packageJson' }),
 	});
+
+	await Promise.all([
+		...forFlavour('base'),
+		...forFlavour('node'),
+		...forFlavour('web'),
+		...forFlavour('svelte'),
+	]);
 
 	await Promise.all([
 		distributePackageJsonItemsInWorkspace(
@@ -106,10 +133,6 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 				logger: logger.getSubLogger({ name: 'workspaceTsConfig' }),
 			}
 		),
-		...forFlavour('base'),
-		...forFlavour('node'),
-		...forFlavour('web'),
-		...forFlavour('svelte'),
 	]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);
