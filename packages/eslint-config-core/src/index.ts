@@ -24,6 +24,15 @@ export default {
 				'plugin:@typescript-eslint/recommended-requiring-type-checking',
 				'plugin:@typescript-eslint/strict',
 			],
+			rules: {
+				'@typescript-eslint/no-invalid-void-type': [
+					'error',
+					{
+						allowInGenericTypeArguments: true,
+						allowAsThisParameter: true,
+					},
+				],
+			},
 		},
 		{
 			files: ['*.svelte'],
