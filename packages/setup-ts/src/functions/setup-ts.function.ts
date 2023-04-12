@@ -46,7 +46,7 @@ export const setupTs = async (rawOptions?: DistributeInWorkspaceOptions): Promis
 				distributePackageJsonItemsInWorkspace(
 					{
 						devDependencies: {
-							'@types/node': `^${packageJson.devDependencies['@types/node']}`,
+							'@types/node': packageJson.devDependencies['@types/node'],
 						},
 					},
 					{
