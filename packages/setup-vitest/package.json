@@ -43,6 +43,7 @@
 			"require": "./dist/index.cjs"
 		},
 		"./package-node-vitest.config": "./static/package-node-vitest.config.ts",
+		"./package-svelte-vitest.config": "./static/package-svelte-vitest.config.ts",
 		"./package-web-vitest.config": "./static/package-web-vitest.config.ts",
 		"./readme": "./readme.md",
 		"./workspace-vitest.config": "./static/workspace-vitest.config.ts"

@@ -68,6 +68,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 	await Promise.all([
 		...forFlavour('node'),
 		...forFlavour('web'),
+		...forFlavour('svelte'),
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
