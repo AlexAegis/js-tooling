@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.6](https://github.com/AlexAegis/js-tooling/compare/v0.1.5...v0.1.6) (2023-04-12)
+
+
+### Features
+
+* **eslint-config-core:** allow void as this arg ([b7d06ee](https://github.com/AlexAegis/js-tooling/commit/b7d06eec52de0d5ff8784c38b7c54093bc1384e2))
+* **setup-ts:** add node types for node setups ([12d92f9](https://github.com/AlexAegis/js-tooling/commit/12d92f96442cd28cdedc3831d3ffa7257206302d))
+
+
+### Bug Fixes
+
+* **setup-vite:** add missing vite dep ([06c2d27](https://github.com/AlexAegis/js-tooling/commit/06c2d273e90fd500bb2ca2323216cba9b12cf45e))
+
 ## [0.1.5](https://github.com/AlexAegis/js-tooling/compare/v0.1.4...v0.1.5) (2023-04-11)
 
 
