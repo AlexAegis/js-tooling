@@ -8,67 +8,67 @@ importers:
         specifier: ^0.1.3
         version: 0.1.3
       '@alexaegis/eslint-config-core':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/eslint-config-core
       '@alexaegis/nuke':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/nuke
       '@alexaegis/setup-commitlint':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-commitlint
       '@alexaegis/setup-depcheck':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-depcheck
       '@alexaegis/setup-editorconfig':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-editorconfig
       '@alexaegis/setup-eslint':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-eslint
       '@alexaegis/setup-git':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-git
       '@alexaegis/setup-github':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-github
       '@alexaegis/setup-husky':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-husky
       '@alexaegis/setup-prettier':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-prettier
       '@alexaegis/setup-remark':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-remark
       '@alexaegis/setup-standard-version':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-standard-version
       '@alexaegis/setup-stylelint':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-stylelint
       '@alexaegis/setup-ts':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-ts
       '@alexaegis/setup-turbo':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-turbo
       '@alexaegis/setup-vite':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-vite
       '@alexaegis/setup-vitest':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-vitest
       '@alexaegis/setup-vscode':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-vscode
       '@alexaegis/setup-workspace':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/setup-workspace
       '@alexaegis/stylelint-config':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/stylelint-config
       '@alexaegis/ts':
-        specifier: workspace:^0.1.6
+        specifier: workspace:^
         version: link:packages/ts
       '@lcov-viewer/cli':
         specifier: ^1.3.0
@@ -131,8 +131,8 @@ importers:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.15.11)(typescript@5.0.4)
       turbo:
-        specifier: ^1.9.0
-        version: 1.9.0
+        specifier: ^1.9.1
+        version: 1.9.1
       typedoc:
         specifier: ^0.24.1
         version: 0.24.1(typescript@5.0.4)
@@ -256,8 +256,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.38.0)
       eslint-config-turbo:
-        specifier: ^1.9.0
-        version: 1.9.0(eslint@8.38.0)
+        specifier: ^1.9.1
+        version: 1.9.1(eslint@8.38.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.38.0)
@@ -321,8 +321,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.38.0)
       eslint-config-turbo:
-        specifier: ^1.9.0
-        version: 1.9.0(eslint@8.38.0)
+        specifier: ^1.9.1
+        version: 1.9.1(eslint@8.38.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.38.0)
@@ -1148,8 +1148,8 @@ importers:
         specifier: ^0.1.3
         version: 0.1.3
       turbo:
-        specifier: ^1.9.0
-        version: 1.9.0
+        specifier: ^1.9.1
+        version: 1.9.1
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.1.6
@@ -1563,6 +1563,9 @@ importers:
 
   packages/vitest:
     dependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^2.0.4
+        version: 2.0.4(svelte@3.58.0)(vite@4.2.1)
       '@vitest/coverage-c8':
         specifier: ^0.30.1
         version: 0.30.1(vitest@0.30.1)
@@ -4046,7 +4049,7 @@ packages:
       readdirp: 3.6.0
       require-package-name: 2.0.1
       resolve: 1.22.2
-      sass: 1.61.0
+      sass: 1.62.0
       scss-parser: 1.0.6
       semver: 7.4.0
       yargs: 16.2.0
@@ -4344,13 +4347,13 @@ packages:
       eslint: 8.38.0
     dev: false
 
-  /eslint-config-turbo@1.9.0(eslint@8.38.0):
-    resolution: {integrity: sha512-DEwFRVitVZPPEEEiEIu/oIqTHDQnKHenYZXB2YhFCTUnBtRPoYuLGPqeB0x8jQzPTVq5D2XFjiXdnFWLx9/71Q==}
+  /eslint-config-turbo@1.9.1(eslint@8.38.0):
+    resolution: {integrity: sha512-tUqm5TxI5bpbDEgClbw+UygVPAwYB20FIpAiQsZI8imJNDz30E40TZkp6uWpAKmxykU8T0+t3jwkYokvXmXc0Q==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.38.0
-      eslint-plugin-turbo: 1.9.0(eslint@8.38.0)
+      eslint-plugin-turbo: 1.9.1(eslint@8.38.0)
     dev: false
 
   /eslint-import-resolver-node@0.3.7:
@@ -4518,8 +4521,8 @@ packages:
       svelte: 3.58.0
     dev: false
 
-  /eslint-plugin-turbo@1.9.0(eslint@8.38.0):
-    resolution: {integrity: sha512-ttv1o+mD1uWxY9l+zeVS3X1iXdmfMzHwWE0VZvxxqxYW0thgLHA5eO9wyC/tdb1V9JdkiV7NmMJKyz+ew+sXuA==}
+  /eslint-plugin-turbo@1.9.1(eslint@8.38.0):
+    resolution: {integrity: sha512-QPd0EG0xkoDkXJLwPQKULxHjkR27VmvJtILW4C9aIrqauLZ+Yc/V7R+A9yVwAi6nkMHxUlCSUsBxmiQP9TIlPw==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -8553,8 +8556,8 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /sass@1.61.0:
-    resolution: {integrity: sha512-PDsN7BrVkNZK2+dj/dpKQAWZavbAQ87IXqVvw2+oEYI+GwlTWkvbQtL7F2cCNbMqJEYKPh1EcjSxsnqIb/kyaQ==}
+  /sass@1.62.0:
+    resolution: {integrity: sha512-Q4USplo4pLYgCi+XlipZCWUQz5pkg/ruSSgJ0WRDSb/+3z9tXUOkQ7QPYn4XrhZKYAK4HlpaQecRwKLJX6+DBg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -9355,59 +9358,59 @@ packages:
       - bluebird
       - supports-color
 
-  /turbo-darwin-64@1.9.0:
-    resolution: {integrity: sha512-snJkC0RRFEQ7STIYbJVDrQzkRaU3b1cgM5PIrWx6elf79HA4Lm50sXbjpWJPsdwxfnvIKcpsAtBsDeR47iqnMQ==}
+  /turbo-darwin-64@1.9.1:
+    resolution: {integrity: sha512-IX/Ph4CO80lFKd9pPx3BWpN2dynt6mcUFifyuHUNVkOP1Usza/G9YuZnKQFG6wUwKJbx40morFLjk1TTeLe04w==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /turbo-darwin-arm64@1.9.0:
-    resolution: {integrity: sha512-+4MDDtRdKe8VMG9YU7J3c6kokpKVV4ELw6iThtO7jwz5DiGy5eTKGNtr5kHkPk3SffUQ0DZTQ/YSJsBC+6LLlA==}
+  /turbo-darwin-arm64@1.9.1:
+    resolution: {integrity: sha512-6tCbmIboy9dTbhIZ/x9KIpje73nvxbiyVnHbr9xKnsxLJavD0xqjHZzbL5U2tHp8chqmYf0E4WYOXd+XCNg+OQ==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /turbo-linux-64@1.9.0:
-    resolution: {integrity: sha512-pEyj6VFo1RYwMqA6BLPHYViRIbE/R1KMAoQFW/qr9vTIT6kuMw1OiL0f/ZJ3AgY5V2mwGQT9Qg2HAH1CIEnH4Q==}
+  /turbo-linux-64@1.9.1:
+    resolution: {integrity: sha512-ti8XofnJFO1XaadL92lYJXgxb0VBl03Yu9VfhxkOTywFe7USTLBkJcdvQ4EpFk/KZwLiTdCmT2NQVxsG4AxBiQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /turbo-linux-arm64@1.9.0:
-    resolution: {integrity: sha512-bwwa3X1ZzFkGsHsXDwAdW+akcKnGVNMmEtFULvh/2UALdslobttO7CiNBot7F+Sf5CfFZivYu5MEuYA/+Kvt7Q==}
+  /turbo-linux-arm64@1.9.1:
+    resolution: {integrity: sha512-XYvIbeiCCCr+ENujd2Jtck/lJPTKWb8T2MSL/AEBx21Zy3Sa7HgrQX6LX0a0pNHjaleHz00XXt1D0W5hLeP+tA==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /turbo-windows-64@1.9.0:
-    resolution: {integrity: sha512-GMvbmXNHJVuLwbgqxQjXTFE4GHjzj3hVE+xZEKlEQWJ0cD+OGrVMqYMGxjVO5Ffbd3aHI9OECAmQw18qHWi1AA==}
+  /turbo-windows-64@1.9.1:
+    resolution: {integrity: sha512-x7lWAspe4/v3XQ0gaFRWDX/X9uyWdhwFBPEfb8BA0YKtnsrPOHkV0mRHCRrXzvzjA7pcDCl2agGzb7o863O+Jg==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /turbo-windows-arm64@1.9.0:
-    resolution: {integrity: sha512-oeePkdHoXit+rBzAT4iqn9hTUWXguKvqsZpJbFKr7JKLKtfeGwsXtyhCtkWIpBBQMT+hkGTBURMr9mHuS3sUPA==}
+  /turbo-windows-arm64@1.9.1:
+    resolution: {integrity: sha512-QSLNz8dRBLDqXOUv/KnoesBomSbIz2Huef/a3l2+Pat5wkQVgMfzFxDOnkK5VWujPYXz+/prYz+/7cdaC78/kw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /turbo@1.9.0:
-    resolution: {integrity: sha512-W99+hwuisT/d9wcr5/KnAJYCQwm3xApbxLTLBRMOEti3iaweRSQIKFCVhdGccaDuu6b0zvE/4bTB6C3qJc8bgw==}
+  /turbo@1.9.1:
+    resolution: {integrity: sha512-Rqe8SP96e53y4Pk29kk2aZbA8EF11UtHJ3vzXJseadrc1T3V6UhzvAWwiKJL//x/jojyOoX1axnoxmX3UHbZ0g==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.9.0
-      turbo-darwin-arm64: 1.9.0
-      turbo-linux-64: 1.9.0
-      turbo-linux-arm64: 1.9.0
-      turbo-windows-64: 1.9.0
-      turbo-windows-arm64: 1.9.0
+      turbo-darwin-64: 1.9.1
+      turbo-darwin-arm64: 1.9.1
+      turbo-linux-64: 1.9.1
+      turbo-linux-arm64: 1.9.1
+      turbo-windows-64: 1.9.1
+      turbo-windows-arm64: 1.9.1
 
   /type-check@0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}
