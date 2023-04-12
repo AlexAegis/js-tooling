@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-remark",
 	"description": "My markdown linting config",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -59,15 +59,15 @@
 	"dependencies": {
 		"@alexaegis/cli-tools": "^0.1.3",
 		"@alexaegis/logging": "^0.1.3",
-		"@alexaegis/remark-preset": "^0.1.6",
+		"@alexaegis/remark-preset": "^0.1.7",
 		"@alexaegis/workspace-tools": "^0.1.3",
 		"remark-cli": "^11.0.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.6",
-		"@alexaegis/ts": "^0.1.6",
-		"@alexaegis/vite": "^0.1.6",
-		"@alexaegis/vitest": "^0.1.6",
+		"@alexaegis/eslint-config-vitest": "^0.1.7",
+		"@alexaegis/ts": "^0.1.7",
+		"@alexaegis/vite": "^0.1.7",
+		"@alexaegis/vitest": "^0.1.7",
 		"@types/yargs": "17.0.24",
 		"@vitest/coverage-c8": "^0.30.1",
 		"vite": "^4.2.1",

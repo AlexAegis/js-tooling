@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.7](https://github.com/AlexAegis/js-tooling/compare/v0.1.6...v0.1.7) (2023-04-12)
+
+
+### Features
+
+* **setup-vitest:** add svelte vitest configuration ([0ba6067](https://github.com/AlexAegis/js-tooling/commit/0ba60671272a48c90f2ea1db33656907f9177c97))
+* **ts:** use bundler moduleResolution for web projects ([010cccb](https://github.com/AlexAegis/js-tooling/commit/010cccb26188d52aad63aa2f54174ca603d99406))
+* **vitest:** add svelte vitest configuration ([38756d7](https://github.com/AlexAegis/js-tooling/commit/38756d7bca0ba38a42776bac8c0e3dbbc0e4c55e))
+
+
+### Bug Fixes
+
+* use sveltePreprocess directly ([285d696](https://github.com/AlexAegis/js-tooling/commit/285d69699846292124d0c103173fbe4f700c81f4))
+
 ## [0.1.6](https://github.com/AlexAegis/js-tooling/compare/v0.1.5...v0.1.6) (2023-04-12)
 
 
