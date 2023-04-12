@@ -85,6 +85,7 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 					['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
 					nodemon: packageJson.dependencies.nodemon,
 					concurrently: packageJson.dependencies.concurrently,
+					vite: packageJson.dependencies.vite,
 				},
 			},
 			{
