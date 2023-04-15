@@ -22,7 +22,6 @@
 		"nodemon",
 		"husky",
 		"@typescript-eslint/*",
-		"remark-lint",
 		"prettier-plugin-svelte",
 		"@vitest/coverage-c8",
 		"commitlint",
