@@ -63,7 +63,7 @@
 		"@alexaegis/commitlint-config": "^0.1.7",
 		"@alexaegis/logging": "^0.1.3",
 		"@alexaegis/workspace-tools": "^0.1.3",
-		"commitlint": "^17.5.1"
+		"commitlint": "^17.6.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.1.7",
