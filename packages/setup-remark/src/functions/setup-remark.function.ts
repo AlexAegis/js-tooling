@@ -78,7 +78,8 @@ export const distributeRemarkConfig = async (
 				'lint:md_': 'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
 			},
 			devDependencies: {
-				'remark-cli': packageJson.dependencies['remark-cli'],
+				'remark-cli': packageJson.devDependencies['remark-cli'],
+				remark: packageJson.devDependencies.remark, // A local installation is required by the remark langauge server
 			},
 		},
 		{
