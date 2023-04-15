@@ -60,5 +60,6 @@ export default {
 		'unicorn/prevent-abbreviations': 'off', // no thanks
 		'unicorn/prefer-top-level-await': 'off', // Until ES2022 is used as target
 		'unicorn/no-useless-undefined': 'off', // for .catch(() => undefined)
+		'unicorn/no-for-loop': 'off', // Seriously?
 	},
 } as Linter.Config;
