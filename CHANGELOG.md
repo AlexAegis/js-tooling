@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.8](https://github.com/AlexAegis/js-tooling/compare/v0.1.7...v0.1.8) (2023-04-15)
+
+
+### Features
+
+* added solutions as an excluded dir in root tsconfig ([2a85efc](https://github.com/AlexAegis/js-tooling/commit/2a85efc3624e8b610350d0ebff658013eedd4f24))
+* **eslint-config-core:** allow for loops ([f9d77cf](https://github.com/AlexAegis/js-tooling/commit/f9d77cfbdc94e277c90057527f7651477660d23d))
+* **setup-remark:** add remark as a devDep too for LSP ([a2f7dc9](https://github.com/AlexAegis/js-tooling/commit/a2f7dc9b45534d3fff0cc42997da46710577bea4))
+* **ts:** use nodenext module for node configs ([b343a5b](https://github.com/AlexAegis/js-tooling/commit/b343a5bbf27b656df319d16919aa697fce750446))
+
+
+### Bug Fixes
+
+* **setup-ts:** fix double caret ([7f868ca](https://github.com/AlexAegis/js-tooling/commit/7f868ca7037fe2833ebfa6eb946d0c8082e33c65))
+* **setup-vitest:** added marks ([11a7a4a](https://github.com/AlexAegis/js-tooling/commit/11a7a4aede1dbbde0402c8bbacfaecbfe2f02df6))
+
 ## [0.1.7](https://github.com/AlexAegis/js-tooling/compare/v0.1.6...v0.1.7) (2023-04-12)
 
 
