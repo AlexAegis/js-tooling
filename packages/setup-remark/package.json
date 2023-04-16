@@ -57,10 +57,10 @@
 		"setup-remark": "./shims/setup-remark.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.3",
-		"@alexaegis/logging": "^0.1.3",
+		"@alexaegis/cli-tools": "^0.1.4",
+		"@alexaegis/logging": "^0.1.4",
 		"@alexaegis/remark-preset": "^0.1.8",
-		"@alexaegis/workspace-tools": "^0.1.3"
+		"@alexaegis/workspace-tools": "^0.1.4"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.1.8",
@@ -71,7 +71,7 @@
 		"@vitest/coverage-c8": "^0.30.1",
 		"remark": "^14.0.2",
 		"remark-cli": "^11.0.0",
-		"vite": "^4.2.1",
+		"vite": "^4.3.1",
 		"vitest": "^0.30.1"
 	}
 }

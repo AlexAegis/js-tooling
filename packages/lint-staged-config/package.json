@@ -48,7 +48,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.1.3",
+		"@alexaegis/fs": "^0.1.4",
 		"lint-staged": "13.2.1",
 		"typescript": "^5.0.4"
 	},
@@ -64,9 +64,9 @@
 		"@alexaegis/vite": "^0.1.8",
 		"@alexaegis/vitest": "^0.1.8",
 		"@types/eslint": "^8.37.0",
-		"@types/node": "^18.15.11",
+		"@types/node": "^18.15.13",
 		"@vitest/coverage-c8": "^0.30.1",
-		"vite": "^4.2.1",
+		"vite": "^4.3.1",
 		"vitest": "^0.30.1"
 	}
 }

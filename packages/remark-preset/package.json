@@ -75,7 +75,7 @@
 		"@alexaegis/vitest": "^0.1.8",
 		"@vitest/coverage-c8": "^0.30.1",
 		"unified": "^10.1.2",
-		"vite": "^4.2.1",
+		"vite": "^4.3.1",
 		"vitest": "^0.30.1"
 	}
 }
