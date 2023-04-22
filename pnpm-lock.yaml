@@ -109,6 +109,9 @@ importers:
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
       remark:
         specifier: ^14.0.2
         version: 14.0.2
@@ -955,6 +958,55 @@ importers:
         specifier: ^0.30.1
         version: 0.30.1(@vitest/ui@0.30.1)(jsdom@21.1.1)
 
+  packages/setup-publint:
+    dependencies:
+      '@alexaegis/cli-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/coverage-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/logging':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/workspace-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@lcov-viewer/cli':
+        specifier: ^1.3.0
+        version: 1.3.0
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^18.15.13
+        version: 18.15.13
+      '@vitest/coverage-c8':
+        specifier: ^0.30.1
+        version: 0.30.1(vitest@0.30.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.1
+        version: 4.3.1(@types/node@18.15.13)
+      vitest:
+        specifier: ^0.30.1
+        version: 0.30.1(@vitest/ui@0.30.1)(jsdom@21.1.1)
+
   packages/setup-remark:
     dependencies:
       '@alexaegis/cli-tools':
@@ -1628,8 +1680,8 @@ packages:
     resolution: {integrity: sha512-yPTcrxPaTdj9VxmMgEvG5bGCxTiIWz1Oc50HbKIpcJd4bKtBUo71CB25ATnl+T51jCiawt2p37zCwyh2IFznXw==}
     engines: {node: '>=18.13.0'}
     dependencies:
-      '@alexaegis/common': 0.1.1
-      '@alexaegis/logging': 0.1.1
+      '@alexaegis/common': 0.1.4
+      '@alexaegis/logging': 0.1.4
       js-yaml: 4.1.0
     optionalDependencies:
       prettier: 2.8.7
@@ -1649,7 +1701,7 @@ packages:
     resolution: {integrity: sha512-8fYdRfmyus2BQ4f76iErb74loH8eecj9gUy9cEj6K4wIy1UoevyvkzhBse5Qi/aKPHV/+o27HSzp9QDahLxhOQ==}
     engines: {node: '>=18.13.0'}
     dependencies:
-      '@alexaegis/common': 0.1.1
+      '@alexaegis/common': 0.1.4
       tslog: 4.8.2
     dev: false
 
@@ -1664,9 +1716,9 @@ packages:
     resolution: {integrity: sha512-T3zoD0d/Zy2CBA+49uosvN8WL9gPiZK74cTMd3dKBUXcU4zMkJAAepgq5zF1jEeUwhAjgu5CNx2A0jTmSx2O2Q==}
     engines: {node: '>=18.13.0'}
     dependencies:
-      '@alexaegis/common': 0.1.1
-      '@alexaegis/fs': 0.1.1
-      '@alexaegis/logging': 0.1.1
+      '@alexaegis/common': 0.1.4
+      '@alexaegis/fs': 0.1.4
+      '@alexaegis/logging': 0.1.4
       '@schemastore/package': 0.0.8
       globby: 13.1.4
       prettier: 2.8.7
@@ -5334,6 +5386,13 @@ packages:
   /ignore-by-default@1.0.1:
     resolution: {integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==}
 
+  /ignore-walk@5.0.1:
+    resolution: {integrity: sha512-yemi4pMf51WKT7khInJqAvsIGzoqYXblnsz0ql8tM+yi1EKYTY1evX4NAbJrLL/Aanr2HyZeluqU+Oi7MGHokw==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    dependencies:
+      minimatch: 5.1.6
+    dev: true
+
   /ignore-walk@6.0.2:
     resolution: {integrity: sha512-ezmQ1Dg2b3jVZh2Dh+ar6Eu2MqNSTkyb32HU2MAQQQX9tKM3q/UQ/9lf03lQ5hW+fOeoMnwxwkleZ0xcNp0/qg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -6920,6 +6979,13 @@ packages:
     resolution: {integrity: sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==}
     engines: {node: '>=14.16'}
 
+  /npm-bundled@2.0.1:
+    resolution: {integrity: sha512-gZLxXdjEzE/+mOstGDqR6b0EkhJ+kM6fxM6vUuckuctuVPh80Q6pw/rSZj9s4Gex9GxWtIicO1pc8DB9KZWudw==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    dependencies:
+      npm-normalize-package-bin: 2.0.0
+    dev: true
+
   /npm-bundled@3.0.0:
     resolution: {integrity: sha512-Vq0eyEQy+elFpzsKjMss9kxqb9tG3YHg4dsyWuUENuzvSUWe1TCnW/vV9FkhvBk/brEDoDiVd+M1Btosa6ImdQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -6971,6 +7037,11 @@ packages:
     dependencies:
       semver: 7.5.0
 
+  /npm-normalize-package-bin@2.0.0:
+    resolution: {integrity: sha512-awzfKUO7v0FscrSpRoogyNm0sajikhBWpU0QMrW09AMi9n1PoKU6WaIqUzuJSQnpciZZmJ/jMZ2Egfmb/9LiWQ==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    dev: true
+
   /npm-normalize-package-bin@3.0.0:
     resolution: {integrity: sha512-g+DPQSkusnk7HYXr75NtzkIP4+N81i3RPsGFidF3DzHd9MT9wWngmqoeg/fnHFz5MNdtG4w03s+QnhewSLTT2Q==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -6983,6 +7054,17 @@ packages:
       proc-log: 3.0.0
       semver: 7.5.0
       validate-npm-package-name: 5.0.0
+
+  /npm-packlist@5.1.3:
+    resolution: {integrity: sha512-263/0NGrn32YFYi4J533qzrQ/krmmrWwhKkzwTuM4f/07ug51odoaNjUexxO4vxlzURHcmYMH1QjvHjsNDKLVg==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    hasBin: true
+    dependencies:
+      glob: 8.1.0
+      ignore-walk: 5.0.1
+      npm-bundled: 2.0.1
+      npm-normalize-package-bin: 2.0.0
+    dev: true
 
   /npm-packlist@7.0.4:
     resolution: {integrity: sha512-d6RGEuRrNS5/N84iglPivjaJPxhDbZmlbTwTDX2IbcRHG5bZCdtysYMhwiPvcF4GisXHGn7xsxv+GQ7T/02M5Q==}
@@ -7515,6 +7597,16 @@ packages:
 
   /pstree.remy@1.1.8:
     resolution: {integrity: sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w==}
+
+  /publint@0.1.11:
+    resolution: {integrity: sha512-sD0rtIEadks83MkpomJswBO/YHExJLkta1TyqUhb0/aVV+o3ZlVnwsDPjCAow8tpfxmLGutCSLWq32yfhPB98w==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      npm-packlist: 5.1.3
+      picocolors: 1.0.0
+      sade: 1.8.1
+    dev: true
 
   /punycode@2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}

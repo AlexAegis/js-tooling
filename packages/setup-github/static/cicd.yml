@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        lint-kind: [tsc, es, format, md, style, svelte, depcheck]
+        lint-kind: [tsc, es, format, md, style, svelte, publint, depcheck]
     steps:
       - name: checkout
         uses: actions/checkout@v3

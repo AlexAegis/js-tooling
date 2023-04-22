@@ -8,6 +8,7 @@
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",

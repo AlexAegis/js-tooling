@@ -12,6 +12,7 @@
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-typedoc",
 		"@alexaegis/setup-vite-lib",
+		"@alexaegis/setup-publint",
 		"@alexaegis/setup-vitest-node",
 		"turbo"
 	],
