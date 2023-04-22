@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.10](https://github.com/AlexAegis/js-tooling/compare/v0.1.9...v0.1.10) (2023-04-22)
+
+
+### Features
+
+* **stylelint-config:** add standard-scss ([ba2e956](https://github.com/AlexAegis/js-tooling/commit/ba2e9561d8a2d5824ed810d1eb1c4c68273a6e50))
+
 ## [0.1.9](https://github.com/AlexAegis/js-tooling/compare/v0.1.8...v0.1.9) (2023-04-22)
 
 ## [0.1.8](https://github.com/AlexAegis/js-tooling/compare/v0.1.7...v0.1.8) (2023-04-15)

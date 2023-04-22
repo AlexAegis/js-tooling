@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-vscode",
 	"description": "My vscode config",
-	"version": "0.1.9",
+	"version": "0.1.10",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -62,10 +62,10 @@
 		"@alexaegis/workspace-tools": "^0.1.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.9",
-		"@alexaegis/ts": "^0.1.9",
-		"@alexaegis/vite": "^0.1.9",
-		"@alexaegis/vitest": "^0.1.9",
+		"@alexaegis/eslint-config-vitest": "^0.1.10",
+		"@alexaegis/ts": "^0.1.10",
+		"@alexaegis/vite": "^0.1.10",
+		"@alexaegis/vitest": "^0.1.10",
 		"@types/node": "^18.15.13",
 		"@vitest/coverage-c8": "^0.30.1",
 		"typescript": "^5.0.4",
