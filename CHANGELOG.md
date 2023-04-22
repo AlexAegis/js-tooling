@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.0](https://github.com/AlexAegis/js-tooling/compare/v0.1.9...v0.2.0) (2023-04-22)
+
+
+### Features
+
+* **setup-github:** combine lint jobs into a single matrix ([232e663](https://github.com/AlexAegis/js-tooling/commit/232e663b4f77774a903863678b0409f090bf14f4))
+* **stylelint-config:** add standard-scss ([ba2e956](https://github.com/AlexAegis/js-tooling/commit/ba2e9561d8a2d5824ed810d1eb1c4c68273a6e50))
+
 ## [0.1.10](https://github.com/AlexAegis/js-tooling/compare/v0.1.9...v0.1.10) (2023-04-22)
 
 
