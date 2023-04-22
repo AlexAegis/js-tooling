@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/setup-git",
 	"description": "Git stuff",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -60,10 +60,10 @@
 		"@alexaegis/workspace-tools": "^0.1.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.1.8",
-		"@alexaegis/ts": "^0.1.8",
-		"@alexaegis/vite": "^0.1.8",
-		"@alexaegis/vitest": "^0.1.8",
+		"@alexaegis/eslint-config-vitest": "^0.1.9",
+		"@alexaegis/ts": "^0.1.9",
+		"@alexaegis/vite": "^0.1.9",
+		"@alexaegis/vitest": "^0.1.9",
 		"@types/node": "^18.15.13",
 		"@vitest/coverage-c8": "^0.30.1",
 		"typescript": "^5.0.4",
