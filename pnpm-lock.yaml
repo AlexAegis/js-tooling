@@ -8,67 +8,67 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4
       '@alexaegis/eslint-config-core':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/eslint-config-core
       '@alexaegis/nuke':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/nuke
       '@alexaegis/setup-commitlint':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-commitlint
       '@alexaegis/setup-depcheck':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-depcheck
       '@alexaegis/setup-editorconfig':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-editorconfig
       '@alexaegis/setup-eslint':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-eslint
       '@alexaegis/setup-git':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-git
       '@alexaegis/setup-github':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-github
       '@alexaegis/setup-husky':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-husky
       '@alexaegis/setup-prettier':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-prettier
       '@alexaegis/setup-remark':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-remark
       '@alexaegis/setup-standard-version':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-standard-version
       '@alexaegis/setup-stylelint':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-stylelint
       '@alexaegis/setup-ts':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-ts
       '@alexaegis/setup-turbo':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-turbo
       '@alexaegis/setup-vite':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-vite
       '@alexaegis/setup-vitest':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-vitest
       '@alexaegis/setup-vscode':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-vscode
       '@alexaegis/setup-workspace':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/setup-workspace
       '@alexaegis/stylelint-config':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/stylelint-config
       '@alexaegis/ts':
-        specifier: workspace:^0.1.10
+        specifier: workspace:^
         version: link:packages/ts
       '@lcov-viewer/cli':
         specifier: ^1.3.0
@@ -118,12 +118,6 @@ importers:
       stylelint:
         specifier: 15.5.0
         version: 15.5.0
-      svelte:
-        specifier: ^3.58.0
-        version: 3.58.0
-      svelte-check:
-        specifier: ^3.2.0
-        version: 3.2.0(postcss@8.4.23)(svelte@3.58.0)
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.15.13)(typescript@5.0.4)

@@ -15,6 +15,7 @@
 		"svelte",
 		"commit-and-tag-version",
 		"stylelint-config-standard",
+		"stylelint-config-standard-scss",
 		"npm-check-updates",
 		"stylelint",
 		"postcss-scss",
