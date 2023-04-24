@@ -13,7 +13,7 @@ export const setupPublint = async (rawOptions?: DistributeInWorkspaceOptions): P
 	const options = normalizeDistributeInWorkspaceOptions(rawOptions);
 	const startTime = performance.now();
 	const workspaceRoot = getWorkspaceRoot(options.cwd);
-	const logger = createLogger({ name: 'distribute:vitest' });
+	const logger = createLogger({ name: 'distribute:publint' });
 
 	if (!workspaceRoot) {
 		console.warn("can't distribute config, not in a workspace!");

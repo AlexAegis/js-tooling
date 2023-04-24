@@ -10,6 +10,7 @@
 		"@alexaegis/setup-ts-svelte",
 		"@alexaegis/setup-vite-svelte",
 		"@alexaegis/setup-vitest-web",
+		"@alexaegis/setup-svelte",
 		"svelte"
 	],
 	"type": "module",

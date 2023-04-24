@@ -34,7 +34,7 @@
 		"format": "prettier --write .",
 		"prebuild": "turbo run prebuild_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"prebuild_": "vite build",
-		"test": "turbo run test_ --concurrency 6 --cache-dir .cache/turbo --filter  @alexaegis/vite && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
+		"test": "turbo run test_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
