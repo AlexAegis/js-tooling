@@ -31,6 +31,8 @@
 		"lint-staged",
 		"ts-node",
 		"typedoc",
+		"publint",
+		"@lcov-viewer/cli",
 		"typescript",
 		"vitest"
 	],

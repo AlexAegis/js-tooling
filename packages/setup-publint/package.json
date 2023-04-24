@@ -8,10 +8,10 @@
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
-		"@alexaegis/setup-publint",
 		"publint"
 	],
 	"type": "module",
@@ -29,6 +29,8 @@
 		"lint:format_": "prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/setup-publint",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+		"lint:publint": "turbo run lint:publint_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/setup-publint",
+		"lint:publint_": "publint",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/setup-publint",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
@@ -43,15 +45,11 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./package-node-vitest.config": "./static/package-node-vitest.config.ts",
-		"./package-svelte-vitest.config": "./static/package-svelte-vitest.config.ts",
-		"./package-web-vitest.config": "./static/package-web-vitest.config.ts",
-		"./readme": "./readme.md",
-		"./workspace-vitest.config": "./static/workspace-vitest.config.ts"
+		"./readme": "./readme.md"
 	},
 	"bin": {
-		"alexaegis-setup-vitest-postinstall": "./shims/postinstall.js",
-		"setup-vitest": "./shims/setup-vitest.js"
+		"alexaegis-setup-publint-postinstall": "./shims/postinstall.js",
+		"setup-publint": "./shims/setup-publint.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "^0.1.4",

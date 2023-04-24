@@ -78,7 +78,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				},
 				devDependencies: {
 					'@vitest/coverage-c8': packageJson.devDependencies['@vitest/coverage-c8'],
-					'@lcov-viewer/cli': packageJson.dependencies['@lcov-viewer/cli'],
+					'@lcov-viewer/cli': packageJson.devDependencies['@lcov-viewer/cli'],
 					'@alexaegis/coverage-tools':
 						packageJson.dependencies['@alexaegis/coverage-tools'],
 				},

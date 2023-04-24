@@ -120,6 +120,16 @@
 			"outputs": [],
 			"outputMode": "new-only"
 		},
+		"lint:publint_": {
+			"dependsOn": [],
+			"outputs": [],
+			"outputMode": "new-only"
+		},
+		"//#lint:publint_": {
+			"dependsOn": [],
+			"outputs": [],
+			"outputMode": "new-only"
+		},
 		"lint:format_": {
 			"env": [],
 			"dependsOn": [],

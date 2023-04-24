@@ -8,10 +8,10 @@
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
+		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
-		"@alexaegis/setup-publint",
 		"@alexaegis/setup-vitest-node",
 		"stylelint"
 	],
@@ -33,6 +33,8 @@
 		"lint:format_": "prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/setup-github",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+		"lint:publint": "turbo run lint:publint_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/setup-github",
+		"lint:publint_": "publint",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/setup-github",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
@@ -69,6 +71,7 @@
 		"@alexaegis/vitest": "^0.2.0",
 		"@types/node": "^18.16.0",
 		"@vitest/coverage-c8": "^0.30.1",
+		"publint": "^0.1.11",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.1",
 		"vitest": "^0.30.1"
