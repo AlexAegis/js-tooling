@@ -72,10 +72,10 @@
 		"vite-plugin-dts": "^2.3.0"
 	},
 	"optionalDependencies": {
-		"prettier": "^2.8.7"
+		"prettier": "^2.8.8"
 	},
 	"devDependencies": {
-		"@types/node": "^18.15.13",
+		"@types/node": "^18.16.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.4",
 		"vitest": "^0.30.1"

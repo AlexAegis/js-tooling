@@ -49,7 +49,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"prettier": "^2.8.7",
+		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.0"
 	},
 	"optionalDependencies": {
@@ -60,7 +60,7 @@
 		"@alexaegis/ts": "^0.2.0",
 		"@alexaegis/vite": "^0.2.0",
 		"@alexaegis/vitest": "^0.2.0",
-		"@types/node": "^18.15.13",
+		"@types/node": "^18.16.0",
 		"@vitest/coverage-c8": "^0.30.1",
 		"vite": "^4.3.1",
 		"vitest": "^0.30.1"
