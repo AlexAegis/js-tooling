@@ -1,6 +1,8 @@
 import { createLogger } from '@alexaegis/logging';
 import {
 	NODE_MODULES_DIRECTORY_NAME,
+	distributeFileInWorkspace,
+	distributePackageJsonItemsInWorkspace,
 	getWorkspaceRoot,
 	normalizeDistributeInWorkspaceOptions,
 	type DistributeInWorkspaceOptions,
@@ -26,7 +28,37 @@ export const setupSvelte = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 	);
 	logger.info(`distributing config from ${packageDirectory}`);
 
-	await Promise.all([]);
+	await Promise.all([
+		distributeFileInWorkspace(
+			join(packageDirectory, 'static', 'svelte.config.txt'),
+			'svelte.config.js',
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'svelteConfig' }),
+			}
+		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				scripts: {
+					start: "TARGET_ENV='local' vite",
+				},
+				devDependencies: {
+					svelte: packageJson.dependencies.svelte,
+					'svelte-check': packageJson.dependencies['svelte-check'],
+					'svelte-preprocess': packageJson.dependencies['svelte-preprocess'],
+					'@sveltejs/kit': packageJson.dependencies['@sveltejs/kit'],
+				},
+			},
+			{
+				...options,
+				skipWorkspaceRoot: true,
+				keywordCriteria: [packageJson.name],
+				logger: logger.getSubLogger({ name: 'packageJson' }),
+			}
+		),
+	]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);
 };

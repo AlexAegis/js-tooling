@@ -33,7 +33,7 @@ export const setupPublint = async (rawOptions?: DistributeInWorkspaceOptions): P
 				scripts: {
 					publint:
 						'turbo run publint_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
-					publint_: 'publint',
+					publint_: 'publint dist',
 				},
 				devDependencies: {
 					publint: packageJson.devDependencies.publint,

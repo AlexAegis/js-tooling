@@ -75,10 +75,10 @@ export const setupVite = async (rawOptions?: DistributeInWorkspaceOptions): Prom
 					build: 'turbo run build-app_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
 					build_: undefined,
 					'build-app': undefined,
-					'build-app_': 'vite build',
+					'build-app_': "TARGET_ENV='local' vite build",
 					dev: 'concurrently npm:watch-deps npm:start',
 					'watch-deps':
-						"nodemon --config ${relativePathFromPackageToRoot}/node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}'",
+						"TARGET_ENV='local' nodemon --config ${relativePathFromPackageToRoot}/node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}'",
 					start: 'vite',
 				},
 				devDependencies: {

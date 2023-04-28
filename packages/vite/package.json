@@ -36,7 +36,7 @@
 		"prebuild_": "vite build",
 		"test": "turbo run test_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage --run"
+		"test:watch": "vitest --passWithNoTests --coverage"
 	},
 	"exports": {
 		".": {

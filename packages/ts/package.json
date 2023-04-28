@@ -55,7 +55,6 @@
 	},
 	"dependencies": {
 		"@alexaegis/vite": "^0.2.0",
-		"@tsconfig/svelte": "^4.0.1",
 		"@types/node": "^18.16.2",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.4",
