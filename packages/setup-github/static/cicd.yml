@@ -371,7 +371,7 @@ jobs:
           build ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run build-lib_ --filter="${{ matrix.artifact }}" --concurrency 6 --cache-dir=.cache/turbo
+          npx turbo run build-lib_ --filter="${{ matrix.artifact }}" --concurrency 32 --cache-dir=.cache/turbo
       - name: |
           release ${{ env.NPM_PACKAGE_ORG_PREFIX }}${{ matrix.artifact }}@${{steps.version.outputs.prop}} on npm
         if: env.IS_ON_NPM != 'true'

@@ -44,7 +44,7 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			{
 				scripts: {
 					'lint:es':
-						'turbo run lint:es_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:es_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:es_': 'eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .',
 				},
 			},
@@ -58,7 +58,7 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					'lint:es': 'turbo run lint:es_ --concurrency 6 --cache-dir .cache/turbo',
+					'lint:es': 'turbo run lint:es_ --concurrency 32 --cache-dir .cache/turbo',
 				},
 				devDependencies: {
 					'@alexaegis/eslint-config-core':

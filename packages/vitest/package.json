@@ -19,20 +19,20 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"build": "turbo run build-lib_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:es": "turbo run lint:es_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:format": "turbo run lint:format_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:md": "turbo run lint:md_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:tsc_": "tsc --noEmit",
 		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"test": "turbo run test_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage --run"
 	},
@@ -63,7 +63,7 @@
 		"vitest": "node_modules/.bin/vitest"
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.1.0",
+		"@sveltejs/vite-plugin-svelte": "^2.1.1",
 		"@vitest/coverage-c8": "^0.30.1",
 		"@vitest/ui": "^0.30.1",
 		"jsdom": "21.1.1",
@@ -75,6 +75,6 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.2.0",
-		"vite": "^4.3.1"
+		"vite": "^4.3.3"
 	}
 }

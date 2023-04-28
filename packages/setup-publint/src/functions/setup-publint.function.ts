@@ -32,7 +32,7 @@ export const setupPublint = async (rawOptions?: DistributeInWorkspaceOptions): P
 			{
 				scripts: {
 					'lint:publint':
-						'turbo run lint:publint_ --concurrency 6 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:publint_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:publint_': 'publint',
 				},
 				devDependencies: {
@@ -50,7 +50,7 @@ export const setupPublint = async (rawOptions?: DistributeInWorkspaceOptions): P
 			{
 				scripts: {
 					'lint:publint':
-						'turbo run lint:publint_ --concurrency 6 --cache-dir .cache/turbo',
+						'turbo run lint:publint_ --concurrency 32 --cache-dir .cache/turbo',
 				},
 			},
 			{

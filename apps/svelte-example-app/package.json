@@ -15,31 +15,31 @@
 	],
 	"type": "module",
 	"scripts": {
-		"build": "turbo run build-app_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"build": "turbo run build-app_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"build-app_": "vite build",
-		"lint:es": "turbo run lint:es_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:es": "turbo run lint:es_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:format": "turbo run lint:format_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:md": "turbo run lint:md_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:style": "turbo run lint:style_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
-		"lint:style:css": "turbo run lint:style:css_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:style": "turbo run lint:style_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:style:css": "turbo run lint:style:css_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:style:css_": "stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css ./**/*.css",
-		"lint:style:scss": "turbo run lint:style:scss_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:style:scss": "turbo run lint:style:scss_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:style:scss_": "stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss ./**/*.scss",
-		"lint:svelte": "turbo run lint:svelte_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:svelte": "turbo run lint:svelte_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:svelte_": "svelte-check --tsconfig ./tsconfig.json",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:tsc_": "tsc --noEmit",
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "prettier --write .",
 		"preview": "vite preview",
 		"start": "vite",
-		"test": "turbo run test_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"test": "turbo run test_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
-		"watch-deps": "nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
+		"watch-deps": "nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
 		"@alexaegis/example": "^0.2.0"
@@ -60,7 +60,7 @@
 		"svelte-check": "^3.2.0",
 		"svelte-preprocess": "^5.0.3",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.1",
+		"vite": "^4.3.3",
 		"vitest": "^0.30.1"
 	}
 }
