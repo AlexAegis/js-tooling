@@ -16,7 +16,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "turbo run build-app_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
-		"build-app_": "vite build",
+		"build-app_": "TARGET_ENV='local' vite build",
 		"lint:es": "turbo run lint:es_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
@@ -35,11 +35,11 @@
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "prettier --write .",
 		"preview": "vite preview",
-		"start": "vite",
+		"start": "TARGET_ENV='locafl' vite",
 		"test": "turbo run test_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
-		"watch-deps": "nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
+		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 32 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
 		"@alexaegis/example": "^0.2.0"

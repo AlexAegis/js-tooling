@@ -63,6 +63,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
+		"@alexaegis/logging": "^0.1.4",
 		"@sveltejs/vite-plugin-svelte": "^2.1.1",
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",

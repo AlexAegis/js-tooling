@@ -31,9 +31,9 @@ export const setupPublint = async (rawOptions?: DistributeInWorkspaceOptions): P
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					'lint:publint':
-						'turbo run lint:publint_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
-					'lint:publint_': 'publint',
+					publint:
+						'turbo run publint_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+					publint_: 'publint',
 				},
 				devDependencies: {
 					publint: packageJson.devDependencies.publint,
@@ -49,8 +49,7 @@ export const setupPublint = async (rawOptions?: DistributeInWorkspaceOptions): P
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					'lint:publint':
-						'turbo run lint:publint_ --concurrency 32 --cache-dir .cache/turbo',
+					publint: 'turbo run publint_ --concurrency 32 --cache-dir .cache/turbo',
 				},
 			},
 			{

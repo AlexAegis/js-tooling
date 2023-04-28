@@ -1,10 +1,32 @@
-import { autolib, defineConfigWithDefaults } from '@alexaegis/vite';
+import {
+	autolib,
+	conditionalPlugin,
+	defineConfigWithDefaults,
+	isTargetEnvNotLocal,
+} from '@alexaegis/vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfigWithDefaults({
 	plugins: [
-		autolib({
-			// Check the readme too see why these files are here
-			autoExportStaticGlobs: ['base.json', 'node.json', 'web.json', 'svelte.json'],
-		}),
+		conditionalPlugin(
+			{
+				...autolib({
+					// Check the readme too see why these files are here
+					autoExportStaticGlobs: ['base.json', 'node.json', 'web.json', 'svelte.json'],
+				}),
+				apply: 'build',
+			},
+			isTargetEnvNotLocal
+		),
+		conditionalPlugin(
+			{
+				...dts({
+					entryRoot: 'src',
+					copyDtsFiles: true,
+				}),
+				apply: 'build',
+			},
+			isTargetEnvNotLocal
+		),
 	],
 });
