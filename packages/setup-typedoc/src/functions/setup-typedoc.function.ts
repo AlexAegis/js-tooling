@@ -67,7 +67,7 @@ export const setupTypedoc = async (rawOptions?: DistributeInWorkspaceOptions): P
 		),
 		distributeFileInWorkspace(
 			join(packageDirectory, 'static', 'typedoc.base.json'),
-			join('.config', 'typedoc.json'),
+			join('.config', 'typedoc.base.json'),
 			{
 				...options,
 				onlyWorkspaceRoot: true,
