@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { hello } from '@alexaegis/example';
 	import svelteLogo from './assets/svelte.svg';
-	import Counter from './lib/Counter.svelte';
+	import Counter from './lib/counter.svelte';
 	hello('asd');
 </script>
 

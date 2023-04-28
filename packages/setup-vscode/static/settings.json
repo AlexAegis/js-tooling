@@ -59,6 +59,7 @@
 	"editor.tabSize": 4,
 	"editor.useTabStops": true,
 	"editor.wordBasedSuggestions": true,
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "svelte"],
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
 		"*.js": "${capture}*",

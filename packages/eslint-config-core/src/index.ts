@@ -1,12 +1,12 @@
 import type { Linter } from 'eslint';
 
 export default {
-	parser: '@typescript-eslint/parser',
 	extends: [
 		'eslint:recommended', // 'eslint:all'
 		'plugin:unicorn/recommended', // 'plugin:unicorn/all'
 		'prettier',
 	],
+	parser: '@typescript-eslint/parser',
 	// The first entry here throws away all ignores coming from other configs
 	ignorePatterns: ['!**/*', 'node_modules', 'dist', 'coverage', '.turbo', 'tmp', 'shims'],
 	overrides: [
@@ -17,7 +17,7 @@ export default {
 			},
 		},
 		{
-			files: ['*.ts', '*.svelte'],
+			files: ['*.{ts,svelte}'],
 			plugins: ['@typescript-eslint'],
 			extends: [
 				'plugin:@typescript-eslint/recommended', // 'plugin:@typescript-eslint/all',
@@ -36,25 +36,36 @@ export default {
 		},
 		{
 			files: ['*.svelte'],
-			plugins: ['svelte3', '@typescript-eslint'],
-			processor: 'svelte3/svelte3',
-			settings: {
-				'svelte3/typescript': true,
+			parser: 'svelte-eslint-parser',
+			extends: ['plugin:svelte/recommended'],
+			parserOptions: {
+				parser: '@typescript-eslint/parser', // svelte script tags read the parser from here
+			},
+			globals: {
+				$$Generic: true, // To let `type T = $$Generic;` be defined
+			},
+			rules: {
+				'@typescript-eslint/no-unused-vars': [
+					'warn',
+					{ varsIgnorePattern: '$$', argsIgnorePattern: '_' }, // To let $$Slot be defined
+				],
+				'@typescript-eslint/no-unsafe-assignment': 'off', // Cannot cast to $$Generic
 			},
 		},
 	],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2022,
+		extraFileExtensions: ['.svelte'], // ! Can't move this to the overrides section for *.svelte
 	},
 	env: {
 		browser: true,
-		es2020: true,
+		es2022: true,
 		node: true,
 	},
 	rules: {
-		'no-unused-vars': 'off',
-		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+		'no-unused-vars': 'off', // Letting @typescript-eslint/no-unused-vars take helm
+		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
 		'unicorn/no-array-reduce': 'off',
 		'unicorn/no-array-callback-reference': 'off', // needed for easy nullish checks
 		'unicorn/prevent-abbreviations': 'off', // no thanks
