@@ -88,6 +88,7 @@ export const setupEslint = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 			'.eslintrc.cjs',
 			{
 				...options,
+
 				onlyWorkspaceRoot: true,
 				dependencyCriteria: [packageJson.name],
 				logger: logger.getSubLogger({ name: 'workspaceEslintRc' }),

@@ -553,6 +553,49 @@ importers:
         specifier: ^0.30.1
         version: 0.30.1(@vitest/ui@0.30.1)(jsdom@21.1.1)
 
+  packages/object-match:
+    dependencies:
+      '@alexaegis/cli-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/logging':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/workspace-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.1
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.1
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.1
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.1
+        version: link:../vitest
+      '@types/node':
+        specifier: ^18.16.3
+        version: 18.16.3
+      '@vitest/coverage-c8':
+        specifier: ^0.30.1
+        version: 0.30.1(vitest@0.30.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.3
+        version: 4.3.3(@types/node@18.16.3)
+      vitest:
+        specifier: ^0.30.1
+        version: 0.30.1(@vitest/ui@0.30.1)(jsdom@21.1.1)
+
   packages/prettier-config:
     dependencies:
       prettier:
@@ -664,6 +707,52 @@ importers:
       unified:
         specifier: ^10.1.2
         version: 10.1.2
+      vite:
+        specifier: ^4.3.3
+        version: 4.3.3(@types/node@18.16.3)
+      vitest:
+        specifier: ^0.30.1
+        version: 0.30.1(@vitest/ui@0.30.1)(jsdom@21.1.1)
+
+  packages/setup:
+    dependencies:
+      '@alexaegis/cli-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/logging':
+        specifier: ^0.1.4
+        version: 0.1.4
+      '@alexaegis/object-match':
+        specifier: ^0.2.1
+        version: link:../object-match
+      '@alexaegis/workspace-tools':
+        specifier: ^0.1.4
+        version: 0.1.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.1
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.1
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.1
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.1
+        version: link:../vitest
+      '@types/node':
+        specifier: ^18.16.3
+        version: 18.16.3
+      '@vitest/coverage-c8':
+        specifier: ^0.30.1
+        version: 0.30.1(vitest@0.30.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
       vite:
         specifier: ^4.3.3
         version: 4.3.3(@types/node@18.16.3)
