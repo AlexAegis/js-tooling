@@ -1,1 +1,1 @@
-export const distributeGitConfig = () => console.log('git');
+export * from './functions/index.js';
