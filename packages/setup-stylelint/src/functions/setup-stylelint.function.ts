@@ -52,13 +52,13 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 		distributePackageJsonItemsInWorkspace(
 			{
 				scripts: {
-					'lint:style': 'turbo run lint:style_ --concurrency 32 --cache-dir .cache/turbo',
+					'lint:style': 'turbo run lint:style_ --concurrency 16 --cache-dir .cache/turbo',
 					'lint:style:css':
-						'turbo run lint:style:css_ --concurrency 32 --cache-dir .cache/turbo',
+						'turbo run lint:style:css_ --concurrency 16 --cache-dir .cache/turbo',
 					'lint:style:scss':
-						'turbo run lint:style:scss_ --concurrency 32 --cache-dir .cache/turbo',
+						'turbo run lint:style:scss_ --concurrency 16 --cache-dir .cache/turbo',
 					'lint:style:html':
-						'turbo run lint:style:html_ --concurrency 32 --cache-dir .cache/turbo',
+						'turbo run lint:style:html_ --concurrency 16 --cache-dir .cache/turbo',
 				},
 				devDependencies: {
 					'@alexaegis/stylelint-config': `^${packageJson.version}`,
@@ -76,17 +76,17 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 			{
 				scripts: {
 					'lint:style':
-						'turbo run lint:style_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:style_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:style:css':
-						'turbo run lint:style:css_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:style:css_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:style:css_':
 						'stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css --allow-empty-input **/*.css',
 					'lint:style:scss':
-						'turbo run lint:style:scss_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:style:scss_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:style:scss_':
 						'stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss --allow-empty-input **/*.scss',
 					'lint:style:html':
-						'turbo run lint:style:html_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:style:html_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:style:html_':
 						'stylelint --customSyntax=postcss-html --cache true --cache-strategy content --cache-location .cache/stylelintcache-html --allow-empty-input **/*.html ',
 				},

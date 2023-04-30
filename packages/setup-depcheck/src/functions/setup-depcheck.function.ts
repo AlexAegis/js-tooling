@@ -43,7 +43,7 @@ export const setupDepcheck = async (rawOptions?: DistributeInWorkspaceOptions): 
 			{
 				scripts: {
 					'lint:depcheck':
-						'turbo run lint:depcheck_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:depcheck_': 'depcheck',
 				},
 			},
@@ -58,7 +58,7 @@ export const setupDepcheck = async (rawOptions?: DistributeInWorkspaceOptions): 
 			{
 				scripts: {
 					'lint:depcheck':
-						'turbo run lint:depcheck_ --concurrency 32 --cache-dir .cache/turbo',
+						'turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo',
 					'lint:depcheck_': 'depcheck',
 				},
 				devDependencies: {

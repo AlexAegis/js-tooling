@@ -70,7 +70,7 @@ export const distributePrettierConfig = async (
 				format: 'prettier --write .',
 				'lint:format_': 'prettier --check .',
 				'lint:format':
-					'turbo run lint:format_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+					'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 			},
 			dependencies: {},
 		},
@@ -89,7 +89,7 @@ export const distributePrettierConfig = async (
 				format: 'prettier --write .', // Not done through turbo, it covers the entire repo anyway
 				'lint:format:workspace': undefined,
 				'lint:format_': 'prettier --check *.{json,ts,js,mjs,md,yml,yaml}',
-				'lint:format': 'turbo run lint:format_ --concurrency 32 --cache-dir .cache/turbo',
+				'lint:format': 'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
 			},
 			devDependencies: {
 				prettier: packageJson.dependencies.prettier,
