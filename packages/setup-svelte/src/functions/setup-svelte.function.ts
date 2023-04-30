@@ -58,6 +58,18 @@ export const setupSvelte = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 				logger: logger.getSubLogger({ name: 'packageJson' }),
 			}
 		),
+		distributePackageJsonItemsInWorkspace(
+			{
+				devDependencies: {
+					'svelte-check': packageJson.dependencies['svelte-check'], // for lint-staged
+				},
+			},
+			{
+				...options,
+				onlyWorkspaceRoot: true,
+				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
+			}
+		),
 	]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);

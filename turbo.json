@@ -41,6 +41,8 @@
 				"lint:tsc_",
 				"lint:svelte_",
 				"lint:style:css_",
+				"lint:style:scss_",
+				"lint:style:html_",
 				"lint:md_",
 				"lint:format_"
 			],
@@ -86,7 +88,7 @@
 			"outputMode": "new-only"
 		},
 		"lint:style_": {
-			"dependsOn": ["lint:style:css_", "lint:style:scss_"],
+			"dependsOn": ["lint:style:css_", "lint:style:scss_", "lint:style:html_"],
 			"outputs": [],
 			"outputMode": "new-only"
 		},
@@ -98,22 +100,28 @@
 		},
 		"lint:style:css_": {
 			"dependsOn": ["^lint:style:require:build-lib_", "lint:style:require:build-lib_"],
+			"inputs": [".stylelint*", "**/*.css"],
 			"outputs": [".cache/stylelintcache-css"],
-			"outputMode": "new-only"
-		},
-		"//#lint:style:css_": {
-			"dependsOn": [],
-			"outputs": [],
 			"outputMode": "new-only"
 		},
 		"lint:style:scss_": {
 			"dependsOn": ["^lint:style:require:build-lib_", "lint:style:require:build-lib_"],
+			"inputs": [".stylelint*", "**/*.scss", "**/*.sass"],
 			"outputs": [".cache/stylelintcache-scss"],
 			"outputMode": "new-only"
 		},
-		"//#lint:style:scss_": {
-			"dependsOn": [],
-			"outputs": [],
+		"lint:style:html_": {
+			"dependsOn": ["^lint:style:require:build-lib_", "lint:style:require:build-lib_"],
+			"inputs": [
+				".stylelint*",
+				"**/*.html",
+				"**/*.svelte",
+				"**/*.vue",
+				"**/*.astro",
+				"**/*.xml",
+				"**/*.php"
+			],
+			"outputs": [".cache/stylelintcache-html"],
 			"outputMode": "new-only"
 		},
 		"lint:md_": {

@@ -57,11 +57,12 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 						'turbo run lint:style:css_ --concurrency 32 --cache-dir .cache/turbo',
 					'lint:style:scss':
 						'turbo run lint:style:scss_ --concurrency 32 --cache-dir .cache/turbo',
+					'lint:style:html':
+						'turbo run lint:style:html_ --concurrency 32 --cache-dir .cache/turbo',
 				},
 				devDependencies: {
 					'@alexaegis/stylelint-config': `^${packageJson.version}`,
 					stylelint: packageJson.devDependencies.stylelint,
-					'postcss-scss': packageJson.devDependencies['postcss-scss'],
 				},
 			},
 			{
@@ -79,16 +80,19 @@ export const setupStylelint = async (rawOptions?: DistributeInWorkspaceOptions):
 					'lint:style:css':
 						'turbo run lint:style:css_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:style:css_':
-						'stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css ./**/*.css',
+						'stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css --allow-empty-input **/*.css',
 					'lint:style:scss':
 						'turbo run lint:style:scss_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
 					'lint:style:scss_':
-						'stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss ./**/*.scss',
+						'stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss --allow-empty-input **/*.scss',
+					'lint:style:html':
+						'turbo run lint:style:html_ --concurrency 32 --cache-dir .cache/turbo --filter ${packageName}',
+					'lint:style:html_':
+						'stylelint --customSyntax=postcss-html --cache true --cache-strategy content --cache-location .cache/stylelintcache-html --allow-empty-input **/*.html ',
 				},
 				devDependencies: {
 					'@alexaegis/stylelint-config': `^${packageJson.version}`,
 					stylelint: packageJson.devDependencies.stylelint,
-					'postcss-scss': packageJson.devDependencies['postcss-scss'],
 				},
 			},
 			{

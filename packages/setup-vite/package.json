@@ -49,7 +49,8 @@
 		"./nodemon": "./static/nodemon.json",
 		"./readme": "./readme.md",
 		"./vite-lib.config": "./static/vite-lib.config.ts",
-		"./vite-svelte.config": "./static/vite-svelte.config.ts"
+		"./vite-svelte-app.config": "./static/vite-svelte-app.config.ts",
+		"./vite-svelte-lib.config": "./static/vite-svelte-lib.config.ts"
 	},
 	"bin": {
 		"alexaegis-setup-vite-postinstall": "./shims/postinstall.js",
@@ -68,7 +69,7 @@
 		"@alexaegis/ts": "^0.2.0",
 		"@alexaegis/vite": "^0.2.0",
 		"@alexaegis/vitest": "^0.2.0",
-		"@types/node": "^18.16.2",
+		"@types/node": "^18.16.3",
 		"@vitest/coverage-c8": "^0.30.1",
 		"publint": "^0.1.11",
 		"typescript": "^5.0.4",

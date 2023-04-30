@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { hello } from '@alexaegis/example';
+	import { hello } from '@alexaegis/example-ts-lib';
 	import svelteLogo from './assets/svelte.svg';
 	import Counter from './lib/counter.svelte';
 	hello('asd');
@@ -18,8 +18,9 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	main {
+		height: 12px;
 		display: grid;
 		justify-content: center;
 		justify-items: center;
