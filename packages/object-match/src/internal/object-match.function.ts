@@ -3,16 +3,13 @@ export type JsonLeafValue = string | number | undefined | null;
 export interface JsonObject {
 	[key: string | number]: JsonObject | JsonLeafValue | (JsonObject | JsonLeafValue)[];
 }
-
 export type JsonValue = JsonObject[keyof JsonObject];
 
 export const isJsonObject = (t: unknown): t is JsonObject => {
 	return typeof t === 'string' || typeof t === 'number' || typeof t === 'object';
 };
 
-export type CustomJsonValueMatcher<T extends JsonValue | JsonValue[] = JsonValue> = (
-	value: T
-) => boolean;
+export type CustomJsonValueMatcher<T = JsonValue> = (value: T) => boolean;
 
 export type JsonLeafMatcher = string | number | RegExp | CustomJsonValueMatcher;
 
@@ -30,19 +27,19 @@ export type JsonMatcher = JsonObjectMatcher[keyof JsonObjectMatcher];
  *
  * Beautiful.
  */
-export type JsonMatcherFrom<T> = {
-	[K in keyof T]: T[K] extends string
-		? string | RegExp | CustomJsonValueMatcher<string>
-		: T[K] extends number
-		? number | CustomJsonValueMatcher<number>
-		: T[K] extends (infer R)[]
-		?
-				| (JsonObjectMatcher | JsonLeafMatcher)[]
-				| CustomJsonValueMatcher<R extends JsonValue ? R[] : (JsonObject | JsonLeafValue)[]>
-		: T[K] extends JsonValue
-		? JsonMatcherFrom<T[K]> | CustomJsonValueMatcher<T[K]>
-		: never;
-};
+export type JsonMatcherFrom<T> = T extends string
+	? string | RegExp | CustomJsonValueMatcher<string>
+	: T extends number
+	? number | CustomJsonValueMatcher<number>
+	: T extends (infer R)[]
+	? JsonMatcherFrom<R>[] | CustomJsonValueMatcher<T>
+	: T extends object
+	?
+			| {
+					[K in keyof T]?: JsonMatcherFrom<T[K]>;
+			  }
+			| CustomJsonValueMatcher<T>
+	: T;
 
 /**
  * TODO: Options to set if extra keys are allowed or not, currently it's allowed

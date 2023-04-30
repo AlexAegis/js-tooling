@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/object-match",
 	"description": "Matches objects based on a object matcher",
-	"version": "0.2.1",
+	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
 	"keywords": [
@@ -56,16 +56,11 @@
 		},
 		"./readme": "./readme.md"
 	},
-	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
-		"@alexaegis/logging": "^0.1.4",
-		"@alexaegis/workspace-tools": "^0.1.4"
-	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.2.1",
-		"@alexaegis/ts": "^0.2.1",
-		"@alexaegis/vite": "^0.2.1",
-		"@alexaegis/vitest": "^0.2.1",
+		"@alexaegis/eslint-config-vitest": "^0.2.0",
+		"@alexaegis/ts": "^0.2.0",
+		"@alexaegis/vite": "^0.2.0",
+		"@alexaegis/vitest": "^0.2.0",
 		"@types/node": "^18.16.3",
 		"@vitest/coverage-c8": "^0.30.1",
 		"publint": "^0.1.11",

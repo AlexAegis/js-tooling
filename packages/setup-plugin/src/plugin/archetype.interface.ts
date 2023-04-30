@@ -1,4 +1,5 @@
-import type { JsonMatcher, JsonMatcherFrom } from '@alexaegis/object-match';
+import type { JsonMatcherFrom } from '@alexaegis/object-match';
+import type { PackageJson } from '@alexaegis/workspace-tools';
 
 /**
  * The archetypical description of a project present in the "archetype" field
@@ -33,14 +34,15 @@ export interface Archetype {
 	kind: 'app' | 'lib';
 
 	/**
-	 * You can disable specific setup elements if you wish to skip them.
-	 * Like define `["vitest"]` if you don't want
+	 * You can disable specific setup plugins if you wish to skip them in a
+	 * specific package, even if it would otherwise match the rest of the
+	 * archetype.
 	 *
+	 * Like define `["vitest"]` if you don't want it to be applied.
+	 *
+	 * Treated as a RegExp
 	 */
-	disabledElements?: string[];
+	disabledPlugins?: string[];
 }
 
-export interface JsonFilterWithArchetypeFilter {
-	archetype: JsonMatcherFrom<Archetype>;
-	[K: string]: JsonMatcher | JsonMatcherFrom<Archetype>;
-}
+export type PackageJsonFilter = JsonMatcherFrom<PackageJson & { archetype?: Archetype }>;
