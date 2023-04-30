@@ -1,4 +1,5 @@
-import type { JsonMatcher } from '@alexaegis/object-match';
+import type { JsonValue } from '@alexaegis/object-match';
+import type { JsonFilterWithArchetypeFilter } from './archetype.interface.js';
 
 export interface SetupElementBase {
 	/**
@@ -6,7 +7,7 @@ export interface SetupElementBase {
 	 * match in order for the element to be applied. (Remember, deprecated
 	 * elements ALWAYS match, and they are ALWAYS removed!)
 	 */
-	packageJsonFilter?: JsonMatcher;
+	packageJsonFilter?: JsonFilterWithArchetypeFilter;
 
 	/**
 	 * If an element is marked legacy it will always be removed, if you change
@@ -24,10 +25,17 @@ export interface SetupElementBase {
 
 export interface SetupElementFileKind {
 	kind: 'file';
+	sourceFile: string;
+	targetFile: string;
 }
 
 export interface SetupElementJsonKind {
 	kind: 'json';
+	data: JsonValue;
+	/**
+	 * Has to be JSON5 parseable. Will be re-formatted with prettier when available.
+	 */
+	targetFile: string;
 }
 
 export interface SetupElementUniqueKind {
@@ -47,6 +55,6 @@ export type SetupElement = SetupElementFileKind | SetupElementJsonKind | SetupEl
 export type SetupElementKind = SetupElement['kind'];
 
 export interface SetupPlugin {
-	packageJsonFilter?: JsonMatcher;
+	packageJsonFilter?: JsonFilterWithArchetypeFilter;
 	elements: SetupElement[];
 }

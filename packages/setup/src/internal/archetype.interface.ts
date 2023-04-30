@@ -1,3 +1,5 @@
+import type { JsonMatcher, JsonMatcherFrom } from '@alexaegis/object-match';
+
 /**
  * The archetypical description of a project present in the "archetype" field
  * of the package.json. It's not the full description as other package.json
@@ -36,4 +38,9 @@ export interface Archetype {
 	 *
 	 */
 	disabledElements?: string[];
+}
+
+export interface JsonFilterWithArchetypeFilter {
+	archetype: JsonMatcherFrom<Archetype>;
+	[K: string]: JsonMatcher | JsonMatcherFrom<Archetype>;
 }

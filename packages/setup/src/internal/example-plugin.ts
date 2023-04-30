@@ -3,8 +3,20 @@ import type { SetupPlugin } from './setup-plugin.interface.js';
 export const exampleSetupPlugin = (): SetupPlugin => {
 	return {
 		packageJsonFilter: {
-			archetype: {},
+			a: {},
+			archetype: {
+				framework: 'v',
+				kind: 'a',
+				language: 'a',
+				disabledElements: (elements) => !(elements?.includes('asd') ?? false),
+			},
 		},
-		elements: [],
+		elements: [
+			{
+				kind: 'file',
+				sourceFile: '',
+				targetFile: '',
+			},
+		],
 	};
 };
