@@ -1,8 +1,10 @@
 import type { JsonValue } from '@alexaegis/object-match';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 import type { PackageJsonFilter } from './package-json-filter.interface.js';
-
-export type PackageKind = 'root' | 'regular' | 'both';
+import type {
+	SetupPluginElementPackageTargetKind,
+	SourcePluginInformation,
+} from './setup-plugin.interface.js';
 
 export interface SetupElementBase {
 	/**
@@ -20,7 +22,7 @@ export interface SetupElementBase {
 	 *
 	 * @default 'both'
 	 */
-	packageKind?: PackageKind | undefined;
+	packageKind?: SetupPluginElementPackageTargetKind | undefined;
 
 	/**
 	 * Conditionally apply the element based on the contents of the target
@@ -136,11 +138,13 @@ export type UntargetedSetupElement = SetupElementUniqueKind;
 
 export type SetupElement = TargetedSetupElement | UntargetedSetupElement;
 
-export const isUntargetedElement = (element: SetupElement): element is UntargetedSetupElement =>
-	element.type === 'unique';
+export const isUntargetedElementWithSourceInformation = (
+	element: SetupElement & SourcePluginInformation
+): element is UntargetedSetupElement & SourcePluginInformation =>
+	element.type === 'unique' && !!element.sourcePlugin;
 
 export const isTargetedElement = (element: SetupElement): element is TargetedSetupElement =>
-	!isUntargetedElement(element);
+	element.type !== 'unique';
 
 export interface SetupElementFileRemoveKind extends SetupElementBase, GlobTargetedElement {
 	/**
@@ -155,12 +159,14 @@ type OmitTargeting<T> = Omit<
 	keyof DirectlyTargetedElement | keyof GlobTargetedElement | keyof MultiTargetedElement
 >;
 
-export type SetupElementWithoutTargeting =
-	| OmitTargeting<SetupElementUniqueKind>
-	| OmitTargeting<SetupElementJsonKind>
-	| OmitTargeting<SetupElementFileTransformKind>
-	| OmitTargeting<SetupElementFileRemoveKind>
-	| OmitTargeting<SetupElementFileSymlinkKind>
-	| OmitTargeting<SetupElementFileCopyKind>;
+export type SetupElementWithSourcePlugin = SetupElement & SourcePluginInformation;
+
+export type SetupElementWithoutTargetingWithSourcePlugin =
+	| OmitTargeting<SetupElementUniqueKind & SourcePluginInformation>
+	| OmitTargeting<SetupElementJsonKind & SourcePluginInformation>
+	| OmitTargeting<SetupElementFileTransformKind & SourcePluginInformation>
+	| OmitTargeting<SetupElementFileRemoveKind & SourcePluginInformation>
+	| OmitTargeting<SetupElementFileSymlinkKind & SourcePluginInformation>
+	| OmitTargeting<SetupElementFileCopyKind & SourcePluginInformation>;
 
 export type SetupElementTypes = SetupElement['type'];

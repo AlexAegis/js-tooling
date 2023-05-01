@@ -1,5 +1,8 @@
+import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 import type { PackageJsonFilter } from './package-json-filter.interface.js';
-import type { PackageKind, SetupElement } from './setup-element.interface.js';
+import type { SetupElement } from './setup-element.interface.js';
+
+export type SetupPluginElementPackageTargetKind = WorkspacePackage['packageKind'] | 'all';
 
 export interface SetupPluginFilter {
 	/**
@@ -20,7 +23,7 @@ export interface SetupPluginFilter {
 	 *
 	 * @default 'both'
 	 */
-	packageKind?: PackageKind | undefined;
+	packageKind?: SetupPluginElementPackageTargetKind | undefined;
 }
 
 export interface SetupPlugin extends SetupPluginFilter {
@@ -39,4 +42,8 @@ export interface SetupPlugin extends SetupPluginFilter {
 	templateVariables?: Record<string | number, string> | undefined;
 
 	elements: SetupElement[];
+}
+
+export interface SourcePluginInformation {
+	sourcePlugin: SetupPlugin;
 }

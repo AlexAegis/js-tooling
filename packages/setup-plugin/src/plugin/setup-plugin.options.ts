@@ -8,6 +8,7 @@ import {
 export interface BaseSetupPluginOptions {
 	workspaceRoot: string;
 }
+
 export type SetupPluginOptions = CwdOption & LoggerOption & BaseSetupPluginOptions;
 export type NormalizedSetupPluginOptions = NormalizedCwdOption &
 	NormalizedLoggerOption &

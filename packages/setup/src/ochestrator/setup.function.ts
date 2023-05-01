@@ -1,25 +1,24 @@
 import { asyncFilterMap, asyncMap, isNotNullish } from '@alexaegis/common';
+import type { NormalizedLoggerOption } from '@alexaegis/logging';
 import { objectMatch, type JsonMatcher } from '@alexaegis/object-match';
 import {
 	isDirectlyTargetedElement,
 	isGlobTargetedElement,
 	isMultiTargetedElement,
 	isTargetedElement,
-	isUntargetedElement,
+	isUntargetedElementWithSourceInformation,
 	type SetupElement,
 	type SetupElementTypes,
 	type SetupElementUniqueKind,
-	type SetupElementWithoutTargeting,
+	type SetupElementWithSourcePlugin,
+	type SetupElementWithoutTargetingWithSourcePlugin,
 	type SetupPlugin,
 	type SetupPluginFilter,
 	type SetupPluginOptions,
+	type SourcePluginInformation,
 } from '@alexaegis/setup-plugin';
 import { tsSetupPlugin } from '@alexaegis/setup-ts';
-import {
-	collectWorkspacePackages,
-	getWorkspaceRoot,
-	type WorkspacePackage,
-} from '@alexaegis/workspace-tools';
+import { collectWorkspacePackages, type WorkspacePackage } from '@alexaegis/workspace-tools';
 import { globby } from 'globby';
 import { minimatch } from 'minimatch';
 import { normalizeSetupOptions, type SetupOptions } from './setup.function.options.js';
@@ -27,31 +26,31 @@ import { normalizeSetupOptions, type SetupOptions } from './setup.function.optio
 export type AlreadyFilteredSetupElement = Omit<SetupElement, 'packageJsonFilter' | 'packageKind'>;
 
 export type WorkspacePackageWithElements = WorkspacePackage & {
-	elements: SetupElement[];
+	elements: SetupElementWithSourcePlugin[];
 };
 
 export interface TargetNormalizedElement {
-	element: SetupElementWithoutTargeting;
+	element: SetupElementWithoutTargetingWithSourcePlugin;
 	targetFiles: string[];
 }
 
 export type WorkspacePackageWithTargetedElements = WorkspacePackage & {
 	targetedElements: TargetNormalizedElement[];
-	untargetedElements: SetupElementUniqueKind[];
+	untargetedElements: (SetupElementUniqueKind & SourcePluginInformation)[];
 };
 
 export type WorkspacePackageElementsByTarget = WorkspacePackage & {
-	targetedElements: Record<string, SetupElementWithoutTargeting[]>;
-	untargetedElements: SetupElementUniqueKind[];
+	targetedElements: Record<string, SetupElementWithoutTargetingWithSourcePlugin[]>;
+	untargetedElements: (SetupElementUniqueKind & SourcePluginInformation)[];
 };
 
 export const elementAndPluginFilter = (
 	workspacePackage: WorkspacePackage,
 	filter: SetupPluginFilter
 ): boolean => {
-	const pluginPackageKind = filter.packageKind ?? 'both';
+	const pluginPackageKind = filter.packageKind ?? 'all';
 
-	let result = pluginPackageKind === 'both' || pluginPackageKind === workspacePackage.packageKind;
+	let result = pluginPackageKind === 'all' || pluginPackageKind === workspacePackage.packageKind;
 
 	if (isNotNullish(filter.packageJsonFilter)) {
 		result =
@@ -76,7 +75,10 @@ export const filterElementsForPackage = (
 			.flatMap((plugin) =>
 				plugin.elements
 					.filter((element) => elementAndPluginFilter(workspacePackage, element))
-					.map((element) => ({ ...element, sourcePlugin: plugin }))
+					.map<SetupElementWithSourcePlugin>((element) => ({
+						...element,
+						sourcePlugin: plugin,
+					}))
 			),
 	};
 };
@@ -84,7 +86,9 @@ export const filterElementsForPackage = (
 export const normalizeSetupElements = async (
 	workspacePackage: WorkspacePackageWithElements
 ): Promise<WorkspacePackageWithTargetedElements> => {
-	const untargetedElements = workspacePackage.elements.filter(isUntargetedElement);
+	const untargetedElements = workspacePackage.elements.filter(
+		isUntargetedElementWithSourceInformation
+	);
 	const targetedElements = workspacePackage.elements.filter(isTargetedElement);
 
 	const elements = await asyncFilterMap(targetedElements, async (element) => {
@@ -109,7 +113,11 @@ export const normalizeSetupElements = async (
 		return { element, targetFiles: [...new Set(targetFiles)] } as TargetNormalizedElement;
 	});
 
-	return { ...workspacePackage, targetedElements: elements, untargetedElements };
+	return {
+		...workspacePackage,
+		targetedElements: elements,
+		untargetedElements,
+	};
 };
 
 export const elementsByTargetFile = async (
@@ -118,20 +126,19 @@ export const elementsByTargetFile = async (
 	const n = await normalizeSetupElements(workspacePackage);
 	return {
 		...n,
-		targetedElements: n.targetedElements.reduce<Record<string, SetupElementWithoutTargeting[]>>(
-			(groups, next) => {
-				for (const targetFile of next.targetFiles) {
-					groups[targetFile]?.push(next.element);
+		targetedElements: n.targetedElements.reduce<
+			Record<string, SetupElementWithoutTargetingWithSourcePlugin[]>
+		>((groups, next) => {
+			for (const targetFile of next.targetFiles) {
+				groups[targetFile]?.push(next.element);
 
-					if (!groups[targetFile]) {
-						groups[targetFile] = [next.element];
-					}
+				if (!groups[targetFile]) {
+					groups[targetFile] = [next.element];
 				}
+			}
 
-				return groups;
-			},
-			{}
-		),
+			return groups;
+		}, {}),
 	};
 };
 
@@ -149,8 +156,8 @@ export interface PackageSetupElementError {
 	target: string;
 	message: string;
 	workspacePackage: WorkspacePackage;
-	sourcePlugin?: SetupPlugin;
-	sourceElements: SetupElementWithoutTargeting[];
+	sourcePlugins: SetupPlugin[];
+	sourceElements: SetupElementWithoutTargetingWithSourcePlugin[];
 }
 
 /**
@@ -162,7 +169,7 @@ export const verifyPackageSetupElements = (
 	const errors = Object.entries(workspacePackageElementsByTarget.targetedElements).flatMap(
 		([target, elementsOnATarget]) => {
 			const elementsByType = elementsOnATarget.reduce<
-				Record<SetupElementTypes, SetupElementWithoutTargeting[]>
+				Record<SetupElementTypes, SetupElementWithoutTargetingWithSourcePlugin[]>
 			>(
 				(groups, next) => {
 					groups[next.type].push(next);
@@ -187,19 +194,24 @@ export const verifyPackageSetupElements = (
 					message: 'More than one element tries to copy to the same place!',
 					workspacePackage: workspacePackageElementsByTarget,
 					sourceElements: elementsByType['file-copy'],
+					sourcePlugins: elementsByType['file-copy'].flatMap(
+						(element) => element.sourcePlugin
+					),
 				});
 			}
 
 			if (elementsByType['file-copy'].length + elementsByType['file-remove'].length > 1) {
+				const erroredElements = [
+					...elementsByType['file-copy'],
+					...elementsByType['file-remove'],
+				];
 				errors.push({
 					target,
 					type: SETUP_ERROR_MULTIPLE_COPIES_AND_REMOVES,
 					message: 'More than one element',
 					workspacePackage: workspacePackageElementsByTarget,
-					sourceElements: [
-						...elementsByType['file-copy'],
-						...elementsByType['file-remove'],
-					],
+					sourceElements: erroredElements,
+					sourcePlugins: erroredElements.flatMap((element) => element.sourcePlugin),
 				});
 			}
 
@@ -226,6 +238,7 @@ export const verifyPackageSetupElements = (
 						workspacePackage: workspacePackageElementsByTarget,
 						target: elementTargetingInsideAPackage.target,
 						sourceElements: [elementTargetingInsideAPackage.element],
+						sourcePlugins: [elementTargetingInsideAPackage.element.sourcePlugin],
 					})
 				)
 			);
@@ -235,31 +248,53 @@ export const verifyPackageSetupElements = (
 	return errors;
 };
 
+export const reportPackageSetupElementError = (
+	error: PackageSetupElementError,
+	options: NormalizedLoggerOption
+): void => {
+	const affectedPlugins = `Affected plugin${
+		error.sourcePlugins.length > 1 ? 's' : ''
+	}: ${error.sourcePlugins.map((p) => p.name).join(', ')}`;
+	const affectedElements = `Affected element${
+		error.sourceElements.length > 1 ? 's' : ''
+	}: ${error.sourceElements.map((p) => p.name).join(', ')}`;
+
+	options.logger.error(`Error: ${error.type}
+	Reason: ${error.message}
+	Target: ${error.target}
+	${affectedPlugins}
+	${affectedElements}
+	Workspace: ${error.workspacePackage.packagePath}`);
+};
+
 export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 	const options = normalizeSetupOptions(rawOptions);
 	const logger = options.logger.getSubLogger({ name: 'setup' });
 
-	// TODO: instead of having a fixed set of plugins, detect them
+	// collect target packages
+	const workspacePackages = await collectWorkspacePackages(options);
+	const workspaceRootPackage = workspacePackages.find(
+		(workspacePackage) => workspacePackage.packageKind === 'root'
+	);
 
-	const workspaceRoot = getWorkspaceRoot(options.cwd);
-
-	if (!workspaceRoot) {
+	if (!workspaceRootPackage) {
 		logger.warn('cannot do setup, not in a workspace!');
 		return;
 	}
 
-	const pluginOptions: SetupPluginOptions = { ...options, workspaceRoot };
+	const pluginOptions: SetupPluginOptions = {
+		...options,
+		workspaceRoot: workspaceRootPackage.packagePath,
+	};
 
 	// Load plugins
+	// TODO: instead of having a fixed set of plugins, detect them
 	const plugins: SetupPlugin[] = [];
 	const tsPlugin = tsSetupPlugin(pluginOptions);
 
 	if (tsPlugin) {
 		plugins.push(tsPlugin);
 	}
-
-	// collect target packages
-	const workspacePackages = await collectWorkspacePackages(options);
 
 	// Collect elements?
 
@@ -273,6 +308,20 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 	);
 
 	console.log(workspacePackageElementsByTarget);
+
+	const errors = workspacePackageElementsByTarget.flatMap((workspacePackageElements) =>
+		verifyPackageSetupElements(workspacePackageElements)
+	);
+
+	if (errors.length > 0) {
+		logger.error('Error detected within setup elements!');
+		for (const error of errors) {
+			reportPackageSetupElementError(error, options);
+		}
+		return undefined;
+	}
+
+	logger.info('Valid setup elements, proceeding');
 
 	// apply
 
