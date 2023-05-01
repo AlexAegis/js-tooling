@@ -9,6 +9,10 @@ export const isJsonObject = (t: unknown): t is JsonObject => {
 	return typeof t === 'string' || typeof t === 'number' || typeof t === 'object';
 };
 
+export const isCustomJsonValueMatcher = <T>(t: unknown): t is CustomJsonValueMatcher<T> => {
+	return typeof t === 'function';
+};
+
 export type CustomJsonValueMatcher<T = JsonValue> = (value: T) => boolean;
 
 export type JsonLeafMatcher = string | number | RegExp | CustomJsonValueMatcher;
@@ -43,9 +47,10 @@ export type JsonMatcherFrom<T> = T extends string
 
 /**
  * TODO: Options to set if extra keys are allowed or not, currently it's allowed
+ * TODO: The generic was extremely slow!!!
  */
-export const objectMatch = (
-	target: JsonValue,
+export const objectMatch = <T = JsonValue>(
+	target: T,
 	matcher: JsonMatcher | undefined | null
 ): boolean => {
 	if (typeof matcher === 'string') {
@@ -56,7 +61,7 @@ export const objectMatch = (
 		return target === null;
 	} else if (typeof matcher === 'number') {
 		return typeof target === 'number' && target === matcher;
-	} else if (typeof matcher === 'function') {
+	} else if (isCustomJsonValueMatcher<T>(matcher)) {
 		return matcher(target);
 	} else if (matcher instanceof RegExp) {
 		return typeof target === 'string' && matcher.test(target);
@@ -70,7 +75,10 @@ export const objectMatch = (
 				typeof target === 'object' &&
 				target !== null && // typeof null === 'object'
 				!Array.isArray(target) &&
-				objectMatch(target[filterKey], filter)
+				objectMatch(
+					(target as Record<string | number, unknown>)[filterKey],
+					filter as JsonMatcher
+				)
 			);
 		});
 	}

@@ -58,12 +58,14 @@
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "^0.1.4",
+		"@alexaegis/common": "^0.1.4",
 		"@alexaegis/fs": "^0.1.4",
 		"@alexaegis/logging": "^0.1.4",
 		"@alexaegis/object-match": "^0.2.0",
 		"@alexaegis/setup-plugin": "^0.2.0",
 		"@alexaegis/setup-ts": "^0.2.0",
-		"@alexaegis/workspace-tools": "^0.1.4"
+		"@alexaegis/workspace-tools": "^0.1.4",
+		"globby": "^13.1.4"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",

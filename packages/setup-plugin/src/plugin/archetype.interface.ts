@@ -45,4 +45,5 @@ export interface Archetype {
 	disabledPlugins?: string[];
 }
 
-export type PackageJsonFilter = JsonMatcherFrom<PackageJson & { archetype?: Archetype }>;
+export type PackageJsonWithArchetype = PackageJson & { archetype?: Archetype };
+export type PackageJsonFilter = JsonMatcherFrom<PackageJsonWithArchetype>;
