@@ -1,36 +1,34 @@
 import {
+	getAssumedFinalInstallLocationOfPackage,
 	normalizeSetupPluginOptions,
 	type SetupElement,
 	type SetupPlugin,
 	type SetupPluginOptions,
 } from '@alexaegis/setup-plugin';
-import { NODE_MODULES_DIRECTORY_NAME } from '@alexaegis/workspace-tools';
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
 export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | undefined => {
 	const options = normalizeSetupPluginOptions(rawOptions);
 	const logger = options.logger.getSubLogger({ name: 'ts' });
-	logger.info('loading...');
+	const packageDirectory = getAssumedFinalInstallLocationOfPackage(options, packageJson);
 
-	const packageDirectory = join(
-		options.workspaceRoot,
-		NODE_MODULES_DIRECTORY_NAME,
-		...packageJson.name.split('/')
-	);
+	logger.info('loading...');
 
 	return {
 		name: 'ts',
 		elements: [
 			{
+				name: 'copy workspace root ts config',
 				type: 'file-copy',
-				packageKind: 'workspace',
+				packageKind: 'root',
 				targetFile: 'tsconfig.json',
 				sourceFile: join(packageDirectory, 'static', 'workspace-tsconfig.json'),
 			},
 			{
+				name: 'add workspace root ts scripts',
 				type: 'json',
-				packageKind: 'workspace',
+				packageKind: 'root',
 				targetFile: 'package.json',
 				packageJsonFilter: {
 					keywords: (keywords) => keywords.includes(packageJson.name),
@@ -47,6 +45,7 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				},
 			},
 			{
+				name: 'add package ts scripts',
 				type: 'json',
 				packageKind: 'regular',
 				targetFile: 'package.json',
@@ -65,10 +64,12 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				},
 			},
 			{
+				name: 'remove unnecessary tsconfig files',
 				type: 'file-remove',
 				globPattern: 'tsconfig.!(json)',
 			},
 			{
+				name: 'add @types/node as a devDependency',
 				type: 'json',
 				packageKind: 'regular',
 				targetFile: 'package.json',
@@ -82,6 +83,7 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				},
 			},
 			...['base', 'web', 'svelte', 'node'].map<SetupElement>((flavour) => ({
+				name: `copy tsconfig for ${flavour} packages`,
 				type: 'file-copy',
 				packageKind: 'regular',
 				targetFile: 'tsconfig.json',

@@ -62,10 +62,10 @@
 		"setup-commitlint": "./shims/setup-commitlint.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
+		"@alexaegis/cli-tools": "^0.1.5",
 		"@alexaegis/commitlint-config": "^0.2.0",
-		"@alexaegis/logging": "^0.1.4",
-		"@alexaegis/workspace-tools": "^0.1.4",
+		"@alexaegis/logging": "^0.1.5",
+		"@alexaegis/workspace-tools": "^0.1.5",
 		"commitlint": "^17.6.1"
 	},
 	"devDependencies": {

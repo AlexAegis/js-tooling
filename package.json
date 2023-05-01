@@ -75,7 +75,7 @@
 		"typedoc_": "typedoc"
 	},
 	"devDependencies": {
-		"@alexaegis/coverage-tools": "^0.1.4",
+		"@alexaegis/coverage-tools": "^0.1.5",
 		"@alexaegis/eslint-config-core": "workspace:^",
 		"@alexaegis/nuke": "workspace:^",
 		"@alexaegis/setup-commitlint": "workspace:^",

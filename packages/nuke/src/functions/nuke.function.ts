@@ -14,43 +14,45 @@ import { normalizeNukeOptions, type NukeOptions } from './nuke.function.options.
 export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	const options = normalizeNukeOptions(rawOptions);
 
-	const allPackageDirectories = await collectWorkspacePackages(options);
+	const allWorkspacePackages = await collectWorkspacePackages(options);
 
-	if (allPackageDirectories.length === 0) {
+	if (allWorkspacePackages.length === 0) {
 		throw new Error('not in a workspace!');
 	}
 
 	const nukeList = [...options.nukeList, ...options.nukeMore];
 	const nukeGlobs = [...options.nukeGlobs, ...options.nukeMoreGlobs];
 
-	const packageDirectories = allPackageDirectories.filter(
-		(packageDirectory) =>
+	const nonSkippedWorkspacePackages = allWorkspacePackages.filter(
+		(workspacePackage) =>
 			!options.dontNukeIn.some((skip) =>
 				typeof skip === 'string'
-					? skip === packageDirectory.path
-					: skip.test(packageDirectory.path)
+					? skip === workspacePackage.packagePath
+					: skip.test(workspacePackage.packagePath)
 			)
 	);
 
-	const rootPackageDirectory = allPackageDirectories[0];
+	const rootPackage = allWorkspacePackages.find(
+		(workspacePackage) => workspacePackage.packageKind === 'root'
+	);
 
-	if (!rootPackageDirectory) {
+	if (!rootPackage) {
 		options.logger.error('Not inside a workspace!');
 		return;
 	}
 
-	const packageFlatNukeTargets = packageDirectories.flatMap((packageDirectory) =>
-		nukeList.map((toNuke) => join(packageDirectory.path, toNuke))
+	const packageFlatNukeTargets = nonSkippedWorkspacePackages.flatMap((workspacePackage) =>
+		nukeList.map((toNuke) => join(workspacePackage.packagePath, toNuke))
 	);
 
 	const packageGlobNukeTargets = await Promise.all(
-		packageDirectories.map((packageDirectory) =>
+		nonSkippedWorkspacePackages.map((packageDirectory) =>
 			globby(nukeGlobs, {
-				cwd: packageDirectory.path,
+				cwd: packageDirectory.packagePath,
 				dot: true,
 				followSymbolicLinks: false,
 				expandDirectories: false,
-			}).then((paths) => paths.map((path) => join(packageDirectory.path, path)))
+			}).then((paths) => paths.map((path) => join(packageDirectory.packagePath, path)))
 		)
 	);
 
@@ -62,7 +64,7 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {
 				options.logger.warn(
-					'obliterating: ' + relative(rootPackageDirectory.path, nukeTarget)
+					'obliterating: ' + relative(rootPackage.packagePath, nukeTarget)
 				);
 				return dryRm(nukeTarget, { recursive: true }).catch(() => false);
 			})

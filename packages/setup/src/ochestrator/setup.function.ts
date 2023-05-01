@@ -6,8 +6,8 @@ import {
 	isMultiTargetedElement,
 	isTargetedElement,
 	isUntargetedElement,
-	type PackageJsonWithArchetype,
 	type SetupElement,
+	type SetupElementTypes,
 	type SetupElementUniqueKind,
 	type SetupElementWithoutTargeting,
 	type SetupPlugin,
@@ -15,15 +15,14 @@ import {
 	type SetupPluginOptions,
 } from '@alexaegis/setup-plugin';
 import { tsSetupPlugin } from '@alexaegis/setup-ts';
-import { collectWorkspacePackages, getWorkspaceRoot } from '@alexaegis/workspace-tools';
+import {
+	collectWorkspacePackages,
+	getWorkspaceRoot,
+	type WorkspacePackage,
+} from '@alexaegis/workspace-tools';
 import { globby } from 'globby';
+import { minimatch } from 'minimatch';
 import { normalizeSetupOptions, type SetupOptions } from './setup.function.options.js';
-
-export interface WorkspacePackage {
-	packageJson: PackageJsonWithArchetype;
-	path: string;
-	packageKind: 'workspace' | 'regular';
-}
 
 export type AlreadyFilteredSetupElement = Omit<SetupElement, 'packageJsonFilter' | 'packageKind'>;
 
@@ -97,7 +96,7 @@ export const normalizeSetupElements = async (
 
 		if (isGlobTargetedElement(element)) {
 			const matchedFiles = await globby(element.globPattern, {
-				cwd: workspacePackage.path,
+				cwd: workspacePackage.packagePath,
 			});
 
 			targetFiles.push(...matchedFiles);
@@ -136,6 +135,106 @@ export const elementsByTargetFile = async (
 	};
 };
 
+export const SETUP_ERROR_MULTIPLE_COPIES = 'ESETUPMULTICOPY';
+export const SETUP_ERROR_MULTIPLE_COPIES_AND_REMOVES = 'ESETUPMULTICOPYANDREMOVE';
+export const SETUP_ERROR_WORKSPACE_ELEMENT_TARGETING_INSIDE_PACKAGE = 'ESETUPROOTINTOPACKAGE';
+
+export type PackageSetupElementErrorTypes =
+	| typeof SETUP_ERROR_MULTIPLE_COPIES
+	| typeof SETUP_ERROR_MULTIPLE_COPIES_AND_REMOVES
+	| typeof SETUP_ERROR_WORKSPACE_ELEMENT_TARGETING_INSIDE_PACKAGE;
+
+export interface PackageSetupElementError {
+	type: PackageSetupElementErrorTypes;
+	target: string;
+	message: string;
+	workspacePackage: WorkspacePackage;
+	sourcePlugin?: SetupPlugin;
+	sourceElements: SetupElementWithoutTargeting[];
+}
+
+/**
+ * Checks for conflicts in the collected setup elements for all targets
+ */
+export const verifyPackageSetupElements = (
+	workspacePackageElementsByTarget: WorkspacePackageElementsByTarget
+): PackageSetupElementError[] => {
+	const errors = Object.entries(workspacePackageElementsByTarget.targetedElements).flatMap(
+		([target, elementsOnATarget]) => {
+			const elementsByType = elementsOnATarget.reduce<
+				Record<SetupElementTypes, SetupElementWithoutTargeting[]>
+			>(
+				(groups, next) => {
+					groups[next.type].push(next);
+					return groups;
+				},
+				{
+					'file-copy': [],
+					'file-remove': [],
+					'file-symlink': [],
+					'file-transform': [],
+					json: [],
+					unique: [],
+				}
+			);
+
+			const errors: PackageSetupElementError[] = [];
+
+			if (elementsByType['file-copy'].length > 1) {
+				errors.push({
+					target,
+					type: SETUP_ERROR_MULTIPLE_COPIES,
+					message: 'More than one element tries to copy to the same place!',
+					workspacePackage: workspacePackageElementsByTarget,
+					sourceElements: elementsByType['file-copy'],
+				});
+			}
+
+			if (elementsByType['file-copy'].length + elementsByType['file-remove'].length > 1) {
+				errors.push({
+					target,
+					type: SETUP_ERROR_MULTIPLE_COPIES_AND_REMOVES,
+					message: 'More than one element',
+					workspacePackage: workspacePackageElementsByTarget,
+					sourceElements: [
+						...elementsByType['file-copy'],
+						...elementsByType['file-remove'],
+					],
+				});
+			}
+
+			return errors;
+		}
+	);
+
+	if (workspacePackageElementsByTarget.packageKind === 'root') {
+		const elementsTargetingInsideAPackage = Object.entries(
+			workspacePackageElementsByTarget.targetedElements
+		).flatMap(([target, elements]) =>
+			workspacePackageElementsByTarget.workspacePackagePatterns
+				.filter((pattern) => minimatch(target, pattern))
+				.flatMap(() => elements)
+				.map((element) => ({ element, target }))
+		);
+
+		if (elementsTargetingInsideAPackage.length > 0) {
+			errors.push(
+				...elementsTargetingInsideAPackage.map<PackageSetupElementError>(
+					(elementTargetingInsideAPackage) => ({
+						type: SETUP_ERROR_WORKSPACE_ELEMENT_TARGETING_INSIDE_PACKAGE,
+						message: 'A workspace level element tries to modify a a sub-package!',
+						workspacePackage: workspacePackageElementsByTarget,
+						target: elementTargetingInsideAPackage.target,
+						sourceElements: [elementTargetingInsideAPackage.element],
+					})
+				)
+			);
+		}
+	}
+
+	return errors;
+};
+
 export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 	const options = normalizeSetupOptions(rawOptions);
 	const logger = options.logger.getSubLogger({ name: 'setup' });
@@ -165,13 +264,7 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 	// Collect elements?
 
 	const workspacePackageElements = workspacePackages.map((workspacePackage) =>
-		filterElementsForPackage(
-			{
-				...workspacePackage,
-				packageKind: workspacePackage.path === workspaceRoot ? 'workspace' : 'regular',
-			},
-			plugins
-		)
+		filterElementsForPackage(workspacePackage, plugins)
 	);
 
 	const workspacePackageElementsByTarget = await asyncMap(

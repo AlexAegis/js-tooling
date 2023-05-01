@@ -4,10 +4,14 @@ import { load } from 'js-yaml';
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join, normalize } from 'node:path';
 
+const PACKAGE_JSON_NAME = 'package.json';
+
 /**
  * The functions found in this file are copied from @alexaegis/workspace-tools
  * to be a sync, non-esm (globby is only esm) variant that could be invoked
  * from a CJS based configuration file.
+ *
+ * ? Once standard-version/commit-and-version is migrated to ESM, this can be removed
  */
 export const collectPackages = (): {
 	workspacePackage: WorkspacePackage;
@@ -23,8 +27,9 @@ export const collectPackages = (): {
 		readFileSync(join(workspaceRoot, 'pnpm-workspace.yaml'), { encoding: 'utf8' })
 	) as PnpmWorkspaceYaml;
 
+	const workspacePackageJsonPath = join(workspaceRoot, PACKAGE_JSON_NAME);
 	const workspacePackageJson = JSON.parse(
-		readFileSync(join(workspaceRoot, 'package.json'), { encoding: 'utf8' })
+		readFileSync(workspacePackageJsonPath, { encoding: 'utf8' })
 	) as PackageJson;
 
 	let workspaces = normalizePackageJsonWorkspacesField(workspacePackageJson.workspaces);
@@ -40,15 +45,23 @@ export const collectPackages = (): {
 	}).filter((path) => statSync(path).isDirectory());
 
 	const workspacePackage: WorkspacePackage = {
-		path: workspaceRoot,
+		packageKind: 'root',
+		packagePath: workspaceRoot,
 		packageJson: workspacePackageJson,
+		packageJsonPath: workspacePackageJsonPath,
+		workspacePackagePatterns: workspaces,
 	};
-	const subPackages: WorkspacePackage[] = packagePaths.map((packagePath) => ({
-		path: packagePath.toString(),
-		packageJson: JSON.parse(
-			readFileSync(join(packagePath, 'package.json'), { encoding: 'utf8' })
-		) as PackageJson,
-	}));
+	const subPackages: WorkspacePackage[] = packagePaths.map((packagePath) => {
+		const packageJsonPath = join(packagePath, PACKAGE_JSON_NAME);
+		return {
+			packageKind: 'regular',
+			packagePath: packagePath.toString(),
+			packageJsonPath,
+			packageJson: JSON.parse(
+				readFileSync(packageJsonPath, { encoding: 'utf8' })
+			) as PackageJson,
+		};
+	});
 
 	return { workspacePackage, subPackages };
 };

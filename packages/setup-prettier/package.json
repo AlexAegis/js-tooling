@@ -64,10 +64,10 @@
 		"setup-prettier": "./shims/setup-prettier.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
-		"@alexaegis/logging": "^0.1.4",
+		"@alexaegis/cli-tools": "^0.1.5",
+		"@alexaegis/logging": "^0.1.5",
 		"@alexaegis/prettier-config": "^0.2.0",
-		"@alexaegis/workspace-tools": "^0.1.4",
+		"@alexaegis/workspace-tools": "^0.1.5",
 		"prettier": "^2.8.8"
 	},
 	"optionalDependencies": {

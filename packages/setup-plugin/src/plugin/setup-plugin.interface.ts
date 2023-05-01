@@ -1,4 +1,4 @@
-import type { PackageJsonFilter } from './archetype.interface.js';
+import type { PackageJsonFilter } from './package-json-filter.interface.js';
 import type { PackageKind, SetupElement } from './setup-element.interface.js';
 
 export interface SetupPluginFilter {

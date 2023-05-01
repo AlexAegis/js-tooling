@@ -12,19 +12,19 @@ export const createStandardVersionConfig = () => {
 		},
 		bumpFiles: [
 			{
-				filename: join(workspacePackage.path, 'package.json'),
+				filename: workspacePackage.packageJsonPath,
 				updater,
 			},
 			{
-				filename: join(workspacePackage.path, 'readme.md'),
+				filename: join(workspacePackage.packagePath, 'readme.md'),
 				updater,
 			},
-			...subPackages.map((p) => ({
-				filename: join(p.path, 'package.json'),
+			...subPackages.map((pkg) => ({
+				filename: join(pkg.packagePath, 'package.json'),
 				updater,
 			})),
-			...subPackages.map((p) => ({
-				filename: join(p.path, 'readme.md'),
+			...subPackages.map((pkg) => ({
+				filename: join(pkg.packagePath, 'readme.md'),
 				updater,
 			})),
 		],

@@ -60,9 +60,9 @@
 		"setup-typedoc": "./shims/setup-typedoc.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
-		"@alexaegis/logging": "^0.1.4",
-		"@alexaegis/workspace-tools": "^0.1.4",
+		"@alexaegis/cli-tools": "^0.1.5",
+		"@alexaegis/logging": "^0.1.5",
+		"@alexaegis/workspace-tools": "^0.1.5",
 		"typedoc": "^0.24.6"
 	},
 	"devDependencies": {

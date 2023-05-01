@@ -60,10 +60,10 @@
 		"setup-husky": "./shims/setup-husky.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
+		"@alexaegis/cli-tools": "^0.1.5",
 		"@alexaegis/lint-staged-config": "^0.2.0",
-		"@alexaegis/logging": "^0.1.4",
-		"@alexaegis/workspace-tools": "^0.1.4",
+		"@alexaegis/logging": "^0.1.5",
+		"@alexaegis/workspace-tools": "^0.1.5",
 		"@commitlint/config-conventional": "^17.6.1",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.2"

@@ -56,10 +56,10 @@
 		"setup-workspace": "./shims/setup-workspace.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
-		"@alexaegis/logging": "^0.1.4",
+		"@alexaegis/cli-tools": "^0.1.5",
+		"@alexaegis/logging": "^0.1.5",
 		"@alexaegis/setup-editorconfig": "^0.2.0",
-		"@alexaegis/workspace-tools": "^0.1.4",
+		"@alexaegis/workspace-tools": "^0.1.5",
 		"npm-check-updates": "^16.10.9"
 	},
 	"devDependencies": {

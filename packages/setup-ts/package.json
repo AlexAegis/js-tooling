@@ -58,7 +58,6 @@
 	},
 	"dependencies": {
 		"@alexaegis/setup-plugin": "^0.2.0",
-		"@alexaegis/workspace-tools": "^0.1.4",
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {

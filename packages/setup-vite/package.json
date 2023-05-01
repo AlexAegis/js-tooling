@@ -57,9 +57,9 @@
 		"setup-vite": "./shims/setup-vite.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.4",
-		"@alexaegis/logging": "^0.1.4",
-		"@alexaegis/workspace-tools": "^0.1.4",
+		"@alexaegis/cli-tools": "^0.1.5",
+		"@alexaegis/logging": "^0.1.5",
+		"@alexaegis/workspace-tools": "^0.1.5",
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",
 		"vite": "^4.3.3"

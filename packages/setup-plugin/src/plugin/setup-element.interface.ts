@@ -1,10 +1,15 @@
 import type { JsonValue } from '@alexaegis/object-match';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
-import type { PackageJsonFilter } from './archetype.interface.js';
+import type { PackageJsonFilter } from './package-json-filter.interface.js';
 
-export type PackageKind = 'workspace' | 'regular' | 'both';
+export type PackageKind = 'root' | 'regular' | 'both';
 
 export interface SetupElementBase {
+	/**
+	 * Name of the element, used for logging, debugging.
+	 */
+	name: string;
+
 	/**
 	 * 'workspace' means this will only be applied to the root package, the
 	 * entire workspace. 'regular' means a normal package thats inside the
@@ -157,3 +162,5 @@ export type SetupElementWithoutTargeting =
 	| OmitTargeting<SetupElementFileRemoveKind>
 	| OmitTargeting<SetupElementFileSymlinkKind>
 	| OmitTargeting<SetupElementFileCopyKind>;
+
+export type SetupElementTypes = SetupElement['type'];
