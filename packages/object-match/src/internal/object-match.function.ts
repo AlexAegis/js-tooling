@@ -1,4 +1,4 @@
-export type JsonLeafValue = string | number | undefined | null;
+export type JsonLeafValue = string | number | boolean | undefined | null;
 
 export interface JsonObject {
 	[key: string | number]: JsonObject | JsonLeafValue | (JsonObject | JsonLeafValue)[];
@@ -15,7 +15,7 @@ export const isCustomJsonValueMatcher = <T>(t: unknown): t is CustomJsonValueMat
 
 export type CustomJsonValueMatcher<T = JsonValue> = (value: T) => boolean;
 
-export type JsonLeafMatcher = string | number | RegExp | CustomJsonValueMatcher;
+export type JsonLeafMatcher = string | number | boolean | RegExp | CustomJsonValueMatcher;
 
 export interface JsonObjectMatcher {
 	[key: string | number]:
@@ -55,12 +55,14 @@ export const objectMatch = <T = JsonValue>(
 ): boolean => {
 	if (typeof matcher === 'string') {
 		return typeof target === 'string' && new RegExp(matcher).test(target); // Treat every string filter as a RegExp
+	} else if (typeof matcher === 'number') {
+		return typeof target === 'number' && target === matcher;
+	} else if (typeof matcher === 'boolean') {
+		return typeof target === 'boolean' && target === matcher;
 	} else if (matcher === undefined) {
 		return target === undefined || target === null;
 	} else if (matcher === null) {
 		return target === null;
-	} else if (typeof matcher === 'number') {
-		return typeof target === 'number' && target === matcher;
 	} else if (isCustomJsonValueMatcher<T>(matcher)) {
 		return matcher(target);
 	} else if (matcher instanceof RegExp) {

@@ -79,4 +79,39 @@ describe('objectMatch', () => {
 
 		expect(result).toBeFalsy();
 	});
+
+	it('should be able to match booleans', () => {
+		expect(objectMatch(true, true)).toBeTruthy();
+	});
+
+	it('should not match different booleans', () => {
+		expect(objectMatch(true, false)).toBeFalsy();
+		expect(objectMatch(false, true)).toBeFalsy();
+	});
+
+	it('should be able to match nested booleans', () => {
+		expect(
+			objectMatch(
+				{
+					foo: true,
+				},
+				{
+					foo: true,
+				}
+			)
+		).toBeTruthy();
+	});
+
+	it('should not match different nested booleans', () => {
+		expect(
+			objectMatch(
+				{
+					foo: true,
+				},
+				{
+					foo: false,
+				}
+			)
+		).toBeFalsy();
+	});
 });

@@ -154,14 +154,14 @@ export interface SetupElementFileRemoveKind extends SetupElementBase, GlobTarget
 	type: 'file-remove';
 }
 
-type OmitTargeting<T> = Omit<
+export type OmitTargeting<T> = Omit<
 	T,
 	keyof DirectlyTargetedElement | keyof GlobTargetedElement | keyof MultiTargetedElement
 >;
 
 export type SetupElementWithSourcePlugin = SetupElement & SourcePluginInformation;
 
-export type SetupElementWithoutTargetingWithSourcePlugin =
+export type SetupElementWithMetadata =
 	| OmitTargeting<SetupElementUniqueKind & SourcePluginInformation>
 	| OmitTargeting<SetupElementJsonKind & SourcePluginInformation>
 	| OmitTargeting<SetupElementFileTransformKind & SourcePluginInformation>
@@ -170,3 +170,12 @@ export type SetupElementWithoutTargetingWithSourcePlugin =
 	| OmitTargeting<SetupElementFileCopyKind & SourcePluginInformation>;
 
 export type SetupElementTypes = SetupElement['type'];
+
+export interface GroupedSetupElementsWithMetadata {
+	'file-copy': OmitTargeting<SetupElementFileCopyKind & SourcePluginInformation>[];
+	'file-remove': OmitTargeting<SetupElementFileRemoveKind & SourcePluginInformation>[];
+	'file-symlink': OmitTargeting<SetupElementFileSymlinkKind & SourcePluginInformation>[];
+	'file-transform': OmitTargeting<SetupElementFileTransformKind & SourcePluginInformation>[];
+	json: OmitTargeting<SetupElementJsonKind & SourcePluginInformation>[];
+	unique: OmitTargeting<SetupElementUniqueKind & SourcePluginInformation>[];
+}

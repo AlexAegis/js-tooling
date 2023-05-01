@@ -1,19 +1,18 @@
-import { asyncFilterMap, asyncMap, isNotNullish } from '@alexaegis/common';
+import { asyncFilterMap, asyncMap, dry } from '@alexaegis/common';
 import type { NormalizedLoggerOption } from '@alexaegis/logging';
-import { objectMatch, type JsonMatcher } from '@alexaegis/object-match';
 import {
 	isDirectlyTargetedElement,
 	isGlobTargetedElement,
 	isMultiTargetedElement,
 	isTargetedElement,
 	isUntargetedElementWithSourceInformation,
+	type GroupedSetupElementsWithMetadata,
 	type SetupElement,
 	type SetupElementTypes,
 	type SetupElementUniqueKind,
+	type SetupElementWithMetadata,
 	type SetupElementWithSourcePlugin,
-	type SetupElementWithoutTargetingWithSourcePlugin,
 	type SetupPlugin,
-	type SetupPluginFilter,
 	type SetupPluginOptions,
 	type SourcePluginInformation,
 } from '@alexaegis/setup-plugin';
@@ -21,7 +20,14 @@ import { tsSetupPlugin } from '@alexaegis/setup-ts';
 import { collectWorkspacePackages, type WorkspacePackage } from '@alexaegis/workspace-tools';
 import { globby } from 'globby';
 import { minimatch } from 'minimatch';
-import { normalizeSetupOptions, type SetupOptions } from './setup.function.options.js';
+import { cp, rm } from 'node:fs/promises';
+import { join } from 'node:path';
+import { elementAndPluginFilter } from './element-and-plugin-filter.function.js';
+import {
+	normalizeSetupOptions,
+	type NormalizedSetupOptions,
+	type SetupOptions,
+} from './setup.function.options.js';
 
 export type AlreadyFilteredSetupElement = Omit<SetupElement, 'packageJsonFilter' | 'packageKind'>;
 
@@ -30,7 +36,7 @@ export type WorkspacePackageWithElements = WorkspacePackage & {
 };
 
 export interface TargetNormalizedElement {
-	element: SetupElementWithoutTargetingWithSourcePlugin;
+	element: SetupElementWithMetadata;
 	targetFiles: string[];
 }
 
@@ -40,25 +46,8 @@ export type WorkspacePackageWithTargetedElements = WorkspacePackage & {
 };
 
 export type WorkspacePackageElementsByTarget = WorkspacePackage & {
-	targetedElements: Record<string, SetupElementWithoutTargetingWithSourcePlugin[]>;
+	targetedElements: Record<string, SetupElementWithMetadata[]>;
 	untargetedElements: (SetupElementUniqueKind & SourcePluginInformation)[];
-};
-
-export const elementAndPluginFilter = (
-	workspacePackage: WorkspacePackage,
-	filter: SetupPluginFilter
-): boolean => {
-	const pluginPackageKind = filter.packageKind ?? 'all';
-
-	let result = pluginPackageKind === 'all' || pluginPackageKind === workspacePackage.packageKind;
-
-	if (isNotNullish(filter.packageJsonFilter)) {
-		result =
-			result &&
-			objectMatch(workspacePackage.packageJson, filter.packageJsonFilter as JsonMatcher);
-	}
-
-	return result;
 };
 
 /**
@@ -126,19 +115,20 @@ export const elementsByTargetFile = async (
 	const n = await normalizeSetupElements(workspacePackage);
 	return {
 		...n,
-		targetedElements: n.targetedElements.reduce<
-			Record<string, SetupElementWithoutTargetingWithSourcePlugin[]>
-		>((groups, next) => {
-			for (const targetFile of next.targetFiles) {
-				groups[targetFile]?.push(next.element);
+		targetedElements: n.targetedElements.reduce<Record<string, SetupElementWithMetadata[]>>(
+			(groups, next) => {
+				for (const targetFile of next.targetFiles) {
+					groups[targetFile]?.push(next.element);
 
-				if (!groups[targetFile]) {
-					groups[targetFile] = [next.element];
+					if (!groups[targetFile]) {
+						groups[targetFile] = [next.element];
+					}
 				}
-			}
 
-			return groups;
-		}, {}),
+				return groups;
+			},
+			{}
+		),
 	};
 };
 
@@ -157,8 +147,27 @@ export interface PackageSetupElementError {
 	message: string;
 	workspacePackage: WorkspacePackage;
 	sourcePlugins: SetupPlugin[];
-	sourceElements: SetupElementWithoutTargetingWithSourcePlugin[];
+	sourceElements: SetupElementWithMetadata[];
 }
+
+export const groupElementsByType = (
+	elements: SetupElementWithMetadata[]
+): GroupedSetupElementsWithMetadata => {
+	return elements.reduce<Record<SetupElementTypes, SetupElementWithMetadata[]>>(
+		(groups, next) => {
+			groups[next.type].push(next);
+			return groups;
+		},
+		{
+			'file-copy': [],
+			'file-remove': [],
+			'file-symlink': [],
+			'file-transform': [],
+			json: [],
+			unique: [],
+		}
+	) as GroupedSetupElementsWithMetadata;
+};
 
 /**
  * Checks for conflicts in the collected setup elements for all targets
@@ -169,7 +178,7 @@ export const verifyPackageSetupElements = (
 	const errors = Object.entries(workspacePackageElementsByTarget.targetedElements).flatMap(
 		([target, elementsOnATarget]) => {
 			const elementsByType = elementsOnATarget.reduce<
-				Record<SetupElementTypes, SetupElementWithoutTargetingWithSourcePlugin[]>
+				Record<SetupElementTypes, SetupElementWithMetadata[]>
 			>(
 				(groups, next) => {
 					groups[next.type].push(next);
@@ -267,6 +276,55 @@ export const reportPackageSetupElementError = (
 	Workspace: ${error.workspacePackage.packagePath}`);
 };
 
+/**
+ *
+ */
+export type ItemOf<T extends readonly unknown[]> = T extends readonly (infer R)[] ? R : never;
+
+export const applyFileRemoveElement = async (
+	removeElement: ItemOf<GroupedSetupElementsWithMetadata['file-remove']>,
+	relativeFilePath: string,
+	options: NormalizedSetupOptions
+): Promise<void> => {
+	options.logger.info(`Executing ${removeElement.name}`);
+	const filePath = join(options.cwd, relativeFilePath);
+	const dryRm = dry(options.dry, rm);
+	await dryRm(filePath);
+	options.logger.info(`Removing ${filePath}`);
+};
+
+export const applyFileCopyElement = async (
+	copyElement: ItemOf<GroupedSetupElementsWithMetadata['file-copy']>,
+	relativeFilePath: string,
+	options: NormalizedSetupOptions
+): Promise<void> => {
+	options.logger.info(`Executing ${copyElement.name}`);
+	const filePath = join(options.cwd, relativeFilePath);
+	const dryCp = dry(options.dry, cp);
+	await dryCp(copyElement.sourceFile, filePath);
+	options.logger.info(`Copy ${filePath}`);
+};
+
+export const applyWorkspacePackageElementsByTarget = async (
+	workspacePackageElementsByTarget: WorkspacePackageElementsByTarget,
+	options: NormalizedSetupOptions
+): Promise<void> => {
+	options.logger.info(
+		`processing elements targeting ${workspacePackageElementsByTarget.packagePath}`
+	);
+	// Todo: concurrency using Promise.allSettled
+
+	for (const [relativeFilePath, elements] of Object.entries(
+		workspacePackageElementsByTarget.targetedElements
+	)) {
+		const grouped = groupElementsByType(elements);
+
+		for (const fileRemoveElement of grouped['file-remove']) {
+			await applyFileRemoveElement(fileRemoveElement, relativeFilePath, options);
+		}
+	}
+};
+
 export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 	const options = normalizeSetupOptions(rawOptions);
 	const logger = options.logger.getSubLogger({ name: 'setup' });
@@ -302,14 +360,14 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 		filterElementsForPackage(workspacePackage, plugins)
 	);
 
-	const workspacePackageElementsByTarget = await asyncMap(
+	const workspacePackagesWithElementsByTarget = await asyncMap(
 		workspacePackageElements,
 		elementsByTargetFile
 	);
 
-	console.log(workspacePackageElementsByTarget);
+	console.log(workspacePackagesWithElementsByTarget);
 
-	const errors = workspacePackageElementsByTarget.flatMap((workspacePackageElements) =>
+	const errors = workspacePackagesWithElementsByTarget.flatMap((workspacePackageElements) =>
 		verifyPackageSetupElements(workspacePackageElements)
 	);
 
@@ -323,7 +381,9 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 
 	logger.info('Valid setup elements, proceeding');
 
-	// apply
-
-	return undefined;
+	await Promise.allSettled([
+		workspacePackagesWithElementsByTarget.map((workspacePackageElementsByTarget) =>
+			applyWorkspacePackageElementsByTarget(workspacePackageElementsByTarget, options)
+		),
+	]);
 };
