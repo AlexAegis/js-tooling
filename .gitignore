@@ -111,7 +111,7 @@ dist
 
 # Svelte
 public/build/
-
+.svelte-kit
 
 # dependencies
 node_modules
