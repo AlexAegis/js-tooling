@@ -1,4 +1,4 @@
-import type { SetupElementWithMetadata, SetupPlugin } from '@alexaegis/setup-plugin';
+import type { InternalSetupElement, SetupPlugin } from '@alexaegis/setup-plugin';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 
 export const SETUP_ERROR_MULTIPLE_COPIES = 'ESETUPMULTICOPY';
@@ -16,5 +16,5 @@ export interface PackageSetupElementError {
 	message: string;
 	workspacePackage: WorkspacePackage;
 	sourcePlugins: SetupPlugin[];
-	sourceElements: SetupElementWithMetadata[];
+	sourceElements: InternalSetupElement[];
 }

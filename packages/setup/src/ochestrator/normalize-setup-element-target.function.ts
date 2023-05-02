@@ -1,51 +1,57 @@
-import { asyncFilterMap } from '@alexaegis/common';
-import {
-	isDirectlyTargetedElement,
-	isGlobTargetedElement,
-	isMultiTargetedElement,
-	isTargetedElement,
-	isUntargetedElementWithSourceInformation,
-} from '@alexaegis/setup-plugin';
+import { asyncFilterMap, isNotNullish } from '@alexaegis/common';
+import { type InternalSetupElement } from '@alexaegis/setup-plugin';
 import { globby } from 'globby';
 import type {
-	TargetNormalizedElement,
+	InternalSetupElementsWithResolvedTargets,
 	WorkspacePackageWithElements,
 	WorkspacePackageWithTargetedElements,
 } from './types.interface.js';
 
-export const normalizeSetupElementTargets = async (
-	workspacePackage: WorkspacePackageWithElements
-): Promise<WorkspacePackageWithTargetedElements> => {
-	const untargetedElements = workspacePackage.elements.filter(
-		isUntargetedElementWithSourceInformation
-	);
-	const targetedElements = workspacePackage.elements.filter(isTargetedElement);
+const isElementTargeting = (element: InternalSetupElement): boolean => {
+	return isNotNullish(element.targetFile) || isNotNullish(element.targetFilePatterns);
+};
 
-	const elements = await asyncFilterMap(targetedElements, async (element) => {
+export const normalizeSetupElementTargets = async (
+	workspacePackageWithElements: WorkspacePackageWithElements
+): Promise<WorkspacePackageWithTargetedElements> => {
+	const elementsWithTargeting = workspacePackageWithElements.elements.filter((element) =>
+		isElementTargeting(element)
+	);
+	const elementsWithoutTargeting = workspacePackageWithElements.elements.filter(
+		(element) => !isElementTargeting(element)
+	);
+
+	const elements = await asyncFilterMap(elementsWithTargeting, async (element) => {
 		const targetFiles: string[] = [];
 
-		if (isDirectlyTargetedElement(element)) {
-			targetFiles.push(element.targetFile);
+		if (element.targetFile) {
+			if (typeof element.targetFile === 'string') {
+				targetFiles.push(element.targetFile);
+			} else {
+				targetFiles.push(...element.targetFile);
+			}
 		}
 
-		if (isGlobTargetedElement(element)) {
-			const matchedFiles = await globby(element.globPattern, {
-				cwd: workspacePackage.packagePath,
+		if (element.targetFilePatterns) {
+			const matchedFiles = await globby(element.targetFilePatterns, {
+				cwd: workspacePackageWithElements.workspacePackage.packagePath,
+				dot: true,
+				globstar: true,
+				braceExpansion: true,
 			});
 
 			targetFiles.push(...matchedFiles);
 		}
 
-		if (isMultiTargetedElement(element)) {
-			targetFiles.push(...element.targetFiles);
-		}
-
-		return { element, targetFiles: [...new Set(targetFiles)] } as TargetNormalizedElement;
+		return {
+			element,
+			resolvedTargetFiles: [...new Set(targetFiles)],
+		} as InternalSetupElementsWithResolvedTargets;
 	});
 
 	return {
-		...workspacePackage,
+		...workspacePackageWithElements,
 		targetedElements: elements,
-		untargetedElements,
+		untargetedElements: elementsWithoutTargeting,
 	};
 };

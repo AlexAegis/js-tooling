@@ -1,29 +1,37 @@
-import type { SetupElementWithMetadata } from '@alexaegis/setup-plugin';
+import type { InternalSetupElement } from '@alexaegis/setup-plugin';
+import type { ExecutorMap } from '../executor-map.type.js';
 import { normalizeSetupElementTargets } from '../normalize-setup-element-target.function.js';
 import type {
 	WorkspacePackageElementsByTarget,
 	WorkspacePackageWithElements,
 } from '../types.interface.js';
+import { consolidateSetupElements } from './consolidate-elements.function.js';
+import { mapRecord } from './map-record.function.js';
 
-export const groupElementsByTargetFile = async (
-	workspacePackage: WorkspacePackageWithElements
+export const groupAndConsolidateElementsByTargetFile = async (
+	workspacePackage: WorkspacePackageWithElements,
+	executorMap: ExecutorMap
 ): Promise<WorkspacePackageElementsByTarget> => {
-	const n = await normalizeSetupElementTargets(workspacePackage);
+	const resolved = await normalizeSetupElementTargets(workspacePackage);
+	const targetedElementsByFile = resolved.targetedElements.reduce<
+		Record<string, InternalSetupElement[]>
+	>((groups, next) => {
+		for (const targetFile of next.resolvedTargetFiles) {
+			groups[targetFile]?.push(next.element);
+
+			if (!groups[targetFile]) {
+				groups[targetFile] = [next.element];
+			}
+		}
+
+		return groups;
+	}, {});
+
 	return {
-		...n,
-		targetedElements: n.targetedElements.reduce<Record<string, SetupElementWithMetadata[]>>(
-			(groups, next) => {
-				for (const targetFile of next.targetFiles) {
-					groups[targetFile]?.push(next.element);
-
-					if (!groups[targetFile]) {
-						groups[targetFile] = [next.element];
-					}
-				}
-
-				return groups;
-			},
-			{}
+		workspacePackage: resolved.workspacePackage,
+		untargetedElements: resolved.untargetedElements,
+		targetedElementsByFile: mapRecord(targetedElementsByFile, (elements) =>
+			consolidateSetupElements(elements, executorMap)
 		),
 	};
 };

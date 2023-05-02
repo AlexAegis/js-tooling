@@ -1,32 +1,28 @@
-import type {
-	SetupElement,
-	SetupElementUniqueKind,
-	SetupElementWithMetadata,
-	SetupElementWithSourcePlugin,
-	SourcePluginInformation,
-} from '@alexaegis/setup-plugin';
+import type { InternalSetupElement, SetupElement, SetupPlugin } from '@alexaegis/setup-plugin';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 
-export type AlreadyFilteredSetupElement = Omit<SetupElement, 'packageJsonFilter' | 'packageKind'>;
-
-export type WorkspacePackageWithElements = WorkspacePackage & {
-	elements: SetupElementWithSourcePlugin[];
-};
-
-export interface TargetNormalizedElement {
-	element: SetupElementWithMetadata;
-	targetFiles: string[];
+export type SetupElementWithSourcePlugin = SetupElement<string> & { sourcePlugin: SetupPlugin };
+export interface WorkspacePackageWithElements {
+	workspacePackage: WorkspacePackage;
+	elements: InternalSetupElement[];
 }
 
-export type WorkspacePackageWithTargetedElements = WorkspacePackage & {
-	targetedElements: TargetNormalizedElement[];
-	untargetedElements: (SetupElementUniqueKind & SourcePluginInformation)[];
-};
+export interface InternalSetupElementsWithResolvedTargets {
+	element: InternalSetupElement;
+	resolvedTargetFiles: string[];
+}
 
-export type WorkspacePackageElementsByTarget = WorkspacePackage & {
-	targetedElements: Record<string, SetupElementWithMetadata[]>;
-	untargetedElements: (SetupElementUniqueKind & SourcePluginInformation)[];
-};
+export interface WorkspacePackageWithTargetedElements {
+	workspacePackage: WorkspacePackage;
+	targetedElements: InternalSetupElementsWithResolvedTargets[];
+	untargetedElements: InternalSetupElement[];
+}
+
+export interface WorkspacePackageElementsByTarget {
+	workspacePackage: WorkspacePackage;
+	targetedElementsByFile: Record<string, InternalSetupElement[]>;
+	untargetedElements: InternalSetupElement[];
+}
 
 /**
  * TODO: remove this, use core

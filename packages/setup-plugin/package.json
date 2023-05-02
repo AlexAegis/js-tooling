@@ -52,6 +52,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
+		"@alexaegis/common": "^0.1.5",
 		"@alexaegis/fs": "^0.1.5",
 		"@alexaegis/logging": "^0.1.5",
 		"@alexaegis/object-match": "^0.2.0",

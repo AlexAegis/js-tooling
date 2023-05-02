@@ -712,9 +712,6 @@ importers:
       '@alexaegis/common':
         specifier: ^0.1.5
         version: 0.1.5
-      '@alexaegis/fs':
-        specifier: ^0.1.5
-        version: 0.1.5
       '@alexaegis/logging':
         specifier: ^0.1.5
         version: 0.1.5
@@ -1104,6 +1101,9 @@ importers:
 
   packages/setup-plugin:
     dependencies:
+      '@alexaegis/common':
+        specifier: ^0.1.5
+        version: 0.1.5
       '@alexaegis/fs':
         specifier: ^0.1.5
         version: 0.1.5

@@ -1,12 +1,20 @@
 import { asyncMap } from '@alexaegis/common';
-import { type SetupPlugin, type SetupPluginOptions } from '@alexaegis/setup-plugin';
+import {
+	type SetupElement,
+	type SetupElementExecutor,
+	type SetupPlugin,
+	type SetupPluginOptions,
+} from '@alexaegis/setup-plugin';
 import { tsSetupPlugin } from '@alexaegis/setup-ts';
 import { collectWorkspacePackages } from '@alexaegis/workspace-tools';
-import { applySetupElementsOnPackage } from './apply-setup-elements-on-package.function.js';
+import {
+	normalizeSetupOptions,
+	type SetupOptions,
+} from '../../../setup-plugin/src/plugin/setup.function.options.js';
+import { executeSetupElementsOnPackage } from './execute-setup-elements-on-package.function.js';
 import { filterElementsForPackage } from './helpers/filter-elements-for-package.function.js';
-import { groupElementsByTargetFile } from './helpers/group-elements-by-target-file.function.js';
+import { groupAndConsolidateElementsByTargetFile } from './helpers/group-elements-by-target-file.function.js';
 import { reportSetupElementError } from './report-setup-element-error.function.js';
-import { normalizeSetupOptions, type SetupOptions } from './setup.function.options.js';
 import { verifyPackageSetupElements } from './verify-package-setup-elements.function.js';
 
 export const setup = async (rawOptions: SetupOptions): Promise<void> => {
@@ -38,21 +46,35 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 		plugins.push(tsPlugin);
 	}
 
+	const executorMap = plugins.reduce((executorMap, plugin) => {
+		if (plugin.executors) {
+			for (const executor of plugin.executors) {
+				if (executorMap.has(executor.type)) {
+					options.logger.warn(`Executor ${executor.type} already loaded!`);
+				} else {
+					executorMap.set(executor.type, executor);
+				}
+			}
+		}
+		return executorMap;
+	}, new Map<string, SetupElementExecutor<SetupElement<string>>>());
+
 	// Collect elements?
 
-	const workspacePackageElements = workspacePackages.map((workspacePackage) =>
+	const workspacePackagesWithElements = workspacePackages.map((workspacePackage) =>
 		filterElementsForPackage(workspacePackage, plugins)
 	);
 
 	const workspacePackagesWithElementsByTarget = await asyncMap(
-		workspacePackageElements,
-		groupElementsByTargetFile
+		workspacePackagesWithElements,
+		(workspacePackageWithElements) =>
+			groupAndConsolidateElementsByTargetFile(workspacePackageWithElements, executorMap)
 	);
 
 	console.log(workspacePackagesWithElementsByTarget);
 
 	const errors = workspacePackagesWithElementsByTarget.flatMap((workspacePackageElements) =>
-		verifyPackageSetupElements(workspacePackageElements)
+		verifyPackageSetupElements(workspacePackageElements, executorMap)
 	);
 
 	if (errors.length > 0) {
@@ -65,9 +87,9 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 
 	logger.info('Valid setup elements, proceeding');
 
-	await Promise.allSettled([
+	await Promise.allSettled(
 		workspacePackagesWithElementsByTarget.map((workspacePackageElementsByTarget) =>
-			applySetupElementsOnPackage(workspacePackageElementsByTarget, options)
-		),
-	]);
+			executeSetupElementsOnPackage(workspacePackageElementsByTarget, executorMap, options)
+		)
+	);
 };

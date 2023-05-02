@@ -59,7 +59,6 @@
 	"dependencies": {
 		"@alexaegis/cli-tools": "^0.1.5",
 		"@alexaegis/common": "^0.1.5",
-		"@alexaegis/fs": "^0.1.5",
 		"@alexaegis/logging": "^0.1.5",
 		"@alexaegis/object-match": "workspace:^",
 		"@alexaegis/setup-plugin": "workspace:^",

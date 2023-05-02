@@ -1,7 +1,7 @@
 import {
 	getAssumedFinalInstallLocationOfPackage,
 	normalizeSetupPluginOptions,
-	type SetupElement,
+	type SetupElementFileCopy,
 	type SetupPlugin,
 	type SetupPluginOptions,
 } from '@alexaegis/setup-plugin';
@@ -19,15 +19,16 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 		name: 'ts',
 		elements: [
 			{
-				name: 'copy workspace root ts config',
-				type: 'file-copy',
+				description: 'copy workspace root ts config',
+				executor: 'file-copy',
 				packageKind: 'root',
 				targetFile: 'tsconfig.json',
+
 				sourceFile: join(packageDirectory, 'static', 'workspace-tsconfig.json'),
 			},
 			{
-				name: 'add workspace root ts scripts',
-				type: 'json',
+				description: 'add workspace root ts scripts',
+				executor: 'package-json',
 				packageKind: 'root',
 				targetFile: 'package.json',
 				packageJsonFilter: {
@@ -45,8 +46,8 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				},
 			},
 			{
-				name: 'add package ts scripts',
-				type: 'json',
+				description: 'add package ts scripts',
+				executor: 'package-json',
 				packageKind: 'regular',
 				targetFile: 'package.json',
 				packageJsonFilter: {
@@ -64,13 +65,13 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				},
 			},
 			{
-				name: 'remove unnecessary tsconfig files',
-				type: 'file-remove',
-				globPattern: 'tsconfig.!(json)',
+				description: 'remove unnecessary tsconfig files',
+				executor: 'file-remove',
+				targetFilePatterns: 'tsconfig.!(json)',
 			},
 			{
-				name: 'add @types/node as a devDependency',
-				type: 'json',
+				description: 'add @types/node as a devDependency',
+				executor: 'package-json',
 				packageKind: 'regular',
 				targetFile: 'package.json',
 				packageJsonFilter: {
@@ -82,9 +83,9 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 					},
 				},
 			},
-			...['base', 'web', 'svelte', 'node'].map<SetupElement>((flavour) => ({
+			...['base', 'web', 'svelte', 'node'].map<SetupElementFileCopy>((flavour) => ({
 				name: `copy tsconfig for ${flavour} packages`,
-				type: 'file-copy',
+				executor: 'file-copy',
 				packageKind: 'regular',
 				targetFile: 'tsconfig.json',
 				packageJsonFilter: {

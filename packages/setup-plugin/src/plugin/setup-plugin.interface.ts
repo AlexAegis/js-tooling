@@ -1,5 +1,7 @@
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
+import type { DefaultSetupElements } from '../index.js';
 import type { PackageJsonFilter } from './package-json-filter.interface.js';
+import type { SetupElementExecutor } from './setup-element-executor.interface.js';
 import type { SetupElement } from './setup-element.interface.js';
 
 export type SetupPluginElementPackageTargetKind = WorkspacePackage['packageKind'] | 'all';
@@ -26,7 +28,8 @@ export interface SetupPluginFilter {
 	packageKind?: SetupPluginElementPackageTargetKind | undefined;
 }
 
-export interface SetupPlugin extends SetupPluginFilter {
+export interface SetupPlugin<Elements extends SetupElement<string> = DefaultSetupElements>
+	extends SetupPluginFilter {
 	/**
 	 * Name of the plugin, used for logging.
 	 */
@@ -41,7 +44,8 @@ export interface SetupPlugin extends SetupPluginFilter {
 	 */
 	templateVariables?: Record<string | number, string> | undefined;
 
-	elements: SetupElement[];
+	elements: Elements[];
+	executors?: SetupElementExecutor<SetupElement<string>>[] | undefined;
 }
 
 export interface SourcePluginInformation {

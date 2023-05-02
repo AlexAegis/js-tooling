@@ -1,4 +1,4 @@
-import type { SetupElementWithSourcePlugin, SetupPlugin } from '@alexaegis/setup-plugin';
+import type { InternalSetupElement, SetupPlugin } from '@alexaegis/setup-plugin';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 import type { WorkspacePackageWithElements } from '../types.interface.js';
 import { elementAndPluginFilter } from './element-and-plugin-filter.function.js';
@@ -11,15 +11,16 @@ export const filterElementsForPackage = (
 	setupPlugins: SetupPlugin[]
 ): WorkspacePackageWithElements => {
 	return {
-		...workspacePackage,
+		workspacePackage,
 		elements: setupPlugins
 			.filter((plugin) => elementAndPluginFilter(workspacePackage, plugin))
-			.flatMap((plugin) =>
-				plugin.elements
+			.flatMap((sourcePlugin) =>
+				sourcePlugin.elements
 					.filter((element) => elementAndPluginFilter(workspacePackage, element))
-					.map<SetupElementWithSourcePlugin>((element) => ({
+					.map<InternalSetupElement>((element) => ({
 						...element,
-						sourcePlugin: plugin,
+						sourcePlugin,
+						workspacePackage,
 					}))
 			),
 	};
