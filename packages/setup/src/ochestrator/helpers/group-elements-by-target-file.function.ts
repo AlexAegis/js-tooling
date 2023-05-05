@@ -1,10 +1,10 @@
-import type { InternalSetupElement } from '@alexaegis/setup-plugin';
+import type {
+	InternalSetupElement,
+	WorkspacePackageElementsByTarget,
+} from '@alexaegis/setup-plugin';
 import type { ExecutorMap } from '../executor-map.type.js';
 import { normalizeSetupElementTargets } from '../normalize-setup-element-target.function.js';
-import type {
-	WorkspacePackageElementsByTarget,
-	WorkspacePackageWithElements,
-} from '../types.interface.js';
+import type { WorkspacePackageWithElements } from '../types.interface.js';
 import { consolidateSetupElements } from './consolidate-elements.function.js';
 import { mapRecord } from './map-record.function.js';
 

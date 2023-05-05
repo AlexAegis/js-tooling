@@ -18,12 +18,6 @@ export interface WorkspacePackageWithTargetedElements {
 	untargetedElements: InternalSetupElement[];
 }
 
-export interface WorkspacePackageElementsByTarget {
-	workspacePackage: WorkspacePackage;
-	targetedElementsByFile: Record<string, InternalSetupElement[]>;
-	untargetedElements: InternalSetupElement[];
-}
-
 /**
  * TODO: remove this, use core
  */

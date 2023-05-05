@@ -8,6 +8,7 @@
 		"esbenp.prettier-vscode",
 		"Gruntfuggly.todo-tree",
 		"mhutchie.git-graph",
-		"svelte.svelte-vscode"
+		"svelte.svelte-vscode",
+		"github.vscode-github-actions"
 	]
 }

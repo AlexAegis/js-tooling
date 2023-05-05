@@ -1,19 +1,14 @@
+import type { SetupElementError, WorkspacePackageElementsByTarget } from '@alexaegis/setup-plugin';
 import { minimatch } from 'minimatch';
-import type { ExecutorMap } from './executor-map.type.js';
-import {
-	SETUP_ERROR_WORKSPACE_ELEMENT_TARGETING_INSIDE_PACKAGE,
-	type PackageSetupElementError,
-} from './setup-errors.js';
-import type { WorkspacePackageElementsByTarget } from './types.interface.js';
 
 /**
  * Checks for conflicts in the collected setup elements for all targets
  */
 export const verifyPackageSetupElements = (
-	workspacePackageElementsByTarget: WorkspacePackageElementsByTarget,
-	_executorMap: ExecutorMap
-): PackageSetupElementError[] => {
+	workspacePackageElementsByTarget: WorkspacePackageElementsByTarget
+): SetupElementError[] => {
 	const errors = [];
+
 	if (workspacePackageElementsByTarget.workspacePackage.packageKind === 'root') {
 		// TODO: Detect this in a dedicated function and test it!
 		// TODO: Add verifications to the plugins too!
@@ -30,9 +25,9 @@ export const verifyPackageSetupElements = (
 
 		if (elementsTargetingInsideAPackage.length > 0) {
 			errors.push(
-				...elementsTargetingInsideAPackage.map<PackageSetupElementError>(
+				...elementsTargetingInsideAPackage.map<SetupElementError>(
 					(elementTargetingInsideAPackage) => ({
-						type: SETUP_ERROR_WORKSPACE_ELEMENT_TARGETING_INSIDE_PACKAGE,
+						type: 'ETRYINGTOMODIFYPKGFROMROOT',
 						message: 'A workspace level element tries to modify a a sub-package!',
 						workspacePackage: workspacePackageElementsByTarget.workspacePackage,
 						target: elementTargetingInsideAPackage.target,

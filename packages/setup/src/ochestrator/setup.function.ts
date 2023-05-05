@@ -15,7 +15,7 @@ import { executeSetupElementsOnPackage } from './execute-setup-elements-on-packa
 import { filterElementsForPackage } from './helpers/filter-elements-for-package.function.js';
 import { groupAndConsolidateElementsByTargetFile } from './helpers/group-elements-by-target-file.function.js';
 import { reportSetupElementError } from './report-setup-element-error.function.js';
-import { verifyPackageSetupElements } from './verify-package-setup-elements.function.js';
+import type { PackageSetupElementErrorWithSourceData } from './setup-errors.js';
 
 export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 	const options = normalizeSetupOptions(rawOptions);
@@ -59,6 +59,7 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 		return executorMap;
 	}, new Map<string, SetupElementExecutor<SetupElement<string>>>());
 
+	const verifiers = plugins.flatMap((plugin) => plugin.validators ?? []);
 	// Collect elements?
 
 	const workspacePackagesWithElements = workspacePackages.map((workspacePackage) =>
@@ -71,10 +72,19 @@ export const setup = async (rawOptions: SetupOptions): Promise<void> => {
 			groupAndConsolidateElementsByTargetFile(workspacePackageWithElements, executorMap)
 	);
 
-	console.log(workspacePackagesWithElementsByTarget);
-
-	const errors = workspacePackagesWithElementsByTarget.flatMap((workspacePackageElements) =>
-		verifyPackageSetupElements(workspacePackageElements, executorMap)
+	const errors: PackageSetupElementErrorWithSourceData[] = verifiers.flatMap((verifier) =>
+		workspacePackagesWithElementsByTarget.flatMap((workspacePackageElements) =>
+			verifier(workspacePackageElements).map<PackageSetupElementErrorWithSourceData>(
+				(error) => ({
+					// TODO fill metadata
+					sourceElements: [],
+					sourcePlugins: [],
+					target: '',
+					workspacePackage: workspacePackageElements.workspacePackage,
+					message: error.message,
+				})
+			)
+		)
 	);
 
 	if (errors.length > 0) {

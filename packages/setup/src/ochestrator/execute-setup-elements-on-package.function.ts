@@ -1,7 +1,6 @@
+import type { WorkspacePackageElementsByTarget } from '@alexaegis/setup-plugin';
 import type { NormalizedSetupOptions } from '../../../setup-plugin/src/plugin/setup.function.options.js';
 import type { ExecutorMap } from './executor-map.type.js';
-
-import type { WorkspacePackageElementsByTarget } from './types.interface.js';
 
 /**
  * Targeted files are executed concurrently but elements targeting the same

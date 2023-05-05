@@ -17,14 +17,14 @@
 		"build-lib_": {
 			"env": ["TARGET_ENV"],
 			"dependsOn": ["^prebuild_", "^build-lib_"],
-			"inputs": ["**/*", "!src/**/*.{spec,test}.{ts,js}"],
+			"inputs": ["**/*", "!src/**/*.spec.{ts,js,tsx,jsx}"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
 		"build-app_": {
 			"env": ["TARGET_ENV", "BASE_HREF"],
 			"dependsOn": ["^prebuild_", "^build-lib_"],
-			"inputs": ["**/*", "!src/**/*.{spec,test}.{ts,js}"],
+			"inputs": ["**/*", "!src/**/*.spec.{ts,js,tsx,jsx}"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
@@ -44,7 +44,12 @@
 				"lint:style:scss_",
 				"lint:style:html_",
 				"lint:md_",
-				"lint:format_"
+				"lint:format_",
+				"//#lint:es_",
+				"//#lint:depcheck_",
+				"//#lint:tsc_",
+				"//#lint:md_",
+				"//#lint:format_"
 			],
 			"outputMode": "new-only"
 		},

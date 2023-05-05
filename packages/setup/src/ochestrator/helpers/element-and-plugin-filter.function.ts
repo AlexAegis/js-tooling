@@ -1,5 +1,5 @@
 import { isNotNullish } from '@alexaegis/common';
-import { objectMatch, type JsonMatcher } from '@alexaegis/object-match';
+import { match, type JsonMatcher } from '@alexaegis/match';
 import type { SetupPluginFilter } from '@alexaegis/setup-plugin';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 
@@ -12,7 +12,7 @@ export const elementAndPluginFilter = (
 	let result = pluginPackageKind === 'all' || pluginPackageKind === workspacePackage.packageKind;
 
 	if (isNotNullish(filter.packageJsonFilter)) {
-		const packageJsonMatch = objectMatch(
+		const packageJsonMatch = match(
 			workspacePackage.packageJson,
 			filter.packageJsonFilter as JsonMatcher
 		);

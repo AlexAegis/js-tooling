@@ -1,8 +1,8 @@
 import type { NormalizedLoggerOption } from '@alexaegis/logging';
-import type { PackageSetupElementError } from './setup-errors.js';
+import type { PackageSetupElementErrorWithSourceData } from './setup-errors.js';
 
 export const reportSetupElementError = (
-	error: PackageSetupElementError,
+	error: PackageSetupElementErrorWithSourceData,
 	options: NormalizedLoggerOption
 ): void => {
 	const affectedPlugins = `Affected plugin${
@@ -14,7 +14,7 @@ export const reportSetupElementError = (
 		.map((e) => e.executor + (e.description ? ' "' + e.description + '"' : ''))
 		.join(', ')}`;
 
-	options.logger.error(`Error: ${error.type}
+	options.logger.error(`Error:
 	Reason: ${error.message}
 	Target: ${error.target}
 	${affectedPlugins}
