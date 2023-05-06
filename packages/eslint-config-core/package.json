@@ -59,7 +59,7 @@
 		"eslint-config-turbo": "^1.9.3",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-svelte": "^2.27.3",
-		"eslint-plugin-unicorn": "^46.0.0",
+		"eslint-plugin-unicorn": "^47.0.0",
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {

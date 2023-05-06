@@ -71,7 +71,6 @@ export default {
 		'unicorn/prevent-abbreviations': 'off', // no thanks
 		'unicorn/prefer-top-level-await': 'off', // Until ES2022 is used as target
 		'unicorn/no-useless-undefined': 'off', // for .catch(() => undefined)
-		'unicorn/no-for-loop': 'off', // Seriously?,
-		'unicorn/expiring-todo-comments': 'off', // TODO: Remove me once this resolves https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2076
+		'unicorn/no-for-loop': 'off', // Seriously?
 	},
 } as Linter.Config;

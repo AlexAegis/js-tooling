@@ -351,8 +351,8 @@ importers:
         specifier: ^2.27.3
         version: 2.27.3(eslint@8.40.0)(svelte@3.59.0)(ts-node@10.9.1)
       eslint-plugin-unicorn:
-        specifier: ^46.0.0
-        version: 46.0.0(eslint@8.40.0)
+        specifier: ^47.0.0
+        version: 47.0.0(eslint@8.40.0)
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -419,8 +419,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(eslint@8.40.0)(svelte@3.59.0)
       eslint-plugin-unicorn:
-        specifier: ^46.0.0
-        version: 46.0.0(eslint@8.40.0)
+        specifier: ^47.0.0
+        version: 47.0.0(eslint@8.40.0)
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -671,67 +671,6 @@ importers:
         specifier: ^0.31.0
         version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
 
-  packages/setup:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/common':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/logging':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/match':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/setup-plugin':
-        specifier: workspace:^
-        version: link:../setup-plugin
-      '@alexaegis/setup-ts':
-        specifier: workspace:^
-        version: link:../setup-ts
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.6
-        version: 0.1.6
-      globby:
-        specifier: ^13.1.4
-        version: 13.1.4
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: workspace:^
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: workspace:^
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: workspace:^
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: workspace:^
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.0
-        version: 20.1.0
-      '@types/yargs':
-        specifier: 17.0.24
-        version: 17.0.24
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.5
-        version: 4.3.5(@types/node@20.1.0)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
   packages/setup-commitlint:
     dependencies:
       '@alexaegis/cli-tools':
@@ -749,61 +688,6 @@ importers:
       commitlint:
         specifier: ^17.6.3
         version: 17.6.3
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.0
-        version: 20.1.0
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.5
-        version: 4.3.5(@types/node@20.1.0)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
-  packages/setup-default-plugin:
-    dependencies:
-      '@alexaegis/common':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/fs':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/logging':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/match':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/setup-plugin':
-        specifier: ^0.2.0
-        version: link:../setup-plugin
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.6
-        version: 0.1.6
-      minimatch:
-        specifier: ^9.0.0
-        version: 9.0.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.2.0
@@ -1089,55 +973,6 @@ importers:
       lint-staged:
         specifier: ^13.2.2
         version: 13.2.2
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.0
-        version: 20.1.0
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.5
-        version: 4.3.5(@types/node@20.1.0)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
-  packages/setup-plugin:
-    dependencies:
-      '@alexaegis/common':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/fs':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/logging':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/match':
-        specifier: ^0.1.6
-        version: 0.1.6
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.6
-        version: 0.1.6
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.2.0
@@ -1479,9 +1314,9 @@ importers:
 
   packages/setup-ts:
     dependencies:
-      '@alexaegis/setup-plugin':
-        specifier: ^0.2.0
-        version: link:../setup-plugin
+      '@alexaegis/logging':
+        specifier: ^0.1.6
+        version: 0.1.6
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.1.0)(typescript@5.0.4)
@@ -2067,11 +1902,6 @@ packages:
     dependencies:
       '@alexaegis/common': 0.1.6
       tslog: 4.8.2
-
-  /@alexaegis/match@0.1.6:
-    resolution: {integrity: sha512-c/lFwSdxEt/sP8QyNvKC+xYs6+vSENA7s8bBiVulOZA/rQ6cBrJgz89z14BV5WvTZ4QDuMcYE2f/Bywe8KZGLw==}
-    engines: {node: '>=18.13.0'}
-    dev: false
 
   /@alexaegis/workspace-tools@0.1.1:
     resolution: {integrity: sha512-T3zoD0d/Zy2CBA+49uosvN8WL9gPiZK74cTMd3dKBUXcU4zMkJAAepgq5zF1jEeUwhAjgu5CNx2A0jTmSx2O2Q==}
@@ -2889,8 +2719,8 @@ packages:
     dependencies:
       graceful-fs: 4.2.10
 
-  /@pnpm/npm-conf@2.1.1:
-    resolution: {integrity: sha512-yfRcuupmxxeDOSxvw4g+wFCrGiPD0L32f5WMzqMXp7Rl93EOCdFiDcaSNnZ10Up9GdNqkj70UTa8hfhPFphaZA==}
+  /@pnpm/npm-conf@2.2.0:
+    resolution: {integrity: sha512-roLI1ul/GwzwcfcVpZYPdrgW2W/drLriObl1h+yLF5syc8/5ULWw2ALbCHUWF+4YltIqA3xFSbG4IwyJz37e9g==}
     engines: {node: '>=12'}
     dependencies:
       '@pnpm/config.env-replace': 1.1.0
@@ -3301,7 +3131,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       '@typescript-eslint/types': 5.59.2
-      eslint-visitor-keys: 3.4.0
+      eslint-visitor-keys: 3.4.1
     dev: false
 
   /@vitest/coverage-c8@0.31.0(vitest@0.31.0):
@@ -5077,11 +4907,11 @@ packages:
       eslint: 8.40.0
     dev: false
 
-  /eslint-plugin-unicorn@46.0.0(eslint@8.40.0):
-    resolution: {integrity: sha512-j07WkC+PFZwk8J33LYp6JMoHa1lXc1u6R45pbSAipjpfpb7KIGr17VE2D685zCxR5VL4cjrl65kTJflziQWMDA==}
-    engines: {node: '>=14.18'}
+  /eslint-plugin-unicorn@47.0.0(eslint@8.40.0):
+    resolution: {integrity: sha512-ivB3bKk7fDIeWOUmmMm9o3Ax9zbMz1Bsza/R2qm46ufw4T6VBFBaJIR1uN3pCKSmSXm8/9Nri8V+iUut1NhQGA==}
+    engines: {node: '>=16'}
     peerDependencies:
-      eslint: '>=8.28.0'
+      eslint: '>=8.38.0'
     dependencies:
       '@babel/helper-validator-identifier': 7.19.1
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.40.0)
@@ -5096,7 +4926,7 @@ packages:
       pluralize: 8.0.0
       read-pkg-up: 7.0.1
       regexp-tree: 0.1.27
-      regjsparser: 0.9.1
+      regjsparser: 0.10.0
       safe-regex: 2.1.1
       semver: 7.5.0
       strip-indent: 3.0.0
@@ -8280,7 +8110,7 @@ packages:
     resolution: {integrity: sha512-o/3ikDxtXaA59BmZuZrJZDJv8NMDGSj+6j6XaeBmHw8eY1i1qd9+6H+LjVvQXx3HN6aRCGa1cUdJ9RaJZUugnQ==}
     engines: {node: '>=14'}
     dependencies:
-      '@pnpm/npm-conf': 2.1.1
+      '@pnpm/npm-conf': 2.2.0
 
   /registry-url@6.0.1:
     resolution: {integrity: sha512-+crtS5QjFRqFCoQmvGduwYWEBng99ZvmFvF+cUJkGYF1L1BfU8C6Zp9T7f5vPAwyLkUExpvK+ANVZmGU49qi4Q==}
@@ -8288,8 +8118,8 @@ packages:
     dependencies:
       rc: 1.2.8
 
-  /regjsparser@0.9.1:
-    resolution: {integrity: sha512-dQUtn90WanSNl+7mQKcXAgZxvUe7Z0SqXlgzv0za4LwiUhyzBC58yQO3liFoUgu8GiJVInAhJjkj1N0EtQ5nkQ==}
+  /regjsparser@0.10.0:
+    resolution: {integrity: sha512-qx+xQGZVsy55CH0a1hiVwHmqjLryfh7wQyF5HO07XJ9f7dQMY/gPQHhlyDkIzJKC+x2fUCpCcUODUUUFrm7SHA==}
     hasBin: true
     dependencies:
       jsesc: 0.5.0

@@ -57,7 +57,7 @@
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
 	"dependencies": {
-		"@alexaegis/setup-plugin": "^0.2.0",
+		"@alexaegis/logging": "^0.1.6",
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {

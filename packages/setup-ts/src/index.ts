@@ -1,13 +1,15 @@
+import { join } from 'node:path';
+import packageJson from '../package.json';
 import {
 	getAssumedFinalInstallLocationOfPackage,
 	normalizeSetupPluginOptions,
-	type SetupElementFileCopy,
 	type SetupPlugin,
 	type SetupPluginOptions,
-} from '@alexaegis/setup-plugin';
-import { join } from 'node:path';
-import packageJson from '../package.json';
+} from './mock/autotool-plugin.js'; // TODO remove
 
+/**
+ * TODO: uncomment stuff
+ */
 export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | undefined => {
 	const options = normalizeSetupPluginOptions(rawOptions);
 	const logger = options.logger.getSubLogger({ name: 'ts' });
@@ -31,9 +33,9 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				executor: 'package-json',
 				packageKind: 'root',
 				targetFile: 'package.json',
-				packageJsonFilter: {
-					keywords: (keywords) => keywords.includes(packageJson.name),
-				},
+				//packageJsonFilter: {
+				//	keywords: (keywords) => keywords.includes(packageJson.name),
+				//},
 				data: {
 					scripts: {
 						'lint:tsc': 'turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo',
@@ -50,9 +52,9 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				executor: 'package-json',
 				packageKind: 'regular',
 				targetFile: 'package.json',
-				packageJsonFilter: {
-					keywords: (keywords) => keywords.includes(packageJson.name),
-				},
+				//packageJsonFilter: {
+				//	keywords: (keywords) => keywords.includes(packageJson.name),
+				//},
 				data: {
 					scripts: {
 						'lint:tsc':
@@ -69,33 +71,33 @@ export const tsSetupPlugin = (rawOptions: SetupPluginOptions): SetupPlugin | und
 				executor: 'file-remove',
 				targetFilePatterns: 'tsconfig.!(json)',
 			},
-			{
-				description: 'add @types/node as a devDependency',
-				executor: 'package-json',
-				packageKind: 'regular',
-				targetFile: 'package.json',
-				packageJsonFilter: {
-					keywords: (keywords) => keywords.includes(`${packageJson.name}-node`),
-				},
-				data: {
-					devDependencies: {
-						'@types/node': packageJson.devDependencies['@types/node'],
-					},
-				},
-			},
-			...['base', 'web', 'svelte', 'node'].map<SetupElementFileCopy>((flavour) => ({
-				name: `copy tsconfig for ${flavour} packages`,
-				executor: 'file-copy',
-				packageKind: 'regular',
-				targetFile: 'tsconfig.json',
-				packageJsonFilter: {
-					keywords: (keywords) => keywords.includes(`${packageJson.name}-${flavour}`),
-				},
-				sourceFile: join(packageDirectory, 'static', 'package-simple-tsconfig.json'),
-				templateVariables: {
-					flavour,
-				},
-			})),
+			//{
+			//	description: 'add @types/node as a devDependency',
+			//	executor: 'package-json',
+			//	packageKind: 'regular',
+			//	targetFile: 'package.json',
+			//	packageJsonFilter: {
+			//		keywords: (keywords) => keywords.includes(`${packageJson.name}-node`),
+			//	},
+			//	data: {
+			//		devDependencies: {
+			//			'@types/node': packageJson.devDependencies['@types/node'],
+			//		},
+			//	},
+			//},
+			//...['base', 'web', 'svelte', 'node'].map<SetupElementFileCopy>((flavour) => ({
+			//	name: `copy tsconfig for ${flavour} packages`,
+			//	executor: 'file-copy',
+			//	packageKind: 'regular',
+			//	targetFile: 'tsconfig.json',
+			//	packageJsonFilter: {
+			//		keywords: (keywords) => keywords.includes(`${packageJson.name}-${flavour}`),
+			//	},
+			//	sourceFile: join(packageDirectory, 'static', 'package-simple-tsconfig.json'),
+			//	templateVariables: {
+			//		flavour,
+			//	},
+			//})),
 		],
 	};
 };
