@@ -56,11 +56,11 @@
 		"setup-workspace": "./shims/setup-workspace.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.6",
-		"@alexaegis/logging": "^0.1.6",
+		"@alexaegis/cli-tools": "^0.1.7",
+		"@alexaegis/logging": "^0.1.7",
 		"@alexaegis/setup-editorconfig": "^0.2.0",
-		"@alexaegis/workspace-tools": "^0.1.6",
-		"npm-check-updates": "^16.10.9"
+		"@alexaegis/workspace-tools": "^0.1.7",
+		"npm-check-updates": "^16.10.12"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",
@@ -68,7 +68,7 @@
 		"@alexaegis/ts": "^0.2.0",
 		"@alexaegis/vite": "^0.2.0",
 		"@alexaegis/vitest": "^0.2.0",
-		"@types/node": "^20.1.0",
+		"@types/node": "^20.1.4",
 		"@vitest/coverage-c8": "^0.31.0",
 		"publint": "^0.1.11",
 		"typescript": "^5.0.4",
