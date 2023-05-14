@@ -7,6 +7,7 @@
 		"@alexaegis/nuke",
 		"@alexaegis/coverage-tools",
 		"@alexaegis/stylelint-config",
+		"autotool-plugin-*",
 		"@types/eslint",
 		"@types/node",
 		"@commitlint/config-conventional",

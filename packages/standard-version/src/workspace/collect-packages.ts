@@ -1,8 +1,9 @@
+import { isNotNullish } from '@alexaegis/common';
 import type { PackageJson, PnpmWorkspaceYaml, WorkspacePackage } from '@alexaegis/workspace-tools';
 import { globSync } from 'glob';
 import { load } from 'js-yaml';
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { join, normalize } from 'node:path';
+import { dirname, join, normalize, relative } from 'node:path';
 
 const PACKAGE_JSON_NAME = 'package.json';
 
@@ -50,18 +51,26 @@ export const collectPackages = (): {
 		packageJson: workspacePackageJson,
 		packageJsonPath: workspacePackageJsonPath,
 		workspacePackagePatterns: workspaces,
+		packagePathFromRootPackage: '.',
 	};
-	const subPackages: WorkspacePackage[] = packagePaths.map((packagePath) => {
-		const packageJsonPath = join(packagePath, PACKAGE_JSON_NAME);
-		return {
-			packageKind: 'regular',
-			packagePath: packagePath.toString(),
-			packageJsonPath,
-			packageJson: JSON.parse(
-				readFileSync(packageJsonPath, { encoding: 'utf8' })
-			) as PackageJson,
-		};
-	});
+	const subPackages: WorkspacePackage[] = packagePaths
+		.map((packagePath) => {
+			const packageJsonPath = join(packagePath, PACKAGE_JSON_NAME);
+			try {
+				return {
+					packageKind: 'regular',
+					packagePath: packagePath.toString(),
+					packageJsonPath,
+					packageJson: JSON.parse(
+						readFileSync(packageJsonPath, { encoding: 'utf8' })
+					) as PackageJson,
+					packagePathFromRootPackage: relative(workspaceRoot, dirname(packageJsonPath)),
+				} as WorkspacePackage;
+			} catch {
+				return undefined;
+			}
+		})
+		.filter(isNotNullish);
 
 	return { workspacePackage, subPackages };
 };

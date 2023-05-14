@@ -10,7 +10,7 @@ const getPackageJsonNameWithoutOrg = (packageName = ''): string => {
 	return packageNameWithoutOrg;
 };
 
-export const getLocalPackageNamesWithoutOrg = (): string[] => {
+export const getLocalPackageNames = (): string[] => {
 	return collectPackages().subPackages.map((p) =>
 		getPackageJsonNameWithoutOrg(p.packageJson.name)
 	);
@@ -18,7 +18,7 @@ export const getLocalPackageNamesWithoutOrg = (): string[] => {
 
 export const createCommitlintConfig = (): UserConfig => {
 	const genericScopes = ['docs', 'lint', 'changelog', 'release'];
-	const localPackageNames = getLocalPackageNamesWithoutOrg();
+	const localPackageNames = getLocalPackageNames();
 
 	return {
 		extends: ['@commitlint/config-conventional'],
