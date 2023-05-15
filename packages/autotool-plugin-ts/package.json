@@ -1,18 +1,21 @@
 {
-	"name": "@alexaegis/setup-ts",
-	"description": "Exports custom updaters for standard-version",
+	"name": "@alexaegis/autotool-plugin-ts",
+	"description": "TypeScript setup",
 	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "autotool",
+		"language": "ts",
+		"kind": "lib",
+		"bundler": "vite",
+		"testing": "vitest"
+	},
 	"keywords": [
-		"@alexaegis/setup-depcheck",
-		"@alexaegis/setup-eslint",
-		"@alexaegis/setup-prettier",
-		"@alexaegis/setup-publint",
-		"@alexaegis/setup-remark",
-		"@alexaegis/setup-ts-node",
-		"@alexaegis/setup-vite-lib",
-		"@alexaegis/setup-vitest-node",
+		"autotool-plugin",
+		"managed-by-autotool",
+		"ts",
 		"tsconfig",
 		"typescript"
 	],
@@ -24,22 +27,22 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"publint_": "publint dist",
 		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-ts",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
 	},
@@ -57,7 +60,9 @@
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.1.7",
+		"@alexaegis/logging": "^0.1.8",
+		"@alexaegis/workspace-tools": "^0.1.8",
+		"autotool-plugin": "^0.0.2",
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {
@@ -71,7 +76,7 @@
 		"@types/node": "^20.1.4",
 		"@vitest/coverage-c8": "^0.31.0",
 		"publint": "^0.1.11",
-		"vite": "^4.3.5",
+		"vite": "^4.3.6",
 		"vitest": "^0.31.0"
 	}
 }

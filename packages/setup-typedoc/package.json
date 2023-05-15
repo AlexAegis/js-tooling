@@ -4,17 +4,25 @@
 	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "autotool",
+		"language": "ts",
+		"kind": "lib",
+		"bundler": "vite",
+		"testing": "vitest"
+	},
 	"keywords": [
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
-		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-typedoc",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
-		"turbo"
+		"managed-by-autotool",
+		"typedoc"
 	],
 	"type": "module",
 	"config": {
@@ -60,9 +68,9 @@
 		"setup-typedoc": "./shims/setup-typedoc.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.7",
-		"@alexaegis/logging": "^0.1.7",
-		"@alexaegis/workspace-tools": "^0.1.7",
+		"@alexaegis/cli-tools": "^0.1.8",
+		"@alexaegis/logging": "^0.1.8",
+		"@alexaegis/workspace-tools": "^0.1.8",
 		"typedoc": "^0.24.7"
 	},
 	"devDependencies": {
@@ -74,7 +82,7 @@
 		"@vitest/coverage-c8": "^0.31.0",
 		"publint": "^0.1.11",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.5",
+		"vite": "^4.3.6",
 		"vitest": "^0.31.0"
 	}
 }

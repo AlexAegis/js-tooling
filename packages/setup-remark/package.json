@@ -4,15 +4,23 @@
 	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "autotool",
+		"language": "ts",
+		"kind": "lib",
+		"bundler": "vite",
+		"testing": "vitest"
+	},
 	"keywords": [
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
-		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
+		"managed-by-autotool",
 		"markdown"
 	],
 	"type": "module",
@@ -60,10 +68,10 @@
 		"setup-remark": "./shims/setup-remark.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.7",
-		"@alexaegis/logging": "^0.1.7",
+		"@alexaegis/cli-tools": "^0.1.8",
+		"@alexaegis/logging": "^0.1.8",
 		"@alexaegis/remark-preset": "^0.2.0",
-		"@alexaegis/workspace-tools": "^0.1.7"
+		"@alexaegis/workspace-tools": "^0.1.8"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",
@@ -76,7 +84,7 @@
 		"publint": "^0.1.11",
 		"remark": "^14.0.2",
 		"remark-cli": "^11.0.0",
-		"vite": "^4.3.5",
+		"vite": "^4.3.6",
 		"vitest": "^0.31.0"
 	}
 }

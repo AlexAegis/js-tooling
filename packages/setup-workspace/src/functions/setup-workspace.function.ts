@@ -50,7 +50,7 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					'@alexaegis/setup-remark': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-standard-version': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-stylelint': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-ts': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-ts': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-turbo': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-vite': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-vitest': `^${packageJson.version}`, // versioned together

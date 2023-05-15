@@ -30,7 +30,26 @@
 		},
 		"ce_": {
 			"outputs": [],
-			"dependsOn": ["lint_", "build-app_", "build-lib_", "test_", "typedoc_"],
+			"dependsOn": [
+				"lint_",
+				"build-app_",
+				"build-lib_",
+				"test_",
+				"typedoc_",
+				"//#typedoc_",
+				"//#lint_"
+			],
+			"outputMode": "new-only"
+		},
+		"//#lint_": {
+			"outputs": [],
+			"dependsOn": [
+				"//#lint:es_",
+				"//#lint:depcheck_",
+				"//#lint:tsc_",
+				"//#lint:md_",
+				"//#lint:format_"
+			],
 			"outputMode": "new-only"
 		},
 		"lint_": {
@@ -44,12 +63,7 @@
 				"lint:style:scss_",
 				"lint:style:html_",
 				"lint:md_",
-				"lint:format_",
-				"//#lint:es_",
-				"//#lint:depcheck_",
-				"//#lint:tsc_",
-				"//#lint:md_",
-				"//#lint:format_"
+				"lint:format_"
 			],
 			"outputMode": "new-only"
 		},

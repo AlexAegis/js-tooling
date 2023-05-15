@@ -4,11 +4,20 @@
 	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "vite",
+		"language": "ts",
+		"kind": "lib",
+		"bundler": "vite",
+		"testing": "vitest"
+	},
 	"keywords": [
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
+		"managed-by-autotool",
 		"vite"
 	],
 	"type": "module",
@@ -63,13 +72,13 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.1.7",
+		"@alexaegis/logging": "^0.1.8",
 		"@sveltejs/vite-plugin-svelte": "^2.2.0",
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",
 		"svelte": "^3.59.1",
-		"vite": "^4.3.5",
-		"vite-plugin-autolib": "^0.1.0",
+		"vite": "^4.3.6",
+		"vite-plugin-autolib": "^0.1.1",
 		"vite-plugin-dts": "^2.3.0"
 	},
 	"optionalDependencies": {

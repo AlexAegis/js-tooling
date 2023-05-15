@@ -18,8 +18,10 @@ inherit from.
 ### `"moduleResolution": "nodenext",`
 
 Very important for interop with ES Modules. When importing a locally bundled
-dependency, using 'node' would try to import cjs modules from es
-modules,resulting in a runtime error.
+dependency, using 'node' would try to import cjs modules from es modules,
+resulting in a runtime error.
+
+TODO: Explore `"moduleResolution": "bundler",`
 
 ### `"target": "es2020",`
 

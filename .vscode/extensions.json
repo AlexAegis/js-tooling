@@ -9,6 +9,7 @@
 		"Gruntfuggly.todo-tree",
 		"mhutchie.git-graph",
 		"svelte.svelte-vscode",
-		"github.vscode-github-actions"
+		"github.vscode-github-actions",
+		"unifiedjs.vscode-remark"
 	]
 }

@@ -22,10 +22,10 @@ like the `setup-*` packages.
 - [vite](packages/vite/)
 - [vitest](packages/vitest/)
 
-## auto-setup providers
+## autotool plugins
 
-Every `setup-*` package's job is to distribute files and `package.json` entries
-in the workspace on `postinstall`.
+Every `autotool-plugin-*` packages job is to distribute files and `package.json`
+entries in the workspace on `postinstall`.
 
 - [setup-editorconfig](packages/setup-editorconfig/)
 - [setup-eslint](packages/setup-eslint/)
@@ -35,7 +35,7 @@ in the workspace on `postinstall`.
 - [setup-remark](packages/setup-remark/)
 - [setup-standard-version](packages/setup-standard-version/)
 - [setup-stylelint](packages/setup-stylelint/)
-- [setup-ts](packages/setup-ts/)
+- [autotool-plugin-ts](packages/autotool-plugin-ts/)
 - [setup-turbo](packages/setup-turbo/)
 - [setup-vite](packages/setup-vite/)
 - [setup-vitest](packages/setup-vitest/)
@@ -51,20 +51,6 @@ Packages bundling other packages together
 These are either help config providers function or help manage a workspace
 
 - [nuke](packages/nuke/)
-
-## Assumptions
-
-> maybe these could be turned into lints?
-
-- `ci.yml`
-  - Package names match the folders they're in. (`@org/foo` is in a folder
-    called `foo`)
-  - Every package is either under the same `@org` or in none
-
-## Repository setup guide
-
-1.  Put it together
-2.  Done
 
 ### When using [`turbo`](packages/setup-turbo/)
 

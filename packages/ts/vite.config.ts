@@ -12,7 +12,12 @@ export default defineConfigWithDefaults({
 			{
 				...autolib({
 					// Check the readme too see why these files are here
-					autoExportStaticGlobs: ['base.json', 'node.json', 'web.json', 'svelte.json'],
+					autoExportStaticGlobs: [
+						'base.json',
+						'node.json',
+						'web.json',
+						'web-svelte.json',
+					],
 				}),
 				apply: 'build',
 			},

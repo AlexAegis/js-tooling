@@ -4,15 +4,23 @@
 	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "stylelint",
+		"language": "ts",
+		"kind": "lib",
+		"bundler": "vite",
+		"testing": "vitest"
+	},
 	"keywords": [
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
-		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
+		"managed-by-autotool",
 		"stylelint"
 	],
 	"type": "module",
@@ -66,7 +74,7 @@
 		"publint": "^0.1.11",
 		"stylelint": "^15.6.1",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.5",
+		"vite": "^4.3.6",
 		"vitest": "^0.31.0"
 	}
 }

@@ -4,15 +4,23 @@
 	"version": "0.2.0",
 	"license": "MIT",
 	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "autotool",
+		"language": "ts",
+		"kind": "lib",
+		"bundler": "vite",
+		"testing": "vitest"
+	},
 	"keywords": [
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
-		"@alexaegis/setup-ts-node",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
+		"managed-by-autotool",
 		"vite"
 	],
 	"type": "module",
@@ -57,12 +65,12 @@
 		"setup-vite": "./shims/setup-vite.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.1.7",
-		"@alexaegis/logging": "^0.1.7",
-		"@alexaegis/workspace-tools": "^0.1.7",
+		"@alexaegis/cli-tools": "^0.1.8",
+		"@alexaegis/logging": "^0.1.8",
+		"@alexaegis/workspace-tools": "^0.1.8",
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",
-		"vite": "^4.3.5"
+		"vite": "^4.3.6"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",
@@ -73,7 +81,7 @@
 		"@vitest/coverage-c8": "^0.31.0",
 		"publint": "^0.1.11",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.5",
+		"vite": "^4.3.6",
 		"vitest": "^0.31.0"
 	}
 }

@@ -88,7 +88,7 @@ export const distributePrettierConfig = async (
 			scripts: {
 				format: 'prettier --write .', // Not done through turbo, it covers the entire repo anyway
 				'lint:format:workspace': undefined,
-				'lint:format_': 'prettier --check ./*.*',
+				'lint:format_': 'prettier --check *.*',
 				'lint:format': 'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
 			},
 			devDependencies: {
