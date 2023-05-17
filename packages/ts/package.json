@@ -54,8 +54,8 @@
 		},
 		"./base": "./base.json",
 		"./node": "./node.json",
-		"./web": "./web.json",
-		"./web-svelte": "./web-svelte.json"
+		"./svelte": "./svelte.json",
+		"./web": "./web.json"
 	},
 	"dependencies": {
 		"@alexaegis/vite": "^0.2.0",

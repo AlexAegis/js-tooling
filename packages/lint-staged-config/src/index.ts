@@ -11,7 +11,9 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
 
 // TODO: explore more optimal settings since eslint is slow when used on files 1 by 1
 export const lintStagedConfig: Config = {
-	'**/!(shims)/*.(ts|js|cts|cjs|mts|mjs)?(x)': (filenames: string[]): string[] => {
+	'**/!(shims)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': (
+		filenames: string[]
+	): string[] => {
 		const groups = groupByCommonNearestFile(filenames, 'tsconfig.json');
 		return Object.keys(groups).map(
 			(tsRoot) => `${tscCommand} --project ${join(tsRoot, 'tsconfig.json')}`

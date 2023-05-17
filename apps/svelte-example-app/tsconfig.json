@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig?mark=managed-by-autotool",
-	"extends": "@alexaegis/ts/web-svelte",
+	"extends": "@alexaegis/ts/svelte",
 	"compilerOptions": {
 		"rootDir": "../../",
 		"outDir": "./dist/out-tsc"

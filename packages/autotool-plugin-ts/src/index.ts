@@ -33,9 +33,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	const languageMatcher = /^(ts|typescript)$/;
 
 	const archetypeFlavours: JsonMatcherFrom<PackageArchetype>[] = [
-		{ language: languageMatcher, platform: 'web', framework: 'svelte' },
+		{ language: languageMatcher, framework: 'svelte' },
 		{ language: languageMatcher, platform: 'web', framework: /^(?!svelte).*$/ },
-		{ language: languageMatcher, platform: 'node' },
+		{ language: languageMatcher, platform: 'node', framework: /^(?!svelte).*$/ },
 		{ language: languageMatcher, platform: undefined, framework: undefined },
 	];
 
