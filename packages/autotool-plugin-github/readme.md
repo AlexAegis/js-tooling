@@ -1,4 +1,4 @@
-# [@alexaegis/autotool-plugin-github](https://github.com/AlexAegis/js-tooling/tree/master/packages/setup-github)
+# [@alexaegis/autotool-plugin-github](https://github.com/AlexAegis/js-tooling/tree/master/packages/autotool-plugin-github)
 
 [![npm](https://img.shields.io/npm/v/@alexaegis/autotool-plugin-github/latest)](https://www.npmjs.com/package/@alexaegis/autotool-plugin-github)
 [![ci](https://github.com/AlexAegis/js-tooling/actions/workflows/cicd.yml/badge.svg)](https://github.com/AlexAegis/js-tooling/actions/workflows/cicd.yml)

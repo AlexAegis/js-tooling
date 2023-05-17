@@ -32,7 +32,7 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-editorconfig](packages/autotool-plugin-editorconfig/)
 - [autotool-plugin-eslint](packages/autotool-plugin-eslint/)
 - [autotool-plugin-git](packages/autotool-plugin-git/)
-- [setup-husky](packages/setup-husky/)
+- [autotool-plugin-husky](packages/autotool-plugin-husky/)
 - [autotool-plugin-prettier](packages/autotool-plugin-prettier/)
 - [setup-remark](packages/setup-remark/)
 - [setup-standard-version](packages/setup-standard-version/)
