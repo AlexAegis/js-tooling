@@ -18,6 +18,7 @@
 		"@alexaegis/setup-svelte",
 		"@alexaegis/setup-vite-svelte-app",
 		"@alexaegis/setup-vitest-svelte",
+		"managed-by-autotool",
 		"svelte"
 	],
 	"type": "module",

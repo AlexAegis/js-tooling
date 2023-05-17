@@ -1,22 +1,43 @@
-import { getEncodedArchetype, type PackageArchetype } from '@alexaegis/workspace-tools';
+import type { CustomJsonValueMatcher, JsonMatcherFrom } from '@alexaegis/match';
+import { type PackageArchetype } from '@alexaegis/workspace-tools';
 import {
 	type AutotoolElementFileCopy,
 	type AutotoolPlugin,
 	type AutotoolPluginObject,
 } from 'autotool-plugin';
-import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
-export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
-	const archetypeFlavours: PackageArchetype[] = [
-		{ platform: 'web', framework: 'svelte' },
-		{ platform: 'web', framework: undefined },
-		{ platform: 'node' },
-		{ platform: undefined, framework: undefined }, // base
+/**
+ * @deprecated use core
+ */
+export const getEncodedArchetype = (
+	archetype?: JsonMatcherFrom<PackageArchetype> | undefined
+): string => {
+	if (!archetype || typeof archetype === 'function') {
+		return '';
+	}
+	const orderedValues: (string | RegExp | CustomJsonValueMatcher<string> | null | undefined)[] = [
+		archetype.platform,
+		archetype.framework,
+		archetype.language,
+		archetype.kind,
+		archetype.bundler,
+		archetype.testing,
 	];
 
-	const language = /^(ts|typescript)$/;
+	return orderedValues.filter((value) => typeof value === 'string').join('-');
+};
+
+export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
+	const languageMatcher = /^(ts|typescript)$/;
+
+	const archetypeFlavours: JsonMatcherFrom<PackageArchetype>[] = [
+		{ language: languageMatcher, platform: 'web', framework: 'svelte' },
+		{ language: languageMatcher, platform: 'web', framework: /^(?!svelte).*$/ },
+		{ language: languageMatcher, platform: 'node' },
+		{ language: languageMatcher, platform: undefined, framework: undefined },
+	];
 
 	return {
 		name: 'ts',
@@ -50,7 +71,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						language,
+						language: languageMatcher,
 					},
 				},
 				data: {
@@ -67,16 +88,15 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						language,
+						language: languageMatcher,
 					},
-					name: (name: string) => {
-						const result = '@alexaegis/ts' !== name;
-
-						if (!result) {
-							writeFileSync(name.replace('/', '') + '.not.txt', name);
-						}
-						return result;
-					}, // Don't add a dependency for itself
+					name: (name) =>
+						![
+							'@alexaegis/ts',
+							'@alexaegis/vite',
+							'@alexaegis/vitest',
+							'@alexaegis/eslint-config-vitest',
+						].includes(name), // Don't add a dependency for itself, and other packages where it would result in a circle
 				},
 				data: {
 					devDependencies: {
@@ -95,7 +115,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						language,
+						language: languageMatcher,
 						framework: 'node',
 					},
 				},
@@ -115,7 +135,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					targetFile: 'tsconfig.json',
 					sourcePluginPackageName: packageJson.name,
 					packageJsonFilter: {
-						language,
 						archetype,
 					},
 					sourceFile: join('static', 'package-simple-tsconfig.json'),

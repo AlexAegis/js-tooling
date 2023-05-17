@@ -292,6 +292,9 @@ importers:
       '@alexaegis/logging':
         specifier: ^0.1.8
         version: 0.1.8
+      '@alexaegis/match':
+        specifier: ^0.1.8
+        version: 0.1.8
       '@alexaegis/workspace-tools':
         specifier: ^0.1.8
         version: 0.1.8
@@ -9001,14 +9004,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /rollup@3.22.0:
-    resolution: {integrity: sha512-imsigcWor5Y/dC0rz2q0bBt9PabcL3TORry2hAa6O6BuMvY71bqHyfReAz5qyAqiQATD1m70qdntqBfBQjVWpQ==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: false
-
   /rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
 
@@ -10540,7 +10535,7 @@ packages:
       '@types/node': 18.16.12
       esbuild: 0.17.19
       postcss: 8.4.23
-      rollup: 3.22.0
+      rollup: 3.21.8
     optionalDependencies:
       fsevents: 2.3.2
     dev: false

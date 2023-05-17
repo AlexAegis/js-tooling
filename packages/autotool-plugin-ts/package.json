@@ -61,6 +61,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.1.8",
+		"@alexaegis/match": "^0.1.8",
 		"@alexaegis/workspace-tools": "^0.1.8",
 		"autotool-plugin": "^0.0.4",
 		"typescript": "^5.0.4"

@@ -19,7 +19,8 @@
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
-		"eslint"
+		"eslint",
+		"managed-by-autotool"
 	],
 	"type": "module",
 	"config": {
