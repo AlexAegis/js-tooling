@@ -69,9 +69,9 @@
 		"@alexaegis/vite": "^0.2.0",
 		"@alexaegis/vitest": "^0.2.0",
 		"@types/js-yaml": "^4.0.5",
-		"@types/node": "^20.1.4",
+		"@types/node": "^20.1.7",
 		"publint": "^0.1.11",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.6"
+		"vite": "^4.3.7"
 	}
 }

@@ -8,11 +8,9 @@ export default {
 	// for more information about preprocessors
 	preprocess: sveltePreprocess(),
 	vitePlugin: {
-		experimental: {
-			inspector: {
-				holdMode: true,
-				toggleKeyCombo: 'shift',
-			},
+		inspector: {
+			holdMode: true,
+			toggleKeyCombo: 'shift',
 		},
 	},
 };

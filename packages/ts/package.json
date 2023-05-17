@@ -59,10 +59,10 @@
 	},
 	"dependencies": {
 		"@alexaegis/vite": "^0.2.0",
-		"@types/node": "^20.1.4",
+		"@types/node": "^20.1.7",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.6"
+		"vite": "^4.3.7"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",
@@ -70,7 +70,7 @@
 		"@alexaegis/vitest": "^0.2.0",
 		"@vitest/coverage-c8": "^0.31.0",
 		"publint": "^0.1.11",
-		"vite": "^4.3.6",
+		"vite": "^4.3.7",
 		"vite-plugin-dts": "^2.3.0",
 		"vitest": "^0.31.0"
 	}
