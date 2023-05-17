@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-remark",
 		"managed-by-autotool",
 		"vite"
 	],

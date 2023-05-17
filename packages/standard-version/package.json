@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-remark",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest",
 		"commit-and-tag-version",

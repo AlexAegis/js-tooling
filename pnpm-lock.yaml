@@ -31,6 +31,9 @@ importers:
       '@alexaegis/autotool-plugin-publint':
         specifier: workspace:^
         version: link:packages/autotool-plugin-publint
+      '@alexaegis/autotool-plugin-remark':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-remark
       '@alexaegis/autotool-plugin-ts':
         specifier: workspace:^
         version: link:packages/autotool-plugin-ts
@@ -43,9 +46,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-remark':
-        specifier: workspace:^
-        version: link:packages/setup-remark
       '@alexaegis/setup-standard-version':
         specifier: workspace:^
         version: link:packages/setup-standard-version
@@ -663,6 +663,49 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
+  packages/autotool-plugin-remark:
+    dependencies:
+      '@alexaegis/remark-preset':
+        specifier: ^0.2.0
+        version: link:../remark-preset
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.1.7
+        version: 20.1.7
+      '@vitest/coverage-c8':
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      remark:
+        specifier: ^14.0.3
+        version: 14.0.3
+      remark-cli:
+        specifier: ^11.0.0
+        version: 11.0.0
+      vite:
+        specifier: ^4.3.7
+        version: 4.3.7(@types/node@20.1.7)
+      vitest:
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
+
   packages/autotool-plugin-ts:
     dependencies:
       '@alexaegis/logging':
@@ -1099,58 +1142,6 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
-  packages/setup-remark:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/remark-preset':
-        specifier: ^0.2.0
-        version: link:../remark-preset
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.7
-        version: 20.1.7
-      '@types/yargs':
-        specifier: 17.0.24
-        version: 17.0.24
-      '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      remark:
-        specifier: ^14.0.3
-        version: 14.0.3
-      remark-cli:
-        specifier: ^11.0.0
-        version: 11.0.0
-      vite:
-        specifier: ^4.3.7
-        version: 4.3.7(@types/node@20.1.7)
-      vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
-
   packages/setup-standard-version:
     dependencies:
       '@alexaegis/cli-tools':
@@ -1213,20 +1204,23 @@ importers:
         version: 0.1.8
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
+        specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.2.0
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.2.0
+        specifier: workspace:^
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.2.0
+        specifier: workspace:^
         version: link:../vitest
       '@types/node':
         specifier: ^20.1.7
         version: 20.1.7
+      '@types/yargs':
+        specifier: ^17.0.24
+        version: 17.0.24
       '@vitest/coverage-c8':
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
@@ -1352,9 +1346,6 @@ importers:
 
   packages/setup-typedoc:
     dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
       '@alexaegis/logging':
         specifier: ^0.1.8
         version: 0.1.8
@@ -7340,7 +7331,7 @@ packages:
       prompts-ncu: 3.0.0
       rc-config-loader: 4.1.2
       remote-git-tags: 3.0.0
-      rimraf: 5.0.0
+      rimraf: 5.0.1
       semver: 7.5.1
       semver-utils: 1.1.4
       source-map-support: 0.5.21
@@ -8966,8 +8957,8 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rimraf@5.0.0:
-    resolution: {integrity: sha512-Jf9llaP+RvaEVS5nPShYFhtXIrb3LRKP281ib3So0KkeZKo2wIKyq0Re7TOSwanasA423PSr6CCIL4bP6T040g==}
+  /rimraf@5.0.1:
+    resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -8987,6 +8978,14 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+
+  /rollup@3.22.0:
+    resolution: {integrity: sha512-imsigcWor5Y/dC0rz2q0bBt9PabcL3TORry2hAa6O6BuMvY71bqHyfReAz5qyAqiQATD1m70qdntqBfBQjVWpQ==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: false
 
   /rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
@@ -10519,7 +10518,7 @@ packages:
       '@types/node': 18.16.12
       esbuild: 0.17.19
       postcss: 8.4.23
-      rollup: 3.21.8
+      rollup: 3.22.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: false

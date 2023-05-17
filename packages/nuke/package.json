@@ -12,7 +12,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-remark",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
 		"clean",
