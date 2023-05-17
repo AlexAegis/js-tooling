@@ -76,7 +76,7 @@
 		"lint-staged": "^13.2.2"
 	},
 	"peerDependencies": {
-		"@alexaegis/setup-commitlint": "^0.2.0"
+		"@alexaegis/autotool-plugin-commitlint": "^0.2.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",

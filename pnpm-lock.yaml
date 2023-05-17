@@ -4,6 +4,9 @@ importers:
 
   .:
     devDependencies:
+      '@alexaegis/autotool-plugin-commitlint':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-commitlint
       '@alexaegis/autotool-plugin-prettier':
         specifier: workspace:^
         version: link:packages/autotool-plugin-prettier
@@ -19,9 +22,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-commitlint':
-        specifier: workspace:^
-        version: link:packages/setup-commitlint
       '@alexaegis/setup-depcheck':
         specifier: workspace:^
         version: link:packages/setup-depcheck
@@ -280,6 +280,49 @@ importers:
       publint:
         specifier: ^0.1.11
         version: 0.1.11
+      vite:
+        specifier: ^4.3.7
+        version: 4.3.7(@types/node@20.1.7)
+      vitest:
+        specifier: ^0.31.0
+        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+
+  packages/autotool-plugin-commitlint:
+    dependencies:
+      '@alexaegis/commitlint-config':
+        specifier: ^0.2.0
+        version: link:../commitlint-config
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+      commitlint:
+        specifier: ^17.6.3
+        version: 17.6.3
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.1.7
+        version: 20.1.7
+      '@vitest/coverage-c8':
+        specifier: ^0.31.0
+        version: 0.31.0(vitest@0.31.0)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
       vite:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
@@ -770,55 +813,6 @@ importers:
         specifier: ^0.31.0
         version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
 
-  packages/setup-commitlint:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/commitlint-config':
-        specifier: ^0.2.0
-        version: link:../commitlint-config
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      commitlint:
-        specifier: ^17.6.3
-        version: 17.6.3
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.7
-        version: 20.1.7
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.7
-        version: 4.3.7(@types/node@20.1.7)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
   packages/setup-depcheck:
     dependencies:
       '@alexaegis/cli-tools':
@@ -1048,6 +1042,9 @@ importers:
 
   packages/setup-husky:
     dependencies:
+      '@alexaegis/autotool-plugin-commitlint':
+        specifier: ^0.2.0
+        version: link:../autotool-plugin-commitlint
       '@alexaegis/cli-tools':
         specifier: ^0.1.8
         version: 0.1.8
@@ -1057,9 +1054,6 @@ importers:
       '@alexaegis/logging':
         specifier: ^0.1.8
         version: 0.1.8
-      '@alexaegis/setup-commitlint':
-        specifier: ^0.2.0
-        version: link:../setup-commitlint
       '@alexaegis/workspace-tools':
         specifier: ^0.1.8
         version: 0.1.8

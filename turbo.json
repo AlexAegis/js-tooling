@@ -175,11 +175,13 @@
 		},
 		"typedoc_": {
 			"dependsOn": [],
+			"inputs": ["**/*.ts"],
 			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"//#typedoc_": {
 			"dependsOn": [],
+			"inputs": ["**/*.ts"],
 			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
