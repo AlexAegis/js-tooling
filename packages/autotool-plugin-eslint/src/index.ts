@@ -71,7 +71,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'package-eslintrc.cjs'),
 			},
-
 			{
 				description: 'workspace eslint dependencies',
 				executor: 'packageJson',

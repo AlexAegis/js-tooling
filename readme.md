@@ -27,10 +27,11 @@ like the `setup-*` packages.
 Every `autotool-plugin-*` packages job is to distribute files and `package.json`
 entries in the workspace on `postinstall`.
 
+- [autotool-plugin-commitlint](packages/autotool-plugin-commitlint/)
 - [autotool-plugin-depcheck](packages/autotool-plugin-depcheck/)
 - [autotool-plugin-editorconfig](packages/autotool-plugin-editorconfig/)
 - [autotool-plugin-eslint](packages/autotool-plugin-eslint/)
-- [setup-git](packages/setup-git/)
+- [autotool-plugin-git](packages/autotool-plugin-git/)
 - [setup-husky](packages/setup-husky/)
 - [autotool-plugin-prettier](packages/autotool-plugin-prettier/)
 - [setup-remark](packages/setup-remark/)
