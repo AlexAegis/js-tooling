@@ -19,6 +19,9 @@ importers:
       '@alexaegis/autotool-plugin-git':
         specifier: workspace:^
         version: link:packages/autotool-plugin-git
+      '@alexaegis/autotool-plugin-github':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-github
       '@alexaegis/autotool-plugin-prettier':
         specifier: workspace:^
         version: link:packages/autotool-plugin-prettier
@@ -34,9 +37,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-github':
-        specifier: workspace:^
-        version: link:packages/setup-github
       '@alexaegis/setup-husky':
         specifier: workspace:^
         version: link:packages/setup-husky
@@ -454,6 +454,43 @@ importers:
         version: 0.31.1
 
   packages/autotool-plugin-git:
+    dependencies:
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.1.7
+        version: 20.1.7
+      '@vitest/coverage-c8':
+        specifier: ^0.31.0
+        version: 0.31.1(vitest@0.31.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.7
+        version: 4.3.7(@types/node@20.1.7)
+      vitest:
+        specifier: ^0.31.0
+        version: 0.31.1
+
+  packages/autotool-plugin-github:
     dependencies:
       autotool-plugin:
         specifier: ^0.0.4
@@ -966,49 +1003,6 @@ importers:
       unified:
         specifier: ^10.1.2
         version: 10.1.2
-      vite:
-        specifier: ^4.3.7
-        version: 4.3.7(@types/node@20.1.7)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
-  packages/setup-github:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.7
-        version: 20.1.7
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
       vite:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)

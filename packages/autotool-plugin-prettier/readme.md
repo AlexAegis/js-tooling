@@ -1,4 +1,4 @@
-# [@alexaegis/autotool-plugin-prettier](https://github.com/AlexAegis/js-tooling/tree/master/packages/setup-prettier)
+# [@alexaegis/autotool-plugin-prettier](https://github.com/AlexAegis/js-tooling/tree/master/packages/autotool-plugin-prettier)
 
 [![npm](https://img.shields.io/npm/v/@alexaegis/autotool-plugin-prettier/latest)](https://www.npmjs.com/package/@alexaegis/autotool-plugin-prettier)
 [![ci](https://github.com/AlexAegis/js-tooling/actions/workflows/cicd.yml/badge.svg)](https://github.com/AlexAegis/js-tooling/actions/workflows/cicd.yml)

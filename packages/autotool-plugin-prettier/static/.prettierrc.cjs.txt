@@ -2,4 +2,4 @@
 
 // eslint-disable-next-line unicorn/prefer-module
 // @ts-ignore
-module.exports = require('@alexaegis/setup-prettier/prettier-config');
+module.exports = require('@alexaegis/autotool-plugin-prettier/prettier-config');
