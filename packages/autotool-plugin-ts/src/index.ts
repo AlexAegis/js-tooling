@@ -40,7 +40,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	];
 
 	return {
-		name: 'ts',
+		name: packageJson.name,
 		elements: [
 			{
 				description: 'copy workspace root ts config',

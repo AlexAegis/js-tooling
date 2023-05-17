@@ -31,7 +31,7 @@ entries in the workspace on `postinstall`.
 - [setup-eslint](packages/setup-eslint/)
 - [setup-git](packages/setup-git/)
 - [setup-husky](packages/setup-husky/)
-- [setup-prettier](packages/setup-prettier/)
+- [autotool-plugin-prettier](packages/autotool-plugin-prettier/)
 - [setup-remark](packages/setup-remark/)
 - [setup-standard-version](packages/setup-standard-version/)
 - [setup-stylelint](packages/setup-stylelint/)

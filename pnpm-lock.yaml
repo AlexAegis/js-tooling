@@ -4,6 +4,9 @@ importers:
 
   .:
     devDependencies:
+      '@alexaegis/autotool-plugin-prettier':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-prettier
       '@alexaegis/autotool-plugin-ts':
         specifier: workspace:^
         version: link:packages/autotool-plugin-ts
@@ -37,9 +40,6 @@ importers:
       '@alexaegis/setup-husky':
         specifier: workspace:^
         version: link:packages/setup-husky
-      '@alexaegis/setup-prettier':
-        specifier: workspace:^
-        version: link:packages/setup-prettier
       '@alexaegis/setup-publint':
         specifier: workspace:^
         version: link:packages/setup-publint
@@ -280,6 +280,53 @@ importers:
       publint:
         specifier: ^0.1.11
         version: 0.1.11
+      vite:
+        specifier: ^4.3.7
+        version: 4.3.7(@types/node@20.1.7)
+      vitest:
+        specifier: ^0.31.0
+        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+
+  packages/autotool-plugin-prettier:
+    dependencies:
+      '@alexaegis/prettier-config':
+        specifier: ^0.2.0
+        version: link:../prettier-config
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+      prettier:
+        specifier: ^2.8.8
+        version: 2.8.8
+    optionalDependencies:
+      svelte:
+        specifier: ^3.59.1
+        version: 3.59.1
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.1.7
+        version: 20.1.7
+      '@vitest/coverage-c8':
+        specifier: ^0.31.0
+        version: 0.31.0(vitest@0.31.0)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
       vite:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
@@ -1041,62 +1088,6 @@ importers:
       '@types/node':
         specifier: ^20.1.7
         version: 20.1.7
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.7
-        version: 4.3.7(@types/node@20.1.7)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
-  packages/setup-prettier:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/prettier-config':
-        specifier: ^0.2.0
-        version: link:../prettier-config
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      prettier:
-        specifier: ^2.8.8
-        version: 2.8.8
-    optionalDependencies:
-      svelte:
-        specifier: ^3.59.1
-        version: 3.59.1
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.7
-        version: 20.1.7
-      '@types/yargs':
-        specifier: 17.0.24
-        version: 17.0.24
       '@vitest/coverage-c8':
         specifier: ^0.31.0
         version: 0.31.0(vitest@0.31.0)

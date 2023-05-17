@@ -15,7 +15,6 @@
 	"keywords": [
 		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
-		"@alexaegis/setup-prettier",
 		"@alexaegis/setup-remark",
 		"managed-by-autotool",
 		"vite"

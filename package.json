@@ -87,7 +87,7 @@
 		"@alexaegis/setup-git": "workspace:^",
 		"@alexaegis/setup-github": "workspace:^",
 		"@alexaegis/setup-husky": "workspace:^",
-		"@alexaegis/setup-prettier": "workspace:^",
+		"@alexaegis/autotool-plugin-prettier": "workspace:^",
 		"@alexaegis/setup-publint": "workspace:^",
 		"@alexaegis/setup-remark": "workspace:^",
 		"@alexaegis/setup-standard-version": "workspace:^",
