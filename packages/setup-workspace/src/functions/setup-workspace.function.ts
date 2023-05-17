@@ -40,7 +40,7 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				devDependencies: {
 					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
 					'@alexaegis/autotool-plugin-commitlint': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-depcheck': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-depcheck': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-editorconfig': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-eslint': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-git': `^${packageJson.version}`, // versioned together

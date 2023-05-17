@@ -27,6 +27,7 @@ like the `setup-*` packages.
 Every `autotool-plugin-*` packages job is to distribute files and `package.json`
 entries in the workspace on `postinstall`.
 
+- [autotool-plugin-depcheck](packages/autotool-plugin-depcheck/)
 - [setup-editorconfig](packages/setup-editorconfig/)
 - [setup-eslint](packages/setup-eslint/)
 - [setup-git](packages/setup-git/)

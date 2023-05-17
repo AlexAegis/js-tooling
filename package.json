@@ -77,12 +77,12 @@
 	},
 	"devDependencies": {
 		"@alexaegis/autotool-plugin-commitlint": "workspace:^",
+		"@alexaegis/autotool-plugin-depcheck": "workspace:^",
 		"@alexaegis/autotool-plugin-prettier": "workspace:^",
 		"@alexaegis/autotool-plugin-ts": "workspace:^",
 		"@alexaegis/coverage-tools": "^0.1.8",
 		"@alexaegis/eslint-config-core": "workspace:^",
 		"@alexaegis/nuke": "workspace:^",
-		"@alexaegis/setup-depcheck": "workspace:^",
 		"@alexaegis/setup-editorconfig": "workspace:^",
 		"@alexaegis/setup-eslint": "workspace:^",
 		"@alexaegis/setup-git": "workspace:^",

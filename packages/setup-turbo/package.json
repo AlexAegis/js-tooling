@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-depcheck",
 		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
