@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-eslint",
 		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-vite-lib",

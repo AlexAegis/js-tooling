@@ -29,7 +29,7 @@ entries in the workspace on `postinstall`.
 
 - [autotool-plugin-depcheck](packages/autotool-plugin-depcheck/)
 - [autotool-plugin-editorconfig](packages/autotool-plugin-editorconfig/)
-- [setup-eslint](packages/setup-eslint/)
+- [autotool-plugin-eslint](packages/autotool-plugin-eslint/)
 - [setup-git](packages/setup-git/)
 - [setup-husky](packages/setup-husky/)
 - [autotool-plugin-prettier](packages/autotool-plugin-prettier/)

@@ -35,14 +35,14 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					nuke: 'nuke',
 					ncu: 'ncu --deep --peer --upgrade && pnpm up',
 					'setup-all':
-						'setup-prettier && setup-editorconfig && setup-husky && setup-git && setup-commitlint && setup-eslint && setup-github && setup-ts && setup-remark && setup-standard-version && setup-stylelint && setup-depcheck && setup-turbo && setup-vite && setup-publint && setup-svelte && setup-vitest && setup-workspace',
+						'setup-husky && setup-git && setup-commitlint && setup-github && setup-remark && setup-standard-version && setup-stylelint && setup-turbo && setup-vite && setup-publint && setup-svelte && setup-vitest && setup-workspace',
 				},
 				devDependencies: {
 					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
 					'@alexaegis/autotool-plugin-commitlint': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-depcheck': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-editorconfig': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-eslint': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-editorconfig': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-eslint': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-git': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-github': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-husky': `^${packageJson.version}`, // versioned together
