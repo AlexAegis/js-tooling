@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-publint",
 		"@alexaegis/setup-remark",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
@@ -74,9 +73,9 @@
 		"@types/eslint": "^8.37.0",
 		"@types/lint-staged": "^13.2.0",
 		"@types/node": "^20.1.7",
-		"@vitest/coverage-c8": "^0.31.0",
+		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.11",
 		"vite": "^4.3.7",
-		"vitest": "^0.31.0"
+		"vitest": "^0.31.1"
 	}
 }

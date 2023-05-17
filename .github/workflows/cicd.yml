@@ -299,6 +299,7 @@ jobs:
             'autotool-plugin-eslint',
             'autotool-plugin-git',
             'autotool-plugin-husky',
+            'autotool-plugin-publint',
             'autotool-plugin-prettier',
             'autotool-plugin-ts',
             'commitlint-config',

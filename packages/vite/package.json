@@ -37,6 +37,8 @@
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"lint:tsc_": "tsc --noEmit",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+		"publint_": "publint dist",
 		"format": "prettier --write .",
 		"prebuild": "turbo run prebuild_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"prebuild_": "vite build",
@@ -83,8 +85,9 @@
 	},
 	"devDependencies": {
 		"@types/node": "^20.1.7",
+		"publint": "^0.1.11",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.4",
-		"vitest": "^0.31.0"
+		"vitest": "^0.31.1"
 	}
 }

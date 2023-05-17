@@ -59,8 +59,8 @@
 		"@alexaegis/ts": "^0.2.0",
 		"@alexaegis/vite": "^0.2.0",
 		"@alexaegis/vitest": "^0.2.0",
-		"@sveltejs/kit": "^1.17.0",
-		"@vitest/coverage-c8": "^0.31.0",
+		"@sveltejs/kit": "^1.18.0",
+		"@vitest/coverage-c8": "^0.31.1",
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",
 		"stylelint": "^15.6.2",
@@ -69,6 +69,6 @@
 		"svelte-preprocess": "^5.0.3",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.7",
-		"vitest": "^0.31.0"
+		"vitest": "^0.31.1"
 	}
 }

@@ -300,6 +300,7 @@ jobs:
             'autotool-plugin-git',
             'autotool-plugin-github',
             'autotool-plugin-husky',
+            'autotool-plugin-publint',
             'autotool-plugin-prettier',
             'autotool-plugin-ts',
             'commitlint-config',

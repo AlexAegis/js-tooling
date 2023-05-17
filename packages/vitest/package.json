@@ -37,6 +37,8 @@
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:tsc_": "tsc --noEmit",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"publint_": "publint dist",
 		"format": "prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"test_": "vitest --passWithNoTests --coverage --run",
@@ -70,10 +72,10 @@
 	},
 	"dependencies": {
 		"@sveltejs/vite-plugin-svelte": "^2.2.0",
-		"@vitest/coverage-c8": "^0.31.0",
-		"@vitest/ui": "^0.31.0",
+		"@vitest/coverage-c8": "^0.31.1",
+		"@vitest/ui": "^0.31.1",
 		"jsdom": "22.0.0",
-		"vitest": "^0.31.0"
+		"vitest": "^0.31.1"
 	},
 	"peerDependencies": {
 		"vite": "^4.2.1",
@@ -81,6 +83,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.2.0",
+		"publint": "^0.1.11",
 		"vite": "^4.3.7"
 	}
 }

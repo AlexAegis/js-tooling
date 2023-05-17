@@ -28,6 +28,9 @@ importers:
       '@alexaegis/autotool-plugin-prettier':
         specifier: workspace:^
         version: link:packages/autotool-plugin-prettier
+      '@alexaegis/autotool-plugin-publint':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-publint
       '@alexaegis/autotool-plugin-ts':
         specifier: workspace:^
         version: link:packages/autotool-plugin-ts
@@ -40,9 +43,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-publint':
-        specifier: workspace:^
-        version: link:packages/setup-publint
       '@alexaegis/setup-remark':
         specifier: workspace:^
         version: link:packages/setup-remark
@@ -134,8 +134,8 @@ importers:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.1.7)(typescript@5.0.4)
       turbo:
-        specifier: ^1.9.6
-        version: 1.9.6
+        specifier: ^1.9.7
+        version: 1.9.7
       typedoc:
         specifier: ^0.24.7
         version: 0.24.7(typescript@5.0.4)
@@ -144,7 +144,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: ^0.31.1
-        version: 0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   apps/svelte-example-app:
     dependencies:
@@ -171,11 +171,11 @@ importers:
         specifier: ^0.2.0
         version: link:../../packages/vitest
       '@sveltejs/kit':
-        specifier: ^1.17.0
-        version: 1.17.0(svelte@3.59.1)(vite@4.3.7)
+        specifier: ^1.18.0
+        version: 1.18.0(svelte@3.59.1)(vite@4.3.7)
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       concurrently:
         specifier: ^8.0.1
         version: 8.0.1
@@ -201,8 +201,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   libs/example-svelte-lib:
     dependencies:
@@ -226,8 +226,8 @@ importers:
         specifier: ^0.2.0
         version: link:../../packages/vitest
       '@sveltejs/kit':
-        specifier: ^1.17.0
-        version: 1.17.0(svelte@3.59.1)(vite@4.3.7)
+        specifier: ^1.18.0
+        version: 1.18.0(svelte@3.59.1)(vite@4.3.7)
       stylelint:
         specifier: ^15.6.2
         version: 15.6.2
@@ -247,8 +247,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   libs/example-ts-lib:
     dependencies:
@@ -275,8 +275,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -284,8 +284,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-commitlint:
     dependencies:
@@ -315,8 +315,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -327,8 +327,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-depcheck:
     dependencies:
@@ -352,8 +352,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       depcheck:
         specifier: ^1.4.3
         version: 1.4.3
@@ -367,8 +367,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-editorconfig:
     dependencies:
@@ -392,8 +392,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -404,8 +404,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-eslint:
     dependencies:
@@ -435,7 +435,7 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
+        specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       eslint:
         specifier: ^8.40.0
@@ -450,8 +450,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.1
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-git:
     dependencies:
@@ -475,7 +475,7 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
+        specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
@@ -487,8 +487,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.1
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-github:
     dependencies:
@@ -512,7 +512,7 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
+        specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
@@ -524,8 +524,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.1
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-husky:
     dependencies:
@@ -564,7 +564,7 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
+        specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
@@ -576,8 +576,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.1
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-prettier:
     dependencies:
@@ -611,8 +611,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -623,8 +623,45 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
+
+  packages/autotool-plugin-publint:
+    dependencies:
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.1.7
+        version: 20.1.7
+      '@vitest/coverage-c8':
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.7
+        version: 4.3.7(@types/node@20.1.7)
+      vitest:
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/autotool-plugin-ts:
     dependencies:
@@ -663,8 +700,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -672,8 +709,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/commitlint-config:
     dependencies:
@@ -700,8 +737,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -712,8 +749,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/eslint-config-core:
     dependencies:
@@ -733,8 +770,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.40.0)
       eslint-config-turbo:
-        specifier: ^1.9.6
-        version: 1.9.6(eslint@8.40.0)
+        specifier: ^1.9.7
+        version: 1.9.7(eslint@8.40.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.40.0)
@@ -771,8 +808,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -780,8 +817,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/eslint-config-vitest:
     dependencies:
@@ -801,8 +838,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.40.0)
       eslint-config-turbo:
-        specifier: ^1.9.6
-        version: 1.9.6(eslint@8.40.0)
+        specifier: ^1.9.7
+        version: 1.9.7(eslint@8.40.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.40.0)
@@ -833,8 +870,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -842,8 +879,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/lint-staged-config:
     dependencies:
@@ -883,8 +920,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -892,8 +929,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/nuke:
     dependencies:
@@ -929,8 +966,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -941,8 +978,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/prettier-config:
     dependencies:
@@ -973,8 +1010,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -982,8 +1019,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/remark-preset:
     dependencies:
@@ -1047,8 +1084,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1059,54 +1096,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
-  packages/setup-publint:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/coverage-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.1.7
-        version: 20.1.7
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.7
-        version: 4.3.7(@types/node@20.1.7)
-      vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-remark:
     dependencies:
@@ -1142,8 +1133,8 @@ importers:
         specifier: 17.0.24
         version: 17.0.24
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1157,8 +1148,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-standard-version:
     dependencies:
@@ -1194,8 +1185,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1206,8 +1197,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-stylelint:
     dependencies:
@@ -1237,8 +1228,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1252,8 +1243,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-svelte:
     dependencies:
@@ -1270,8 +1261,8 @@ importers:
         specifier: ^0.1.8
         version: 0.1.8
       '@sveltejs/kit':
-        specifier: ^1.17.0
-        version: 1.17.0(svelte@3.59.1)(vite@4.3.7)
+        specifier: ^1.18.0
+        version: 1.18.0(svelte@3.59.1)(vite@4.3.7)
       svelte:
         specifier: ^3.59.1
         version: 3.59.1
@@ -1298,8 +1289,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1310,8 +1301,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-turbo:
     dependencies:
@@ -1325,8 +1316,8 @@ importers:
         specifier: ^0.1.8
         version: 0.1.8
       turbo:
-        specifier: ^1.9.6
-        version: 1.9.6
+        specifier: ^1.9.7
+        version: 1.9.7
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.2.0
@@ -1344,8 +1335,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1356,8 +1347,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-typedoc:
     dependencies:
@@ -1390,8 +1381,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1402,8 +1393,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-vite:
     dependencies:
@@ -1442,8 +1433,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1451,8 +1442,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-vitest:
     dependencies:
@@ -1488,8 +1479,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1500,8 +1491,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-vscode:
     dependencies:
@@ -1531,8 +1522,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1543,8 +1534,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/setup-workspace:
     dependencies:
@@ -1583,8 +1574,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1595,8 +1586,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/standard-version:
     dependencies:
@@ -1610,8 +1601,8 @@ importers:
         specifier: ^0.1.8
         version: 0.1.8
       glob:
-        specifier: ^10.2.4
-        version: 10.2.4
+        specifier: ^10.2.5
+        version: 10.2.5
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1645,7 +1636,7 @@ importers:
         version: 4.3.7(@types/node@20.1.7)
       vitest:
         specifier: ^0.31.1
-        version: 0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/stylelint-config:
     dependencies:
@@ -1675,8 +1666,8 @@ importers:
         specifier: ^20.1.7
         version: 20.1.7
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1690,8 +1681,8 @@ importers:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/ts:
     dependencies:
@@ -1718,8 +1709,8 @@ importers:
         specifier: ^0.2.0
         version: link:../vitest
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       publint:
         specifier: ^0.1.11
         version: 0.1.11
@@ -1727,8 +1718,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(@types/node@20.1.7)(vite@4.3.7)
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/vite:
     dependencies:
@@ -1764,6 +1755,9 @@ importers:
       '@types/node':
         specifier: ^20.1.7
         version: 20.1.7
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.1.7)(typescript@5.0.4)
@@ -1771,8 +1765,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   packages/vitest:
     dependencies:
@@ -1780,21 +1774,24 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(svelte@3.59.1)(vite@4.3.7)
       '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       '@vitest/ui':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.31.0)
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
       jsdom:
         specifier: 22.0.0
         version: 22.0.0
       vitest:
-        specifier: ^0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
     devDependencies:
       '@alexaegis/vite':
         specifier: ^0.2.0
         version: link:../vite
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
       vite:
         specifier: ^4.3.7
         version: 4.3.7(@types/node@20.1.7)
@@ -2637,7 +2634,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       '@npmcli/name-from-folder': 2.0.0
-      glob: 10.2.4
+      glob: 10.2.5
       minimatch: 9.0.0
       read-package-json-fast: 3.0.2
 
@@ -2774,8 +2771,8 @@ packages:
     resolution: {integrity: sha512-CX6t4SYQ37lzxicAqsBtxA3OseeoVrh9cSJ5PFYam0GksYlupRfy1A+Q4aYD3zvcfECLc0zO2u+ZnR2UYKvCrw==}
     engines: {node: '>=14.16'}
 
-  /@sveltejs/kit@1.17.0(svelte@3.59.1)(vite@4.3.7):
-    resolution: {integrity: sha512-0xm/AdXI2xZ9mtfFhYr9SeS76cCr0I8MSHC+WF9nM8PQxXnL+cbcFUkdrRiEnf1n1Rm1yRXL74nvRpaRAdpAsg==}
+  /@sveltejs/kit@1.18.0(svelte@3.59.1)(vite@4.3.7):
+    resolution: {integrity: sha512-QE5X9gCG34khrO6j01ZbRXtVx+yyUNe8PmVPeG0M+I8eyFejqYMEhD1JtjCrLzpd4KukvuO8bL35M1VWmPM7hQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -3119,18 +3116,6 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: false
 
-  /@vitest/coverage-c8@0.31.0(vitest@0.31.0):
-    resolution: {integrity: sha512-h72qN1D962AO7UefQVulm9JFP5ACS7OfhCdBHioXU8f7ohH/+NTZCgAqmgcfRNHHO/8wLFxx+93YVxhodkEJVA==}
-    peerDependencies:
-      vitest: '>=0.30.0 <1'
-    dependencies:
-      '@ampproject/remapping': 2.2.1
-      c8: 7.13.0
-      magic-string: 0.30.0
-      picocolors: 1.0.0
-      std-env: 3.3.3
-      vitest: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
   /@vitest/coverage-c8@0.31.1(vitest@0.31.1):
     resolution: {integrity: sha512-6TkjQpmgYez7e3dbAUoYdRXxWN81BojCmUILJwgCy39uZFG33DsQ0rSRSZC9beAEdCZTpxR63nOvd9hxDQcJ0g==}
     peerDependencies:
@@ -3141,15 +3126,7 @@ packages:
       magic-string: 0.30.0
       picocolors: 1.0.0
       std-env: 3.3.3
-      vitest: 0.31.1
-    dev: true
-
-  /@vitest/expect@0.31.0:
-    resolution: {integrity: sha512-Jlm8ZTyp6vMY9iz9Ny9a0BHnCG4fqBa8neCF6Pk/c/6vkUk49Ls6UBlgGAU82QnzzoaUs9E/mUhq/eq9uMOv/g==}
-    dependencies:
-      '@vitest/spy': 0.31.0
-      '@vitest/utils': 0.31.0
-      chai: 4.3.7
+      vitest: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   /@vitest/expect@0.31.1:
     resolution: {integrity: sha512-BV1LyNvhnX+eNYzJxlHIGPWZpwJFZaCcOIzp2CNG0P+bbetenTupk6EO0LANm4QFt0TTit+yqx7Rxd1qxi/SQA==}
@@ -3157,15 +3134,6 @@ packages:
       '@vitest/spy': 0.31.1
       '@vitest/utils': 0.31.1
       chai: 4.3.7
-    dev: true
-
-  /@vitest/runner@0.31.0:
-    resolution: {integrity: sha512-H1OE+Ly7JFeBwnpHTrKyCNm/oZgr+16N4qIlzzqSG/YRQDATBYmJb/KUn3GrZaiQQyL7GwpNHVZxSQd6juLCgw==}
-    dependencies:
-      '@vitest/utils': 0.31.0
-      concordance: 5.0.4
-      p-limit: 4.0.0
-      pathe: 1.1.0
 
   /@vitest/runner@0.31.1:
     resolution: {integrity: sha512-imWuc82ngOtxdCUpXwtEzZIuc1KMr+VlQ3Ondph45VhWoQWit5yvG/fFcldbnCi8DUuFi+NmNx5ehMUw/cGLUw==}
@@ -3174,14 +3142,6 @@ packages:
       concordance: 5.0.4
       p-limit: 4.0.0
       pathe: 1.1.0
-    dev: true
-
-  /@vitest/snapshot@0.31.0:
-    resolution: {integrity: sha512-5dTXhbHnyUMTMOujZPB0wjFjQ6q5x9c8TvAsSPUNKjp1tVU7i9pbqcKPqntyu2oXtmVxKbuHCqrOd+Ft60r4tg==}
-    dependencies:
-      magic-string: 0.30.0
-      pathe: 1.1.0
-      pretty-format: 27.5.1
 
   /@vitest/snapshot@0.31.1:
     resolution: {integrity: sha512-L3w5uU9bMe6asrNzJ8WZzN+jUTX4KSgCinEJPXyny0o90fG4FPQMV0OWsq7vrCWfQlAilMjDnOF9nP8lidsJ+g==}
@@ -3189,39 +3149,25 @@ packages:
       magic-string: 0.30.0
       pathe: 1.1.0
       pretty-format: 27.5.1
-    dev: true
-
-  /@vitest/spy@0.31.0:
-    resolution: {integrity: sha512-IzCEQ85RN26GqjQNkYahgVLLkULOxOm5H/t364LG0JYb3Apg0PsYCHLBYGA006+SVRMWhQvHlBBCyuByAMFmkg==}
-    dependencies:
-      tinyspy: 2.1.0
 
   /@vitest/spy@0.31.1:
     resolution: {integrity: sha512-1cTpt2m9mdo3hRLDyCG2hDQvRrePTDgEJBFQQNz1ydHHZy03EiA6EpFxY+7ODaY7vMRCie+WlFZBZ0/dQWyssQ==}
     dependencies:
       tinyspy: 2.1.0
-    dev: true
 
-  /@vitest/ui@0.31.0(vitest@0.31.0):
-    resolution: {integrity: sha512-Dy86l6r3/dbJposgm7w+oqb/15UWJ0lDBbEQaS1ived3+0CTaMbT8OMkUf9vNBkSL47kvBHEBnZLa5fw5i9gUQ==}
+  /@vitest/ui@0.31.1(vitest@0.31.1):
+    resolution: {integrity: sha512-+JJ2+rvRPAVxFLNE+WJOMzOjxqYPn7V2hl00uNwid6kquD+UHTa716Z7szfNeZMLnHOHv+fxq1UgLCymvVpE5w==}
     peerDependencies:
       vitest: '>=0.30.1 <1'
     dependencies:
-      '@vitest/utils': 0.31.0
+      '@vitest/utils': 0.31.1
       fast-glob: 3.2.12
       fflate: 0.7.4
       flatted: 3.2.7
       pathe: 1.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vitest: 0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0)
-
-  /@vitest/utils@0.31.0:
-    resolution: {integrity: sha512-kahaRyLX7GS1urekRXN2752X4gIgOGVX4Wo8eDUGUkTWlGpXzf5ZS6N9RUUS+Re3XEE8nVGqNyxkSxF5HXlGhQ==}
-    dependencies:
-      concordance: 5.0.4
-      loupe: 2.3.6
-      pretty-format: 27.5.1
+      vitest: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   /@vitest/utils@0.31.1:
     resolution: {integrity: sha512-yFyRD5ilwojsZfo3E0BnH72pSVSuLg2356cN1tCEe/0RtDzxTPYwOomIC+eQbot7m6DRy4tPZw+09mB7NkbMmA==}
@@ -3229,7 +3175,6 @@ packages:
       concordance: 5.0.4
       loupe: 2.3.6
       pretty-format: 27.5.1
-    dev: true
 
   /@vue/compiler-core@3.3.2:
     resolution: {integrity: sha512-CKZWo1dzsQYTNTft7whzjL0HsrEpMfiK7pjZ2WFE3bC1NA7caUjWioHSK+49y/LK7Bsm4poJZzAMnvZMQ7OTeg==}
@@ -3708,30 +3653,13 @@ packages:
     transitivePeerDependencies:
       - bluebird
 
-  /cacache@17.1.0:
-    resolution: {integrity: sha512-hXpFU+Z3AfVmNuiLve1qxWHMq0RSIt5gjCKAHi/M6DktwFwDdAXAtunl1i4WSKaaVcU9IsRvXFg42jTHigcC6Q==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-    dependencies:
-      '@npmcli/fs': 3.1.0
-      fs-minipass: 3.0.2
-      glob: 10.2.4
-      lru-cache: 7.18.3
-      minipass: 5.0.0
-      minipass-collect: 1.0.2
-      minipass-flush: 1.0.5
-      minipass-pipeline: 1.2.4
-      p-map: 4.0.0
-      ssri: 10.0.4
-      tar: 6.1.14
-      unique-filename: 3.0.0
-
   /cacache@17.1.2:
     resolution: {integrity: sha512-VcRDUtZd9r7yfGDpdm3dBDBSQbLd19IqWs9q1tuB9g6kmxYLwIjfLngRKMCfDHxReuf0SBclRuYn66Xds7jzUQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.2
-      glob: 10.2.4
+      glob: 10.2.5
       lru-cache: 7.18.3
       minipass: 5.0.0
       minipass-collect: 1.0.2
@@ -4792,13 +4720,13 @@ packages:
       eslint: 8.40.0
     dev: false
 
-  /eslint-config-turbo@1.9.6(eslint@8.40.0):
-    resolution: {integrity: sha512-ZIIfcUZ3kW8owIdC1ykebSGJOmVjUidOin1j7ZxpFDGSGcRc2/r5MBNQ7z347lsJs0rNXk/LpOiFHNbdtE+n6w==}
+  /eslint-config-turbo@1.9.7(eslint@8.40.0):
+    resolution: {integrity: sha512-dTIKlw/nPeI2qwAL/1T8CTlV4HGh44G2SdLWi0D1b7gJ2dvdAxfsY1z8vKqFa6cyAZn6m2AxuH+WKiy2OudJQA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.40.0
-      eslint-plugin-turbo: 1.9.6(eslint@8.40.0)
+      eslint-plugin-turbo: 1.9.7(eslint@8.40.0)
     dev: false
 
   /eslint-import-resolver-node@0.3.7:
@@ -4992,8 +4920,8 @@ packages:
       - ts-node
     dev: false
 
-  /eslint-plugin-turbo@1.9.6(eslint@8.40.0):
-    resolution: {integrity: sha512-xxa+gfTg3CG7wKJbkOIqdZw2eXhriORjw/55GDjJiUrNhU4vo1tA+9HDo/glTQygZ22Pj3nxYhxINFnQ/IU3lg==}
+  /eslint-plugin-turbo@1.9.7(eslint@8.40.0):
+    resolution: {integrity: sha512-SuHqbfsKyfvYvyNTSt1rxV8pmeIs6g3u9OPd2uIgbf3o/CzMcRHbMPXhGRWLlBjtjjhCtHmOk4bmc+DMycnojA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -5473,16 +5401,16 @@ packages:
     dependencies:
       is-glob: 4.0.3
 
-  /glob@10.2.4:
-    resolution: {integrity: sha512-fDboBse/sl1oXSLhIp0FcCJgzW9KmhC/q8ULTKC82zc+DL3TL7FNb8qlt5qqXN53MsKEUSIcb+7DLmEygOE5Yw==}
+  /glob@10.2.5:
+    resolution: {integrity: sha512-Gj+dFYPZ5hc5dazjXzB0iHg2jKWJZYMjITXYPBRQ/xc2Buw7H0BINknRTwURJ6IC6MEFpYbLvtgVb3qD+DwyuA==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.2.0
       minimatch: 9.0.0
-      minipass: 6.0.0
-      path-scurry: 1.9.1
+      minipass: 6.0.2
+      path-scurry: 1.9.2
 
   /glob@7.1.7:
     resolution: {integrity: sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==}
@@ -6614,7 +6542,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       agentkeepalive: 4.3.0
-      cacache: 17.1.0
+      cacache: 17.1.2
       http-cache-semantics: 4.1.1
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
@@ -7200,8 +7128,8 @@ packages:
     resolution: {integrity: sha512-3FnjYuehv9k6ovOEbyOswadCDPX1piCfhV8ncmYtHOjuPwylVWsghTLo7rabjC3Rx5xD4HDx8Wm1xnMF7S5qFQ==}
     engines: {node: '>=8'}
 
-  /minipass@6.0.0:
-    resolution: {integrity: sha512-mvD5U4pUen1aWcjTxUgdoMg6PB98dcV0obc/OiPzls79++IpgNoO+MCbOHRlKfWIOvjIjmjUygjZmSStP7B0Og==}
+  /minipass@6.0.2:
+    resolution: {integrity: sha512-MzWSV5nYVT7mVyWCwn2o7JH13w2TBRmmSqSRCKzTw+lmft9X4z+3wjvs06Tzijo5z4W/kahUCDpRXTF+ZrmF/w==}
     engines: {node: '>=16 || 14 >=14.17'}
 
   /minizlib@2.1.2:
@@ -7784,12 +7712,12 @@ packages:
   /path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
-  /path-scurry@1.9.1:
-    resolution: {integrity: sha512-UgmoiySyjFxP6tscZDgWGEAgsW5ok8W3F5CJDnnH2pozwSTGE6eH7vwTotMwATWA2r5xqdkKdxYPkwlJjAI/3g==}
+  /path-scurry@1.9.2:
+    resolution: {integrity: sha512-qSDLy2aGFPm8i4rsbHd4MNyTcrzHFsLQykrtbuGRknZZCBBVXSv2tSCDN2Cg6Rt/GFRw8GoW9y9Ecw5rIPG1sg==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       lru-cache: 9.1.1
-      minipass: 6.0.0
+      minipass: 6.0.2
 
   /path-type@3.0.0:
     resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==}
@@ -8086,7 +8014,7 @@ packages:
     resolution: {integrity: sha512-4QbpReW4kxFgeBQ0vPAqh2y8sXEB3D4t3jsXbJKIhBiF80KT6XRo45reqwtftju5J6ru1ax06A2Gb/wM1qCOEQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      glob: 10.2.4
+      glob: 10.2.5
       json-parse-even-better-errors: 3.0.0
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
@@ -9043,7 +8971,7 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      glob: 10.2.4
+      glob: 10.2.5
 
   /rollup@3.21.7:
     resolution: {integrity: sha512-KXPaEuR8FfUoK2uHwNjxTmJ18ApyvD6zJpYv9FOJSqLStmt6xOY84l1IjK2dSolQmoXknrhEFRaPRgOPdqCT5w==}
@@ -10041,59 +9969,59 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /turbo-darwin-64@1.9.6:
-    resolution: {integrity: sha512-9jmxyCAcPrJiPD/EmtK2tObrPGblmyORCgNgtcw1iozcfC7kqungWTfbnHrvTNUfUmVhH0sA3BGzshpuslbQHg==}
+  /turbo-darwin-64@1.9.7:
+    resolution: {integrity: sha512-+/yijrhefcPtGxC/TwlJJTccaYiCtbh7lPdnsk23soGYO+hVYGtg1o/33RNiuFULY4YAQyebZVsWkimntJfYYw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /turbo-darwin-arm64@1.9.6:
-    resolution: {integrity: sha512-5f8ajEi8mOdAZ0AXavu/TzkHGEUi7tw+paefff7KK+XTUrdeyTlf8ULiTI+r97uH1jsYeTeL4JPu9IsEx+bL6g==}
+  /turbo-darwin-arm64@1.9.7:
+    resolution: {integrity: sha512-7A6XX0A0h+0aadzo4Tq7IUmITm5rt7vIrZ1XLD7G8ihFC9b53XKhI7xO/QrkKpwG8VkUJeZtbvb8g9lbKb7uTg==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /turbo-linux-64@1.9.6:
-    resolution: {integrity: sha512-UrCDMl2Nqd/kxNEJonqvDg8nmZU4UggVQTmqcdYyuOiCA3H98jxggQqZh1VGeF23XDbCWHSQjnbkLeoUvQJWKw==}
+  /turbo-linux-64@1.9.7:
+    resolution: {integrity: sha512-1mBcCWX5KK+uXojGDhIBPN/LYzjT2wAjY+HVK7Bb4bDNwYXwWeynk5kSOCkT+G9b6N0uu9cln46Qty+nPwqm/Q==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /turbo-linux-arm64@1.9.6:
-    resolution: {integrity: sha512-oOxAT6lNiMpYVZPWzFNsUvC2LQgKYyH4aBnkeoBnjuAUk8BK5AhUWSWl4QlfTcBWW4LnjDPeZQKrbnxvHhPVsw==}
+  /turbo-linux-arm64@1.9.7:
+    resolution: {integrity: sha512-r2xUwoF3Uc85MOESNZ9dlLsuWdDowG+pKT1rDfsXbDz4hjXHKaQupy68vnNQRtTRwxGofgjYkrnJsfE3nd64xQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /turbo-windows-64@1.9.6:
-    resolution: {integrity: sha512-65UxLL1vb5RItzJYNerO5c+yPMzSnD+GvJxfBZIvAwSnb+4ulhPRHzQOYinVq4PZ2DosBZOorWPRf97POmhvog==}
+  /turbo-windows-64@1.9.7:
+    resolution: {integrity: sha512-8qCYVlMrQG2lfp+E7OTJwVkpc6VdpuWGvLAVc9f0bJ23XH3ttn4k8L9KWNhRBkQHs/2obBPMJjhX0Xhq8uuPRA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /turbo-windows-arm64@1.9.6:
-    resolution: {integrity: sha512-aF9VzYT+vaKNbZGDccN7AYrNhph4gr6yOFN7GtTr777IwS5FGW7evku7RScsua5r2HwVKvBO2WjyadpbXuoOOQ==}
+  /turbo-windows-arm64@1.9.7:
+    resolution: {integrity: sha512-OSXAtagKpJL0/xfGlF5QCpVes67vrtV1DliHiXNNf2mMhUnDxNmJDz5KU5GHzWfCJi6CJ038d5n1AohG7ZNH/Q==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /turbo@1.9.6:
-    resolution: {integrity: sha512-mLbCIAYNbSm60kVhBiAr+YA1BYpPObS/y7rqw1hjh36ZdJDp35lUSeqdBs6oGt0Y4hnmN4ZeIXu8zMVRR03/vw==}
+  /turbo@1.9.7:
+    resolution: {integrity: sha512-giQ0YpSZg4cxpFl7aEwhAMELS7t+6I+QPug739u2zOJV2ODY+sRiwkul1ikuMfpLdVdlI8IT62tnHU6M8AQgpA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.9.6
-      turbo-darwin-arm64: 1.9.6
-      turbo-linux-64: 1.9.6
-      turbo-linux-arm64: 1.9.6
-      turbo-windows-64: 1.9.6
-      turbo-windows-arm64: 1.9.6
+      turbo-darwin-64: 1.9.7
+      turbo-darwin-arm64: 1.9.7
+      turbo-linux-64: 1.9.7
+      turbo-linux-arm64: 1.9.7
+      turbo-windows-64: 1.9.7
+      turbo-windows-arm64: 1.9.7
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -10492,26 +10420,6 @@ packages:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  /vite-node@0.31.0(@types/node@20.1.7):
-    resolution: {integrity: sha512-8x1x1LNuPvE2vIvkSB7c1mApX5oqlgsxzHQesYF7l5n1gKrEmrClIiZuOFbFDQcjLsmcWSwwmrWrcGWm9Fxc/g==}
-    engines: {node: '>=v14.18.0'}
-    hasBin: true
-    dependencies:
-      cac: 6.7.14
-      debug: 4.3.4
-      mlly: 1.2.1
-      pathe: 1.1.0
-      picocolors: 1.0.0
-      vite: 4.3.7(@types/node@20.1.7)
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-
   /vite-node@0.31.1(@types/node@20.1.7):
     resolution: {integrity: sha512-BajE/IsNQ6JyizPzu9zRgHrBwczkAs0erQf/JRpgTIESpKvNj9/Gd0vxX905klLkb0I0SJVCKbdrl5c6FnqYKA==}
     engines: {node: '>=v14.18.0'}
@@ -10531,7 +10439,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: true
 
   /vite-plugin-autolib@0.1.1(typescript@5.0.4):
     resolution: {integrity: sha512-HLe/IwaAcKkxLfuTpw81avhJZTItmsZcjTeKFOEBjVtDIW9Zc4jRFqTHnj+8APrD/xU9kg/W0OyYGPE6aUp9BQ==}
@@ -10659,73 +10566,7 @@ packages:
     dependencies:
       vite: 4.3.7(@types/node@20.1.7)
 
-  /vitest@0.31.0(@vitest/ui@0.31.0)(jsdom@22.0.0):
-    resolution: {integrity: sha512-JwWJS9p3GU9GxkG7eBSmr4Q4x4bvVBSswaCFf1PBNHiPx00obfhHRJfgHcnI0ffn+NMlIh9QGvG75FlaIBdKGA==}
-    engines: {node: '>=v14.18.0'}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@vitest/browser': '*'
-      '@vitest/ui': '*'
-      happy-dom: '*'
-      jsdom: '*'
-      playwright: '*'
-      safaridriver: '*'
-      webdriverio: '*'
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@vitest/browser':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-      playwright:
-        optional: true
-      safaridriver:
-        optional: true
-      webdriverio:
-        optional: true
-    dependencies:
-      '@types/chai': 4.3.5
-      '@types/chai-subset': 1.3.3
-      '@types/node': 20.1.7
-      '@vitest/expect': 0.31.0
-      '@vitest/runner': 0.31.0
-      '@vitest/snapshot': 0.31.0
-      '@vitest/spy': 0.31.0
-      '@vitest/ui': 0.31.0(vitest@0.31.0)
-      '@vitest/utils': 0.31.0
-      acorn: 8.8.2
-      acorn-walk: 8.2.0
-      cac: 6.7.14
-      chai: 4.3.7
-      concordance: 5.0.4
-      debug: 4.3.4
-      jsdom: 22.0.0
-      local-pkg: 0.4.3
-      magic-string: 0.30.0
-      pathe: 1.1.0
-      picocolors: 1.0.0
-      std-env: 3.3.3
-      strip-literal: 1.0.1
-      tinybench: 2.5.0
-      tinypool: 0.5.0
-      vite: 4.3.7(@types/node@20.1.7)
-      vite-node: 0.31.0(@types/node@20.1.7)
-      why-is-node-running: 2.2.2
-    transitivePeerDependencies:
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-
-  /vitest@0.31.1:
+  /vitest@0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0):
     resolution: {integrity: sha512-/dOoOgzoFk/5pTvg1E65WVaobknWREN15+HF+0ucudo3dDG/vCZoXTQrjIfEaWvQXmqScwkRodrTbM/ScMpRcQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -10763,6 +10604,7 @@ packages:
       '@vitest/runner': 0.31.1
       '@vitest/snapshot': 0.31.1
       '@vitest/spy': 0.31.1
+      '@vitest/ui': 0.31.1(vitest@0.31.1)
       '@vitest/utils': 0.31.1
       acorn: 8.8.2
       acorn-walk: 8.2.0
@@ -10770,6 +10612,7 @@ packages:
       chai: 4.3.7
       concordance: 5.0.4
       debug: 4.3.4
+      jsdom: 22.0.0
       local-pkg: 0.4.3
       magic-string: 0.30.0
       pathe: 1.1.0
@@ -10788,7 +10631,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: true
 
   /vscode-oniguruma@1.7.0:
     resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
