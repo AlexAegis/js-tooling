@@ -49,7 +49,7 @@
 		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo",
-		"lint:format_": "prettier --check ./*.*",
+		"lint:format_": "prettier --check *.*",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:style": "turbo run lint:style_ --concurrency 16 --cache-dir .cache/turbo",
@@ -76,6 +76,7 @@
 		"typedoc_": "typedoc"
 	},
 	"devDependencies": {
+		"@alexaegis/autotool-plugin-prettier": "workspace:^",
 		"@alexaegis/autotool-plugin-ts": "workspace:^",
 		"@alexaegis/coverage-tools": "^0.1.8",
 		"@alexaegis/eslint-config-core": "workspace:^",
@@ -87,7 +88,6 @@
 		"@alexaegis/setup-git": "workspace:^",
 		"@alexaegis/setup-github": "workspace:^",
 		"@alexaegis/setup-husky": "workspace:^",
-		"@alexaegis/autotool-plugin-prettier": "workspace:^",
 		"@alexaegis/setup-publint": "workspace:^",
 		"@alexaegis/setup-remark": "workspace:^",
 		"@alexaegis/setup-standard-version": "workspace:^",
