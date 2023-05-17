@@ -28,7 +28,7 @@ Every `autotool-plugin-*` packages job is to distribute files and `package.json`
 entries in the workspace on `postinstall`.
 
 - [autotool-plugin-depcheck](packages/autotool-plugin-depcheck/)
-- [setup-editorconfig](packages/setup-editorconfig/)
+- [autotool-plugin-editorconfig](packages/autotool-plugin-editorconfig/)
 - [setup-eslint](packages/setup-eslint/)
 - [setup-git](packages/setup-git/)
 - [setup-husky](packages/setup-husky/)
