@@ -91,6 +91,7 @@
 		"@alexaegis/autotool-plugin-svelte": "workspace:^",
 		"@alexaegis/autotool-plugin-ts": "workspace:^",
 		"@alexaegis/autotool-plugin-turbo": "workspace:^",
+		"@alexaegis/autotool-plugin-typedoc": "workspace:^",
 		"@alexaegis/coverage-tools": "^0.1.8",
 		"@alexaegis/eslint-config-core": "workspace:^",
 		"@alexaegis/nuke": "workspace:^",

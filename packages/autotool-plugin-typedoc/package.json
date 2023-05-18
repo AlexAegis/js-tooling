@@ -1,5 +1,5 @@
 {
-	"name": "@alexaegis/setup-typedoc",
+	"name": "@alexaegis/autotool-plugin-typedoc",
 	"description": "My typedoc config",
 	"version": "0.2.0",
 	"license": "MIT",
@@ -13,9 +13,9 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-typedoc",
 		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
+		"autotool-plugin",
 		"managed-by-autotool",
 		"typedoc"
 	],
@@ -27,22 +27,22 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"publint_": "publint dist",
 		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/setup-typedoc",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-typedoc",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
 	},
@@ -58,8 +58,7 @@
 		"./workspace-typedoc": "./static/workspace-typedoc.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.1.8",
-		"@alexaegis/workspace-tools": "^0.1.8",
+		"autotool-plugin": "^0.0.4",
 		"typedoc": "^0.24.7"
 	},
 	"devDependencies": {
