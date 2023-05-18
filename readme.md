@@ -38,6 +38,7 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-remark](packages/autotool-plugin-remark/)
 - [autotool-plugin-standard-version](packages/autotool-plugin-standard-version/)
 - [autotool-plugin-stylelint](packages/autotool-plugin-stylelint/)
+- [autotool-plugin-svelte](packages/autotool-plugin-svelte/)
 - [autotool-plugin-ts](packages/autotool-plugin-ts/)
 - [setup-turbo](packages/setup-turbo/)
 - [setup-vite](packages/setup-vite/)

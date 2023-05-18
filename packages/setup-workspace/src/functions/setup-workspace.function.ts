@@ -34,8 +34,7 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				scripts: {
 					nuke: 'nuke',
 					ncu: 'ncu --deep --peer --upgrade && pnpm up',
-					'setup-all':
-						'setup-standard-version && setup-stylelint && setup-turbo && setup-vite && setup-publint && setup-svelte && setup-vitest && setup-workspace',
+					'setup-all': 'setup-turbo && setup-vite && setup-vitest && setup-workspace',
 				},
 				devDependencies: {
 					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
@@ -48,8 +47,9 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					'@alexaegis/autotool-plugin-husky': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-prettier': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-remark': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-standard-version': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-stylelint': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-standard-version': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-stylelint': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-svelte': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-ts': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-turbo': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-vite': `^${packageJson.version}`, // versioned together

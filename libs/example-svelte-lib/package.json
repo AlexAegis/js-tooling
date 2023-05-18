@@ -12,7 +12,6 @@
 	},
 	"keywords": [
 		"@alexaegis/setup-stylelint",
-		"@alexaegis/setup-svelte-lib",
 		"@alexaegis/setup-vite-svelte-lib",
 		"@alexaegis/setup-vitest-svelte",
 		"managed-by-autotool",
