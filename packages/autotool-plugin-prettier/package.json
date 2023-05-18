@@ -11,7 +11,6 @@
 		"kind": "lib"
 	},
 	"keywords": [
-		"@alexaegis/autotool-plugin-prettier",
 		"autotool-plugin",
 		"managed-by-autotool",
 		"prettier"
@@ -74,6 +73,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.2.0",
+		"@alexaegis/logging": "^0.1.8",
 		"@alexaegis/ts": "^0.2.0",
 		"@alexaegis/vite": "^0.2.0",
 		"@alexaegis/vitest": "^0.2.0",

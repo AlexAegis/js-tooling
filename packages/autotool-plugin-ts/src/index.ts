@@ -29,6 +29,14 @@ export const getEncodedArchetype = (
 	return orderedValues.filter((value) => typeof value === 'string').join('-');
 };
 
+export const notCircularName = (name: string): boolean =>
+	![
+		'@alexaegis/ts',
+		'@alexaegis/vite',
+		'@alexaegis/vitest',
+		'@alexaegis/eslint-config-vitest',
+	].includes(name);
+
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	const languageMatcher = /^(ts|typescript)$/;
 
@@ -90,13 +98,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					archetype: {
 						language: languageMatcher,
 					},
-					name: (name) =>
-						![
-							'@alexaegis/ts',
-							'@alexaegis/vite',
-							'@alexaegis/vitest',
-							'@alexaegis/eslint-config-vitest',
-						].includes(name), // Don't add a dependency for itself, and other packages where it would result in a circle
+					name: notCircularName, // Don't add a dependency for itself, and other packages where it would result in a circle
 				},
 				data: {
 					devDependencies: {

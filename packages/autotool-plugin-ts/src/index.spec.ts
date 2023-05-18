@@ -7,6 +7,7 @@ import type {
 } from 'autotool-plugin';
 import { describe, expect, it } from 'vitest';
 import * as library from './index.js';
+import { getEncodedArchetype, notCircularName } from './index.js';
 
 describe('autotool-plugin-ts', () => {
 	const rootWorkspacePackage: WorkspacePackage = {
@@ -39,5 +40,17 @@ describe('autotool-plugin-ts', () => {
 		const plugin = await (library.default as AutotoolPluginFactory)(defaultOptions);
 
 		expect(plugin).toBeDefined();
+	});
+
+	describe('notCircularName', () => {
+		it('should not match for the ts package', () => {
+			expect(notCircularName('@alexaegis/ts')).toBeFalsy();
+		});
+	});
+
+	describe('getEncodedArchetype', () => {
+		it('should return an empty string if the archetype is a function', () => {
+			expect(getEncodedArchetype(() => false)).toEqual('');
+		});
 	});
 });

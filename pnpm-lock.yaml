@@ -385,6 +385,9 @@ importers:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.2.0
         version: link:../eslint-config-vitest
+      '@alexaegis/logging':
+        specifier: ^0.1.8
+        version: 0.1.8
       '@alexaegis/ts':
         specifier: ^0.2.0
         version: link:../ts
@@ -468,6 +471,9 @@ importers:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.2.0
         version: link:../eslint-config-vitest
+      '@alexaegis/logging':
+        specifier: ^0.1.8
+        version: 0.1.8
       '@alexaegis/ts':
         specifier: ^0.2.0
         version: link:../ts
@@ -604,6 +610,9 @@ importers:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.2.0
         version: link:../eslint-config-vitest
+      '@alexaegis/logging':
+        specifier: ^0.1.8
+        version: 0.1.8
       '@alexaegis/ts':
         specifier: ^0.2.0
         version: link:../ts

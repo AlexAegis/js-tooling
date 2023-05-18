@@ -33,12 +33,13 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'@alexaegis/autotool-plugin-github': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-husky': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-prettier': `^${packageJson.version}`, // versioned together
+						'@alexaegis/autotool-plugin-publint': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-remark': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-standard-version': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-stylelint': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-svelte': `^${packageJson.version}`, // versioned together
-						'@alexaegis/autotool-plugin-turbo': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-ts': `^${packageJson.version}`, // versioned together
+						'@alexaegis/autotool-plugin-turbo': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-typedoc': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-vite': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-vitest': `^${packageJson.version}`, // versioned together
