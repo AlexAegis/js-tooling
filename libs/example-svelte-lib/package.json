@@ -3,7 +3,7 @@
 	"version": "0.2.0",
 	"private": true,
 	"archetype": {
-		"platform": "node",
+		"platform": "web",
 		"framework": "svelte",
 		"language": "ts",
 		"kind": "lib",

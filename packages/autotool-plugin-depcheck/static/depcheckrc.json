@@ -9,6 +9,7 @@
 		"autotool",
 		"autotool-plugin-*",
 		"@alexaegis/autotool-plugin-*",
+		"@types/yargs",
 		"@types/eslint",
 		"@types/node",
 		"@commitlint/config-conventional",

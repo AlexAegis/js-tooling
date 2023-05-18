@@ -37,6 +37,9 @@ importers:
       '@alexaegis/autotool-plugin-standard-version':
         specifier: workspace:^
         version: link:packages/autotool-plugin-standard-version
+      '@alexaegis/autotool-plugin-stylelint':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-stylelint
       '@alexaegis/autotool-plugin-ts':
         specifier: workspace:^
         version: link:packages/autotool-plugin-ts
@@ -49,9 +52,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-stylelint':
-        specifier: workspace:^
-        version: link:packages/setup-stylelint
       '@alexaegis/setup-svelte':
         specifier: workspace:^
         version: link:packages/setup-svelte
@@ -85,6 +85,9 @@ importers:
       '@types/node':
         specifier: ^20.2.1
         version: 20.2.1
+      '@types/yargs':
+        specifier: ^17.0.24
+        version: 17.0.24
       '@vitest/coverage-c8':
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
@@ -749,6 +752,46 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
+  packages/autotool-plugin-stylelint:
+    dependencies:
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: workspace:^
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: workspace:^
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: workspace:^
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: workspace:^
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.2.1
+        version: 20.2.1
+      '@vitest/coverage-c8':
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      stylelint:
+        specifier: ^15.6.2
+        version: 15.6.2
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.8
+        version: 4.3.8(@types/node@20.2.1)
+      vitest:
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
+
   packages/autotool-plugin-ts:
     dependencies:
       '@alexaegis/logging':
@@ -1178,55 +1221,6 @@ importers:
       unified:
         specifier: ^10.1.2
         version: 10.1.2
-      vite:
-        specifier: ^4.3.8
-        version: 4.3.8(@types/node@20.2.1)
-      vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
-
-  packages/setup-stylelint:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: workspace:^
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: workspace:^
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: workspace:^
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: workspace:^
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.2.1
-        version: 20.2.1
-      '@types/yargs':
-        specifier: ^17.0.24
-        version: 17.0.24
-      '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      stylelint:
-        specifier: ^15.6.2
-        version: 15.6.2
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
