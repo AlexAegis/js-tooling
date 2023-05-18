@@ -65,32 +65,7 @@ export const setupVitest = async (rawOptions?: DistributeInWorkspaceOptions): Pr
 		];
 	};
 
-	await Promise.all([
-		...forFlavour('node'),
-		...forFlavour('web'),
-		...forFlavour('svelte'),
-		distributePackageJsonItemsInWorkspace(
-			{
-				scripts: {
-					test: 'turbo run test_ --concurrency 16 --cache-dir .cache/turbo',
-					'merge-coverage':
-						'merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
-				},
-				devDependencies: {
-					'@vitest/coverage-c8': packageJson.devDependencies['@vitest/coverage-c8'],
-					'@lcov-viewer/cli': packageJson.devDependencies['@lcov-viewer/cli'],
-					'@alexaegis/coverage-tools':
-						packageJson.dependencies['@alexaegis/coverage-tools'],
-				},
-			},
-			{
-				...options,
-				onlyWorkspaceRoot: true,
-				dependencyCriteria: [packageJson.name],
-				logger: logger.getSubLogger({ name: 'packageJson:workspace' }),
-			}
-		),
-	]);
+	await Promise.all([...forFlavour('node'), ...forFlavour('web'), ...forFlavour('svelte')]);
 
 	logger.info(`finished in ${Math.floor(performance.now() - startTime)}ms`);
 };

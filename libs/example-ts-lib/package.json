@@ -7,12 +7,9 @@
 	"archetype": {
 		"platform": "node",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "lib"
 	},
 	"keywords": [
-		"@alexaegis/setup-vitest-node",
 		"eslint",
 		"managed-by-autotool"
 	],

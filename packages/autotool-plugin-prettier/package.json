@@ -8,13 +8,10 @@
 		"platform": "node",
 		"framework": "autotool",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "lib"
 	},
 	"keywords": [
 		"@alexaegis/autotool-plugin-prettier",
-		"@alexaegis/setup-vitest-node",
 		"autotool-plugin",
 		"managed-by-autotool",
 		"prettier"

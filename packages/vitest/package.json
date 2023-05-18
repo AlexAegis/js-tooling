@@ -8,9 +8,7 @@
 		"platform": "node",
 		"framework": "vitest",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "lib"
 	},
 	"keywords": [
 		"managed-by-autotool"

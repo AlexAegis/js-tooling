@@ -6,14 +6,9 @@
 		"platform": "web",
 		"framework": "svelte",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "lib"
 	},
 	"keywords": [
-		"@alexaegis/setup-stylelint",
-		"@alexaegis/setup-vite-svelte-lib",
-		"@alexaegis/setup-vitest-svelte",
 		"managed-by-autotool",
 		"svelte"
 	],

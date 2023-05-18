@@ -11,7 +11,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageJsonFilter: {
 					archetype: {
-						bundler: 'vite',
 						kind: 'lib',
 						framework: /^(?!svelte).*$/, // Svelte has its own special vite config
 					},
@@ -26,7 +25,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageJsonFilter: {
 					archetype: {
-						bundler: 'vite',
 						kind: 'lib',
 						framework: 'svelte',
 					},
@@ -41,7 +39,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageJsonFilter: {
 					archetype: {
-						bundler: 'vite',
 						kind: 'app',
 						framework: 'svelte',
 					},
@@ -73,7 +70,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageJsonFilter: {
 					name: /^(?!@alexaegis\/vite).*$/, // Don't add it for itself, `vite` itself is a regular dependency of it anyway
 					archetype: {
-						bundler: 'vite',
+						kind: /^(app|lib)$/,
 					},
 				},
 				data: {
@@ -89,7 +86,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						bundler: 'vite',
 						kind: 'lib',
 					},
 				},
@@ -106,7 +102,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						bundler: 'vite',
 						kind: 'app',
 					},
 				},
@@ -116,7 +111,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'build-app_': 'vite build',
 						dev: 'concurrently npm:watch-deps npm:start',
 						'watch-deps':
-							"TARGET_ENV='local' nodemon --config ${relativePathFromPackageToRoot}/node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}'",
+							"TARGET_ENV='local' nodemon --config ${relativePathFromPackageToRoot}/node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}'",
 						start: "TARGET_ENV='local' vite",
 					},
 					devDependencies: {

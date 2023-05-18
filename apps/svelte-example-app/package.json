@@ -6,13 +6,10 @@
 		"platform": "web",
 		"framework": "svelte",
 		"language": "ts",
-		"kind": "app",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "app"
 	},
 	"keywords": [
 		"@alexaegis/setup-stylelint",
-		"@alexaegis/setup-vitest-svelte",
 		"managed-by-autotool",
 		"svelte"
 	],
@@ -44,7 +41,7 @@
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
-		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/setup-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
+		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
 		"@alexaegis/example-svelte-lib": "^0.2.0",

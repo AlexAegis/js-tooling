@@ -43,7 +43,7 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-ts](packages/autotool-plugin-ts/)
 - [autotool-plugin-typedoc](packages/autotool-plugin-typedoc/)
 - [autotool-plugin-vite](packages/autotool-plugin-vite/)
-- [setup-vitest](packages/setup-vitest/)
+- [autotool-plugin-vitest](packages/autotool-plugin-vitest/)
 
 ### bundles
 

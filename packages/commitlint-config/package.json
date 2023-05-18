@@ -8,12 +8,9 @@
 		"platform": "node",
 		"framework": "commitlint",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "lib"
 	},
 	"keywords": [
-		"@alexaegis/setup-vitest-node",
 		"managed-by-autotool",
 		"stylelint"
 	],

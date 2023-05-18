@@ -8,9 +8,7 @@
 		"platform": "node",
 		"framework": "autotool",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest"
+		"kind": "lib"
 	},
 	"keywords": [
 		"autotool-plugin",

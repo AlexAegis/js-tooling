@@ -7,12 +7,7 @@
 	"archetype": {
 		"platform": "node",
 		"language": "ts",
-		"kind": "lib",
-		"bundler": "vite",
-		"testing": "vitest",
-		"disabledPlugins": [
-			"@alexaegis/autolib-plugin-ts"
-		]
+		"kind": "lib"
 	},
 	"keywords": [
 		"managed-by-autotool",
