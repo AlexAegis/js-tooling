@@ -31,7 +31,7 @@ export const DEFAULT_NUKE_GLOBS: string[] = [
 	'./vitest.config.ts.timestamp*',
 ];
 
-interface NukeOptionsOnly {
+export interface NukeOptionsOnly {
 	/**
 	 * Don't remove `node_modules` directories but try to clean them up
 	 *

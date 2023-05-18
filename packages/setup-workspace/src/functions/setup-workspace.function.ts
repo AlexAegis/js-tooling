@@ -54,7 +54,7 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					'@alexaegis/autotool-plugin-typedoc': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-vite': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-vitest': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-vscode': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-vscode': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-workspace': `^${packageJson.version}`, // versioned together
 					'npm-check-updates': packageJson.dependencies['npm-check-updates'],
 				},

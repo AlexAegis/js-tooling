@@ -58,6 +58,9 @@ importers:
       '@alexaegis/autotool-plugin-vitest':
         specifier: workspace:^
         version: link:packages/autotool-plugin-vitest
+      '@alexaegis/autotool-plugin-vscode':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-vscode
       '@alexaegis/coverage-tools':
         specifier: ^0.1.8
         version: 0.1.8
@@ -67,9 +70,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-vscode':
-        specifier: workspace:^
-        version: link:packages/setup-vscode
       '@alexaegis/setup-workspace':
         specifier: workspace:^
         version: link:packages/setup-workspace
@@ -1062,6 +1062,43 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
+  packages/autotool-plugin-vscode:
+    dependencies:
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.2.1
+        version: 20.2.1
+      '@vitest/coverage-c8':
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.8
+        version: 4.3.8(@types/node@20.2.1)
+      vitest:
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
+
   packages/commitlint-config:
     dependencies:
       '@alexaegis/standard-version':
@@ -1442,49 +1479,6 @@ importers:
       unified:
         specifier: ^10.1.2
         version: 10.1.2
-      vite:
-        specifier: ^4.3.8
-        version: 4.3.8(@types/node@20.2.1)
-      vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
-
-  packages/setup-vscode:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.2.1
-        version: 20.2.1
-      '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
