@@ -70,13 +70,13 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^20.1.7",
+		"@types/node": "^20.2.1",
 		"@types/yargs": "^17.0.24",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.11",
 		"stylelint": "^15.6.2",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.7",
+		"vite": "^4.3.8",
 		"vitest": "^0.31.1"
 	}
 }

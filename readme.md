@@ -36,7 +36,7 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-prettier](packages/autotool-plugin-prettier/)
 - [autotool-plugin-publint](packages/autotool-plugin-publint/)
 - [autotool-plugin-remark](packages/autotool-plugin-remark/)
-- [setup-standard-version](packages/setup-standard-version/)
+- [autotool-plugin-standard-version](packages/autotool-plugin-standard-version/)
 - [setup-stylelint](packages/setup-stylelint/)
 - [autotool-plugin-ts](packages/autotool-plugin-ts/)
 - [setup-turbo](packages/setup-turbo/)
