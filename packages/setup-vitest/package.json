@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-vite-lib",
 		"managed-by-autotool",
 		"vitest"
 	],

@@ -14,7 +14,6 @@
 	},
 	"keywords": [
 		"@alexaegis/autotool-plugin-prettier",
-		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
 		"autotool-plugin",
 		"managed-by-autotool",

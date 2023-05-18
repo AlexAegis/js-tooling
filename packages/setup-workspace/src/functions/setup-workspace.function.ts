@@ -34,7 +34,7 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 				scripts: {
 					nuke: 'nuke',
 					ncu: 'ncu --deep --peer --upgrade && pnpm up',
-					'setup-all': 'setup-vite && setup-vitest && setup-workspace',
+					'setup-all': 'setup-vitest && setup-workspace',
 				},
 				devDependencies: {
 					'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
@@ -52,7 +52,8 @@ export const setupWorkspace = async (rawOptions?: DistributeInWorkspaceOptions):
 					'@alexaegis/autotool-plugin-svelte': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-turbo': `^${packageJson.version}`, // versioned together
 					'@alexaegis/autotool-plugin-ts': `^${packageJson.version}`, // versioned together
-					'@alexaegis/setup-vite': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-typedoc': `^${packageJson.version}`, // versioned together
+					'@alexaegis/autotool-plugin-vite': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-vitest': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-vscode': `^${packageJson.version}`, // versioned together
 					'@alexaegis/setup-workspace': `^${packageJson.version}`, // versioned together

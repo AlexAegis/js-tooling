@@ -13,7 +13,6 @@
 		"testing": "vitest"
 	},
 	"keywords": [
-		"@alexaegis/setup-vite-lib",
 		"@alexaegis/setup-vitest-node",
 		"autotool-plugin",
 		"commitlint",

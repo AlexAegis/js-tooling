@@ -41,7 +41,8 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-svelte](packages/autotool-plugin-svelte/)
 - [autotool-plugin-turbo](packages/autotool-plugin-turbo/)
 - [autotool-plugin-ts](packages/autotool-plugin-ts/)
-- [setup-vite](packages/setup-vite/)
+- [autotool-plugin-typedoc](packages/autotool-plugin-typedoc/)
+- [autotool-plugin-vite](packages/autotool-plugin-vite/)
 - [setup-vitest](packages/setup-vitest/)
 
 ### bundles

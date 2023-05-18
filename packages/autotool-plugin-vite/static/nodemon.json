@@ -1,0 +1,4 @@
+{
+	"$schema": "https://json.schemastore.org/nodemon?mark=managed-by-autotool",
+	"ignoreRoot": [".git"]
+}

@@ -24,6 +24,7 @@
 		"access": "public"
 	},
 	"scripts": {
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"build-lib": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"build-lib_": "vite build",
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
