@@ -39,8 +39,8 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-standard-version](packages/autotool-plugin-standard-version/)
 - [autotool-plugin-stylelint](packages/autotool-plugin-stylelint/)
 - [autotool-plugin-svelte](packages/autotool-plugin-svelte/)
+- [autotool-plugin-turbo](packages/autotool-plugin-turbo/)
 - [autotool-plugin-ts](packages/autotool-plugin-ts/)
-- [setup-turbo](packages/setup-turbo/)
 - [setup-vite](packages/setup-vite/)
 - [setup-vitest](packages/setup-vitest/)
 
@@ -56,7 +56,9 @@ These are either help config providers function or help manage a workspace
 
 - [nuke](packages/nuke/)
 
-### When using [`turbo`](packages/setup-turbo/)
+### When using [`turbo`](packages/autotool-plugin-turbo/)
+
+To enable remote caching:
 
 ```sh
 npx turbo link
