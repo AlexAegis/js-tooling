@@ -61,6 +61,9 @@ importers:
       '@alexaegis/autotool-plugin-vscode':
         specifier: workspace:^
         version: link:packages/autotool-plugin-vscode
+      '@alexaegis/autotool-plugin-workspace':
+        specifier: workspace:^
+        version: link:packages/autotool-plugin-workspace
       '@alexaegis/coverage-tools':
         specifier: ^0.1.8
         version: 0.1.8
@@ -70,9 +73,6 @@ importers:
       '@alexaegis/nuke':
         specifier: workspace:^
         version: link:packages/nuke
-      '@alexaegis/setup-workspace':
-        specifier: workspace:^
-        version: link:packages/setup-workspace
       '@alexaegis/stylelint-config':
         specifier: workspace:^
         version: link:packages/stylelint-config
@@ -1099,6 +1099,49 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
+  packages/autotool-plugin-workspace:
+    dependencies:
+      autotool-plugin:
+        specifier: ^0.0.4
+        version: 0.0.4
+      npm-check-updates:
+        specifier: ^16.10.12
+        version: 16.10.12
+    devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.2.0
+        version: link:../eslint-config-vitest
+      '@alexaegis/nuke':
+        specifier: ^0.2.0
+        version: link:../nuke
+      '@alexaegis/ts':
+        specifier: ^0.2.0
+        version: link:../ts
+      '@alexaegis/vite':
+        specifier: ^0.2.0
+        version: link:../vite
+      '@alexaegis/vitest':
+        specifier: ^0.2.0
+        version: link:../vitest
+      '@types/node':
+        specifier: ^20.2.1
+        version: 20.2.1
+      '@vitest/coverage-c8':
+        specifier: ^0.31.1
+        version: 0.31.1(vitest@0.31.1)
+      publint:
+        specifier: ^0.1.11
+        version: 0.1.11
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.8
+        version: 4.3.8(@types/node@20.2.1)
+      vitest:
+        specifier: ^0.31.1
+        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
+
   packages/commitlint-config:
     dependencies:
       '@alexaegis/standard-version':
@@ -1486,58 +1529,6 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
-  packages/setup-workspace:
-    dependencies:
-      '@alexaegis/cli-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/logging':
-        specifier: ^0.1.8
-        version: 0.1.8
-      '@alexaegis/setup-editorconfig':
-        specifier: ^0.2.0
-        version: 0.2.0(@types/node@20.2.1)(typescript@5.0.4)
-      '@alexaegis/workspace-tools':
-        specifier: ^0.1.8
-        version: 0.1.8
-      npm-check-updates:
-        specifier: ^16.10.12
-        version: 16.10.12
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.2.0
-        version: link:../eslint-config-vitest
-      '@alexaegis/nuke':
-        specifier: ^0.2.0
-        version: link:../nuke
-      '@alexaegis/ts':
-        specifier: ^0.2.0
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.2.0
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.2.0
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.2.1
-        version: 20.2.1
-      '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
-      publint:
-        specifier: ^0.1.11
-        version: 0.1.11
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
-      vite:
-        specifier: ^4.3.8
-        version: 4.3.8(@types/node@20.2.1)
-      vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
-
   packages/standard-version:
     dependencies:
       '@alexaegis/common':
@@ -1791,57 +1782,6 @@ packages:
   /@alexaegis/match@0.1.8:
     resolution: {integrity: sha512-WR7SXQnqIypiRnt2ua67k6MQuvJJPciPChPRPvo0jX5kleIzZmo8IithUtuwpKbXeR+0EDdw5gbVfLfM4AYIAQ==}
     engines: {node: '>=18.13.0'}
-
-  /@alexaegis/setup-editorconfig@0.2.0(@types/node@20.2.1)(typescript@5.0.4):
-    resolution: {integrity: sha512-Itj1FxdT9hoF6PEu0lQDhyyuCTZK40jaYChnEFFT7NNgBJZU709oeHnzQ4Bpi5FUAHHflD76gznk39SjktWDKw==}
-    engines: {node: '>=18.13.0'}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      '@alexaegis/cli-tools': 0.1.8
-      '@alexaegis/logging': 0.1.8
-      '@alexaegis/vite': 0.2.0(@types/node@20.2.1)(typescript@5.0.4)
-      '@alexaegis/workspace-tools': 0.1.8
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - less
-      - rollup
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - typescript
-    dev: false
-
-  /@alexaegis/vite@0.2.0(@types/node@20.2.1)(typescript@5.0.4):
-    resolution: {integrity: sha512-rqCXegFFT/k52bNOBWdhiBjK2sf0aRljA0nKv42p+3zFGsMjzX7mUqESxH5CSd6LiwYLLMwoFL406Nsq3VEKJw==}
-    engines: {node: '>=18.13.0'}
-    dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.2.0(svelte@3.59.1)(vite@4.3.8)
-      concurrently: 8.0.1
-      nodemon: 2.0.22
-      svelte: 3.59.1
-      vite: 4.3.8(@types/node@20.2.1)
-      vite-plugin-autolib: 0.1.1(typescript@5.0.4)
-      vite-plugin-dts: 2.3.0(@types/node@20.2.1)(vite@4.3.8)
-    optionalDependencies:
-      prettier: 2.8.8
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - less
-      - rollup
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - typescript
-    dev: false
 
   /@alexaegis/workspace-tools@0.1.8:
     resolution: {integrity: sha512-AR7lSTyflUAXF1p8I1FLuZgptqWhkSILFSMg071WIMwVdxNbKItUaRbFJ7IxTse8iIeBxHRyzO17G8Waf0+mvQ==}

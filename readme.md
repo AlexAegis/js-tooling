@@ -44,12 +44,7 @@ entries in the workspace on `postinstall`.
 - [autotool-plugin-typedoc](packages/autotool-plugin-typedoc/)
 - [autotool-plugin-vite](packages/autotool-plugin-vite/)
 - [autotool-plugin-vitest](packages/autotool-plugin-vitest/)
-
-### bundles
-
-Packages bundling other packages together
-
-- [setup-workspace](packages/setup-workspace/)
+- [autotool-plugin-workspace](packages/autotool-plugin-workspace/)
 
 ## cli tools
 
