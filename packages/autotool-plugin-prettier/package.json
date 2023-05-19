@@ -56,11 +56,6 @@
 			"import": "./dist/prettier-config.js",
 			"require": "./dist/prettier-config.cjs"
 		},
-		"./prettier-plugin-svelte.d": {
-			"types": "./src/prettier-plugin-svelte.d.ts",
-			"import": "./dist/prettier-plugin-svelte.d.js",
-			"require": "./dist/prettier-plugin-svelte.d.cjs"
-		},
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
