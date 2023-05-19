@@ -5,79 +5,79 @@ importers:
   .:
     devDependencies:
       '@alexaegis/autotool-plugin-commitlint':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-commitlint
       '@alexaegis/autotool-plugin-depcheck':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-depcheck
       '@alexaegis/autotool-plugin-editorconfig':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-editorconfig
       '@alexaegis/autotool-plugin-eslint':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-eslint
       '@alexaegis/autotool-plugin-git':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-git
       '@alexaegis/autotool-plugin-github':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-github
       '@alexaegis/autotool-plugin-husky':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-husky
       '@alexaegis/autotool-plugin-prettier':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-prettier
       '@alexaegis/autotool-plugin-publint':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-publint
       '@alexaegis/autotool-plugin-remark':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-remark
       '@alexaegis/autotool-plugin-standard-version':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-standard-version
       '@alexaegis/autotool-plugin-stylelint':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-stylelint
       '@alexaegis/autotool-plugin-svelte':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-svelte
       '@alexaegis/autotool-plugin-ts':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-ts
       '@alexaegis/autotool-plugin-turbo':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-turbo
       '@alexaegis/autotool-plugin-typedoc':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-typedoc
       '@alexaegis/autotool-plugin-vite':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-vite
       '@alexaegis/autotool-plugin-vitest':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-vitest
       '@alexaegis/autotool-plugin-vscode':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-vscode
       '@alexaegis/autotool-plugin-workspace':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/autotool-plugin-workspace
       '@alexaegis/coverage-tools':
         specifier: ^0.1.8
         version: 0.1.8
       '@alexaegis/eslint-config-core':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/eslint-config-core
       '@alexaegis/nuke':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/nuke
       '@alexaegis/stylelint-config':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/stylelint-config
       '@alexaegis/ts':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^
         version: link:packages/ts
       '@lcov-viewer/cli':
         specifier: ^1.3.0
