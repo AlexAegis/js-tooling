@@ -36,6 +36,7 @@
 				"build-lib_",
 				"test_",
 				"typedoc_",
+				"publint_",
 				"//#typedoc_",
 				"//#lint_"
 			],
