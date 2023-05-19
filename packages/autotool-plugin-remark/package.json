@@ -55,6 +55,7 @@
 		}
 	},
 	"dependencies": {
+		"@alexaegis/logging": "^0.1.8",
 		"@alexaegis/remark-preset": "^0.2.0",
 		"autotool-plugin": "^0.0.4"
 	},

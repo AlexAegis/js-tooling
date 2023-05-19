@@ -52,6 +52,7 @@
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"dependencies": {
+		"@alexaegis/logging": "^0.1.8",
 		"autotool-plugin": "^0.0.4"
 	},
 	"devDependencies": {

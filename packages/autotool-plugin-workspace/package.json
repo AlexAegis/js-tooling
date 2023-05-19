@@ -51,6 +51,7 @@
 		"./pnpm-workspace": "./static/pnpm-workspace.yaml"
 	},
 	"dependencies": {
+		"@alexaegis/logging": "^0.1.8",
 		"autotool-plugin": "^0.0.4",
 		"npm-check-updates": "^16.10.12"
 	},

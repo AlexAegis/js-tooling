@@ -48,16 +48,12 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./config": {
-			"types": "./src/config.ts",
-			"import": "./dist/config.js",
-			"require": "./dist/config.cjs"
-		},
 		"./readme": "./readme.md",
 		"./stylelint.config": "./static/stylelint.config.cjs",
 		"./stylelintignore": "./static/stylelintignore"
 	},
 	"dependencies": {
+		"@alexaegis/logging": "^0.1.8",
 		"autotool-plugin": "^0.0.4"
 	},
 	"devDependencies": {

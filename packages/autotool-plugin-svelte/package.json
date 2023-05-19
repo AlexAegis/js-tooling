@@ -50,6 +50,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/coverage-tools": "^0.1.8",
+		"@alexaegis/logging": "^0.1.8",
 		"@sveltejs/kit": "^1.18.0",
 		"autotool-plugin": "^0.0.4",
 		"svelte": "^3.59.1",

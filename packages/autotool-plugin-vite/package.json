@@ -52,6 +52,7 @@
 		"./vite-svelte-lib.config": "./static/vite-svelte-lib.config.ts"
 	},
 	"dependencies": {
+		"@alexaegis/logging": "^0.1.8",
 		"autotool-plugin": "^0.0.4",
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",
