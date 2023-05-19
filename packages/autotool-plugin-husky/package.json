@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-husky",
 	"description": "Husky, lint-staged and commitlint stuff",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -55,7 +55,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/lint-staged-config": "^0.2.0",
+		"@alexaegis/lint-staged-config": "^0.3.0",
 		"@alexaegis/logging": "^0.1.8",
 		"@commitlint/config-conventional": "^17.6.3",
 		"autotool-plugin": "^0.0.4",
@@ -63,13 +63,13 @@
 		"lint-staged": "^13.2.2"
 	},
 	"peerDependencies": {
-		"@alexaegis/autotool-plugin-commitlint": "^0.2.0"
+		"@alexaegis/autotool-plugin-commitlint": "^0.3.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.2.0",
-		"@alexaegis/ts": "^0.2.0",
-		"@alexaegis/vite": "^0.2.0",
-		"@alexaegis/vitest": "^0.2.0",
+		"@alexaegis/eslint-config-vitest": "^0.3.0",
+		"@alexaegis/ts": "^0.3.0",
+		"@alexaegis/vite": "^0.3.0",
+		"@alexaegis/vitest": "^0.3.0",
 		"@types/node": "^20.2.1",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.11",

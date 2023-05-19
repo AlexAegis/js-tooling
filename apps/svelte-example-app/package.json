@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"private": true,
 	"archetype": {
 		"platform": "web",
@@ -44,15 +44,15 @@
 		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
-		"@alexaegis/example-svelte-lib": "^0.2.0",
-		"@alexaegis/example-ts-lib": "^0.2.0"
+		"@alexaegis/example-svelte-lib": "^0.3.0",
+		"@alexaegis/example-ts-lib": "^0.3.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.2.0",
-		"@alexaegis/stylelint-config": "^0.2.0",
-		"@alexaegis/ts": "^0.2.0",
-		"@alexaegis/vite": "^0.2.0",
-		"@alexaegis/vitest": "^0.2.0",
+		"@alexaegis/eslint-config-vitest": "^0.3.0",
+		"@alexaegis/stylelint-config": "^0.3.0",
+		"@alexaegis/ts": "^0.3.0",
+		"@alexaegis/vite": "^0.3.0",
+		"@alexaegis/vitest": "^0.3.0",
 		"@sveltejs/kit": "^1.18.0",
 		"@vitest/coverage-c8": "^0.31.1",
 		"concurrently": "^8.0.1",

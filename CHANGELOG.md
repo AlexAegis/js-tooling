@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://github.com/AlexAegis/js-tooling/compare/v0.2.0...v0.3.0) (2023-05-19)
+
+
+### Features
+
+* add TARGET_ENV as build dep, fix publint setup ([063a03f](https://github.com/AlexAegis/js-tooling/commit/063a03f42b0191e96ab3c050bcd89b211c1a411b))
+* **autotool-plugin-commitlint:** migrated to autotool ([62c5400](https://github.com/AlexAegis/js-tooling/commit/62c540055c5b54384838cc5d2ea3f692922994b1))
+* **autotool-plugin-depcheck:** migrated to autotool ([140b406](https://github.com/AlexAegis/js-tooling/commit/140b40694bd15c502256434e04a9edbc718dcb8e))
+* **autotool-plugin-editorconfig:** migrated to autotool ([1867a3b](https://github.com/AlexAegis/js-tooling/commit/1867a3ba1021c26b68bdc9908b63ef92bd28f4a0))
+* **autotool-plugin-eslint:** migrated to autotool ([ff87e6f](https://github.com/AlexAegis/js-tooling/commit/ff87e6fcb8a967de2d93be5cfe9b57dcb9f13c90))
+* **autotool-plugin-github:** migrated to autotool ([f93273d](https://github.com/AlexAegis/js-tooling/commit/f93273d5c1e281d96aba91a7575ea3e6b480090e))
+* **autotool-plugin-git:** migrated to autotool ([75af425](https://github.com/AlexAegis/js-tooling/commit/75af425b272ebd5be0167dd4f6c3d0025dace728))
+* **autotool-plugin-husky:** migrated to autotool ([02a220b](https://github.com/AlexAegis/js-tooling/commit/02a220b26211500d32e3d39c9a7de46eedfc5ea7))
+* **autotool-plugin-prettier:** migrated prettier setup ([c7a3d48](https://github.com/AlexAegis/js-tooling/commit/c7a3d481f2b6e841bb62d77b0c4804950b68e8d1))
+* **autotool-plugin-publint:** migrated to autotool ([ba25293](https://github.com/AlexAegis/js-tooling/commit/ba252937dfcabdb2f59b7e3b5e43cf16a6a4043f))
+* **autotool-plugin-remark:** migrated to autotool ([5a01a29](https://github.com/AlexAegis/js-tooling/commit/5a01a29f8a66f1fa16428d1aefcbb828f1e32fbc))
+* **autotool-plugin-standard-version:** migrated to autotool ([787193f](https://github.com/AlexAegis/js-tooling/commit/787193f7b66d9169be68a867620c5749330d3b11))
+* **autotool-plugin-stylelint:** migrated to autotool ([41178d4](https://github.com/AlexAegis/js-tooling/commit/41178d44ff2913aa53ff750d5b5bb207b245ed00))
+* **autotool-plugin-svelte:** migrated to autotool ([51d426f](https://github.com/AlexAegis/js-tooling/commit/51d426fb68447ce2b78ea6246e31e90c35c6ec7f))
+* **autotool-plugin-ts:** applied plugin ([0ec022f](https://github.com/AlexAegis/js-tooling/commit/0ec022feca81cb95b55c6a76c6b1cc0f65afcc11))
+* **autotool-plugin-ts:** migrated ([141c138](https://github.com/AlexAegis/js-tooling/commit/141c1386af6ad911ae81720fea221968d0dbcbd8))
+* **autotool-plugin-turbo:** migrated to autotool ([a548ea7](https://github.com/AlexAegis/js-tooling/commit/a548ea7813d5279fc9da59af762da6da67e20a83))
+* **autotool-plugin-typedoc:** migrated to autotool ([1d18258](https://github.com/AlexAegis/js-tooling/commit/1d1825852b14b2c9e44fcfcf114a7c2894a4d7a7))
+* **autotool-plugin-vite:** migrated to autotool ([2a1674c](https://github.com/AlexAegis/js-tooling/commit/2a1674cf2511806153669647ab4d592f5f8f365d))
+* **autotool-plugin-vitest:** migrated to autotool ([b99c89b](https://github.com/AlexAegis/js-tooling/commit/b99c89b596aeb6b4dd9db354ed05d6bc03e973d2))
+* **autotool-plugin-vscode:** migrated to autotool ([06c7612](https://github.com/AlexAegis/js-tooling/commit/06c76124e3d34c2f044931d0730f174a2226db2b))
+* **autotool-plugin-workspace:** migrated to autotool ([6710dee](https://github.com/AlexAegis/js-tooling/commit/6710dee589182c5ee1866b7ebff285b5418bf475))
+* converted setup-ts to the new plugin format ([465622a](https://github.com/AlexAegis/js-tooling/commit/465622a56694cf0de069dc450a5597d616110bd4))
+* create default plugin ([81681a3](https://github.com/AlexAegis/js-tooling/commit/81681a39eb3b1df858549728eab29343af28b9db))
+* depcheck should ignore autotool plugins ([7c22094](https://github.com/AlexAegis/js-tooling/commit/7c220948969aa934cbf54c695de25445ea8582f6))
+* **eslint-config-core:** better svelte support ([7508621](https://github.com/AlexAegis/js-tooling/commit/7508621d1aae8913d685300e8589dbd1a7155802))
+* **object-match:** add JsonMatcherFrom ([2650ffc](https://github.com/AlexAegis/js-tooling/commit/2650ffc54ee602233d1cb736df64dd39790a3f8b))
+* **object-match:** implement object matching package ([1d144ab](https://github.com/AlexAegis/js-tooling/commit/1d144ab27a068a97b4fc63e316864fe408da44b5))
+* reduce concurrency to 16 ([2d544e2](https://github.com/AlexAegis/js-tooling/commit/2d544e2963825e0ec211691ab367b0157aabbc3f))
+* **setup-github:** got rid of NPM_PACKAGE_ORG_PREFIX from cicd env ([d7a30e6](https://github.com/AlexAegis/js-tooling/commit/d7a30e6096f81bdb1dec819855d7969942cbc87f))
+* **setup-publint:** add setup-publint ([7c2498e](https://github.com/AlexAegis/js-tooling/commit/7c2498ebf868de0e7cf28835ea6c0c0f532d5085))
+* **setup-stylelint:** added html setup for html like files like svelte ([82d3199](https://github.com/AlexAegis/js-tooling/commit/82d31998a0da6a905821a9ce2cec3e4a274fdd98))
+* **setup-svelte:** add package ([82afbc6](https://github.com/AlexAegis/js-tooling/commit/82afbc618a2d58acf28d04bd7ee806e336fd21f5))
+* **setup-svelte:** basic setup ([5562b85](https://github.com/AlexAegis/js-tooling/commit/5562b85d3af603537d68a94bfc54d0d34738c15d))
+* **setup-svelte:** move inspector out of experimental ([83c4761](https://github.com/AlexAegis/js-tooling/commit/83c4761b78c3e37aaee7361b7b9013d7025cb586))
+* **setup:** added sourcePlugin info for errors ([d1840b6](https://github.com/AlexAegis/js-tooling/commit/d1840b6c0d50ab43c9e5d320f37d0e3ff2a35949))
+* **setup:** pluginify executors ([a39e84f](https://github.com/AlexAegis/js-tooling/commit/a39e84f665cea245b872ff8e6cc04f77ecf46061))
+* simpler prettier command ([d00ca76](https://github.com/AlexAegis/js-tooling/commit/d00ca765001da30dc937a61152c01ca012fca365))
+
+
+### Bug Fixes
+
+* ignore .svelte-kit folder ([70b7f0b](https://github.com/AlexAegis/js-tooling/commit/70b7f0bf101a85491ae8dc21afa2eeff7ae7dc52))
+* **object-match:** add boolean support ([c0b112b](https://github.com/AlexAegis/js-tooling/commit/c0b112bea14ffdb467070db63e185eec079a79b9))
+* removed tsc from typedoc dependencies, as it would result in double work ([73b0966](https://github.com/AlexAegis/js-tooling/commit/73b0966b0f8413fab01a0bbb914c514d4ddeb067))
+* **setup-git:** bad export ([d9e16d0](https://github.com/AlexAegis/js-tooling/commit/d9e16d07a094759ce6a0bd269204ee66f56a4a96))
+* **setup-publint:** fix and apply ([e19aaa3](https://github.com/AlexAegis/js-tooling/commit/e19aaa35ac88168c087fc23fbc7a5b19e9783a60))
+* **setup-typedoc:** fix filename ([0303371](https://github.com/AlexAegis/js-tooling/commit/030337134fe6b732d08298b39f3a3dea7ff89df0))
+
 ## [0.2.0](https://github.com/AlexAegis/js-tooling/compare/v0.1.9...v0.2.0) (2023-04-22)
 
 
