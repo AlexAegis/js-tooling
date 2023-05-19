@@ -174,13 +174,13 @@
 			"outputMode": "new-only"
 		},
 		"typedoc_": {
-			"dependsOn": ["^lint:tsc_", "lint:tsc_"],
+			"dependsOn": [],
 			"inputs": ["**/*.ts"],
 			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"//#typedoc_": {
-			"dependsOn": ["lint:tsc_"],
+			"dependsOn": [],
 			"inputs": ["**/*.ts"],
 			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
