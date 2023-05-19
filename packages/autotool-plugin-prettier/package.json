@@ -59,7 +59,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.1.8",
+		"@alexaegis/logging": "^0.2.0",
 		"@alexaegis/prettier-config": "^0.3.0",
 		"autotool-plugin": "^0.0.4",
 		"prettier": "^2.8.8"

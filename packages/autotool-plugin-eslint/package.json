@@ -52,7 +52,7 @@
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.1.8",
+		"@alexaegis/logging": "^0.2.0",
 		"autotool-plugin": "^0.0.4"
 	},
 	"devDependencies": {
@@ -64,7 +64,7 @@
 		"@types/eslint": "^8.37.0",
 		"@types/node": "^20.2.1",
 		"@vitest/coverage-c8": "^0.31.1",
-		"eslint": "^8.40.0",
+		"eslint": "^8.41.0",
 		"publint": "^0.1.11",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.8",

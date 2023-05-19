@@ -1,5 +1,5 @@
-import type { CustomJsonValueMatcher, JsonMatcherFrom } from '@alexaegis/match';
-import { type PackageArchetype } from '@alexaegis/workspace-tools';
+import type { JsonMatcherFrom } from '@alexaegis/match';
+import { getEncodedArchetype, type PackageArchetype } from '@alexaegis/workspace-tools';
 import {
 	type AutotoolElementFileCopy,
 	type AutotoolPlugin,
@@ -7,27 +7,6 @@ import {
 } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
-
-/**
- * @deprecated use core
- */
-export const getEncodedArchetype = (
-	archetype?: JsonMatcherFrom<PackageArchetype> | undefined
-): string => {
-	if (!archetype || typeof archetype === 'function') {
-		return '';
-	}
-	const orderedValues: (string | RegExp | CustomJsonValueMatcher<string> | null | undefined)[] = [
-		archetype.platform,
-		archetype.framework,
-		archetype.language,
-		archetype.kind,
-		archetype.bundler,
-		archetype.testing,
-	];
-
-	return orderedValues.filter((value) => typeof value === 'string').join('-');
-};
 
 export const notCircularName = (name: string): boolean =>
 	![
