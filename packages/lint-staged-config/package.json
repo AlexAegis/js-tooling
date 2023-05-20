@@ -54,9 +54,6 @@
 		"lint-staged": "13.2.2",
 		"typescript": "^5.0.4"
 	},
-	"peerDependencies": {
-		"typescript": "^5.0.4"
-	},
 	"optionalDependencies": {
 		"svelte": "^3.59.1"
 	},

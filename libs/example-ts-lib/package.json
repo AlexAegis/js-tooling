@@ -48,10 +48,6 @@
 		},
 		"./readme": "./readme.md"
 	},
-	"dependencies": {},
-	"peerDependencies": {
-		"typescript": "^5.0.4"
-	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.0",
 		"@alexaegis/ts": "^0.3.0",

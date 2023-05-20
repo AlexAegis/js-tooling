@@ -73,10 +73,6 @@
 		"jsdom": "22.0.0",
 		"vitest": "^0.31.1"
 	},
-	"peerDependencies": {
-		"vite": "^4.2.1",
-		"vitest": "^0.30.1"
-	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.3.0",
 		"publint": "^0.1.12",

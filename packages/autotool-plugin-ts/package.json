@@ -64,9 +64,6 @@
 		"autotool-plugin": "^0.0.4",
 		"typescript": "^5.0.4"
 	},
-	"peerDependencies": {
-		"ts-node": "^10.9.1"
-	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.0",
 		"@alexaegis/ts": "^0.3.0",
@@ -75,6 +72,7 @@
 		"@types/node": "^20.2.1",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.12",
+		"ts-node": "^10.9.1",
 		"vite": "^4.3.8",
 		"vitest": "^0.31.1"
 	}

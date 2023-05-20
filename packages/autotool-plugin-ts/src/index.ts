@@ -48,7 +48,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					devDependencies: {
 						'@alexaegis/ts': `^${packageJson.version}`, // For the root tsConfig
 						typescript: packageJson.dependencies.typescript,
-						'ts-node': packageJson.peerDependencies['ts-node'],
+						'ts-node': packageJson.devDependencies['ts-node'],
 					},
 				},
 			},

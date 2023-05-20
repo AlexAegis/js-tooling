@@ -257,10 +257,6 @@ importers:
         version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.0.0)
 
   libs/example-ts-lib:
-    dependencies:
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.3.0
@@ -553,9 +549,6 @@ importers:
 
   packages/autotool-plugin-husky:
     dependencies:
-      '@alexaegis/autotool-plugin-commitlint':
-        specifier: ^0.3.0
-        version: link:../autotool-plugin-commitlint
       '@alexaegis/lint-staged-config':
         specifier: ^0.3.0
         version: link:../lint-staged-config
@@ -900,9 +893,6 @@ importers:
       autotool-plugin:
         specifier: ^0.0.4
         version: 0.0.4
-      ts-node:
-        specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.2.1)(typescript@5.0.4)
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -928,6 +918,9 @@ importers:
       publint:
         specifier: ^0.1.12
         version: 0.1.12
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.1(@types/node@20.2.1)(typescript@5.0.4)
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)

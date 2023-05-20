@@ -63,9 +63,6 @@
 		"remark-prettier": "^2.0.0",
 		"remark-validate-links": "^12.1.1"
 	},
-	"peerDependencies": {
-		"prettier": "^2.8.7"
-	},
 	"optionalDependencies": {
 		"prettier": "^2.8.8"
 	},

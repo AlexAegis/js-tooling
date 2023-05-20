@@ -47,6 +47,7 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./angular": "./angular.json",
 		"./base": "./base.json",
 		"./node": "./node.json",
 		"./svelte": "./svelte.json",
