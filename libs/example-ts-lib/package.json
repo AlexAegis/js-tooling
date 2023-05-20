@@ -60,7 +60,7 @@
 		"@types/eslint": "^8.37.0",
 		"@types/node": "^20.2.1",
 		"@vitest/coverage-c8": "^0.31.1",
-		"publint": "^0.1.11",
+		"publint": "^0.1.12",
 		"vite": "^4.3.8",
 		"vitest": "^0.31.1"
 	}

@@ -15,6 +15,22 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: 'pnpm-workspace.yaml',
 			},
 			{
+				description: 'workspace engine preferences for node',
+				executor: 'packageJson',
+				packageKind: 'root',
+				data: {
+					config: {
+						'engine-strict': true,
+					},
+					engines: {
+						node: '>=18.10.0',
+						npm: undefined,
+						pnpm: '>=8.0.0',
+					},
+					packageManager: 'pnpm@8.5.1',
+				},
+			},
+			{
 				description: 'workspace scripts and all autotool plugins as devDependencies',
 				executor: 'packageJson',
 				packageKind: 'root',

@@ -62,7 +62,7 @@
 		"@alexaegis/vitest": "^0.3.0",
 		"@types/node": "^20.2.1",
 		"@vitest/coverage-c8": "^0.31.1",
-		"publint": "^0.1.11",
+		"publint": "^0.1.12",
 		"stylelint": "^15.6.2",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.8",

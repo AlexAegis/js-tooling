@@ -122,8 +122,8 @@ importers:
         specifier: ^2.8.8
         version: 2.8.8
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       remark:
         specifier: ^14.0.3
         version: 14.0.3
@@ -284,8 +284,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -327,8 +327,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -370,8 +370,8 @@ importers:
         specifier: ^1.4.3
         version: 1.4.3
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -410,8 +410,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -459,8 +459,8 @@ importers:
         specifier: ^8.41.0
         version: 8.41.0
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -499,8 +499,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -539,8 +539,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -594,8 +594,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -644,8 +644,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -684,8 +684,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -727,8 +727,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       remark:
         specifier: ^14.0.3
         version: 14.0.3
@@ -776,8 +776,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -801,13 +801,13 @@ importers:
         specifier: workspace:^0.3.0
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.3.0
+        specifier: ^0.3.0
         version: link:../ts
       '@alexaegis/vite':
-        specifier: workspace:^0.3.0
+        specifier: ^0.3.0
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: workspace:^0.3.0
+        specifier: ^0.3.0
         version: link:../vitest
       '@types/node':
         specifier: ^20.2.1
@@ -816,8 +816,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       stylelint:
         specifier: ^15.6.2
         version: 15.6.2
@@ -874,8 +874,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -926,8 +926,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -966,8 +966,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1009,8 +1009,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1058,8 +1058,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1101,8 +1101,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1141,8 +1141,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1187,8 +1187,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1227,8 +1227,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1298,8 +1298,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -1360,8 +1360,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -1410,8 +1410,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -1456,8 +1456,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1500,8 +1500,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -1574,8 +1574,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       unified:
         specifier: ^10.1.2
         version: 10.1.2
@@ -1623,8 +1623,8 @@ importers:
         specifier: ^20.2.1
         version: 20.2.1
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
@@ -1666,8 +1666,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       stylelint:
         specifier: ^15.6.2
         version: 15.6.2
@@ -1709,8 +1709,8 @@ importers:
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite-plugin-dts:
         specifier: ^2.3.0
         version: 2.3.0(@types/node@20.2.1)(vite@4.3.8)
@@ -1753,8 +1753,8 @@ importers:
         specifier: ^20.2.1
         version: 20.2.1
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.2.1)(typescript@5.0.4)
@@ -1787,8 +1787,8 @@ importers:
         specifier: ^0.3.0
         version: link:../vite
       publint:
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.1)
@@ -3936,7 +3936,7 @@ packages:
     dependencies:
       date-time: 3.1.0
       esutils: 2.0.3
-      fast-diff: 1.2.0
+      fast-diff: 1.3.0
       js-string-escape: 1.0.1
       lodash: 4.17.21
       md5-hex: 3.0.1
@@ -5095,6 +5095,10 @@ packages:
 
   /fast-diff@1.2.0:
     resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
+    dev: false
+
+  /fast-diff@1.3.0:
+    resolution: {integrity: sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==}
 
   /fast-glob@3.2.12:
     resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
@@ -7921,8 +7925,8 @@ packages:
   /pstree.remy@1.1.8:
     resolution: {integrity: sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w==}
 
-  /publint@0.1.11:
-    resolution: {integrity: sha512-sD0rtIEadks83MkpomJswBO/YHExJLkta1TyqUhb0/aVV+o3ZlVnwsDPjCAow8tpfxmLGutCSLWq32yfhPB98w==}
+  /publint@0.1.12:
+    resolution: {integrity: sha512-8LxkO430t/SOhUl0qXQWdXq34m6oyLcPhE4Kc8eXhOEnB82vCHcShPQ2kH53n/ksC7jWdRWDP7MPGxKJbntQfg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
