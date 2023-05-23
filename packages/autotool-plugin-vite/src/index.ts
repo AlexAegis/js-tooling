@@ -87,6 +87,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageJsonFilter: {
 					archetype: {
 						kind: 'lib',
+						framework: '', // TODO: not angular (ng-packagr) and not svelte (svelte package) -> unless vite can handle through plugins
 					},
 				},
 				data: {

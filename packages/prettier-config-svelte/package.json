@@ -1,0 +1,72 @@
+{
+	"name": "@alexaegis/prettier-config-svelte",
+	"description": "Prettier configuration for svelte and tailwind",
+	"version": "0.3.0",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "prettier",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"managed-by-autotool",
+		"svelte",
+		"tailwind"
+	],
+	"type": "module",
+	"config": {
+		"engine-strict": true
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"build-lib_": "vite build",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"lint:format_": "prettier --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"publint_": "publint dist",
+		"format": "prettier --write .",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./readme": "./readme.md"
+	},
+	"dependencies": {
+		"@alexaegis/prettier-config": "^0.3.0",
+		"prettier": "^2.8.8",
+		"prettier-plugin-svelte": "^2.10.0",
+		"prettier-plugin-tailwind": "^2.2.12",
+		"svelte": "^3.59.1",
+		"tailwindcss": "^3.3.2"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "^0.3.0",
+		"@alexaegis/ts": "^0.3.0",
+		"@alexaegis/vite": "^0.3.0",
+		"@alexaegis/vitest": "^0.3.0",
+		"@types/node": "^20.2.3",
+		"@vitest/coverage-c8": "^0.31.1",
+		"publint": "^0.1.12",
+		"vite": "^4.3.8",
+		"vitest": "^0.31.1"
+	}
+}

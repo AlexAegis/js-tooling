@@ -2,7 +2,7 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "./base.json",
 	"compilerOptions": {
-		"moduleResolution": "bundler",
+		"moduleResolution": "nodenext",
 		"lib": ["es2022", "dom"]
 	}
 }

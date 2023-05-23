@@ -1,11 +1,41 @@
 {
-	"$schema": "https://json.schemastore.org/tsconfig?mark=managed-by-autotool",
-	"extends": "@alexaegis/ts/svelte",
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": ["./.svelte-kit/tsconfig.json", "@alexaegis/ts/web"],
 	"compilerOptions": {
 		"rootDir": "../../",
+		"moduleResolution": "bundler",
 		"outDir": "./dist/out-tsc"
 	},
-	"files": ["package.json", "../../package.json"],
-	"include": ["src/**/*", "static/**/*", "__mocks__/**/*", ".*", "*", "*.json", "**/*.json"],
-	"exclude": ["node_modules", "dist", "coverage", "typedoc", "vite*.config.ts.timestamp-*"]
+	"files": [
+		// extends doesn't combine fields, so this has been copied from .svelte-kit
+		".svelte-kit/ambient.d.ts",
+
+		"package.json",
+		"../../package.json"
+	],
+	"include": [
+		// extends doesn't combine fields, so this has been copied from .svelte-kit
+		".svelte-kit/ambient.d.ts",
+		".svelte-kit/types/**/$types.d.ts",
+		"src/**/*",
+		"static/**/*",
+		"__mocks__/**/*",
+		".*",
+		"*",
+		"*.json",
+		"**/*.json"
+	],
+	"exclude": [
+		"tailwind.config.cjss",
+		// extends doesn't combine fields, so this has been copied from .svelte-kit
+		".svelte-kit/[!ambient.d.ts]**",
+		"src/service-worker.js",
+		"src/service-worker.ts",
+		"src/service-worker.d.ts",
+		"node_modules",
+		"dist",
+		"coverage",
+		"typedoc",
+		"vite*.config.ts.timestamp-*"
+	]
 }

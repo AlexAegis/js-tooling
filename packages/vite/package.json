@@ -1,91 +1,91 @@
 {
-	"name": "@alexaegis/vite",
-	"description": "My vite config",
-	"version": "0.3.0",
-	"license": "MIT",
-	"private": false,
-	"archetype": {
-		"platform": "node",
-		"framework": "vite",
-		"language": "ts",
-		"kind": "lib"
-	},
-	"keywords": [
-		"managed-by-autotool",
-		"vite"
-	],
-	"type": "module",
-	"config": {
-		"engine-strict": false
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"build-lib": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"publint_": "publint dist",
-		"format": "prettier --write .",
-		"prebuild": "turbo run prebuild_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"prebuild_": "vite build",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage"
-	},
-	"exports": {
-		".": {
-			"types": "./src/index.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		},
-		"./app-svelte-vite.config": {
-			"types": "./src/app-svelte-vite.config.ts",
-			"import": "./dist/app-svelte-vite.config.js",
-			"require": "./dist/app-svelte-vite.config.cjs"
-		},
-		"./base-vite.config": {
-			"types": "./src/base-vite.config.ts",
-			"import": "./dist/base-vite.config.js",
-			"require": "./dist/base-vite.config.cjs"
-		},
-		"./example": "./static/example.json",
-		"./library-vite.config": {
-			"types": "./src/library-vite.config.ts",
-			"import": "./dist/library-vite.config.js",
-			"require": "./dist/library-vite.config.cjs"
-		},
-		"./readme": "./readme.md"
-	},
-	"dependencies": {
-		"@alexaegis/logging": "^0.2.0",
-		"@sveltejs/vite-plugin-svelte": "^2.2.0",
-		"concurrently": "^8.0.1",
-		"nodemon": "^2.0.22",
-		"svelte": "^3.59.1",
-		"vite": "^4.3.8",
-		"vite-plugin-autolib": "^0.1.1",
-		"vite-plugin-dts": "^2.3.0"
-	},
-	"optionalDependencies": {
-		"prettier": "^2.8.8"
-	},
-	"devDependencies": {
-		"@types/node": "^20.2.1",
-		"publint": "^0.1.12",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.0.4",
-		"vitest": "^0.31.1"
-	}
+  "name": "@alexaegis/vite",
+  "description": "My vite config",
+  "version": "0.3.0",
+  "license": "MIT",
+  "private": false,
+  "archetype": {
+    "platform": "node",
+    "framework": "vite",
+    "language": "ts",
+    "kind": "lib"
+  },
+  "keywords": [
+    "managed-by-autotool",
+    "vite"
+  ],
+  "type": "module",
+  "config": {
+    "engine-strict": false
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "build-lib": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "build-lib_": "vite build",
+    "lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "lint:depcheck_": "depcheck",
+    "lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+    "lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "lint:format_": "prettier --check .",
+    "lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+    "lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "lint:tsc_": "tsc --noEmit",
+    "publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "publint_": "publint dist",
+    "format": "prettier --write .",
+    "prebuild": "turbo run prebuild_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "prebuild_": "vite build",
+    "test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+    "test_": "vitest --passWithNoTests --coverage --run",
+    "test:watch": "vitest --passWithNoTests --coverage"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./app-svelte-vite.config": {
+      "types": "./src/app-svelte-vite.config.ts",
+      "import": "./dist/app-svelte-vite.config.js",
+      "require": "./dist/app-svelte-vite.config.cjs"
+    },
+    "./base-vite.config": {
+      "types": "./src/base-vite.config.ts",
+      "import": "./dist/base-vite.config.js",
+      "require": "./dist/base-vite.config.cjs"
+    },
+    "./example": "./static/example.json",
+    "./library-vite.config": {
+      "types": "./src/library-vite.config.ts",
+      "import": "./dist/library-vite.config.js",
+      "require": "./dist/library-vite.config.cjs"
+    },
+    "./readme": "./readme.md"
+  },
+  "dependencies": {
+    "@alexaegis/logging": "^0.2.1",
+    "@sveltejs/vite-plugin-svelte": "^2.3.0",
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22",
+    "svelte": "^3.59.1",
+    "vite": "^4.3.8",
+    "vite-plugin-autolib": "^0.1.2",
+    "vite-plugin-dts": "^2.3.0"
+  },
+  "optionalDependencies": {
+    "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "publint": "^0.1.12",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "vitest": "^0.31.1"
+  }
 }

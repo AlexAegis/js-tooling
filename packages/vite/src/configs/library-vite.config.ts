@@ -6,21 +6,12 @@ import { defineConfigWithDefaults } from './define-config-with-defaults.function
 
 export const libraryViteConfig = defineConfigWithDefaults({
 	plugins: [
+		autolib(),
 		conditionalPlugin(
-			{
-				...autolib(),
-				apply: 'build',
-			},
-			isTargetEnvNotLocal
-		),
-		conditionalPlugin(
-			{
-				...dts({
-					entryRoot: 'src',
-					copyDtsFiles: true,
-				}),
-				apply: 'build',
-			},
+			dts({
+				entryRoot: 'src',
+				copyDtsFiles: true,
+			}),
 			isTargetEnvNotLocal
 		),
 	],

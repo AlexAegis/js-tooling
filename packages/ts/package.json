@@ -1,73 +1,73 @@
 {
-	"name": "@alexaegis/ts",
-	"description": "My typescript configurations",
-	"version": "0.3.0",
-	"license": "MIT",
-	"private": false,
-	"archetype": {
-		"platform": "node",
-		"language": "ts",
-		"kind": "lib"
-	},
-	"keywords": [
-		"managed-by-autotool",
-		"tsconfig",
-		"typescript"
-	],
-	"type": "module",
-	"config": {
-		"engine-strict": false
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"publint_": "publint dist",
-		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
-		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage"
-	},
-	"exports": {
-		".": {
-			"types": "./src/index.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		},
-		"./angular": "./angular.json",
-		"./base": "./base.json",
-		"./node": "./node.json",
-		"./svelte": "./svelte.json",
-		"./web": "./web.json"
-	},
-	"dependencies": {
-		"@alexaegis/vite": "^0.3.0",
-		"@types/node": "^20.2.1",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.0.4",
-		"vite": "^4.3.8"
-	},
-	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.3.0",
-		"@alexaegis/vite": "^0.3.0",
-		"@alexaegis/vitest": "^0.3.0",
-		"@vitest/coverage-c8": "^0.31.1",
-		"publint": "^0.1.12",
-		"vite": "^4.3.8",
-		"vite-plugin-dts": "^2.3.0",
-		"vitest": "^0.31.1"
-	}
+  "name": "@alexaegis/ts",
+  "description": "My typescript configurations",
+  "version": "0.3.0",
+  "license": "MIT",
+  "private": false,
+  "archetype": {
+    "platform": "node",
+    "language": "ts",
+    "kind": "lib"
+  },
+  "keywords": [
+    "managed-by-autotool",
+    "tsconfig",
+    "typescript"
+  ],
+  "type": "module",
+  "config": {
+    "engine-strict": false
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "build-lib_": "vite build",
+    "lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "lint:depcheck_": "depcheck",
+    "lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+    "lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "lint:format_": "prettier --check .",
+    "lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+    "lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "lint:tsc_": "tsc --noEmit",
+    "publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "publint_": "publint dist",
+    "format": "prettier --write .",
+    "test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/ts",
+    "test_": "vitest --passWithNoTests --coverage --run",
+    "test:watch": "vitest --passWithNoTests --coverage"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./angular": "./angular.json",
+    "./base": "./base.json",
+    "./node": "./node.json",
+    "./svelte": "./svelte.json",
+    "./web": "./web.json"
+  },
+  "dependencies": {
+    "@alexaegis/vite": "^0.3.0",
+    "@types/node": "^20.2.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.8"
+  },
+  "devDependencies": {
+    "@alexaegis/eslint-config-vitest": "^0.3.0",
+    "@alexaegis/vite": "^0.3.0",
+    "@alexaegis/vitest": "^0.3.0",
+    "@vitest/coverage-c8": "^0.31.1",
+    "publint": "^0.1.12",
+    "vite": "^4.3.8",
+    "vite-plugin-dts": "^2.3.0",
+    "vitest": "^0.31.1"
+  }
 }

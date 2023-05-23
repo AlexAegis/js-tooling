@@ -52,16 +52,16 @@
 		"./turbo": "./static/turbo.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.0",
+		"@alexaegis/logging": "^0.2.1",
 		"autotool-plugin": "^0.0.4",
-		"turbo": "^1.9.8"
+		"turbo": "^1.9.9"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.0",
 		"@alexaegis/ts": "^0.3.0",
 		"@alexaegis/vite": "^0.3.0",
 		"@alexaegis/vitest": "^0.3.0",
-		"@types/node": "^20.2.1",
+		"@types/node": "^20.2.3",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.12",
 		"typescript": "^5.0.4",

@@ -1,1 +1,0 @@
-# Svelte example app

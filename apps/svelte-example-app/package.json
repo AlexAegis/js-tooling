@@ -1,7 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
 	"version": "0.3.0",
-	"private": true,
 	"archetype": {
 		"platform": "web",
 		"framework": "svelte",
@@ -9,14 +8,14 @@
 		"kind": "app"
 	},
 	"keywords": [
-		"@alexaegis/setup-stylelint",
-		"managed-by-autotool",
-		"svelte"
+		"managed-by-autotool"
 	],
 	"type": "module",
 	"scripts": {
 		"build": "turbo run build-app_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"build-app_": "vite build",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
@@ -36,32 +35,40 @@
 		"lint:tsc_": "tsc --noEmit",
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "prettier --write .",
-		"preview": "vite preview",
+		"postinstall": "svelte-kit sync",
 		"start": "TARGET_ENV='local' vite",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
 		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
-	"dependencies": {
-		"@alexaegis/example-svelte-lib": "^0.3.0",
-		"@alexaegis/example-ts-lib": "^0.3.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.0",
 		"@alexaegis/stylelint-config": "^0.3.0",
 		"@alexaegis/ts": "^0.3.0",
 		"@alexaegis/vite": "^0.3.0",
 		"@alexaegis/vitest": "^0.3.0",
+		"@skeletonlabs/skeleton": "^1.6.0",
+		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.18.0",
-		"@vitest/coverage-c8": "^0.31.1",
+		"@types/node": "^20.2.3",
+		"autoprefixer": "^10.4.14",
 		"concurrently": "^8.0.1",
+		"eslint-config-next": "^13.4.3",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-config-turbo": "^1.9.9",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-svelte": "^2.29.0",
+		"eslint-plugin-unicorn": "^47.0.0",
 		"nodemon": "^2.0.22",
+		"postcss": "^8.4.23",
+		"postcss-load-config": "^4.0.1",
 		"stylelint": "^15.6.2",
 		"svelte": "^3.59.1",
 		"svelte-check": "^3.3.2",
 		"svelte-preprocess": "^5.0.3",
-		"typescript": "^5.0.4",
+		"tailwindcss": "^3.3.2",
 		"vite": "^4.3.8",
 		"vitest": "^0.31.1"
 	}

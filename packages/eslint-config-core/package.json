@@ -1,79 +1,79 @@
 {
-	"name": "@alexaegis/eslint-config-core",
-	"description": "ESLint setup",
-	"version": "0.3.0",
-	"license": "MIT",
-	"private": false,
-	"archetype": {
-		"platform": "node",
-		"framework": "eslint",
-		"language": "ts",
-		"kind": "lib"
-	},
-	"keywords": [
-		"eslint",
-		"managed-by-autotool"
-	],
-	"type": "module",
-	"config": {
-		"engine-strict": true
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"lint:format_": "prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"publint_": "publint dist",
-		"format": "prettier --write .",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage"
-	},
-	"exports": {
-		".": {
-			"types": "./src/index.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		},
-		"./readme": "./readme.md"
-	},
-	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.59.6",
-		"@typescript-eslint/parser": "^5.59.6",
-		"eslint": "^8.41.0",
-		"eslint-config-next": "^13.4.3",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-config-turbo": "^1.9.8",
-		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-svelte": "^2.28.0",
-		"eslint-plugin-unicorn": "^47.0.0",
-		"typescript": "^5.0.4"
-	},
-	"optionalDependencies": {
-		"svelte": "^3.59.1"
-	},
-	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.3.0",
-		"@alexaegis/ts": "^0.3.0",
-		"@alexaegis/vite": "^0.3.0",
-		"@alexaegis/vitest": "^0.3.0",
-		"@types/eslint": "^8.37.0",
-		"@types/node": "^20.2.1",
-		"@vitest/coverage-c8": "^0.31.1",
-		"publint": "^0.1.12",
-		"vite": "^4.3.8",
-		"vitest": "^0.31.1"
-	}
+  "name": "@alexaegis/eslint-config-core",
+  "description": "ESLint setup",
+  "version": "0.3.0",
+  "license": "MIT",
+  "private": false,
+  "archetype": {
+    "platform": "node",
+    "framework": "eslint",
+    "language": "ts",
+    "kind": "lib"
+  },
+  "keywords": [
+    "eslint",
+    "managed-by-autotool"
+  ],
+  "type": "module",
+  "config": {
+    "engine-strict": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "build-lib_": "vite build",
+    "lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "lint:depcheck_": "depcheck",
+    "lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+    "lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "lint:format_": "prettier --check .",
+    "lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+    "lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "lint:tsc_": "tsc --noEmit",
+    "publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "publint_": "publint dist",
+    "format": "prettier --write .",
+    "test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+    "test_": "vitest --passWithNoTests --coverage --run",
+    "test:watch": "vitest --passWithNoTests --coverage"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./readme": "./readme.md"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.41.0",
+    "eslint-config-next": "^13.4.3",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-turbo": "^1.9.9",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-svelte": "^2.29.0",
+    "eslint-plugin-unicorn": "^47.0.0",
+    "typescript": "^5.0.4"
+  },
+  "optionalDependencies": {
+    "svelte": "^3.59.1"
+  },
+  "devDependencies": {
+    "@alexaegis/eslint-config-vitest": "^0.3.0",
+    "@alexaegis/ts": "^0.3.0",
+    "@alexaegis/vite": "^0.3.0",
+    "@alexaegis/vitest": "^0.3.0",
+    "@types/eslint": "^8.40.0",
+    "@types/node": "^20.2.3",
+    "@vitest/coverage-c8": "^0.31.1",
+    "publint": "^0.1.12",
+    "vite": "^4.3.8",
+    "vitest": "^0.31.1"
+  }
 }

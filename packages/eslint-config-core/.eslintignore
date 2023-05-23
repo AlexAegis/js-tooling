@@ -6,4 +6,7 @@ vite.config.ts.*
 vitest.config.ts.*
 shims
 typedoc
+
+# sveltekit
 .svelte-kit
+build

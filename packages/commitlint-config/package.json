@@ -63,7 +63,7 @@
 		"@alexaegis/vite": "^0.3.0",
 		"@alexaegis/vitest": "^0.3.0",
 		"@commitlint/types": "^17.4.4",
-		"@types/node": "^20.2.1",
+		"@types/node": "^20.2.3",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.12",
 		"typescript": "^5.0.4",
