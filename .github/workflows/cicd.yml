@@ -319,6 +319,7 @@ jobs:
             'lint-staged-config',
             'nuke',
             'prettier-config',
+            'prettier-config-svelte',
             'remark-preset',
             'standard-version',
             'stylelint-config',

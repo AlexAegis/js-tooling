@@ -1,6 +1,6 @@
 {
-	"name": "@alexaegis/eslint-config-core",
-	"description": "ESLint setup",
+	"name": "@alexaegis/eslint-config-svelte",
+	"description": "ESLint rules for svelte",
 	"version": "0.3.0",
 	"license": "MIT",
 	"private": false,
@@ -12,7 +12,8 @@
 	},
 	"keywords": [
 		"eslint",
-		"managed-by-autotool"
+		"managed-by-autotool",
+		"svelte"
 	],
 	"type": "module",
 	"config": {
@@ -22,23 +23,23 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"publint_": "publint dist",
-		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-svelte",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
 	},
@@ -58,7 +59,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-turbo": "^1.9.9",
 		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-svelte": "^2.29.0",
+		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint-plugin-unicorn": "^47.0.0",
 		"typescript": "^5.0.4"
 	},
@@ -66,7 +67,6 @@
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.3.0",
 		"@alexaegis/ts": "^0.3.0",
 		"@alexaegis/vite": "^0.3.0",
 		"@alexaegis/vitest": "^0.3.0",

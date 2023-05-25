@@ -40,4 +40,16 @@ describe('autotool-plugin-eslint', () => {
 
 		expect(plugin).toBeDefined();
 	});
+
+	describe('joinAdditionalExtends', () => {
+		it('should join strings like so', () => {
+			expect(library.joinAdditionalExtends('foo', 'bar', 'amogus')).toEqual(
+				", 'foo', 'bar', 'amogus'"
+			);
+		});
+
+		it('should return an empty string for empty inputs', () => {
+			expect(library.joinAdditionalExtends()).toEqual('');
+		});
+	});
 });

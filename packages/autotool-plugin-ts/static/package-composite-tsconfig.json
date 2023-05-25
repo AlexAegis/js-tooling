@@ -3,6 +3,7 @@
 	"extends": "@alexaegis/ts/${flavour}",
 	"references": [{ "path": "./tsconfig.${flavour}.json" }, { "path": "./tsconfig.spec.json" }],
 	"compilerOptions": {
+		"composite": true,
 		"rootDir": "${relativePathFromPackageToRoot}/",
 		"outDir": "./dist/out-tsc"
 	},

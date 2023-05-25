@@ -73,8 +73,9 @@
 		".stylelintrc.*": ".stylelintignore"
 	},
 	"files.associations": {
-		"*.json": "jsonc",
-		".stylelintrc": "jsonc"
+		".stylelintrc": "jsonc",
+		"*.prettierignore": "ignore", // Used for custom prettierignore files that are only used through --ignore-path
+		"*.json": "jsonc"
 	},
 	"files.exclude": {
 		"**/.DS_Store": true,

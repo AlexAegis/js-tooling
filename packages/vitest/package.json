@@ -1,81 +1,82 @@
 {
-  "name": "@alexaegis/vitest",
-  "description": "My vitest config",
-  "version": "0.3.0",
-  "license": "MIT",
-  "private": false,
-  "archetype": {
-    "platform": "node",
-    "framework": "vitest",
-    "language": "ts",
-    "kind": "lib"
-  },
-  "keywords": [
-    "managed-by-autotool"
-  ],
-  "type": "module",
-  "config": {
-    "engine-strict": false
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "build-lib_": "vite build",
-    "lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "lint:depcheck_": "depcheck",
-    "lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-    "lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "lint:format_": "prettier --check .",
-    "lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-    "lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "lint:tsc_": "tsc --noEmit",
-    "publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "publint_": "publint dist",
-    "format": "prettier --write .",
-    "test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-    "test_": "vitest --passWithNoTests --coverage --run",
-    "test:watch": "vitest --passWithNoTests --coverage"
-  },
-  "exports": {
-    ".": {
-      "types": "./src/index.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./readme": "./readme.md",
-    "./vitest-node.config": {
-      "types": "./src/vitest-node.config.ts",
-      "import": "./dist/vitest-node.config.js",
-      "require": "./dist/vitest-node.config.cjs"
-    },
-    "./vitest-svelte.config": {
-      "types": "./src/vitest-svelte.config.ts",
-      "import": "./dist/vitest-svelte.config.js",
-      "require": "./dist/vitest-svelte.config.cjs"
-    },
-    "./vitest-web.config": {
-      "types": "./src/vitest-web.config.ts",
-      "import": "./dist/vitest-web.config.js",
-      "require": "./dist/vitest-web.config.cjs"
-    }
-  },
-  "bin": {
-    "vitest": "node_modules/.bin/vitest"
-  },
-  "dependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.3.0",
-    "@vitest/coverage-c8": "^0.31.1",
-    "@vitest/ui": "^0.31.1",
-    "jsdom": "22.0.0",
-    "vitest": "^0.31.1"
-  },
-  "devDependencies": {
-    "@alexaegis/vite": "^0.3.0",
-    "publint": "^0.1.12",
-    "vite": "^4.3.8"
-  }
+	"name": "@alexaegis/vitest",
+	"description": "My vitest config",
+	"version": "0.3.0",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "vitest",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"managed-by-autotool"
+	],
+	"type": "module",
+	"config": {
+		"engine-strict": false
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"build-lib_": "vite build",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"publint_": "publint dist",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./readme": "./readme.md",
+		"./vitest-node.config": {
+			"types": "./src/vitest-node.config.ts",
+			"import": "./dist/vitest-node.config.js",
+			"require": "./dist/vitest-node.config.cjs"
+		},
+		"./vitest-svelte.config": {
+			"types": "./src/vitest-svelte.config.ts",
+			"import": "./dist/vitest-svelte.config.js",
+			"require": "./dist/vitest-svelte.config.cjs"
+		},
+		"./vitest-web.config": {
+			"types": "./src/vitest-web.config.ts",
+			"import": "./dist/vitest-web.config.js",
+			"require": "./dist/vitest-web.config.cjs"
+		}
+	},
+	"bin": {
+		"vitest": "node_modules/.bin/vitest"
+	},
+	"dependencies": {
+		"@sveltejs/vite-plugin-svelte": "^2.3.0",
+		"@vitest/coverage-c8": "^0.31.1",
+		"@vitest/ui": "^0.31.1",
+		"jsdom": "22.0.0",
+		"vitest": "^0.31.1"
+	},
+	"devDependencies": {
+		"@alexaegis/vite": "^0.3.0",
+		"publint": "^0.1.12",
+		"vite": "^4.3.8"
+	}
 }

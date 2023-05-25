@@ -13,8 +13,11 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				data: {
 					scripts: {
-						format: 'prettier --write .',
-						'lint:format_': 'prettier --check .',
+						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						format_:
+							'prettier --no-plugin-search --cache-location .cache/prettier --write .',
+						'lint:format_':
+							'prettier --no-plugin-search --cache-location .cache/prettier --check .',
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					},
@@ -27,8 +30,11 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						format: 'prettier --write .', // Not done through turbo, it covers the entire repo anyway
-						'lint:format_': 'prettier --check *.*',
+						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo',
+						format_:
+							'prettier --no-plugin-search --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .',
+						'lint:format_':
+							'prettier --no-plugin-search --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
 					},
@@ -38,20 +44,57 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 			},
 			{
+				description: 'copy workspace prettier ignore file used by scripts',
+				executor: 'fileCopy',
+				packageKind: 'root',
+				sourcePluginPackageName: packageJson.name,
+				sourceFile: join('static', 'workspace-only.prettierignore'),
+				targetFile: join('.config', 'workspace-only.prettierignore'),
+			},
+			{
 				description: 'copy workspace prettier config',
 				executor: 'fileCopy',
 				packageKind: 'root',
 				targetFile: '.prettierrc.cjs',
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', '.prettierrc.cjs.txt'),
+				sourceFile: join('static', 'prettierrc.cjs.txt'),
 			},
 			{
-				description: 'copy workspace prettierignore',
+				description: 'add prettier-config-svelte as a devDependency',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					archetype: {
+						framework: 'svelte',
+					},
+				},
+				data: {
+					devDependencies: {
+						'@alexaegis/prettier-config-svelte':
+							packageJson.dependencies['@alexaegis/prettier-config'], // Different package, versioned together
+					},
+				},
+			},
+			{
+				description: 'copy svelte prettier config',
+				executor: 'fileCopy',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					archetype: {
+						framework: 'svelte',
+					},
+				},
+				targetFile: '.prettierrc.cjs',
+				sourcePluginPackageName: packageJson.name,
+				sourceFile: join('static', 'prettierrc.svelte.cjs.txt'),
+			},
+			{
+				description: 'copy workspace prettierignore used by the editor',
 				executor: 'fileCopy',
 				packageKind: 'root',
 				targetFile: '.prettierignore',
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', '.prettierignore'),
+				sourceFile: join('static', 'workspace.prettierignore'),
 			},
 			{
 				description: 'copy package prettierignore',

@@ -2,6 +2,7 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "./web.json",
 	"compilerOptions": {
+		"moduleResolution": "bundler",
 		"types": ["svelte", "vite/client", "node"]
 	}
 }

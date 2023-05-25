@@ -1,5 +1,16 @@
 {
 	"$schema": "https://turborepo.org/schema.json?mark=managed-by-autotool",
+	"globalDependencies": [
+		"package.json",
+		"pnpm-lock.yaml",
+		".env",
+		"tsconfig.json",
+		".eslintrc.cjs",
+		".prettierrc.cjs",
+		".remarkrc.js",
+		".config/*"
+	],
+	"globalPassThroughEnv": ["GITHUB_TOKEN"],
 	"pipeline": {
 		"prebuild_": {
 			"env": ["TARGET_ENV"],
@@ -165,24 +176,36 @@
 		"lint:format_": {
 			"env": [],
 			"dependsOn": [],
-			"outputs": [],
+			"outputs": [".cache/prettier"],
 			"outputMode": "new-only"
 		},
 		"//#lint:format_": {
 			"env": [],
 			"dependsOn": [],
-			"outputs": [],
+			"outputs": [".cache/prettier"],
+			"outputMode": "new-only"
+		},
+		"format_": {
+			"env": [],
+			"dependsOn": [],
+			"outputs": [".cache/prettier"],
+			"outputMode": "new-only"
+		},
+		"//#format_": {
+			"env": [],
+			"dependsOn": [],
+			"outputs": [".cache/prettier"],
 			"outputMode": "new-only"
 		},
 		"typedoc_": {
 			"dependsOn": [],
-			"inputs": ["**/*.ts"],
+			"inputs": ["**/*.ts", "typedoc.json"],
 			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"//#typedoc_": {
 			"dependsOn": [],
-			"inputs": ["**/*.ts"],
+			"inputs": ["**/*.ts", "typedoc.json"],
 			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},

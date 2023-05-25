@@ -32,14 +32,15 @@
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
-		"lint:format_": "prettier --check .",
+		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"publint_": "publint dist",
-		"format": "prettier --write .",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
+		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-ts",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
@@ -50,9 +51,8 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./package-composing-tsconfig": "./static/package-composing-tsconfig.json",
+		"./package-composite-tsconfig": "./static/package-composite-tsconfig.json",
 		"./package-simple-tsconfig": "./static/package-simple-tsconfig.json",
-		"./package-source-tsconfig": "./static/package-source-tsconfig.json",
 		"./package-spec-vitest-tsconfig": "./static/package-spec-vitest-tsconfig.json",
 		"./readme": "./readme.md",
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"

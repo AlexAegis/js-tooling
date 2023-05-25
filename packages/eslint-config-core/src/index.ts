@@ -11,13 +11,13 @@ export default {
 	ignorePatterns: ['!**/*', 'node_modules', 'dist', 'coverage', '.turbo', 'tmp', 'shims'],
 	overrides: [
 		{
-			files: ['*.{ts,js,cts,cjs,mts,mjs,tsx,jsx,svelte}'],
+			files: ['*.{ts,js,cts,cjs,mts,mjs,tsx,jsx}'],
 			rules: {
 				quotes: ['error', 'single', { avoidEscape: true }],
 			},
 		},
 		{
-			files: ['*.{ts,svelte}'],
+			files: ['*.{ts,tsx}'],
 			plugins: ['@typescript-eslint'],
 			extends: [
 				'plugin:@typescript-eslint/recommended', // 'plugin:@typescript-eslint/all',
@@ -34,29 +34,10 @@ export default {
 				],
 			},
 		},
-		{
-			files: ['*.svelte'],
-			parser: 'svelte-eslint-parser',
-			extends: ['plugin:svelte/recommended'],
-			parserOptions: {
-				parser: '@typescript-eslint/parser', // svelte script tags read the parser from here
-			},
-			globals: {
-				$$Generic: true, // To let `type T = $$Generic;` be defined
-			},
-			rules: {
-				'@typescript-eslint/no-unused-vars': [
-					'warn',
-					{ varsIgnorePattern: '$$', argsIgnorePattern: '_' }, // To let $$Slot be defined
-				],
-				'@typescript-eslint/no-unsafe-assignment': 'off', // Cannot cast to $$Generic
-			},
-		},
 	],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2022,
-		extraFileExtensions: ['.svelte'], // ! Can't move this to the overrides section for *.svelte
 	},
 	env: {
 		browser: true,

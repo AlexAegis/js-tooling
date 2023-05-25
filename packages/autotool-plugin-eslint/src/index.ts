@@ -2,6 +2,13 @@ import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin'
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
+/**
+ * @returns a string like ", 'foo', 'bar', 'amogus'"
+ */
+export const joinAdditionalExtends = (...pluginNames: string[]): string => {
+	return pluginNames.length > 0 ? `, '${pluginNames.join("', '")}'` : '';
+};
+
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
@@ -40,8 +47,11 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						testing: /^(?!vitest).*$/, // fallback option!
 					},
 				},
+				templateVariables: {
+					additionalExtends: joinAdditionalExtends(), // No additional extends
+				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'package-eslintrc.cjs'),
+				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
 			},
 			{
 				description: 'package eslint config (vitest)',
@@ -55,10 +65,30 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'package-eslintrc-vitest.cjs'),
+				templateVariables: {
+					additionalExtends: joinAdditionalExtends('@alexaegis/eslint-config-vitest'),
+				},
+				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
 			},
 			{
-				description: 'package eslint config (vitest patch to break circular dependencies)',
+				description: 'package eslint dependencies (vitest)',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					name: /^(?!@alexaegis\/vite(st)?).*$/,
+					archetype: {
+						testing: 'vitest',
+					},
+				},
+				data: {
+					devDependencies: {
+						'@alexaegis/eslint-config-vitest':
+							packageJson.devDependencies['@alexaegis/eslint-config-vitest'],
+					},
+				},
+			},
+			{
+				description: 'package eslint config (For @alexaegis/vitest only)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				targetFile: '.eslintrc.cjs',
@@ -68,8 +98,11 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						testing: 'vitest',
 					},
 				},
+				templateVariables: {
+					additionalExtends: joinAdditionalExtends(), // No extra config here
+				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'package-eslintrc.cjs'),
+				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
 			},
 			{
 				description: 'workspace eslint dependencies',

@@ -1,0 +1,1 @@
+# @alexaegis/eslint-config-svelte

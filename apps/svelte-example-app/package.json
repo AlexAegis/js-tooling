@@ -5,7 +5,8 @@
 		"platform": "web",
 		"framework": "svelte",
 		"language": "ts",
-		"kind": "app"
+		"kind": "app",
+		"model": "skeleton"
 	},
 	"keywords": [
 		"managed-by-autotool"
@@ -14,12 +15,10 @@
 	"scripts": {
 		"build": "turbo run build-app_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"build-app_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 6 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
-		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
-		"lint:format_": "prettier --check .",
+		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:style": "turbo run lint:style_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
@@ -34,7 +33,8 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:tsc_": "tsc --noEmit",
 		"dev": "concurrently npm:watch-deps npm:start",
-		"format": "prettier --write .",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
 		"postinstall": "svelte-kit sync",
 		"start": "TARGET_ENV='local' vite",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
@@ -42,14 +42,14 @@
 		"test:watch": "vitest --passWithNoTests --coverage",
 		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.0",
+		"@alexaegis/prettier-config-svelte": "^0.3.0",
 		"@alexaegis/stylelint-config": "^0.3.0",
 		"@alexaegis/ts": "^0.3.0",
 		"@alexaegis/vite": "^0.3.0",
 		"@alexaegis/vitest": "^0.3.0",
-		"@skeletonlabs/skeleton": "^1.6.0",
+		"@skeletonlabs/skeleton": "^1.6.2",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.18.0",
 		"@types/node": "^20.2.3",

@@ -31,14 +31,15 @@
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
-		"lint:format_": "prettier --check .",
+		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"publint_": "publint dist",
-		"format": "prettier --write .",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
+		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
@@ -49,18 +50,20 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./.prettierignore": "./static/.prettierignore",
-		"./.prettierrc.cjs": "./static/.prettierrc.cjs.txt",
 		"./prettier-config": {
 			"types": "./src/prettier-config.ts",
 			"import": "./dist/prettier-config.js",
 			"require": "./dist/prettier-config.cjs"
 		},
-		"./readme": "./readme.md"
+		"./prettierrc.cjs": "./static/prettierrc.cjs.txt",
+		"./prettierrc.svelte.cjs": "./static/prettierrc.svelte.cjs.txt",
+		"./readme": "./readme.md",
+		"./workspace": "./static/workspace.prettierignore",
+		"./workspace-only": "./static/workspace-only.prettierignore"
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.2.1",
-		"@alexaegis/prettier-config": "workspace:^",
+		"@alexaegis/prettier-config": "^0.3.0",
 		"autotool-plugin": "^0.0.4",
 		"prettier": "^2.8.8"
 	},
@@ -68,10 +71,10 @@
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "workspace:^",
-		"@alexaegis/ts": "workspace:^",
-		"@alexaegis/vite": "workspace:^",
-		"@alexaegis/vitest": "workspace:^",
+		"@alexaegis/eslint-config-vitest": "^0.3.0",
+		"@alexaegis/ts": "^0.3.0",
+		"@alexaegis/vite": "^0.3.0",
+		"@alexaegis/vitest": "^0.3.0",
 		"@types/node": "^20.2.3",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.12",
