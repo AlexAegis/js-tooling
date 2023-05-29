@@ -22,7 +22,7 @@
 	"homepage": "https://github.com/AlexAegis/js-tooling",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AlexAegis/js-tooling"
+		"url": "git+https://github.com/AlexAegis/js-tooling"
 	},
 	"bugs": {
 		"email": "alexaegis@gmail.com",
