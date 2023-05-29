@@ -315,10 +315,13 @@ jobs:
             'autotool-plugin-workspace',
             'commitlint-config',
             'eslint-config-core',
+            'eslint-config-svelte',
             'eslint-config-vitest',
             'lint-staged-config',
             'nuke',
             'prettier-config',
+            'prettier-config-svelte',
+            'prettier-config-tailwind',
             'remark-preset',
             'standard-version',
             'stylelint-config',
@@ -391,4 +394,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm publish packages/${{ matrix.artifact }}/dist/ --access public
+        run: |
+          pnpm publish --access public --provenance packages/${{ matrix.artifact }}/dist/
