@@ -30,6 +30,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'root lint-staged config',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				targetFile: 'lint-staged.config.mjs',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'lint-staged.config.mjs'),

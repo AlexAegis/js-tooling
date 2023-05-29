@@ -33,6 +33,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'copy workspace root ts config',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				targetFile: 'tsconfig.json',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'workspace-tsconfig.json'),
@@ -66,6 +67,16 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'lint:tsc':
 							'turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 						'lint:tsc_': 'tsc --noEmit',
+					},
+				},
+			},
+			{
+				description: 'add workspace dependency for the ts configs',
+				executor: 'packageJson',
+				packageKind: 'root',
+				data: {
+					devDependencies: {
+						'@alexaegis/ts': `^${packageJson.version}`,
 					},
 				},
 			},
@@ -113,6 +124,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					name: `copy tsconfig for ${flavour} packages`,
 					executor: 'fileCopy',
 					packageKind: 'regular',
+					formatWithPrettier: true,
 					targetFile: 'tsconfig.json',
 					sourcePluginPackageName: packageJson.name,
 					packageJsonFilter: {

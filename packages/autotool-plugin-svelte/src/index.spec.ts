@@ -27,6 +27,8 @@ describe('autotool-plugin-svelte', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
+		filter: [],
+		filterPlugins: [],
 	};
 
 	it('should be defined', () => {

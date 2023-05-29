@@ -59,6 +59,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'copy workspace prettier config',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				targetFile: '.prettierrc.cjs',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'prettierrc.cjs.txt'),
@@ -111,6 +112,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						tailwindcss: undefined,
 					},
 				},
+				formatWithPrettier: true,
 				targetFile: '.prettierrc.cjs',
 				templateVariables: {
 					additionalConfigs: assembleAdditionalConfigs(
@@ -132,6 +134,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						tailwindcss: /.*/,
 					},
 				},
+				formatWithPrettier: true,
 				targetFile: '.prettierrc.cjs',
 				templateVariables: {
 					additionalConfigs: assembleAdditionalConfigs(

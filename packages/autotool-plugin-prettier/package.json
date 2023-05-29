@@ -33,11 +33,12 @@
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
-		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"publint_": "publint dist",
+		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
 		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-prettier",
@@ -64,7 +65,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.2.1",
 		"@alexaegis/prettier-config": "^0.3.0",
-		"autotool-plugin": "^0.0.4",
+		"autotool-plugin": "^0.0.5",
 		"prettier": "^2.8.8"
 	},
 	"optionalDependencies": {

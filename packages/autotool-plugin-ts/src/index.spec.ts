@@ -28,6 +28,8 @@ describe('autotool-plugin-ts', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
+		filter: [],
+		filterPlugins: [],
 	};
 
 	it('should be defined', () => {

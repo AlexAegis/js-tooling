@@ -27,6 +27,8 @@ describe('autotool-plugin-vitest', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
+		filter: [],
+		filterPlugins: [],
 	};
 
 	it('should be defined', () => {

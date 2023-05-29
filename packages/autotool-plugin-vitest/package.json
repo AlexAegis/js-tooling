@@ -29,11 +29,12 @@
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
 		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
-		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
 		"publint_": "publint dist",
+		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
 		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-vitest",
@@ -54,7 +55,7 @@
 	"dependencies": {
 		"@alexaegis/coverage-tools": "^0.2.1",
 		"@alexaegis/logging": "^0.2.1",
-		"autotool-plugin": "^0.0.4"
+		"autotool-plugin": "^0.0.5"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.0",

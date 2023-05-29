@@ -39,6 +39,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'copy workspace depcheck config',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				targetFile: '.depcheckrc.json',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'depcheckrc.json'),

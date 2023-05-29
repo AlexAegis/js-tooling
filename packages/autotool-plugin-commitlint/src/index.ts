@@ -10,6 +10,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'copy workspace commitlint config',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				targetFile: 'commitlint.config.cjs',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'commitlint.config.cjs'),

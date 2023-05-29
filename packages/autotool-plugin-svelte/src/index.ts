@@ -21,6 +21,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				packageJsonFilter,
+				formatWithPrettier: true,
 				sourceFile: join('static', 'svelte.config.txt'),
 				targetFile: 'svelte.config.js',
 				sourcePluginPackageName: packageJson.name,

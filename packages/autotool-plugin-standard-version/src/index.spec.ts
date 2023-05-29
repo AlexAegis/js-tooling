@@ -27,6 +27,8 @@ describe('autotool-plugin-standard-version', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
+		filter: [],
+		filterPlugins: [],
 	};
 
 	it('should be defined', () => {

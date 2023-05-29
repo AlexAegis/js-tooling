@@ -27,6 +27,8 @@ describe('autotool-plugin-prettier', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
+		filter: [],
+		filterPlugins: [],
 	};
 
 	it('should be defined', () => {

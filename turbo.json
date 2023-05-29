@@ -39,18 +39,14 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
-		"ce_": {
+		"all_": {
 			"outputs": [],
-			"dependsOn": [
-				"lint_",
-				"build-app_",
-				"build-lib_",
-				"test_",
-				"typedoc_",
-				"publint_",
-				"//#typedoc_",
-				"//#lint_"
-			],
+			"dependsOn": ["lint_", "build-app_", "build-lib_", "test_", "typedoc_", "publint_"],
+			"outputMode": "new-only"
+		},
+		"//#all_": {
+			"outputs": [],
+			"dependsOn": ["//#typedoc_", "//#lint_"],
 			"outputMode": "new-only"
 		},
 		"//#lint_": {
@@ -163,7 +159,7 @@
 		},
 		"//#lint:md_": {
 			"dependsOn": [],
-			"inputs": ["package.json", "**/*.md"],
+			"inputs": ["package.json", "**/*.md", "!packages", "!libs", "!apps"],
 			"outputs": [],
 			"outputMode": "new-only"
 		},

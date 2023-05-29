@@ -14,7 +14,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					scripts: {
 						'lint:md': 'turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo',
 						'lint:md_':
-							'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
+							'remark --frail --no-stdout --silently-ignore --ignore-pattern packages --ignore-pattern libs --ignore-pattern apps .', // ? I would've like to use a .config/workspace-only.remarkignore file but remark didn't use it when passed with --ignore-path, maybe a bug?
 					},
 					devDependencies: {
 						'remark-cli': packageJson.devDependencies['remark-cli'],
@@ -30,8 +30,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					scripts: {
 						'lint:md':
 							'turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
-						'lint:md_':
-							'remark --frail --no-stdout --silently-ignore *.md docs/**/*.md',
+						'lint:md_': 'remark --frail --no-stdout --silently-ignore .',
 					},
 				},
 			},
@@ -47,6 +46,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'workspace remarkrc config file',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				sourceFile: join('static', 'dot-remarkrc.js'),
 				targetFile: '.remarkrc.js',
 				sourcePluginPackageName: packageJson.name,

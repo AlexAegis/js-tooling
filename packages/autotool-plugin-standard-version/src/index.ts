@@ -30,6 +30,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'workspace standard-version config file',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				sourceFile: join('static', 'versionrc.cjs.txt'),
 				targetFile: '.versionrc.cjs',
 				sourcePluginPackageName: packageJson.name,

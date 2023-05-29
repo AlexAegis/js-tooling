@@ -17,6 +17,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'workspace eslint config',
 				executor: 'fileCopy',
 				packageKind: 'root',
+				formatWithPrettier: true,
 				targetFile: '.eslintrc.cjs',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'workspace-eslintrc.cjs'),
@@ -41,6 +42,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'package eslint config',
 				executor: 'fileCopy',
 				packageKind: 'regular',
+				formatWithPrettier: true,
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
 					archetype: {
@@ -57,6 +59,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'package eslint config (vitest)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
+				formatWithPrettier: true,
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
 					name: /^(?!@alexaegis\/vite(st)?).*$/,
@@ -91,6 +94,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				description: 'package eslint config (For @alexaegis/vitest only)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
+				formatWithPrettier: true,
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
 					name: /^@alexaegis\/vite(st)?$/,

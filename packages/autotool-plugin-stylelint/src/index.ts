@@ -21,6 +21,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				packageJsonFilter,
+				formatWithPrettier: true,
 				sourceFile: join('static', 'stylelint.config.cjs'),
 				targetFile: '.stylelintrc.cjs',
 				sourcePluginPackageName: packageJson.name,
