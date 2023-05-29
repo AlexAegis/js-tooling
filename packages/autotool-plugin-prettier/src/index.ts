@@ -2,6 +2,10 @@ import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin'
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
+const assembleAdditionalConfigs = (...configPackageNames: string[]): string => {
+	return configPackageNames.map((name) => `require('${name}').default`).join(', ');
+};
+
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
@@ -70,23 +74,73 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 				data: {
 					devDependencies: {
+						'@alexaegis/prettier-config':
+							packageJson.dependencies['@alexaegis/prettier-config'],
 						'@alexaegis/prettier-config-svelte':
 							packageJson.dependencies['@alexaegis/prettier-config'], // Different package, versioned together
 					},
 				},
 			},
 			{
-				description: 'copy svelte prettier config',
+				description: 'add prettier-config-tailwind as a devDependency',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					devDependencies: {
+						tailwindcss: /.*/,
+					},
+				},
+				data: {
+					devDependencies: {
+						'@alexaegis/prettier-config':
+							packageJson.dependencies['@alexaegis/prettier-config'],
+						'@alexaegis/prettier-config-tailwind':
+							packageJson.dependencies['@alexaegis/prettier-config'], // Different package, versioned together
+					},
+				},
+			},
+			{
+				description: 'copy svelte prettier config without tailwind',
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
 						framework: 'svelte',
 					},
+					devDependencies: {
+						tailwindcss: undefined,
+					},
 				},
 				targetFile: '.prettierrc.cjs',
+				templateVariables: {
+					additionalConfigs: assembleAdditionalConfigs(
+						'@alexaegis/prettier-config-svelte'
+					),
+				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'prettierrc.svelte.cjs.txt'),
+				sourceFile: join('static', 'prettierrc.custom.cjs.txt'),
+			},
+			{
+				description: 'copy svelte prettier config with tailwind',
+				executor: 'fileCopy',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					archetype: {
+						framework: 'svelte',
+					},
+					devDependencies: {
+						tailwindcss: /.*/,
+					},
+				},
+				targetFile: '.prettierrc.cjs',
+				templateVariables: {
+					additionalConfigs: assembleAdditionalConfigs(
+						'@alexaegis/prettier-config-svelte',
+						'@alexaegis/prettier-config-tailwind'
+					),
+				},
+				sourcePluginPackageName: packageJson.name,
+				sourceFile: join('static', 'prettierrc.custom.cjs.txt'),
 			},
 			{
 				description: 'copy workspace prettierignore used by the editor',

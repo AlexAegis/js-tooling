@@ -1,6 +1,8 @@
 import type { Config, Options } from 'prettier';
 
-export default {
+export * from './internal/merge-config.function.js';
+
+export const prettierConfig = {
 	tabWidth: 4,
 	useTabs: true,
 	singleQuote: true,
@@ -25,3 +27,5 @@ export default {
 		},
 	],
 } satisfies Config;
+
+export default prettierConfig;

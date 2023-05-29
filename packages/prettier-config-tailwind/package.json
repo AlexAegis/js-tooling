@@ -1,6 +1,6 @@
 {
-	"name": "@alexaegis/prettier-config-svelte",
-	"description": "Prettier configuration for svelte",
+	"name": "@alexaegis/prettier-config-tailwind",
+	"description": "Prettier configuration for tailwind",
 	"version": "0.3.0",
 	"license": "MIT",
 	"private": false,
@@ -23,23 +23,23 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"build-lib_": "vite build",
-		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"lint:depcheck_": "depcheck",
-		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
-		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore *.md docs/**/*.md",
-		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"lint:tsc_": "tsc --noEmit",
-		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"publint_": "publint dist",
-		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
-		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-svelte",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/prettier-config-tailwind",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
 	},
@@ -54,6 +54,7 @@
 	"dependencies": {
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
+		"prettier-plugin-tailwindcss": "^0.3.0",
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {

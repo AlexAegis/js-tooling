@@ -64,11 +64,11 @@
 		"@alexaegis/ts": "^0.3.0",
 		"@alexaegis/vite": "^0.3.0",
 		"@alexaegis/vitest": "^0.3.0",
-		"@types/node": "^20.2.3",
+		"@types/node": "^20.2.5",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.12",
 		"typescript": "^5.0.4",
-		"vite": "^4.3.8",
+		"vite": "^4.3.9",
 		"vitest": "^0.31.1"
 	}
 }

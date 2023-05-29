@@ -5,4 +5,7 @@
  */
 const { mergeConfig, prettierConfig } = require('@alexaegis/prettier-config');
 
-module.exports = mergeConfig(prettierConfig, require('@alexaegis/prettier-config-svelte').default);
+module.exports = mergeConfig(
+	prettierConfig,
+	${additionalConfigs}
+);

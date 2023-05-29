@@ -68,15 +68,15 @@
 		"vitest": "node_modules/.bin/vitest"
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.3.0",
+		"@sveltejs/vite-plugin-svelte": "^2.4.1",
 		"@vitest/coverage-c8": "^0.31.1",
 		"@vitest/ui": "^0.31.1",
-		"jsdom": "22.0.0",
+		"jsdom": "22.1.0",
 		"vitest": "^0.31.1"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.3.0",
 		"publint": "^0.1.12",
-		"vite": "^4.3.8"
+		"vite": "^4.3.9"
 	}
 }
