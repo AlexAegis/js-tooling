@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.1](https://github.com/AlexAegis/js-tooling/compare/v0.3.0...v0.3.1) (2023-05-29)
+
+
+### Features
+
+* **autotool-plugin-github:** add package provenance ([1328ee8](https://github.com/AlexAegis/js-tooling/commit/1328ee8696f97f33e3948c07335de21e74a6abb5))
+* **autotool-plugin-turbo:** added publint to ce ([73a4443](https://github.com/AlexAegis/js-tooling/commit/73a4443d8a6274476cadb26b0e649004e942ea38))
+* **autotool-plugin-turbo:** renamed ce to all ([b91ef54](https://github.com/AlexAegis/js-tooling/commit/b91ef54ae3845df2f04447c1d177492aeb42e8ac))
+* **autotool-plugin-workspace:** engine preferences ([e9932b3](https://github.com/AlexAegis/js-tooling/commit/e9932b3e9545a0fc6c0092b8163401004bf1040e))
+* **autotool-plugin-workspace:** read packageManager from this package ([e8b8713](https://github.com/AlexAegis/js-tooling/commit/e8b8713416affd7c96f0660b0ee33e9e111b674b))
+* **prettier-config-svelte:** svelte specific prettierconfig ([c065ec6](https://github.com/AlexAegis/js-tooling/commit/c065ec6800922f009d46a87364d5fa66ceaada31))
+* **prettier-config-tailwind:** extracted tailwind config ([7e2ff54](https://github.com/AlexAegis/js-tooling/commit/7e2ff549e1cc96b6c23e5e393c73b12f5a155f7f))
+
 ## [0.3.0](https://github.com/AlexAegis/js-tooling/compare/v0.2.0...v0.3.0) (2023-05-19)
 
 

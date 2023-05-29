@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-editorconfig",
 	"description": "My editorconfig",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -58,10 +58,10 @@
 		"autotool-plugin": "^0.0.5"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.3.0",
-		"@alexaegis/ts": "^0.3.0",
-		"@alexaegis/vite": "^0.3.0",
-		"@alexaegis/vitest": "^0.3.0",
+		"@alexaegis/eslint-config-vitest": "^0.3.1",
+		"@alexaegis/ts": "^0.3.1",
+		"@alexaegis/vite": "^0.3.1",
+		"@alexaegis/vitest": "^0.3.1",
 		"@types/node": "^20.2.5",
 		"@vitest/coverage-c8": "^0.31.1",
 		"publint": "^0.1.12",

@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/eslint-config-svelte",
 	"description": "ESLint rules for svelte",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -68,9 +68,9 @@
 		"svelte": "^3.59.1"
 	},
 	"devDependencies": {
-		"@alexaegis/ts": "^0.3.0",
-		"@alexaegis/vite": "^0.3.0",
-		"@alexaegis/vitest": "^0.3.0",
+		"@alexaegis/ts": "^0.3.1",
+		"@alexaegis/vite": "^0.3.1",
+		"@alexaegis/vitest": "^0.3.1",
 		"@types/eslint": "^8.40.0",
 		"@types/node": "^20.2.5",
 		"@vitest/coverage-c8": "^0.31.1",
