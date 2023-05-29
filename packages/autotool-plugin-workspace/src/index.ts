@@ -1,5 +1,6 @@
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
+import rootPackageJson from '../../../package.json';
 import packageJson from '../package.json';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
@@ -27,7 +28,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						npm: undefined,
 						pnpm: '>=8.0.0',
 					},
-					packageManager: 'pnpm@8.5.1',
+					packageManager: rootPackageJson.packageManager,
 				},
 			},
 			{
