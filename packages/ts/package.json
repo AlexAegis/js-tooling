@@ -66,10 +66,10 @@
 		"@alexaegis/eslint-config-vitest": "^0.3.1",
 		"@alexaegis/vite": "^0.3.1",
 		"@alexaegis/vitest": "^0.3.1",
-		"@vitest/coverage-c8": "^0.31.1",
+		"@vitest/coverage-c8": "^0.31.3",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
 		"vite-plugin-dts": "^2.3.0",
-		"vitest": "^0.31.1"
+		"vitest": "^0.31.3"
 	}
 }

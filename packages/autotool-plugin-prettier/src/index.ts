@@ -159,7 +159,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				targetFile: '.prettierignore',
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', '.prettierignore'),
+				sourceFile: join('static', 'workspace.prettierignore'),
 			},
 		],
 	};

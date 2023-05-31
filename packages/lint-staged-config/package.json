@@ -67,9 +67,9 @@
 		"@types/eslint": "^8.40.0",
 		"@types/lint-staged": "^13.2.0",
 		"@types/node": "^20.2.5",
-		"@vitest/coverage-c8": "^0.31.1",
+		"@vitest/coverage-c8": "^0.31.3",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
-		"vitest": "^0.31.1"
+		"vitest": "^0.31.3"
 	}
 }

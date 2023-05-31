@@ -96,8 +96,8 @@ importers:
         specifier: ^17.0.24
         version: 17.0.24
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       autotool:
         specifier: ^0.0.5
         version: 0.0.5
@@ -105,8 +105,8 @@ importers:
         specifier: ^11.2.1
         version: 11.2.1
       commitlint:
-        specifier: ^17.6.3
-        version: 17.6.3
+        specifier: ^17.6.5
+        version: 17.6.5
       depcheck:
         specifier: ^1.4.3
         version: 1.4.3
@@ -144,8 +144,8 @@ importers:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.2.5)(typescript@5.0.4)
       turbo:
-        specifier: ^1.9.9
-        version: 1.9.9
+        specifier: ^1.10.0
+        version: 1.10.0
       typedoc:
         specifier: ^0.24.7
         version: 0.24.7(typescript@5.0.4)
@@ -153,8 +153,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   apps/svelte-example-app:
     devDependencies:
@@ -207,8 +207,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.41.0)
       eslint-config-turbo:
-        specifier: ^1.9.9
-        version: 1.9.9(eslint@8.41.0)
+        specifier: ^1.10.0
+        version: 1.10.0(eslint@8.41.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.41.0)
@@ -246,8 +246,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   libs/example-svelte-lib:
     dependencies:
@@ -298,8 +298,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   libs/example-ts-lib:
     devDependencies:
@@ -322,8 +322,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -331,8 +331,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-commitlint:
     dependencies:
@@ -346,8 +346,8 @@ importers:
         specifier: ^0.0.5
         version: 0.0.5
       commitlint:
-        specifier: ^17.6.3
-        version: 17.6.3
+        specifier: ^17.6.5
+        version: 17.6.5
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.3.1
@@ -365,8 +365,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -377,8 +377,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-depcheck:
     dependencies:
@@ -405,8 +405,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       depcheck:
         specifier: ^1.4.3
         version: 1.4.3
@@ -420,8 +420,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-editorconfig:
     dependencies:
@@ -448,8 +448,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -460,8 +460,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-eslint:
     dependencies:
@@ -494,8 +494,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       eslint:
         specifier: ^8.41.0
         version: 8.41.0
@@ -509,8 +509,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-git:
     dependencies:
@@ -537,8 +537,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -549,8 +549,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-github:
     dependencies:
@@ -577,8 +577,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -589,8 +589,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-husky:
     dependencies:
@@ -601,8 +601,8 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1
       '@commitlint/config-conventional':
-        specifier: ^17.6.3
-        version: 17.6.3
+        specifier: ^17.6.5
+        version: 17.6.5
       autotool-plugin:
         specifier: ^0.0.5
         version: 0.0.5
@@ -629,8 +629,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -641,8 +641,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-prettier:
     dependencies:
@@ -679,8 +679,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -691,8 +691,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-publint:
     dependencies:
@@ -719,8 +719,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -731,8 +731,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-remark:
     dependencies:
@@ -762,8 +762,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -777,8 +777,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-standard-version:
     dependencies:
@@ -811,8 +811,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -823,8 +823,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-stylelint:
     dependencies:
@@ -836,7 +836,7 @@ importers:
         version: 0.0.5
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: workspace:^0.3.1
+        specifier: ^0.3.1
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
         specifier: ^0.3.1
@@ -851,8 +851,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -866,8 +866,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-svelte:
     dependencies:
@@ -909,8 +909,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -921,8 +921,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-ts:
     dependencies:
@@ -958,8 +958,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -970,8 +970,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-turbo:
     dependencies:
@@ -982,8 +982,8 @@ importers:
         specifier: ^0.0.5
         version: 0.0.5
       turbo:
-        specifier: ^1.9.9
-        version: 1.9.9
+        specifier: ^1.10.0
+        version: 1.10.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.3.1
@@ -1001,8 +1001,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1013,8 +1013,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-typedoc:
     dependencies:
@@ -1044,8 +1044,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1056,8 +1056,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-vite:
     dependencies:
@@ -1093,8 +1093,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1102,8 +1102,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-vitest:
     dependencies:
@@ -1136,8 +1136,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1148,8 +1148,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-vscode:
     dependencies:
@@ -1176,8 +1176,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1188,8 +1188,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/autotool-plugin-workspace:
     dependencies:
@@ -1222,8 +1222,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1234,8 +1234,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/commitlint-config:
     dependencies:
@@ -1262,8 +1262,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1274,8 +1274,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/eslint-config-core:
     dependencies:
@@ -1295,8 +1295,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.41.0)
       eslint-config-turbo:
-        specifier: ^1.9.9
-        version: 1.9.9(eslint@8.41.0)
+        specifier: ^1.10.0
+        version: 1.10.0(eslint@8.41.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.41.0)
@@ -1333,8 +1333,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1342,8 +1342,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/eslint-config-svelte:
     dependencies:
@@ -1363,8 +1363,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.41.0)
       eslint-config-turbo:
-        specifier: ^1.9.9
-        version: 1.9.9(eslint@8.41.0)
+        specifier: ^1.10.0
+        version: 1.10.0(eslint@8.41.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.41.0)
@@ -1382,6 +1382,9 @@ importers:
         specifier: ^3.59.1
         version: 3.59.1
     devDependencies:
+      '@alexaegis/eslint-config-vitest':
+        specifier: ^0.3.1
+        version: link:../eslint-config-vitest
       '@alexaegis/ts':
         specifier: ^0.3.1
         version: link:../ts
@@ -1398,8 +1401,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1407,8 +1410,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/eslint-config-vitest:
     dependencies:
@@ -1428,8 +1431,8 @@ importers:
         specifier: ^8.8.0
         version: 8.8.0(eslint@8.41.0)
       eslint-config-turbo:
-        specifier: ^1.9.9
-        version: 1.9.9(eslint@8.41.0)
+        specifier: ^1.10.0
+        version: 1.10.0(eslint@8.41.0)
       eslint-plugin-react:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.41.0)
@@ -1460,8 +1463,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1469,8 +1472,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/lint-staged-config:
     dependencies:
@@ -1510,8 +1513,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1519,8 +1522,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/nuke:
     dependencies:
@@ -1556,8 +1559,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1568,8 +1571,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/prettier-config:
     dependencies:
@@ -1593,8 +1596,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1602,8 +1605,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/prettier-config-svelte:
     dependencies:
@@ -1633,8 +1636,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1642,8 +1645,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/prettier-config-tailwind:
     dependencies:
@@ -1676,8 +1679,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1685,8 +1688,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/remark-preset:
     dependencies:
@@ -1750,8 +1753,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1762,8 +1765,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/standard-version:
     dependencies:
@@ -1811,8 +1814,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/stylelint-config:
     dependencies:
@@ -1842,8 +1845,8 @@ importers:
         specifier: ^20.2.5
         version: 20.2.5
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1857,8 +1860,8 @@ importers:
         specifier: ^4.3.9
         version: 4.3.9(@types/node@20.2.5)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/ts:
     dependencies:
@@ -1885,8 +1888,8 @@ importers:
         specifier: ^0.3.1
         version: link:../vitest
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       publint:
         specifier: ^0.1.12
         version: 0.1.12
@@ -1894,8 +1897,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(@types/node@20.2.5)(vite@4.3.9)
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/vite:
     dependencies:
@@ -1941,8 +1944,8 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
   packages/vitest:
     dependencies:
@@ -1950,17 +1953,17 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1(svelte@3.59.1)(vite@4.3.9)
       '@vitest/coverage-c8':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       '@vitest/ui':
-        specifier: ^0.31.1
-        version: 0.31.1(vitest@0.31.1)
+        specifier: ^0.31.3
+        version: 0.31.3(vitest@0.31.3)
       jsdom:
         specifier: 22.1.0
         version: 22.1.0
       vitest:
-        specifier: ^0.31.1
-        version: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+        specifier: ^0.31.3
+        version: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
     devDependencies:
       '@alexaegis/vite':
         specifier: ^0.3.1
@@ -2169,13 +2172,13 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@commitlint/cli@17.6.3:
-    resolution: {integrity: sha512-ItSz2fd4F+CujgIbQOfNNerDF1eFlsBGEfp9QcCb1kxTYMuKTYZzA6Nu1YRRrIaaWwe2E7awUGpIMrPoZkOG3A==}
+  /@commitlint/cli@17.6.5:
+    resolution: {integrity: sha512-3PQrWr/uo6lzF5k7n5QuosCYnzaxP9qGBp3jhWP0Vmsa7XA6wrl9ccPqfQyXpSbQE3zBROVO3TDqgPKe4tfmLQ==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.4
-      '@commitlint/lint': 17.6.3
+      '@commitlint/lint': 17.6.5
       '@commitlint/load': 17.5.0
       '@commitlint/read': 17.5.1
       '@commitlint/types': 17.4.4
@@ -2188,8 +2191,8 @@ packages:
       - '@swc/core'
       - '@swc/wasm'
 
-  /@commitlint/config-conventional@17.6.3:
-    resolution: {integrity: sha512-bLyHEjjRWqlLQWIgYFHmUPbEFMOOLXeF3QbUinDIJev/u9e769tkoTH9YPknEywiuIrAgZaVo+OfzAIsJP0fsw==}
+  /@commitlint/config-conventional@17.6.5:
+    resolution: {integrity: sha512-Xl9H9KLl86NZm5CYNTNF9dcz1xelE/EbvhWIWcYxG/rn3UWYWdWmmnX2q6ZduNdLFSGbOxzUpIx61j5zxbeXxg==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
@@ -2224,20 +2227,20 @@ packages:
       '@commitlint/types': 17.4.4
       chalk: 4.1.2
 
-  /@commitlint/is-ignored@17.6.3:
-    resolution: {integrity: sha512-LQbNdnPbxrpbcrVKR5yf51SvquqktpyZJwqXx3lUMF6+nT9PHB8xn3wLy8pi2EQv5Zwba484JnUwDE1ygVYNQA==}
+  /@commitlint/is-ignored@17.6.5:
+    resolution: {integrity: sha512-CQvAPt9gX7cuUbMrIaIMKczfWJqqr6m8IlJs0F2zYwyyMTQ87QMHIj5jJ5HhOaOkaj6dvTMVGx8Dd1I4xgUuoQ==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
       semver: 7.5.0
 
-  /@commitlint/lint@17.6.3:
-    resolution: {integrity: sha512-fBlXwt6SHJFgm3Tz+luuo3DkydAx9HNC5y4eBqcKuDuMVqHd2ugMNr+bQtx6riv9mXFiPoKp7nE4Xn/ls3iVDA==}
+  /@commitlint/lint@17.6.5:
+    resolution: {integrity: sha512-BSJMwkE4LWXrOsiP9KoHG+/heSDfvOL/Nd16+ojTS/DX8HZr8dNl8l3TfVr/d/9maWD8fSegRGtBtsyGuugFrw==}
     engines: {node: '>=v14'}
     dependencies:
-      '@commitlint/is-ignored': 17.6.3
-      '@commitlint/parse': 17.4.4
-      '@commitlint/rules': 17.6.1
+      '@commitlint/is-ignored': 17.6.5
+      '@commitlint/parse': 17.6.5
+      '@commitlint/rules': 17.6.5
       '@commitlint/types': 17.4.4
 
   /@commitlint/load@17.5.0:
@@ -2266,8 +2269,8 @@ packages:
     resolution: {integrity: sha512-3XMNbzB+3bhKA1hSAWPCQA3lNxR4zaeQAQcHj0Hx5sVdO6ryXtgUBGGv+1ZCLMgAPRixuc6en+iNAzZ4NzAa8Q==}
     engines: {node: '>=v14'}
 
-  /@commitlint/parse@17.4.4:
-    resolution: {integrity: sha512-EKzz4f49d3/OU0Fplog7nwz/lAfXMaDxtriidyGF9PtR+SRbgv4FhsfF310tKxs6EPj8Y+aWWuX3beN5s+yqGg==}
+  /@commitlint/parse@17.6.5:
+    resolution: {integrity: sha512-0zle3bcn1Hevw5Jqpz/FzEWNo2KIzUbc1XyGg6WrWEoa6GH3A1pbqNF6MvE6rjuy6OY23c8stWnb4ETRZyN+Yw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/types': 17.4.4
@@ -2295,8 +2298,8 @@ packages:
       resolve-from: 5.0.0
       resolve-global: 1.0.0
 
-  /@commitlint/rules@17.6.1:
-    resolution: {integrity: sha512-lUdHw6lYQ1RywExXDdLOKxhpp6857/4c95Dc/1BikrHgdysVUXz26yV0vp1GL7Gv+avx9WqZWTIVB7pNouxlfw==}
+  /@commitlint/rules@17.6.5:
+    resolution: {integrity: sha512-uTB3zSmnPyW2qQQH+Dbq2rekjlWRtyrjDo4aLFe63uteandgkI+cc0NhhbBAzcXShzVk0qqp8SlkQMu0mgHg/A==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/ensure': 17.4.4
@@ -3330,8 +3333,8 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: false
 
-  /@vitest/coverage-c8@0.31.1(vitest@0.31.1):
-    resolution: {integrity: sha512-6TkjQpmgYez7e3dbAUoYdRXxWN81BojCmUILJwgCy39uZFG33DsQ0rSRSZC9beAEdCZTpxR63nOvd9hxDQcJ0g==}
+  /@vitest/coverage-c8@0.31.3(vitest@0.31.3):
+    resolution: {integrity: sha512-i6z+aFyrv4HLwPw35SGQ4OcSlqfUcxIsarrp3JghrosSE/1prQcE0iOqO9EXEjNz+AVfR4Cvta/6m/Rrof46bQ==}
     peerDependencies:
       vitest: '>=0.30.0 <1'
     dependencies:
@@ -3340,51 +3343,51 @@ packages:
       magic-string: 0.30.0
       picocolors: 1.0.0
       std-env: 3.3.3
-      vitest: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+      vitest: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
-  /@vitest/expect@0.31.1:
-    resolution: {integrity: sha512-BV1LyNvhnX+eNYzJxlHIGPWZpwJFZaCcOIzp2CNG0P+bbetenTupk6EO0LANm4QFt0TTit+yqx7Rxd1qxi/SQA==}
+  /@vitest/expect@0.31.3:
+    resolution: {integrity: sha512-J+npV64YwKRJN7hA8KVnuyGi5k5mIaq4XmqIxKbRUX0BRBkU1xZ7gZeTwQ4S4dBTcvSvcoxceBNfMTnOdTlg3g==}
     dependencies:
-      '@vitest/spy': 0.31.1
-      '@vitest/utils': 0.31.1
+      '@vitest/spy': 0.31.3
+      '@vitest/utils': 0.31.3
       chai: 4.3.7
 
-  /@vitest/runner@0.31.1:
-    resolution: {integrity: sha512-imWuc82ngOtxdCUpXwtEzZIuc1KMr+VlQ3Ondph45VhWoQWit5yvG/fFcldbnCi8DUuFi+NmNx5ehMUw/cGLUw==}
+  /@vitest/runner@0.31.3:
+    resolution: {integrity: sha512-89Fic1IRu4yNqnks/KJEncqZsmQpxq9RSnMVwV0RZeI9RWv/FYh9Nuoz8ld73YKOh6NiF4f9EE3COfNwX8aRpw==}
     dependencies:
-      '@vitest/utils': 0.31.1
+      '@vitest/utils': 0.31.3
       concordance: 5.0.4
       p-limit: 4.0.0
       pathe: 1.1.0
 
-  /@vitest/snapshot@0.31.1:
-    resolution: {integrity: sha512-L3w5uU9bMe6asrNzJ8WZzN+jUTX4KSgCinEJPXyny0o90fG4FPQMV0OWsq7vrCWfQlAilMjDnOF9nP8lidsJ+g==}
+  /@vitest/snapshot@0.31.3:
+    resolution: {integrity: sha512-CgcmlZyP083oPUgd83rwLZ+qoT4KdvLNsyWRiJNgHoJjR0r7StVY+LlLAfdC9qA70G8O+hJeug+Yn1u4H51OzA==}
     dependencies:
       magic-string: 0.30.0
       pathe: 1.1.0
       pretty-format: 27.5.1
 
-  /@vitest/spy@0.31.1:
-    resolution: {integrity: sha512-1cTpt2m9mdo3hRLDyCG2hDQvRrePTDgEJBFQQNz1ydHHZy03EiA6EpFxY+7ODaY7vMRCie+WlFZBZ0/dQWyssQ==}
+  /@vitest/spy@0.31.3:
+    resolution: {integrity: sha512-tXGIYPdqjBXLhOWSUhWV/eBWBllfD8f6ppQXR0YMBt95bZrCNV7pM29pkam2M/3GAlg7hS+I8wnKZVkIxgXz9A==}
     dependencies:
-      tinyspy: 2.1.0
+      tinyspy: 2.1.1
 
-  /@vitest/ui@0.31.1(vitest@0.31.1):
-    resolution: {integrity: sha512-+JJ2+rvRPAVxFLNE+WJOMzOjxqYPn7V2hl00uNwid6kquD+UHTa716Z7szfNeZMLnHOHv+fxq1UgLCymvVpE5w==}
+  /@vitest/ui@0.31.3(vitest@0.31.3):
+    resolution: {integrity: sha512-AAW2N0DG5VSgsF0en6ImKmbY/EwoIqx4TOCYqzaJokABCd1Mh8Zlyhk0PVwaZrKXccgrAchd05CJHWnAmI7Pbw==}
     peerDependencies:
       vitest: '>=0.30.1 <1'
     dependencies:
-      '@vitest/utils': 0.31.1
+      '@vitest/utils': 0.31.3
       fast-glob: 3.2.12
       fflate: 0.7.4
       flatted: 3.2.7
       pathe: 1.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vitest: 0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0)
+      vitest: 0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0)
 
-  /@vitest/utils@0.31.1:
-    resolution: {integrity: sha512-yFyRD5ilwojsZfo3E0BnH72pSVSuLg2356cN1tCEe/0RtDzxTPYwOomIC+eQbot7m6DRy4tPZw+09mB7NkbMmA==}
+  /@vitest/utils@0.31.3:
+    resolution: {integrity: sha512-aLxfilR38ARSw6U/E9hl5bkn2TNeWLK7rZaIWZQUpT6BBilbehwJbSVGENubW5Pb9cawqchZZ7IQMW99t0Ww3A==}
     dependencies:
       concordance: 5.0.4
       loupe: 2.3.6
@@ -4154,12 +4157,12 @@ packages:
       semver: 7.5.1
       yargs: 17.7.2
 
-  /commitlint@17.6.3:
-    resolution: {integrity: sha512-0S6j3gKZyLmY4F/YchW7lqXiBeplFBKJqXcrOdxhzJdsZdqiPZxqsN7zq++Ovc4iMLnX65W4bJB7YKalYfXesw==}
+  /commitlint@17.6.5:
+    resolution: {integrity: sha512-YRpFI8ABdvh0TbR6T72HaJFDn0TQdMVGgKnv6/GFkTdYTqzGo3ItTKn2bh/sxSVy/5ziOrVVAXtCy3PEq5Vs8w==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
-      '@commitlint/cli': 17.6.3
+      '@commitlint/cli': 17.6.5
       '@commitlint/types': 17.4.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -4965,13 +4968,13 @@ packages:
     dependencies:
       eslint: 8.41.0
 
-  /eslint-config-turbo@1.9.9(eslint@8.41.0):
-    resolution: {integrity: sha512-OQLvRK9Ej/8HIEAW6e9hPu3nk1nCYWJ76voB4eOIaI2fYeIKC++0/r0zJPMOD8puo5V1DH+Gkd0XioKpL14ncg==}
+  /eslint-config-turbo@1.10.0(eslint@8.41.0):
+    resolution: {integrity: sha512-iJsjoOb0vjnpV65rL+SAOIgbOluEibFqo/ke4UzXA9bi13cNJOT9k6FCQA7RXBHwChz+6BzYq5ZyoE3WcUg+0g==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.41.0
-      eslint-plugin-turbo: 1.9.9(eslint@8.41.0)
+      eslint-plugin-turbo: 1.10.0(eslint@8.41.0)
 
   /eslint-import-resolver-node@0.3.7:
     resolution: {integrity: sha512-gozW2blMLJCeFpBwugLTGyvVjNoeo1knonXAcatC6bjPBZitotxdWf7Gimr25N4c0AAOo4eOUfaG82IJPDpqCA==}
@@ -5156,8 +5159,8 @@ packages:
       - supports-color
       - ts-node
 
-  /eslint-plugin-turbo@1.9.9(eslint@8.41.0):
-    resolution: {integrity: sha512-BgtBMcgNd2YKiHbn1clRiEAmnlpSl19kt9yfIhFEsNIVPg2Gx0O1H++vWXGzMtT19mjHG4Unx0uIMRENKnDYLg==}
+  /eslint-plugin-turbo@1.10.0(eslint@8.41.0):
+    resolution: {integrity: sha512-7eDeOjZDx/GcrZj4XYX1puaxsDtm6FE53qlbb4JyJhhkKC8OVYTJHTpu8kSmFTNsVoIgDFo/SEUIMwKHLYRM3w==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -6825,6 +6828,26 @@ packages:
       uvu: 0.5.6
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /mdast-util-from-markdown@1.3.1:
+    resolution: {integrity: sha512-4xTO/M8c82qBcnQc1tgpNtubGUW/Y1tBQ1B0i5CtSoelOLKFYlElIr3bvgREYYO5iRqbMY1YuqZng0GVOI8Qww==}
+    dependencies:
+      '@types/mdast': 3.0.11
+      '@types/unist': 2.0.6
+      decode-named-character-reference: 1.0.2
+      mdast-util-to-string: 3.2.0
+      micromark: 3.2.0
+      micromark-util-decode-numeric-character-reference: 1.1.0
+      micromark-util-decode-string: 1.1.0
+      micromark-util-normalize-identifier: 1.1.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+      unist-util-stringify-position: 3.0.3
+      uvu: 0.5.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /mdast-util-gfm-autolink-literal@1.0.3:
     resolution: {integrity: sha512-My8KJ57FYEy2W2LyNom4n3E7hKTuQk/0SES0u16tjA9Z3oFkF4RrC/hPAPgjlSpezsOvI8ObcXcElo92wn5IGA==}
@@ -6989,6 +7012,28 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
       uvu: 0.5.6
+    dev: false
+
+  /micromark-core-commonmark@1.1.0:
+    resolution: {integrity: sha512-BgHO1aRbolh2hcrzL2d1La37V0Aoz73ymF8rAcKnohLy93titmv62E0gP8Hrx9PKcKrqCZ1BbLGbP3bEhoXYlw==}
+    dependencies:
+      decode-named-character-reference: 1.0.2
+      micromark-factory-destination: 1.1.0
+      micromark-factory-label: 1.1.0
+      micromark-factory-space: 1.1.0
+      micromark-factory-title: 1.1.0
+      micromark-factory-whitespace: 1.1.0
+      micromark-util-character: 1.2.0
+      micromark-util-chunked: 1.1.0
+      micromark-util-classify-character: 1.1.0
+      micromark-util-html-tag-name: 1.2.0
+      micromark-util-normalize-identifier: 1.1.0
+      micromark-util-resolve-all: 1.1.0
+      micromark-util-subtokenize: 1.1.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+      uvu: 0.5.6
+    dev: true
 
   /micromark-extension-gfm-autolink-literal@1.0.4:
     resolution: {integrity: sha512-WCssN+M9rUyfHN5zPBn3/f0mIA7tqArHL/EKbv3CZK+LT2rG77FEikIQEqBkv46fOqXQK4NEW/Pc7Z27gshpeg==}
@@ -7068,6 +7113,15 @@ packages:
       micromark-util-character: 1.1.0
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
+    dev: false
+
+  /micromark-factory-destination@1.1.0:
+    resolution: {integrity: sha512-XaNDROBgx9SgSChd69pjiGKbV+nfHGDPVYFs5dOoDd7ZnMAE+Cuu91BCpsY8RT2NP9vo/B8pds2VQNCLiu0zhg==}
+    dependencies:
+      micromark-util-character: 1.2.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-factory-label@1.0.2:
     resolution: {integrity: sha512-CTIwxlOnU7dEshXDQ+dsr2n+yxpP0+fn271pu0bwDIS8uqfFcumXpj5mLn3hSC8iw2MUr6Gx8EcKng1dD7i6hg==}
@@ -7076,12 +7130,30 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
       uvu: 0.5.6
+    dev: false
+
+  /micromark-factory-label@1.1.0:
+    resolution: {integrity: sha512-OLtyez4vZo/1NjxGhcpDSbHQ+m0IIGnT8BoPamh+7jVlzLJBH98zzuCoUeMxvM6WsNeh8wx8cKvqLiPHEACn0w==}
+    dependencies:
+      micromark-util-character: 1.2.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+      uvu: 0.5.6
+    dev: true
 
   /micromark-factory-space@1.0.0:
     resolution: {integrity: sha512-qUmqs4kj9a5yBnk3JMLyjtWYN6Mzfcx8uJfi5XAveBniDevmZasdGBba5b4QsvRcAkmvGo5ACmSUmyGiKTLZew==}
     dependencies:
       micromark-util-character: 1.1.0
       micromark-util-types: 1.0.2
+    dev: false
+
+  /micromark-factory-space@1.1.0:
+    resolution: {integrity: sha512-cRzEj7c0OL4Mw2v6nwzttyOZe8XY/Z8G0rzmWQZTBi/jjwyw/U4uqKtUORXQrR5bAZZnbTI/feRV/R7hc4jQYQ==}
+    dependencies:
+      micromark-util-character: 1.2.0
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-factory-title@1.0.2:
     resolution: {integrity: sha512-zily+Nr4yFqgMGRKLpTVsNl5L4PMu485fGFDOQJQBl2NFpjGte1e86zC0da93wf97jrc4+2G2GQudFMHn3IX+A==}
@@ -7091,6 +7163,16 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
       uvu: 0.5.6
+    dev: false
+
+  /micromark-factory-title@1.1.0:
+    resolution: {integrity: sha512-J7n9R3vMmgjDOCY8NPw55jiyaQnH5kBdV2/UXCtZIpnHH3P6nHUKaH7XXEYuWwx/xUJcawa8plLBEjMPU24HzQ==}
+    dependencies:
+      micromark-factory-space: 1.1.0
+      micromark-util-character: 1.2.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-factory-whitespace@1.0.0:
     resolution: {integrity: sha512-Qx7uEyahU1lt1RnsECBiuEbfr9INjQTGa6Err+gF3g0Tx4YEviPbqqGKNv/NrBaE7dVHdn1bVZKM/n5I/Bak7A==}
@@ -7099,6 +7181,16 @@ packages:
       micromark-util-character: 1.1.0
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
+    dev: false
+
+  /micromark-factory-whitespace@1.1.0:
+    resolution: {integrity: sha512-v2WlmiymVSp5oMg+1Q0N1Lxmt6pMhIHD457whWM7/GUlEks1hI9xj5w3zbc4uuMKXGisksZk8DzP2UyGbGqNsQ==}
+    dependencies:
+      micromark-factory-space: 1.1.0
+      micromark-util-character: 1.2.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-util-character@1.1.0:
     resolution: {integrity: sha512-agJ5B3unGNJ9rJvADMJ5ZiYjBRyDpzKAOk01Kpi1TKhlT1APx3XZk6eN7RtSz1erbWHC2L8T3xLZ81wdtGRZzg==}
@@ -7106,10 +7198,24 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
 
+  /micromark-util-character@1.2.0:
+    resolution: {integrity: sha512-lXraTwcX3yH/vMDaFWCQJP1uIszLVebzUa3ZHdrgxr7KEU/9mL4mVgCpGbyhvNLNlauROiNUq7WN5u7ndbY6xg==}
+    dependencies:
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+    dev: true
+
   /micromark-util-chunked@1.0.0:
     resolution: {integrity: sha512-5e8xTis5tEZKgesfbQMKRCyzvffRRUX+lK/y+DvsMFdabAicPkkZV6gO+FEWi9RfuKKoxxPwNL+dFF0SMImc1g==}
     dependencies:
       micromark-util-symbol: 1.0.1
+    dev: false
+
+  /micromark-util-chunked@1.1.0:
+    resolution: {integrity: sha512-Ye01HXpkZPNcV6FiyoW2fGZDUw4Yc7vT0E9Sad83+bEDiCJ1uXu0S3mr8WLpsz3HaG3x2q0HM6CTuPdcZcluFQ==}
+    dependencies:
+      micromark-util-symbol: 1.1.0
+    dev: true
 
   /micromark-util-classify-character@1.0.0:
     resolution: {integrity: sha512-F8oW2KKrQRb3vS5ud5HIqBVkCqQi224Nm55o5wYLzY/9PwHGXC01tr3d7+TqHHz6zrKQ72Okwtvm/xQm6OVNZA==}
@@ -7117,17 +7223,40 @@ packages:
       micromark-util-character: 1.1.0
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
+    dev: false
+
+  /micromark-util-classify-character@1.1.0:
+    resolution: {integrity: sha512-SL0wLxtKSnklKSUplok1WQFoGhUdWYKggKUiqhX+Swala+BtptGCu5iPRc+xvzJ4PXE/hwM3FNXsfEVgoZsWbw==}
+    dependencies:
+      micromark-util-character: 1.2.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-util-combine-extensions@1.0.0:
     resolution: {integrity: sha512-J8H058vFBdo/6+AsjHp2NF7AJ02SZtWaVUjsayNFeAiydTxUwViQPxN0Hf8dp4FmCQi0UUFovFsEyRSUmFH3MA==}
     dependencies:
       micromark-util-chunked: 1.0.0
       micromark-util-types: 1.0.2
+    dev: false
+
+  /micromark-util-combine-extensions@1.1.0:
+    resolution: {integrity: sha512-Q20sp4mfNf9yEqDL50WwuWZHUrCO4fEyeDCnMGmG5Pr0Cz15Uo7KBs6jq+dq0EgX4DPwwrh9m0X+zPV1ypFvUA==}
+    dependencies:
+      micromark-util-chunked: 1.1.0
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-util-decode-numeric-character-reference@1.0.0:
     resolution: {integrity: sha512-OzO9AI5VUtrTD7KSdagf4MWgHMtET17Ua1fIpXTpuhclCqD8egFWo85GxSGvxgkGS74bEahvtM0WP0HjvV0e4w==}
     dependencies:
       micromark-util-symbol: 1.0.1
+
+  /micromark-util-decode-numeric-character-reference@1.1.0:
+    resolution: {integrity: sha512-m9V0ExGv0jB1OT21mrWcuf4QhP46pH1KkfWy9ZEezqHKAxkj4mPCy3nIH1rkbdMlChLHX531eOrymlwyZIf2iw==}
+    dependencies:
+      micromark-util-symbol: 1.1.0
+    dev: true
 
   /micromark-util-decode-string@1.0.2:
     resolution: {integrity: sha512-DLT5Ho02qr6QWVNYbRZ3RYOSSWWFuH3tJexd3dgN1odEuPNxCngTCXJum7+ViRAd9BbdxCvMToPOD/IvVhzG6Q==}
@@ -7137,21 +7266,54 @@ packages:
       micromark-util-decode-numeric-character-reference: 1.0.0
       micromark-util-symbol: 1.0.1
 
+  /micromark-util-decode-string@1.1.0:
+    resolution: {integrity: sha512-YphLGCK8gM1tG1bd54azwyrQRjCFcmgj2S2GoJDNnh4vYtnL38JS8M4gpxzOPNyHdNEpheyWXCTnnTDY3N+NVQ==}
+    dependencies:
+      decode-named-character-reference: 1.0.2
+      micromark-util-character: 1.2.0
+      micromark-util-decode-numeric-character-reference: 1.1.0
+      micromark-util-symbol: 1.1.0
+    dev: true
+
   /micromark-util-encode@1.0.1:
     resolution: {integrity: sha512-U2s5YdnAYexjKDel31SVMPbfi+eF8y1U4pfiRW/Y8EFVCy/vgxk/2wWTxzcqE71LHtCuCzlBDRU2a5CQ5j+mQA==}
+    dev: false
+
+  /micromark-util-encode@1.1.0:
+    resolution: {integrity: sha512-EuEzTWSTAj9PA5GOAs992GzNh2dGQO52UvAbtSOMvXTxv3Criqb6IOzJUBCmEqrrXSblJIJBbFFv6zPxpreiJw==}
+    dev: true
 
   /micromark-util-html-tag-name@1.1.0:
     resolution: {integrity: sha512-BKlClMmYROy9UiV03SwNmckkjn8QHVaWkqoAqzivabvdGcwNGMMMH/5szAnywmsTBUzDsU57/mFi0sp4BQO6dA==}
+    dev: false
+
+  /micromark-util-html-tag-name@1.2.0:
+    resolution: {integrity: sha512-VTQzcuQgFUD7yYztuQFKXT49KghjtETQ+Wv/zUjGSGBioZnkA4P1XXZPT1FHeJA6RwRXSF47yvJ1tsJdoxwO+Q==}
+    dev: true
 
   /micromark-util-normalize-identifier@1.0.0:
     resolution: {integrity: sha512-yg+zrL14bBTFrQ7n35CmByWUTFsgst5JhA4gJYoty4Dqzj4Z4Fr/DHekSS5aLfH9bdlfnSvKAWsAgJhIbogyBg==}
     dependencies:
       micromark-util-symbol: 1.0.1
+    dev: false
+
+  /micromark-util-normalize-identifier@1.1.0:
+    resolution: {integrity: sha512-N+w5vhqrBihhjdpM8+5Xsxy71QWqGn7HYNUvch71iV2PM7+E3uWGox1Qp90loa1ephtCxG2ftRV/Conitc6P2Q==}
+    dependencies:
+      micromark-util-symbol: 1.1.0
+    dev: true
 
   /micromark-util-resolve-all@1.0.0:
     resolution: {integrity: sha512-CB/AGk98u50k42kvgaMM94wzBqozSzDDaonKU7P7jwQIuH2RU0TeBqGYJz2WY1UdihhjweivStrJ2JdkdEmcfw==}
     dependencies:
       micromark-util-types: 1.0.2
+    dev: false
+
+  /micromark-util-resolve-all@1.1.0:
+    resolution: {integrity: sha512-b/G6BTMSg+bX+xVCshPTPyAu2tmA0E4X98NSR7eIbeC6ycCqCeE7wjfDIgzEbkzdEVJXRtOG4FbEm/uGbCRouA==}
+    dependencies:
+      micromark-util-types: 1.1.0
+    dev: true
 
   /micromark-util-sanitize-uri@1.1.0:
     resolution: {integrity: sha512-RoxtuSCX6sUNtxhbmsEFQfWzs8VN7cTctmBPvYivo98xb/kDEoTCtJQX5wyzIYEmk/lvNFTat4hL8oW0KndFpg==}
@@ -7159,6 +7321,15 @@ packages:
       micromark-util-character: 1.1.0
       micromark-util-encode: 1.0.1
       micromark-util-symbol: 1.0.1
+    dev: false
+
+  /micromark-util-sanitize-uri@1.2.0:
+    resolution: {integrity: sha512-QO4GXv0XZfWey4pYFndLUKEAktKkG5kZTdUNaTAkzbuJxn2tNBOr+QtxR2XpWaMhbImT2dPzyLrPXLlPhph34A==}
+    dependencies:
+      micromark-util-character: 1.2.0
+      micromark-util-encode: 1.1.0
+      micromark-util-symbol: 1.1.0
+    dev: true
 
   /micromark-util-subtokenize@1.0.2:
     resolution: {integrity: sha512-d90uqCnXp/cy4G881Ub4psE57Sf8YD0pim9QdjCRNjfas2M1u6Lbt+XZK9gnHL2XFhnozZiEdCa9CNfXSfQ6xA==}
@@ -7167,12 +7338,30 @@ packages:
       micromark-util-symbol: 1.0.1
       micromark-util-types: 1.0.2
       uvu: 0.5.6
+    dev: false
+
+  /micromark-util-subtokenize@1.1.0:
+    resolution: {integrity: sha512-kUQHyzRoxvZO2PuLzMt2P/dwVsTiivCK8icYTeR+3WgbuPqfHgPPy7nFKbeqRivBvn/3N3GBiNC+JRTMSxEC7A==}
+    dependencies:
+      micromark-util-chunked: 1.1.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+      uvu: 0.5.6
+    dev: true
 
   /micromark-util-symbol@1.0.1:
     resolution: {integrity: sha512-oKDEMK2u5qqAptasDAwWDXq0tG9AssVwAx3E9bBF3t/shRIGsWIRG+cGafs2p/SnDSOecnt6hZPCE2o6lHfFmQ==}
 
+  /micromark-util-symbol@1.1.0:
+    resolution: {integrity: sha512-uEjpEYY6KMs1g7QfJ2eX1SQEV+ZT4rUD3UcF6l57acZvLNK7PBZL+ty82Z1qhK1/yXIY4bdx04FKMgR0g4IAag==}
+    dev: true
+
   /micromark-util-types@1.0.2:
     resolution: {integrity: sha512-DCfg/T8fcrhrRKTPjRrw/5LLvdGV7BHySf/1LOZx7TzWZdYRjogNtyNq885z3nNallwr3QUKARjqvHqX1/7t+w==}
+
+  /micromark-util-types@1.1.0:
+    resolution: {integrity: sha512-ukRBgie8TIAcacscVHSiddHjO4k/q3pnedmzMQ4iwDcK0FtFCohKOlFbaOL/mPgfnPsL3C1ZyxJa4sbWrBl3jg==}
+    dev: true
 
   /micromark@3.1.0:
     resolution: {integrity: sha512-6Mj0yHLdUZjHnOPgr5xfWIMqMWS12zDN6iws9SLuSz76W8jTtAv24MN4/CL7gJrl5vtxGInkkqDv/JIoRsQOvA==}
@@ -7196,6 +7385,31 @@ packages:
       uvu: 0.5.6
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /micromark@3.2.0:
+    resolution: {integrity: sha512-uD66tJj54JLYq0De10AhWycZWGQNUvDI55xPgk2sQM5kn1JYlhbCMTtEeT27+vAhW2FBQxLlOmS3pmA7/2z4aA==}
+    dependencies:
+      '@types/debug': 4.1.8
+      debug: 4.3.4
+      decode-named-character-reference: 1.0.2
+      micromark-core-commonmark: 1.1.0
+      micromark-factory-space: 1.1.0
+      micromark-util-character: 1.2.0
+      micromark-util-chunked: 1.1.0
+      micromark-util-combine-extensions: 1.1.0
+      micromark-util-decode-numeric-character-reference: 1.1.0
+      micromark-util-encode: 1.1.0
+      micromark-util-normalize-identifier: 1.1.0
+      micromark-util-resolve-all: 1.1.0
+      micromark-util-sanitize-uri: 1.2.0
+      micromark-util-subtokenize: 1.1.0
+      micromark-util-symbol: 1.1.0
+      micromark-util-types: 1.1.0
+      uvu: 0.5.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
@@ -9037,7 +9251,7 @@ packages:
     resolution: {integrity: sha512-3ydxgHa/ZQzG8LvC7jTXccARYDcRld3VfcgIIFs7bI6vbRSxJJmzgLEIIoYKyrfhaY+ujuWaf/PJiMZXoiCXgw==}
     dependencies:
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.3.0
+      mdast-util-from-markdown: 1.3.1
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
@@ -10168,8 +10382,8 @@ packages:
     resolution: {integrity: sha512-paHQtnrlS1QZYKF/GnLoOM/DN9fqaGOFbCbxzAhwniySnzl9Ebk8w73/dd34DAhe/obUbPAOldTyYXQZxnPBPQ==}
     engines: {node: '>=14.0.0'}
 
-  /tinyspy@2.1.0:
-    resolution: {integrity: sha512-7eORpyqImoOvkQJCSkL0d0mB4NHHIFAy4b1u8PHdDa7SjGS2njzl6/lyGoZLm+eyYEtlUmFGE0rFj66SWxZgQQ==}
+  /tinyspy@2.1.1:
+    resolution: {integrity: sha512-XPJL2uSzcOyBMky6OFrusqWlzfFrXtE0hPuMgW8A2HmaqrPo4ZQHRN/V0QXN3FSjKxpsbRrFc5LI7KOwBsT1/w==}
     engines: {node: '>=14.0.0'}
 
   /titleize@3.0.0:
@@ -10305,59 +10519,59 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /turbo-darwin-64@1.9.9:
-    resolution: {integrity: sha512-UDGM9E21eCDzF5t1F4rzrjwWutcup33e7ZjNJcW/mJDPorazZzqXGKEPIy9kXwKhamUUXfC7668r6ZuA1WXF2Q==}
+  /turbo-darwin-64@1.10.0:
+    resolution: {integrity: sha512-N0aVGFtBgOKd7pIdUiKREwnDhNHRIvpMJbmUw04c1AqEoTiKAKT6iuzcCozO5N/gYMVr0hxrXgLal5OLYXtcsw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /turbo-darwin-arm64@1.9.9:
-    resolution: {integrity: sha512-VyfkXzTJpYLTAQ9krq2myyEq7RPObilpS04lgJ4OO1piq76RNmSpX9F/t9JCaY9Pj/4TL7i0d8PM7NGhwEA5Ag==}
+  /turbo-darwin-arm64@1.10.0:
+    resolution: {integrity: sha512-boXzhaHTS5MsTMv48I/JmYp9/fYplXk5nACUDrqV6nD1hzO5PMn5wNg75ATbpkaMaeuD+hjuobeSxn1p4vpqQg==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /turbo-linux-64@1.9.9:
-    resolution: {integrity: sha512-Fu1MY29Odg8dHOqXcpIIGC3T63XLOGgnGfbobXMKdrC7JQDvtJv8TUCYciRsyknZYjyyKK1z6zKuYIiDjf3KeQ==}
+  /turbo-linux-64@1.10.0:
+    resolution: {integrity: sha512-crKQuS1jrp4vp+Th6EmUqqmAlvYNnzGmwWMLeckmYILrV7zAddu87eJu4hB7V6uV+W1qHZUTw8WXa1w1+8boBw==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /turbo-linux-arm64@1.9.9:
-    resolution: {integrity: sha512-50LI8NafPuJxdnMCBeDdzgyt1cgjQG7FwkyY336v4e95WJPUVjrHdrKH6jYXhOUyrv9+jCJxwX1Yrg02t5yJ1g==}
+  /turbo-linux-arm64@1.10.0:
+    resolution: {integrity: sha512-Y2fhWe0xepLjl7doIvsJK7mp2h8E+OF6qJsUHRgxFeRWQWi1I6clD2aEQeykHK8Tp+qp8pKFMocj32nFBvuCcg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /turbo-windows-64@1.9.9:
-    resolution: {integrity: sha512-9IsTReoLmQl1IRsy3WExe2j2RKWXQyXujfJ4fXF+jp08KxjVF4/tYP2CIRJx/A7UP/7keBta27bZqzAjsmbSTA==}
+  /turbo-windows-64@1.10.0:
+    resolution: {integrity: sha512-uh8rEqH6teaHysEMjinwWBqyNwv4IvgSAwbq/OphP8jObstTYHoR+gFPo8RQUSTaBYy4QVszgi5eO5YLvEQqNA==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /turbo-windows-arm64@1.9.9:
-    resolution: {integrity: sha512-CUu4hpeQo68JjDr0V0ygTQRLbS+/sNfdqEVV+Xz9136vpKn2WMQLAuUBVZV0Sp0S/7i+zGnplskT0fED+W46wQ==}
+  /turbo-windows-arm64@1.10.0:
+    resolution: {integrity: sha512-JaVj3iM7qyRD6xYGZLL/Gs4mQKfM1zL0f91AwHZLNkk1CrJ6i5kO4ZjhKkwXSpVOTNKW3sX0Q7dExXj85Vv7UQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /turbo@1.9.9:
-    resolution: {integrity: sha512-+ZS66LOT7ahKHxh6XrIdcmf2Yk9mNpAbPEj4iF2cs0cAeaDU3xLVPZFF0HbSho89Uxwhx7b5HBgPbdcjQTwQkg==}
+  /turbo@1.10.0:
+    resolution: {integrity: sha512-GWxoL2zJduiNaEHz78o74l2jCQEeuUZ3MdpMPz0SpZOvt3nimpvQPNxiyfbqt3U9/V5G375PWKYSbXkVnIbQcA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.9.9
-      turbo-darwin-arm64: 1.9.9
-      turbo-linux-64: 1.9.9
-      turbo-linux-arm64: 1.9.9
-      turbo-windows-64: 1.9.9
-      turbo-windows-arm64: 1.9.9
+      turbo-darwin-64: 1.10.0
+      turbo-darwin-arm64: 1.10.0
+      turbo-linux-64: 1.10.0
+      turbo-linux-arm64: 1.10.0
+      turbo-windows-64: 1.10.0
+      turbo-windows-arm64: 1.10.0
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -10760,8 +10974,8 @@ packages:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  /vite-node@0.31.1(@types/node@20.2.5):
-    resolution: {integrity: sha512-BajE/IsNQ6JyizPzu9zRgHrBwczkAs0erQf/JRpgTIESpKvNj9/Gd0vxX905klLkb0I0SJVCKbdrl5c6FnqYKA==}
+  /vite-node@0.31.3(@types/node@20.2.5):
+    resolution: {integrity: sha512-KGdemamy6imPlmTycADRs5yMX/CoxPq9vJwTAOgSfabzneJmyexmRBBVEX8Mesb3mleIXTBIVR6z0fmtoRTcww==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
     dependencies:
@@ -10871,8 +11085,8 @@ packages:
     dependencies:
       vite: 4.3.9(@types/node@20.2.5)
 
-  /vitest@0.31.1(@vitest/ui@0.31.1)(jsdom@22.1.0):
-    resolution: {integrity: sha512-/dOoOgzoFk/5pTvg1E65WVaobknWREN15+HF+0ucudo3dDG/vCZoXTQrjIfEaWvQXmqScwkRodrTbM/ScMpRcQ==}
+  /vitest@0.31.3(@vitest/ui@0.31.3)(jsdom@22.1.0):
+    resolution: {integrity: sha512-LMXIKXfI7tDClf6HIR5GjCSHZQdlmfCWWPaJwWcLF+M11V766Tzefb8LD9mLcHmX/zR0xtlfcokpg3JxEDLfeA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
     peerDependencies:
@@ -10905,12 +11119,12 @@ packages:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
       '@types/node': 20.2.5
-      '@vitest/expect': 0.31.1
-      '@vitest/runner': 0.31.1
-      '@vitest/snapshot': 0.31.1
-      '@vitest/spy': 0.31.1
-      '@vitest/ui': 0.31.1(vitest@0.31.1)
-      '@vitest/utils': 0.31.1
+      '@vitest/expect': 0.31.3
+      '@vitest/runner': 0.31.3
+      '@vitest/snapshot': 0.31.3
+      '@vitest/spy': 0.31.3
+      '@vitest/ui': 0.31.3(vitest@0.31.3)
+      '@vitest/utils': 0.31.3
       acorn: 8.8.2
       acorn-walk: 8.2.0
       cac: 6.7.14
@@ -10927,7 +11141,7 @@ packages:
       tinybench: 2.5.0
       tinypool: 0.5.0
       vite: 4.3.9(@types/node@20.2.5)
-      vite-node: 0.31.1(@types/node@20.2.5)
+      vite-node: 0.31.3(@types/node@20.2.5)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

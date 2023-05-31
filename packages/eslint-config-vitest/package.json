@@ -57,7 +57,7 @@
 		"eslint": "^8.41.0",
 		"eslint-config-next": "^13.4.4",
 		"eslint-config-prettier": "^8.8.0",
-		"eslint-config-turbo": "^1.9.9",
+		"eslint-config-turbo": "^1.10.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint-plugin-unicorn": "^47.0.0",
@@ -71,9 +71,9 @@
 		"@alexaegis/vitest": "^0.3.1",
 		"@types/eslint": "^8.40.0",
 		"@types/node": "^20.2.5",
-		"@vitest/coverage-c8": "^0.31.1",
+		"@vitest/coverage-c8": "^0.31.3",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
-		"vitest": "^0.31.1"
+		"vitest": "^0.31.3"
 	}
 }

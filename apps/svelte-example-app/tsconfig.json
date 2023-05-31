@@ -1,3 +1,4 @@
+// TODO: let it be managed by autotool
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": ["./.svelte-kit/tsconfig.json", "@alexaegis/ts/web"],

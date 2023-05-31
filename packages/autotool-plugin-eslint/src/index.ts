@@ -39,23 +39,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				sourceFile: join('static', 'eslintignore.txt'),
 			},
 			{
-				description: 'package eslint config',
-				executor: 'fileCopy',
-				packageKind: 'regular',
-				formatWithPrettier: true,
-				targetFile: '.eslintrc.cjs',
-				packageJsonFilter: {
-					archetype: {
-						testing: /^(?!vitest).*$/, // fallback option!
-					},
-				},
-				templateVariables: {
-					additionalExtends: joinAdditionalExtends(), // No additional extends
-				},
-				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
-			},
-			{
 				description: 'package eslint config (vitest)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
@@ -63,9 +46,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
 					name: /^(?!@alexaegis\/vite(st)?).*$/,
-					archetype: {
-						testing: 'vitest',
-					},
 				},
 				sourcePluginPackageName: packageJson.name,
 				templateVariables: {
@@ -78,10 +58,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
-					name: /^(?!@alexaegis\/vite(st)?).*$/,
-					archetype: {
-						testing: 'vitest',
-					},
+					name: /^(?!@alexaegis\/(eslint-config-)?vite(st)?).*$/,
 				},
 				data: {
 					devDependencies: {
@@ -98,9 +75,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
 					name: /^@alexaegis\/vite(st)?$/,
-					archetype: {
-						testing: 'vitest',
-					},
 				},
 				templateVariables: {
 					additionalExtends: joinAdditionalExtends(), // No extra config here
