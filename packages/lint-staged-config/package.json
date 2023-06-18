@@ -15,9 +15,6 @@
 		"managed-by-autotool"
 	],
 	"type": "module",
-	"config": {
-		"engine-strict": true
-	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -52,9 +49,9 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.2.1",
+		"@alexaegis/fs": "^0.2.2",
 		"lint-staged": "13.2.2",
-		"typescript": "^5.0.4"
+		"typescript": "^5.1.3"
 	},
 	"optionalDependencies": {
 		"svelte": "^3.59.1"
@@ -64,12 +61,12 @@
 		"@alexaegis/ts": "^0.3.1",
 		"@alexaegis/vite": "^0.3.1",
 		"@alexaegis/vitest": "^0.3.1",
-		"@types/eslint": "^8.40.0",
+		"@types/eslint": "^8.40.2",
 		"@types/lint-staged": "^13.2.0",
-		"@types/node": "^20.2.5",
-		"@vitest/coverage-c8": "^0.31.3",
+		"@types/node": "^20.3.1",
+		"@vitest/coverage-c8": "^0.32.2",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
-		"vitest": "^0.31.3"
+		"vitest": "^0.32.2"
 	}
 }

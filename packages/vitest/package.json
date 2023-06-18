@@ -11,12 +11,10 @@
 		"kind": "lib"
 	},
 	"keywords": [
-		"managed-by-autotool"
+		"managed-by-autotool",
+		"vitest"
 	],
 	"type": "module",
-	"config": {
-		"engine-strict": false
-	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -70,10 +68,10 @@
 	},
 	"dependencies": {
 		"@sveltejs/vite-plugin-svelte": "^2.4.1",
-		"@vitest/coverage-c8": "^0.31.3",
-		"@vitest/ui": "^0.31.3",
+		"@vitest/coverage-c8": "^0.32.2",
+		"@vitest/ui": "^0.32.2",
 		"jsdom": "22.1.0",
-		"vitest": "^0.31.3"
+		"vitest": "^0.32.2"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.3.1",

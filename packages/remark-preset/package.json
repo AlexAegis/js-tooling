@@ -15,9 +15,6 @@
 		"managed-by-autotool"
 	],
 	"type": "module",
-	"config": {
-		"engine-strict": true
-	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -74,11 +71,11 @@
 		"@alexaegis/ts": "^0.3.1",
 		"@alexaegis/vite": "^0.3.1",
 		"@alexaegis/vitest": "^0.3.1",
-		"@types/node": "^20.2.5",
-		"@vitest/coverage-c8": "^0.31.3",
+		"@types/node": "^20.3.1",
+		"@vitest/coverage-c8": "^0.32.2",
 		"publint": "^0.1.12",
 		"unified": "^10.1.2",
 		"vite": "^4.3.9",
-		"vitest": "^0.31.3"
+		"vitest": "^0.32.2"
 	}
 }
