@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.2](https://github.com/AlexAegis/js-tooling/compare/v0.3.1...v0.3.2) (2023-06-18)
+
+
+### Features
+
+* better vite lib config, updated dependencies ([5a683a1](https://github.com/AlexAegis/js-tooling/commit/5a683a193faf3ad4ac89ba713707e6d18cfd314d))
+* updated autolib to autofill fields for provenance ([c6142da](https://github.com/AlexAegis/js-tooling/commit/c6142da628285936cd1be3e7925e0cffa50c65b4))
+
+
+### Bug Fixes
+
+* prettierignore and eslintrc ([f551a1d](https://github.com/AlexAegis/js-tooling/commit/f551a1d3be320bea60da2480b9645d353e8b456d))
+
 ## [0.3.1](https://github.com/AlexAegis/js-tooling/compare/v0.3.0...v0.3.1) (2023-05-29)
 
 
