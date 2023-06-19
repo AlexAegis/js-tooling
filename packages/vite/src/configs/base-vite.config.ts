@@ -2,8 +2,13 @@ import type { LibraryFormats } from 'vite';
 import { defineConfig, mergeConfig } from 'vite';
 import { createLazyAutoExternalsFunction } from '../helpers/rollup-externals.function.js';
 
-export const DEFAULT_OUT_DIR = './dist';
-export const DEFAULT_ENTRY = './src/index.ts';
+export const DEFAULT_OUT_DIR = 'dist';
+/**
+ * It's an array because when entry is defined as a single string, the name
+ * of the output will be the same as the name of the package. But if it's an
+ * array, the name will be the same as the file's name without extensions.
+ */
+export const DEFAULT_ENTRY = ['src/index.ts'];
 export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
 export const DEFAULT_BUILD_TARGET = 'es2022';
 
