@@ -381,12 +381,12 @@ jobs:
           build ${{steps.packageName.outputs.prop}}@${{steps.packageVersion.outputs.prop}}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run build-lib_ --filter="${{ matrix.artifact }}" --concurrency 16 --cache-dir=.cache/turbo
+          npx turbo run build-lib_ --filter="${{steps.packageName.outputs.prop}}" --concurrency 16 --cache-dir=.cache/turbo
       - name: |
           publint ${{steps.packageName.outputs.prop}}@${{steps.packageVersion.outputs.prop}}
         if: env.IS_ON_NPM != 'true'
         run: |
-          npx turbo run publint_ --filter="${{ matrix.artifact }}" --concurrency 16 --cache-dir=.cache/turbo
+          npx turbo run publint_ --filter="${{steps.packageName.outputs.prop}}" --concurrency 16 --cache-dir=.cache/turbo
       - name: |
           release ${{steps.packageName.outputs.prop}}@${{steps.packageVersion.outputs.prop}} on npm
         if: env.IS_ON_NPM != 'true'
