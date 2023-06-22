@@ -27,14 +27,14 @@
 		},
 		"build-lib_": {
 			"env": ["TARGET_ENV"],
-			"dependsOn": ["^prebuild_", "^build-lib_"],
+			"dependsOn": ["prebuild_", "^prebuild_", "^build-lib_"],
 			"inputs": ["**/*", "!src/**/*.spec.{ts,js,tsx,jsx}"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
 		"build-app_": {
 			"env": ["TARGET_ENV", "BASE_HREF"],
-			"dependsOn": ["^prebuild_", "^build-lib_"],
+			"dependsOn": ["prebuild_", "^prebuild_", "^build-lib_"],
 			"inputs": ["**/*", "!src/**/*.spec.{ts,js,tsx,jsx}"],
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
