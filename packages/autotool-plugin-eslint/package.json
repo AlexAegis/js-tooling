@@ -45,7 +45,8 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
 		},
 		"./eslintignore": "./static/eslintignore.txt",
 		"./package-eslintrc.cjs": "./static/package-eslintrc.cjs.txt",
@@ -53,7 +54,7 @@
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.2",
+		"@alexaegis/logging": "^0.2.3",
 		"autotool-plugin": "^0.0.5"
 	},
 	"devDependencies": {
@@ -63,8 +64,7 @@
 		"@alexaegis/vite": "^0.3.2",
 		"@alexaegis/vitest": "^0.3.2",
 		"@types/eslint": "^8.40.2",
-		"@types/node": "^20.3.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@types/node": "^20.3.2",
 		"eslint": "^8.43.0",
 		"publint": "^0.1.12",
 		"typescript": "^5.1.3",

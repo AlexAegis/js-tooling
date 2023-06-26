@@ -45,7 +45,8 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
 		},
 		"./dot-remarkignore": "./static/dot-remarkignore",
 		"./dot-remarkrc": "./static/dot-remarkrc.js",
@@ -53,11 +54,12 @@
 		"./remark-preset": {
 			"types": "./src/remark-preset.ts",
 			"import": "./dist/remark-preset.js",
-			"require": "./dist/remark-preset.cjs"
+			"require": "./dist/remark-preset.cjs",
+			"default": "./dist/remark-preset.js"
 		}
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.2",
+		"@alexaegis/logging": "^0.2.3",
 		"@alexaegis/remark-preset": "^0.3.2",
 		"autotool-plugin": "^0.0.5"
 	},
@@ -66,8 +68,7 @@
 		"@alexaegis/ts": "^0.3.2",
 		"@alexaegis/vite": "^0.3.2",
 		"@alexaegis/vitest": "^0.3.2",
-		"@types/node": "^20.3.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@types/node": "^20.3.2",
 		"publint": "^0.1.12",
 		"remark": "^14.0.3",
 		"remark-cli": "^11.0.0",

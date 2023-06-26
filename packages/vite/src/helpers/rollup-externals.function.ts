@@ -42,6 +42,10 @@ export const createRollupExternalsFn = (...packageJsons: PackageJson[]) => {
 	};
 };
 
+/**
+ *
+ * @deprecated use from pakk
+ */
 export const createLazyAutoExternalsFunction = () => {
 	let externalsFn:
 		| ((source: string, importer: string | undefined, isResolved: boolean) => boolean)

@@ -17,7 +17,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 							'merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
 					},
 					devDependencies: {
-						'@vitest/coverage-c8': packageJson.devDependencies['@vitest/coverage-c8'],
+						'@vitest/coverage-c8': undefined, // TODO: remove once cascaded
+						'@vitest/coverage-v8': packageJson.devDependencies['@vitest/coverage-v8'],
 						'@lcov-viewer/cli': packageJson.devDependencies['@lcov-viewer/cli'],
 						'@alexaegis/coverage-tools':
 							packageJson.dependencies['@alexaegis/coverage-tools'],

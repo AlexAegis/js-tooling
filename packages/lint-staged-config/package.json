@@ -44,17 +44,18 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
 		},
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.2.2",
+		"@alexaegis/fs": "^0.2.3",
 		"lint-staged": "13.2.2",
 		"typescript": "^5.1.3"
 	},
 	"optionalDependencies": {
-		"svelte": "^3.59.1"
+		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.2",
@@ -63,8 +64,7 @@
 		"@alexaegis/vitest": "^0.3.2",
 		"@types/eslint": "^8.40.2",
 		"@types/lint-staged": "^13.2.0",
-		"@types/node": "^20.3.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@types/node": "^20.3.2",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
 		"vitest": "^0.32.2"

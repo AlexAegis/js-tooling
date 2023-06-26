@@ -45,7 +45,8 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
 		},
 		"./readme": "./readme.md"
 	},
@@ -53,15 +54,14 @@
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prettier-plugin-tailwindcss": "^0.3.0",
-		"svelte": "^3.59.1"
+		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.2",
 		"@alexaegis/ts": "^0.3.2",
 		"@alexaegis/vite": "^0.3.2",
 		"@alexaegis/vitest": "^0.3.2",
-		"@types/node": "^20.3.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@types/node": "^20.3.2",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
 		"vitest": "^0.32.2"

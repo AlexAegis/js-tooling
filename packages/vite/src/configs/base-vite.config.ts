@@ -1,4 +1,4 @@
-import type { LibraryFormats } from 'vite';
+import type { LibraryFormats, UserConfig } from 'vite';
 import { defineConfig, mergeConfig } from 'vite';
 import { createLazyAutoExternalsFunction } from '../helpers/rollup-externals.function.js';
 
@@ -27,6 +27,7 @@ export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 		minify: false,
 		sourcemap: true,
 		rollupOptions: {
+			// TODO: import from pakk
 			external: createLazyAutoExternalsFunction(), // I'm always using this, but autolib also adds it with the other defaults if they are not defined
 			treeshake: true,
 		},
@@ -35,4 +36,4 @@ export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 			formats: DEFAULT_EXPORT_FORMATS,
 		},
 	},
-});
+} satisfies UserConfig);

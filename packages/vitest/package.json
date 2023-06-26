@@ -44,31 +44,35 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
 		},
 		"./readme": "./readme.md",
 		"./vitest-node.config": {
 			"types": "./src/vitest-node.config.ts",
 			"import": "./dist/vitest-node.config.js",
-			"require": "./dist/vitest-node.config.cjs"
+			"require": "./dist/vitest-node.config.cjs",
+			"default": "./dist/vitest-node.config.js"
 		},
 		"./vitest-svelte.config": {
 			"types": "./src/vitest-svelte.config.ts",
 			"import": "./dist/vitest-svelte.config.js",
-			"require": "./dist/vitest-svelte.config.cjs"
+			"require": "./dist/vitest-svelte.config.cjs",
+			"default": "./dist/vitest-svelte.config.js"
 		},
 		"./vitest-web.config": {
 			"types": "./src/vitest-web.config.ts",
 			"import": "./dist/vitest-web.config.js",
-			"require": "./dist/vitest-web.config.cjs"
+			"require": "./dist/vitest-web.config.cjs",
+			"default": "./dist/vitest-web.config.js"
 		}
 	},
 	"bin": {
 		"vitest": "node_modules/.bin/vitest"
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.4.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@sveltejs/vite-plugin-svelte": "^2.4.2",
+		"@vitest/coverage-v8": "^0.32.2",
 		"@vitest/ui": "^0.32.2",
 		"jsdom": "22.1.0",
 		"vitest": "^0.32.2"

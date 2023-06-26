@@ -45,7 +45,8 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
 		},
 		"./nodemon": "./static/nodemon.json",
 		"./readme": "./readme.md",
@@ -54,7 +55,7 @@
 		"./vite-svelte-lib.config": "./static/vite-svelte-lib.config.ts"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.2",
+		"@alexaegis/logging": "^0.2.3",
 		"autotool-plugin": "^0.0.5",
 		"concurrently": "^8.2.0",
 		"nodemon": "^2.0.22",
@@ -65,8 +66,7 @@
 		"@alexaegis/ts": "^0.3.2",
 		"@alexaegis/vite": "^0.3.2",
 		"@alexaegis/vitest": "^0.3.2",
-		"@types/node": "^20.3.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@types/node": "^20.3.2",
 		"publint": "^0.1.12",
 		"typescript": "^5.1.3",
 		"vite": "^4.3.9",

@@ -1,3 +1,3 @@
-export { autolib } from 'vite-plugin-autolib';
+export { pakk } from 'vite-plugin-pakk';
 export * from './configs/index.js';
 export * from './helpers/index.js';

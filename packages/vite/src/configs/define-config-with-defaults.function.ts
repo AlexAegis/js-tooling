@@ -7,12 +7,11 @@ import { DEFAULT_VITE_CONFIG, DEFAULT_VITE_LIB_CONFIG } from './base-vite.config
  */
 export const defineAppConfig = (config: UserConfigExport) =>
 	mergeConfig(DEFAULT_VITE_CONFIG, defineConfig(config));
+
 /**
- * Adds defaults from DEFAULT_VITE_LIB_CONFIG, but no plugins
- *
- * Recommended plugins are:
- * - autolib
- * - dts
+ * TODO: redo with pakk in mind
+ * @param config
+ * @returns
  */
 export const defineLibConfig = (config: UserConfigExport) =>
 	mergeConfig(DEFAULT_VITE_LIB_CONFIG, defineConfig(config));

@@ -33,3 +33,18 @@ target that you want
 When both of these options are missing typescript will just import everything it
 can within its folder except what you're excluding. And that's exactly what we
 need.
+
+## Development Troubleshooting
+
+> For potential issues while developing this package. These are no concerns of
+> the consumer.
+
+```sh
+error during build:
+TSConfckParseError: failed to resolve "extends":"@alexaegis/ts/node" in js-tooling/packages/ts/tsconfig.json
+```
+
+This package consumes itself for building. Its `tsconfig` is using definitions
+defined within this plugin so if the package gets malformed like `exports` gets
+removed from this package.json, then it will fail to build. As long as the
+tsconfigs exported here are valid, and they are exported it will be fine.
