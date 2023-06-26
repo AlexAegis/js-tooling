@@ -1,3 +1,8 @@
 // managed-by-autotool
 
-export { libraryViteConfig as default } from '@alexaegis/vite';
+import { pakk } from '@alexaegis/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+	plugins: [pakk()],
+});
