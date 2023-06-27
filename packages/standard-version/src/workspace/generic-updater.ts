@@ -9,7 +9,7 @@ import type { WorkspacePackage } from '@alexaegis/workspace-tools';
  *
  * It also replaces everything that looks like a `packageName@version`
  */
-export const createUpdater = (packages: WorkspacePackage[]) => {
+export const createGenericUpdater = (packages: WorkspacePackage[]) => {
 	return {
 		readVersion: (contents: string): string => {
 			const results = [...contents.matchAll(/"version": "(.*)"/g)];
@@ -23,8 +23,12 @@ export const createUpdater = (packages: WorkspacePackage[]) => {
 					(r, localPackageName) =>
 						r
 							.replaceAll(
-								new RegExp(`"${localPackageName}": "(.*:)?[~^]?.*"`, 'g'),
-								`"${localPackageName}": "$1^${version}"`
+								new RegExp(`"${localPackageName}": "(workspace:)([~^])?.*"`, 'g'),
+								`"${localPackageName}": "$1$2"` // the workspace protocol does not include versions but keeps the specifier. This is how pnpm leaves them on install.
+							)
+							.replaceAll(
+								new RegExp(`"${localPackageName}": "(?!workspace:)([~^])?.*"`, 'g'),
+								`"${localPackageName}": "$1${version}"`
 							)
 							.replaceAll(
 								new RegExp(`${localPackageName}@([^s\t\n\r]+)`, 'g'),

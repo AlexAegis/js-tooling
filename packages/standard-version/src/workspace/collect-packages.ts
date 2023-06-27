@@ -7,6 +7,13 @@ import { dirname, join, normalize, relative } from 'node:path';
 
 const PACKAGE_JSON_NAME = 'package.json';
 
+export const PACKAGE_JSON_DEPENDENCY_FIELDS = [
+	'dependencies',
+	'devDependencies',
+	'optionalDependencies',
+	'peerDependencies',
+] as const;
+
 /**
  * The functions found in this file are copied from @alexaegis/workspace-tools
  * to be a sync, non-esm (globby is only esm) variant that could be invoked

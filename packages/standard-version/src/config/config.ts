@@ -1,10 +1,13 @@
 import { join } from 'node:path';
 import { collectPackages } from '../workspace/collect-packages.js';
-import { createUpdater } from '../workspace/local-package-updater.js';
+import { createGenericUpdater } from '../workspace/generic-updater.js';
+import { createPackageJsonUpdater } from '../workspace/package-json-updater.js';
 
 export const createStandardVersionConfig = () => {
 	const { workspacePackage, subPackages } = collectPackages();
-	const updater = createUpdater(subPackages);
+	const packageJsonUpdater = createPackageJsonUpdater(subPackages);
+	const genericUpdater = createGenericUpdater(subPackages);
+
 	return {
 		scripts: {
 			postbump: 'pnpm install',
@@ -13,19 +16,19 @@ export const createStandardVersionConfig = () => {
 		bumpFiles: [
 			{
 				filename: workspacePackage.packageJsonPath,
-				updater,
+				updater: packageJsonUpdater,
 			},
 			{
 				filename: join(workspacePackage.packagePath, 'readme.md'),
-				updater,
+				updater: genericUpdater,
 			},
 			...subPackages.map((pkg) => ({
-				filename: join(pkg.packagePath, 'package.json'),
-				updater,
+				filename: pkg.packageJsonPath,
+				updater: packageJsonUpdater,
 			})),
 			...subPackages.map((pkg) => ({
 				filename: join(pkg.packagePath, 'readme.md'),
-				updater,
+				updater: genericUpdater,
 			})),
 		],
 	};
