@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/vite",
 	"description": "My vite config",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

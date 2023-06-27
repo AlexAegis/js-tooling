@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.3](https://github.com/AlexAegis/js-tooling/compare/v0.3.2...v0.3.3) (2023-06-27)
+
+
+### Features
+
+* **autotool-plugin-workspace:** add fixtures as a package kind ([9544086](https://github.com/AlexAegis/js-tooling/commit/9544086588856a96690b3e59da4bdf160f965aad))
+* library config is now easier to modify if needed ([9f767d2](https://github.com/AlexAegis/js-tooling/commit/9f767d22ed2bfae860b49cfa3b410230a361044b))
+* migrating from autolib to pakk ([7d42931](https://github.com/AlexAegis/js-tooling/commit/7d429318d587f5943cfc77eb22fe498619a6f863))
+
+
+### Bug Fixes
+
+* **autotool-plugin-prettier:** add types and easier overridability ([5b3ed29](https://github.com/AlexAegis/js-tooling/commit/5b3ed296b4f236bd57347a90d47dfd3c4e14b867))
+* **autotool-plugin-turbo:** run prebuild in the same package too ([6347617](https://github.com/AlexAegis/js-tooling/commit/634761723ebc50581abb598029d9fba89417b795))
+* **standard-version:** do not bump bins ([a3b9400](https://github.com/AlexAegis/js-tooling/commit/a3b94003d76d12d76148fac3f9c8c343fd03677b))
+* **vite:** default entry should be an array ([d62af74](https://github.com/AlexAegis/js-tooling/commit/d62af744b4739ec644aa26718a6b3273a3d4dcfe))
+
 ## [0.3.2](https://github.com/AlexAegis/js-tooling/compare/v0.3.1...v0.3.2) (2023-06-18)
 
 

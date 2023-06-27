@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/prettier-config-svelte",
 	"description": "Prettier configuration for svelte",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -56,10 +56,10 @@
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.3.2",
-		"@alexaegis/ts": "^0.3.2",
-		"@alexaegis/vite": "^0.3.2",
-		"@alexaegis/vitest": "^0.3.2",
+		"@alexaegis/eslint-config-vitest": "^0.3.3",
+		"@alexaegis/ts": "^0.3.3",
+		"@alexaegis/vite": "^0.3.3",
+		"@alexaegis/vitest": "^0.3.3",
 		"@types/node": "^20.3.2",
 		"publint": "^0.1.12",
 		"vite": "^4.3.9",
