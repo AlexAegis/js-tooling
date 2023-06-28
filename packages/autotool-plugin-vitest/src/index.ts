@@ -1,6 +1,9 @@
+import { equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
+
+const appOrLib = or(equal('app'), equal('lib'));
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
@@ -31,7 +34,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						kind: /^(app|lib)$/,
+						kind: appOrLib,
 					},
 				},
 				data: {
@@ -47,9 +50,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
-					name: /^(?!@alexaegis\/vite(st)?).*$/, // Don't add it for itself and 'vite' it would cause a circle
+					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Don't add it for itself and 'vite' it would cause a circle
 					archetype: {
-						kind: /^(app|lib)$/,
+						kind: appOrLib,
 					},
 				},
 				data: {
@@ -64,9 +67,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageJsonFilter: {
 					archetype: {
-						kind: /^(app|lib)$/,
+						kind: appOrLib,
 						platform: 'web',
-						framework: /^(?!svelte).*$/,
+						framework: not(equal('svelte')),
 					},
 				},
 				packageKind: 'regular',
@@ -81,9 +84,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageJsonFilter: {
 					archetype: {
-						kind: /^(app|lib)$/,
+						kind: appOrLib,
 						platform: 'node',
-						framework: /^(?!svelte).*$/,
+						framework: not(equal('svelte')),
 					},
 				},
 				packageKind: 'regular',
@@ -97,7 +100,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageJsonFilter: {
 					archetype: {
-						kind: /^(app|lib)$/,
+						kind: appOrLib,
 						framework: 'svelte',
 					},
 				},

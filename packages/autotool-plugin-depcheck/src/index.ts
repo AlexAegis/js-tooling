@@ -1,3 +1,4 @@
+import { equal, not } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
@@ -24,7 +25,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				packageJsonFilter: {
 					archetype: {
-						framework: /^(?!svelte).*$/, // There's no svelte parser for depcheck so it would have a bunch of false reports
+						framework: not(equal('svelte')), // There's no svelte parser for depcheck so it would have a bunch of false reports
 					},
 				},
 				data: {

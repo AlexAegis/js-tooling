@@ -57,11 +57,12 @@
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.3",
-		"@alexaegis/match": "^0.2.3",
-		"@alexaegis/workspace-tools": "^0.2.3",
-		"autotool-plugin": "^0.0.5",
-		"typescript": "^5.1.3"
+		"@alexaegis/logging": "^0.2.4",
+		"@alexaegis/match": "^0.2.4",
+		"@alexaegis/predicate": "^0.2.4",
+		"@alexaegis/workspace-tools": "^0.2.4",
+		"autotool-plugin": "^0.1.0",
+		"typescript": "^5.1.5"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.3",

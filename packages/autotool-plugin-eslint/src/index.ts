@@ -1,3 +1,4 @@
+import { equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
@@ -45,7 +46,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				formatWithPrettier: true,
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
-					name: /^(?!@alexaegis\/vite(st)?).*$/,
+					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))),
 				},
 				sourcePluginPackageName: packageJson.name,
 				templateVariables: {

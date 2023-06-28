@@ -1,9 +1,10 @@
 import type { JsonMatcherFrom } from '@alexaegis/match';
+import { equal, not } from '@alexaegis/predicate';
 import { getEncodedArchetype, type PackageArchetype } from '@alexaegis/workspace-tools';
-import {
-	type AutotoolElementFileCopy,
-	type AutotoolPlugin,
-	type AutotoolPluginObject,
+import type {
+	AutotoolElementFileCopy,
+	AutotoolPlugin,
+	AutotoolPluginObject,
 } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
@@ -21,8 +22,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 
 	const archetypeFlavours: JsonMatcherFrom<PackageArchetype>[] = [
 		{ language: languageMatcher, framework: 'svelte' },
-		{ language: languageMatcher, platform: 'web', framework: /^(?!svelte).*$/ },
-		{ language: languageMatcher, platform: 'node', framework: /^(?!svelte).*$/ },
+		{ language: languageMatcher, platform: 'web', framework: not(equal('svelte')) },
+		{ language: languageMatcher, platform: 'node', framework: not(equal('svelte')) },
 		{ language: languageMatcher, platform: undefined, framework: undefined },
 	];
 

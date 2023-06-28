@@ -50,9 +50,9 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.2.3",
-		"lint-staged": "13.2.2",
-		"typescript": "^5.1.3"
+		"@alexaegis/fs": "^0.2.4",
+		"lint-staged": "13.2.3",
+		"typescript": "^5.1.5"
 	},
 	"optionalDependencies": {
 		"svelte": "^4.0.0"
