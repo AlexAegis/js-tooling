@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.4](https://github.com/AlexAegis/js-tooling/compare/v0.3.3...v0.3.4) (2023-07-01)
+
+
+### Features
+
+* **autotool-plugin-turbo:** reworked turbo configuration ([eb710ec](https://github.com/AlexAegis/js-tooling/commit/eb710eccd95adb40813e1c942749beba1146d3a5))
+
+
+### Bug Fixes
+
+* use predicades where negated results are used ([9659f0c](https://github.com/AlexAegis/js-tooling/commit/9659f0c20505ce691fe954da6b98aa71cd6c26bc))
+
 ## [0.3.3](https://github.com/AlexAegis/js-tooling/compare/v0.3.2...v0.3.3) (2023-06-27)
 
 

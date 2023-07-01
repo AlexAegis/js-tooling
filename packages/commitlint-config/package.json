@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/commitlint-config",
 	"description": "My commitlint config",
-	"version": "0.3.3",
+	"version": "0.3.4",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -56,13 +56,13 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/standard-version": "^0.3.3"
+		"@alexaegis/standard-version": "^0.3.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.3.3",
-		"@alexaegis/ts": "^0.3.3",
-		"@alexaegis/vite": "^0.3.3",
-		"@alexaegis/vitest": "^0.3.3",
+		"@alexaegis/eslint-config-vitest": "^0.3.4",
+		"@alexaegis/ts": "^0.3.4",
+		"@alexaegis/vite": "^0.3.4",
+		"@alexaegis/vitest": "^0.3.4",
 		"@commitlint/types": "^17.4.4",
 		"@types/node": "^20.3.3",
 		"publint": "^0.1.13",
