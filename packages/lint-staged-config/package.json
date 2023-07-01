@@ -50,12 +50,12 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.2.4",
+		"@alexaegis/fs": "^0.3.2",
 		"lint-staged": "13.2.3",
-		"typescript": "^5.1.5"
+		"typescript": "^5.1.6"
 	},
 	"optionalDependencies": {
-		"svelte": "^4.0.0"
+		"svelte": "^4.0.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.3",
@@ -64,8 +64,8 @@
 		"@alexaegis/vitest": "^0.3.3",
 		"@types/eslint": "^8.40.2",
 		"@types/lint-staged": "^13.2.0",
-		"@types/node": "^20.3.2",
-		"publint": "^0.1.12",
+		"@types/node": "^20.3.3",
+		"publint": "^0.1.13",
 		"vite": "^4.3.9",
 		"vitest": "^0.32.2"
 	}

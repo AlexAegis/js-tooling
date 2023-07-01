@@ -1,0 +1,24 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"extends": ["//"],
+	"pipeline": {
+		"build-lib_": {
+			"dependsOn": ["^build-lib_", "@alexaegis/vite#build-lib_"]
+		},
+		"build-app_": {
+			"dependsOn": ["^build-lib_", "@alexaegis/vite#build-lib_"]
+		},
+		"test_": {
+			"dependsOn": ["^build-lib_", "@alexaegis/vitest#build-lib_"]
+		},
+		"lint:style:css_": {
+			"dependsOn": ["@alexaegis/stylelint-config#build-lib_"]
+		},
+		"lint:style:scss_": {
+			"dependsOn": ["@alexaegis/stylelint-config#build-lib_"]
+		},
+		"lint:style:html_": {
+			"dependsOn": ["@alexaegis/stylelint-config#build-lib_"]
+		}
+	}
+}

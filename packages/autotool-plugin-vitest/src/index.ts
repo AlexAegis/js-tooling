@@ -15,12 +15,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						test: 'turbo run test_ --concurrency 16 --cache-dir .cache/turbo',
-						'merge-coverage':
-							'merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
+						test: 'turbo run test_ --concurrency 16 --cache-dir .cache/turbo && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
 					},
 					devDependencies: {
-						'@vitest/coverage-c8': undefined, // TODO: remove once cascaded
 						'@vitest/coverage-v8': packageJson.devDependencies['@vitest/coverage-v8'],
 						'@lcov-viewer/cli': packageJson.devDependencies['@lcov-viewer/cli'],
 						'@alexaegis/coverage-tools':

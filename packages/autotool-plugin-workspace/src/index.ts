@@ -7,7 +7,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 		name: packageJson.name,
 		elements: [
 			{
-				description: 'vscode settings',
+				description: 'pnpm workspace preferences',
 				executor: 'fileCopy',
 				packageKind: 'root',
 				sourcePluginPackageName: packageJson.name,
@@ -36,7 +36,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				data: {
 					scripts: {
 						nuke: 'nuke',
-						ncu: 'ncu --deep --peer --upgrade && pnpm up',
 					},
 					devDependencies: {
 						'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
@@ -47,6 +46,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'@alexaegis/autotool-plugin-git': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-github': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-husky': `^${packageJson.version}`, // versioned together
+						'@alexaegis/autotool-plugin-ncu': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-prettier': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-publint': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-remark': `^${packageJson.version}`, // versioned together
@@ -60,7 +60,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'@alexaegis/autotool-plugin-vitest': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-vscode': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-workspace': `^${packageJson.version}`, // versioned together
-						'npm-check-updates': packageJson.dependencies['npm-check-updates'],
 					},
 				},
 			},

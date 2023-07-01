@@ -37,8 +37,6 @@
 		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
-		"prebuild": "turbo run prebuild_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
-		"prebuild_": "vite build",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
@@ -47,33 +45,37 @@
 		".": {
 			"types": "./src/index.ts",
 			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
 		"./app-svelte-vite.config": {
 			"types": "./src/app-svelte-vite.config.ts",
 			"import": "./dist/app-svelte-vite.config.js",
+			"require": "./dist/app-svelte-vite.config.cjs",
 			"default": "./dist/app-svelte-vite.config.js"
 		},
 		"./base-vite.config": {
 			"types": "./src/base-vite.config.ts",
 			"import": "./dist/base-vite.config.js",
+			"require": "./dist/base-vite.config.cjs",
 			"default": "./dist/base-vite.config.js"
 		},
 		"./example": "./static/example.json",
 		"./library-vite.config": {
 			"types": "./src/library-vite.config.ts",
 			"import": "./dist/library-vite.config.js",
+			"require": "./dist/library-vite.config.cjs",
 			"default": "./dist/library-vite.config.js"
 		},
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.4",
-		"@alexaegis/workspace-tools": "^0.2.4",
+		"@alexaegis/logging": "^0.3.2",
+		"@alexaegis/workspace-tools": "^0.3.2",
 		"@sveltejs/vite-plugin-svelte": "^2.4.2",
 		"concurrently": "^8.2.0",
 		"nodemon": "^2.0.22",
-		"svelte": "^4.0.0",
+		"svelte": "^4.0.1",
 		"vite": "^4.3.9",
 		"vite-plugin-pakk": "^0.2.2"
 	},
@@ -81,10 +83,10 @@
 		"prettier": "^2.8.8"
 	},
 	"devDependencies": {
-		"@types/node": "^20.3.2",
-		"publint": "^0.1.12",
+		"@types/node": "^20.3.3",
+		"publint": "^0.1.13",
 		"ts-node": "^10.9.1",
-		"typescript": "^5.1.5",
+		"typescript": "^5.1.6",
 		"vitest": "^0.32.2"
 	}
 }

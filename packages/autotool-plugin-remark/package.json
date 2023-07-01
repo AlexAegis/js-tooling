@@ -59,7 +59,7 @@
 		}
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.4",
+		"@alexaegis/logging": "^0.3.2",
 		"@alexaegis/remark-preset": "^0.3.3",
 		"autotool-plugin": "^0.1.0"
 	},
@@ -68,8 +68,8 @@
 		"@alexaegis/ts": "^0.3.3",
 		"@alexaegis/vite": "^0.3.3",
 		"@alexaegis/vitest": "^0.3.3",
-		"@types/node": "^20.3.2",
-		"publint": "^0.1.12",
+		"@types/node": "^20.3.3",
+		"publint": "^0.1.13",
 		"remark": "^14.0.3",
 		"remark-cli": "^11.0.0",
 		"vite": "^4.3.9",

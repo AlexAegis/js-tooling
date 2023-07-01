@@ -53,7 +53,7 @@
 		"./stylelintignore": "./static/stylelintignore"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.2.4",
+		"@alexaegis/logging": "^0.3.2",
 		"autotool-plugin": "^0.1.0"
 	},
 	"devDependencies": {
@@ -61,10 +61,10 @@
 		"@alexaegis/ts": "^0.3.3",
 		"@alexaegis/vite": "^0.3.3",
 		"@alexaegis/vitest": "^0.3.3",
-		"@types/node": "^20.3.2",
-		"publint": "^0.1.12",
+		"@types/node": "^20.3.3",
+		"publint": "^0.1.13",
 		"stylelint": "^15.9.0",
-		"typescript": "^5.1.5",
+		"typescript": "^5.1.6",
 		"vite": "^4.3.9",
 		"vitest": "^0.32.2"
 	}

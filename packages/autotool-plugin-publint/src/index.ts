@@ -33,6 +33,24 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 			},
+			{
+				description:
+					'remove package publint command and scripts for private packages in case they got there somehow',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					private: true,
+				},
+				data: {
+					scripts: {
+						publint: undefined,
+						publint_: undefined,
+					},
+					devDependencies: {
+						publint: undefined,
+					},
+				},
+			},
 		],
 	};
 };

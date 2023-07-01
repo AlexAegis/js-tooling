@@ -54,15 +54,15 @@
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"prettier-plugin-tailwindcss": "^0.3.0",
-		"svelte": "^4.0.0"
+		"svelte": "^4.0.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.3",
 		"@alexaegis/ts": "^0.3.3",
 		"@alexaegis/vite": "^0.3.3",
 		"@alexaegis/vitest": "^0.3.3",
-		"@types/node": "^20.3.2",
-		"publint": "^0.1.12",
+		"@types/node": "^20.3.3",
+		"publint": "^0.1.13",
 		"vite": "^4.3.9",
 		"vitest": "^0.32.2"
 	}

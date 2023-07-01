@@ -166,8 +166,6 @@ jobs:
         run: pnpm install
       - name: test
         run: pnpm run test
-      - name: merge lcov reports
-        run: pnpm run merge-coverage
       - name: upload coverage result to codacy
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
@@ -300,6 +298,7 @@ jobs:
             'autotool-plugin-git',
             'autotool-plugin-github',
             'autotool-plugin-husky',
+            'autotool-plugin-ncu',
             'autotool-plugin-prettier',
             'autotool-plugin-publint',
             'autotool-plugin-remark',

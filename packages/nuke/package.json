@@ -54,20 +54,20 @@
 		"nuke": "./shims/nuke.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.2.4",
-		"@alexaegis/common": "^0.2.4",
-		"@alexaegis/logging": "^0.2.4",
-		"@alexaegis/workspace-tools": "^0.2.4",
-		"globby": "^13.2.0"
+		"@alexaegis/cli-tools": "^0.3.2",
+		"@alexaegis/common": "^0.3.2",
+		"@alexaegis/logging": "^0.3.2",
+		"@alexaegis/workspace-tools": "^0.3.2",
+		"globby": "^13.2.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.3",
 		"@alexaegis/ts": "^0.3.3",
 		"@alexaegis/vite": "^0.3.3",
 		"@alexaegis/vitest": "^0.3.3",
-		"@types/node": "^20.3.2",
-		"publint": "^0.1.12",
-		"typescript": "^5.1.5",
+		"@types/node": "^20.3.3",
+		"publint": "^0.1.13",
+		"typescript": "^5.1.6",
 		"vite": "^4.3.9",
 		"vitest": "^0.32.2"
 	}
