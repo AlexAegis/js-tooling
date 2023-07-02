@@ -61,7 +61,7 @@
 		"@alexaegis/match": "^0.3.2",
 		"@alexaegis/predicate": "^0.3.2",
 		"@alexaegis/workspace-tools": "^0.3.2",
-		"autotool-plugin": "^0.1.0",
+		"autotool-plugin": "^0.1.1",
 		"typescript": "^5.1.6"
 	},
 	"devDependencies": {

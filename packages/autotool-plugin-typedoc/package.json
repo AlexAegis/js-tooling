@@ -55,7 +55,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.3.2",
-		"autotool-plugin": "^0.1.0",
+		"autotool-plugin": "^0.1.1",
 		"typedoc": "^0.24.8"
 	},
 	"devDependencies": {

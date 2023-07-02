@@ -216,7 +216,7 @@
 		"//#typedoc_": {
 			"dependsOn": [],
 			"inputs": [
-				"**/*.ts",
+				"{packages,libs,apps}/**/*.ts",
 				"typedoc.json",
 				"!{.turbo,.cache,dist,build,.svelte-kit}/**/*",
 				"!vite*.config.*.*"

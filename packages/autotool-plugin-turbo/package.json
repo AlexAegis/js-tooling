@@ -53,7 +53,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.3.2",
-		"autotool-plugin": "^0.1.0",
+		"autotool-plugin": "^0.1.1",
 		"turbo": "^1.10.7"
 	},
 	"devDependencies": {

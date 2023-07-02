@@ -63,7 +63,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.3.2",
 		"@alexaegis/prettier-config": "^0.3.4",
-		"autotool-plugin": "^0.1.0",
+		"autotool-plugin": "^0.1.1",
 		"prettier": "^2.8.8"
 	},
 	"optionalDependencies": {

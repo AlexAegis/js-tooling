@@ -55,7 +55,7 @@
 		"@alexaegis/coverage-tools": "^0.3.2",
 		"@alexaegis/logging": "^0.3.2",
 		"@sveltejs/kit": "^1.21.0",
-		"autotool-plugin": "^0.1.0",
+		"autotool-plugin": "^0.1.1",
 		"svelte": "^4.0.1",
 		"svelte-check": "^3.4.4",
 		"svelte-preprocess": "^5.0.4"
