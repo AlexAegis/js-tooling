@@ -1,11 +1,10 @@
-import type { Logger } from '@alexaegis/logging';
-import { MockLogger } from '@alexaegis/logging/mocks';
+import { createMockLogger } from '@alexaegis/logging/mocks';
 import type {
 	AutotoolPluginFactory,
 	NormalizedAutotoolPluginOptions,
 	WorkspacePackage,
 } from 'autotool-plugin';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import * as library from './index.js';
 
 describe('autotool-plugin-vitest', () => {
@@ -18,8 +17,7 @@ describe('autotool-plugin-vitest', () => {
 		packagePathFromRootPackage: '.',
 	};
 
-	const mockLogger = new MockLogger();
-	const logger = mockLogger as unknown as Logger<unknown>;
+	const { logger } = createMockLogger(vi);
 
 	const defaultOptions: NormalizedAutotoolPluginOptions = {
 		cwd: '/projects/foo',

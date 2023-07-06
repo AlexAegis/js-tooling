@@ -58,9 +58,9 @@
 		"./versionrc.cjs": "./static/versionrc.cjs.txt"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.0",
+		"@alexaegis/logging": "^0.4.2",
 		"@alexaegis/standard-version": "^0.4.0",
-		"autotool-plugin": "^0.1.1",
+		"autotool-plugin": "^0.2.0",
 		"commit-and-tag-version": "^11.2.2"
 	},
 	"devDependencies": {
@@ -71,7 +71,7 @@
 		"@types/node": "^20.4.0",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
-		"vite": "^4.3.9",
-		"vitest": "^0.32.4"
+		"vite": "^4.4.1",
+		"vitest": "^0.33.0"
 	}
 }

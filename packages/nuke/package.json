@@ -54,10 +54,10 @@
 		"nuke": "./shims/nuke.js"
 	},
 	"dependencies": {
-		"@alexaegis/cli-tools": "^0.4.0",
-		"@alexaegis/common": "^0.4.0",
-		"@alexaegis/logging": "^0.4.0",
-		"@alexaegis/workspace-tools": "^0.4.0",
+		"@alexaegis/cli-tools": "^0.4.2",
+		"@alexaegis/common": "^0.4.2",
+		"@alexaegis/logging": "^0.4.2",
+		"@alexaegis/workspace-tools": "^0.4.2",
 		"globby": "^13.2.2"
 	},
 	"devDependencies": {
@@ -68,7 +68,7 @@
 		"@types/node": "^20.4.0",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
-		"vite": "^4.3.9",
-		"vitest": "^0.32.4"
+		"vite": "^4.4.1",
+		"vitest": "^0.33.0"
 	}
 }

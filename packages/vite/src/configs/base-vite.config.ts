@@ -1,5 +1,5 @@
-import type { LibraryFormats, UserConfig } from 'vite';
-import { defineConfig, mergeConfig } from 'vite';
+import type { LibraryFormats } from 'vite';
+import { mergeConfig, type UserConfig } from 'vite';
 import { createLazyAutoExternalsFunction } from '../helpers/rollup-externals.function.js';
 
 export const DEFAULT_OUT_DIR = 'dist';
@@ -15,12 +15,12 @@ export const DEFAULT_BUILD_TARGET = 'es2022';
 /**
  * https://vitejs.dev/config/
  */
-export const DEFAULT_VITE_CONFIG = defineConfig({
+export const DEFAULT_VITE_CONFIG: UserConfig = {
 	build: {
 		target: DEFAULT_BUILD_TARGET,
 		outDir: DEFAULT_OUT_DIR,
 	},
-});
+};
 
 export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 	build: {

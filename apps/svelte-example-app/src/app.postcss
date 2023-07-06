@@ -1,8 +1,17 @@
-/* Write your global styles here, in PostCSS syntax */
+@import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@import '@skeletonlabs/skeleton/dist/styles/partials/core.css';
+@import '@skeletonlabs/skeleton/dist/styles/partials/typography-next.css';
+@import '@skeletonlabs/skeleton/dist/styles/partials/elements.css';
+@import '@skeletonlabs/skeleton/dist/styles/partials/variants.css';
 
 html,
 body {
-	color: yellow;
+	color: white;
+
 	@apply h-full overflow-hidden;
 }
 

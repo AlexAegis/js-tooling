@@ -11,7 +11,7 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
 
 // TODO: explore more optimal settings since eslint is slow when used on files 1 by 1
 export const lintStagedConfig: Config = {
-	'**/!(shims|public)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': (
+	'**/!(shims)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': (
 		filenames: string[],
 	): string[] => {
 		const groups = groupByCommonNearestFile(filenames, 'tsconfig.json');
@@ -19,7 +19,7 @@ export const lintStagedConfig: Config = {
 			(tsRoot) => `${tscCommand} --project ${join(tsRoot, 'tsconfig.json')}`,
 		);
 	},
-	'**/!(shims|public)/*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
+	'**/!(shims)/*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
 	'*.css': ['stylelint', prettierCommand],
 	'*.scss': ['stylelint --customSyntax=postcss-scss', prettierCommand],
 	'*.(html|svelte|vue|astro|xml|php)': ['stylelint --customSyntax=postcss-html'],

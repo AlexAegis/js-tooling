@@ -14,5 +14,8 @@ export default {
 				ignorePseudoClasses: ['global'],
 			},
 		],
+		'at-rule-no-unknown': undefined,
+		'scss/at-rule-no-unknown': [true, { ignoreAtRules: ['tailwind'] }],
+		'no-invalid-position-at-import-rule': [true, { ignoreAtRules: ['tailwind'] }],
 	},
 } as Config;

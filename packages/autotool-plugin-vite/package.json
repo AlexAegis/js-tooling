@@ -55,12 +55,12 @@
 		"./vite-svelte-lib.config": "./static/vite-svelte-lib.config.ts"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.0",
-		"@alexaegis/predicate": "^0.4.0",
-		"autotool-plugin": "^0.1.1",
+		"@alexaegis/logging": "^0.4.2",
+		"@alexaegis/predicate": "^0.4.2",
+		"autotool-plugin": "^0.2.0",
 		"concurrently": "^8.2.0",
 		"nodemon": "^2.0.22",
-		"vite": "^4.3.9"
+		"vite": "^4.4.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.4.0",
@@ -70,7 +70,7 @@
 		"@types/node": "^20.4.0",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
-		"vite": "^4.3.9",
-		"vitest": "^0.32.4"
+		"vite": "^4.4.1",
+		"vitest": "^0.33.0"
 	}
 }

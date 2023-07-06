@@ -57,11 +57,11 @@
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.0",
-		"@alexaegis/match": "^0.4.0",
-		"@alexaegis/predicate": "^0.4.0",
-		"@alexaegis/workspace-tools": "^0.4.0",
-		"autotool-plugin": "^0.1.1",
+		"@alexaegis/logging": "^0.4.2",
+		"@alexaegis/match": "^0.4.2",
+		"@alexaegis/predicate": "^0.4.2",
+		"@alexaegis/workspace-tools": "^0.4.2",
+		"autotool-plugin": "^0.2.0",
 		"typescript": "^5.1.6"
 	},
 	"devDependencies": {
@@ -72,7 +72,7 @@
 		"@types/node": "^20.4.0",
 		"publint": "^0.1.16",
 		"ts-node": "^10.9.1",
-		"vite": "^4.3.9",
-		"vitest": "^0.32.4"
+		"vite": "^4.4.1",
+		"vitest": "^0.33.0"
 	}
 }
