@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-prettier",
 	"description": "My prettier config distributor",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -62,7 +62,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.4.2",
-		"@alexaegis/prettier-config": "^0.4.0",
+		"@alexaegis/prettier-config": "^0.4.1",
 		"autotool-plugin": "^0.2.0",
 		"prettier": "^3.0.0"
 	},
@@ -70,10 +70,10 @@
 		"svelte": "^4.0.5"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.4.0",
-		"@alexaegis/ts": "^0.4.0",
-		"@alexaegis/vite": "^0.4.0",
-		"@alexaegis/vitest": "^0.4.0",
+		"@alexaegis/eslint-config-vitest": "^0.4.1",
+		"@alexaegis/ts": "^0.4.1",
+		"@alexaegis/vite": "^0.4.1",
+		"@alexaegis/vitest": "^0.4.1",
 		"@types/node": "^20.4.0",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",

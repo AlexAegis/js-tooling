@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.1](https://github.com/AlexAegis/js-tooling/compare/v0.4.0...v0.4.1) (2023-07-06)
+
+
+### Features
+
+* **autotool-plugin-vscode:** added readonly and linkedediting options ([bef793f](https://github.com/AlexAegis/js-tooling/commit/bef793f5f690b12fe70b0a4635ec2865280c57a1))
+
 ## [0.3.4](https://github.com/AlexAegis/js-tooling/compare/v0.3.3...v0.3.4) (2023-07-01)
 
 
