@@ -336,11 +336,11 @@ jobs:
       - name: |
           build ${{ matrix.package.package_name }}@${{ matrix.package.package_version }}
         run: |
-          npx turbo run build-lib_ --filter="${{ matrix.package.package_version }}" --concurrency 16 --cache-dir=.cache/turbo
+          npx turbo run build-lib_ --filter="${{ matrix.package.package_name }}" --concurrency 16 --cache-dir=.cache/turbo
       - name: |
           publint ${{ matrix.package.package_name }}@${{ matrix.package.package_version }}
         run: |
-          npx turbo run publint_ --filter="${{ matrix.package.package_version }}" --concurrency 16 --cache-dir=.cache/turbo
+          npx turbo run publint_ --filter="${{ matrix.package.package_name }}" --concurrency 16 --cache-dir=.cache/turbo
       - name: |
           release ${{ matrix.package.package_name }}@${{ matrix.package.package_version }} on npm
         env:
