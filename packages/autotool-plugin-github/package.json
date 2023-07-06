@@ -1,72 +1,72 @@
 {
-  "name": "@alexaegis/autotool-plugin-github",
-  "description": "My github config",
-  "version": "0.3.4",
-  "license": "MIT",
-  "private": false,
-  "archetype": {
-    "platform": "node",
-    "framework": "autotool",
-    "language": "ts",
-    "kind": "lib"
-  },
-  "keywords": [
-    "autotool-plugin",
-    "github",
-    "managed-by-autotool"
-  ],
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "build-lib_": "vite build",
-    "lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "lint:depcheck_": "depcheck",
-    "lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
-    "lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "lint:format_": "prettier --cache-location .cache/prettier --check .",
-    "lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "lint:md_": "remark --frail --no-stdout --silently-ignore .",
-    "lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "lint:tsc_": "tsc --noEmit",
-    "publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "publint_": "publint dist",
-    "all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "format_": "prettier --cache-location .cache/prettier --write .",
-    "test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-    "test_": "vitest --passWithNoTests --coverage --run",
-    "test:watch": "vitest --passWithNoTests --coverage"
-  },
-  "exports": {
-    ".": {
-      "types": "./src/index.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    },
-    "./bug_report": "./static/bug_report.yml",
-    "./cicd": "./static/cicd.yml",
-    "./feature_request": "./static/feature_request.yml",
-    "./funding": "./static/funding.yml",
-    "./readme": "./readme.md"
-  },
-  "dependencies": {
-    "@alexaegis/logging": "^0.4.0",
-    "autotool-plugin": "^0.1.1"
-  },
-  "devDependencies": {
-    "@alexaegis/eslint-config-vitest": "^0.3.4",
-    "@alexaegis/ts": "^0.3.4",
-    "@alexaegis/vite": "^0.3.4",
-    "@alexaegis/vitest": "^0.3.4",
-    "@types/node": "^20.4.0",
-    "publint": "^0.1.16",
-    "typescript": "^5.1.6",
-    "vite": "^4.3.9",
-    "vitest": "^0.32.4"
-  }
+	"name": "@alexaegis/autotool-plugin-github",
+	"description": "My github config",
+	"version": "0.4.0",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "autotool",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"autotool-plugin",
+		"github",
+		"managed-by-autotool"
+	],
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"build-lib_": "vite build",
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"lint:format_": "prettier --cache-location .cache/prettier --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"publint_": "publint dist",
+		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"format_": "prettier --cache-location .cache/prettier --write .",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
+		},
+		"./bug_report": "./static/bug_report.yml",
+		"./cicd": "./static/cicd.yml",
+		"./feature_request": "./static/feature_request.yml",
+		"./funding": "./static/funding.yml",
+		"./readme": "./readme.md"
+	},
+	"dependencies": {
+		"@alexaegis/logging": "^0.4.0",
+		"autotool-plugin": "^0.1.1"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "^0.4.0",
+		"@alexaegis/ts": "^0.4.0",
+		"@alexaegis/vite": "^0.4.0",
+		"@alexaegis/vitest": "^0.4.0",
+		"@types/node": "^20.4.0",
+		"publint": "^0.1.16",
+		"typescript": "^5.1.6",
+		"vite": "^4.3.9",
+		"vitest": "^0.32.4"
+	}
 }
