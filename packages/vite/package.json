@@ -77,7 +77,7 @@
 		"nodemon": "^2.0.22",
 		"svelte": "^4.0.5",
 		"vite": "^4.4.1",
-		"vite-plugin-pakk": "^0.3.0"
+		"vite-plugin-pakk": "^0.3.1"
 	},
 	"optionalDependencies": {
 		"prettier": "^3.0.0"

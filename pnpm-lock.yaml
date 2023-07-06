@@ -1880,8 +1880,8 @@ importers:
         specifier: ^4.4.1
         version: 4.4.1(@types/node@20.4.0)
       vite-plugin-pakk:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.3.1
+        version: 0.3.1
     optionalDependencies:
       prettier:
         specifier: ^3.0.0
@@ -2762,8 +2762,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@pakk/core@0.3.0:
-    resolution: {integrity: sha512-6D6SXJCyHcagu4Q3yD8LKG/qauVsuERE3y7iMcAKZjFKy4/CJ7rtWOIcO5bhkrBZH/EsMX2glbtTqWm1kzYO7g==}
+  /@pakk/core@0.3.1:
+    resolution: {integrity: sha512-gJCJOTsrnImqZHo2jRHWlOORfowhlJ5Mp8gYe97AY9EmqJEblEZlwSiXerfWkqBNBs7/xQpORFtyFkVYQrYfSA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
       '@alexaegis/common': 0.4.2
@@ -10748,14 +10748,14 @@ packages:
       - terser
     dev: false
 
-  /vite-plugin-pakk@0.3.0:
-    resolution: {integrity: sha512-j2PzWIKypE/XSjoaP24oj8ZaHhttLei8yQuoI5dOoEjYHEv7eD/iXfNl0SdaRsWQwbt/2h/tKnU2BlpyMDr0SQ==}
+  /vite-plugin-pakk@0.3.1:
+    resolution: {integrity: sha512-sxjdxKrJh/KFP8RcPZqss1cozIsGc6uhvmBrxlMNOvwA6LtsmaDcqHCTpFzLYwOO2KNzEwTB1TeqEZ+kXabDDQ==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
       '@alexaegis/common': 0.4.2
       '@alexaegis/fs': 0.4.2
       '@alexaegis/workspace-tools': 0.4.2
-      '@pakk/core': 0.3.0
+      '@pakk/core': 0.3.1
       '@types/node': 20.4.0
       prettier: 3.0.0
       ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
