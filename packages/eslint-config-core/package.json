@@ -26,7 +26,7 @@
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
+		"lint:format_": "prettier --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
@@ -35,7 +35,7 @@
 		"publint_": "publint dist",
 		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
-		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
+		"format_": "prettier --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config-core",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
@@ -50,10 +50,10 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.60.1",
-		"@typescript-eslint/parser": "^5.60.1",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"@typescript-eslint/parser": "^5.61.0",
 		"eslint": "^8.44.0",
-		"eslint-config-next": "^13.4.7",
+		"eslint-config-next": "^13.4.8",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-turbo": "^1.10.7",
 		"eslint-plugin-react": "^7.32.2",
@@ -62,7 +62,7 @@
 		"typescript": "^5.1.6"
 	},
 	"optionalDependencies": {
-		"svelte": "^4.0.1"
+		"svelte": "^4.0.4"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.3.4",
@@ -70,9 +70,9 @@
 		"@alexaegis/vite": "^0.3.4",
 		"@alexaegis/vitest": "^0.3.4",
 		"@types/eslint": "^8.40.2",
-		"@types/node": "^20.3.3",
-		"publint": "^0.1.13",
+		"@types/node": "^20.4.0",
+		"publint": "^0.1.16",
 		"vite": "^4.3.9",
-		"vitest": "^0.32.2"
+		"vitest": "^0.32.4"
 	}
 }

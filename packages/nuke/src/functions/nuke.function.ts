@@ -28,12 +28,12 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 			!options.dontNukeIn.some((skip) =>
 				typeof skip === 'string'
 					? skip === workspacePackage.packagePath
-					: skip.test(workspacePackage.packagePath)
-			)
+					: skip.test(workspacePackage.packagePath),
+			),
 	);
 
 	const rootPackage = allWorkspacePackages.find(
-		(workspacePackage) => workspacePackage.packageKind === 'root'
+		(workspacePackage) => workspacePackage.packageKind === 'root',
 	);
 
 	if (!rootPackage) {
@@ -42,7 +42,7 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	}
 
 	const packageFlatNukeTargets = nonSkippedWorkspacePackages.flatMap((workspacePackage) =>
-		nukeList.map((toNuke) => join(workspacePackage.packagePath, toNuke))
+		nukeList.map((toNuke) => join(workspacePackage.packagePath, toNuke)),
 	);
 
 	const packageGlobNukeTargets = await Promise.all(
@@ -52,8 +52,8 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 				dot: true,
 				followSymbolicLinks: false,
 				expandDirectories: false,
-			}).then((paths) => paths.map((path) => join(packageDirectory.packagePath, path)))
-		)
+			}).then((paths) => paths.map((path) => join(packageDirectory.packagePath, path))),
+		),
 	);
 
 	const everyNukeTarget = [...packageFlatNukeTargets, ...packageGlobNukeTargets.flat()].sort();
@@ -64,9 +64,9 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 			.filter((nukeTarget) => existsSync(nukeTarget))
 			.map((nukeTarget) => {
 				options.logger.warn(
-					'obliterating: ' + relative(rootPackage.packagePath, nukeTarget)
+					'obliterating: ' + relative(rootPackage.packagePath, nukeTarget),
 				);
 				return dryRm(nukeTarget, { recursive: true }).catch(() => false);
-			})
+			}),
 	);
 };

@@ -31,9 +31,15 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageKind: 'root',
 				formatWithPrettier: true,
-				targetFile: 'lint-staged.config.mjs',
+				targetFile: 'lint-staged.config.js',
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'lint-staged.config.mjs'),
+				sourceFile: join('static', 'lint-staged.config.js'),
+			},
+			{
+				description: 'remove mjs root lint-staged config in favor of js', // TODO: remove once propagated
+				executor: 'fileRemove',
+				packageKind: 'root',
+				targetFile: 'lint-staged.config.mjs',
 			},
 			{
 				description: 'husky commit-msg hook',

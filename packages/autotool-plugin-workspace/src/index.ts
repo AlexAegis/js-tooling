@@ -1,5 +1,6 @@
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
+import rootPackageJson from '../../../package.json';
 import packageJson from '../package.json';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
@@ -27,6 +28,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						npm: undefined,
 						pnpm: '>=8.0.0',
 					},
+					packageManager: rootPackageJson.packageManager,
+					workspaces: ['apps/*', 'libs/*', 'packages/*', 'fixtures/*'], // Some tools like typedoc will only read this field even through the same information is defined in the pnpm-workspace.yaml
 				},
 			},
 			{

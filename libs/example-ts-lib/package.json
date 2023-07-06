@@ -28,14 +28,14 @@
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
-		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
+		"lint:format_": "prettier --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
 		"lint:tsc_": "tsc --noEmit",
 		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
-		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
+		"format_": "prettier --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-ts-lib",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
@@ -55,8 +55,8 @@
 		"@alexaegis/vite": "^0.3.4",
 		"@alexaegis/vitest": "^0.3.4",
 		"@types/eslint": "^8.40.2",
-		"@types/node": "^20.3.3",
+		"@types/node": "^20.4.0",
 		"vite": "^4.3.9",
-		"vitest": "^0.32.2"
+		"vitest": "^0.32.4"
 	}
 }

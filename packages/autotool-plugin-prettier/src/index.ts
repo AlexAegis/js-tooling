@@ -2,8 +2,22 @@ import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin'
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
-const assembleAdditionalConfigs = (...configPackageNames: string[]): string => {
-	return configPackageNames.map((name) => `require('${name}').default`).join(', ');
+const packageNameToCamelCase = (name: string) =>
+	name
+		.replaceAll(/^@/g, '')
+		.replaceAll(/[/-]([a-z])/g, (_: string, letter: string) => letter.toUpperCase());
+
+const assembleAdditionalConfigTemplateVariables = (
+	...configPackageNames: string[]
+): Record<string, string> => {
+	return {
+		additionalConfigs: configPackageNames
+			.map((name) => packageNameToCamelCase(name))
+			.join(', '),
+		additionalConfigImports: configPackageNames
+			.map((name) => `import ${packageNameToCamelCase(name)} from '${name}';`)
+			.join('\n'),
+	};
 };
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
@@ -18,10 +32,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				data: {
 					scripts: {
 						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
-						format_:
-							'prettier --no-plugin-search --cache-location .cache/prettier --write .',
-						'lint:format_':
-							'prettier --no-plugin-search --cache-location .cache/prettier --check .',
+						format_: 'prettier --cache-location .cache/prettier --write .',
+						'lint:format_': 'prettier --cache-location .cache/prettier --check .',
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					},
@@ -36,9 +48,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					scripts: {
 						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo',
 						format_:
-							'prettier --no-plugin-search --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .',
+							'prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .',
 						'lint:format_':
-							'prettier --no-plugin-search --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
+							'prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
 					},
@@ -60,9 +72,14 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageKind: 'root',
 				formatWithPrettier: true,
-				targetFile: '.prettierrc.cjs',
+				targetFile: '.prettierrc.js',
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'prettierrc.cjs.txt'),
+				sourceFile: join('static', 'prettierrc.js.txt'),
+			},
+			{
+				description: 'remove old cjs prettierrc files',
+				executor: 'fileRemove',
+				targetFile: '.prettierrc.cjs',
 			},
 			{
 				description: 'add prettier-config-svelte as a devDependency',
@@ -113,14 +130,14 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 				formatWithPrettier: true,
-				targetFile: '.prettierrc.cjs',
+				targetFile: '.prettierrc.js',
 				templateVariables: {
-					additionalConfigs: assembleAdditionalConfigs(
-						'@alexaegis/prettier-config-svelte'
+					...assembleAdditionalConfigTemplateVariables(
+						'@alexaegis/prettier-config-svelte',
 					),
 				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'prettierrc.custom.cjs.txt'),
+				sourceFile: join('static', 'prettierrc.custom.js.txt'),
 			},
 			{
 				description: 'copy svelte prettier config with tailwind',
@@ -135,15 +152,15 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 				formatWithPrettier: true,
-				targetFile: '.prettierrc.cjs',
+				targetFile: '.prettierrc.js',
 				templateVariables: {
-					additionalConfigs: assembleAdditionalConfigs(
+					...assembleAdditionalConfigTemplateVariables(
 						'@alexaegis/prettier-config-svelte',
-						'@alexaegis/prettier-config-tailwind'
+						'@alexaegis/prettier-config-tailwind',
 					),
 				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'prettierrc.custom.cjs.txt'),
+				sourceFile: join('static', 'prettierrc.custom.js.txt'),
 			},
 			{
 				description: 'copy workspace prettierignore used by the editor',

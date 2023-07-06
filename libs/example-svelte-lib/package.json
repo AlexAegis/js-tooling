@@ -19,7 +19,7 @@
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-svelte-lib",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-svelte-lib",
-		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
+		"lint:format_": "prettier --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-svelte-lib",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
 		"lint:style": "turbo run lint:style_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-svelte-lib",
@@ -36,7 +36,7 @@
 		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-svelte-lib",
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/example-svelte-lib",
-		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
+		"format_": "prettier --cache-location .cache/prettier --write .",
 		"postinstall": "svelte-kit sync",
 		"preview": "vite preview",
 		"start": "TARGET_ENV='local' vite",
@@ -64,13 +64,13 @@
 		"@alexaegis/ts": "^0.3.4",
 		"@alexaegis/vite": "^0.3.4",
 		"@alexaegis/vitest": "^0.3.4",
-		"@sveltejs/kit": "^1.21.0",
-		"stylelint": "^15.9.0",
-		"svelte": "^4.0.1",
+		"@sveltejs/kit": "^1.22.0",
+		"stylelint": "^15.10.0",
+		"svelte": "^4.0.4",
 		"svelte-check": "^3.4.4",
 		"svelte-preprocess": "^5.0.4",
 		"typescript": "^5.1.6",
 		"vite": "^4.3.9",
-		"vitest": "^0.32.2"
+		"vitest": "^0.32.4"
 	}
 }

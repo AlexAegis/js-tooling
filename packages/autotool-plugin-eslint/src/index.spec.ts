@@ -27,8 +27,6 @@ describe('autotool-plugin-eslint', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
-		filter: [],
-		filterPlugins: [],
 	};
 
 	it('should be defined', () => {
@@ -46,7 +44,7 @@ describe('autotool-plugin-eslint', () => {
 	describe('joinAdditionalExtends', () => {
 		it('should join strings like so', () => {
 			expect(library.joinAdditionalExtends('foo', 'bar', 'amogus')).toEqual(
-				", 'foo', 'bar', 'amogus'"
+				", 'foo', 'bar', 'amogus'",
 			);
 		});
 

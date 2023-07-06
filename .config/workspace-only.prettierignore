@@ -17,6 +17,7 @@ yarn.lock
 # build artifacts
 dist
 public/build
+public/index.js
 .svelte-kit
 typedoc
 

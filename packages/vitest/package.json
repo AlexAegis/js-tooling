@@ -26,7 +26,7 @@
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
 		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-		"lint:format_": "prettier --no-plugin-search --cache-location .cache/prettier --check .",
+		"lint:format_": "prettier --cache-location .cache/prettier --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
@@ -35,7 +35,7 @@
 		"publint_": "publint dist",
 		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
-		"format_": "prettier --no-plugin-search --cache-location .cache/prettier --write .",
+		"format_": "prettier --cache-location .cache/prettier --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitest",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage"
@@ -72,14 +72,14 @@
 	},
 	"dependencies": {
 		"@sveltejs/vite-plugin-svelte": "^2.4.2",
-		"@vitest/coverage-v8": "^0.32.2",
-		"@vitest/ui": "^0.32.2",
+		"@vitest/coverage-v8": "^0.32.4",
+		"@vitest/ui": "^0.32.4",
 		"jsdom": "22.1.0",
-		"vitest": "^0.32.2"
+		"vitest": "^0.32.4"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.3.4",
-		"publint": "^0.1.13",
+		"publint": "^0.1.16",
 		"vite": "^4.3.9"
 	}
 }

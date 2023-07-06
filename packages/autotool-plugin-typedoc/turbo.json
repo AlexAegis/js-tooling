@@ -19,6 +19,12 @@
 		},
 		"lint:style:html_": {
 			"dependsOn": ["@alexaegis/stylelint-config#build-lib_"]
+		},
+		"lint:md_": {
+			"dependsOn": ["@alexaegis/autotool-plugin-remark#build-lib_"]
+		},
+		"lint:format_": {
+			"dependsOn": ["@alexaegis/autotool-plugin-prettier#build-lib_"]
 		}
 	}
 }

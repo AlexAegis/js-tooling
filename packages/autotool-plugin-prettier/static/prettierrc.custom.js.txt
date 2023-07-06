@@ -1,0 +1,10 @@
+// managed-by-autotool
+/** @type {typeof import('@alexaegis/prettier-config')} */
+import { mergeConfig, prettierConfig } from '@alexaegis/prettier-config';
+${additionalConfigImports}
+
+/** @type {import('prettier').Config} */
+export default mergeConfig(
+	prettierConfig,
+	${additionalConfigs}
+);

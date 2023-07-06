@@ -32,12 +32,12 @@ export const collectPackages = (): {
 	}
 
 	const pnpmWorkspace = load(
-		readFileSync(join(workspaceRoot, 'pnpm-workspace.yaml'), { encoding: 'utf8' })
+		readFileSync(join(workspaceRoot, 'pnpm-workspace.yaml'), { encoding: 'utf8' }),
 	) as PnpmWorkspaceYaml;
 
 	const workspacePackageJsonPath = join(workspaceRoot, PACKAGE_JSON_NAME);
 	const workspacePackageJson = JSON.parse(
-		readFileSync(workspacePackageJsonPath, { encoding: 'utf8' })
+		readFileSync(workspacePackageJsonPath, { encoding: 'utf8' }),
 	) as PackageJson;
 
 	let workspaces = normalizePackageJsonWorkspacesField(workspacePackageJson.workspaces);
@@ -69,7 +69,7 @@ export const collectPackages = (): {
 					packagePath: packagePath.toString(),
 					packageJsonPath,
 					packageJson: JSON.parse(
-						readFileSync(packageJsonPath, { encoding: 'utf8' })
+						readFileSync(packageJsonPath, { encoding: 'utf8' }),
 					) as PackageJson,
 					packagePathFromRootPackage: relative(workspaceRoot, dirname(packageJsonPath)),
 				} as WorkspacePackage;
@@ -92,7 +92,7 @@ const collectPackageJsonPathsUpDirectoryTree = (cwd: string = process.cwd()): st
 
 const collectPackageJsonPathsUpDirectoryTreeInternal = (
 	cwd: string,
-	collection: string[] = []
+	collection: string[] = [],
 ): string[] => {
 	const path = normalize(cwd);
 
@@ -109,7 +109,7 @@ const collectPackageJsonPathsUpDirectoryTreeInternal = (
 };
 
 const normalizePackageJsonWorkspacesField = (
-	packageJsonWorkspaces?: PackageJson['workspaces']
+	packageJsonWorkspaces?: PackageJson['workspaces'],
 ): string[] => {
 	if (Array.isArray(packageJsonWorkspaces)) {
 		return packageJsonWorkspaces;

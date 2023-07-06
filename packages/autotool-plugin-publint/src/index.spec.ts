@@ -27,8 +27,6 @@ describe('autotool-plugin-publint', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
-		filter: [],
-		filterPlugins: [],
 	};
 
 	it('should be defined', () => {

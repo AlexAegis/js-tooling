@@ -24,17 +24,17 @@ export const createGenericUpdater = (packages: WorkspacePackage[]) => {
 						r
 							.replaceAll(
 								new RegExp(`"${localPackageName}": "(workspace:)([~^])?.*"`, 'g'),
-								`"${localPackageName}": "$1$2"` // the workspace protocol does not include versions but keeps the specifier. This is how pnpm leaves them on install.
+								`"${localPackageName}": "$1$2"`, // the workspace protocol does not include versions but keeps the specifier. This is how pnpm leaves them on install.
 							)
 							.replaceAll(
 								new RegExp(`"${localPackageName}": "(?!workspace:)([~^])?.*"`, 'g'),
-								`"${localPackageName}": "$1${version}"`
+								`"${localPackageName}": "$1${version}"`,
 							)
 							.replaceAll(
 								new RegExp(`${localPackageName}@([^s\t\n\r]+)`, 'g'),
-								`${localPackageName}@${version}`
+								`${localPackageName}@${version}`,
 							),
-					contents.replace(/"version": ".*"/, `"version": "${version}"`)
+					contents.replace(/"version": ".*"/, `"version": "${version}"`),
 				);
 		},
 	};

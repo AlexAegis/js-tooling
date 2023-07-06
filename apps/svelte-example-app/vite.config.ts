@@ -17,5 +17,5 @@ export default mergeConfig(
 		test: {
 			include: ['src/**/*.{test,spec}.{js,ts}'],
 		},
-	})
+	}),
 );

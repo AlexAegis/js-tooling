@@ -12,7 +12,7 @@ const getPackageJsonNameWithoutOrg = (packageName = ''): string => {
 
 export const getLocalPackageNames = (): string[] => {
 	return collectPackages().subPackages.map((p) =>
-		getPackageJsonNameWithoutOrg(p.packageJson.name)
+		getPackageJsonNameWithoutOrg(p.packageJson.name),
 	);
 };
 

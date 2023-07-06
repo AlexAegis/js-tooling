@@ -12,7 +12,7 @@
 		".svelte-kit/ambient.d.ts",
 		"package.json",
 		"../../package.json",
-		".prettierrc.cjs"
+		".prettierrc.js"
 	],
 	"include": [
 		// extends doesn't combine fields, so this has been copied from .svelte-kit

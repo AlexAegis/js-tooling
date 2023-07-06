@@ -7,7 +7,6 @@ import type {
 } from 'autotool-plugin';
 import { describe, expect, it } from 'vitest';
 import * as library from './index.js';
-import { notCircularName } from './index.js';
 
 describe('autotool-plugin-ts', () => {
 	const rootWorkspacePackage: WorkspacePackage = {
@@ -28,8 +27,6 @@ describe('autotool-plugin-ts', () => {
 		force: false,
 		logger,
 		rootWorkspacePackage,
-		filter: [],
-		filterPlugins: [],
 	};
 
 	it('should be defined', () => {
@@ -42,11 +39,5 @@ describe('autotool-plugin-ts', () => {
 		const plugin = await (library.default as AutotoolPluginFactory)(defaultOptions);
 
 		expect(plugin).toBeDefined();
-	});
-
-	describe('notCircularName', () => {
-		it('should not match for the ts package', () => {
-			expect(notCircularName('@alexaegis/ts')).toBeFalsy();
-		});
 	});
 });

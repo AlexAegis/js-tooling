@@ -50,7 +50,7 @@ const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 				array: true,
 				type: 'string',
 				description: "If it shouldn't nuke a specific package, add them here.",
-			})
+			}),
 	)
 	.add(yargsForLogLevelOption);
 

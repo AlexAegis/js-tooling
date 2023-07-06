@@ -1,5 +1,5 @@
 import type { JsonMatcherFrom } from '@alexaegis/match';
-import { equal, not } from '@alexaegis/predicate';
+import { equal, not, or } from '@alexaegis/predicate';
 import { getEncodedArchetype, type PackageArchetype } from '@alexaegis/workspace-tools';
 import type {
 	AutotoolElementFileCopy,
@@ -8,14 +8,6 @@ import type {
 } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
-
-export const notCircularName = (name: string): boolean =>
-	![
-		'@alexaegis/ts',
-		'@alexaegis/vite',
-		'@alexaegis/vitest',
-		'@alexaegis/eslint-config-vitest',
-	].includes(name);
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	const languageMatcher = /^(ts|typescript)$/;
@@ -89,7 +81,14 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					archetype: {
 						language: languageMatcher,
 					},
-					name: notCircularName, // Don't add a dependency for itself, and other packages where it would result in a circle
+					name: not(
+						or(
+							equal('@alexaegis/ts'),
+							equal('@alexaegis/vite'),
+							equal('@alexaegis/vitest'),
+							equal('@alexaegis/eslint-config-vitest'),
+						),
+					), // Don't add a dependency for itself, and other packages where it would result in a circle
 				},
 				data: {
 					devDependencies: {

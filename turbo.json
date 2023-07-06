@@ -190,7 +190,8 @@
 			],
 			"dependsOn": [],
 			"outputs": [".cache/prettier"],
-			"outputMode": "new-only"
+			"outputMode": "new-only",
+			"cache": false
 		},
 		"//#format_": {
 			"dependsOn": [],
@@ -200,7 +201,8 @@
 				"!vite*.config.*.*"
 			],
 			"outputs": [".cache/prettier"],
-			"outputMode": "new-only"
+			"outputMode": "new-only",
+			"cache": false
 		},
 		"typedoc_": {
 			"dependsOn": [],

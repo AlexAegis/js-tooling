@@ -13,14 +13,17 @@ import remarkPrettier from 'remark-prettier';
 import remarkValidateLinks from 'remark-validate-links';
 import type { Preset } from 'unified';
 
+// TODO: remove, readd
+console.log(remarkPresetPrettier, remarkPrettier);
+
 export default {
 	settings: { bullet: '-', quote: "'", tightDefinitions: true },
 	plugins: [
 		remarkLint,
 		remarkGfm,
 		remarkValidateLinks,
-		remarkPrettier,
-		remarkPresetPrettier as Preset,
+		// remarkPrettier,
+		// remarkPresetPrettier as Preset,
 		remarkPresetLintRecommended,
 		remarkPresetLintConsistent,
 		remarkPresetLintMarkdownStyleGuide,

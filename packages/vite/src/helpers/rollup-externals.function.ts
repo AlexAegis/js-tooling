@@ -57,9 +57,9 @@ export const createLazyAutoExternalsFunction = () => {
 				...collectPackageJsonPathsUpDirectoryTree().map(
 					(path) =>
 						JSON.parse(
-							readFileSync(join(path, PACKAGE_JSON_NAME), { encoding: 'utf8' })
-						) as PackageJson
-				)
+							readFileSync(join(path, PACKAGE_JSON_NAME), { encoding: 'utf8' }),
+						) as PackageJson,
+				),
 			);
 		}
 
