@@ -348,4 +348,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pnpm publish --access public --provenance ${{ matrix.package.package_path_from_root_package }}/dist/
+          pnpm publish --no-git-checks --access public --provenance ${{ matrix.package.package_path_from_root_package }}/dist/
