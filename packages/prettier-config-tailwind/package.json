@@ -63,7 +63,7 @@
 		"@alexaegis/vitest": "^0.4.1",
 		"@types/node": "^20.4.0",
 		"publint": "^0.1.16",
-		"vite": "^4.4.1",
+		"vite": "^4.4.2",
 		"vitest": "^0.33.0"
 	}
 }
