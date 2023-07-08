@@ -1,4 +1,3 @@
-import { isNotNullish } from '@alexaegis/common';
 import type { PackageJson, WorkspacePackage } from '@alexaegis/workspace-tools';
 
 import { PACKAGE_JSON_DEPENDENCY_FIELDS } from './collect-packages.js';
@@ -28,7 +27,7 @@ export const createPackageJsonUpdater = (packages: WorkspacePackage[]) => {
 
 			for (const localPackageName of packages
 				.map((localPackage) => localPackage.packageJson.name)
-				.filter(isNotNullish)) {
+				.filter((name): name is string => !!name)) {
 				for (const dependencyField of PACKAGE_JSON_DEPENDENCY_FIELDS) {
 					const dependencies = packageJson[dependencyField];
 

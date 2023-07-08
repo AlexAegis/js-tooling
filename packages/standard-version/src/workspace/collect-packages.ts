@@ -1,4 +1,3 @@
-import { isNotNullish } from '@alexaegis/common';
 import type { PackageJson, PnpmWorkspaceYaml, WorkspacePackage } from '@alexaegis/workspace-tools';
 import { globSync } from 'glob';
 import { load } from 'js-yaml';
@@ -77,7 +76,7 @@ export const collectPackages = (): {
 				return undefined;
 			}
 		})
-		.filter(isNotNullish);
+		.filter((pkg): pkg is WorkspacePackage => !!pkg);
 
 	return { workspacePackage, subPackages };
 };

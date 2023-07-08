@@ -72,8 +72,8 @@ importers:
         specifier: workspace:^
         version: link:packages/autotool-plugin-workspace
       '@alexaegis/coverage-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/eslint-config-core':
         specifier: workspace:^
         version: link:packages/eslint-config-core
@@ -93,8 +93,8 @@ importers:
         specifier: ^8.44.0
         version: 8.44.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       '@types/yargs':
         specifier: ^17.0.24
         version: 17.0.24
@@ -102,8 +102,8 @@ importers:
         specifier: ^0.33.0
         version: 0.33.0(vitest@0.33.0)
       autotool:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       commit-and-tag-version:
         specifier: ^11.2.2
         version: 11.2.2
@@ -145,7 +145,7 @@ importers:
         version: 3.4.5(postcss-load-config@4.0.1)(postcss@8.4.25)(svelte@4.0.5)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+        version: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       turbo:
         specifier: ^1.10.7
         version: 1.10.7
@@ -195,8 +195,8 @@ importers:
         specifier: ^1.22.1
         version: 1.22.1(svelte@4.0.5)(vite@4.4.2)
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.25)
@@ -247,7 +247,7 @@ importers:
         version: 3.3.2(ts-node@10.9.1)
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -299,7 +299,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -322,11 +322,11 @@ importers:
         specifier: ^8.44.0
         version: 8.44.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -337,11 +337,11 @@ importers:
         specifier: ^0.4.1
         version: link:../commitlint-config
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       commitlint:
         specifier: ^17.6.6
         version: 17.6.6
@@ -359,8 +359,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -369,7 +369,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -377,14 +377,14 @@ importers:
   packages/autotool-plugin-depcheck:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/predicate':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -399,8 +399,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       depcheck:
         specifier: ^1.4.3
         version: 1.4.3
@@ -412,7 +412,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -420,11 +420,11 @@ importers:
   packages/autotool-plugin-editorconfig:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -439,8 +439,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -449,7 +449,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -457,14 +457,14 @@ importers:
   packages/autotool-plugin-eslint:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/predicate':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-core':
         specifier: ^0.4.1
@@ -485,8 +485,8 @@ importers:
         specifier: ^8.44.0
         version: 8.44.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
@@ -498,7 +498,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -506,11 +506,11 @@ importers:
   packages/autotool-plugin-git:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -525,8 +525,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -535,7 +535,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -543,11 +543,11 @@ importers:
   packages/autotool-plugin-github:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -562,8 +562,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -572,7 +572,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -583,14 +583,14 @@ importers:
         specifier: ^0.4.1
         version: link:../lint-staged-config
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@commitlint/config-conventional':
         specifier: ^17.6.6
         version: 17.6.6
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -611,8 +611,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -621,7 +621,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -629,11 +629,11 @@ importers:
   packages/autotool-plugin-ncu:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       npm-check-updates:
         specifier: ^16.10.15
         version: 16.10.15
@@ -654,8 +654,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -664,7 +664,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -672,14 +672,14 @@ importers:
   packages/autotool-plugin-prettier:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/prettier-config':
         specifier: ^0.4.1
         version: link:../prettier-config
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
@@ -701,8 +701,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -711,7 +711,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -719,11 +719,11 @@ importers:
   packages/autotool-plugin-publint:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -738,8 +738,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -748,7 +748,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -756,14 +756,14 @@ importers:
   packages/autotool-plugin-remark:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/remark-preset':
         specifier: ^0.4.1
         version: link:../remark-preset
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -778,8 +778,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -791,7 +791,7 @@ importers:
         version: 11.0.0
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -799,14 +799,14 @@ importers:
   packages/autotool-plugin-standard-version:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/standard-version':
         specifier: ^0.4.1
         version: link:../standard-version
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       commit-and-tag-version:
         specifier: ^11.2.2
         version: 11.2.2
@@ -824,8 +824,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -834,7 +834,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -842,11 +842,11 @@ importers:
   packages/autotool-plugin-stylelint:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -861,8 +861,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -874,7 +874,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -882,17 +882,17 @@ importers:
   packages/autotool-plugin-svelte:
     dependencies:
       '@alexaegis/coverage-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@sveltejs/kit':
         specifier: ^1.22.1
         version: 1.22.1(svelte@4.0.5)(vite@4.4.2)
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       svelte:
         specifier: ^4.0.5
         version: 4.0.5
@@ -916,8 +916,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -926,7 +926,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -934,20 +934,20 @@ importers:
   packages/autotool-plugin-ts:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/match':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/predicate':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/workspace-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -965,17 +965,17 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+        version: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -983,11 +983,11 @@ importers:
   packages/autotool-plugin-turbo:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       turbo:
         specifier: ^1.10.7
         version: 1.10.7
@@ -1005,8 +1005,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1015,7 +1015,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1023,11 +1023,11 @@ importers:
   packages/autotool-plugin-typedoc:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       typedoc:
         specifier: ^0.24.8
         version: 0.24.8(typescript@5.1.6)
@@ -1045,8 +1045,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1055,7 +1055,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1063,14 +1063,14 @@ importers:
   packages/autotool-plugin-vite:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/predicate':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
       concurrently:
         specifier: ^8.2.0
         version: 8.2.0
@@ -1079,7 +1079,7 @@ importers:
         version: 2.0.22
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -1094,8 +1094,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1109,17 +1109,17 @@ importers:
   packages/autotool-plugin-vitest:
     dependencies:
       '@alexaegis/coverage-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/predicate':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -1137,8 +1137,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       '@vitest/coverage-v8':
         specifier: ^0.33.0
         version: 0.33.0(vitest@0.33.0)
@@ -1150,7 +1150,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1158,11 +1158,11 @@ importers:
   packages/autotool-plugin-vscode:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -1177,8 +1177,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1187,7 +1187,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1195,11 +1195,11 @@ importers:
   packages/autotool-plugin-workspace:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       autotool-plugin:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -1217,8 +1217,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1227,7 +1227,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1254,8 +1254,8 @@ importers:
         specifier: ^17.4.4
         version: 17.4.4
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1264,7 +1264,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1322,14 +1322,14 @@ importers:
         specifier: ^8.44.0
         version: 8.44.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1387,14 +1387,14 @@ importers:
         specifier: ^8.44.0
         version: 8.44.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1446,14 +1446,14 @@ importers:
         specifier: ^8.44.0
         version: 8.44.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1461,8 +1461,8 @@ importers:
   packages/lint-staged-config:
     dependencies:
       '@alexaegis/fs':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       lint-staged:
         specifier: 13.2.3
         version: 13.2.3
@@ -1493,14 +1493,14 @@ importers:
         specifier: ^13.2.0
         version: 13.2.0
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1508,17 +1508,17 @@ importers:
   packages/nuke:
     dependencies:
       '@alexaegis/cli-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/common':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/workspace-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       globby:
         specifier: ^13.2.2
         version: 13.2.2
@@ -1536,8 +1536,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1546,7 +1546,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1570,14 +1570,14 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1607,14 +1607,14 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1647,14 +1647,14 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1718,8 +1718,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1728,25 +1728,22 @@ importers:
         version: 10.1.2
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
 
   packages/standard-version:
     dependencies:
-      '@alexaegis/common':
-        specifier: ^0.4.2
-        version: 0.4.2
       '@alexaegis/coverage-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/workspace-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       glob:
-        specifier: ^10.3.1
-        version: 10.3.1
+        specifier: ^10.3.2
+        version: 10.3.2
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1767,8 +1764,8 @@ importers:
         specifier: ^4.0.5
         version: 4.0.5
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1777,7 +1774,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1807,8 +1804,8 @@ importers:
         specifier: ^0.4.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1820,7 +1817,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1831,17 +1828,17 @@ importers:
         specifier: ^0.4.1
         version: link:../vite
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+        version: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.1
@@ -1859,11 +1856,11 @@ importers:
   packages/vite:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@alexaegis/workspace-tools':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.4.4
+        version: 0.4.4
       '@sveltejs/vite-plugin-svelte':
         specifier: ^2.4.2
         version: 2.4.2(svelte@4.0.5)(vite@4.4.2)
@@ -1878,24 +1875,24 @@ importers:
         version: 4.0.5
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
     optionalDependencies:
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
       vite-plugin-pakk:
-        specifier: ^0.3.1
-        version: 0.3.1
+        specifier: ^0.3.2
+        version: 0.3.2
     devDependencies:
       '@types/node':
-        specifier: ^20.4.0
-        version: 20.4.0
+        specifier: ^20.4.1
+        version: 20.4.1
       publint:
         specifier: ^0.1.16
         version: 0.1.16
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+        version: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -1929,7 +1926,7 @@ importers:
         version: 0.1.16
       vite:
         specifier: ^4.4.2
-        version: 4.4.2(@types/node@20.4.0)
+        version: 4.4.2(@types/node@20.4.1)
 
 packages:
 
@@ -1937,65 +1934,65 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  /@alexaegis/cli-tools@0.4.2:
-    resolution: {integrity: sha512-GyNEpYHoHSniLgHHn2zZsMAVlvHDJXjOLw+0RbcdYcjk8/dQlbKf9kHvF4K/I8eYk7r4Be6QP5Y6e7eKGSTDIg==}
+  /@alexaegis/cli-tools@0.4.4:
+    resolution: {integrity: sha512-D8gF1eLoK4WDFHaKEYZJe44xjjLPNT4iBgwBEXSOQI1ZGLnA1I3idDEulZj7VNVplzVuMaCbhAHH21riicU4fA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
       '@types/yargs': 17.0.24
       yargs: 17.7.2
 
-  /@alexaegis/common@0.4.2:
-    resolution: {integrity: sha512-1YG6UfHVoF2PTPOSvBIQul4ofMH5/UGUOPgqs+2ThuueYtgkgq4mlH9VJjSPLNKkdJn7YME9fCR8TXFJMgMPnw==}
+  /@alexaegis/common@0.4.4:
+    resolution: {integrity: sha512-5i+DBomq+v/C149kTLsK58gbAmEi1VFu6yJD3agGwBWqknpdq3C3DQQtangDdCEJvNAHGNGJDd8LchgHDHlGKw==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
 
-  /@alexaegis/coverage-tools@0.4.2:
-    resolution: {integrity: sha512-h4gmrtQPDZ0bsv+J6GB3irAvIpykBhlnFXJfSCAeV8AOYUvAMyCpoeCQjlAMiak+k9BW+Qxw3j1Nz3gLuEKQ3A==}
+  /@alexaegis/coverage-tools@0.4.4:
+    resolution: {integrity: sha512-lQlO6L2Ho8hYs0J4wQ+ydtgxKKCBDcMs1VbQpdZUW+Sze0zTl3O3P+2a8hj9fzbX8ImcO8BhAQwu9vh9+sxLMg==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     hasBin: true
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
       globby: 13.2.2
 
-  /@alexaegis/fs@0.4.2:
-    resolution: {integrity: sha512-o3ZWBuyDYVZEJVmeC69PABYCjnUxVy4XAd8TLgEdVafhBE/+OHmR3cheF4GsyCT/R031kcHE5bF2tkExHTgk2A==}
+  /@alexaegis/fs@0.4.4:
+    resolution: {integrity: sha512-5VvjOF1E+JyCehLpvwh4oTnQ4O/JgqlrBb1NnYpMT/Md9bYm0UY9xANomqdv7seLJ3Ag4n1P91vk3/fuThqZyQ==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/logging': 0.4.2
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/logging': 0.4.4
       js-yaml: 4.1.0
     optionalDependencies:
       prettier: 3.0.0
 
-  /@alexaegis/logging@0.4.2:
-    resolution: {integrity: sha512-rgd6Jupd5rl2U7r+itR/MWp0dX+YCiWRaYNjfuMTavbqipnAGCeb/BnuYLpNq3QkPiVP6I7Ev8EOsM/OqoUmmw==}
+  /@alexaegis/logging@0.4.4:
+    resolution: {integrity: sha512-u71oh3LsO6O8Al1I95322ODKyHH/lkvRCEmdtMwhqrtAixlFcmNxZGry0NtWZrubZVmvw2hoOYf15Z4m6KC4qQ==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
+      '@alexaegis/common': 0.4.4
       tslog: 4.8.2
 
-  /@alexaegis/match@0.4.2:
-    resolution: {integrity: sha512-glwqcsuX8o/roFk4nogKS4HCIh2i0wSUxLu4O6mS40OyhbAgfMI7TKScxbAsoevOA0hAXD5TkfGLbUBHLNNeZQ==}
+  /@alexaegis/match@0.4.4:
+    resolution: {integrity: sha512-XJLw8fy3s2ARiWA2d2gR0ByNX/Lj8kYuxsX3ofz4xXORtY6inD5lSVySlahVQHGccxopVsz+U9soT4Z12FZY8Q==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
 
-  /@alexaegis/predicate@0.4.2:
-    resolution: {integrity: sha512-c3sn95kyWgYoP46HoMKUc/78NKvf+4NHzXoNZFSsLcgjDaYuimXayi5akrmT2dFSXHuZy5ACQZJbtzL5QABxzQ==}
+  /@alexaegis/predicate@0.4.4:
+    resolution: {integrity: sha512-sXn39E0tG/ceDls4UamTBNJELFaZZ0bW+lFk6B9IGhdVHXQBmRTq2VFR5vlYif+chrBbvgpd7vUeuJ+N5yQmag==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dev: false
 
-  /@alexaegis/workspace-tools@0.4.2:
-    resolution: {integrity: sha512-7tXoDenaPoOaXQySBjCRYLPN4rD0TF0hRwTN73ChWS1aNXfdx3LDpiLi049Zxc+tYNZbKeAncKDc3jqmr3JX0w==}
+  /@alexaegis/workspace-tools@0.4.4:
+    resolution: {integrity: sha512-DEi3RhpA/N+2w1lAF7TfR2JqPB/OurhB1hGVKS1V7Xj/qzizj+lSUud3JFoqQvzuaPeior8jqSSs/qAVLLQKZA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/match': 0.4.2
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/match': 0.4.4
       '@schemastore/package': 0.0.9
       globby: 13.2.2
 
@@ -2214,15 +2211,15 @@ packages:
       '@commitlint/execute-rule': 17.4.0
       '@commitlint/resolve-extends': 17.4.4
       '@commitlint/types': 17.4.4
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       chalk: 4.1.2
       cosmiconfig: 8.2.0
-      cosmiconfig-typescript-loader: 4.3.0(@types/node@20.4.0)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.1.6)
+      cosmiconfig-typescript-loader: 4.3.0(@types/node@20.4.1)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.1.6)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       typescript: 5.1.6
     transitivePeerDependencies:
       - '@swc/core'
@@ -2619,25 +2616,25 @@ packages:
       commander: 9.5.0
     dev: true
 
-  /@microsoft/api-extractor-model@7.27.4(@types/node@20.4.0):
+  /@microsoft/api-extractor-model@7.27.4(@types/node@20.4.1):
     resolution: {integrity: sha512-HjqQFmuGPOS20rtnu+9Jj0QrqZyR59E+piUWXPMZTTn4jaZI+4UmsHSf3Id8vyueAhOBH2cgwBuRTE5R+MfSMw==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.5(@types/node@20.4.0)
+      '@rushstack/node-core-library': 3.59.5(@types/node@20.4.1)
     transitivePeerDependencies:
       - '@types/node'
     dev: false
     optional: true
 
-  /@microsoft/api-extractor@7.36.1(@types/node@20.4.0):
+  /@microsoft/api-extractor@7.36.1(@types/node@20.4.1):
     resolution: {integrity: sha512-2SPp1jq6wDY5IOsRLUv/4FxngslctBZJlztAJ3uWpCAwqKQG7ESdL3DhEza+StbYLtBQmu1Pk6q1Vkhl7qD/bg==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.27.4(@types/node@20.4.0)
+      '@microsoft/api-extractor-model': 7.27.4(@types/node@20.4.1)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.5(@types/node@20.4.0)
+      '@rushstack/node-core-library': 3.59.5(@types/node@20.4.1)
       '@rushstack/rig-package': 0.4.0
       '@rushstack/ts-command-line': 4.15.1
       colors: 1.2.5
@@ -2736,7 +2733,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       '@npmcli/name-from-folder': 2.0.0
-      glob: 10.3.1
+      glob: 10.3.2
       minimatch: 9.0.3
       read-package-json-fast: 3.0.2
 
@@ -2766,21 +2763,21 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@pakk/core@0.3.1:
-    resolution: {integrity: sha512-gJCJOTsrnImqZHo2jRHWlOORfowhlJ5Mp8gYe97AY9EmqJEblEZlwSiXerfWkqBNBs7/xQpORFtyFkVYQrYfSA==}
+  /@pakk/core@0.3.2:
+    resolution: {integrity: sha512-7zUvty77LMLm3DMsWszwD835UrtFFDjjNeMQWu/u8n41ZyrUkPPNQvDbmvtX1jpfTL//TCzFW8LolpsWPl03yA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
-      '@types/node': 20.4.0
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
+      '@types/node': 20.4.1
       globby: 13.2.2
       prettier: 3.0.0
       rollup: 3.26.2
-      ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       typescript: 5.1.6
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -2850,7 +2847,7 @@ packages:
   /@rushstack/eslint-patch@1.3.2:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
 
-  /@rushstack/node-core-library@3.59.5(@types/node@20.4.0):
+  /@rushstack/node-core-library@3.59.5(@types/node@20.4.1):
     resolution: {integrity: sha512-1IpV7LufrI1EoVO8hYsb3t6L8L+yp40Sa0OaOV2CIu1zx4e6ZeVNaVIEXFgMXBKdGXkAh21MnCaIzlDNpG6ZQw==}
     peerDependencies:
       '@types/node': '*'
@@ -2858,7 +2855,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -2949,7 +2946,7 @@ packages:
       sirv: 2.0.3
       svelte: 4.0.5
       undici: 5.22.1
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2964,7 +2961,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.0.5)(vite@4.4.2)
       debug: 4.3.4
       svelte: 4.0.5
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2982,7 +2979,7 @@ packages:
       magic-string: 0.30.1
       svelte: 4.0.5
       svelte-hmr: 0.15.2(svelte@4.0.5)
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
       vitefu: 0.2.4(vite@4.4.2)
     transitivePeerDependencies:
       - supports-color
@@ -3036,7 +3033,7 @@ packages:
   /@types/concat-stream@2.0.0:
     resolution: {integrity: sha512-t3YCerNM7NTVjLuICZo5gYAXYoDvpuuTceCcFQWcDQz26kxUR5uIWolxbIR5jRNIXpMqhOpW/b8imCR1LEmuJw==}
     dependencies:
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
 
   /@types/cookie@0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
@@ -3109,8 +3106,8 @@ packages:
   /@types/node@18.16.19:
     resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
 
-  /@types/node@20.4.0:
-    resolution: {integrity: sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==}
+  /@types/node@20.4.1:
+    resolution: {integrity: sha512-JIzsAvJeA/5iY6Y/OxZbv1lUcc8dNSE77lb2gnBH+/PJ3lFR1Ccvgwl5JWnHAkNHcRsT0TbpVOsiMKZ1F/yyJg==}
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -3703,43 +3700,43 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /autotool-plugin-default@0.2.0:
-    resolution: {integrity: sha512-8UGI1s8WwtX1ajU3XKWdcDMTnuUwAis6asElhD85YfsEhO7csglJ5ZtYaenJZhErzZGS4mzU19naMHgdjg8mig==}
+  /autotool-plugin-default@0.2.2:
+    resolution: {integrity: sha512-bWflsWgSqQJyRt5SN+F1GI8kyKvYXc4CKIGuHC9i/s9Ni0aEBAItE9G5itnfJ9DG1uf+T1pnjsr7OHTL96wirA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
-      autotool-plugin: 0.2.0
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
+      autotool-plugin: 0.2.2
       minimatch: 9.0.3
       semver: 7.5.4
     dev: true
 
-  /autotool-plugin@0.2.0:
-    resolution: {integrity: sha512-X1YdpSsNxOS5gQ5wFR+99a4bPyAhadh/EPt5DvN1RksTJefTS2D4m9MYclUpQmUuGGVhWFh2fN5jz0yYXU5YlQ==}
+  /autotool-plugin@0.2.2:
+    resolution: {integrity: sha512-gH14MMMmBaFS/FR6BdO/8b5YC/8TiO6LRu0J1p/AI1j3XuwW6rp56nqMkL4cxQHWKvRDLSAXKxX9IZ7hy/zakg==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/match': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/match': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
 
-  /autotool@0.2.0:
-    resolution: {integrity: sha512-eXnuI2AZ6IU9igh7MhraGTKcXmwmjuLWzzJL5q6qMaMXBQHj7SZ5B4FKHAglKEwFPdsI9kEKEEkhmz3MQAMmmw==}
+  /autotool@0.2.2:
+    resolution: {integrity: sha512-oDq8HOtMe/ASGn15Er5xaAhdykDOfuepFjYRx6GPDNTL4cCTuBzKk+TgUTOQdtOCfnDycDM97yqceXTHqlMNXg==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@alexaegis/cli-tools': 0.4.2
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/logging': 0.4.2
-      '@alexaegis/match': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
-      autotool-plugin: 0.2.0
-      autotool-plugin-default: 0.2.0
+      '@alexaegis/cli-tools': 0.4.4
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/logging': 0.4.4
+      '@alexaegis/match': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
+      autotool-plugin: 0.2.2
+      autotool-plugin-default: 0.2.2
       globby: 13.2.2
       microdiff: 1.3.2
     dev: true
@@ -3858,7 +3855,7 @@ packages:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.2
-      glob: 10.3.1
+      glob: 10.3.2
       lru-cache: 7.18.3
       minipass: 5.0.0
       minipass-collect: 1.0.2
@@ -4393,7 +4390,7 @@ packages:
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  /cosmiconfig-typescript-loader@4.3.0(@types/node@20.4.0)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.1.6):
+  /cosmiconfig-typescript-loader@4.3.0(@types/node@20.4.1)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.1.6):
     resolution: {integrity: sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -4402,9 +4399,9 @@ packages:
       ts-node: '>=10'
       typescript: '>=3'
     dependencies:
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       cosmiconfig: 8.2.0
-      ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       typescript: 5.1.6
 
   /cosmiconfig@7.1.0:
@@ -5623,16 +5620,16 @@ packages:
     dependencies:
       is-glob: 4.0.3
 
-  /glob@10.3.1:
-    resolution: {integrity: sha512-9BKYcEeIs7QwlCYs+Y3GBvqAMISufUS0i2ELd11zpZjxI5V9iyRj0HgzB5/cLf2NY4vcYBTYzJ7GIui7j/4DOw==}
+  /glob@10.3.2:
+    resolution: {integrity: sha512-vsuLzB3c/uyDLLEdBZtT8vGnN0z57rwOxHV2oYZib/7HWmBspUaja/McYIobBjC4qaUTuNpUyFO2IdqM4DZIJA==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.2.1
       minimatch: 9.0.3
-      minipass: 6.0.2
-      path-scurry: 1.10.0
+      minipass: 7.0.1
+      path-scurry: 1.10.1
 
   /glob@7.1.6:
     resolution: {integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==}
@@ -7265,8 +7262,8 @@ packages:
     resolution: {integrity: sha512-3FnjYuehv9k6ovOEbyOswadCDPX1piCfhV8ncmYtHOjuPwylVWsghTLo7rabjC3Rx5xD4HDx8Wm1xnMF7S5qFQ==}
     engines: {node: '>=8'}
 
-  /minipass@6.0.2:
-    resolution: {integrity: sha512-MzWSV5nYVT7mVyWCwn2o7JH13w2TBRmmSqSRCKzTw+lmft9X4z+3wjvs06Tzijo5z4W/kahUCDpRXTF+ZrmF/w==}
+  /minipass@7.0.1:
+    resolution: {integrity: sha512-NQ8MCKimInjVlaIqx51RKJJB7mINVkLTJbsZKmto4UAAOC/CWXES8PGaOgoBZyqoUsUA/U3DToGK7GJkkHbjJw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
   /minizlib@2.1.2:
@@ -7852,12 +7849,12 @@ packages:
   /path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
-  /path-scurry@1.10.0:
-    resolution: {integrity: sha512-tZFEaRQbMLjwrsmidsGJ6wDMv0iazJWk6SfIKnY4Xru8auXgmJkOBa5DUbYFcFD2Rzk2+KDlIiF0GVXNCbgC7g==}
+  /path-scurry@1.10.1:
+    resolution: {integrity: sha512-MkhCqzzBEpPvxxQ71Md0b1Kk51W01lrYvlMzSUaIzNsODdd7mqhiimSZlr+VegAz5Z6Vzt9Xg2ttE//XBhH3EQ==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       lru-cache: 10.0.0
-      minipass: 6.0.2
+      minipass: 7.0.1
 
   /path-type@3.0.0:
     resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==}
@@ -7970,7 +7967,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.25
-      ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       yaml: 1.10.2
 
   /postcss-load-config@4.0.1(postcss@8.4.25)(ts-node@10.9.1):
@@ -7987,7 +7984,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.25
-      ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       yaml: 2.3.1
 
   /postcss-media-query-parser@0.2.3:
@@ -8273,7 +8270,7 @@ packages:
     resolution: {integrity: sha512-AEtWXYfopBj2z5N5PbkAOeNHRPUg5q+Nen7QLxV8M2zJq1ym6/lCz3fYNTCXe19puu2d06jfHhrP7v/S2PtMMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      glob: 10.3.1
+      glob: 10.3.2
       json-parse-even-better-errors: 3.0.0
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
@@ -9255,7 +9252,7 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      glob: 10.3.1
+      glob: 10.3.2
 
   /rollup@3.26.2:
     resolution: {integrity: sha512-6umBIGVz93er97pMgQO08LuH3m6PUb3jlDUUGFsNJB6VgTCUaDFpupf5JfU30529m/UKOgmiX+uY6Sx8cOYpLA==}
@@ -10207,7 +10204,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.4.0)(typescript@5.1.6):
+  /ts-node@10.9.1(@types/node@20.4.1)(typescript@5.1.6):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -10226,7 +10223,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -10725,7 +10722,7 @@ packages:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  /vite-node@0.33.0(@types/node@20.4.0):
+  /vite-node@0.33.0(@types/node@20.4.1):
     resolution: {integrity: sha512-19FpHYbwWWxDr73ruNahC+vtEdza52kA90Qb3La98yZ0xULqV8A5JLNPUff0f5zID4984tW7l3DH2przTJUZSw==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -10735,7 +10732,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10746,15 +10743,15 @@ packages:
       - supports-color
       - terser
 
-  /vite-plugin-dts@3.1.1(@types/node@20.4.0)(typescript@5.1.6):
+  /vite-plugin-dts@3.1.1(@types/node@20.4.1)(typescript@5.1.6):
     resolution: {integrity: sha512-OgCa6Mch3D1RyGbx3baHx9n6IVzfizDIo2J5EnC96SHyirPwD9CdVAH6yit4/5exoIhc2x7Zdi0Gw7tPewycfA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@microsoft/api-extractor': 7.36.1(@types/node@20.4.0)
+      '@microsoft/api-extractor': 7.36.1(@types/node@20.4.1)
       '@rollup/pluginutils': 5.0.2(rollup@3.26.2)
-      '@rushstack/node-core-library': 3.59.5(@types/node@20.4.0)
+      '@rushstack/node-core-library': 3.59.5(@types/node@20.4.1)
       '@vue/language-core': 1.8.4(typescript@5.1.6)
       debug: 4.3.4
       kolorist: 1.8.0
@@ -10762,7 +10759,7 @@ packages:
       vue-tsc: 1.8.4(typescript@5.1.6)
     optionalDependencies:
       rollup: 3.26.2
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10775,21 +10772,21 @@ packages:
     dev: false
     optional: true
 
-  /vite-plugin-pakk@0.3.1:
-    resolution: {integrity: sha512-sxjdxKrJh/KFP8RcPZqss1cozIsGc6uhvmBrxlMNOvwA6LtsmaDcqHCTpFzLYwOO2KNzEwTB1TeqEZ+kXabDDQ==}
+  /vite-plugin-pakk@0.3.2:
+    resolution: {integrity: sha512-bzQSy78Bx0rfG309AEMad0b4Ezf43vtmOc1xy7n4ofkJdn5dXFYqPEKqD0CRJKFYbBUYTP0zSzEFgBm+cX4IYA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     requiresBuild: true
     dependencies:
-      '@alexaegis/common': 0.4.2
-      '@alexaegis/fs': 0.4.2
-      '@alexaegis/workspace-tools': 0.4.2
-      '@pakk/core': 0.3.1
-      '@types/node': 20.4.0
+      '@alexaegis/common': 0.4.4
+      '@alexaegis/fs': 0.4.4
+      '@alexaegis/workspace-tools': 0.4.4
+      '@pakk/core': 0.3.2
+      '@types/node': 20.4.1
       prettier: 3.0.0
-      ts-node: 10.9.1(@types/node@20.4.0)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
       typescript: 5.1.6
-      vite: 4.4.2(@types/node@20.4.0)
-      vite-plugin-dts: 3.1.1(@types/node@20.4.0)(typescript@5.1.6)
+      vite: 4.4.2(@types/node@20.4.1)
+      vite-plugin-dts: 3.1.1(@types/node@20.4.1)(typescript@5.1.6)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -10803,7 +10800,7 @@ packages:
     dev: false
     optional: true
 
-  /vite@4.4.2(@types/node@20.4.0):
+  /vite@4.4.2(@types/node@20.4.1):
     resolution: {integrity: sha512-zUcsJN+UvdSyHhYa277UHhiJ3iq4hUBwHavOpsNUGsTgjBeoBlK8eDt+iT09pBq0h9/knhG/SPrZiM7cGmg7NA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -10831,7 +10828,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       esbuild: 0.18.11
       postcss: 8.4.25
       rollup: 3.26.2
@@ -10846,7 +10843,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.2(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
 
   /vitest@0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0):
     resolution: {integrity: sha512-1CxaugJ50xskkQ0e969R/hW47za4YXDUfWJDxip1hwbnhUjYolpfUn2AMOulqG/Dtd9WYAtkHmM/m3yKVrEejQ==}
@@ -10881,7 +10878,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       '@vitest/expect': 0.33.0
       '@vitest/runner': 0.33.0
       '@vitest/snapshot': 0.33.0
@@ -10902,8 +10899,8 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.6.0
-      vite: 4.4.2(@types/node@20.4.0)
-      vite-node: 0.33.0(@types/node@20.4.0)
+      vite: 4.4.2(@types/node@20.4.1)
+      vite-node: 0.33.0(@types/node@20.4.1)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

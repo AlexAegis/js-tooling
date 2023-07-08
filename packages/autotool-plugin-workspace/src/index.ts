@@ -16,6 +16,14 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: 'pnpm-workspace.yaml',
 			},
 			{
+				description: 'package.json sort preferences',
+				executor: 'fileCopy',
+				packageKind: 'root',
+				sourcePluginPackageName: packageJson.name,
+				sourceFile: join('static', 'package.sort.json'),
+				targetFile: join('.config', 'package.sort.json'),
+			},
+			{
 				description: 'workspace engine preferences for node',
 				executor: 'packageJson',
 				packageKind: 'root',

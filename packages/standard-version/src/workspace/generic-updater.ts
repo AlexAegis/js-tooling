@@ -1,4 +1,3 @@
-import { isNotNullish } from '@alexaegis/common';
 import type { WorkspacePackage } from '@alexaegis/workspace-tools';
 
 /**
@@ -18,7 +17,7 @@ export const createGenericUpdater = (packages: WorkspacePackage[]) => {
 		writeVersion: (contents: string, version: string): string => {
 			return packages
 				.map((localPackage) => localPackage.packageJson.name)
-				.filter(isNotNullish)
+				.filter((name): name is string => !!name)
 				.reduce(
 					(r, localPackageName) =>
 						r

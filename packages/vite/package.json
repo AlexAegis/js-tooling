@@ -70,8 +70,8 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.2",
-		"@alexaegis/workspace-tools": "^0.4.2",
+		"@alexaegis/logging": "^0.4.4",
+		"@alexaegis/workspace-tools": "^0.4.4",
 		"@sveltejs/vite-plugin-svelte": "^2.4.2",
 		"concurrently": "^8.2.0",
 		"nodemon": "^2.0.22",
@@ -80,10 +80,10 @@
 	},
 	"optionalDependencies": {
 		"prettier": "^3.0.0",
-		"vite-plugin-pakk": "^0.3.1"
+		"vite-plugin-pakk": "^0.3.2"
 	},
 	"devDependencies": {
-		"@types/node": "^20.4.0",
+		"@types/node": "^20.4.1",
 		"publint": "^0.1.16",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.1.6",

@@ -29,7 +29,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        lint-kind: [tsc, es, md, style, svelte, depcheck]
+        lint-kind: [tsc, es, md, format, style, svelte, depcheck]
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -348,4 +348,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pnpm publish --no-git-checks --access public --provenance ${{ matrix.package.package_path_from_root_package }}/dist/
+          pnpm publish --access public --provenance ${{ matrix.package.package_path_from_root_package }}/dist/

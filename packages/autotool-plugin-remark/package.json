@@ -59,16 +59,16 @@
 		}
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.2",
+		"@alexaegis/logging": "^0.4.4",
 		"@alexaegis/remark-preset": "^0.4.1",
-		"autotool-plugin": "^0.2.0"
+		"autotool-plugin": "^0.2.2"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.4.1",
 		"@alexaegis/ts": "^0.4.1",
 		"@alexaegis/vite": "^0.4.1",
 		"@alexaegis/vitest": "^0.4.1",
-		"@types/node": "^20.4.0",
+		"@types/node": "^20.4.1",
 		"publint": "^0.1.16",
 		"remark": "^14.0.3",
 		"remark-cli": "^11.0.0",
