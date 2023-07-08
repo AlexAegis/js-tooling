@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-ts",
 	"description": "TypeScript setup",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -65,10 +65,10 @@
 		"typescript": "^5.1.6"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.4.1",
-		"@alexaegis/ts": "^0.4.1",
-		"@alexaegis/vite": "^0.4.1",
-		"@alexaegis/vitest": "^0.4.1",
+		"@alexaegis/eslint-config-vitest": "^0.4.2",
+		"@alexaegis/ts": "^0.4.2",
+		"@alexaegis/vite": "^0.4.2",
+		"@alexaegis/vitest": "^0.4.2",
 		"@types/node": "^20.4.1",
 		"publint": "^0.1.16",
 		"ts-node": "^10.9.1",

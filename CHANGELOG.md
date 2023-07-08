@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.2](https://github.com/AlexAegis/js-tooling/compare/v0.4.1...v0.4.2) (2023-07-08)
+
+
+### Features
+
+* **autotool-plugin-workspace:** distribute sorting preference of package.json ([e7f6aee](https://github.com/AlexAegis/js-tooling/commit/e7f6aeee1a7773d72bb4edea7d1bd7be435ffaca))
+
 ## [0.4.1](https://github.com/AlexAegis/js-tooling/compare/v0.4.0...v0.4.1) (2023-07-06)
 
 
