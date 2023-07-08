@@ -18,7 +18,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"directories": {},
 	"scripts": {
 		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/nuke",
 		"build-lib_": "vite build",

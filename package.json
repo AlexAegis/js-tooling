@@ -67,7 +67,7 @@
 		"format_": "prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .",
 		"ncu": "ncu --configFilePath ./.config/ && pnpm up",
 		"nuke": "nuke",
-		"postinstall": "husky install && turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config* --filter @alexaegis/prettier-config* --filter @alexaegis/autotool-plugin-remark && autotool",
+		"postinstall": "husky install && turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config* --filter @alexaegis/prettier-config* --filter @alexaegis/autotool-plugin-* && autotool",
 		"release": "commit-and-tag-version --sign --commit-all",
 		"release:major": "commit-and-tag-version --sign --commit-all --release-as major",
 		"release:minor": "commit-and-tag-version --sign --commit-all --release-as minor",

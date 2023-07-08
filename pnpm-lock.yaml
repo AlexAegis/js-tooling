@@ -1552,10 +1552,6 @@ importers:
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
 
   packages/prettier-config:
-    dependencies:
-      prettier:
-        specifier: ^3.0.0
-        version: 3.0.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.4.2
@@ -1572,6 +1568,9 @@ importers:
       '@types/node':
         specifier: ^20.4.1
         version: 20.4.1
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.0
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1881,8 +1880,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       vite-plugin-pakk:
-        specifier: ^0.3.2
-        version: 0.3.2
+        specifier: ^0.3.3
+        version: 0.3.3
     devDependencies:
       '@types/node':
         specifier: ^20.4.1
@@ -2763,8 +2762,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@pakk/core@0.3.2:
-    resolution: {integrity: sha512-7zUvty77LMLm3DMsWszwD835UrtFFDjjNeMQWu/u8n41ZyrUkPPNQvDbmvtX1jpfTL//TCzFW8LolpsWPl03yA==}
+  /@pakk/core@0.3.3:
+    resolution: {integrity: sha512-mAF8fualtpZjbDhcf4RnTH/ozuNSaifm6o0HyNktH/5bxbAtd7oqT2Ue+F0pM9xg0ahQFeyusiRRnyUcOy1IoQ==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
       '@alexaegis/common': 0.4.4
@@ -5123,7 +5122,7 @@ packages:
       postcss-selector-parser: 6.0.13
       semver: 7.5.4
       svelte: 4.0.5
-      svelte-eslint-parser: 0.32.0(svelte@4.0.5)
+      svelte-eslint-parser: 0.32.1(svelte@4.0.5)
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -9921,8 +9920,8 @@ packages:
       - stylus
       - sugarss
 
-  /svelte-eslint-parser@0.32.0(svelte@4.0.5):
-    resolution: {integrity: sha512-Q8Nh3GHHoWZMv3Ej4zw+3+gyWPR8I5pPTJXEOvW+JOgwhGXqGKh7mOKNlVcEPtk+PCGiK9TPaRtvRkKoJR327A==}
+  /svelte-eslint-parser@0.32.1(svelte@4.0.5):
+    resolution: {integrity: sha512-GCSfeIzdgk53CaOzK+s/+l2igfTno3mWGkwoDYAwPes/rD9Al2fc7ksfopjx5UL87S7dw1eL73F6wNYiiuhzIA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       svelte: ^3.37.0 || ^4.0.0
@@ -10772,15 +10771,15 @@ packages:
     dev: false
     optional: true
 
-  /vite-plugin-pakk@0.3.2:
-    resolution: {integrity: sha512-bzQSy78Bx0rfG309AEMad0b4Ezf43vtmOc1xy7n4ofkJdn5dXFYqPEKqD0CRJKFYbBUYTP0zSzEFgBm+cX4IYA==}
+  /vite-plugin-pakk@0.3.3:
+    resolution: {integrity: sha512-J5njTyQlfZK/6nFTZn64Kt/8z0vdorN0DRqjF9COS2JOSTiDE5hI2pXau8etvqOrzhfqbdgGh0Ycv01/prz9aw==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     requiresBuild: true
     dependencies:
       '@alexaegis/common': 0.4.4
       '@alexaegis/fs': 0.4.4
       '@alexaegis/workspace-tools': 0.4.4
-      '@pakk/core': 0.3.2
+      '@pakk/core': 0.3.3
       '@types/node': 20.4.1
       prettier: 3.0.0
       ts-node: 10.9.1(@types/node@20.4.1)(typescript@5.1.6)
