@@ -90,6 +90,14 @@
 		"**/.turbo/**": true,
 		"**/.svelte-kit/**": true
 	},
+	"files.readonlyExclude": {
+		// I should still be able to delete the folders themselves
+		"**/node_modules": true,
+		"**/coverage": true,
+		"**/.cache": true,
+		"**/.turbo": true,
+		"**/.svelte-kit": true
+	},
 	"json.schemas": [
 		{
 			"fileMatch": ["typedoc.json"],
