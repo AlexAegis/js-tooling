@@ -47,6 +47,7 @@ export default {
 	rules: {
 		'no-unused-vars': 'off', // Letting @typescript-eslint/no-unused-vars take helm
 		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
+		'unicorn/no-empty-file': 'off', // TODO: Reenable when this is fixed https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2175
 		'unicorn/no-array-reduce': 'off',
 		'unicorn/no-array-callback-reference': 'off', // needed for easy nullish checks
 		'unicorn/prevent-abbreviations': 'off', // no thanks

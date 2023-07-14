@@ -24,6 +24,7 @@ export const DEFAULT_NUKE_LIST: string[] = [
 	'package-lock.json',
 	'pnpm-lock.yaml',
 	'typedoc',
+	'.svelte-kit',
 ];
 
 export const DEFAULT_NUKE_GLOBS: string[] = [

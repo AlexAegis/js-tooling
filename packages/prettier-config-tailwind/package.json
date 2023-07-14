@@ -53,7 +53,7 @@
 	"dependencies": {
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^2.10.1",
-		"prettier-plugin-tailwindcss": "^0.3.0",
+		"prettier-plugin-tailwindcss": "^0.4.0",
 		"svelte": "^4.0.5"
 	},
 	"devDependencies": {
@@ -61,9 +61,9 @@
 		"@alexaegis/ts": "^0.4.2",
 		"@alexaegis/vite": "^0.4.2",
 		"@alexaegis/vitest": "^0.4.2",
-		"@types/node": "^20.4.1",
+		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
-		"vite": "^4.4.2",
+		"vite": "^4.4.3",
 		"vitest": "^0.33.0"
 	}
 }

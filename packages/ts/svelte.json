@@ -3,6 +3,6 @@
 	"extends": "./web.json",
 	"compilerOptions": {
 		"moduleResolution": "bundler",
-		"types": ["svelte", "vite/client", "node"]
+		"types": ["svelte", "node"]
 	}
 }

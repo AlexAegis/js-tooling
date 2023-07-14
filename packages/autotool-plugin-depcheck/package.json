@@ -61,11 +61,11 @@
 		"@alexaegis/ts": "^0.4.2",
 		"@alexaegis/vite": "^0.4.2",
 		"@alexaegis/vitest": "^0.4.2",
-		"@types/node": "^20.4.1",
+		"@types/node": "^20.4.2",
 		"depcheck": "^1.4.3",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.2",
+		"vite": "^4.4.3",
 		"vitest": "^0.33.0"
 	}
 }

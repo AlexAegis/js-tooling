@@ -54,10 +54,10 @@
 	"dependencies": {
 		"@alexaegis/coverage-tools": "^0.4.4",
 		"@alexaegis/logging": "^0.4.4",
-		"@sveltejs/kit": "^1.22.1",
+		"@sveltejs/kit": "^1.22.3",
 		"autotool-plugin": "^0.2.2",
 		"svelte": "^4.0.5",
-		"svelte-check": "^3.4.5",
+		"svelte-check": "^3.4.6",
 		"svelte-preprocess": "^5.0.4"
 	},
 	"devDependencies": {
@@ -65,10 +65,10 @@
 		"@alexaegis/ts": "^0.4.2",
 		"@alexaegis/vite": "^0.4.2",
 		"@alexaegis/vitest": "^0.4.2",
-		"@types/node": "^20.4.1",
+		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.2",
+		"vite": "^4.4.3",
 		"vitest": "^0.33.0"
 	}
 }

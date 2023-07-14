@@ -25,6 +25,13 @@
 		},
 		"lint:format_": {
 			"dependsOn": ["@alexaegis/autotool-plugin-prettier#build-lib_"]
+		},
+		"lint:es_": {
+			"dependsOn": [
+				"@alexaegis/eslint-config-core#build-lib_",
+				"@alexaegis/eslint-config-vitest#build-lib_",
+				"@alexaegis/eslint-config-svelte#build-lib_"
+			]
 		}
 	}
 }

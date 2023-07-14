@@ -80,6 +80,6 @@
 	"devDependencies": {
 		"@alexaegis/vite": "^0.4.2",
 		"publint": "^0.1.16",
-		"vite": "^4.4.2"
+		"vite": "^4.4.3"
 	}
 }
