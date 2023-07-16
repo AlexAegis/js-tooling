@@ -57,6 +57,7 @@
 		"@alexaegis/example-ts-lib": "^0.4.2"
 	},
 	"devDependencies": {
+		"@alexaegis/eslint-config-svelte": "^0.4.2",
 		"@alexaegis/eslint-config-vitest": "^0.4.2",
 		"@alexaegis/prettier-config": "^0.4.2",
 		"@alexaegis/prettier-config-svelte": "^0.4.2",

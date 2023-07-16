@@ -40,17 +40,41 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				sourceFile: join('static', 'eslintignore.txt'),
 			},
 			{
-				description: 'package eslint config (vitest)',
+				description: 'package eslint config (non svelte)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				formatWithPrettier: true,
 				targetFile: '.eslintrc.cjs',
 				packageJsonFilter: {
-					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))),
+					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Skip these libraries to avoid circular dependencies
+					archetype: {
+						framework: not(equal('svelte')),
+					},
 				},
 				sourcePluginPackageName: packageJson.name,
 				templateVariables: {
 					additionalExtends: joinAdditionalExtends('@alexaegis/eslint-config-vitest'),
+				},
+				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
+			},
+			{
+				description: 'package eslint config (svelte)',
+				executor: 'fileCopy',
+				packageKind: 'regular',
+				formatWithPrettier: true,
+				targetFile: '.eslintrc.cjs',
+				packageJsonFilter: {
+					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Skip these libraries to avoid circular dependencies
+					archetype: {
+						framework: 'svelte',
+					},
+				},
+				sourcePluginPackageName: packageJson.name,
+				templateVariables: {
+					additionalExtends: joinAdditionalExtends(
+						'@alexaegis/eslint-config-svelte',
+						'@alexaegis/eslint-config-vitest',
+					),
 				},
 				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
 			},
@@ -65,6 +89,21 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					devDependencies: {
 						'@alexaegis/eslint-config-vitest':
 							packageJson.devDependencies['@alexaegis/eslint-config-vitest'],
+					},
+				},
+			},
+			{
+				description: 'package eslint dependencies (svelte)',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					archetype: {
+						framework: 'svelte',
+					},
+				},
+				data: {
+					devDependencies: {
+						'@alexaegis/eslint-config-svelte': `^${packageJson.version}`, // Versioned together, it's fine
 					},
 				},
 			},

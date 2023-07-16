@@ -43,6 +43,7 @@
 		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
 	"devDependencies": {
+		"@alexaegis/eslint-config-svelte": "workspace:^",
 		"@alexaegis/eslint-config-vitest": "^0.4.2",
 		"@alexaegis/prettier-config": "^0.4.2",
 		"@alexaegis/prettier-config-svelte": "^0.4.2",
