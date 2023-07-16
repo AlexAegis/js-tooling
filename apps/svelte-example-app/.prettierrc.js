@@ -1,6 +1,10 @@
-// TODO: fix the generator
-/** @type {typeof import('@alexaegis/prettier-config')} */
+// managed-by-autotool
 import { mergeConfig, prettierConfig } from '@alexaegis/prettier-config';
+import alexaegisPrettierConfigSvelte from '@alexaegis/prettier-config-svelte';
+import alexaegisPrettierConfigTailwind from '@alexaegis/prettier-config-tailwind';
 
-/** @type {import('prettier').Config} */
-export default mergeConfig(prettierConfig);
+export default mergeConfig(
+	prettierConfig,
+	alexaegisPrettierConfigSvelte,
+	alexaegisPrettierConfigTailwind,
+);

@@ -1,8 +1,9 @@
 import type { Config } from 'prettier';
-import prettierPluginTailwindcss from 'prettier-plugin-tailwindcss';
+// ? Can't use the import until this is solved https://github.com/remcohaszing/unified-prettier/issues/1
+// import prettierPluginTailwindcss from 'prettier-plugin-tailwindcss';
 
 export const prettierConfigTailwind = {
-	plugins: [prettierPluginTailwindcss],
+	plugins: ['prettier-plugin-tailwindcss'],
 } as Config;
 
 export default prettierConfigTailwind;

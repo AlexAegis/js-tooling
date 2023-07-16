@@ -38,6 +38,7 @@ export default {
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2022,
+		extraFileExtensions: ['.json'],
 	},
 	env: {
 		browser: true,

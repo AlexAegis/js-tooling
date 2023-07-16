@@ -9,21 +9,16 @@ import remarkPresetLintConsistent from 'remark-preset-lint-consistent';
 import remarkPresetLintMarkdownStyleGuide from 'remark-preset-lint-markdown-style-guide';
 import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
 import remarkPresetPrettier from 'remark-preset-prettier';
-import remarkPrettier from 'remark-prettier';
 import remarkValidateLinks from 'remark-validate-links';
 import type { Preset } from 'unified';
-
-// TODO: remove, readd
-console.log(remarkPresetPrettier, remarkPrettier);
-
+import unifiedConsistency from 'unified-consistency';
+import unifiedPrettier from 'unified-prettier';
 export default {
 	settings: { bullet: '-', quote: "'", tightDefinitions: true },
 	plugins: [
 		remarkLint,
 		remarkGfm,
 		remarkValidateLinks,
-		// remarkPrettier,
-		// remarkPresetPrettier as Preset,
 		remarkPresetLintRecommended,
 		remarkPresetLintConsistent,
 		remarkPresetLintMarkdownStyleGuide,
@@ -32,5 +27,8 @@ export default {
 		[remarkLintListItemIndent, false], // Conflicts with prettier
 		[remarkLintOrderedListMarkerValue, true, 'ordered'],
 		remarkLintNoDuplicateHeadingsInSection,
+		remarkPresetPrettier,
+		unifiedPrettier,
+		unifiedConsistency,
 	],
 } as Preset;
