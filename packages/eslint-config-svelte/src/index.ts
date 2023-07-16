@@ -6,10 +6,16 @@ export default {
 		{
 			files: ['*.svelte'],
 			plugins: ['@typescript-eslint'],
+			parserOptions: {
+				project: true, // For @typescript-eslint
+			},
 			extends: [
-				'plugin:@typescript-eslint/recommended', // 'plugin:@typescript-eslint/all',
-				'plugin:@typescript-eslint/recommended-requiring-type-checking',
+				'plugin:@typescript-eslint/recommended',
+				'plugin:@typescript-eslint/recommended-type-checked',
 				'plugin:@typescript-eslint/strict',
+				'plugin:@typescript-eslint/strict-type-checked',
+				'plugin:@typescript-eslint/stylistic',
+				'plugin:@typescript-eslint/stylistic-type-checked',
 			],
 			rules: {
 				quotes: ['error', 'single', { avoidEscape: true }],
