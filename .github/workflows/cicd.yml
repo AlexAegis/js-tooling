@@ -239,6 +239,8 @@ jobs:
         env:
           BASE_HREF: '/${{ github.event.repository.name }}/'
         run: pnpm run build
+      - name: publint
+        run: pnpm run publint
       - name: prepare pages (use index.html as 404.html)
         if: |
           env.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'build' &&
