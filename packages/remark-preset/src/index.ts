@@ -13,6 +13,27 @@ import remarkValidateLinks from 'remark-validate-links';
 import type { Preset } from 'unified';
 import unifiedConsistency from 'unified-consistency';
 import unifiedPrettier from 'unified-prettier';
+
+/**
+ * Peek
+ *
+ * ```js
+ * remarkLint,
+ * remarkGfm,
+ * remarkValidateLinks,
+ * remarkPresetLintRecommended,
+ * remarkPresetLintConsistent,
+ * remarkPresetLintMarkdownStyleGuide,
+ * [remarkLintListItemSpacing, false, false],
+ * [remarkLintNoDuplicateHeadings, true],
+ * [remarkLintListItemIndent, false], // Conflicts with prettier
+ * [remarkLintOrderedListMarkerValue, true, 'ordered'],
+ * remarkLintNoDuplicateHeadingsInSection,
+ * remarkPresetPrettier,
+ * unifiedPrettier,
+ * unifiedConsistency,
+ * ```
+ */
 export default {
 	settings: { bullet: '-', quote: "'", tightDefinitions: true },
 	plugins: [
