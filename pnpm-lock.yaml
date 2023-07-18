@@ -1718,6 +1718,9 @@ importers:
       unified-consistency:
         specifier: ^1.0.1
         version: 1.0.1
+      unified-prettier:
+        specifier: ^1.0.1
+        version: 1.0.1(prettier@3.0.0)
     optionalDependencies:
       prettier:
         specifier: ^3.0.0
@@ -1744,9 +1747,6 @@ importers:
       unified:
         specifier: ^10.1.2
         version: 10.1.2
-      unified-prettier:
-        specifier: ^1.0.1
-        version: 1.0.1(prettier@3.0.0)
       vite:
         specifier: ^4.4.4
         version: 4.4.4(@types/node@20.4.2)
@@ -2875,7 +2875,7 @@ packages:
       prettier: ^3.0.0
     dependencies:
       prettier: 3.0.0
-    dev: true
+    dev: false
 
   /@rollup/pluginutils@5.0.2:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -10696,7 +10696,7 @@ packages:
       '@prettier/sync': 0.3.0(prettier@3.0.0)
       prettier: 3.0.0
       unified: 10.1.2
-    dev: true
+    dev: false
 
   /unified@10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
