@@ -72,7 +72,7 @@
 	},
 	"optionalDependencies": {
 		"prettier": "^3.0.0",
-		"vite-plugin-pakk": "^0.4.1"
+		"vite-plugin-pakk": "^0.4.2"
 	},
 	"devDependencies": {
 		"@types/node": "^20.4.2",

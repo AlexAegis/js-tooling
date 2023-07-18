@@ -1,4 +1,4 @@
-import { and, equal, not, or } from '@alexaegis/predicate';
+import { and, equal, not } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
@@ -37,13 +37,31 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 			},
 			{
-				description: 'package devDependencies',
+				description: 'package devDependencies for libraries',
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
 					name: not(equal('@alexaegis/vite')), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
 					archetype: {
-						kind: or(equal('app'), equal('lib')),
+						kind: equal('lib'),
+						framework: not(equal('svelte')), // svelte libraries don't use vite, they use svelte-package
+					},
+				},
+				data: {
+					devDependencies: {
+						['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
+						vite: packageJson.dependencies.vite,
+					},
+				},
+			},
+			{
+				description: 'package devDependencies for applications',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					name: not(equal('@alexaegis/vite')), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
+					archetype: {
+						kind: equal('app'),
 					},
 				},
 				data: {

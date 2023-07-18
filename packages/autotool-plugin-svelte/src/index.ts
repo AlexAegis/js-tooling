@@ -331,8 +331,16 @@ export const svelteLibarySetupPlugin: AutotoolPluginObject = {
 				devDependencies: {
 					'@pakk/cli': packageJson.devDependencies['@pakk/cli'],
 					'@sveltejs/package': packageJson.devDependencies['@sveltejs/package'],
+					['@alexaegis/vite']: undefined,
+					vite: undefined,
 				},
 			},
+		},
+		{
+			description: 'remove unnecessary vite config',
+			executor: 'fileRemove',
+			packageKind: 'regular',
+			targetFile: 'vite.config.ts',
 		},
 	],
 };
