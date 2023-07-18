@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.0](https://github.com/AlexAegis/js-tooling/compare/v0.4.2...v0.5.0) (2023-07-18)
+
+
+### Features
+
+* **autotool-plugin-depcheck:** add @pakk/cli to the ignore list ([0aaa4a4](https://github.com/AlexAegis/js-tooling/commit/0aaa4a4160e6df863db35dc5f520666f8ad46ffa))
+* **autotool-plugin-eslint:** add svelte support ([a6b9cc2](https://github.com/AlexAegis/js-tooling/commit/a6b9cc2834f244428190235b995a84b48300525c))
+* **autotool-plugin-svelte:** a more comprehensive svelte setup ([1e3b7cb](https://github.com/AlexAegis/js-tooling/commit/1e3b7cbb5af0a8056f4f8c056e48ccf612a7eccd))
+* **autotool-plugin-ts:** add "hidden" json files to include ([eb4a356](https://github.com/AlexAegis/js-tooling/commit/eb4a3567347ba54d84826c4387e571d859f11450))
+* **autotool-plugin-ts:** include more in the workspace root ([aefb22e](https://github.com/AlexAegis/js-tooling/commit/aefb22e2e5507256d09629decd3e4bb6b82746a2))
+* **autotool-plugin-vscode:** exclude the folders themselves from readonly ([7115fc8](https://github.com/AlexAegis/js-tooling/commit/7115fc849fa78afd8a2398dab19812967d45baf4))
+* **eslint-config-core:** use new ts project settings ([7d70733](https://github.com/AlexAegis/js-tooling/commit/7d707332da697d9491f022fe45389bf3a84d0897))
+* migrated to unified-prettier from remark-prettier ([c6decbb](https://github.com/AlexAegis/js-tooling/commit/c6decbbeb28436ef35bc456c8979e9472e1ed0c2))
+* **nuke:** nuke now also clears the .svelte-kit dir ([4b70511](https://github.com/AlexAegis/js-tooling/commit/4b70511129c0f524416bffea50b64b05feace495))
+
+
+### Bug Fixes
+
+* build autotool plugins before running autotool on workspace postinstall ([7d6c669](https://github.com/AlexAegis/js-tooling/commit/7d6c669ed68b261428e8b0b192fcaf0c8cc17e86))
+
 ## [0.4.2](https://github.com/AlexAegis/js-tooling/compare/v0.4.1...v0.4.2) (2023-07-08)
 
 
