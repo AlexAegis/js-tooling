@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-eslint",
 	"description": "Setup eslint",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -59,11 +59,11 @@
 		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-core": "^0.5.2",
-		"@alexaegis/eslint-config-vitest": "^0.5.2",
-		"@alexaegis/ts": "^0.5.2",
-		"@alexaegis/vite": "^0.5.2",
-		"@alexaegis/vitest": "^0.5.2",
+		"@alexaegis/eslint-config-core": "^0.5.3",
+		"@alexaegis/eslint-config-vitest": "^0.5.3",
+		"@alexaegis/ts": "^0.5.3",
+		"@alexaegis/vite": "^0.5.3",
+		"@alexaegis/vitest": "^0.5.3",
 		"@types/eslint": "^8.44.0",
 		"@types/node": "^20.4.2",
 		"eslint": "^8.45.0",

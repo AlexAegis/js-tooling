@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-svelte",
 	"description": "Setup svelte",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -64,10 +64,10 @@
 		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.2",
-		"@alexaegis/ts": "^0.5.2",
-		"@alexaegis/vite": "^0.5.2",
-		"@alexaegis/vitest": "^0.5.2",
+		"@alexaegis/eslint-config-vitest": "^0.5.3",
+		"@alexaegis/ts": "^0.5.3",
+		"@alexaegis/vite": "^0.5.3",
+		"@alexaegis/vitest": "^0.5.3",
 		"@pakk/cli": "^0.4.2",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.2",

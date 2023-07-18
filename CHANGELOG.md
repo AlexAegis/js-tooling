@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.3](https://github.com/AlexAegis/js-tooling/compare/v0.5.2...v0.5.3) (2023-07-18)
+
+
+### Features
+
+* **autotool-plugin-svelte:** moved svelte specific tsconfigs here ([d9a5d98](https://github.com/AlexAegis/js-tooling/commit/d9a5d989b5be274aa617cf6b51d54e65edc489b3))
+* **autotool-plugin-ts:** cache incremental tsc output with turbo ([d109913](https://github.com/AlexAegis/js-tooling/commit/d1099137e02eb274cd299926041bfba5cb109332))
+
 ## [0.5.2](https://github.com/AlexAegis/js-tooling/compare/v0.5.1...v0.5.2) (2023-07-18)
 
 
