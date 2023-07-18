@@ -5,6 +5,14 @@
 		"composite": true,
 		"types": ["node", "vitest/globals"]
 	},
-	"include": ["**/*"],
-	"exclude": ["node_modules", "dist", "coverage", "shims"]
+	"include": ["**/*.spec.ts"],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"coverage",
+		"typedoc",
+		".turbo",
+		".cache",
+		"vite*.config.ts.timestamp-*"
+	]
 }

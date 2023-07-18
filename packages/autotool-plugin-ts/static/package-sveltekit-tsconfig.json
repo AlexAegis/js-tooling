@@ -3,7 +3,7 @@
 	"extends": ["./.svelte-kit/tsconfig.json", "@alexaegis/ts/svelte"],
 	"compilerOptions": {
 		"rootDir": "${relativePathFromPackageToRoot}/",
-		"outDir": "./dist/out-tsc"
+		"outDir": ".cache/tsc"
 	},
 	"files": ["package.json", "${relativePathFromPackageToRoot}/package.json"],
 	"include": [
@@ -29,6 +29,8 @@
 		"dist",
 		"coverage",
 		"typedoc",
+		".turbo",
+		".cache",
 		"vite*.config.ts.timestamp-*"
 	]
 }

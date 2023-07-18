@@ -3866,7 +3866,6 @@ packages:
     resolution: {integrity: sha512-LBV6Jnwi7zWVJDyzcHrMVfDVZsOQxkGWnGSwhjm8SZT/96UN825JQ8yHLd0aFJfzH8yE/EX0If3xJJbRzZWmCA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     hasBin: true
-    requiresBuild: true
     dependencies:
       '@alexaegis/cli-tools': 0.4.5
       '@alexaegis/common': 0.4.5

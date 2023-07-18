@@ -3,7 +3,7 @@
 	"extends": "@alexaegis/ts/node",
 	"compilerOptions": {
 		"rootDir": "../../",
-		"outDir": "./dist/out-tsc"
+		"outDir": ".cache/tsc"
 	},
 	"files": ["package.json", "../../package.json"],
 	"include": [
@@ -16,5 +16,13 @@
 		".*.json",
 		"**/*.json"
 	],
-	"exclude": ["node_modules", "dist", "coverage", "typedoc", "vite*.config.ts.timestamp-*"]
+	"exclude": [
+		"node_modules",
+		"dist",
+		"coverage",
+		"typedoc",
+		".turbo",
+		".cache",
+		"vite*.config.ts.timestamp-*"
+	]
 }

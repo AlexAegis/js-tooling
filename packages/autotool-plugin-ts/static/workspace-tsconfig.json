@@ -3,13 +3,17 @@
 	"extends": "@alexaegis/ts/base",
 	"compilerOptions": {
 		"rootDir": ".",
-		"outDir": "dist/out-tsc"
+		"outDir": ".cache/tsc"
 	},
 	"include": ["*", ".*", "*.json", "**/*.json"],
 	"exclude": [
 		"node_modules",
 		"dist",
 		"coverage",
+		"typedoc",
+		".turbo",
+		".cache",
+		"vite*.config.ts.timestamp-*",
 		"packages",
 		"apps",
 		"libs",

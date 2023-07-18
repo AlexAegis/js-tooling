@@ -5,9 +5,17 @@
 	"compilerOptions": {
 		"composite": true,
 		"rootDir": "${relativePathFromPackageToRoot}/",
-		"outDir": "./dist/out-tsc"
+		"outDir": ".cache/tsc"
 	},
 	"files": [],
 	"include": [],
-	"exclude": ["node_modules", "dist", "coverage", "shims", "**/*.spec.ts"]
+	"exclude": [
+		"node_modules",
+		"dist",
+		"coverage",
+		"typedoc",
+		".turbo",
+		".cache",
+		"vite*.config.ts.timestamp-*"
+	]
 }

@@ -34,7 +34,8 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true,
-		"verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true,
+		"incremental": true
 	},
 	"include": [],
 	"exclude": ["node_modules", "tmp", "dist", "coverage"]
