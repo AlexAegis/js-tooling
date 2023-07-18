@@ -52,8 +52,8 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.4",
-		"autotool-plugin": "^0.2.2",
+		"@alexaegis/logging": "^0.4.5",
+		"autotool-plugin": "^0.2.3",
 		"npm-check-updates": "^16.10.16"
 	},
 	"devDependencies": {

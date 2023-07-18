@@ -51,8 +51,8 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/coverage-tools": "^0.4.4",
-		"@alexaegis/workspace-tools": "^0.4.4",
+		"@alexaegis/coverage-tools": "^0.4.5",
+		"@alexaegis/workspace-tools": "^0.4.5",
 		"glob": "^10.3.3",
 		"js-yaml": "^4.1.0"
 	},

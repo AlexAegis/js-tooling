@@ -56,17 +56,17 @@
 		"./vite-sveltekit-app.config": "./static/vite-sveltekit-app.config.ts"
 	},
 	"dependencies": {
-		"@alexaegis/coverage-tools": "^0.4.4",
-		"@alexaegis/logging": "^0.4.4",
-		"@alexaegis/predicate": "^0.4.4",
-		"autotool-plugin": "^0.2.2"
+		"@alexaegis/coverage-tools": "^0.4.5",
+		"@alexaegis/logging": "^0.4.5",
+		"@alexaegis/predicate": "^0.4.5",
+		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.5.1",
 		"@alexaegis/ts": "^0.5.1",
 		"@alexaegis/vite": "^0.5.1",
 		"@alexaegis/vitest": "^0.5.1",
-		"@pakk/cli": "^0.4.0",
+		"@pakk/cli": "^0.4.1",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.22.3",

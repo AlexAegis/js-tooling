@@ -70,7 +70,7 @@
 		"@alexaegis/ts": "^0.5.1",
 		"@alexaegis/vite": "^0.5.1",
 		"@alexaegis/vitest": "^0.5.1",
-		"@pakk/cli": "^0.4.0",
+		"@pakk/cli": "^0.4.1",
 		"@sveltejs/package": "^2.2.0",
 		"stylelint": "^15.10.1",
 		"svelte": "^4.0.5",

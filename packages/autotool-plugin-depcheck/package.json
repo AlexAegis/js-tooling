@@ -52,9 +52,9 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.4",
-		"@alexaegis/predicate": "^0.4.4",
-		"autotool-plugin": "^0.2.2"
+		"@alexaegis/logging": "^0.4.5",
+		"@alexaegis/predicate": "^0.4.5",
+		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.5.1",
