@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/stylelint-config",
 	"description": "My stylelint config",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -55,10 +55,10 @@
 		"stylelint-config-standard-scss": "^10.0.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.1",
-		"@alexaegis/ts": "^0.5.1",
-		"@alexaegis/vite": "^0.5.1",
-		"@alexaegis/vitest": "^0.5.1",
+		"@alexaegis/eslint-config-vitest": "^0.5.2",
+		"@alexaegis/ts": "^0.5.2",
+		"@alexaegis/vite": "^0.5.2",
+		"@alexaegis/vitest": "^0.5.2",
 		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
 		"stylelint": "^15.10.1",

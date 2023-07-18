@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.2](https://github.com/AlexAegis/js-tooling/compare/v0.5.1...v0.5.2) (2023-07-18)
+
+
+### Features
+
+* **autotool-plugin-vite:** do not install vite for svelte libraries ([96a204a](https://github.com/AlexAegis/js-tooling/commit/96a204a2712b9d491a5e3f14a4786ff724b1832a))
+
 ## [0.5.1](https://github.com/AlexAegis/js-tooling/compare/v0.5.0...v0.5.1) (2023-07-18)
 
 
