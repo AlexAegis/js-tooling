@@ -48,12 +48,6 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
-		"./app-svelte-vite.config": {
-			"types": "./src/app-svelte-vite.config.ts",
-			"import": "./dist/app-svelte-vite.config.js",
-			"require": "./dist/app-svelte-vite.config.cjs",
-			"default": "./dist/app-svelte-vite.config.js"
-		},
 		"./base-vite.config": {
 			"types": "./src/base-vite.config.ts",
 			"import": "./dist/base-vite.config.js",
@@ -72,10 +66,8 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.4.4",
 		"@alexaegis/workspace-tools": "^0.4.4",
-		"@sveltejs/vite-plugin-svelte": "^2.4.2",
 		"concurrently": "^8.2.0",
 		"nodemon": "^3.0.1",
-		"svelte": "^4.0.5",
 		"vite": "^4.4.4"
 	},
 	"optionalDependencies": {

@@ -54,7 +54,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.4.4",
 		"autotool-plugin": "^0.2.2",
-		"turbo": "^1.10.7"
+		"turbo": "^1.10.8"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.4.2",

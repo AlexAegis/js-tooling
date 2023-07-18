@@ -3,6 +3,6 @@
 	"extends": "./base.json",
 	"compilerOptions": {
 		"moduleResolution": "nodenext",
-		"lib": ["es2022", "dom"]
+		"lib": ["es2022", "esnext", "DOM", "DOM.Iterable"]
 	}
 }

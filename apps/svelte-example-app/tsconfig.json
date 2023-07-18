@@ -5,7 +5,9 @@
 	"compilerOptions": {
 		"rootDir": "../../",
 		"moduleResolution": "bundler",
-		"outDir": "./dist/out-tsc"
+		"outDir": "./dist/out-tsc",
+		"allowArbitraryExtensions": true,
+		"types": ["svelte"]
 	},
 	"files": [
 		// extends doesn't combine fields, so this has been copied from .svelte-kit

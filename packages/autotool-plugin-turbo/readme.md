@@ -16,7 +16,7 @@ To achieve this while not modifying the root `turbo.json` config, your only
 option is (unless inverse dependencies become possible) placing an override
 `turbo.json` file into every single package.
 
-### Task postfixes
+## Task postfixes
 
 Tasks are postfixed with an `_` so npm scripts that call `turbo` are clearly
 separated from the ones that contain the actual implementation of that script.
@@ -24,3 +24,15 @@ This allows defining tasks inside the individial packages that call `turbo`
 filtering to that package only. You shouldn't use the internal task
 implementation of a package because that doesn't ensure that dependencies are
 met.
+
+## Notes
+
+### Why does lint:svelte depend on ^build?
+
+svelte-check fails if types can't be resolved for an import, and local library
+export types are only available if the library is packaged. `svelte-package`
+generates the `.svelte.d.ts` files.
+
+It is advised to only export ts files, and not svelte files becuase of this type
+related limitation, but this task dependency is there nontheless to avoid any
+possible weird errors during lint:svelte.

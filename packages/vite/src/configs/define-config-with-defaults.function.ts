@@ -3,7 +3,9 @@ import { mergeConfig } from 'vite';
 import { DEFAULT_VITE_CONFIG, DEFAULT_VITE_LIB_CONFIG } from './base-vite.config.js';
 
 /**
- * Adds defaults from DEFAULT_VITE_CONFIG
+ * Merges with DEFAULT_VITE_CONFIG
+ *
+ *
  */
 export const defineAppConfig = (config: UserConfig) => mergeConfig(DEFAULT_VITE_CONFIG, config);
 

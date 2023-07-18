@@ -13,7 +13,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageJsonFilter: {
 					archetype: {
 						kind: 'lib',
-						framework: not(equal('svelte')), // Svelte has its own special vite config
+						framework: not(equal('svelte')), // Svelte libraries are not built by vite but svelte-package
 					},
 				},
 				packageKind: 'regular',
@@ -22,37 +22,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: 'vite.config.ts',
 				sourcePluginPackageName: packageJson.name,
 			},
-			{
-				description: 'package vite config file for svelte libraries',
-				executor: 'fileCopy',
-				packageJsonFilter: {
-					archetype: {
-						kind: 'lib',
-						framework: 'svelte',
-					},
-				},
-				packageKind: 'regular',
-				formatWithPrettier: true,
-				sourceFile: join('static', 'vite-svelte-lib.config.ts'),
-				targetFile: 'vite.config.ts',
-				sourcePluginPackageName: packageJson.name,
-			},
-			{
-				description: 'package vite config file for svelte applications',
-				executor: 'fileCopy',
-				packageJsonFilter: {
-					archetype: {
-						kind: 'app',
-						framework: 'svelte',
-					},
-				},
-				packageKind: 'regular',
-				formatWithPrettier: true,
-				sourceFile: join('static', 'vite-svelte-app.config.ts'),
-				targetFile: 'vite.config.ts',
-				sourcePluginPackageName: packageJson.name,
-			},
-
 			{
 				description: 'workspace build scripts',
 				executor: 'packageJson',

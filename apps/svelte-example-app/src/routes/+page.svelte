@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { Hello } from '@alexaegis/example-svelte-lib';
+	// import Direct from '@alexaegis/example-svelte-lib/direct'; // TODO: since the typedefs are only available for svelte libs after packaging, make build a dependency of lint:svelte
+</script>
 <div class="card m-12">
 	<header class="card-header">
 		<h1 class="h1">
@@ -14,5 +18,9 @@
 			ipsa qui maiores quam officia omnis dolore officiis! Aspernatur qui ipsam incidunt quod
 			cupiditate reiciendis dolorem ab.
 		</p>
+	</section>
+	<section class="p-4">
+		<Hello name='example app'></Hello>
+		<!-- <Direct ></Direct> -->
 	</section>
 </div>

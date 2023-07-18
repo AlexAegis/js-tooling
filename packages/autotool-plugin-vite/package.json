@@ -50,9 +50,7 @@
 		},
 		"./nodemon": "./static/nodemon.json",
 		"./readme": "./readme.md",
-		"./vite-lib.config": "./static/vite-lib.config.ts",
-		"./vite-svelte-app.config": "./static/vite-svelte-app.config.ts",
-		"./vite-svelte-lib.config": "./static/vite-svelte-lib.config.ts"
+		"./vite-lib.config": "./static/vite-lib.config.ts"
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.4.4",

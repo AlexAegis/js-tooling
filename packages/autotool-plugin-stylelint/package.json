@@ -49,7 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./readme": "./readme.md",
-		"./stylelint.config": "./static/stylelint.config.cjs",
+		"./stylelint.config": "./static/stylelint.config.js",
 		"./stylelintignore": "./static/stylelintignore"
 	},
 	"dependencies": {

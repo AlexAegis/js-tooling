@@ -54,7 +54,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.4.4",
 		"autotool-plugin": "^0.2.2",
-		"npm-check-updates": "^16.10.15"
+		"npm-check-updates": "^16.10.16"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.4.2",

@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json.schemastore.org/typings?mark=managed-by-autotool",
+	"ignores": [
+		"@sveltejs/*",
+		"@alexaegis/ts",
+		"@pakk/cli",
+		"publint",
+		"svelte-check",
+		"svelte-preprocess",
+		"@alexaegis/coverage-tools"
+	],
+	"skip-missing": true
+}

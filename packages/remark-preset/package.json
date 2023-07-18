@@ -75,7 +75,7 @@
 		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
 		"unified": "^10.1.2",
-		"unified-prettier": "^1.0.0",
+		"unified-prettier": "^1.0.1",
 		"vite": "^4.4.4",
 		"vitest": "^0.33.0"
 	}

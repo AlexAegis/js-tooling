@@ -104,7 +104,7 @@
 		},
 		"lint:svelte_": {
 			"outputs": [],
-			"dependsOn": [],
+			"dependsOn": ["^build-lib_"],
 			"outputMode": "new-only"
 		},
 		"//#lint:svelte_": {

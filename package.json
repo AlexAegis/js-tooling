@@ -36,7 +36,7 @@
 		"node": ">=18.10.0",
 		"pnpm": ">=8.0.0"
 	},
-	"packageManager": "pnpm@8.6.7",
+	"packageManager": "pnpm@8.6.8",
 	"workspaces": [
 		"apps/*",
 		"fixtures/*",
@@ -67,7 +67,7 @@
 		"format_": "prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .",
 		"ncu": "ncu --configFilePath ./.config/ && pnpm up",
 		"nuke": "nuke",
-		"postinstall": "husky install && turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config* --filter @alexaegis/prettier-config* --filter @alexaegis/autotool-plugin-* && autotool",
+		"postinstasll": "husky install && turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/eslint-config* --filter @alexaegis/prettier-config* --filter @alexaegis/autotool-plugin-* && autotool",
 		"release": "commit-and-tag-version --sign --commit-all",
 		"release:major": "commit-and-tag-version --sign --commit-all --release-as major",
 		"release:minor": "commit-and-tag-version --sign --commit-all --release-as minor",
@@ -116,7 +116,7 @@
 		"eslint": "^8.45.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3",
-		"npm-check-updates": "^16.10.15",
+		"npm-check-updates": "^16.10.16",
 		"prettier": "^3.0.0",
 		"publint": "^0.1.16",
 		"remark": "^14.0.3",
@@ -124,7 +124,7 @@
 		"stylelint": "^15.10.1",
 		"svelte-check": "^3.4.6",
 		"ts-node": "^10.9.1",
-		"turbo": "^1.10.7",
+		"turbo": "^1.10.8",
 		"typedoc": "^0.24.8",
 		"typescript": "^5.1.6",
 		"vitest": "^0.33.0"

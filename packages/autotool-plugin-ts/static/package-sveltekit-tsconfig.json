@@ -1,25 +1,23 @@
-// TODO: let it be managed by autotool
 {
-	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": ["@alexaegis/ts/svelte"],
+	"$schema": "https://json.schemastore.org/tsconfig?mark=managed-by-autotool",
+	"extends": ["./.svelte-kit/tsconfig.json", "@alexaegis/ts/svelte"],
 	"compilerOptions": {
-		"rootDir": "../../",
+		"rootDir": "${relativePathFromPackageToRoot}/",
 		"outDir": "./dist/out-tsc"
 	},
-	"files": ["package.json", "../../package.json"],
+	"files": ["package.json", "${relativePathFromPackageToRoot}/package.json"],
 	"include": [
-		// extends doesn't combine fields, so this has been copied from .svelte-kit
 		".svelte-kit/ambient.d.ts",
 		".svelte-kit/types/**/$types.d.ts",
-		"src/**/*.svelte",
 		"src/**/*",
+		"src/**/*.svelte",
 		"static/**/*",
 		"__mocks__/**/*",
-		".*",
 		"*",
+		".*",
 		"*.json",
-		"**/*.json",
-		"*.cjs"
+		".*.json",
+		"**/*.json"
 	],
 	"exclude": [
 		// extends doesn't combine fields, so this has been copied from .svelte-kit
