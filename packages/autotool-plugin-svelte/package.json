@@ -48,6 +48,8 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./package-svelte-tsconfig": "./static/package-svelte-tsconfig.json",
+		"./package-sveltekit-tsconfig": "./static/package-sveltekit-tsconfig.json",
 		"./readme": "./readme.md",
 		"./svelte.config": "./static/svelte.config.txt",
 		"./sveltekit-static.config": "./static/sveltekit-static.config.txt",

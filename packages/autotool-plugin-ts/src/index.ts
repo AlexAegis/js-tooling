@@ -13,7 +13,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	const languageMatcher = /^(ts|typescript)$/;
 
 	const archetypeFlavours: JsonMatcherFrom<PackageArchetype>[] = [
-		{ language: languageMatcher, framework: 'svelte' },
 		{ language: languageMatcher, platform: 'web', framework: not(equal('svelte')) },
 		{ language: languageMatcher, platform: 'node', framework: not(equal('svelte')) },
 		{ language: languageMatcher, platform: undefined, framework: undefined },
@@ -117,11 +116,12 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 			},
+
 			...archetypeFlavours.map<AutotoolElementFileCopy>((archetype) => {
 				const flavour = getEncodedArchetype(archetype);
 
 				return {
-					name: `copy tsconfig for ${flavour} packages`,
+					description: `copy tsconfig for ${flavour} packages`,
 					executor: 'fileCopy',
 					packageKind: 'regular',
 					formatWithPrettier: true,
