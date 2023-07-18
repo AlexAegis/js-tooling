@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.1](https://github.com/AlexAegis/js-tooling/compare/v0.5.0...v0.5.1) (2023-07-18)
+
+
+### Bug Fixes
+
+* moved unified-prettier to dependencies ([b49c3c7](https://github.com/AlexAegis/js-tooling/commit/b49c3c744517dc425f289c91a3f25152a8f59ced))
+
 ## [0.5.0](https://github.com/AlexAegis/js-tooling/compare/v0.4.2...v0.5.0) (2023-07-18)
 
 

@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-git",
 	"description": "Git stuff",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -57,10 +57,10 @@
 		"autotool-plugin": "^0.2.2"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.0",
-		"@alexaegis/ts": "^0.5.0",
-		"@alexaegis/vite": "^0.5.0",
-		"@alexaegis/vitest": "^0.5.0",
+		"@alexaegis/eslint-config-vitest": "^0.5.1",
+		"@alexaegis/ts": "^0.5.1",
+		"@alexaegis/vite": "^0.5.1",
+		"@alexaegis/vitest": "^0.5.1",
 		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
