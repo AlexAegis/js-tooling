@@ -8,6 +8,7 @@ export default {
 			plugins: ['@typescript-eslint'],
 			parserOptions: {
 				project: true, // For @typescript-eslint
+				extraFileExtensions: ['.svelte'],
 			},
 			extends: [
 				'plugin:@typescript-eslint/recommended',
@@ -31,9 +32,10 @@ export default {
 		{
 			files: ['*.svelte'],
 			parser: 'svelte-eslint-parser',
-			extends: ['plugin:svelte/recommended'],
+			extends: ['plugin:svelte/recommended', 'plugin:svelte/prettier'],
 			parserOptions: {
 				parser: '@typescript-eslint/parser', // svelte script tags read the parser from here
+				extraFileExtensions: ['.svelte'],
 			},
 			globals: {
 				$$Generic: true, // To let `type T = $$Generic;` be defined
@@ -44,6 +46,7 @@ export default {
 					{ varsIgnorePattern: '$$', argsIgnorePattern: '_' }, // To let $$Slot be defined
 				],
 				'@typescript-eslint/no-unsafe-assignment': 'off', // Cannot cast to $$Generic
+				'@typescript-eslint/no-unsafe-argument': 'off', // Doesn't work properly
 			},
 		},
 	],

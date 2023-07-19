@@ -55,7 +55,7 @@
 		"typescript": "^5.1.6"
 	},
 	"optionalDependencies": {
-		"svelte": "^4.0.5"
+		"svelte": "^4.1.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.5.3",
