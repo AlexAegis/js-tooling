@@ -176,10 +176,10 @@ importers:
         version: link:../../packages/prettier-config
       '@alexaegis/prettier-config-svelte':
         specifier: ^0.5.4
-        version: link:../../packages/prettier-config-svelte
+        version: 0.5.4
       '@alexaegis/prettier-config-tailwind':
         specifier: ^0.5.4
-        version: link:../../packages/prettier-config-tailwind
+        version: 0.5.4
       '@alexaegis/stylelint-config':
         specifier: ^0.5.4
         version: link:../../packages/stylelint-config
@@ -279,7 +279,7 @@ importers:
         version: link:../../packages/prettier-config
       '@alexaegis/prettier-config-svelte':
         specifier: ^0.5.4
-        version: link:../../packages/prettier-config-svelte
+        version: 0.5.4
       '@alexaegis/stylelint-config':
         specifier: ^0.5.4
         version: link:../../packages/stylelint-config
@@ -1574,46 +1574,13 @@ importers:
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
 
   packages/prettier-config:
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.4
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.5.4
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.5.4
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.5.4
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.4.2
-        version: 20.4.2
-      prettier:
-        specifier: ^3.0.0
-        version: 3.0.0
-      publint:
-        specifier: ^0.1.16
-        version: 0.1.16
-      vite:
-        specifier: ^4.4.4
-        version: 4.4.4(@types/node@20.4.2)
-      vitest:
-        specifier: ^0.33.0
-        version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
-
-  packages/prettier-config-svelte:
     dependencies:
-      prettier:
-        specifier: ^3.0.0
-        version: 3.0.0
       prettier-plugin-svelte:
         specifier: ^3.0.0
         version: 3.0.0(prettier@3.0.0)(svelte@4.1.0)
-      svelte:
-        specifier: ^4.1.0
-        version: 4.1.0
+      prettier-plugin-tailwindcss:
+        specifier: ^0.4.1
+        version: 0.4.1(prettier-plugin-svelte@3.0.0)(prettier@3.0.0)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.5.4
@@ -1630,40 +1597,9 @@ importers:
       '@types/node':
         specifier: ^20.4.2
         version: 20.4.2
-      publint:
-        specifier: ^0.1.16
-        version: 0.1.16
-      vite:
-        specifier: ^4.4.4
-        version: 4.4.4(@types/node@20.4.2)
-      vitest:
-        specifier: ^0.33.0
-        version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
-
-  packages/prettier-config-tailwind:
-    dependencies:
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
-      prettier-plugin-tailwindcss:
-        specifier: ^0.4.1
-        version: 0.4.1(prettier@3.0.0)
-    devDependencies:
-      '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.4
-        version: link:../eslint-config-vitest
-      '@alexaegis/ts':
-        specifier: ^0.5.4
-        version: link:../ts
-      '@alexaegis/vite':
-        specifier: ^0.5.4
-        version: link:../vite
-      '@alexaegis/vitest':
-        specifier: ^0.5.4
-        version: link:../vitest
-      '@types/node':
-        specifier: ^20.4.2
-        version: 20.4.2
       publint:
         specifier: ^0.1.16
         version: 0.1.16
@@ -1996,6 +1932,39 @@ packages:
     resolution: {integrity: sha512-Vc9cEa3wAFeHBoPgrytOG2U0nb9CFBYmrswNMCw4DyEiU6FXYJwr3pi+5OwpNQSSFmeYnQb8aybYQMWztz0SgA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dev: false
+
+  /@alexaegis/prettier-config-svelte@0.5.4:
+    resolution: {integrity: sha512-b1ijnSQXh+tj7+TDSFpb53YasCZvr6Bw1qnb3C/zO1jLlvOcCMd74kVDDD6v7xf1jFPpYY6kHQxlTcY+F7qyFg==}
+    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
+    dependencies:
+      prettier: 3.0.0
+      prettier-plugin-svelte: 3.0.0(prettier@3.0.0)(svelte@4.1.0)
+      svelte: 4.1.0
+    dev: true
+
+  /@alexaegis/prettier-config-tailwind@0.5.4:
+    resolution: {integrity: sha512-MLCSwN60f5oP7CKBoGTo/r+vAmia/Qye60ZtfapUNGHO0HKwqQLm8SXyYLW1MPjEVMcGRM9JOVFHhr0ZkNDlxA==}
+    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
+    dependencies:
+      prettier: 3.0.0
+      prettier-plugin-tailwindcss: 0.4.1(prettier-plugin-svelte@3.0.0)(prettier@3.0.0)
+    transitivePeerDependencies:
+      - '@ianvs/prettier-plugin-sort-imports'
+      - '@prettier/plugin-pug'
+      - '@shopify/prettier-plugin-liquid'
+      - '@shufo/prettier-plugin-blade'
+      - '@trivago/prettier-plugin-sort-imports'
+      - prettier-plugin-astro
+      - prettier-plugin-css-order
+      - prettier-plugin-import-sort
+      - prettier-plugin-jsdoc
+      - prettier-plugin-marko
+      - prettier-plugin-organize-attributes
+      - prettier-plugin-organize-imports
+      - prettier-plugin-style-order
+      - prettier-plugin-svelte
+      - prettier-plugin-twig-melody
+    dev: true
 
   /@alexaegis/workspace-tools@0.4.5:
     resolution: {integrity: sha512-jI6auujQvlrQQTnx8U0f1SQZehd6fIUPBUq62hwr68eQxw9k/1zEAg2M54hraXcnx2r7Qz8/jF0pbrHKhut2ww==}
@@ -8220,9 +8189,8 @@ packages:
     dependencies:
       prettier: 3.0.0
       svelte: 4.1.0
-    dev: false
 
-  /prettier-plugin-tailwindcss@0.4.1(prettier@3.0.0):
+  /prettier-plugin-tailwindcss@0.4.1(prettier-plugin-svelte@3.0.0)(prettier@3.0.0):
     resolution: {integrity: sha512-hwn2EiJmv8M+AW4YDkbjJ6HlZCTzLyz1QlySn9sMuKV/Px0fjwldlB7tol8GzdgqtkdPtzT3iJ4UzdnYXP25Ag==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -8275,7 +8243,7 @@ packages:
         optional: true
     dependencies:
       prettier: 3.0.0
-    dev: false
+      prettier-plugin-svelte: 3.0.0(prettier@3.0.0)(svelte@4.1.0)
 
   /prettier@3.0.0:
     resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}

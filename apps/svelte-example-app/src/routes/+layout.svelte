@@ -1,11 +1,9 @@
 <script lang="ts">
-
-// Finally, your application's global stylesheet (sometimes labeled 'app.css')
-import '../app.postcss';
+	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
+	import '../app.postcss';
 	// Most of your app wide CSS should be put in this file
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import packageJson from '../../../../package.json';
-
 </script>
 
 <AppShell>

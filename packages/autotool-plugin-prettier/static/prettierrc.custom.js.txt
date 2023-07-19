@@ -1,8 +1,0 @@
-// managed-by-autotool
-import { mergeConfig, prettierConfig } from '@alexaegis/prettier-config';
-${additionalConfigImports}
-
-export default mergeConfig(
-	prettierConfig,
-	${additionalConfigs}
-);

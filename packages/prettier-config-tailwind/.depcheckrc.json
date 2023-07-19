@@ -1,5 +1,0 @@
-{
-	"$schema": "https://json.schemastore.org/typings?mark=managed-by-autotool",
-	"ignores": ["prettier-plugin-tailwindcss", "publint", "@alexaegis/ts"],
-	"skip-missing": true
-}

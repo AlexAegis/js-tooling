@@ -22,7 +22,7 @@
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
 	},
 	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -121,6 +121,7 @@
 	],
 	"svelte.enable-ts-plugin": true,
 	"terminal.integrated.windowsEnableConpty": true,
+	"prettier.documentSelectors": ["**/*.svelte"],
 	"vitest.commandLine": "npx vitest --coverage",
 	"vitest.enable": true
 }

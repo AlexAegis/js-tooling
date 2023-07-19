@@ -2,24 +2,6 @@ import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin'
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
-const packageNameToCamelCase = (name: string) =>
-	name
-		.replaceAll(/^@/g, '')
-		.replaceAll(/[/-]([a-z])/g, (_: string, letter: string) => letter.toUpperCase());
-
-const assembleAdditionalConfigTemplateVariables = (
-	...configPackageNames: string[]
-): Record<string, string> => {
-	return {
-		additionalConfigs: configPackageNames
-			.map((name) => packageNameToCamelCase(name))
-			.join(', '),
-		additionalConfigImports: configPackageNames
-			.map((name) => `import ${packageNameToCamelCase(name)} from '${name}';`)
-			.join('\n'),
-	};
-};
-
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
@@ -32,8 +14,10 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				data: {
 					scripts: {
 						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
-						format_: 'prettier --cache-location .cache/prettier --write .',
-						'lint:format_': 'prettier --cache-location .cache/prettier --check .',
+						format_:
+							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .', // TODO: Remove plugin arguments from here once https://github.com/prettier/prettier/issues/15079 is resolved
+						'lint:format_':
+							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .',
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					},
@@ -48,9 +32,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					scripts: {
 						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo',
 						format_:
-							'prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .',
+							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --write .', // TODO: Remove plugin arguments from here once https://github.com/prettier/prettier/issues/15079 is resolved
 						'lint:format_':
-							'prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
+							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
 					},
@@ -82,85 +66,10 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: '.prettierrc.cjs',
 			},
 			{
-				description: 'add prettier-config-svelte as a devDependency',
-				executor: 'packageJson',
+				description: 'remove package config overrides as they arent supported',
+				executor: 'fileRemove',
 				packageKind: 'regular',
-				packageJsonFilter: {
-					archetype: {
-						framework: 'svelte',
-					},
-				},
-				data: {
-					devDependencies: {
-						'@alexaegis/prettier-config':
-							packageJson.dependencies['@alexaegis/prettier-config'],
-						'@alexaegis/prettier-config-svelte':
-							packageJson.dependencies['@alexaegis/prettier-config'], // Different package, versioned together
-					},
-				},
-			},
-			{
-				description: 'add prettier-config-tailwind as a devDependency',
-				executor: 'packageJson',
-				packageKind: 'regular',
-				packageJsonFilter: {
-					devDependencies: {
-						tailwindcss: /.*/,
-					},
-				},
-				data: {
-					devDependencies: {
-						'@alexaegis/prettier-config':
-							packageJson.dependencies['@alexaegis/prettier-config'],
-						'@alexaegis/prettier-config-tailwind':
-							packageJson.dependencies['@alexaegis/prettier-config'], // Different package, versioned together
-					},
-				},
-			},
-			{
-				description: 'copy svelte prettier config without tailwind',
-				executor: 'fileCopy',
-				packageKind: 'regular',
-				packageJsonFilter: {
-					archetype: {
-						framework: 'svelte',
-					},
-					devDependencies: {
-						tailwindcss: undefined,
-					},
-				},
-				formatWithPrettier: true,
 				targetFile: '.prettierrc.js',
-				templateVariables: {
-					...assembleAdditionalConfigTemplateVariables(
-						'@alexaegis/prettier-config-svelte',
-					),
-				},
-				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'prettierrc.custom.js.txt'),
-			},
-			{
-				description: 'copy svelte prettier config with tailwind',
-				executor: 'fileCopy',
-				packageKind: 'regular',
-				packageJsonFilter: {
-					archetype: {
-						framework: 'svelte',
-					},
-					devDependencies: {
-						tailwindcss: /.*/,
-					},
-				},
-				formatWithPrettier: true,
-				targetFile: '.prettierrc.js',
-				templateVariables: {
-					...assembleAdditionalConfigTemplateVariables(
-						'@alexaegis/prettier-config-svelte',
-						'@alexaegis/prettier-config-tailwind',
-					),
-				},
-				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'prettierrc.custom.js.txt'),
 			},
 			{
 				description: 'copy workspace prettierignore used by the editor',

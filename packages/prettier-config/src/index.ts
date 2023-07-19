@@ -1,13 +1,13 @@
 import type { Config, Options } from 'prettier';
 
-export * from './internal/merge-config.function.js';
-
+// The prettier VS Code extension doesn't really care about configs deeper in
+// the project structure, so the root config has to deal with everything
 export const prettierConfig = {
 	tabWidth: 4,
 	useTabs: true,
 	singleQuote: true,
 	printWidth: 100,
-	plugins: [],
+	plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
 	overrides: [
 		{
 			files: '*.{md,yml,yaml}',
@@ -24,6 +24,14 @@ export const prettierConfig = {
 				useTabs: false,
 				printWidth: 80,
 			} satisfies Options,
+		},
+		{
+			files: '*.svelte',
+			options: {
+				parser: 'svelte',
+				svelteStrictMode: true,
+				svelteSortOrder: 'options-scripts-markup-styles',
+			} as Options,
 		},
 	],
 } satisfies Config;

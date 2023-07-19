@@ -1,0 +1,11 @@
+{
+	"$schema": "https://json.schemastore.org/typings?mark=managed-by-autotool",
+	"ignores": [
+		"prettier-plugin-svelte",
+		"prettier-plugin-tailwindcss",
+		"svelte",
+		"@alexaegis/ts",
+		"publint"
+	],
+	"skip-missing": true
+}
