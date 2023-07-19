@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/example-svelte-lib",
-	"version": "0.5.4",
+	"version": "0.5.5",
 	"private": true,
 	"archetype": {
 		"platform": "web",
@@ -58,16 +58,16 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/example-ts-lib": "^0.5.4"
+		"@alexaegis/example-ts-lib": "^0.5.5"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "^0.5.4",
-		"@alexaegis/eslint-config-vitest": "^0.5.4",
-		"@alexaegis/prettier-config": "^0.5.4",
+		"@alexaegis/eslint-config-svelte": "^0.5.5",
+		"@alexaegis/eslint-config-vitest": "^0.5.5",
+		"@alexaegis/prettier-config": "^0.5.5",
 		"@alexaegis/prettier-config-svelte": "^0.5.4",
-		"@alexaegis/stylelint-config": "^0.5.4",
-		"@alexaegis/ts": "^0.5.4",
-		"@alexaegis/vitest": "^0.5.4",
+		"@alexaegis/stylelint-config": "^0.5.5",
+		"@alexaegis/ts": "^0.5.5",
+		"@alexaegis/vitest": "^0.5.5",
 		"@pakk/cli": "^0.4.2",
 		"@sveltejs/package": "^2.2.0",
 		"stylelint": "^15.10.2",

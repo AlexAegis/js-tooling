@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.5](https://github.com/AlexAegis/js-tooling/compare/v0.5.4...v0.5.5) (2023-07-19)
+
+
+### Features
+
+* consolidated prettier config ([b0921c3](https://github.com/AlexAegis/js-tooling/commit/b0921c34fe22735a68ef0a0ef4931c4a560c90c0))
+
 ## [0.5.4](https://github.com/AlexAegis/js-tooling/compare/v0.5.3...v0.5.4) (2023-07-19)
 
 
