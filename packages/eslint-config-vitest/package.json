@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/eslint-config-vitest",
 	"description": "ESLint rules for vitest",
-	"version": "0.5.3",
+	"version": "0.5.4",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -64,8 +64,8 @@
 		"svelte": "^4.1.0"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "^0.5.3",
-		"@alexaegis/vitest": "^0.5.3",
+		"@alexaegis/vite": "^0.5.4",
+		"@alexaegis/vitest": "^0.5.4",
 		"@types/eslint": "^8.44.0",
 		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",

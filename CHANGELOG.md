@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.4](https://github.com/AlexAegis/js-tooling/compare/v0.5.3...v0.5.4) (2023-07-19)
+
+
+### Features
+
+* **eslint-config-svelte:** disabled some conflicting rules ([71b7ffc](https://github.com/AlexAegis/js-tooling/commit/71b7ffc48191cf1d3cb27157363e4d8923656bfc))
+* **prettier-config-svelte:** re-added prettier-plugin-svelte ([bf4a172](https://github.com/AlexAegis/js-tooling/commit/bf4a1723113df52a1ba36bad4d0a70dabf3ae058))
+* **vitest:** add an include glob ([d5856f0](https://github.com/AlexAegis/js-tooling/commit/d5856f0ab7c97351aa24e75209e03fb69b4b0ad4))
+
 ## [0.5.3](https://github.com/AlexAegis/js-tooling/compare/v0.5.2...v0.5.3) (2023-07-18)
 
 
