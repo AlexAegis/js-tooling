@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.6](https://github.com/AlexAegis/js-tooling/compare/v0.5.5...v0.5.6) (2023-07-19)
+
+
+### Features
+
+* **autotool-plugin-stylelint:** fixed patterns added all supported html-like extensions ([45038ea](https://github.com/AlexAegis/js-tooling/commit/45038ea67a3cf9ef05236e9439b5514024c96405))
+
 ## [0.5.5](https://github.com/AlexAegis/js-tooling/compare/v0.5.4...v0.5.5) (2023-07-19)
 
 

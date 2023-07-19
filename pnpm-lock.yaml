@@ -169,10 +169,10 @@ importers:
         specifier: workspace:^
         version: link:../../packages/eslint-config-svelte
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/eslint-config-vitest
       '@alexaegis/prettier-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/prettier-config
       '@alexaegis/prettier-config-svelte':
         specifier: ^0.5.4
@@ -181,16 +181,16 @@ importers:
         specifier: ^0.5.4
         version: 0.5.4
       '@alexaegis/stylelint-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/stylelint-config
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/vitest
       '@skeletonlabs/skeleton':
         specifier: ^1.10.0
@@ -265,29 +265,29 @@ importers:
   libs/example-svelte-lib:
     dependencies:
       '@alexaegis/example-ts-lib':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../example-ts-lib
     devDependencies:
       '@alexaegis/eslint-config-svelte':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/eslint-config-svelte
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/eslint-config-vitest
       '@alexaegis/prettier-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/prettier-config
       '@alexaegis/prettier-config-svelte':
         specifier: ^0.5.4
         version: 0.5.4
       '@alexaegis/stylelint-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/stylelint-config
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/ts
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/vitest
       '@pakk/cli':
         specifier: ^0.4.2
@@ -317,16 +317,16 @@ importers:
   libs/example-ts-lib:
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../../packages/vitest
       '@types/eslint':
         specifier: ^8.44.0
@@ -344,7 +344,7 @@ importers:
   packages/autotool-plugin-commitlint:
     dependencies:
       '@alexaegis/commitlint-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../commitlint-config
       '@alexaegis/logging':
         specifier: ^0.4.5
@@ -357,16 +357,16 @@ importers:
         version: 17.6.7
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -397,16 +397,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -437,16 +437,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -477,19 +477,19 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-core':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-core
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.44.0
@@ -523,16 +523,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -560,16 +560,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -590,7 +590,7 @@ importers:
   packages/autotool-plugin-husky:
     dependencies:
       '@alexaegis/lint-staged-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../lint-staged-config
       '@alexaegis/logging':
         specifier: ^0.4.5
@@ -609,16 +609,16 @@ importers:
         version: 13.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -649,19 +649,19 @@ importers:
         version: 16.10.16
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/nuke':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../nuke
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -685,7 +685,7 @@ importers:
         specifier: ^0.4.5
         version: 0.4.5
       '@alexaegis/prettier-config':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../prettier-config
       autotool-plugin:
         specifier: ^0.2.3
@@ -699,16 +699,16 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -736,16 +736,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -769,23 +769,23 @@ importers:
         specifier: ^0.4.5
         version: 0.4.5
       '@alexaegis/remark-preset':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../remark-preset
       autotool-plugin:
         specifier: ^0.2.3
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -812,7 +812,7 @@ importers:
         specifier: ^0.4.5
         version: 0.4.5
       '@alexaegis/standard-version':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../standard-version
       autotool-plugin:
         specifier: ^0.2.3
@@ -822,16 +822,16 @@ importers:
         version: 11.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -859,16 +859,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -905,16 +905,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@pakk/cli':
         specifier: ^0.4.2
@@ -981,16 +981,16 @@ importers:
         version: 5.1.6
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1021,16 +1021,16 @@ importers:
         version: 1.10.9
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1061,16 +1061,16 @@ importers:
         version: 0.24.8(typescript@5.1.6)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1110,16 +1110,16 @@ importers:
         version: 4.4.4(@types/node@20.4.2)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1150,16 +1150,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@lcov-viewer/cli':
         specifier: ^1.3.0
@@ -1193,16 +1193,16 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1230,19 +1230,19 @@ importers:
         version: 0.2.3
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/nuke':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../nuke
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1263,20 +1263,20 @@ importers:
   packages/commitlint-config:
     dependencies:
       '@alexaegis/standard-version':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../standard-version
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@commitlint/types':
         specifier: ^17.4.4
@@ -1332,16 +1332,16 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.44.0
@@ -1397,16 +1397,16 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.44.0
@@ -1459,10 +1459,10 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.44.0
@@ -1497,16 +1497,16 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/eslint':
         specifier: ^8.44.0
@@ -1546,16 +1546,16 @@ importers:
         version: 13.2.2
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1583,16 +1583,16 @@ importers:
         version: 0.4.1(prettier-plugin-svelte@3.0.0)(prettier@3.0.0)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1660,16 +1660,16 @@ importers:
         version: 3.0.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1703,16 +1703,16 @@ importers:
         version: 4.1.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/js-yaml':
         specifier: ^4.0.5
@@ -1746,16 +1746,16 @@ importers:
         version: 10.0.0(postcss@8.4.26)(stylelint@15.10.2)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../ts
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       '@types/node':
         specifier: ^20.4.2
@@ -1779,7 +1779,7 @@ importers:
   packages/ts:
     dependencies:
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       '@types/node':
         specifier: ^20.4.2
@@ -1795,10 +1795,10 @@ importers:
         version: 4.4.4(@types/node@20.4.2)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../eslint-config-vitest
       '@alexaegis/vitest':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vitest
       publint:
         specifier: ^0.1.16
@@ -1867,7 +1867,7 @@ importers:
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
     devDependencies:
       '@alexaegis/vite':
-        specifier: ^0.5.5
+        specifier: ^0.5.6
         version: link:../vite
       publint:
         specifier: ^0.1.16

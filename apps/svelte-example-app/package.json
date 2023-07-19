@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
-	"version": "0.5.5",
+	"version": "0.5.6",
 	"archetype": {
 		"platform": "web",
 		"framework": "svelte",
@@ -48,14 +48,14 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-svelte": "workspace:^",
-		"@alexaegis/eslint-config-vitest": "^0.5.5",
-		"@alexaegis/prettier-config": "^0.5.5",
+		"@alexaegis/eslint-config-vitest": "^0.5.6",
+		"@alexaegis/prettier-config": "^0.5.6",
 		"@alexaegis/prettier-config-svelte": "^0.5.4",
 		"@alexaegis/prettier-config-tailwind": "^0.5.4",
-		"@alexaegis/stylelint-config": "^0.5.5",
-		"@alexaegis/ts": "^0.5.5",
-		"@alexaegis/vite": "^0.5.5",
-		"@alexaegis/vitest": "^0.5.5",
+		"@alexaegis/stylelint-config": "^0.5.6",
+		"@alexaegis/ts": "^0.5.6",
+		"@alexaegis/vite": "^0.5.6",
+		"@alexaegis/vitest": "^0.5.6",
 		"@skeletonlabs/skeleton": "^1.10.0",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.22.3",
