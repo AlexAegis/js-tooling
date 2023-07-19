@@ -68,15 +68,15 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'lint:style:css':
 							'turbo run lint:style:css_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 						'lint:style:css_':
-							'stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css --allow-empty-input **/*.css',
+							"stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-css --allow-empty-input '**/*.css'",
 						'lint:style:scss':
 							'turbo run lint:style:scss_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 						'lint:style:scss_':
-							'stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss --allow-empty-input **/*.scss',
+							"stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss --allow-empty-input '**/*.scss'",
 						'lint:style:html':
 							'turbo run lint:style:html_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 						'lint:style:html_':
-							'stylelint --customSyntax=postcss-html --cache true --cache-strategy content --cache-location .cache/stylelintcache-html --allow-empty-input **/*.html ',
+							"stylelint --customSyntax=postcss-html --cache true --cache-strategy content --cache-location .cache/stylelintcache-html --allow-empty-input '**/*.{html,svelte,vue,astro,xml,php}'",
 					},
 					devDependencies: {
 						'@alexaegis/stylelint-config': `^${packageJson.version}`,
