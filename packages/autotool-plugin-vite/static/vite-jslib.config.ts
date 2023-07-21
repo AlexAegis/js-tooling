@@ -1,17 +1,8 @@
 // managed-by-autotool
+import { DEFAULT_VITE_JS_LIB_CONFIG, pakk } from '@alexaegis/vite';
+import { mergeConfig } from 'vite';
 
-import { pakk } from '@alexaegis/vite';
-import { defineConfig } from 'vite';
-
-// default config for node libraries using plain javascript
-export default defineConfig({
-	build: {
-		rollupOptions: {
-			output: {
-				preserveModules: true,
-			},
-		},
-	},
+export default mergeConfig(DEFAULT_VITE_JS_LIB_CONFIG, {
 	plugins: [
 		pakk({
 			developmentPackageJsonExportsTarget: 'source',

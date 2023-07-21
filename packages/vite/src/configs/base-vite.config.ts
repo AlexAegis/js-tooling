@@ -1,8 +1,9 @@
 import type { LibraryFormats } from 'vite';
 import { mergeConfig, type UserConfig } from 'vite';
-import { createLazyAutoExternalsFunction } from '../helpers/rollup-externals.function.js';
+import { createLazyAutoExternalsFunction } from 'vite-plugin-pakk';
 
 export const DEFAULT_OUT_DIR = 'dist';
+
 /**
  * It's an array because when entry is defined as a single string, the name
  * of the output will be the same as the name of the package. But if it's an
@@ -13,6 +14,9 @@ export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
 export const DEFAULT_BUILD_TARGET = 'es2022';
 
 /**
+ * Common Vite configuration defining
+ * - build.target: es2022
+ * - build.outDir: 'dist'
  * https://vitejs.dev/config/
  */
 export const DEFAULT_VITE_CONFIG: UserConfig = {
@@ -22,12 +26,18 @@ export const DEFAULT_VITE_CONFIG: UserConfig = {
 	},
 };
 
+/**
+ * Vite configuration for building libraries
+ *
+ * esbuild does not need to be disabled here to preserve comments as it's
+ * expected to generate d.ts files from the ts files when publishing and
+ * those will preserve the comments in the d.ts files.
+ */
 export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 	build: {
 		minify: false,
 		sourcemap: true,
 		rollupOptions: {
-			// TODO: import from pakk
 			external: createLazyAutoExternalsFunction(), // I'm always using this, but autolib also adds it with the other defaults if they are not defined
 			treeshake: true,
 		},
@@ -36,4 +46,22 @@ export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 			formats: DEFAULT_EXPORT_FORMATS,
 		},
 	},
+} satisfies UserConfig);
+
+/**
+ * Vite configuration for building plain JS libraries
+ *
+ * Disables esbuild to preserve jsdoc comments, and also enables
+ * build.rollupOptions.output.preserveModules not to interfere with the paths
+ * expected by `vite-plugin-dts`
+ */
+export const DEFAULT_VITE_JS_LIB_CONFIG = mergeConfig(DEFAULT_VITE_LIB_CONFIG, {
+	build: {
+		rollupOptions: {
+			output: {
+				preserveModules: true, // Otherwise type paths would be mangled
+			},
+		},
+	},
+	esbuild: false, // esbuild always removes comments, and JSDoc wouldn't work
 } satisfies UserConfig);
