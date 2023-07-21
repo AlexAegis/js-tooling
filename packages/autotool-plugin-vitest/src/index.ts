@@ -1,4 +1,4 @@
-import { equal, not, or } from '@alexaegis/predicate';
+import { contains, equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
@@ -66,7 +66,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					archetype: {
 						kind: appOrLib,
 						platform: 'web',
-						framework: not(equal('svelte')),
+						framework: not(contains('svelte')),
 					},
 				},
 				packageKind: 'regular',
@@ -83,7 +83,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					archetype: {
 						kind: appOrLib,
 						platform: 'node',
-						framework: not(equal('svelte')),
+						framework: not(contains('svelte')),
 					},
 				},
 				packageKind: 'regular',

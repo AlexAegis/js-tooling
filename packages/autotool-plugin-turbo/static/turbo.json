@@ -25,7 +25,7 @@
 			"outputMode": "new-only"
 		},
 		"build-app_": {
-			"env": ["TARGET_ENV", "BASE_HREF"],
+			"env": ["TARGET_ENV", "BASE_HREF", "PLATFORM"],
 			"dependsOn": ["^build-lib_"],
 			"inputs": [
 				"{src,static,public}/**/*",

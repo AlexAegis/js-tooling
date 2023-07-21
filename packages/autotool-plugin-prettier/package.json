@@ -63,10 +63,9 @@
 		"@alexaegis/logging": "^0.4.5",
 		"@alexaegis/prettier-config": "^0.5.6",
 		"autotool-plugin": "^0.2.3",
-		"prettier": "^3.0.0"
-	},
-	"optionalDependencies": {
-		"svelte": "^4.1.0"
+		"prettier": "^3.0.0",
+		"prettier-plugin-svelte": "^3.0.0",
+		"prettier-plugin-tailwindcss": "^0.4.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.5.6",
@@ -76,7 +75,7 @@
 		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.4",
+		"vite": "^4.4.5",
 		"vitest": "^0.33.0"
 	}
 }

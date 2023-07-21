@@ -3,10 +3,9 @@
 	"version": "0.5.6",
 	"archetype": {
 		"platform": "web",
-		"framework": "svelte",
+		"framework": "sveltekit",
 		"language": "ts",
-		"kind": "app",
-		"kit": "static"
+		"kind": "app"
 	},
 	"keywords": [
 		"managed-by-autotool"
@@ -36,7 +35,7 @@
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
-		"postinstall": "svelte-kit sync # pakk:no-publish",
+		"postinstall": "svelte-kit sync # pakk:not-distributed",
 		"start": "TARGET_ENV='local' vite",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"test_": "vitest --passWithNoTests --coverage --run",
@@ -44,20 +43,18 @@
 		"watch-deps": "TARGET_ENV='local' nodemon --config ../../node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app'"
 	},
 	"dependencies": {
-		"@alexaegis/example-svelte-lib": "workspace:^"
+		"@alexaegis/example-svelte-lib": "^0.5.6"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "workspace:^",
+		"@alexaegis/eslint-config-svelte": "^0.5.6",
 		"@alexaegis/eslint-config-vitest": "^0.5.6",
 		"@alexaegis/prettier-config": "^0.5.6",
-		"@alexaegis/prettier-config-svelte": "^0.5.4",
-		"@alexaegis/prettier-config-tailwind": "^0.5.4",
 		"@alexaegis/stylelint-config": "^0.5.6",
+		"@alexaegis/svelte-config": "^0.5.6",
 		"@alexaegis/ts": "^0.5.6",
 		"@alexaegis/vite": "^0.5.6",
 		"@alexaegis/vitest": "^0.5.6",
 		"@skeletonlabs/skeleton": "^1.10.0",
-		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.22.3",
 		"@types/node": "^20.4.2",
 		"autoprefixer": "^10.4.14",
@@ -65,19 +62,19 @@
 		"eslint-config-next": "^13.4.10",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-turbo": "^1.10.9",
-		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-svelte": "^2.32.2",
+		"eslint-plugin-react": "^7.33.0",
+		"eslint-plugin-svelte": "^2.32.3",
 		"eslint-plugin-unicorn": "^48.0.0",
 		"nodemon": "^3.0.1",
 		"postcss": "^8.4.26",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^3.0.0",
 		"stylelint": "^15.10.2",
-		"svelte": "^4.1.0",
+		"svelte": "^4.1.1",
 		"svelte-check": "^3.4.6",
 		"svelte-preprocess": "^5.0.4",
 		"tailwindcss": "^3.3.3",
-		"vite": "^4.4.4",
+		"vite": "^4.4.5",
 		"vitest": "^0.33.0"
 	}
 }

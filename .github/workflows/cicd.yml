@@ -237,7 +237,8 @@ jobs:
         run: pnpm install
       - name: build
         env:
-          BASE_HREF: '/${{ github.event.repository.name }}/'
+          BASE_HREF: '/${{ github.event.repository.name }}'
+          PLATFORM: 'github-pages'
         run: pnpm run build
       - name: publint
         run: pnpm run publint

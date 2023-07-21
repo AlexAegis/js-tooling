@@ -1,4 +1,4 @@
-import { equal, not, or } from '@alexaegis/predicate';
+import { contains, equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json';
@@ -48,7 +48,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageJsonFilter: {
 					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Skip these libraries to avoid circular dependencies
 					archetype: {
-						framework: not(equal('svelte')),
+						framework: not(contains('svelte')),
 					},
 				},
 				sourcePluginPackageName: packageJson.name,

@@ -68,11 +68,11 @@
 		"@alexaegis/workspace-tools": "^0.4.5",
 		"concurrently": "^8.2.0",
 		"nodemon": "^3.0.1",
-		"vite": "^4.4.4"
+		"vite": "^4.4.5"
 	},
 	"optionalDependencies": {
 		"prettier": "^3.0.0",
-		"vite-plugin-pakk": "^0.4.2"
+		"vite-plugin-pakk": "^0.4.3"
 	},
 	"devDependencies": {
 		"@types/node": "^20.4.2",

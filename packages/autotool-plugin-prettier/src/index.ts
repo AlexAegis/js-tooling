@@ -40,6 +40,11 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 					devDependencies: {
 						prettier: packageJson.dependencies.prettier,
+						// Since the plugins are set as string in the distributed configuration these have to be installed somewhere where prettier can find them
+						'prettier-plugin-svelte':
+							packageJson.dependencies['prettier-plugin-svelte'],
+						'prettier-plugin-tailwindcss':
+							packageJson.dependencies['prettier-plugin-tailwindcss'],
 					},
 				},
 			},
