@@ -1,7 +1,7 @@
 // managed-by-autotool
 import { spaConfiguration } from '@alexaegis/svelte-config';
 
-/** @type {import('@alexaegis/svelte-config').Config} */
+/** @type {import('@sveltejs/kit').Config} */
 export default {
 	...spaConfiguration,
 };

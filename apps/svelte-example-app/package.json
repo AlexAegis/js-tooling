@@ -63,7 +63,7 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-turbo": "^1.10.9",
 		"eslint-plugin-react": "^7.33.0",
-		"eslint-plugin-svelte": "^2.32.3",
+		"eslint-plugin-svelte": "^2.32.4",
 		"eslint-plugin-unicorn": "^48.0.0",
 		"nodemon": "^3.0.1",
 		"postcss": "^8.4.26",

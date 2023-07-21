@@ -1,19 +1,31 @@
 import autoAdapter from '@sveltejs/adapter-auto';
 import staticAdapter from '@sveltejs/adapter-static';
 import vercelAdapter from '@sveltejs/adapter-vercel';
-import type { Adapter } from '@sveltejs/kit';
 
-export type Platform = 'vercel' | 'github-pages' | 'auto';
-
-export const isPlatform = (platform: string | undefined): platform is Platform => {
+/**
+ *
+ * @param {string | undefined} platform
+ * @returns {platform is import('./types.js').Platform}
+ */
+export const isPlatform = (platform) => {
 	return platform === 'vercel' || platform === 'github-pages' || platform === 'auto';
 };
 
-export const normalizePlatform = (platform: string | undefined): Platform => {
+/**
+ *
+ * @param {string | undefined} platform
+ * @returns {import('./types.js').Platform}
+ */
+export const normalizePlatform = (platform) => {
 	return isPlatform(platform) ? platform : 'auto';
 };
 
-export const pickAdapter = (platform: Platform = 'auto'): Adapter => {
+/**
+ *
+ * @param {string | undefined} platform
+ * @returns {import('./types.js').Adapter}
+ */
+export const pickAdapter = (platform = 'auto') => {
 	if (platform === 'github-pages') {
 		return staticAdapter({
 			fallback: 'index.html', // may differ from host to host

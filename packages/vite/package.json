@@ -64,15 +64,15 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.4.5",
-		"@alexaegis/workspace-tools": "^0.4.5",
+		"@alexaegis/logging": "^0.5.0",
+		"@alexaegis/workspace-tools": "^0.5.0",
 		"concurrently": "^8.2.0",
 		"nodemon": "^3.0.1",
 		"vite": "^4.4.5"
 	},
 	"optionalDependencies": {
 		"prettier": "^3.0.0",
-		"vite-plugin-pakk": "^0.4.3"
+		"vite-plugin-pakk": "^0.5.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.4.2",
