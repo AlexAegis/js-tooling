@@ -21,7 +21,7 @@
 				"!{src,static,public}/**/*.spec.{ts,js,tsx,jsx}",
 				"!vite*.config.*.*"
 			],
-			"outputs": ["dist", "build", ".svelte-kit"],
+			"outputs": ["dist/**", "build/**", ".svelte-kit/**"],
 			"outputMode": "new-only"
 		},
 		"build-app_": {
@@ -33,7 +33,7 @@
 				"!{src,static,public}/**/*.spec.{ts,js,tsx,jsx}",
 				"!vite*.config.*.*"
 			],
-			"outputs": ["dist", "build", ".svelte-kit"],
+			"outputs": ["dist/**", "build/**", ".svelte-kit/**"],
 			"outputMode": "new-only"
 		},
 		"all_": {
@@ -94,12 +94,12 @@
 		},
 		"lint:tsc_": {
 			"dependsOn": [],
-			"outputs": [".cache/tsc"],
+			"outputs": [".cache/tsc/**"],
 			"outputMode": "new-only"
 		},
 		"//#lint:tsc_": {
 			"dependsOn": [],
-			"outputs": [".cache/tsc"],
+			"outputs": [".cache/tsc/**"],
 			"outputMode": "new-only"
 		},
 		"lint:svelte_": {
@@ -167,7 +167,7 @@
 				"!vite*.config.*.*"
 			],
 			"dependsOn": [],
-			"outputs": [".cache/prettier"],
+			"outputs": [".cache/prettier/**"],
 			"outputMode": "new-only"
 		},
 		"//#lint:format_": {
@@ -178,7 +178,7 @@
 				"!vite*.config.*.*"
 			],
 			"dependsOn": [],
-			"outputs": [".cache/prettier"],
+			"outputs": [".cache/prettier/**"],
 			"outputMode": "new-only"
 		},
 		"format_": {
@@ -189,7 +189,7 @@
 				"!vite*.config.*.*"
 			],
 			"dependsOn": [],
-			"outputs": [".cache/prettier"],
+			"outputs": [".cache/prettier/**"],
 			"outputMode": "new-only",
 			"cache": false
 		},
@@ -200,7 +200,7 @@
 				"!{.turbo,.cache,packages,libs,apps,fixtures,dist,build,.svelte-kit}/**/*",
 				"!vite*.config.*.*"
 			],
-			"outputs": [".cache/prettier"],
+			"outputs": [".cache/prettier/**"],
 			"outputMode": "new-only",
 			"cache": false
 		},
@@ -212,7 +212,7 @@
 				"!{.turbo,.cache,dist,build,.svelte-kit}/**/*",
 				"!vite*.config.*.*"
 			],
-			"outputs": [".cache/typedoc"],
+			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"//#typedoc_": {
@@ -223,14 +223,14 @@
 				"!{.turbo,.cache,dist,build,.svelte-kit}/**/*",
 				"!vite*.config.*.*"
 			],
-			"outputs": [".cache/typedoc"],
+			"outputs": [".cache/typedoc/**"],
 			"outputMode": "new-only"
 		},
 		"test_": {
 			"env": ["VITEST"],
 			"inputs": ["{src,static,public}/**/*", "*.*", "!vite*.config.*.*"],
 			"dependsOn": ["^build-lib_"],
-			"outputs": ["coverage"],
+			"outputs": ["coverage/**"],
 			"outputMode": "new-only"
 		},
 		"start": {
