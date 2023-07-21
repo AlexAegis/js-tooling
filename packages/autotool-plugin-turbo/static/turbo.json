@@ -13,7 +13,7 @@
 	"globalPassThroughEnv": ["GITHUB_TOKEN"],
 	"pipeline": {
 		"build-lib_": {
-			"env": ["TARGET_ENV"],
+			"env": ["TARGET_ENV", "BUILD_REASON", "BASE_HREF", "PLATFORM"],
 			"dependsOn": ["^build-lib_"],
 			"inputs": [
 				"{src,static,public}/**/*",
@@ -25,7 +25,7 @@
 			"outputMode": "new-only"
 		},
 		"build-app_": {
-			"env": ["TARGET_ENV", "BASE_HREF", "PLATFORM"],
+			"env": ["TARGET_ENV", "BUILD_REASON", "BASE_HREF", "PLATFORM"],
 			"dependsOn": ["^build-lib_"],
 			"inputs": [
 				"{src,static,public}/**/*",

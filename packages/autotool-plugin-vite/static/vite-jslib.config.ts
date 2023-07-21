@@ -15,6 +15,7 @@ export default defineConfig({
 	plugins: [
 		pakk({
 			developmentPackageJsonExportsTarget: 'source',
+			dts: process.env['BUILD_REASON'] === 'publish',
 		}),
 	],
 });
