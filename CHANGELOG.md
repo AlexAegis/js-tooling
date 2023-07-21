@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.7](https://github.com/AlexAegis/js-tooling/compare/v0.5.6...v0.5.7) (2023-07-21)
+
+
+### Features
+
+* **svelte-config:** added a new package for the svelte configs ([147ec95](https://github.com/AlexAegis/js-tooling/commit/147ec954852c928a3e51352fdf208081209116dc))
+* **svelte-config:** jsdoc based package ([45abda8](https://github.com/AlexAegis/js-tooling/commit/45abda8c8233b858f1eb58277cd9fbac9d87fb44))
+
 ## [0.5.6](https://github.com/AlexAegis/js-tooling/compare/v0.5.5...v0.5.6) (2023-07-19)
 
 

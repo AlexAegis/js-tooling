@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-depcheck",
 	"description": "My depcheck setup",
-	"version": "0.5.6",
+	"version": "0.5.7",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -57,10 +57,10 @@
 		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.6",
-		"@alexaegis/ts": "^0.5.6",
-		"@alexaegis/vite": "^0.5.6",
-		"@alexaegis/vitest": "^0.5.6",
+		"@alexaegis/eslint-config-vitest": "^0.5.7",
+		"@alexaegis/ts": "^0.5.7",
+		"@alexaegis/vite": "^0.5.7",
+		"@alexaegis/vitest": "^0.5.7",
 		"@types/node": "^20.4.2",
 		"depcheck": "^1.4.3",
 		"publint": "^0.1.16",
