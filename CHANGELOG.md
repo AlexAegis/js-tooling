@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.9](https://github.com/AlexAegis/js-tooling/compare/v0.5.8...v0.5.9) (2023-07-21)
+
+
+### Features
+
+* **autotool-plugin-github:** cicd template is now generic ([3f729a2](https://github.com/AlexAegis/js-tooling/commit/3f729a2b9a66802d74b54d0a2778d044325dd3e1))
+
 ## [0.5.8](https://github.com/AlexAegis/js-tooling/compare/v0.5.7...v0.5.8) (2023-07-21)
 
 

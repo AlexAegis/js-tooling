@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/prettier-config",
 	"description": "Prettier configuration",
-	"version": "0.5.8",
+	"version": "0.5.9",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -54,10 +54,10 @@
 		"prettier-plugin-tailwindcss": "^0.4.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.8",
-		"@alexaegis/ts": "^0.5.8",
-		"@alexaegis/vite": "^0.5.8",
-		"@alexaegis/vitest": "^0.5.8",
+		"@alexaegis/eslint-config-vitest": "^0.5.9",
+		"@alexaegis/ts": "^0.5.9",
+		"@alexaegis/vite": "^0.5.9",
+		"@alexaegis/vitest": "^0.5.9",
 		"@types/node": "^20.4.2",
 		"prettier": "^3.0.0",
 		"publint": "^0.1.16",
