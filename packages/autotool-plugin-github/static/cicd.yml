@@ -237,7 +237,9 @@ jobs:
         run: pnpm install
       - name: build
         env:
-          BASE_HREF: '/${{ github.event.repository.name }}/'
+          BASE_HREF: '/${{ github.event.repository.name }}'
+          PLATFORM: 'github-pages'
+          BUILD_REASON: 'publish' # publint would like to see the .d.ts files
         run: pnpm run build
       - name: publint
         run: pnpm run publint
@@ -337,6 +339,8 @@ jobs:
         run: pnpm install
       - name: |
           build ${{ matrix.package.package_name }}@${{ matrix.package.package_version }}
+        env:
+          BUILD_REASON: 'publish'
         run: |
           npx turbo run build-lib_ --filter="${{ matrix.package.package_name }}" --concurrency 16 --cache-dir=.cache/turbo
       - name: |

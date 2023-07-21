@@ -239,6 +239,7 @@ jobs:
         env:
           BASE_HREF: '/${{ github.event.repository.name }}'
           PLATFORM: 'github-pages'
+          BUILD_REASON: 'publish' # publint would like to see the .d.ts files
         run: pnpm run build
       - name: publint
         run: pnpm run publint
