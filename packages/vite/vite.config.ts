@@ -1,9 +1,8 @@
-// managed-by-autotool
+// autotool:not-managed
 
-import { pakk } from '@alexaegis/vite';
 import { defineConfig } from 'vite';
+import { pakk } from 'vite-plugin-pakk';
 
-// default config for node libraries
 export default defineConfig({
 	plugins: [
 		pakk({
