@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/svelte-config",
 	"description": "Svelte config",
-	"version": "0.5.9",
+	"version": "0.5.10",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -56,10 +56,10 @@
 		"svelte-preprocess": "^5.0.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.9",
-		"@alexaegis/ts": "^0.5.9",
-		"@alexaegis/vite": "^0.5.9",
-		"@alexaegis/vitest": "^0.5.9",
+		"@alexaegis/eslint-config-vitest": "^0.5.10",
+		"@alexaegis/ts": "^0.5.10",
+		"@alexaegis/vite": "^0.5.10",
+		"@alexaegis/vitest": "^0.5.10",
 		"@types/node": "^20.4.2",
 		"publint": "^0.1.16",
 		"stylelint": "^15.10.2",

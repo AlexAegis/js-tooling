@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.10](https://github.com/AlexAegis/js-tooling/compare/v0.5.9...v0.5.10) (2023-07-21)
+
+
+### Features
+
+* **autotool-plugin-github:** always build fresh before publishing ([46d10c5](https://github.com/AlexAegis/js-tooling/commit/46d10c571d741d1ecf388240e4b771417eb95cc5))
+
+
+### Bug Fixes
+
+* **autotool-plugin-github:** making BUILD_REASON publish for the entire pipeline ([ca7855c](https://github.com/AlexAegis/js-tooling/commit/ca7855c3831e89054046fdc69043fb13893ba9aa))
+* **autotool-plugin-turbo:** fix output globs ([a0b02bd](https://github.com/AlexAegis/js-tooling/commit/a0b02bd619e1c8db26bed66cb50abf6778b6fa86))
+* **autotool-plugin-turbo:** force BUILD_REASON=publish for tasks that involve publint ([7e50524](https://github.com/AlexAegis/js-tooling/commit/7e505246bafb7dcbcb925c8a86593d85440d7187))
+* **vite:** preserve comments in pure js libraries ([ed7a61c](https://github.com/AlexAegis/js-tooling/commit/ed7a61c411c3823f5d669cabd5f605c8e16f59d0))
+
 ## [0.5.9](https://github.com/AlexAegis/js-tooling/compare/v0.5.8...v0.5.9) (2023-07-21)
 
 
