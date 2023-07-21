@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.8](https://github.com/AlexAegis/js-tooling/compare/v0.5.7...v0.5.8) (2023-07-21)
+
+
+### Features
+
+* **autotool-plugin-vite:** offer a config for jsdoc based libs ([408beb2](https://github.com/AlexAegis/js-tooling/commit/408beb2ebe8d778bd43446f995c4007932fa7580))
+* **autotool-plugin-vite:** only run dts when building for publishing ([#9](https://github.com/AlexAegis/js-tooling/issues/9)) ([479bbed](https://github.com/AlexAegis/js-tooling/commit/479bbed720ff71aedd040b3c6e42ae9ef77e26ec))
+
 ## [0.5.7](https://github.com/AlexAegis/js-tooling/compare/v0.5.6...v0.5.7) (2023-07-21)
 
 
