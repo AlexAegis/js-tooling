@@ -14,11 +14,28 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					archetype: {
 						kind: 'lib',
 						framework: not(contains('svelte')), // Svelte libraries are not built by vite but svelte-package
+						language: 'ts',
 					},
 				},
 				packageKind: 'regular',
 				formatWithPrettier: true,
 				sourceFile: join('static', 'vite-lib.config.ts'),
+				targetFile: 'vite.config.ts',
+				sourcePluginPackageName: packageJson.name,
+			},
+			{
+				description: 'package vite config file for libraries',
+				executor: 'fileCopy',
+				packageJsonFilter: {
+					archetype: {
+						kind: 'lib',
+						framework: not(contains('svelte')), // Svelte libraries are not built by vite but svelte-package
+						language: 'js',
+					},
+				},
+				packageKind: 'regular',
+				formatWithPrettier: true,
+				sourceFile: join('static', 'vite-jslib.config.ts'),
 				targetFile: 'vite.config.ts',
 				sourcePluginPackageName: packageJson.name,
 			},

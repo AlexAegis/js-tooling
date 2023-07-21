@@ -10,7 +10,8 @@ import { join } from 'node:path';
 import packageJson from '../package.json';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
-	const languageMatcher = /^(ts|typescript)$/;
+	// Plan js libs also matched to be able to lint:tsc JSDoc style types
+	const languageMatcher = /^(ts|js)$/;
 
 	const archetypeFlavours: JsonMatcherFrom<PackageArchetype>[] = [
 		{ language: languageMatcher, platform: 'web', framework: not(contains('svelte')) },

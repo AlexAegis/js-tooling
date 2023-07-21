@@ -9,7 +9,7 @@ import packageJson from '../package.json';
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	const packageJsonFilter: PackageJsonFilter = {
 		archetype: {
-			language: /^(ts|typescript)$/,
+			language: /^(ts|js)$/, // Typedoc can process JSDoc too
 		},
 	};
 

@@ -50,6 +50,7 @@
 		},
 		"./nodemon": "./static/nodemon.json",
 		"./readme": "./readme.md",
+		"./vite-jslib.config": "./static/vite-jslib.config.ts",
 		"./vite-lib.config": "./static/vite-lib.config.ts"
 	},
 	"dependencies": {
