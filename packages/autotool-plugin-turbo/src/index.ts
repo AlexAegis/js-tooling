@@ -21,7 +21,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				data: {
 					scripts: {
-						all: 'turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						// When checking everything, publint will only succeed when building for publishing
+						all: "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}",
 					},
 				},
 			},
@@ -34,7 +35,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						build: 'turbo run build-lib_ build-app_ --concurrency 16 --cache-dir .cache/turbo',
 						'build-lib':
 							'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo',
-						all: 'turbo run all_ --concurrency 16 --cache-dir .cache/turbo',
+						all: "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo",
 						lint: 'turbo run lint_ --concurrency 16 --cache-dir .cache/turbo',
 					},
 					devDependencies: {

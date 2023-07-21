@@ -214,19 +214,22 @@
 		},
 		"publint_": {
 			"dependsOn": ["build-lib_"],
+			"env": ["BASE_HREF", "BUILD_REASON", "PLATFORM", "TARGET_ENV"],
 			"inputs": ["dist/**"],
 			"outputMode": "new-only",
 			"outputs": []
 		},
 		"start": {
-			"cache": false
+			"cache": false,
+			"passThroughEnv": ["BUILD_REASON"]
 		},
 		"test_": {
 			"dependsOn": ["^build-lib_"],
 			"env": ["VITEST"],
 			"inputs": ["!vite*.config.*.*", "*.*", "{src,static,public}/**/*"],
 			"outputMode": "new-only",
-			"outputs": ["coverage/**"]
+			"outputs": ["coverage/**"],
+			"passThroughEnv": ["BUILD_REASON"]
 		},
 		"typedoc_": {
 			"dependsOn": [],

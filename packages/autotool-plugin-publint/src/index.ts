@@ -11,7 +11,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						publint: 'turbo run publint_ --concurrency 16 --cache-dir .cache/turbo',
+						publint:
+							"BUILD_REASON='publish' turbo run publint_ --concurrency 16 --cache-dir .cache/turbo",
 					},
 				},
 			},
@@ -25,7 +26,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				data: {
 					scripts: {
 						publint:
-							'turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+							"BUILD_REASON='publish' turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}",
 						publint_: 'publint dist',
 					},
 					devDependencies: {

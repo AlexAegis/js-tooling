@@ -31,7 +31,7 @@
 		"lint:svelte_": "svelte-check --tsconfig ./tsconfig.json",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"lint:tsc_": "tsc --noEmit",
-		"all": "turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
