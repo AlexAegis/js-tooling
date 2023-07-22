@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-publint",
 	"description": "Setup publint",
-	"version": "0.5.10",
+	"version": "0.5.11",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -55,10 +55,10 @@
 		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.5.10",
-		"@alexaegis/ts": "^0.5.10",
-		"@alexaegis/vite": "^0.5.10",
-		"@alexaegis/vitest": "^0.5.10",
+		"@alexaegis/eslint-config-vitest": "^0.5.11",
+		"@alexaegis/ts": "^0.5.11",
+		"@alexaegis/vite": "^0.5.11",
+		"@alexaegis/vitest": "^0.5.11",
 		"@types/node": "^20.4.4",
 		"publint": "^0.1.16",
 		"typescript": "^5.1.6",

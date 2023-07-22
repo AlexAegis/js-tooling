@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.11](https://github.com/AlexAegis/js-tooling/compare/v0.5.10...v0.5.11) (2023-07-22)
+
+
+### Bug Fixes
+
+* **autotool-plugin-turbo:** publint should not get invalidated all the time ([c989b35](https://github.com/AlexAegis/js-tooling/commit/c989b35e39fc039a2ca67142cd0e0b2a1c5d8555))
+* **svelte-config:** manual types ([4fb8bb6](https://github.com/AlexAegis/js-tooling/commit/4fb8bb6a3bbc1acd9cb3bee5bea2dfed368e70f0))
+
 ## [0.5.10](https://github.com/AlexAegis/js-tooling/compare/v0.5.9...v0.5.10) (2023-07-21)
 
 
