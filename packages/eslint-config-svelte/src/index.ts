@@ -51,6 +51,7 @@ export default {
 					'warn',
 					{ varsIgnorePattern: '$$', argsIgnorePattern: '_' }, // To let $$Slot be defined
 				],
+				'no-undef': 'off', // TODO: the new generics feature doesn't like this https://github.com/sveltejs/eslint-plugin-svelte/issues/521
 				'@typescript-eslint/dot-notation': 'off', // Conflicts with: "Property comes from an index signature, so it must be accessed with [].js(4111)"
 				'@typescript-eslint/no-unsafe-call': 'off',
 				'@typescript-eslint/no-unsafe-assignment': 'off', // TODO: Because generics aren't properly supported yet Remove once this is resolved: https://github.com/sveltejs/eslint-plugin-svelte/issues/521
