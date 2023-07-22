@@ -214,10 +214,11 @@
 		},
 		"publint_": {
 			"dependsOn": ["build-lib_"],
-			"env": ["BASE_HREF", "BUILD_REASON", "PLATFORM", "TARGET_ENV"],
+			"env": ["BUILD_REASON"],
 			"inputs": ["dist/**"],
 			"outputMode": "new-only",
-			"outputs": []
+			"outputs": [],
+			"passThroughEnv": ["BASE_HREF", "PLATFORM", "TARGET_ENV"]
 		},
 		"start": {
 			"cache": false,
