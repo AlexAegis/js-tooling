@@ -58,7 +58,7 @@
 		"@alexaegis/ts": "^0.5.10",
 		"@alexaegis/vite": "^0.5.10",
 		"@alexaegis/vitest": "^0.5.10",
-		"@types/node": "^20.4.2",
+		"@types/node": "^20.4.4",
 		"prettier": "^3.0.0",
 		"publint": "^0.1.16",
 		"vite": "^4.4.6",

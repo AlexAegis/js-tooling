@@ -60,7 +60,7 @@
 		"@alexaegis/ts": "^0.5.10",
 		"@alexaegis/vite": "^0.5.10",
 		"@alexaegis/vitest": "^0.5.10",
-		"@types/node": "^20.4.2",
+		"@types/node": "^20.4.4",
 		"publint": "^0.1.16",
 		"stylelint": "^15.10.2",
 		"terser": "^5.19.2",
