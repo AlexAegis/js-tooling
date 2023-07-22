@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.12](https://github.com/AlexAegis/js-tooling/compare/v0.5.11...v0.5.12) (2023-07-22)
+
+
+### Bug Fixes
+
+* **eslint-config-svelte:** ignore generics related problems ([3996ec2](https://github.com/AlexAegis/js-tooling/commit/3996ec242457491406c9b1ba0543a49d6cfe7fce))
+
 ## [0.5.11](https://github.com/AlexAegis/js-tooling/compare/v0.5.10...v0.5.11) (2023-07-22)
 
 
