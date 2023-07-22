@@ -22,7 +22,8 @@ export default {
 				extraFileExtensions: ['.svelte'],
 			},
 			globals: {
-				$$Generic: true, // To let `type T = $$Generic;` be defined
+				// To let `type T = $$Generic;` be defined (Old generics syntax, <script lang="ts" generics="T"> is preferred)
+				$$Generic: 'readonly',
 			},
 			settings: {
 				svelte: {
@@ -52,6 +53,7 @@ export default {
 				],
 				'@typescript-eslint/dot-notation': 'off', // Conflicts with: "Property comes from an index signature, so it must be accessed with [].js(4111)"
 				'@typescript-eslint/no-unsafe-call': 'off',
+				'@typescript-eslint/no-unsafe-assignment': 'off', // TODO: Because generics aren't properly supported yet Remove once this is resolved: https://github.com/sveltejs/eslint-plugin-svelte/issues/521
 				'@typescript-eslint/no-unnecessary-condition': 'off', // @typescript-eslint doesn't know if a field can changed by svelte, like an input field, so a field like export let isEnabled: boolean = true; will always be seen as just true by the linter.
 			},
 		},
