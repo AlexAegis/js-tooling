@@ -1,12 +1,11 @@
 /**
- * A ts copy of this file exists at
- * packages/vite/src/helpers/to-base-href.function.ts
+ * A plain js copy of this file exists at
+ * packages/svelte-config/src/internal/to-base-href.function.js
  */
 
-/**
- * @type {import('./to-base-href.function.js').isAbsolute}
- */
-export const isAbsolute = (path) => {
+export type AbsolutePath = `/${string}`;
+
+export const isAbsolute = (path: string): path is AbsolutePath => {
 	return path.startsWith('/');
 };
 
@@ -16,10 +15,8 @@ export const isAbsolute = (path) => {
  *
  * The reason for this limitation is to let the base variable be trivially
  * joined with other paths like this: `${base}/foo`
- *
- * @type {import('./to-base-href.function.js').toBaseHref}
  */
-export const toBaseHref = (path = '') => {
+export const toBaseHref = (path = ''): AbsolutePath | '' => {
 	const trimmed = path.replace(/\/$/, ''); // Must not end with '/'
 	if (trimmed) {
 		return isAbsolute(trimmed) ? trimmed : `/${trimmed}`;

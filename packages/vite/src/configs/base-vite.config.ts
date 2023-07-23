@@ -1,6 +1,7 @@
 import type { LibraryFormats } from 'vite';
 import { mergeConfig, type UserConfig } from 'vite';
 import { createLazyAutoExternalsFunction } from 'vite-plugin-pakk';
+import { toBaseHref } from '../helpers/to-base-href.function.js';
 
 export const DEFAULT_OUT_DIR = 'dist';
 
@@ -25,6 +26,17 @@ export const DEFAULT_VITE_CONFIG: UserConfig = {
 		outDir: DEFAULT_OUT_DIR,
 	},
 };
+
+/**
+ * A Vite configuration for apps, containing
+ * - build.target: es2022
+ * - build.outDir: 'dist'
+ * from DEFAULT_VITE_CONFIG, and
+ * - base: toBaseHref(process.env['BASE_HREF']),
+ */
+export const DEFAULT_VITE_APP_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
+	base: toBaseHref(process.env['BASE_HREF']),
+} as UserConfig);
 
 /**
  * Vite configuration for building libraries
