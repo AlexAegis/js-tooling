@@ -6,7 +6,7 @@ import { toBaseHref } from './to-base-href.function.js';
 /**
  * Adds the regular sveltePreprocessors
  *
- * @type {import('./configurations.js').libConfiguration}
+ * @type {import('./types.js').Config}
  */
 export const libConfiguration = {
 	preprocess: sveltePreprocess(),
@@ -15,7 +15,7 @@ export const libConfiguration = {
 /**
  * Enables the vite inspector on `shift`
  *
- * @type {import('./configurations.js').spaConfiguration}
+ * @type {import('./types.js').Config}
  */
 export const spaConfiguration = {
 	...libConfiguration,
@@ -33,7 +33,7 @@ export const spaConfiguration = {
  * And the platform based on `process.env['PLATFORM']`
  * Valid values are 'vercel', 'github-pages' and 'auto' which is the default
  *
- * @type {import('./configurations.js').kitConfiguration}
+ * @type {import('./types.js').Config}
  */
 export const kitConfiguration = {
 	...spaConfiguration,

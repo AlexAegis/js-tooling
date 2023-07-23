@@ -3,21 +3,24 @@ import staticAdapter from '@sveltejs/adapter-static';
 import vercelAdapter from '@sveltejs/adapter-vercel';
 
 /**
- * @type {import('./pick-adapter.function.js').isPlatform}
+ * @param {string | undefined} platform
+ * @returns {platform is import('./types.js').Platform}
  */
 export const isPlatform = (platform) => {
 	return platform === 'vercel' || platform === 'github-pages' || platform === 'auto';
 };
 
 /**
- * @type {import('./pick-adapter.function.js').normalizePlatform}
+ * @param {string | undefined} platform
+ * @returns {import('./types.js').Platform}
  */
 export const normalizePlatform = (platform) => {
 	return isPlatform(platform) ? platform : 'auto';
 };
 
 /**
- * @type {import('./pick-adapter.function.js').pickAdapter}
+ * @param {string | undefined} platform
+ * @returns {import('./types.js').Adapter}
  */
 export const pickAdapter = (platform = 'auto') => {
 	if (platform === 'github-pages') {
