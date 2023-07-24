@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.1](https://github.com/AlexAegis/js-tooling/compare/v0.6.0...v0.6.1) (2023-07-24)
+
+
+### Features
+
+* **autotool-plugin-depcheck:** added @sveltejs/ deps like adapters to the ignore list ([774800b](https://github.com/AlexAegis/js-tooling/commit/774800b8061f39bbc8e557bc8381be9cf1e45ded))
+* **autotool-plugin-svelte:** adapters are now explicitly installed ([9a3afb0](https://github.com/AlexAegis/js-tooling/commit/9a3afb0a1a0fbc3d3046049496cb75b256f04b1d))
+* **autotool-plugin-turbo:** add turbo-ignore ([17d8d82](https://github.com/AlexAegis/js-tooling/commit/17d8d82889a484616e98772c039d6689f7e462dd))
+* **autotool-plugin-turbo:** mark start and dev as persistent ([fcd634d](https://github.com/AlexAegis/js-tooling/commit/fcd634dcb80ccf7ffac3ceabf1faaf43a5e1f3e0))
+
 ## [0.6.0](https://github.com/AlexAegis/js-tooling/compare/v0.5.12...v0.6.0) (2023-07-24)
 
 
