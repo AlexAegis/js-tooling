@@ -200,7 +200,7 @@ importers:
         version: 1.10.0(svelte@4.1.1)
       '@sveltejs/kit':
         specifier: ^1.22.3
-        version: 1.22.3(svelte@4.1.1)(vite@4.4.6)
+        version: 1.22.3(svelte@4.1.1)(vite@4.4.7)
       '@types/node':
         specifier: ^20.4.4
         version: 20.4.4
@@ -256,8 +256,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3(ts-node@10.9.1)
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -335,8 +335,8 @@ importers:
         specifier: ^20.4.4
         version: 20.4.4
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -378,8 +378,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -421,8 +421,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -458,8 +458,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -507,8 +507,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -544,8 +544,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -581,8 +581,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -630,8 +630,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -673,8 +673,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -722,8 +722,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -759,8 +759,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -802,8 +802,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -845,8 +845,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -885,8 +885,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -929,13 +929,13 @@ importers:
         version: 2.0.2(@sveltejs/kit@1.22.3)
       '@sveltejs/kit':
         specifier: ^1.22.3
-        version: 1.22.3(svelte@4.1.1)(vite@4.4.6)
+        version: 1.22.3(svelte@4.1.1)(vite@4.4.7)
       '@sveltejs/package':
         specifier: ^2.2.0
         version: 2.2.0(svelte@4.1.1)(typescript@5.1.6)
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^2.4.2
-        version: 2.4.2(svelte@4.1.1)(vite@4.4.6)
+        specifier: ^2.4.3
+        version: 2.4.3(svelte@4.1.1)(vite@4.4.7)
       '@types/node':
         specifier: ^20.4.4
         version: 20.4.4
@@ -955,8 +955,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1004,8 +1004,8 @@ importers:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.4.4)(typescript@5.1.6)
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1044,8 +1044,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1084,8 +1084,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1108,8 +1108,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.5.12
@@ -1179,8 +1179,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1216,8 +1216,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1256,8 +1256,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1293,8 +1293,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1351,8 +1351,8 @@ importers:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1412,8 +1412,8 @@ importers:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1464,8 +1464,8 @@ importers:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1507,8 +1507,8 @@ importers:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1553,8 +1553,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1590,8 +1590,8 @@ importers:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1667,8 +1667,8 @@ importers:
         specifier: ^10.1.2
         version: 10.1.2
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1713,8 +1713,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1756,8 +1756,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1775,7 +1775,7 @@ importers:
         version: 3.0.2(@sveltejs/kit@1.22.3)
       '@sveltejs/kit':
         specifier: ~1.22.3
-        version: 1.22.3(svelte@4.1.1)(vite@4.4.6)
+        version: 1.22.3(svelte@4.1.1)(vite@4.4.7)
       svelte-preprocess:
         specifier: ^5.0.4
         version: 5.0.4(postcss-load-config@4.0.1)(postcss@8.4.27)(svelte@4.1.1)(typescript@5.1.6)
@@ -1805,8 +1805,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vitest:
         specifier: ^0.33.0
         version: 0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0)
@@ -1826,8 +1826,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.5.12
@@ -1857,8 +1857,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
       vite-plugin-pakk:
         specifier: ^0.5.0
         version: 0.5.0
@@ -1882,8 +1882,8 @@ importers:
   packages/vitest:
     dependencies:
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^2.4.2
-        version: 2.4.2(svelte@4.1.1)(vite@4.4.6)
+        specifier: ^2.4.3
+        version: 2.4.3(svelte@4.1.1)(vite@4.4.7)
       '@vitest/coverage-v8':
         specifier: ^0.33.0
         version: 0.33.0(vitest@0.33.0)
@@ -1904,8 +1904,8 @@ importers:
         specifier: ^0.1.16
         version: 0.1.16
       vite:
-        specifier: ^4.4.6
-        version: 4.4.6(@types/node@20.4.4)
+        specifier: ^4.4.7
+        version: 4.4.7(@types/node@20.4.4)
 
 packages:
 
@@ -2535,6 +2535,11 @@ packages:
   /@eslint-community/regexpp@4.6.0:
     resolution: {integrity: sha512-uiPeRISaglZnaZk8vwrjQZ1CxogZeY/4IYft6gBOTqu1WhVXWmCmZMWxUv2Q/pxSvPdp1JPaO62kLOcOkMqWrw==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    dev: false
+
+  /@eslint-community/regexpp@4.6.1:
+    resolution: {integrity: sha512-O7x6dMstWLn2ktjcoiNLDkAGG2EjveHL+Vvc+n0fXumkJYAcSqcVYKtwDU+hDZ0uDUsnUagSYaZrOLAYE8un1A==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
   /@eslint/eslintrc@2.1.0:
     resolution: {integrity: sha512-Lj7DECXqIVCqnqjjHMPna4vn6GJcMgul/wuS0je9OZ9gsL0zzDpKPVtcG1HaDVc+9y+qgXneTeUMbCqXJNpH1A==}
@@ -2819,7 +2824,7 @@ packages:
       prettier: 3.0.0
       ts-node: 10.9.1(@types/node@20.4.4)(typescript@5.1.6)
       typescript: 5.1.6
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
       yargs: 17.7.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -2846,7 +2851,7 @@ packages:
       rollup: 3.26.3
       ts-node: 10.9.1(@types/node@20.4.4)(typescript@5.1.6)
       typescript: 5.1.6
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -3005,7 +3010,7 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.22.3(svelte@4.1.1)(vite@4.4.6)
+      '@sveltejs/kit': 1.22.3(svelte@4.1.1)(vite@4.4.7)
       import-meta-resolve: 3.0.0
 
   /@sveltejs/adapter-static@2.0.2(@sveltejs/kit@1.22.3):
@@ -3013,14 +3018,14 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.22.3(svelte@4.1.1)(vite@4.4.6)
+      '@sveltejs/kit': 1.22.3(svelte@4.1.1)(vite@4.4.7)
 
   /@sveltejs/adapter-vercel@3.0.2(@sveltejs/kit@1.22.3):
     resolution: {integrity: sha512-CQcLoKeVmF5Si+sJax0v8KMtXviJXfDXozJt3zfPHHYytCwMcGpJXsgqpqUbkdaF2xxgXuhTD7ClhQRFThbprw==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.22.3(svelte@4.1.1)(vite@4.4.6)
+      '@sveltejs/kit': 1.22.3(svelte@4.1.1)(vite@4.4.7)
       '@vercel/nft': 0.22.6
       esbuild: 0.18.16
     transitivePeerDependencies:
@@ -3028,7 +3033,7 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit@1.22.3(svelte@4.1.1)(vite@4.4.6):
+  /@sveltejs/kit@1.22.3(svelte@4.1.1)(vite@4.4.7):
     resolution: {integrity: sha512-IpHD5wvuoOIHYaHQUBJ1zERD2Iz+fB/rBXhXjl8InKw6X4VKE9BSus+ttHhE7Ke+Ie9ecfilzX8BnWE3FeQyng==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
@@ -3037,7 +3042,7 @@ packages:
       svelte: ^3.54.0 || ^4.0.0-next.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.1.1)(vite@4.4.6)
+      '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.1.1)(vite@4.4.7)
       '@types/cookie': 0.5.1
       cookie: 0.5.0
       devalue: 4.3.2
@@ -3050,7 +3055,7 @@ packages:
       sirv: 2.0.3
       svelte: 4.1.1
       undici: 5.22.1
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -3071,7 +3076,7 @@ packages:
       - typescript
     dev: true
 
-  /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.2)(svelte@4.1.1)(vite@4.4.6):
+  /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.2)(svelte@4.1.1)(vite@4.4.7):
     resolution: {integrity: sha512-Khdl5jmmPN6SUsVuqSXatKpQTMIifoQPDanaxC84m9JxIibWvSABJyHpyys0Z+1yYrxY5TTEQm+6elh0XCMaOA==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -3079,29 +3084,63 @@ packages:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.1.1)(vite@4.4.6)
+      '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.1.1)(vite@4.4.7)
       debug: 4.3.4
       svelte: 4.1.1
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
     transitivePeerDependencies:
       - supports-color
 
-  /@sveltejs/vite-plugin-svelte@2.4.2(svelte@4.1.1)(vite@4.4.6):
+  /@sveltejs/vite-plugin-svelte-inspector@1.0.3(@sveltejs/vite-plugin-svelte@2.4.3)(svelte@4.1.1)(vite@4.4.7):
+    resolution: {integrity: sha512-Khdl5jmmPN6SUsVuqSXatKpQTMIifoQPDanaxC84m9JxIibWvSABJyHpyys0Z+1yYrxY5TTEQm+6elh0XCMaOA==}
+    engines: {node: ^14.18.0 || >= 16}
+    peerDependencies:
+      '@sveltejs/vite-plugin-svelte': ^2.2.0
+      svelte: ^3.54.0 || ^4.0.0
+      vite: ^4.0.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 2.4.3(svelte@4.1.1)(vite@4.4.7)
+      debug: 4.3.4
+      svelte: 4.1.1
+      vite: 4.4.7(@types/node@20.4.4)
+    transitivePeerDependencies:
+      - supports-color
+
+  /@sveltejs/vite-plugin-svelte@2.4.2(svelte@4.1.1)(vite@4.4.7):
     resolution: {integrity: sha512-ePfcC48ftMKhkT0OFGdOyycYKnnkT6i/buzey+vHRTR/JpQvuPzzhf1PtKqCDQfJRgoPSN2vscXs6gLigx/zGw==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.3(@sveltejs/vite-plugin-svelte@2.4.2)(svelte@4.1.1)(vite@4.4.6)
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.3(@sveltejs/vite-plugin-svelte@2.4.2)(svelte@4.1.1)(vite@4.4.7)
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.1
       svelte: 4.1.1
       svelte-hmr: 0.15.2(svelte@4.1.1)
-      vite: 4.4.6(@types/node@20.4.4)
-      vitefu: 0.2.4(vite@4.4.6)
+      vite: 4.4.7(@types/node@20.4.4)
+      vitefu: 0.2.4(vite@4.4.7)
+    transitivePeerDependencies:
+      - supports-color
+
+  /@sveltejs/vite-plugin-svelte@2.4.3(svelte@4.1.1)(vite@4.4.7):
+    resolution: {integrity: sha512-NY2h+B54KHZO3kDURTdARqthn6D4YSIebtfW75NvZ/fwyk4G+AJw3V/i0OBjyN4406Ht9yZcnNWMuRUFnDNNiA==}
+    engines: {node: ^14.18.0 || >= 16}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0
+      vite: ^4.0.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.3(@sveltejs/vite-plugin-svelte@2.4.3)(svelte@4.1.1)(vite@4.4.7)
+      debug: 4.3.4
+      deepmerge: 4.3.1
+      kleur: 4.1.5
+      magic-string: 0.30.1
+      svelte: 4.1.1
+      svelte-hmr: 0.15.2(svelte@4.1.1)
+      vite: 4.4.7(@types/node@20.4.4)
+      vitefu: 0.2.4(vite@4.4.7)
     transitivePeerDependencies:
       - supports-color
 
@@ -5398,7 +5437,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.45.0)
-      '@eslint-community/regexpp': 4.6.0
+      '@eslint-community/regexpp': 4.6.1
       '@eslint/eslintrc': 2.1.0
       '@eslint/js': 8.44.0
       '@humanwhocodes/config-array': 0.11.10
@@ -11046,7 +11085,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11057,7 +11096,7 @@ packages:
       - supports-color
       - terser
 
-  /vite-plugin-dts@3.3.1(@types/node@20.4.4)(typescript@5.1.6)(vite@4.4.6):
+  /vite-plugin-dts@3.3.1(@types/node@20.4.4)(typescript@5.1.6)(vite@4.4.7):
     resolution: {integrity: sha512-RFebFGg6GWKkZqRQ5n6ls8giSiygKMBriJTFp8N+CRbYgI4lMXBxXEx0z2bthfeQv/xB53Wmhn/LNOOqb9OQHQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -11073,7 +11112,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.8.0
       typescript: 5.1.6
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
       vue-tsc: 1.8.6(typescript@5.1.6)
     transitivePeerDependencies:
       - '@types/node'
@@ -11093,8 +11132,8 @@ packages:
       prettier: 3.0.0
       ts-node: 10.9.1(@types/node@20.4.4)(typescript@5.1.6)
       typescript: 5.1.6
-      vite: 4.4.6(@types/node@20.4.4)
-      vite-plugin-dts: 3.3.1(@types/node@20.4.4)(typescript@5.1.6)(vite@4.4.6)
+      vite: 4.4.7(@types/node@20.4.4)
+      vite-plugin-dts: 3.3.1(@types/node@20.4.4)(typescript@5.1.6)(vite@4.4.7)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -11108,8 +11147,8 @@ packages:
       - terser
     dev: false
 
-  /vite@4.4.6(@types/node@20.4.4):
-    resolution: {integrity: sha512-EY6Mm8vJ++S3D4tNAckaZfw3JwG3wa794Vt70M6cNJ6NxT87yhq7EC8Rcap3ahyHdo8AhCmV9PTk+vG1HiYn1A==}
+  /vite@4.4.7(@types/node@20.4.4):
+    resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -11143,7 +11182,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitefu@0.2.4(vite@4.4.6):
+  /vitefu@0.2.4(vite@4.4.7):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -11151,7 +11190,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
 
   /vitest@0.33.0(@vitest/ui@0.33.0)(jsdom@22.1.0):
     resolution: {integrity: sha512-1CxaugJ50xskkQ0e969R/hW47za4YXDUfWJDxip1hwbnhUjYolpfUn2AMOulqG/Dtd9WYAtkHmM/m3yKVrEejQ==}
@@ -11207,7 +11246,7 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.6.0
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
       vite-node: 0.33.0(@types/node@20.4.4)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
