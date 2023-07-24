@@ -12,13 +12,13 @@ functions had to be reimplemented, albeit in a much simpler form.
 ## Installation
 
 ```sh
-npm i @alexaegis/standard-version@0.5.12
+npm i @alexaegis/standard-version@0.6.0
 ```
 
 ```json
 {
   "dependencies": {
-    "@alexaegis/standard-version": "^0.5.12"
+    "@alexaegis/standard-version": "^0.6.0"
   }
 }
 ```

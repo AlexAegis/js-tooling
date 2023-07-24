@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.0](https://github.com/AlexAegis/js-tooling/compare/v0.5.12...v0.6.0) (2023-07-24)
+
+
+### Features
+
+* **autotool-plugin-github:** optional codacy report lang override ([bed4c55](https://github.com/AlexAegis/js-tooling/commit/bed4c5535ab58894a3f096afd89495020e698687))
+* **autotool-plugin-git:** ignore the .vercel folder ([8221a23](https://github.com/AlexAegis/js-tooling/commit/8221a23695e26a6647c93e85cc08b44c9ddd13c2))
+* **autotool-plugin-turbo:** the .vercel folder should be considered output ([95a0efc](https://github.com/AlexAegis/js-tooling/commit/95a0efc38de764daaa7626dc2048fb8da7bbbd7b))
+* **eslint-config-svelte:** disable rule conflicting with the new generics feature ([735a6cf](https://github.com/AlexAegis/js-tooling/commit/735a6cf23e5440768c8bc3b93df3b8817a688e20))
+* **vite:** added base config for apps ([0900c4f](https://github.com/AlexAegis/js-tooling/commit/0900c4f56dca4cb4f0b642be032c7e7228736823))
+
+
+### Bug Fixes
+
+* **ts:** allowJs ([68a1f77](https://github.com/AlexAegis/js-tooling/commit/68a1f77a36509e851a1b01ff916366db3f6afdca))
+
 ## [0.5.12](https://github.com/AlexAegis/js-tooling/compare/v0.5.11...v0.5.12) (2023-07-22)
 
 
