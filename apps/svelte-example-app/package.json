@@ -35,6 +35,7 @@
 		"dev": "concurrently npm:watch-deps npm:start",
 		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
 		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
+		"kit:sync": "svelte-kit sync",
 		"postinstall": "svelte-kit sync # pakk:not-distributed",
 		"start": "TARGET_ENV='local' vite",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app",
