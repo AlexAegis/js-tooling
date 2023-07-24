@@ -39,7 +39,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						lint: 'turbo run lint_ --concurrency 16 --cache-dir .cache/turbo',
 					},
 					devDependencies: {
-						turbo: packageJson.dependencies.turbo,
+						turbo: packageJson.devDependencies.turbo,
+						'turbo-ignore': packageJson.devDependencies['turbo-ignore'],
 					},
 				},
 			},
