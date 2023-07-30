@@ -216,6 +216,7 @@ export const svelteKitAppSetupPlugin: AutotoolPluginObject = {
 			data: {
 				devDependencies: {
 					'@sveltejs/adapter-auto': packageJson.devDependencies['@sveltejs/adapter-auto'],
+					'@sveltejs/adapter-node': packageJson.devDependencies['@sveltejs/adapter-node'],
 					'@sveltejs/adapter-static':
 						packageJson.devDependencies['@sveltejs/adapter-static'],
 					'@sveltejs/adapter-vercel':

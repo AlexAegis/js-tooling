@@ -1,4 +1,5 @@
 import autoAdapter from '@sveltejs/adapter-auto';
+import nodeAdapter from '@sveltejs/adapter-node';
 import staticAdapter from '@sveltejs/adapter-static';
 import vercelAdapter from '@sveltejs/adapter-vercel';
 
@@ -7,7 +8,12 @@ import vercelAdapter from '@sveltejs/adapter-vercel';
  * @returns {platform is import('./types.js').Platform}
  */
 export const isPlatform = (platform) => {
-	return platform === 'vercel' || platform === 'github-pages' || platform === 'auto';
+	return (
+		platform === 'vercel' ||
+		platform === 'node' ||
+		platform === 'github-pages' ||
+		platform === 'auto'
+	);
 };
 
 /**
@@ -23,15 +29,24 @@ export const normalizePlatform = (platform) => {
  * @returns {import('./types.js').Adapter}
  */
 export const pickAdapter = (platform = 'auto') => {
-	if (platform === 'github-pages') {
-		return staticAdapter({
-			fallback: 'index.html', // may differ from host to host
-			strict: true,
-			precompress: true,
-		});
-	} else if (platform === 'vercel') {
-		return vercelAdapter({});
-	} else {
-		return autoAdapter();
+	switch (platform) {
+		case 'github-pages': {
+			return staticAdapter({
+				fallback: 'index.html', // may differ from host to host
+				strict: true,
+				precompress: true,
+			});
+		}
+		case 'vercel': {
+			return vercelAdapter({});
+		}
+		case 'node': {
+			return nodeAdapter({
+				precompress: true,
+			});
+		}
+		default: {
+			return autoAdapter();
+		}
 	}
 };
