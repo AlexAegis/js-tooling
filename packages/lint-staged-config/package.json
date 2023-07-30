@@ -50,7 +50,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.5.0",
+		"@alexaegis/fs": "^0.5.2",
 		"lint-staged": "13.2.3",
 		"typescript": "^5.1.6"
 	},
@@ -59,11 +59,11 @@
 		"@alexaegis/ts": "^0.6.1",
 		"@alexaegis/vite": "^0.6.1",
 		"@alexaegis/vitest": "^0.6.1",
-		"@types/eslint": "^8.44.0",
+		"@types/eslint": "^8.44.1",
 		"@types/lint-staged": "^13.2.0",
-		"@types/node": "^20.4.4",
-		"publint": "^0.1.16",
-		"vite": "^4.4.7",
-		"vitest": "^0.33.0"
+		"@types/node": "^20.4.5",
+		"publint": "^0.2.0",
+		"vite": "^4.4.8",
+		"vitest": "^0.34.1"
 	}
 }

@@ -71,10 +71,10 @@
 		"@pakk/cli": "^0.5.0",
 		"@sveltejs/package": "^2.2.0",
 		"stylelint": "^15.10.2",
-		"svelte": "^4.1.1",
+		"svelte": "^4.1.2",
 		"svelte-check": "^3.4.6",
 		"svelte-preprocess": "^5.0.4",
 		"typescript": "^5.1.6",
-		"vitest": "^0.33.0"
+		"vitest": "^0.34.1"
 	}
 }
