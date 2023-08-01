@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.2](https://github.com/AlexAegis/js-tooling/compare/v0.6.1...v0.6.2) (2023-08-01)
+
+
+### Features
+
+* **autotool-plugin-svelte:** added node adapter to sveltekit conf ([82793c8](https://github.com/AlexAegis/js-tooling/commit/82793c8c9b24a841e215b6323216b424469c1cce))
+* reverted prettier config to use imported plugins instead of strings ([54eec10](https://github.com/AlexAegis/js-tooling/commit/54eec107a2143e623269ad95510c7f1e4e3a7afc))
+
 ## [0.6.1](https://github.com/AlexAegis/js-tooling/compare/v0.6.0...v0.6.1) (2023-07-24)
 
 
