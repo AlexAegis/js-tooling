@@ -128,12 +128,6 @@ importers:
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
-      prettier-plugin-svelte:
-        specifier: ^3.0.3
-        version: 3.0.3(prettier@3.0.0)(svelte@4.1.2)
-      prettier-plugin-tailwindcss:
-        specifier: ^0.4.1
-        version: 0.4.1(prettier-plugin-svelte@3.0.3)(prettier@3.0.0)
       publint:
         specifier: ^0.2.0
         version: 0.2.0
@@ -1872,9 +1866,6 @@ importers:
   packages/vite:
     dependencies:
       '@alexaegis/logging':
-        specifier: ^0.5.2
-        version: 0.5.2
-      '@alexaegis/workspace-tools':
         specifier: ^0.5.2
         version: 0.5.2
       concurrently:
@@ -8440,6 +8431,7 @@ packages:
     dependencies:
       prettier: 3.0.0
       svelte: 4.1.2
+    dev: false
 
   /prettier-plugin-tailwindcss@0.4.1(prettier-plugin-svelte@3.0.3)(prettier@3.0.0):
     resolution: {integrity: sha512-hwn2EiJmv8M+AW4YDkbjJ6HlZCTzLyz1QlySn9sMuKV/Px0fjwldlB7tol8GzdgqtkdPtzT3iJ4UzdnYXP25Ag==}
@@ -8495,6 +8487,7 @@ packages:
     dependencies:
       prettier: 3.0.0
       prettier-plugin-svelte: 3.0.3(prettier@3.0.0)(svelte@4.1.2)
+    dev: false
 
   /prettier@3.0.0:
     resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}

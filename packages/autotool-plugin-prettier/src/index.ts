@@ -14,10 +14,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				data: {
 					scripts: {
 						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
-						format_:
-							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .', // TODO: Remove plugin arguments from here once https://github.com/prettier/prettier/issues/15079 is resolved
-						'lint:format_':
-							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .',
+						format_: 'prettier --cache-location .cache/prettier --write .',
+						'lint:format_': 'prettier --cache-location .cache/prettier --check .',
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 					},
@@ -32,19 +30,17 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					scripts: {
 						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo',
 						format_:
-							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --write .', // TODO: Remove plugin arguments from here once https://github.com/prettier/prettier/issues/15079 is resolved
+							'prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --write .',
 						'lint:format_':
-							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
+							'prettier --cache-location .cache/prettier --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
 						'lint:format':
 							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
 					},
 					devDependencies: {
 						prettier: packageJson.dependencies.prettier,
-						// Since the plugins are set as string in the distributed configuration these have to be installed somewhere where prettier can find them
-						'prettier-plugin-svelte':
-							packageJson.dependencies['prettier-plugin-svelte'],
-						'prettier-plugin-tailwindcss':
-							packageJson.dependencies['prettier-plugin-tailwindcss'],
+						// The plugins are no longer set as strings, time to remove them
+						'prettier-plugin-svelte': undefined,
+						'prettier-plugin-tailwindcss': undefined,
 					},
 				},
 			},
