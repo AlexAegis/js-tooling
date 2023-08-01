@@ -33,6 +33,7 @@
 		"stylelint-config-*",
 		"svelte",
 		"svelte-check",
+		"svelte-preprocess",
 		"ts-node",
 		"turbo-ignore",
 		"typedoc",

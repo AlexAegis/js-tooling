@@ -6,8 +6,7 @@
 		"@pakk/cli",
 		"@sveltejs/*",
 		"publint",
-		"svelte-check",
-		"svelte-preprocess"
+		"svelte-check"
 	],
 	"skip-missing": true
 }
