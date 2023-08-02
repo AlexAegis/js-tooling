@@ -65,7 +65,6 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.5.2",
-		"@alexaegis/workspace-tools": "^0.5.2",
 		"concurrently": "^8.2.0",
 		"nodemon": "^3.0.1",
 		"vite": "^4.4.8",

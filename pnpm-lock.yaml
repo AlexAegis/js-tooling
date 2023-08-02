@@ -1874,9 +1874,6 @@ importers:
       '@alexaegis/logging':
         specifier: ^0.5.2
         version: 0.5.2
-      '@alexaegis/workspace-tools':
-        specifier: ^0.5.2
-        version: 0.5.2
       concurrently:
         specifier: ^8.2.0
         version: 8.2.0
