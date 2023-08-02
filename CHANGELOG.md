@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.3](https://github.com/AlexAegis/js-tooling/compare/v0.6.2...v0.6.3) (2023-08-02)
+
+
+### Features
+
+* **autotool-plugin-depcheck:** added svelte-preprocess to depcheck ignores ([cb05642](https://github.com/AlexAegis/js-tooling/commit/cb0564207f9f697d56e47d0cdc528f86e5adf1cb))
+* **autotool-plugin-eslint:** add .vercel to ignored folders ([64cd950](https://github.com/AlexAegis/js-tooling/commit/64cd95007f15fb167807e9a35ee1f384cc7eb6f1))
+
 ## [0.6.2](https://github.com/AlexAegis/js-tooling/compare/v0.6.1...v0.6.2) (2023-08-01)
 
 
