@@ -52,11 +52,14 @@ export const turbowatchLocalNodeModules = async (
 
 	const commonIgnoredDirs: Expression[] = [
 		['dirname', 'dist'],
+		['dirname', 'out'],
+		['dirname', 'build'],
+		['dirname', 'coverage'],
 		['dirname', '.turbo'],
 		['dirname', '.vercel'],
 		['dirname', '.cache'],
-		['dirname', 'coverage'],
-		['dirname', 'build'],
+		['dirname', '.svelte-kit'],
+		['dirname', '.next'],
 		['match', 'vite(st)?.config.*'],
 	];
 
@@ -100,10 +103,12 @@ export const turbowatchLocalNodeModules = async (
 	};
 
 	let spawnedOnFirstBuild: ChildProcess | undefined;
+	const abortController: AbortController = new AbortController();
 
 	return {
 		project: currentPackagesNodeModulesPath,
 		debounce: { wait: 50 },
+		abortController,
 		triggers: [
 			{
 				expression: watchExpression,
@@ -119,6 +124,12 @@ export const turbowatchLocalNodeModules = async (
 						spawnedOnFirstBuild = options.onFirstBuild
 							? options.onFirstBuild()
 							: startCommand();
+
+						if (spawnedOnFirstBuild) {
+							spawnedOnFirstBuild.on('exit', () => {
+								abortController.abort('onFirstBuild command exited!');
+							});
+						}
 					}
 					changeCount++;
 				},
