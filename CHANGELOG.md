@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.1](https://github.com/AlexAegis/js-tooling/compare/v0.7.0...v0.7.1) (2023-08-03)
+
+
+### Features
+
+* use an abortController in the turbowatcher ([34f65bf](https://github.com/AlexAegis/js-tooling/commit/34f65bf2332d4524f81c559848c8f3a9f9071cb2))
+
 ## [0.7.0](https://github.com/AlexAegis/js-tooling/compare/v0.6.3...v0.7.0) (2023-08-03)
 
 
