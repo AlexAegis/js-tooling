@@ -108,7 +108,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageJsonFilter: {
 					archetype: {
 						language: languageMatcher,
-						framework: 'node',
+						framework: or(equal('node'), equal('svelte')),
 					},
 				},
 				data: {
