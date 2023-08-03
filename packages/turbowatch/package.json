@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/turbowatch",
 	"description": "A turbowatch configuration to watch local dependencies through node_modules",
-	"version": "0.6.3",
+	"version": "0.7.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -60,10 +60,10 @@
 		"@alexaegis/workspace-tools": "^0.6.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.6.3",
-		"@alexaegis/ts": "^0.6.3",
-		"@alexaegis/vite": "^0.6.3",
-		"@alexaegis/vitest": "^0.6.3",
+		"@alexaegis/eslint-config-vitest": "^0.7.0",
+		"@alexaegis/ts": "^0.7.0",
+		"@alexaegis/vite": "^0.7.0",
+		"@alexaegis/vitest": "^0.7.0",
 		"@types/node": "^20.4.6",
 		"publint": "^0.2.0",
 		"turbowatch": "^2.29.4",

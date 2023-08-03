@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.0](https://github.com/AlexAegis/js-tooling/compare/v0.6.3...v0.7.0) (2023-08-03)
+
+
+### Features
+
+* **turbowatch:** new dependency watching system built on turbowatch ([92b499c](https://github.com/AlexAegis/js-tooling/commit/92b499c2c876ea6dd666ae370416e9b4862530fc))
+
 ## [0.6.3](https://github.com/AlexAegis/js-tooling/compare/v0.6.2...v0.6.3) (2023-08-02)
 
 
