@@ -14,7 +14,9 @@ import {
 } from './watch-local-node-modules.options.js';
 
 /**
- * how about relying on CWD, and do the whole thing from a package?
+ * Defines a turbowatch config that runs a build command everytime something
+ * changes in `node_modules`, where all the local dependencies expected to be
+ * linked.
  */
 export const turbowatchLocalNodeModules = async (
 	rawOptions?: TurbowatchLocalNodeModulesOptions,
