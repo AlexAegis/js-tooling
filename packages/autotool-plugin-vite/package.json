@@ -48,17 +48,15 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
-		"./nodemon": "./static/nodemon.json",
+		"./dev.js": "./static/dev.js.txt",
 		"./readme": "./readme.md",
 		"./vite-jslib.config": "./static/vite-jslib.config.ts",
 		"./vite-lib.config": "./static/vite-lib.config.ts"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.5.2",
-		"@alexaegis/predicate": "^0.5.2",
+		"@alexaegis/logging": "^0.6.1",
+		"@alexaegis/predicate": "^0.6.1",
 		"autotool-plugin": "^0.2.3",
-		"concurrently": "^8.2.0",
-		"nodemon": "^3.0.1",
 		"vite": "^4.4.8"
 	},
 	"devDependencies": {
@@ -66,8 +64,9 @@
 		"@alexaegis/ts": "^0.6.3",
 		"@alexaegis/vite": "^0.6.3",
 		"@alexaegis/vitest": "^0.6.3",
-		"@types/node": "^20.4.5",
+		"@types/node": "^20.4.6",
 		"publint": "^0.2.0",
+		"turbowatch": "^2.29.4",
 		"typescript": "^5.1.6",
 		"vite": "^4.4.8",
 		"vitest": "^0.34.1"

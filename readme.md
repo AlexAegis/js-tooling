@@ -22,6 +22,7 @@ These packages only contain configurations, that could be independently used
 - [standard-version](packages/standard-version/)
 - [stylelint-config](packages/stylelint-config/)
 - [ts](packages/ts/)
+- [turbowatch](packages/turbowatch/)
 - [vite](packages/vite/)
 - [vitest](packages/vitest/)
 

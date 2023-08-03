@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Hello from './components/hello.svelte';
 
-	export let name = 'direct';
+	export let name = 'directds';
 </script>
 
 <h1>I'm part of the package API {name}</h1>

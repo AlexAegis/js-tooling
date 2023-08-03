@@ -73,7 +73,7 @@
 		"@alexaegis/ts": "^0.6.3",
 		"@alexaegis/vite": "^0.6.3",
 		"@alexaegis/vitest": "^0.6.3",
-		"@types/node": "^20.4.5",
+		"@types/node": "^20.4.6",
 		"publint": "^0.2.0",
 		"unified": "^10.1.2",
 		"vite": "^4.4.8",

@@ -8,6 +8,9 @@
 		"build-app_": {
 			"dependsOn": ["^build-lib_", "@alexaegis/vite#build-lib_"]
 		},
+		"dev_": {
+			"dependsOn": ["^build-lib_", "@alexaegis/turborepo#build-lib_"]
+		},
 		"test_": {
 			"dependsOn": ["^build-lib_", "@alexaegis/vitest#build-lib_"]
 		},

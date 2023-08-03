@@ -50,7 +50,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.5.2",
+		"@alexaegis/fs": "^0.6.1",
 		"lint-staged": "13.2.3",
 		"typescript": "^5.1.6"
 	},
@@ -61,7 +61,7 @@
 		"@alexaegis/vitest": "^0.6.3",
 		"@types/eslint": "^8.44.1",
 		"@types/lint-staged": "^13.2.0",
-		"@types/node": "^20.4.5",
+		"@types/node": "^20.4.6",
 		"publint": "^0.2.0",
 		"vite": "^4.4.8",
 		"vitest": "^0.34.1"

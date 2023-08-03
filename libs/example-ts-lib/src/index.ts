@@ -3,3 +3,5 @@ export const hello = (msg: string): string => {
 	console.log(result);
 	return result;
 };
+
+export const message = 'message';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hello } from '@alexaegis/example-svelte-lib';
+	import { Hello, message } from '@alexaegis/example-svelte-lib';
 	// import Direct from '@alexaegis/example-svelte-lib/direct'; // TODO: since the typedefs are only available for svelte libs after packaging, make build a dependency of lint:svelte
 </script>
 
@@ -23,5 +23,9 @@
 	<section class="p-4">
 		<Hello name="example app"></Hello>
 		<!-- <Direct ></Direct> -->
+	</section>
+	<section class="p-4">
+		This string is imported from example-svelte-lib, but is actually defined in example-ts-lib:
+		<h4>{message}</h4>
 	</section>
 </div>

@@ -106,6 +106,20 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 			},
 			{
+				description: 'package turbowatch file for apps',
+				executor: 'fileCopy',
+				packageJsonFilter: {
+					archetype: {
+						kind: 'app',
+					},
+				},
+				packageKind: 'regular',
+				formatWithPrettier: true,
+				sourceFile: join('static', 'dev.js.txt'),
+				targetFile: 'dev.js',
+				sourcePluginPackageName: packageJson.name,
+			},
+			{
 				description: 'package build scripts for apps and additional devDependencies',
 				executor: 'packageJson',
 				packageKind: 'regular',
@@ -118,14 +132,16 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					scripts: {
 						build: 'turbo run build-app_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
 						'build-app_': 'vite build',
-						dev: 'concurrently npm:watch-deps npm:start',
-						'watch-deps':
-							"TARGET_ENV='local' nodemon --config ${relativePathFromPackageToRoot}/node_modules/@alexaegis/autotool-plugin-vite/static/nodemon.json --watch ./node_modules/**/src/**/* --ext ts,tsx,mts,cts,svelte,js,jsx,mjs,cjs,json --ignore dist --exec 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}'",
-						start: "TARGET_ENV='local' vite",
+						start_: "TARGET_ENV='local' vite", // This could later be changed to a start command that is not a dev server, but reflects a more production state
+						'build:dependencies':
+							"TARGET_ENV='local' turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName} # used by turbowatch",
+						start: 'turbo run start_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						dev: 'turbowatch dev.js',
+						dev_: "TARGET_ENV='local' vite",
 					},
 					devDependencies: {
-						nodemon: packageJson.dependencies.nodemon,
-						concurrently: packageJson.dependencies.concurrently,
+						turbowatch: packageJson.devDependencies.turbowatch,
+						'@alexaegis/turbowatch': packageJson.version, // versioned together
 					},
 				},
 			},
