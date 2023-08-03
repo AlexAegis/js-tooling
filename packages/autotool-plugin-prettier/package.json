@@ -63,7 +63,7 @@
 		"@alexaegis/logging": "^0.6.1",
 		"@alexaegis/prettier-config": "^0.7.0",
 		"autotool-plugin": "^0.2.3",
-		"prettier": "^3.0.0",
+		"prettier": "^3.0.1",
 		"prettier-plugin-svelte": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.4.1"
 	},

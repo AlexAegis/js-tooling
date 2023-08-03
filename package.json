@@ -118,7 +118,7 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3",
 		"npm-check-updates": "^16.10.17",
-		"prettier": "^3.0.0",
+		"prettier": "^3.0.1",
 		"prettier-plugin-svelte": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.4.1",
 		"publint": "^0.2.0",
