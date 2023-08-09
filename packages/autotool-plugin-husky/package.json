@@ -57,7 +57,7 @@
 	"dependencies": {
 		"@alexaegis/lint-staged-config": "^0.7.1",
 		"@alexaegis/logging": "^0.6.1",
-		"@commitlint/config-conventional": "^17.6.7",
+		"@commitlint/config-conventional": "^17.7.0",
 		"autotool-plugin": "^0.2.3",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3"
@@ -67,10 +67,10 @@
 		"@alexaegis/ts": "^0.7.1",
 		"@alexaegis/vite": "^0.7.1",
 		"@alexaegis/vitest": "^0.7.1",
-		"@types/node": "^20.4.6",
+		"@types/node": "^20.4.9",
 		"publint": "^0.2.0",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.8",
+		"vite": "^4.4.9",
 		"vitest": "^0.34.1"
 	}
 }

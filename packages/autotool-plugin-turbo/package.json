@@ -60,12 +60,12 @@
 		"@alexaegis/ts": "^0.7.1",
 		"@alexaegis/vite": "^0.7.1",
 		"@alexaegis/vitest": "^0.7.1",
-		"@types/node": "^20.4.6",
+		"@types/node": "^20.4.9",
 		"publint": "^0.2.0",
 		"turbo": "^1.10.12",
 		"turbo-ignore": "^1.10.12",
 		"typescript": "^5.1.6",
-		"vite": "^4.4.8",
+		"vite": "^4.4.9",
 		"vitest": "^0.34.1"
 	}
 }
