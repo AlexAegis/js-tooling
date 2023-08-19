@@ -1662,8 +1662,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       unified-prettier:
-        specifier: ^2.0.0
-        version: 2.0.0(prettier@3.0.2)
+        specifier: ^1.0.2
+        version: 1.0.2(prettier@3.0.2)
     optionalDependencies:
       prettier:
         specifier: ^3.0.2
@@ -3648,6 +3648,7 @@ packages:
 
   /@types/unist@3.0.0:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: true
 
   /@types/which@3.0.0:
     resolution: {integrity: sha512-ASCxdbsrwNfSMXALlC3Decif9rwDMu+80KGp5zI2RLRotfMsTv7fHL8W8VDp24wymzDyIFudhUeSCugrgRFfHQ==}
@@ -3789,6 +3790,7 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+    dev: true
 
   /@vercel/nft@0.23.0:
     resolution: {integrity: sha512-1iuPjyltiPqyZrvc/bW1CyICRdng8bVhpJT8MsIXV7Wj+mRFyJs9krsHbVy2pZwu7BMAgforQsT5TCY1JoBDxw==}
@@ -5178,6 +5180,7 @@ packages:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
     dependencies:
       dequal: 2.0.3
+    dev: true
 
   /didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -11334,13 +11337,13 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /unified-prettier@2.0.0(prettier@3.0.2):
-    resolution: {integrity: sha512-sbe/9D1hEWugtRv3nB2EdItKGnajCq0dYIPG06OFUHx+DwkQojpQSlWyrjvGvGVqrTP6deQ2gIxl4/u5Kra02g==}
+  /unified-prettier@1.0.2(prettier@3.0.2):
+    resolution: {integrity: sha512-Hal9mbA+X9cRiVc3SPKo7L2cL1/PIdYxA2XX93iQVDs1uAVLjFaS/Qg4miFgBXypMrgXWclBU5c6+H9I0atjCw==}
     peerDependencies:
       prettier: ^3.0.0
     dependencies:
       prettier: 3.0.2
-      unified: 11.0.1
+      unified: 10.1.2
     dev: false
 
   /unified@10.1.2:
@@ -11364,6 +11367,7 @@ packages:
       is-plain-obj: 4.1.0
       trough: 2.1.0
       vfile: 6.0.1
+    dev: true
 
   /unique-filename@3.0.0:
     resolution: {integrity: sha512-afXhuC55wkAmZ0P18QsVE6kp8JaxrEokN2HGIoIVv2ijHQd419H0+6EigAFcIzXeMIkcIkNBpB3L/DXB3cTS/g==}
@@ -11412,6 +11416,7 @@ packages:
     resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==}
     dependencies:
       '@types/unist': 3.0.0
+    dev: true
 
   /unist-util-visit-parents@4.1.1:
     resolution: {integrity: sha512-1xAFJXAKpnnJl8G7K5KgU7FY55y3GcLIXqkzUj5QF/QVP7biUm0K0O2oqVkYsdjzJKifYeWn9+o6piAK2hGSHw==}
@@ -11558,6 +11563,7 @@ packages:
     dependencies:
       '@types/unist': 3.0.0
       unist-util-stringify-position: 4.0.0
+    dev: true
 
   /vfile-reporter@7.0.5:
     resolution: {integrity: sha512-NdWWXkv6gcd7AZMvDomlQbK3MqFWL1RlGzMn++/O2TI+68+nqxCPTvLugdOtfSzXmjh+xUyhp07HhlrbJjT+mw==}
@@ -11597,6 +11603,7 @@ packages:
       '@types/unist': 3.0.0
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
+    dev: true
 
   /vite-node@0.34.2(@types/node@20.5.1):
     resolution: {integrity: sha512-JtW249Zm3FB+F7pQfH56uWSdlltCo1IOkZW5oHBzeQo0iX4jtC7o1t9aILMGd9kVekXBP2lfJBEQt9rBh07ebA==}
