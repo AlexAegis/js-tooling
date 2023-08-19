@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-stylelint",
 	"description": "My stylelint config",
-	"version": "0.7.1",
+	"version": "0.7.2",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -57,10 +57,10 @@
 		"autotool-plugin": "^0.2.3"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.7.1",
-		"@alexaegis/ts": "^0.7.1",
-		"@alexaegis/vite": "^0.7.1",
-		"@alexaegis/vitest": "^0.7.1",
+		"@alexaegis/eslint-config-vitest": "^0.7.2",
+		"@alexaegis/ts": "^0.7.2",
+		"@alexaegis/vite": "^0.7.2",
+		"@alexaegis/vitest": "^0.7.2",
 		"@types/node": "^20.5.1",
 		"publint": "^0.2.1",
 		"stylelint": "^15.10.3",

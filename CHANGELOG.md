@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.2](https://github.com/AlexAegis/js-tooling/compare/v0.7.1...v0.7.2) (2023-08-19)
+
+
+### Features
+
+* **autotool-plugin-ts:** add node types for svelte packages too ([55562cc](https://github.com/AlexAegis/js-tooling/commit/55562ccfa54a461d6ea6cfd4ad51c12f7c7990bf))
+
+
+### Bug Fixes
+
+* downgrade unified-prettier ([62c5ad9](https://github.com/AlexAegis/js-tooling/commit/62c5ad9e8e7e66c498ec53a4ac008c4cc0460054))
+
 ## [0.7.1](https://github.com/AlexAegis/js-tooling/compare/v0.7.0...v0.7.1) (2023-08-03)
 
 
