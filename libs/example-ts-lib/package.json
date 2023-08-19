@@ -55,8 +55,8 @@
 		"@alexaegis/vite": "^0.7.1",
 		"@alexaegis/vitest": "^0.7.1",
 		"@types/eslint": "^8.44.2",
-		"@types/node": "^20.4.9",
+		"@types/node": "^20.5.1",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.1"
+		"vitest": "^0.34.2"
 	}
 }

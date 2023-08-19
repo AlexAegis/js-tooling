@@ -63,20 +63,20 @@
 		"remark-preset-prettier": "^2.0.1",
 		"remark-validate-links": "^12.1.1",
 		"unified-consistency": "^1.0.1",
-		"unified-prettier": "^1.0.2"
+		"unified-prettier": "^2.0.0"
 	},
 	"optionalDependencies": {
-		"prettier": "^3.0.1"
+		"prettier": "^3.0.2"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.7.1",
 		"@alexaegis/ts": "^0.7.1",
 		"@alexaegis/vite": "^0.7.1",
 		"@alexaegis/vitest": "^0.7.1",
-		"@types/node": "^20.4.9",
-		"publint": "^0.2.0",
-		"unified": "^10.1.2",
+		"@types/node": "^20.5.1",
+		"publint": "^0.2.1",
+		"unified": "^11.0.1",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.1"
+		"vitest": "^0.34.2"
 	}
 }
