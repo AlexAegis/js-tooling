@@ -66,17 +66,17 @@
 		"unified-prettier": "^1.0.2"
 	},
 	"optionalDependencies": {
-		"prettier": "^3.0.2"
+		"prettier": "^3.0.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.7.2",
 		"@alexaegis/ts": "^0.7.2",
 		"@alexaegis/vite": "^0.7.2",
 		"@alexaegis/vitest": "^0.7.2",
-		"@types/node": "^20.5.1",
-		"publint": "^0.2.1",
-		"unified": "^11.0.1",
+		"@types/node": "^20.5.7",
+		"publint": "^0.2.2",
+		"unified": "^11.0.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.2"
+		"vitest": "^0.34.3"
 	}
 }

@@ -68,13 +68,13 @@
 		"@alexaegis/ts": "^0.7.2",
 		"@alexaegis/vitest": "^0.7.2",
 		"@pakk/cli": "^0.6.0",
-		"@sveltejs/package": "^2.2.1",
-		"@types/node": "^20.5.1",
+		"@sveltejs/package": "^2.2.2",
+		"@types/node": "^20.5.7",
 		"stylelint": "^15.10.3",
 		"svelte": "^4.2.0",
-		"svelte-check": "^3.5.0",
+		"svelte-check": "^3.5.1",
 		"svelte-preprocess": "^5.0.4",
-		"typescript": "^5.1.6",
-		"vitest": "^0.34.2"
+		"typescript": "^5.2.2",
+		"vitest": "^0.34.3"
 	}
 }

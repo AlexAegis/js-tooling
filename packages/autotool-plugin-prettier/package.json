@@ -60,22 +60,22 @@
 		"./workspace-only": "./static/workspace-only.prettierignore"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.6.2",
+		"@alexaegis/logging": "^0.7.0",
 		"@alexaegis/prettier-config": "^0.7.2",
 		"autotool-plugin": "^0.2.3",
-		"prettier": "^3.0.2",
+		"prettier": "^3.0.3",
 		"prettier-plugin-svelte": "^3.0.3",
-		"prettier-plugin-tailwindcss": "^0.5.3"
+		"prettier-plugin-tailwindcss": "^0.5.4"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.7.2",
 		"@alexaegis/ts": "^0.7.2",
 		"@alexaegis/vite": "^0.7.2",
 		"@alexaegis/vitest": "^0.7.2",
-		"@types/node": "^20.5.1",
-		"publint": "^0.2.1",
-		"typescript": "^5.1.6",
+		"@types/node": "^20.5.7",
+		"publint": "^0.2.2",
+		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.2"
+		"vitest": "^0.34.3"
 	}
 }

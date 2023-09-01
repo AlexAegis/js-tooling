@@ -55,20 +55,20 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/common": "^0.6.2",
-		"@alexaegis/fs": "^0.6.2",
-		"@alexaegis/workspace-tools": "^0.6.2"
+		"@alexaegis/common": "^0.7.0",
+		"@alexaegis/fs": "^0.7.0",
+		"@alexaegis/workspace-tools": "^0.7.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.7.2",
 		"@alexaegis/ts": "^0.7.2",
 		"@alexaegis/vite": "^0.7.2",
 		"@alexaegis/vitest": "^0.7.2",
-		"@types/node": "^20.5.1",
-		"publint": "^0.2.1",
+		"@types/node": "^20.5.7",
+		"publint": "^0.2.2",
 		"turbowatch": "^2.29.4",
-		"typescript": "^5.1.6",
+		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.2"
+		"vitest": "^0.34.3"
 	}
 }
