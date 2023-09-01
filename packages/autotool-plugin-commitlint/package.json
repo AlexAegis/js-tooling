@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-commitlint",
 	"description": "My commitlint config provided as an autotool plugin",
-	"version": "0.8.0",
+	"version": "0.8.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -57,16 +57,16 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/commitlint-config": "^0.8.0",
+		"@alexaegis/commitlint-config": "^0.8.1",
 		"@alexaegis/logging": "^0.7.0",
 		"autotool-plugin": "^0.2.3",
 		"commitlint": "^17.7.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.8.0",
-		"@alexaegis/ts": "^0.8.0",
-		"@alexaegis/vite": "^0.8.0",
-		"@alexaegis/vitest": "^0.8.0",
+		"@alexaegis/eslint-config-vitest": "^0.8.1",
+		"@alexaegis/ts": "^0.8.1",
+		"@alexaegis/vite": "^0.8.1",
+		"@alexaegis/vitest": "^0.8.1",
 		"@types/node": "^20.5.7",
 		"publint": "^0.2.2",
 		"typescript": "^5.2.2",

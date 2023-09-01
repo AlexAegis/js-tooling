@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.1](https://github.com/AlexAegis/js-tooling/compare/v0.8.0...v0.8.1) (2023-09-01)
+
+
+### Bug Fixes
+
+* **ts:** synced module an moduleresolution settings ([5565647](https://github.com/AlexAegis/js-tooling/commit/556564746f7fcdce89fe84ac083f93b5bfab1afa))
+* **vitest:** removed unnecessary bin for vitest ([7263d72](https://github.com/AlexAegis/js-tooling/commit/7263d729f715c54ba96cb21493f4230d77964ccb))
+
 ## [0.8.0](https://github.com/AlexAegis/js-tooling/compare/v0.7.2...v0.8.0) (2023-09-01)
 
 ## [0.7.2](https://github.com/AlexAegis/js-tooling/compare/v0.7.1...v0.7.2) (2023-08-19)
