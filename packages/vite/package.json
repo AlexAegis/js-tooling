@@ -66,10 +66,10 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.7.0",
 		"vite": "^4.4.9",
-		"vite-plugin-pakk": "^0.6.0"
+		"vite-plugin-pakk": "^0.7.0"
 	},
 	"devDependencies": {
-		"@types/node": "^20.5.7",
+		"@types/node": "^20.5.8",
 		"publint": "^0.2.2",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.2.2",

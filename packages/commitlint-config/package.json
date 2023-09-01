@@ -64,7 +64,7 @@
 		"@alexaegis/vite": "^0.8.1",
 		"@alexaegis/vitest": "^0.8.1",
 		"@commitlint/types": "^17.4.4",
-		"@types/node": "^20.5.7",
+		"@types/node": "^20.5.8",
 		"publint": "^0.2.2",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",

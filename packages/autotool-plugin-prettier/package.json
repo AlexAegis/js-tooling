@@ -62,7 +62,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.7.0",
 		"@alexaegis/prettier-config": "^0.8.1",
-		"autotool-plugin": "^0.2.3",
+		"autotool-plugin": "^0.3.0",
 		"prettier": "^3.0.3",
 		"prettier-plugin-svelte": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.5.4"
@@ -72,7 +72,7 @@
 		"@alexaegis/ts": "^0.8.1",
 		"@alexaegis/vite": "^0.8.1",
 		"@alexaegis/vitest": "^0.8.1",
-		"@types/node": "^20.5.7",
+		"@types/node": "^20.5.8",
 		"publint": "^0.2.2",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",

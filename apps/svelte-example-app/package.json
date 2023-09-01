@@ -66,7 +66,7 @@
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/adapter-vercel": "^3.0.3",
 		"@sveltejs/kit": "^1.24.0",
-		"@types/node": "^20.5.7",
+		"@types/node": "^20.5.8",
 		"autoprefixer": "^10.4.15",
 		"eslint-config-next": "^13.4.19",
 		"eslint-config-prettier": "^9.0.0",

@@ -93,8 +93,8 @@ importers:
         specifier: ^8.44.2
         version: 8.44.2
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       '@types/yargs':
         specifier: ^17.0.24
         version: 17.0.24
@@ -102,8 +102,8 @@ importers:
         specifier: ^0.34.3
         version: 0.34.3(vitest@0.34.3)
       autotool:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       commit-and-tag-version:
         specifier: ^11.2.3
         version: 11.2.3
@@ -151,7 +151,7 @@ importers:
         version: 3.5.1(postcss-load-config@4.0.1)(postcss@8.4.29)(svelte@4.2.0)
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+        version: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       turbo:
         specifier: ^1.10.13
         version: 1.10.13
@@ -223,8 +223,8 @@ importers:
         specifier: ^1.24.0
         version: 1.24.0(svelte@4.2.0)(vite@4.4.9)
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       autoprefixer:
         specifier: ^10.4.15
         version: 10.4.15(postcss@8.4.29)
@@ -275,7 +275,7 @@ importers:
         version: 2.29.4
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -308,14 +308,14 @@ importers:
         specifier: ^0.8.1
         version: link:../../packages/vitest
       '@pakk/cli':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.0
+        version: 0.7.0
       '@sveltejs/package':
         specifier: ^2.2.2
         version: 2.2.2(svelte@4.2.0)(typescript@5.2.2)
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       stylelint:
         specifier: ^15.10.3
         version: 15.10.3
@@ -353,11 +353,11 @@ importers:
         specifier: ^8.44.2
         version: 8.44.2
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -371,8 +371,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       commitlint:
         specifier: ^17.7.1
         version: 17.7.1
@@ -390,8 +390,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -400,7 +400,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -414,8 +414,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -430,8 +430,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       depcheck:
         specifier: ^1.4.5
         version: 1.4.5
@@ -443,7 +443,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -454,8 +454,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -470,8 +470,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -480,7 +480,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -494,8 +494,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-core':
         specifier: ^0.8.1
@@ -516,8 +516,8 @@ importers:
         specifier: ^8.44.2
         version: 8.44.2
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       eslint:
         specifier: ^8.48.0
         version: 8.48.0
@@ -529,7 +529,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -540,8 +540,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -556,8 +556,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -566,7 +566,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -577,8 +577,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -593,8 +593,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -603,7 +603,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -620,8 +620,8 @@ importers:
         specifier: ^17.7.0
         version: 17.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -642,8 +642,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -652,7 +652,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -663,8 +663,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       npm-check-updates:
         specifier: ^16.13.2
         version: 16.13.2
@@ -685,8 +685,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -695,7 +695,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -709,8 +709,8 @@ importers:
         specifier: ^0.8.1
         version: link:../prettier-config
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
@@ -734,8 +734,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -744,7 +744,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -755,8 +755,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -771,8 +771,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -781,7 +781,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -795,8 +795,8 @@ importers:
         specifier: ^0.8.1
         version: link:../remark-preset
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -811,8 +811,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -824,7 +824,7 @@ importers:
         version: 11.0.0
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -838,8 +838,8 @@ importers:
         specifier: ^0.8.1
         version: link:../standard-version
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       commit-and-tag-version:
         specifier: ^11.2.3
         version: 11.2.3
@@ -857,8 +857,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -867,7 +867,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -878,8 +878,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -894,8 +894,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -907,7 +907,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -924,8 +924,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -940,8 +940,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@pakk/cli':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.0
+        version: 0.7.0
       '@sveltejs/adapter-auto':
         specifier: ^2.1.0
         version: 2.1.0(@sveltejs/kit@1.24.0)
@@ -964,8 +964,8 @@ importers:
         specifier: ^2.4.5
         version: 2.4.5(svelte@4.2.0)(vite@4.4.9)
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -983,7 +983,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1003,8 +1003,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1022,17 +1022,17 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+        version: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1043,8 +1043,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -1059,8 +1059,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1075,7 +1075,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1086,8 +1086,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       typedoc:
         specifier: ^0.25.0
         version: 0.25.0(typescript@5.2.2)
@@ -1105,8 +1105,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1115,7 +1115,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1129,11 +1129,11 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -1148,8 +1148,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1175,8 +1175,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -1194,8 +1194,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       '@vitest/coverage-v8':
         specifier: ^0.34.3
         version: 0.34.3(vitest@0.34.3)
@@ -1207,7 +1207,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1218,8 +1218,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -1234,8 +1234,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1244,7 +1244,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1255,8 +1255,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       autotool-plugin:
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.0
+        version: 0.3.0
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -1274,8 +1274,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1284,7 +1284,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1311,8 +1311,8 @@ importers:
         specifier: ^17.4.4
         version: 17.4.4
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1321,7 +1321,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1372,14 +1372,14 @@ importers:
         specifier: ^8.44.2
         version: 8.44.2
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1433,14 +1433,14 @@ importers:
         specifier: ^8.44.2
         version: 8.44.2
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1485,14 +1485,14 @@ importers:
         specifier: ^8.44.2
         version: 8.44.2
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1528,14 +1528,14 @@ importers:
         specifier: ^13.2.0
         version: 13.2.0
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1571,8 +1571,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1581,7 +1581,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1608,8 +1608,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
@@ -1618,7 +1618,7 @@ importers:
         version: 0.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1685,8 +1685,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1695,7 +1695,7 @@ importers:
         version: 11.0.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1731,8 +1731,8 @@ importers:
         specifier: ^4.0.5
         version: 4.0.5
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1741,7 +1741,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1771,8 +1771,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1784,7 +1784,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1823,8 +1823,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1836,7 +1836,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1847,17 +1847,17 @@ importers:
         specifier: ^0.8.1
         version: link:../vite
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+        version: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
     devDependencies:
       '@alexaegis/eslint-config-vitest':
         specifier: ^0.8.1
@@ -1897,8 +1897,8 @@ importers:
         specifier: ^0.8.1
         version: link:../vitest
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1910,7 +1910,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0)
@@ -1922,20 +1922,20 @@ importers:
         version: 0.7.0
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
       vite-plugin-pakk:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.0
+        version: 0.7.0
     devDependencies:
       '@types/node':
-        specifier: ^20.5.7
-        version: 20.5.7
+        specifier: ^20.5.8
+        version: 20.5.8
       publint:
         specifier: ^0.2.2
         version: 0.2.2
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+        version: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1969,37 +1969,13 @@ importers:
         version: 0.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@20.5.7)
+        version: 4.4.9(@types/node@20.5.8)
 
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
-
-  /@alexaegis/cli-tools@0.4.5:
-    resolution: {integrity: sha512-u9mLggxeoddAx1qEdVOl38chsMyLlMgADOXIPeZP0qJ7XH4NwNuVoTfvZxm5EpQ2xtjmoyqXay5Mh972KBCHaQ==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.4.5
-      '@alexaegis/fs': 0.4.5
-      '@alexaegis/logging': 0.4.5
-      '@alexaegis/workspace-tools': 0.4.5
-      '@types/yargs': 17.0.24
-      yargs: 17.7.2
-    dev: true
-
-  /@alexaegis/cli-tools@0.6.1:
-    resolution: {integrity: sha512-7TjK7jrUk/KA6G412uZPvJFQcqr2GFGKVr56CLt+1lyix90+ymWYpyAEK/ISbaHWcAY2x5AelWg153b5DCuQsw==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.1
-      '@alexaegis/fs': 0.6.1
-      '@alexaegis/logging': 0.6.1
-      '@alexaegis/workspace-tools': 0.6.1
-      '@types/yargs': 17.0.24
-      yargs: 17.7.2
-    dev: true
 
   /@alexaegis/cli-tools@0.7.0:
     resolution: {integrity: sha512-Rxfu+ue0XQKij72NSYOYOt02mk4PmxSVj0wqm3fn8oF/Iq7GX8wBk/G6N+iw9H2mH6nyMlY0TXMPuQuak770dg==}
@@ -2011,20 +1987,6 @@ packages:
       '@alexaegis/workspace-tools': 0.7.0
       '@types/yargs': 17.0.24
       yargs: 17.7.2
-    dev: false
-
-  /@alexaegis/common@0.4.5:
-    resolution: {integrity: sha512-NIGkqbNneMlX3FnVDrjvbRCKYEwn6jtOQ6/BePMOipcslyGgg3vErIj/T41I57U7yV1nXvTpy583zVDXScTlqA==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-
-  /@alexaegis/common@0.6.1:
-    resolution: {integrity: sha512-hetpgU5iyE+kMY0y3OmSPbVsug3ZYT9+xTwB1BZBwAkbvv9oGu30NTxykvhdtoWJiK9u0KBCf1Hs40muws84Dg==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-
-  /@alexaegis/common@0.6.2:
-    resolution: {integrity: sha512-D9Tn/nHjl+nDZida/B0FvilWljvOSF5Vj7ny9XX/PasA/5nahxRGpC42iFcdyEbnhrzSjcYMuP/gTHf+5vYNTw==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dev: false
 
   /@alexaegis/common@0.7.0:
     resolution: {integrity: sha512-HeUj7wDBeFqvsA8Wt8JmjrU2xi21CzNz9jhzl/XqgPPi8uZ7xbQgEXEkIdWXcBMGL/ZGHiIZPpa/CtWNrVssjQ==}
@@ -2040,37 +2002,6 @@ packages:
       '@alexaegis/workspace-tools': 0.7.0
       globby: 13.2.2
 
-  /@alexaegis/fs@0.4.5:
-    resolution: {integrity: sha512-IMa0luQxtXH9X0Vtg5a8lq5negjJefGhGJXW9Aje3AatBxWDhGxPfzcAH3c0n98o7CxWykfcBuLGqKY4PBuF1A==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.4.5
-      '@alexaegis/logging': 0.4.5
-      js-yaml: 4.1.0
-    optionalDependencies:
-      prettier: 3.0.3
-
-  /@alexaegis/fs@0.6.1:
-    resolution: {integrity: sha512-UTOoeoru9r49cBi64d9EQNEJZFiikFRVUX5akymiaujaePC9HIeC+T8VJ7IynIvJURPHHTrZkLJvr4v8ERgnLQ==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.1
-      '@alexaegis/logging': 0.6.1
-      js-yaml: 4.1.0
-    optionalDependencies:
-      prettier: 3.0.3
-
-  /@alexaegis/fs@0.6.2:
-    resolution: {integrity: sha512-8rs2F+36IuYGCyfd72wCyZrFUuz0Ra1crb/0clBKqXZscuiCd+UJu/VThVj90tfv1bYPcMbuTEQrkSL5SwF5jQ==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.2
-      '@alexaegis/logging': 0.6.2
-      js-yaml: 4.1.0
-    optionalDependencies:
-      prettier: 3.0.3
-    dev: false
-
   /@alexaegis/fs@0.7.0:
     resolution: {integrity: sha512-r9JQpS3qXJa5zU1ohj+m85+QUz8T0cfHLn+crzboBFcuiiFa3hA0G0B7H8VZXB4p1qCRc/BspGGpjjcB+/G7wA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
@@ -2081,42 +2012,12 @@ packages:
     optionalDependencies:
       prettier: 3.0.3
 
-  /@alexaegis/logging@0.4.5:
-    resolution: {integrity: sha512-csjfDWiS6z3St+QImXBV9dEIj89VHdsD4IPhSiD/kQ0cMxASeAPN2+uVzwz0blayvxhkcihPusfN8a4oEOYADw==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.4.5
-      tslog: 4.9.2
-
-  /@alexaegis/logging@0.6.1:
-    resolution: {integrity: sha512-SkDayzM5/uGOMpOsKch6du+0d7ZSXobUZpfMfgGQ/RujiC9GSrVWnSHVz1J2YJD/Xe5XoWvQ1N69Ag1oS244MA==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.1
-      tslog: 4.9.1
-
-  /@alexaegis/logging@0.6.2:
-    resolution: {integrity: sha512-k18Ja9Qd3tjL5LvDgogt9WXvh+JL+gGaQv+8lbZGErffgUUfCjyV8zzfkKMSuLpy5219b3yxqxeWxAcblBRdcg==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.2
-      tslog: 4.9.2
-    dev: false
-
   /@alexaegis/logging@0.7.0:
     resolution: {integrity: sha512-4oKxiVaDNsWE0uiLjg0hn/VgLYOGViH7J9CgdDj/I4hz9b5p0pHzNVKicwJpGtHe1U3OmBUoNf7i0Rs4sHK/KQ==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
       '@alexaegis/common': 0.7.0
       tslog: 4.9.2
-
-  /@alexaegis/match@0.4.5:
-    resolution: {integrity: sha512-oflbngKM1/kuzoQIu3EaAac1/PYHaEYKZ5WSvNUlL+AZz2kkJGgRYVX1kEwV+9F/eWw/yq4pVZIze1CwnwERMQ==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-
-  /@alexaegis/match@0.6.2:
-    resolution: {integrity: sha512-EGpq6P5TNb2xWUz6F98wA1PrkJ+ycLQvEDLZchRAhlJqU8aWNr+ve2532R3K8v0sROuXUZQA7T8FD/YrHZFkkg==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
 
   /@alexaegis/match@0.7.0:
     resolution: {integrity: sha512-3ZgkfBZGYjicJ4kBMqmj70TaPCdUX0dSNUe9Ciu4eshv/J6hCgSMv/zsbilnbM+Z0J3JCwAI1xvWYzvkmFEr2Q==}
@@ -2125,40 +2026,6 @@ packages:
   /@alexaegis/predicate@0.7.0:
     resolution: {integrity: sha512-nKMffsmEcZNYhvy8Sd+ye3OVNmJliG5EVJGkbwE1CH1RAoMs9u0cgftZ3hb0pbGneXjLlJ/JmqqDnnpRqKEegA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dev: false
-
-  /@alexaegis/workspace-tools@0.4.5:
-    resolution: {integrity: sha512-jI6auujQvlrQQTnx8U0f1SQZehd6fIUPBUq62hwr68eQxw9k/1zEAg2M54hraXcnx2r7Qz8/jF0pbrHKhut2ww==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.4.5
-      '@alexaegis/fs': 0.4.5
-      '@alexaegis/logging': 0.4.5
-      '@alexaegis/match': 0.4.5
-      '@schemastore/package': 0.0.9
-      globby: 13.2.2
-
-  /@alexaegis/workspace-tools@0.6.1:
-    resolution: {integrity: sha512-vw1PDhRJyPWkVsvGdMSMo91Gl42AHwOc3q6/uoZPR5e+1Flsf2qK1hDKeaEkumkptPVpoY6WwK+D4YkrBsK5Cg==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.1
-      '@alexaegis/fs': 0.6.1
-      '@alexaegis/logging': 0.6.1
-      '@alexaegis/match': 0.6.2
-      '@schemastore/package': 0.0.10
-      globby: 13.2.2
-
-  /@alexaegis/workspace-tools@0.6.2:
-    resolution: {integrity: sha512-+kX05tBw69sVp7NcWfuJtODPkTr5AvYMdsAs4CvKZr7mc9JFIp2RNssttHFl3WxEdN5FKsiRDDhPhXkaIHe0Dw==}
-    engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
-    dependencies:
-      '@alexaegis/common': 0.6.2
-      '@alexaegis/fs': 0.6.2
-      '@alexaegis/logging': 0.6.2
-      '@alexaegis/match': 0.6.2
-      '@schemastore/package': 0.0.10
-      globby: 13.2.2
     dev: false
 
   /@alexaegis/workspace-tools@0.7.0:
@@ -2984,24 +2851,24 @@ packages:
       - encoding
       - supports-color
 
-  /@microsoft/api-extractor-model@7.27.6(@types/node@20.5.7):
+  /@microsoft/api-extractor-model@7.27.6(@types/node@20.5.8):
     resolution: {integrity: sha512-eiCnlayyum1f7fS2nA9pfIod5VCNR1G+Tq84V/ijDrKrOFVa598BLw145nCsGDMoFenV6ajNi2PR5WCwpAxW6Q==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.7(@types/node@20.5.7)
+      '@rushstack/node-core-library': 3.59.7(@types/node@20.5.8)
     transitivePeerDependencies:
       - '@types/node'
     dev: false
 
-  /@microsoft/api-extractor@7.36.4(@types/node@20.5.7):
+  /@microsoft/api-extractor@7.36.4(@types/node@20.5.8):
     resolution: {integrity: sha512-21UECq8C/8CpHT23yiqTBQ10egKUacIpxkPyYR7hdswo/M5yTWdBvbq+77YC9uPKQJOUfOD1FImBQ1DzpsdeQQ==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.27.6(@types/node@20.5.7)
+      '@microsoft/api-extractor-model': 7.27.6(@types/node@20.5.8)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.7(@types/node@20.5.7)
+      '@rushstack/node-core-library': 3.59.7(@types/node@20.5.8)
       '@rushstack/rig-package': 0.4.1
       '@rushstack/ts-command-line': 4.15.2
       colors: 1.2.5
@@ -3127,22 +2994,22 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@pakk/cli@0.6.0:
-    resolution: {integrity: sha512-VRhSu/016OVZa1esy4I5kM6Tiupze1Zd9tHJMGQp8iT1OL1NP+Yi668aTo1ILh0De3Ii2zZhG2h4OKl4679SGw==}
+  /@pakk/cli@0.7.0:
+    resolution: {integrity: sha512-26WjwHJFBqhz/QrLTE46uMfz3uzLfsSfGC8ul5TBOLMBW0maiVwwwf6zqsJUYi5C7oruAQ4bMzmFjK8dygrzzw==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     hasBin: true
     dependencies:
-      '@alexaegis/cli-tools': 0.6.1
-      '@alexaegis/common': 0.6.1
-      '@alexaegis/fs': 0.6.1
-      '@alexaegis/logging': 0.6.1
-      '@alexaegis/workspace-tools': 0.6.1
-      '@pakk/core': 0.6.0
-      '@types/node': 20.5.7
+      '@alexaegis/cli-tools': 0.7.0
+      '@alexaegis/common': 0.7.0
+      '@alexaegis/fs': 0.7.0
+      '@alexaegis/logging': 0.7.0
+      '@alexaegis/workspace-tools': 0.7.0
+      '@pakk/core': 0.7.0
+      '@types/node': 20.5.8
       prettier: 3.0.3
-      ts-node: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       typescript: 5.2.2
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
       yargs: 17.7.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -3155,21 +3022,21 @@ packages:
       - terser
     dev: true
 
-  /@pakk/core@0.6.0:
-    resolution: {integrity: sha512-m0FFnjoTRvh/lNc9oy/Ae7sNkcBr+xBuDt2ETEkWL0rLXLK/0NpdQAOOrt0rWyzbnjFGvlzG857fVh4qPanZVw==}
+  /@pakk/core@0.7.0:
+    resolution: {integrity: sha512-UbSe6scshAMjiLbQjVdDrCjEZOaLFG5DzA8zTDUWtI5XbEUebrPdqdydGfobPcHi08pCJQUHlBfG7uO9q9q08Q==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.6.1
-      '@alexaegis/fs': 0.6.1
-      '@alexaegis/logging': 0.6.1
-      '@alexaegis/workspace-tools': 0.6.1
-      '@types/node': 20.5.7
+      '@alexaegis/common': 0.7.0
+      '@alexaegis/fs': 0.7.0
+      '@alexaegis/logging': 0.7.0
+      '@alexaegis/workspace-tools': 0.7.0
+      '@types/node': 20.5.8
       globby: 13.2.2
       prettier: 3.0.3
-      rollup: 3.28.0
-      ts-node: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+      rollup: 3.28.1
+      ts-node: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       typescript: 5.2.2
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -3274,10 +3141,24 @@ packages:
       picomatch: 2.3.1
       rollup: 3.27.0
 
+  /@rollup/pluginutils@5.0.4:
+    resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.1
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: false
+
   /@rushstack/eslint-patch@1.3.3:
     resolution: {integrity: sha512-0xd7qez0AQ+MbHatZTlI1gu5vkG8r7MYRUJAHPAHJBmGLs16zpkrpAVLvjQKQOqaXPDUBwOiJzNc00znHSCVBw==}
 
-  /@rushstack/node-core-library@3.59.7(@types/node@20.5.7):
+  /@rushstack/node-core-library@3.59.7(@types/node@20.5.8):
     resolution: {integrity: sha512-ln1Drq0h+Hwa1JVA65x5mlSgUrBa1uHL+V89FqVWQgXd1vVIMhrtqtWGQrhTnFHxru5ppX+FY39VWELF/FjQCw==}
     peerDependencies:
       '@types/node': '*'
@@ -3285,7 +3166,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -3313,9 +3194,6 @@ packages:
 
   /@schemastore/package@0.0.10:
     resolution: {integrity: sha512-D3LxMCnkgsb4LO5sDKf6E+yahM2SqpEHmkqMPDSJis5Cy/j2MgWo/g/iq0lECK0mrPWfx3hqKm2ZJlqxwbRJQA==}
-
-  /@schemastore/package@0.0.9:
-    resolution: {integrity: sha512-XfGJq/VUeo7T/9LYR/ijGUSIh1umQUDLeb+ljCVgk7DsWeuGqZAYNDnf5iD3EBbQgVVm8SRUgUDlK+EP2Z0WfQ==}
 
   /@sigstore/bundle@1.1.0:
     resolution: {integrity: sha512-PFutXEy0SmQxYI4texPw3dd2KewuNqv7OuK1ZFtY2fM754yhvG2KdgwIhRnoEE2uHdtdGNQ8s0lb94dW9sELog==}
@@ -3431,7 +3309,7 @@ packages:
       svelte: 4.2.0
       tiny-glob: 0.2.9
       undici: 5.23.0
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - supports-color
 
@@ -3463,7 +3341,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.4.5(svelte@4.2.0)(vite@4.4.9)
       debug: 4.3.4
       svelte: 4.2.0
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - supports-color
 
@@ -3481,7 +3359,7 @@ packages:
       magic-string: 0.30.3
       svelte: 4.2.0
       svelte-hmr: 0.15.3(svelte@4.2.0)
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
       vitefu: 0.2.4(vite@4.4.9)
     transitivePeerDependencies:
       - supports-color
@@ -3534,7 +3412,7 @@ packages:
   /@types/concat-stream@2.0.0:
     resolution: {integrity: sha512-t3YCerNM7NTVjLuICZo5gYAXYoDvpuuTceCcFQWcDQz26kxUR5uIWolxbIR5jRNIXpMqhOpW/b8imCR1LEmuJw==}
     dependencies:
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
 
   /@types/cookie@0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
@@ -3564,7 +3442,7 @@ packages:
     resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
     dependencies:
       '@types/jsonfile': 6.1.1
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
     dev: true
 
   /@types/hast@2.3.5:
@@ -3595,7 +3473,7 @@ packages:
   /@types/jsonfile@6.1.1:
     resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
     dependencies:
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
     dev: true
 
   /@types/lint-staged@13.2.0:
@@ -3617,14 +3495,14 @@ packages:
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
 
-  /@types/node@18.17.12:
-    resolution: {integrity: sha512-d6xjC9fJ/nSnfDeU0AMDsaJyb1iHsqCSOdi84w4u+SlN/UgQdY5tRhpMzaFYsI4mnpvgTivEaQd0yOUhAtOnEQ==}
+  /@types/node@18.17.13:
+    resolution: {integrity: sha512-SlLPDDe6YQl1JnQQy4hgsuJeo5q5c1TBU4be4jeBLXsqpjoDbfb0HesSfhMwnaxfSJ4txtfzJzW5/x/43fkkfQ==}
 
   /@types/node@20.4.7:
     resolution: {integrity: sha512-bUBrPjEry2QUTsnuEjzjbS7voGWCc30W0qzgMf90GPeDGFRakvrz47ju+oqDAKCXLUCe39u57/ORMl/O/04/9g==}
 
-  /@types/node@20.5.7:
-    resolution: {integrity: sha512-dP7f3LdZIysZnmvP3ANJYTSwg+wLLl8p7RqniVlV7j+oXSXAbt9h0WIBFmJy5inWZoX9wZN6eXx+YXd9Rh3RBA==}
+  /@types/node@20.5.8:
+    resolution: {integrity: sha512-eajsR9aeljqNhK028VG0Wuw+OaY5LLxYmxeoXynIoE6jannr9/Ucd1LL0hSSoafk5LTYG+FfqsyGt81Q6Zkybw==}
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -3956,22 +3834,22 @@ packages:
       loupe: 2.3.6
       pretty-format: 29.6.3
 
-  /@volar/language-core@1.10.0:
-    resolution: {integrity: sha512-ddyWwSYqcbEZNFHm+Z3NZd6M7Ihjcwl/9B5cZd8kECdimVXUFdFi60XHWD27nrWtUQIsUYIG7Ca1WBwV2u2LSQ==}
+  /@volar/language-core@1.10.1:
+    resolution: {integrity: sha512-JnsM1mIPdfGPxmoOcK1c7HYAsL6YOv0TCJ4aW3AXPZN/Jb4R77epDyMZIVudSGjWMbvv/JfUa+rQ+dGKTmgwBA==}
     dependencies:
-      '@volar/source-map': 1.10.0
+      '@volar/source-map': 1.10.1
     dev: false
 
-  /@volar/source-map@1.10.0:
-    resolution: {integrity: sha512-/ibWdcOzDGiq/GM1JU2eX8fH1bvAhl66hfe8yEgLEzg9txgr6qb5sQ/DEz5PcDL75tF5H5sCRRwn8Eu8ezi9mw==}
+  /@volar/source-map@1.10.1:
+    resolution: {integrity: sha512-3/S6KQbqa7pGC8CxPrg69qHLpOvkiPHGJtWPkI/1AXCsktkJ6gIk/5z4hyuMp8Anvs6eS/Kvp/GZa3ut3votKA==}
     dependencies:
       muggle-string: 0.3.1
     dev: false
 
-  /@volar/typescript@1.10.0:
-    resolution: {integrity: sha512-OtqGtFbUKYC0pLNIk3mHQp5xWnvL1CJIUc9VE39VdZ/oqpoBh5jKfb9uJ45Y4/oP/WYTrif/Uxl1k8VTPz66Gg==}
+  /@volar/typescript@1.10.1:
+    resolution: {integrity: sha512-+iiO9yUSRHIYjlteT+QcdRq8b44qH19/eiUZtjNtuh6D9ailYM7DVR0zO2sEgJlvCaunw/CF9Ov2KooQBpR4VQ==}
     dependencies:
-      '@volar/language-core': 1.10.0
+      '@volar/language-core': 1.10.1
     dev: false
 
   /@vue/compiler-core@3.3.4:
@@ -4018,8 +3896,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@volar/language-core': 1.10.0
-      '@volar/source-map': 1.10.0
+      '@volar/language-core': 1.10.1
+      '@volar/source-map': 1.10.1
       '@vue/compiler-dom': 3.3.4
       '@vue/reactivity': 3.3.4
       '@vue/shared': 3.3.4
@@ -4051,7 +3929,7 @@ packages:
   /@vue/typescript@1.8.8(typescript@5.2.2):
     resolution: {integrity: sha512-jUnmMB6egu5wl342eaUH236v8tdcEPXXkPgj+eI/F6JwW/lb+yAU6U07ZbQ3MVabZRlupIlPESB7ajgAGixhow==}
     dependencies:
-      '@volar/typescript': 1.10.0
+      '@volar/typescript': 1.10.1
       '@vue/language-core': 1.8.8(typescript@5.2.2)
     transitivePeerDependencies:
       - typescript
@@ -4343,42 +4221,42 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /autotool-plugin-default@0.2.3:
-    resolution: {integrity: sha512-D6aw00FwW+8J/U7JYaZSihZTHm7IzpUC0XiEpBeTHGLPDA+zp8OAfnz0Ak3OXRT6MqzG10tBiH0MNsP9m5tHjg==}
+  /autotool-plugin-default@0.3.0:
+    resolution: {integrity: sha512-QczxGJy3YoLxo+PpgGvXwy+qrFEFY5xAQWE2vAuklJMU+ixARPyBACG1ES0GjrEyb7GbTDPPeqI8g9J1brYNkA==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.5
-      '@alexaegis/fs': 0.4.5
-      '@alexaegis/logging': 0.4.5
-      '@alexaegis/workspace-tools': 0.4.5
-      autotool-plugin: 0.2.3
+      '@alexaegis/common': 0.7.0
+      '@alexaegis/fs': 0.7.0
+      '@alexaegis/logging': 0.7.0
+      '@alexaegis/workspace-tools': 0.7.0
+      autotool-plugin: 0.3.0
       minimatch: 9.0.3
       semver: 7.5.4
     dev: true
 
-  /autotool-plugin@0.2.3:
-    resolution: {integrity: sha512-XVO8EgCs8e67sv8qEFbZMJViUQOuALUmjxNjwcFPjK6w/+mtpo+BKtmgq1CTX3Z6LW/tmP6Vw1Fzz+Za4QtJ7w==}
+  /autotool-plugin@0.3.0:
+    resolution: {integrity: sha512-Mtr3RWwldSyxvcVRJo3LDKtsdB5zTeRUkZmUOYSFhFJ5Oq69DQJhicPgm2exTTdsiuk/iqLdoieHw+a4LLjCvw==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.4.5
-      '@alexaegis/fs': 0.4.5
-      '@alexaegis/logging': 0.4.5
-      '@alexaegis/match': 0.4.5
-      '@alexaegis/workspace-tools': 0.4.5
+      '@alexaegis/common': 0.7.0
+      '@alexaegis/fs': 0.7.0
+      '@alexaegis/logging': 0.7.0
+      '@alexaegis/match': 0.7.0
+      '@alexaegis/workspace-tools': 0.7.0
 
-  /autotool@0.2.3:
-    resolution: {integrity: sha512-LBV6Jnwi7zWVJDyzcHrMVfDVZsOQxkGWnGSwhjm8SZT/96UN825JQ8yHLd0aFJfzH8yE/EX0If3xJJbRzZWmCA==}
+  /autotool@0.3.0:
+    resolution: {integrity: sha512-mFuUqqMI5S+8tdCH9HklFEtKjMv+57p6VyXPI+oUzX9cZWcarxDMSER8pjHW+AdRup0SFf0YjpVBtI2bC6Ko6Q==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     hasBin: true
     dependencies:
-      '@alexaegis/cli-tools': 0.4.5
-      '@alexaegis/common': 0.4.5
-      '@alexaegis/fs': 0.4.5
-      '@alexaegis/logging': 0.4.5
-      '@alexaegis/match': 0.4.5
-      '@alexaegis/workspace-tools': 0.4.5
-      autotool-plugin: 0.2.3
-      autotool-plugin-default: 0.2.3
+      '@alexaegis/cli-tools': 0.7.0
+      '@alexaegis/common': 0.7.0
+      '@alexaegis/fs': 0.7.0
+      '@alexaegis/logging': 0.7.0
+      '@alexaegis/match': 0.7.0
+      '@alexaegis/workspace-tools': 0.7.0
+      autotool-plugin: 0.3.0
+      autotool-plugin-default: 0.3.0
       globby: 13.2.2
       microdiff: 1.3.2
     dev: true
@@ -8851,7 +8729,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.29
-      ts-node: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       yaml: 1.10.2
 
   /postcss-load-config@4.0.1(postcss@8.4.29)(ts-node@10.9.1):
@@ -8868,7 +8746,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.29
-      ts-node: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       yaml: 2.3.1
 
   /postcss-media-query-parser@0.2.3:
@@ -10186,6 +10064,13 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
+  /rollup@3.28.1:
+    resolution: {integrity: sha512-R9OMQmIHJm9znrU3m3cpE8uhN0fGdXiawME7aZIpQqvpS/85+Vt1Hq1/yVIcYfOmaQiHjvXkQAoJukvLpau6Yw==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.3
+
   /rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
 
@@ -11141,7 +11026,7 @@ packages:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  /ts-node@10.9.1(@types/node@20.5.7)(typescript@5.2.2):
+  /ts-node@10.9.1(@types/node@20.5.8)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -11160,7 +11045,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -11182,10 +11067,6 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
-
-  /tslog@4.9.1:
-    resolution: {integrity: sha512-N6SkH+ApNh65tyKV7CfXmcShfw7KTnoTASQkKr+nZbhM73iwi/3a9ZJeYKRRvboLxkx3UNnNViMo1s/hNdSZLg==}
-    engines: {node: '>=16'}
 
   /tslog@4.9.2:
     resolution: {integrity: sha512-wBM+LRJoNl34Bdu8mYEFxpvmOUedpNUwMNQB/NcuPIZKwdDde6xLHUev3bBjXQU7gdurX++X/YE7gLH8eXYsiQ==}
@@ -11445,7 +11326,7 @@ packages:
       '@types/concat-stream': 2.0.0
       '@types/debug': 4.1.8
       '@types/is-empty': 1.2.1
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
       '@types/unist': 2.0.7
       concat-stream: 2.0.0
       debug: 4.3.4
@@ -11755,7 +11636,7 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite-node@0.34.3(@types/node@20.5.7):
+  /vite-node@0.34.3(@types/node@20.5.8):
     resolution: {integrity: sha512-+0TzJf1g0tYXj6tR2vEyiA42OPq68QkRZCu/ERSo2PtsDJfBpDyEfuKbRvLmZqi/CgC7SCBtyC+WjTGNMRIaig==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -11765,7 +11646,7 @@ packages:
       mlly: 1.4.1
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11776,8 +11657,8 @@ packages:
       - supports-color
       - terser
 
-  /vite-plugin-dts@3.5.1(@types/node@20.5.7)(typescript@5.2.2)(vite@4.4.9):
-    resolution: {integrity: sha512-wrrIvRTWq9xL0HKOUvJyJ+wivEoLsZ2GU2I2000v5tAAUtu9gE+5OUmUJ9yNkmyYz3tSPedkkiXHeb5jnnSXhg==}
+  /vite-plugin-dts@3.5.3(@types/node@20.5.8)(typescript@5.2.2)(vite@4.4.9):
+    resolution: {integrity: sha512-h94j/+SR1PhLR9jnEtcjZILagE2QZBAV8V1y3T2Ujcet1VI0Et4dZSU1W8fbnp6obB7B3/b8hArqdi2/9HuH+w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -11786,13 +11667,13 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@microsoft/api-extractor': 7.36.4(@types/node@20.5.7)
-      '@rollup/pluginutils': 5.0.2(rollup@3.27.0)
+      '@microsoft/api-extractor': 7.36.4(@types/node@20.5.8)
+      '@rollup/pluginutils': 5.0.4
       '@vue/language-core': 1.8.8(typescript@5.2.2)
       debug: 4.3.4
       kolorist: 1.8.0
       typescript: 5.2.2
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
       vue-tsc: 1.8.8(typescript@5.2.2)
     transitivePeerDependencies:
       - '@types/node'
@@ -11800,20 +11681,20 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-pakk@0.6.0:
-    resolution: {integrity: sha512-+eNvOzvjnEO4G1rCXwK2TP27ZmTkbeod26a6zHSsu0me/Gc7Ibie6avnZRve9J2NOILokpuxFBeLREKGGWlUIg==}
+  /vite-plugin-pakk@0.7.0:
+    resolution: {integrity: sha512-6FkZuN2BLFwBVgVydDnz9W1XHUP5wpbWXQwfjrxsfE4T1uaNZ9ym00nQ3Iy24Nf8ijSMD6m1LFq3BlO9+b0Hrw==}
     engines: {node: '>=18.10.0', pnpm: '>=8.0.0'}
     dependencies:
-      '@alexaegis/common': 0.6.2
-      '@alexaegis/fs': 0.6.2
-      '@alexaegis/workspace-tools': 0.6.2
-      '@pakk/core': 0.6.0
-      '@types/node': 20.5.7
+      '@alexaegis/common': 0.7.0
+      '@alexaegis/fs': 0.7.0
+      '@alexaegis/workspace-tools': 0.7.0
+      '@pakk/core': 0.7.0
+      '@types/node': 20.5.8
       prettier: 3.0.3
-      ts-node: 10.9.1(@types/node@20.5.7)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
       typescript: 5.2.2
-      vite: 4.4.9(@types/node@20.5.7)
-      vite-plugin-dts: 3.5.1(@types/node@20.5.7)(typescript@5.2.2)(vite@4.4.9)
+      vite: 4.4.9(@types/node@20.5.8)
+      vite-plugin-dts: 3.5.3(@types/node@20.5.8)(typescript@5.2.2)(vite@4.4.9)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -11827,7 +11708,7 @@ packages:
       - terser
     dev: false
 
-  /vite@4.4.9(@types/node@20.5.7):
+  /vite@4.4.9(@types/node@20.5.8):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -11855,7 +11736,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
       esbuild: 0.18.20
       postcss: 8.4.29
       rollup: 3.28.0
@@ -11870,7 +11751,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.9(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
 
   /vitest@0.34.3(@vitest/ui@0.34.3)(jsdom@22.1.0):
     resolution: {integrity: sha512-7+VA5Iw4S3USYk+qwPxHl8plCMhA5rtfwMjgoQXMT7rO5ldWcdsdo3U1QD289JgglGK4WeOzgoLTsGFu6VISyQ==}
@@ -11905,7 +11786,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
-      '@types/node': 20.5.7
+      '@types/node': 20.5.8
       '@vitest/expect': 0.34.3
       '@vitest/runner': 0.34.3
       '@vitest/snapshot': 0.34.3
@@ -11926,8 +11807,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.0
       tinypool: 0.7.0
-      vite: 4.4.9(@types/node@20.5.7)
-      vite-node: 0.34.3(@types/node@20.5.7)
+      vite: 4.4.9(@types/node@20.5.8)
+      vite-node: 0.34.3(@types/node@20.5.8)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -12244,7 +12125,7 @@ packages:
     dependencies:
       '@types/fs-extra': 11.0.1
       '@types/minimist': 1.2.2
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
       '@types/ps-tree': 1.1.2
       '@types/which': 3.0.0
       chalk: 5.3.0
