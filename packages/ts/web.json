@@ -2,6 +2,7 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "./base.json",
 	"compilerOptions": {
+		"module": "nodenext",
 		"moduleResolution": "nodenext",
 		"lib": ["es2022", "esnext", "DOM", "DOM.Iterable"]
 	}
