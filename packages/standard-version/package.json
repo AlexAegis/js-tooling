@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/standard-version",
 	"description": "Standard version",
-	"version": "0.7.2",
+	"version": "0.8.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -57,10 +57,10 @@
 		"js-yaml": "^4.1.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.7.2",
-		"@alexaegis/ts": "^0.7.2",
-		"@alexaegis/vite": "^0.7.2",
-		"@alexaegis/vitest": "^0.7.2",
+		"@alexaegis/eslint-config-vitest": "^0.8.0",
+		"@alexaegis/ts": "^0.8.0",
+		"@alexaegis/vite": "^0.8.0",
+		"@alexaegis/vitest": "^0.8.0",
 		"@types/js-yaml": "^4.0.5",
 		"@types/node": "^20.5.7",
 		"publint": "^0.2.2",
