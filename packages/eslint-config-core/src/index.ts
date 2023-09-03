@@ -57,6 +57,7 @@ export default {
 		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
 		'unicorn/no-empty-file': 'off', // TODO: Reenable when this is fixed https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2175
 		'unicorn/no-array-reduce': 'off',
+		'unicorn/no-array-for-each': 'off', // Gives false errors for any functions called forEach
 		'unicorn/no-array-callback-reference': 'off', // needed for easy nullish checks
 		'unicorn/prevent-abbreviations': 'off', // no thanks
 		'unicorn/prefer-top-level-await': 'off', // Until ES2022 is used as target
