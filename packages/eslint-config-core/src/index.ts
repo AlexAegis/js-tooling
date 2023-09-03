@@ -53,6 +53,7 @@ export default {
 	},
 	rules: {
 		'no-unused-vars': 'off', // Letting @typescript-eslint/no-unused-vars take helm
+		'prefer-const': ['error', { destructuring: 'all' }],
 		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
 		'unicorn/no-empty-file': 'off', // TODO: Reenable when this is fixed https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2175
 		'unicorn/no-array-reduce': 'off',
