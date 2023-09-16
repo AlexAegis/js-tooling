@@ -65,11 +65,11 @@
 		"@alexaegis/vite": "^0.8.2",
 		"@alexaegis/vitest": "^0.8.2",
 		"@types/eslint": "^8.44.2",
-		"@types/node": "^20.5.8",
-		"eslint": "^8.48.0",
+		"@types/node": "^20.6.2",
+		"eslint": "^8.49.0",
 		"publint": "^0.2.2",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.3"
+		"vitest": "^0.34.4"
 	}
 }

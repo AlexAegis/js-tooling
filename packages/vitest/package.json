@@ -68,11 +68,11 @@
 		}
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.4.5",
-		"@vitest/coverage-v8": "^0.34.3",
-		"@vitest/ui": "^0.34.3",
+		"@sveltejs/vite-plugin-svelte": "^2.4.6",
+		"@vitest/coverage-v8": "^0.34.4",
+		"@vitest/ui": "^0.34.4",
 		"jsdom": "22.1.0",
-		"vitest": "^0.34.3"
+		"vitest": "^0.34.4"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.8.2",
