@@ -56,17 +56,17 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.7.0",
 		"autotool-plugin": "^0.3.0",
-		"typedoc": "^0.25.1"
+		"typedoc": "^0.25.2"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.8.2",
 		"@alexaegis/ts": "^0.8.2",
 		"@alexaegis/vite": "^0.8.2",
 		"@alexaegis/vitest": "^0.8.2",
-		"@types/node": "^20.6.2",
-		"publint": "^0.2.2",
+		"@types/node": "^20.8.4",
+		"publint": "^0.2.4",
 		"typescript": "^5.2.2",
-		"vite": "^4.4.9",
-		"vitest": "^0.34.4"
+		"vite": "^4.4.11",
+		"vitest": "^0.34.6"
 	}
 }
