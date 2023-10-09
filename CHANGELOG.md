@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.3](https://github.com/AlexAegis/js-tooling/compare/v0.8.2...v0.8.3) (2023-10-09)
+
+
+### Features
+
+* **eslint-config-core:** disabled unicorn/no-array-for-each,  it gives too much false positives ([c0592d7](https://github.com/AlexAegis/js-tooling/commit/c0592d716e504485bc955b89cf1af543d9e15ce7))
+* **eslint-config-core:** prefer const should behave better with destructuring ([eee7e75](https://github.com/AlexAegis/js-tooling/commit/eee7e759b350f06dcab55f7c30c908089a28f859))
+
 ## [0.8.2](https://github.com/AlexAegis/js-tooling/compare/v0.8.1...v0.8.2) (2023-09-01)
 
 ## [0.8.1](https://github.com/AlexAegis/js-tooling/compare/v0.8.0...v0.8.1) (2023-09-01)
