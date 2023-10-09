@@ -64,7 +64,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.0",
+		"@alexaegis/logging": "^0.7.1",
 		"vite": "^4.4.11",
 		"vite-plugin-pakk": "^0.7.0"
 	},

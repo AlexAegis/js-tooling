@@ -50,7 +50,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/fs": "^0.7.0",
+		"@alexaegis/fs": "^0.7.1",
 		"lint-staged": "14.0.1",
 		"typescript": "^5.2.2"
 	},

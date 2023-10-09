@@ -54,8 +54,8 @@
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.0",
-		"@alexaegis/predicate": "^0.7.0",
+		"@alexaegis/logging": "^0.7.1",
+		"@alexaegis/predicate": "^0.7.1",
 		"autotool-plugin": "^0.3.0"
 	},
 	"devDependencies": {

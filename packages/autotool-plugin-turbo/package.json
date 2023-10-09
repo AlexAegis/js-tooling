@@ -52,7 +52,7 @@
 		"./turbo": "./static/turbo.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.0",
+		"@alexaegis/logging": "^0.7.1",
 		"autotool-plugin": "^0.3.0"
 	},
 	"devDependencies": {
