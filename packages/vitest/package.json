@@ -68,7 +68,7 @@
 		}
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^2.4.6",
+		"@sveltejs/vite-plugin-svelte": "^2.5.2",
 		"@vitest/coverage-v8": "^0.34.6",
 		"@vitest/ui": "^0.34.6",
 		"jsdom": "22.1.0",
@@ -76,7 +76,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "^0.8.3",
-		"publint": "^0.2.4",
-		"vite": "^4.4.11"
+		"publint": "^0.2.5",
+		"vite": "^4.5.0"
 	}
 }

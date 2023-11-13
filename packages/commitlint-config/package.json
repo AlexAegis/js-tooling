@@ -63,11 +63,11 @@
 		"@alexaegis/ts": "^0.8.3",
 		"@alexaegis/vite": "^0.8.3",
 		"@alexaegis/vitest": "^0.8.3",
-		"@commitlint/types": "^17.4.4",
-		"@types/node": "^20.8.4",
-		"publint": "^0.2.4",
+		"@commitlint/types": "^18.4.0",
+		"@types/node": "^20.9.0",
+		"publint": "^0.2.5",
 		"typescript": "^5.2.2",
-		"vite": "^4.4.11",
+		"vite": "^4.5.0",
 		"vitest": "^0.34.6"
 	}
 }
