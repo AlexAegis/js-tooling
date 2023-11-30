@@ -83,7 +83,13 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
-					name: /^(?!@alexaegis\/(eslint-config-)?vite(st)?).*$/,
+					name: not(
+						or(
+							equal('@alexaegis/eslint-config-vitest'),
+							equal('@alexaegis/vite'),
+							equal('@alexaegis/vitest'),
+						),
+					),
 				},
 				data: {
 					devDependencies: {

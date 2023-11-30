@@ -20,8 +20,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
-		"build-lib_": "vite build",
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
 		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
@@ -34,12 +32,14 @@
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
 		"publint_": "publint dist",
-		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
-		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
-		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
 		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage"
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/standard-version",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write ."
 	},
 	"exports": {
 		".": {
@@ -51,8 +51,8 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/coverage-tools": "^0.7.2",
-		"@alexaegis/workspace-tools": "^0.7.2",
+		"@alexaegis/coverage-tools": "^0.7.3",
+		"@alexaegis/workspace-tools": "^0.7.3",
 		"glob": "^10.3.10",
 		"js-yaml": "^4.1.0"
 	},
@@ -62,10 +62,10 @@
 		"@alexaegis/vite": "^0.8.4",
 		"@alexaegis/vitest": "^0.8.4",
 		"@types/js-yaml": "^4.0.9",
-		"@types/node": "^20.9.0",
+		"@types/node": "^20.10.1",
 		"publint": "^0.2.5",
-		"typescript": "^5.2.2",
-		"vite": "^4.5.0",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.4",
 		"vitest": "^0.34.6"
 	}
 }

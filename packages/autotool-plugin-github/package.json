@@ -20,8 +20,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-		"build-lib_": "vite build",
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
 		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
@@ -34,12 +32,14 @@
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
 		"publint_": "publint dist",
-		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
-		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
 		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage"
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-github",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write ."
 	},
 	"exports": {
 		".": {
@@ -55,7 +55,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.2",
+		"@alexaegis/logging": "^0.7.3",
 		"autotool-plugin": "^0.3.0"
 	},
 	"devDependencies": {
@@ -63,10 +63,10 @@
 		"@alexaegis/ts": "^0.8.4",
 		"@alexaegis/vite": "^0.8.4",
 		"@alexaegis/vitest": "^0.8.4",
-		"@types/node": "^20.9.0",
+		"@types/node": "^20.10.1",
 		"publint": "^0.2.5",
-		"typescript": "^5.2.2",
-		"vite": "^4.5.0",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.4",
 		"vitest": "^0.34.6"
 	}
 }

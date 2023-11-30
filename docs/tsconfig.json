@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@alexaegis/ts/node",
+	"compilerOptions": {
+		"rootDir": "../",
+		"outDir": "cache/tsc"
+	},
+	"files": ["../package.json", ".vitepress/config.ts"],
+	"include": [
+		"src/**/*",
+		"static/**/*",
+		"__mocks__/**/*",
+		"*",
+		".*",
+		"*.json",
+		".*.json",
+		"**/*.json"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"coverage",
+		"typedoc",
+		".turbo",
+		".cache",
+		"vite*.config.ts.timestamp-*"
+	]
+}

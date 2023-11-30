@@ -20,8 +20,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
-		"build-lib_": "vite build",
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
 		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
@@ -34,12 +32,14 @@
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
 		"publint_": "publint dist",
-		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
-		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
-		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
 		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
 		"test_": "vitest --passWithNoTests --coverage --run",
-		"test:watch": "vitest --passWithNoTests --coverage"
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/autotool-plugin-eslint",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write ."
 	},
 	"exports": {
 		".": {
@@ -54,8 +54,8 @@
 		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.2",
-		"@alexaegis/predicate": "^0.7.2",
+		"@alexaegis/logging": "^0.7.3",
+		"@alexaegis/predicate": "^0.7.3",
 		"autotool-plugin": "^0.3.0"
 	},
 	"devDependencies": {
@@ -64,12 +64,12 @@
 		"@alexaegis/ts": "^0.8.4",
 		"@alexaegis/vite": "^0.8.4",
 		"@alexaegis/vitest": "^0.8.4",
-		"@types/eslint": "^8.44.7",
-		"@types/node": "^20.9.0",
-		"eslint": "^8.53.0",
+		"@types/eslint": "^8.44.8",
+		"@types/node": "^20.10.1",
+		"eslint": "^8.54.0",
 		"publint": "^0.2.5",
-		"typescript": "^5.2.2",
-		"vite": "^4.5.0",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.4",
 		"vitest": "^0.34.6"
 	}
 }

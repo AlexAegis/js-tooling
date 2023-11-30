@@ -7,7 +7,7 @@ import type {
 import { describe, expect, it, vi } from 'vitest';
 import * as library from './index.js';
 
-describe('autotool-plugin-workspace', () => {
+describe('autotool-plugin-ncu', () => {
 	const rootWorkspacePackage: WorkspacePackage = {
 		workspacePackagePatterns: [],
 		packageJson: {},

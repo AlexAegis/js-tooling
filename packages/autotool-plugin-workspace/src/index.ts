@@ -68,6 +68,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'@alexaegis/autotool-plugin-turbo': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-typedoc': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-vite': `^${packageJson.version}`, // versioned together
+						'@alexaegis/autotool-plugin-vitepress': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-vitest': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-vscode': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-workspace': `^${packageJson.version}`, // versioned together

@@ -1,0 +1,5 @@
+{
+	"$schema": "https://json.schemastore.org/typings",
+	"ignores": ["@alexaegis/coverage-tools", "@alexaegis/ts", "@pakk/cli", "publint", "vitepress"],
+	"skip-missing": true
+}

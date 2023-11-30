@@ -1,9 +1,9 @@
 // managed-by-autotool
-
-import { defineAppConfig } from '@alexaegis/vite';
+import { DEFAULT_VITE_APP_CONFIG } from '@alexaegis/vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { mergeConfig } from 'vite';
 
-export default defineAppConfig({
+export default mergeConfig(DEFAULT_VITE_APP_CONFIG, {
 	plugins: [svelte()],
 	appType: 'spa',
 	server: {

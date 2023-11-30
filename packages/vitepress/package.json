@@ -1,0 +1,69 @@
+{
+	"name": "@alexaegis/vitepress",
+	"description": "My vitepress config",
+	"version": "0.8.4",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"framework": "vite",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"managed-by-autotool",
+		"vite"
+	],
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"publint_": "publint dist",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"build-lib": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vite",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/vitepress",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write ."
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
+		},
+		"./example": "./static/example.json",
+		"./readme": "./readme.md"
+	},
+	"dependencies": {
+		"vite": "^5.0.4",
+		"vite-plugin-pakk": "^0.8.0"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "^0.8.4",
+		"@alexaegis/ts": "^0.8.4",
+		"@alexaegis/vite": "^0.8.4",
+		"@alexaegis/vitest": "^0.8.4",
+		"@types/node": "^20.10.1",
+		"publint": "^0.2.5",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.4",
+		"vitest": "^0.34.6"
+	}
+}
