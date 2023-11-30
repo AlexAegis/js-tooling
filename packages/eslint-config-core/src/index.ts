@@ -56,6 +56,7 @@ export default {
 		'prefer-const': ['error', { destructuring: 'all' }],
 		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
 		'@typescript-eslint/no-unnecessary-condition': 'off', // TODO: Reenable once this is fixed: https://github.com/typescript-eslint/typescript-eslint/issues/7693		'unicorn/no-array-reduce': 'off',
+		'unicorn/no-array-reduce': 'off', // I like my array reduces
 		'unicorn/no-array-for-each': 'off', // Gives false errors for any functions called forEach
 		'unicorn/no-array-callback-reference': 'off', // needed for easy nullish checks
 		'unicorn/prevent-abbreviations': 'off', // no thanks
