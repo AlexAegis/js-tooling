@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.1](https://github.com/AlexAegis/js-tooling/compare/v0.9.0...v0.9.1) (2023-11-30)
+
+
+### Features
+
+* **eslint-config-core:** disabled array reduce ban ([9842bbc](https://github.com/AlexAegis/js-tooling/commit/9842bbcd0e2670351a62fbf4be7b46fda6f481f3))
+
+
+### Bug Fixes
+
+* **eslint-config-core:** disabled buggy eslint rule ([22bf9ce](https://github.com/AlexAegis/js-tooling/commit/22bf9ceb1bd0943d1a08807041028226dcf99cad))
+
 ## [0.9.0](https://github.com/AlexAegis/js-tooling/compare/v0.8.4...v0.9.0) (2023-11-30)
 
 ## [0.8.4](https://github.com/AlexAegis/js-tooling/compare/v0.8.3...v0.8.4) (2023-11-13)
