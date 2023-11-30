@@ -55,8 +55,7 @@ export default {
 		'no-unused-vars': 'off', // Letting @typescript-eslint/no-unused-vars take helm
 		'prefer-const': ['error', { destructuring: 'all' }],
 		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
-		'unicorn/no-empty-file': 'off', // TODO: Reenable when this is fixed https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2175
-		'unicorn/no-array-reduce': 'off',
+		'@typescript-eslint/no-unnecessary-condition': 'off', // TODO: Reenable once this is fixed: https://github.com/typescript-eslint/typescript-eslint/issues/7693		'unicorn/no-array-reduce': 'off',
 		'unicorn/no-array-for-each': 'off', // Gives false errors for any functions called forEach
 		'unicorn/no-array-callback-reference': 'off', // needed for easy nullish checks
 		'unicorn/prevent-abbreviations': 'off', // no thanks
