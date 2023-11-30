@@ -57,10 +57,10 @@
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.3",
-		"@alexaegis/match": "^0.7.3",
-		"@alexaegis/predicate": "^0.7.3",
-		"@alexaegis/workspace-tools": "^0.7.3",
+		"@alexaegis/logging": "^0.8.0",
+		"@alexaegis/match": "^0.8.0",
+		"@alexaegis/predicate": "^0.8.0",
+		"@alexaegis/workspace-tools": "^0.8.0",
 		"autotool-plugin": "^0.3.0",
 		"typescript": "^5.3.2"
 	},

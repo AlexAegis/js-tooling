@@ -59,7 +59,7 @@
 		}
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.3",
+		"@alexaegis/logging": "^0.8.0",
 		"@alexaegis/remark-preset": "^0.9.0",
 		"autotool-plugin": "^0.3.0"
 	},

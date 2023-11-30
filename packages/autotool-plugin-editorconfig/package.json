@@ -52,7 +52,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.7.3",
+		"@alexaegis/logging": "^0.8.0",
 		"autotool-plugin": "^0.3.0"
 	},
 	"devDependencies": {

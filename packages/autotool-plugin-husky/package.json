@@ -56,7 +56,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/lint-staged-config": "^0.9.0",
-		"@alexaegis/logging": "^0.7.3",
+		"@alexaegis/logging": "^0.8.0",
 		"@commitlint/config-conventional": "^18.4.3",
 		"autotool-plugin": "^0.3.0",
 		"husky": "^8.0.3",
