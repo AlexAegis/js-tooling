@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.2](https://github.com/AlexAegis/js-tooling/compare/v0.9.1...v0.9.2) (2023-12-14)
+
+
+### Features
+
+* ignore vitepress cache with prettier ([5d02caa](https://github.com/AlexAegis/js-tooling/commit/5d02caae09cc6e251f9a6a267086f5d607b61bc6))
+* updated vscode settings ([f09c133](https://github.com/AlexAegis/js-tooling/commit/f09c133149b81a00c35dfd2af2b613be05b38460))
+
 ## [0.9.1](https://github.com/AlexAegis/js-tooling/compare/v0.9.0...v0.9.1) (2023-11-30)
 
 

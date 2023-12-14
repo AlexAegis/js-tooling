@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
-	"version": "0.9.1",
+	"version": "0.9.2",
 	"archetype": {
 		"platform": "web",
 		"framework": "sveltekit",
@@ -47,18 +47,18 @@
 		"start:no-watch": "turbo run start_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app"
 	},
 	"dependencies": {
-		"@alexaegis/example-svelte-lib": "^0.9.1"
+		"@alexaegis/example-svelte-lib": "^0.9.2"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "^0.9.1",
-		"@alexaegis/eslint-config-vitest": "^0.9.1",
-		"@alexaegis/prettier-config": "^0.9.1",
-		"@alexaegis/stylelint-config": "^0.9.1",
-		"@alexaegis/svelte-config": "^0.9.1",
-		"@alexaegis/ts": "^0.9.1",
+		"@alexaegis/eslint-config-svelte": "^0.9.2",
+		"@alexaegis/eslint-config-vitest": "^0.9.2",
+		"@alexaegis/prettier-config": "^0.9.2",
+		"@alexaegis/stylelint-config": "^0.9.2",
+		"@alexaegis/svelte-config": "^0.9.2",
+		"@alexaegis/ts": "^0.9.2",
 		"@alexaegis/turbowatch": "workspace:^",
-		"@alexaegis/vite": "^0.9.1",
-		"@alexaegis/vitest": "^0.9.1",
+		"@alexaegis/vite": "^0.9.2",
+		"@alexaegis/vitest": "^0.9.2",
 		"@skeletonlabs/skeleton": "^2.6.0",
 		"@skeletonlabs/tw-plugin": "^0.3.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
