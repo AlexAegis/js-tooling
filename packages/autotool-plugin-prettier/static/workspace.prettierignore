@@ -13,6 +13,7 @@ public/build
 build
 .svelte-kit
 .vercel
+typedoc
 **/.vitepress/cache
 
 # test artifacts
