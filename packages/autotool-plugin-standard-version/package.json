@@ -58,9 +58,9 @@
 		"./versionrc.cjs": "./static/versionrc.cjs.txt"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.8.0",
+		"@alexaegis/logging": "^0.8.1",
 		"@alexaegis/standard-version": "^0.9.1",
-		"autotool-plugin": "^0.4.0",
+		"autotool-plugin": "^0.4.1",
 		"commit-and-tag-version": "^12.0.0"
 	},
 	"devDependencies": {

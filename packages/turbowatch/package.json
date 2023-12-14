@@ -55,9 +55,9 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/common": "^0.8.0",
-		"@alexaegis/fs": "^0.8.0",
-		"@alexaegis/workspace-tools": "^0.8.0"
+		"@alexaegis/common": "^0.8.1",
+		"@alexaegis/fs": "^0.8.1",
+		"@alexaegis/workspace-tools": "^0.8.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.9.1",

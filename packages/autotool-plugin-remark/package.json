@@ -59,9 +59,9 @@
 		}
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.8.0",
+		"@alexaegis/logging": "^0.8.1",
 		"@alexaegis/remark-preset": "^0.9.1",
-		"autotool-plugin": "^0.4.0"
+		"autotool-plugin": "^0.4.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.9.1",
