@@ -51,19 +51,19 @@
 	},
 	"dependencies": {
 		"@alexaegis/fs": "^0.8.0",
-		"lint-staged": "15.1.0",
-		"typescript": "^5.3.2"
+		"lint-staged": "15.2.0",
+		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.9.1",
 		"@alexaegis/ts": "^0.9.1",
 		"@alexaegis/vite": "^0.9.1",
 		"@alexaegis/vitest": "^0.9.1",
-		"@types/eslint": "^8.44.8",
+		"@types/eslint": "^8.44.9",
 		"@types/lint-staged": "^13.2.2",
-		"@types/node": "^20.10.1",
-		"publint": "^0.2.5",
-		"vite": "^5.0.4",
-		"vitest": "^0.34.6"
+		"@types/node": "^20.10.4",
+		"publint": "^0.2.6",
+		"vite": "^5.0.9",
+		"vitest": "^1.0.4"
 	}
 }

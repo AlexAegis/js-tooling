@@ -64,11 +64,11 @@
 		"@alexaegis/ts": "^0.9.1",
 		"@alexaegis/vite": "^0.9.1",
 		"@alexaegis/vitest": "^0.9.1",
-		"@types/node": "^20.10.1",
-		"publint": "^0.2.5",
+		"@types/node": "^20.10.4",
+		"publint": "^0.2.6",
 		"turbowatch": "^2.29.4",
-		"typescript": "^5.3.2",
-		"vite": "^5.0.4",
-		"vitest": "^0.34.6"
+		"typescript": "^5.3.3",
+		"vite": "^5.0.9",
+		"vitest": "^1.0.4"
 	}
 }

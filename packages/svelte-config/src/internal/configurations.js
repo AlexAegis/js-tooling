@@ -1,4 +1,4 @@
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess.js';
 import { normalizePlatform, pickAdapter } from './pick-adapter.function.js';
 import { toBaseHref } from './to-base-href.function.js';

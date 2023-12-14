@@ -61,18 +61,18 @@
 		"@alexaegis/match": "^0.8.0",
 		"@alexaegis/predicate": "^0.8.0",
 		"@alexaegis/workspace-tools": "^0.8.0",
-		"autotool-plugin": "^0.3.0",
-		"typescript": "^5.3.2"
+		"autotool-plugin": "^0.4.0",
+		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.9.1",
 		"@alexaegis/ts": "^0.9.1",
 		"@alexaegis/vite": "^0.9.1",
 		"@alexaegis/vitest": "^0.9.1",
-		"@types/node": "^20.10.1",
-		"publint": "^0.2.5",
-		"ts-node": "^10.9.1",
-		"vite": "^5.0.4",
-		"vitest": "^0.34.6"
+		"@types/node": "^20.10.4",
+		"publint": "^0.2.6",
+		"ts-node": "^10.9.2",
+		"vite": "^5.0.9",
+		"vitest": "^1.0.4"
 	}
 }
