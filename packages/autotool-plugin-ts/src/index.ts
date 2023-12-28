@@ -119,7 +119,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 			},
 
 			...archetypeFlavours.map<AutotoolElementFileCopy>((archetype) => {
-				const flavour = getEncodedArchetype(archetype);
+				const flavour = getEncodedArchetype(archetype) || 'node';
 
 				return {
 					description: `copy tsconfig for ${flavour} packages`,
