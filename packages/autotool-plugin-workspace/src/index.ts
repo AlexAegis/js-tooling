@@ -37,7 +37,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						pnpm: '>=8.0.0',
 					},
 					packageManager: rootPackageJson.packageManager,
-					workspaces: ['apps/*', 'libs/*', 'packages/*', 'fixtures/*'], // Some tools like typedoc will only read this field even through the same information is defined in the pnpm-workspace.yaml
+					workspaces: ['apps/*', 'examples/*', 'fixtures/*', 'libs/*', 'packages/*'], // Some tools like typedoc will only read this field even though the same information is defined in pnpm-workspace.yaml
 				},
 			},
 			{

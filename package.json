@@ -39,6 +39,7 @@
 	"packageManager": "pnpm@8.13.1",
 	"workspaces": [
 		"apps/*",
+		"examples/*",
 		"fixtures/*",
 		"libs/*",
 		"packages/*"

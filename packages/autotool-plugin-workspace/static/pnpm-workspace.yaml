@@ -1,7 +1,8 @@
 # managed-by-autotool
 packages:
-  - 'packages/*'
-  - 'fixtures/*'
   - 'apps/*'
+  - 'examples/*'
+  - 'fixtures/*'
   - 'libs/*'
+  - 'packages/*'
 link-workspace-packages: 'deep'
