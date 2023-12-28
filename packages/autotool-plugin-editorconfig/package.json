@@ -52,7 +52,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.8.1",
+		"@alexaegis/logging": "^0.8.2",
 		"autotool-plugin": "^0.4.1"
 	},
 	"devDependencies": {
@@ -60,10 +60,10 @@
 		"@alexaegis/ts": "^0.9.2",
 		"@alexaegis/vite": "^0.9.2",
 		"@alexaegis/vitest": "^0.9.2",
-		"@types/node": "^20.10.4",
-		"publint": "^0.2.6",
+		"@types/node": "^20.10.5",
+		"publint": "^0.2.7",
 		"typescript": "^5.3.3",
-		"vite": "^5.0.9",
-		"vitest": "^1.0.4"
+		"vite": "^5.0.10",
+		"vitest": "^1.1.0"
 	}
 }

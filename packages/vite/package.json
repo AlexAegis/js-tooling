@@ -58,15 +58,15 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.8.1",
-		"vite": "^5.0.9",
+		"@alexaegis/logging": "^0.8.2",
+		"vite": "^5.0.10",
 		"vite-plugin-pakk": "^0.8.0"
 	},
 	"devDependencies": {
-		"@types/node": "^20.10.4",
-		"publint": "^0.2.6",
+		"@types/node": "^20.10.5",
+		"publint": "^0.2.7",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.3.3",
-		"vitest": "^1.0.4"
+		"vitest": "^1.1.0"
 	}
 }
