@@ -36,6 +36,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          submodules: true
+          lfs: true
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -74,6 +76,8 @@ jobs:
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc'
         with:
           fetch-depth: 1
+          submodules: true
+          lfs: true
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc'
@@ -142,6 +146,8 @@ jobs:
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress'
         with:
           fetch-depth: 1
+          submodules: true
+          lfs: true
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress'
@@ -209,6 +215,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          submodules: true
+          lfs: true
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -281,6 +289,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          submodules: true
+          lfs: true
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -366,6 +376,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          submodules: true
+          lfs: true
       - name: collect public packages
         id: collect_packages
         uses: AlexAegis/collect-public-packages@v1
