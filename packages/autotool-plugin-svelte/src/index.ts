@@ -140,6 +140,17 @@ export const svelteAppCommonSetupPlugin: AutotoolPluginObject = {
 				},
 			},
 		},
+		{
+			description: 'add @sveltejs/vite-plugin-svelte',
+			executor: 'packageJson',
+			packageKind: 'regular',
+			data: {
+				devDependencies: {
+					'@sveltejs/vite-plugin-svelte':
+						packageJson.devDependencies['@sveltejs/vite-plugin-svelte'],
+				},
+			},
+		},
 	],
 };
 
@@ -232,17 +243,6 @@ export const svelteKitAppSetupPlugin: AutotoolPluginObject = {
 			targetFile: 'vite.config.ts',
 			sourcePluginPackageName: packageJson.name,
 		},
-		{
-			description: 'remove unneeded dependencies meant for non-kit only',
-			executor: 'packageJson',
-			packageKind: 'regular',
-			consolidationPass: 1,
-			data: {
-				devDependencies: {
-					'@sveltejs/vite-plugin-svelte': undefined, // Kit ships its own vite plugin
-				},
-			},
-		},
 	],
 };
 
@@ -334,7 +334,6 @@ export const svelteLibarySetupPlugin: AutotoolPluginObject = {
 };
 
 export const plugin: AutotoolPlugin = (_options) => {
-	console.log('lasodlas');
 	return [
 		svelteCommonSetupPlugin,
 		svelteAppCommonSetupPlugin,
