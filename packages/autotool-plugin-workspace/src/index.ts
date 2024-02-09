@@ -75,6 +75,13 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 			},
+			{
+				description: 'use esm',
+				executor: 'packageJson',
+				data: {
+					type: 'module',
+				},
+			},
 		],
 	};
 };
