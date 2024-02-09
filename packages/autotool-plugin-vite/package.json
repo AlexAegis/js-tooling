@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-vite",
 	"description": "Setup vite",
-	"version": "0.9.2",
+	"version": "0.9.3",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -60,10 +60,10 @@
 		"vite": "^5.1.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.9.2",
-		"@alexaegis/ts": "^0.9.2",
-		"@alexaegis/vite": "^0.9.2",
-		"@alexaegis/vitest": "^0.9.2",
+		"@alexaegis/eslint-config-vitest": "^0.9.3",
+		"@alexaegis/ts": "^0.9.3",
+		"@alexaegis/vite": "^0.9.3",
+		"@alexaegis/vitest": "^0.9.3",
 		"@types/node": "^20.11.17",
 		"publint": "^0.2.7",
 		"turbowatch": "^2.29.4",

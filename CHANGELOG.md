@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.3](https://github.com/AlexAegis/js-tooling/compare/v0.9.2...v0.9.3) (2024-02-09)
+
+
+### Features
+
+* add back @sveltejs/vite-plugin-svelte ([af6b47f](https://github.com/AlexAegis/js-tooling/commit/af6b47f54751d7a30ccbd618e0b85e748c5ff722))
+* add examples as a workspace folder ([81d8de1](https://github.com/AlexAegis/js-tooling/commit/81d8de1eb23091a9e11afda1fc59d11bc686b431))
+* add git preferences for rust ([8aab851](https://github.com/AlexAegis/js-tooling/commit/8aab851e0087b2777f5fefe59af062763e3d274e))
+* **autotool-plugin-github:** enable lfs and submodules ([b653b40](https://github.com/AlexAegis/js-tooling/commit/b653b40f92ee2a6a0e1deff6a4a6e21682f9b09d))
+* use esm by default ([afad68a](https://github.com/AlexAegis/js-tooling/commit/afad68adb069ed2f48b19bc777477f12caf17ce4))
+
+
+### Bug Fixes
+
+* default to node for unknown package archetypes ([329e70c](https://github.com/AlexAegis/js-tooling/commit/329e70c7448cbb00151997c1d186b0cd5b77e984))
+
 ## [0.9.2](https://github.com/AlexAegis/js-tooling/compare/v0.9.1...v0.9.2) (2023-12-14)
 
 
