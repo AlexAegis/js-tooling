@@ -51,8 +51,8 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/coverage-tools": "^0.8.2",
-		"@alexaegis/workspace-tools": "^0.8.2",
+		"@alexaegis/coverage-tools": "^0.9.0",
+		"@alexaegis/workspace-tools": "^0.9.0",
 		"glob": "^10.3.10",
 		"js-yaml": "^4.1.0"
 	},
@@ -62,10 +62,10 @@
 		"@alexaegis/vite": "^0.9.3",
 		"@alexaegis/vitest": "^0.9.3",
 		"@types/js-yaml": "^4.0.9",
-		"@types/node": "^20.11.17",
+		"@types/node": "^20.11.30",
 		"publint": "^0.2.7",
-		"typescript": "^5.3.3",
-		"vite": "^5.1.0",
-		"vitest": "^1.2.2"
+		"typescript": "^5.4.3",
+		"vite": "^5.2.3",
+		"vitest": "^1.4.0"
 	}
 }

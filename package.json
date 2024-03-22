@@ -15,7 +15,7 @@
 		"typescript"
 	],
 	"author": {
-		"email": "alexaegis@gmail.com",
+		"email": "alexaegis@pm.me",
 		"name": "Alex Aegis",
 		"url": "https://github.com/AlexAegis"
 	},
@@ -25,7 +25,7 @@
 		"type": "git"
 	},
 	"bugs": {
-		"email": "alexaegis@gmail.com",
+		"email": "alexaegis@pm.me",
 		"url": "https://github.com/AlexAegis/js-tooling/issues"
 	},
 	"type": "module",
@@ -36,7 +36,7 @@
 		"node": ">=18.10.0",
 		"pnpm": ">=8.0.0"
 	},
-	"packageManager": "pnpm@8.15.1",
+	"packageManager": "pnpm@8.15.5",
 	"workspaces": [
 		"apps/*",
 		"examples/*",
@@ -105,38 +105,38 @@
 		"@alexaegis/autotool-plugin-vitest": "workspace:^",
 		"@alexaegis/autotool-plugin-vscode": "workspace:^",
 		"@alexaegis/autotool-plugin-workspace": "workspace:^",
-		"@alexaegis/coverage-tools": "^0.8.2",
+		"@alexaegis/coverage-tools": "^0.9.0",
 		"@alexaegis/eslint-config-core": "workspace:^",
 		"@alexaegis/nuke": "workspace:^",
 		"@alexaegis/stylelint-config": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@lcov-viewer/cli": "^1.3.0",
-		"@types/eslint": "^8.56.2",
-		"@types/node": "^20.11.17",
+		"@types/eslint": "^8.56.6",
+		"@types/node": "^20.11.30",
 		"@types/yargs": "^17.0.32",
-		"@vitest/coverage-v8": "^1.2.2",
+		"@vitest/coverage-v8": "^1.4.0",
 		"autotool": "^0.4.1",
 		"commit-and-tag-version": "^12.2.0",
-		"commitlint": "^18.6.0",
+		"commitlint": "^19.2.1",
 		"depcheck": "^1.4.7",
-		"eslint": "^8.56.0",
-		"husky": "^9.0.10",
+		"eslint": "^8.57.0",
+		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
-		"npm-check-updates": "^16.14.14",
+		"npm-check-updates": "^16.14.17",
 		"prettier": "^3.2.5",
-		"prettier-plugin-svelte": "^3.1.2",
-		"prettier-plugin-tailwindcss": "^0.5.11",
+		"prettier-plugin-svelte": "^3.2.2",
+		"prettier-plugin-tailwindcss": "^0.5.12",
 		"publint": "^0.2.7",
 		"remark": "^15.0.1",
 		"remark-cli": "^12.0.0",
 		"stylelint": "^16.2.1",
-		"svelte-check": "^3.6.4",
+		"svelte-check": "^3.6.8",
 		"ts-node": "^10.9.2",
-		"turbo": "^1.12.3",
-		"turbo-ignore": "^1.12.3",
-		"typedoc": "^0.25.7",
-		"typescript": "^5.3.3",
-		"vitepress": "1.0.0-rc.42",
-		"vitest": "^1.2.2"
+		"turbo": "^1.13.0",
+		"turbo-ignore": "^1.13.0",
+		"typedoc": "^0.25.12",
+		"typescript": "^5.4.3",
+		"vitepress": "1.0.1",
+		"vitest": "^1.4.0"
 	}
 }

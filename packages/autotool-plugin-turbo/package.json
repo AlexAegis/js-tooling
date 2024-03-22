@@ -52,7 +52,7 @@
 		"./turbo": "./static/turbo.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.8.2",
+		"@alexaegis/logging": "^0.9.0",
 		"autotool-plugin": "^0.4.1"
 	},
 	"devDependencies": {
@@ -60,12 +60,12 @@
 		"@alexaegis/ts": "^0.9.3",
 		"@alexaegis/vite": "^0.9.3",
 		"@alexaegis/vitest": "^0.9.3",
-		"@types/node": "^20.11.17",
+		"@types/node": "^20.11.30",
 		"publint": "^0.2.7",
-		"turbo": "^1.12.3",
-		"turbo-ignore": "^1.12.3",
-		"typescript": "^5.3.3",
-		"vite": "^5.1.0",
-		"vitest": "^1.2.2"
+		"turbo": "^1.13.0",
+		"turbo-ignore": "^1.13.0",
+		"typescript": "^5.4.3",
+		"vite": "^5.2.3",
+		"vitest": "^1.4.0"
 	}
 }

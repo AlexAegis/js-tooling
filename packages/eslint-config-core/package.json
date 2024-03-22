@@ -50,25 +50,25 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^6.21.0",
-		"@typescript-eslint/parser": "^6.21.0",
-		"eslint": "^8.56.0",
-		"eslint-config-next": "^14.1.0",
+		"@typescript-eslint/eslint-plugin": "^7.3.1",
+		"@typescript-eslint/parser": "^7.3.1",
+		"eslint": "^8.57.0",
+		"eslint-config-next": "^14.1.4",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-config-turbo": "^1.12.3",
-		"eslint-plugin-react": "^7.33.2",
+		"eslint-config-turbo": "^1.13.0",
+		"eslint-plugin-react": "^7.34.1",
 		"eslint-plugin-unicorn": "^51.0.1",
-		"typescript": "^5.3.3"
+		"typescript": "^5.4.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.9.3",
 		"@alexaegis/ts": "^0.9.3",
 		"@alexaegis/vite": "^0.9.3",
 		"@alexaegis/vitest": "^0.9.3",
-		"@types/eslint": "^8.56.2",
-		"@types/node": "^20.11.17",
+		"@types/eslint": "^8.56.6",
+		"@types/node": "^20.11.30",
 		"publint": "^0.2.7",
-		"vite": "^5.1.0",
-		"vitest": "^1.2.2"
+		"vite": "^5.2.3",
+		"vitest": "^1.4.0"
 	}
 }
