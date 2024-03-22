@@ -63,7 +63,7 @@
 		"remark-preset-prettier": "^2.0.1",
 		"remark-validate-links": "^13.0.0",
 		"unified-consistency": "^2.0.0",
-		"unified-prettier": "^2.0.0"
+		"unified-prettier": "^2.0.1"
 	},
 	"optionalDependencies": {
 		"prettier": "^3.2.5"
