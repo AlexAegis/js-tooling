@@ -47,6 +47,13 @@ export default {
 						allowAsThisParameter: true,
 					},
 				],
+				'@typescript-eslint/restrict-template-expressions': [
+					'error',
+					{
+						allowBoolean: true,
+						allowNumber: true,
+					},
+				],
 				'@typescript-eslint/no-unused-vars': [
 					'warn',
 					{ varsIgnorePattern: '$$', argsIgnorePattern: '_' }, // To let $$Slot be defined
