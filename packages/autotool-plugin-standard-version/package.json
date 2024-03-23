@@ -60,7 +60,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.9.0",
 		"@alexaegis/standard-version": "^0.10.2",
-		"autotool-plugin": "^0.4.1",
+		"autotool-plugin": "^0.5.0",
 		"commit-and-tag-version": "^12.2.0"
 	},
 	"devDependencies": {
@@ -71,7 +71,7 @@
 		"@types/node": "^20.11.30",
 		"publint": "^0.2.7",
 		"typescript": "^5.4.3",
-		"vite": "^5.2.3",
+		"vite": "^5.2.4",
 		"vitest": "^1.4.0"
 	}
 }

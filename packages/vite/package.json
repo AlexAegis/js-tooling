@@ -59,8 +59,8 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.9.0",
-		"vite": "^5.2.3",
-		"vite-plugin-pakk": "^0.8.0"
+		"vite": "^5.2.4",
+		"vite-plugin-pakk": "^0.9.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.11.30",
