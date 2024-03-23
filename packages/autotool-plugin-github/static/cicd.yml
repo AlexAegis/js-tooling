@@ -250,7 +250,7 @@ jobs:
           coverage-reports: coverage/lcov.info
           language: ${{ vars.CODACY_REPORT_LANGUAGE }}
       - name: upload coverage result to codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: coverage
@@ -364,7 +364,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: deploy to github pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
         id: deployment
   collect:
     runs-on: ubuntu-latest
