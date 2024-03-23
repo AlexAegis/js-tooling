@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.1](https://github.com/AlexAegis/js-tooling/compare/v0.10.0...v0.10.1) (2024-03-23)
+
+
+### Features
+
+* **autotool-plugin-github:** updated github actions to node20 versions ([5045094](https://github.com/AlexAegis/js-tooling/commit/504509434f756367d92553dc1d881fd914c1157a))
+
 ## [0.10.0](https://github.com/AlexAegis/js-tooling/compare/v0.9.3...v0.10.0) (2024-03-23)
 
 
