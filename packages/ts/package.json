@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/ts",
 	"description": "My typescript configurations",
-	"version": "0.10.2",
+	"version": "0.10.3",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -54,16 +54,16 @@
 		"./web": "./web.json"
 	},
 	"dependencies": {
-		"@alexaegis/vite": "^0.10.2",
+		"@alexaegis/vite": "^0.10.3",
 		"@types/node": "^20.11.30",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.4.3",
 		"vite": "^5.2.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.10.2",
-		"@alexaegis/vite": "^0.10.2",
-		"@alexaegis/vitest": "^0.10.2",
+		"@alexaegis/eslint-config-vitest": "^0.10.3",
+		"@alexaegis/vite": "^0.10.3",
+		"@alexaegis/vitest": "^0.10.3",
 		"publint": "^0.2.7",
 		"vite": "^5.2.4",
 		"vitest": "^1.4.0"
