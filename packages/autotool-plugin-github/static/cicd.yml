@@ -39,11 +39,11 @@ jobs:
           submodules: true
           lfs: true
       - name: setup node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: pnpm setup
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           run_install: false
       - name: get pnpm store directory
@@ -52,7 +52,7 @@ jobs:
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -79,12 +79,12 @@ jobs:
           submodules: true
           lfs: true
       - name: setup node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc'
         with:
           node-version: ${{ matrix.node-version }}
       - name: pnpm setup
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc'
         with:
           run_install: false
@@ -96,7 +96,7 @@ jobs:
       - name: cache
         id: cache
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -119,14 +119,14 @@ jobs:
         run: |
           cp ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/index.html ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/404.html
       - name: setup pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' &&
           github.ref_name == github.event.repository.default_branch &&
           github.event_name != 'pull_request'
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'typedoc' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' && 
@@ -149,12 +149,12 @@ jobs:
           submodules: true
           lfs: true
       - name: setup node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress'
         with:
           node-version: ${{ matrix.node-version }}
       - name: pnpm setup
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress'
         with:
           run_install: false
@@ -166,7 +166,7 @@ jobs:
       - name: cache
         id: cache
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -189,14 +189,14 @@ jobs:
         run: |
           cp ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/index.html ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/404.html
       - name: setup pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' &&
           github.ref_name == github.event.repository.default_branch &&
           github.event_name != 'pull_request'
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' && 
@@ -218,11 +218,11 @@ jobs:
           submodules: true
           lfs: true
       - name: setup node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: pnpm setup
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           run_install: false
       - name: get pnpm store directory
@@ -231,7 +231,7 @@ jobs:
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -263,14 +263,14 @@ jobs:
         run: |
           cp ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/index.html ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/404.html
       - name: setup pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'test' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' &&
           github.ref_name == github.event.repository.default_branch &&
           github.event_name != 'pull_request'
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'test' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' && 
@@ -292,11 +292,11 @@ jobs:
           submodules: true
           lfs: true
       - name: setup node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: pnpm setup
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           run_install: false
       - name: get pnpm store directory
@@ -305,7 +305,7 @@ jobs:
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -331,14 +331,14 @@ jobs:
         run: |
           cp ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/index.html ${{ vars.PAGES_DEPLOY_ARTIFACT_DIR }}/404.html
       - name: setup pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'build' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' &&
           github.ref_name == github.event.repository.default_branch &&
           github.event_name != 'pull_request'
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         if: |
           vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'build' &&
           vars.PAGES_DEPLOY_ARTIFACT_DIR != '' && 
@@ -380,7 +380,7 @@ jobs:
           lfs: true
       - name: collect public packages
         id: collect_packages
-        uses: AlexAegis/collect-public-packages@v1
+        uses: AlexAegis/collect-public-packages@v2
   release:
     name: |
       release ${{ matrix.package.package_name }}@${{ matrix.package.package_version }}
@@ -397,12 +397,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: setup node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - name: pnpm setup
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           run_install: false
       - name: get pnpm store directory
@@ -411,7 +411,7 @@ jobs:
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: cache
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ steps.pnpm-cache.outputs.STORE_PATH }}
