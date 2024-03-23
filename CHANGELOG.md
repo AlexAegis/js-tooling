@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.0](https://github.com/AlexAegis/js-tooling/compare/v0.9.3...v0.10.0) (2024-03-23)
+
+
+### Features
+
+* **autotool-plugin-ncu:** updated locked package versions ([4cb4339](https://github.com/AlexAegis/js-tooling/commit/4cb433983e8a257c3ba20958cde495c5d9f4281c))
+
 ## [0.9.3](https://github.com/AlexAegis/js-tooling/compare/v0.9.2...v0.9.3) (2024-02-09)
 
 
