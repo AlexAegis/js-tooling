@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.4](https://github.com/AlexAegis/js-tooling/compare/v0.10.3...v0.10.4) (2024-03-23)
+
+
+### Features
+
+* **eslint-config-core:** allow numbers and booleans in template expressions ([1b54d7b](https://github.com/AlexAegis/js-tooling/commit/1b54d7b7ad64e65eeb69f199a2661dcb0dcc2ee0))
+
 ## [0.10.3](https://github.com/AlexAegis/js-tooling/compare/v0.10.2...v0.10.3) (2024-03-23)
 
 ## [0.10.2](https://github.com/AlexAegis/js-tooling/compare/v0.10.1...v0.10.2) (2024-03-23)

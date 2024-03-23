@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/lint-staged-config",
 	"description": "Lint staged config",
-	"version": "0.10.3",
+	"version": "0.10.4",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -55,10 +55,10 @@
 		"typescript": "^5.4.3"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.10.3",
-		"@alexaegis/ts": "^0.10.3",
-		"@alexaegis/vite": "^0.10.3",
-		"@alexaegis/vitest": "^0.10.3",
+		"@alexaegis/eslint-config-vitest": "^0.10.4",
+		"@alexaegis/ts": "^0.10.4",
+		"@alexaegis/vite": "^0.10.4",
+		"@alexaegis/vitest": "^0.10.4",
 		"@types/eslint": "^8.56.6",
 		"@types/lint-staged": "^13.3.0",
 		"@types/node": "^20.11.30",

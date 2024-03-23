@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/nuke",
 	"description": "Nuke stuff",
-	"version": "0.10.3",
+	"version": "0.10.4",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -60,10 +60,10 @@
 		"globby": "^14.0.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.10.3",
-		"@alexaegis/ts": "^0.10.3",
-		"@alexaegis/vite": "^0.10.3",
-		"@alexaegis/vitest": "^0.10.3",
+		"@alexaegis/eslint-config-vitest": "^0.10.4",
+		"@alexaegis/ts": "^0.10.4",
+		"@alexaegis/vite": "^0.10.4",
+		"@alexaegis/vitest": "^0.10.4",
 		"@types/node": "^20.11.30",
 		"publint": "^0.2.7",
 		"typescript": "^5.4.3",
