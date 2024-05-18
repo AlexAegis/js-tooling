@@ -52,18 +52,18 @@
 	"dependencies": {
 		"stylelint-config-html": "^1.1.0",
 		"stylelint-config-standard": "^36.0.0",
-		"stylelint-config-standard-scss": "^13.0.0"
+		"stylelint-config-standard-scss": "^13.1.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "^0.10.4",
 		"@alexaegis/ts": "^0.10.4",
 		"@alexaegis/vite": "^0.10.4",
 		"@alexaegis/vitest": "^0.10.4",
-		"@types/node": "^20.11.30",
-		"publint": "^0.2.7",
-		"stylelint": "^16.2.1",
-		"typescript": "^5.4.3",
-		"vite": "^5.2.4",
-		"vitest": "^1.4.0"
+		"@types/node": "^20.12.12",
+		"publint": "^0.2.8",
+		"stylelint": "^16.5.0",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.11",
+		"vitest": "^1.6.0"
 	}
 }

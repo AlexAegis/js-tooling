@@ -55,7 +55,7 @@
 		"./tasks": "./static/tasks.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.9.0",
+		"@alexaegis/logging": "^0.9.1",
 		"autotool-plugin": "^0.5.0"
 	},
 	"devDependencies": {
@@ -63,10 +63,10 @@
 		"@alexaegis/ts": "^0.10.4",
 		"@alexaegis/vite": "^0.10.4",
 		"@alexaegis/vitest": "^0.10.4",
-		"@types/node": "^20.11.30",
-		"publint": "^0.2.7",
-		"typescript": "^5.4.3",
-		"vite": "^5.2.4",
-		"vitest": "^1.4.0"
+		"@types/node": "^20.12.12",
+		"publint": "^0.2.8",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.11",
+		"vitest": "^1.6.0"
 	}
 }
