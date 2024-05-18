@@ -50,20 +50,18 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^7.3.1",
-		"@typescript-eslint/parser": "^7.3.1",
-		"eslint": "^8.57.0",
-		"eslint-config-next": "^14.1.4",
+		"@typescript-eslint/eslint-plugin": "8.0.0-alpha.13",
+		"@typescript-eslint/parser": "8.0.0-alpha.13",
+		"eslint": "^9.3.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-config-turbo": "^1.13.0",
-		"eslint-plugin-react": "^7.34.1",
-		"eslint-plugin-unicorn": "^51.0.1",
+		"eslint-config-turbo": "^1.13.3",
+		"eslint-plugin-unicorn": "^53.0.0",
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "^0.10.4",
-		"@alexaegis/vitest": "^0.10.4",
-		"@types/eslint": "^8.56.6",
+		"@alexaegis/vite": "workspace:^0.10.4",
+		"@alexaegis/vitest": "workspace:^0.10.4",
+		"@types/eslint": "^8.56.10",
 		"@types/node": "^20.12.12",
 		"publint": "^0.2.8",
 		"vite": "^5.2.11",

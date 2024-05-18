@@ -54,16 +54,16 @@
 		"./web": "./web.json"
 	},
 	"dependencies": {
-		"@alexaegis/vite": "^0.10.4",
+		"@alexaegis/vite": "workspace:^0.10.4",
 		"@types/node": "^20.12.12",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.4.5",
 		"vite": "^5.2.11"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.10.4",
-		"@alexaegis/vite": "^0.10.4",
-		"@alexaegis/vitest": "^0.10.4",
+		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
+		"@alexaegis/vite": "workspace:^0.10.4",
+		"@alexaegis/vitest": "workspace:^0.10.4",
 		"publint": "^0.2.8",
 		"vite": "^5.2.11",
 		"vitest": "^1.6.0"

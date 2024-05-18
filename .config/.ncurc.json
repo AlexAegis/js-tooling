@@ -4,5 +4,5 @@
 	"peer": true,
 	"deep": true,
 	"upgrade": true,
-	"reject": ["commitlint", "@commitlint/*", "*eslint*"]
+	"reject": ["commitlint", "@commitlint/*"]
 }

@@ -55,11 +55,11 @@
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.10.4",
+		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
 		"@alexaegis/ts": "^0.10.4",
-		"@alexaegis/vite": "^0.10.4",
-		"@alexaegis/vitest": "^0.10.4",
-		"@types/eslint": "^8.56.6",
+		"@alexaegis/vite": "workspace:^0.10.4",
+		"@alexaegis/vitest": "workspace:^0.10.4",
+		"@types/eslint": "^8.56.10",
 		"@types/lint-staged": "^13.3.0",
 		"@types/node": "^20.12.12",
 		"publint": "^0.2.8",

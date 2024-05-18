@@ -55,10 +55,10 @@
 		"stylelint-config-standard-scss": "^13.1.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "^0.10.4",
+		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
 		"@alexaegis/ts": "^0.10.4",
-		"@alexaegis/vite": "^0.10.4",
-		"@alexaegis/vitest": "^0.10.4",
+		"@alexaegis/vite": "workspace:^0.10.4",
+		"@alexaegis/vitest": "workspace:^0.10.4",
 		"@types/node": "^20.12.12",
 		"publint": "^0.2.8",
 		"stylelint": "^16.5.0",
