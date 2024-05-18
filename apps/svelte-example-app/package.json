@@ -50,7 +50,7 @@
 		"@alexaegis/example-svelte-lib": "workspace:^0.10.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "^0.10.4",
+		"@alexaegis/eslint-config-svelte": "workspace:^0.10.4",
 		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
 		"@alexaegis/prettier-config": "workspace:^0.10.4",
 		"@alexaegis/stylelint-config": "^0.10.4",
@@ -69,7 +69,6 @@
 		"@sveltejs/vite-plugin-svelte": "^3.1.0",
 		"@types/node": "^20.12.12",
 		"autoprefixer": "^10.4.19",
-		"eslint-config-prettier": "^9.1.0",
 		"eslint-config-turbo": "^1.13.3",
 		"eslint-plugin-svelte": "^2.39.0",
 		"eslint-plugin-unicorn": "^53.0.0",

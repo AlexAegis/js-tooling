@@ -60,7 +60,7 @@
 		"@alexaegis/example-ts-lib": "workspace:^0.10.4"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "^0.10.4",
+		"@alexaegis/eslint-config-svelte": "workspace:^0.10.4",
 		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
 		"@alexaegis/prettier-config": "workspace:^0.10.4",
 		"@alexaegis/stylelint-config": "^0.10.4",

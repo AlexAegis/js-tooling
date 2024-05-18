@@ -1,0 +1,5 @@
+// managed-by-autotool
+
+${imports}
+
+export default ${configs};

@@ -3,13 +3,6 @@ import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin'
 import { join } from 'node:path';
 import packageJson from '../package.json';
 
-/**
- * @returns a string like ", 'foo', 'bar', 'amogus'"
- */
-export const joinAdditionalExtends = (...pluginNames: string[]): string => {
-	return pluginNames.length > 0 ? `, '${pluginNames.join("', '")}'` : '';
-};
-
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
@@ -19,32 +12,30 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'fileCopy',
 				packageKind: 'root',
 				formatWithPrettier: true,
+				targetFile: 'eslint.config.js',
+				sourcePluginPackageName: packageJson.name,
+				templateVariables: {
+					imports: `import eslintConfigCore from '@alexaegis/eslint-config-core';`,
+					configs: '[...eslintConfigCore]',
+				},
+				sourceFile: join('static', 'eslint.config.js.txt'),
+			},
+			{
+				description: 'delete the deprecated eslintignore files',
+				executor: 'fileRemove',
+				targetFile: '.eslintignore',
+			},
+			{
+				description: 'delete the deprecated eslintrc files',
+				executor: 'fileRemove',
 				targetFile: '.eslintrc.cjs',
-				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'workspace-eslintrc.cjs'),
-			},
-			{
-				description: 'workspace eslintignore',
-				executor: 'fileCopy',
-				packageKind: 'root',
-				targetFile: '.eslintignore',
-				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'eslintignore.txt'),
-			},
-			{
-				description: 'package eslintignore',
-				executor: 'fileCopy',
-				packageKind: 'regular',
-				targetFile: '.eslintignore',
-				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'eslintignore.txt'),
 			},
 			{
 				description: 'package eslint config (non svelte)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				formatWithPrettier: true,
-				targetFile: '.eslintrc.cjs',
+				targetFile: 'eslint.config.js',
 				packageJsonFilter: {
 					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Skip these libraries to avoid circular dependencies
 					archetype: {
@@ -53,16 +44,18 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 				sourcePluginPackageName: packageJson.name,
 				templateVariables: {
-					additionalExtends: joinAdditionalExtends('@alexaegis/eslint-config-vitest'),
+					imports: `import eslintConfigCore from '@alexaegis/eslint-config-core';
+import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
+					configs: '[...eslintConfigCore, ...eslintConfigVitest]',
 				},
-				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
+				sourceFile: join('static', 'eslint.config.js.txt'),
 			},
 			{
 				description: 'package eslint config (svelte)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				formatWithPrettier: true,
-				targetFile: '.eslintrc.cjs',
+				targetFile: 'eslint.config.js',
 				packageJsonFilter: {
 					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Skip these libraries to avoid circular dependencies
 					archetype: {
@@ -71,12 +64,12 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 				sourcePluginPackageName: packageJson.name,
 				templateVariables: {
-					additionalExtends: joinAdditionalExtends(
-						'@alexaegis/eslint-config-svelte',
-						'@alexaegis/eslint-config-vitest',
-					),
+					imports: `import eslintConfigCore from '@alexaegis/eslint-config-core';
+import eslintConfigSvelte from "@alexaegis/eslint-config-svelte";
+import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
+					configs: '[...eslintConfigCore, ...eslintConfigSvelte, ...eslintConfigVitest]',
 				},
-				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
+				sourceFile: join('static', 'eslint.config.js.txt'),
 			},
 			{
 				description: 'package eslint dependencies (vitest)',
@@ -98,35 +91,37 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 				},
 			},
-			{
-				description: 'package eslint dependencies (svelte)',
-				executor: 'packageJson',
-				packageKind: 'regular',
-				packageJsonFilter: {
-					archetype: {
-						framework: 'svelte',
-					},
-				},
-				data: {
-					devDependencies: {
-						'@alexaegis/eslint-config-svelte': `^${packageJson.version}`, // Versioned together, it's fine
-					},
-				},
-			},
+			// TODO: Fix: https://github.com/AlexAegis/autotool/issues/7
+			//{
+			//	description: 'package eslint dependencies (svelte)',
+			//	executor: 'packageJson',
+			//	packageKind: 'regular',
+			//	packageJsonFilter: {
+			//		archetype: {
+			//			framework: 'svelte',
+			//		},
+			//	},
+			//	data: {
+			//		devDependencies: {
+			//			'@alexaegis/eslint-config-svelte': `^${packageJson.version}`, // Versioned together, it's fine
+			//		},
+			//	},
+			//},
 			{
 				description: 'package eslint config (For @alexaegis/vitest only)',
 				executor: 'fileCopy',
 				packageKind: 'regular',
 				formatWithPrettier: true,
-				targetFile: '.eslintrc.cjs',
+				targetFile: 'eslint.config.js',
 				packageJsonFilter: {
 					name: /^@alexaegis\/vite(st)?$/,
 				},
 				templateVariables: {
-					additionalExtends: joinAdditionalExtends(), // No extra config here
+					imports: `import eslintConfigCore from '@alexaegis/eslint-config-core';`,
+					configs: '[...eslintConfigCore]',
 				},
 				sourcePluginPackageName: packageJson.name,
-				sourceFile: join('static', 'package-eslintrc.cjs.txt'),
+				sourceFile: join('static', 'eslint.config.js.txt'),
 			},
 			{
 				description: 'workspace eslint dependencies',

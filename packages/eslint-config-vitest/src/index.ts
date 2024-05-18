@@ -1,6 +1,8 @@
-import type { Linter } from 'eslint';
+import { TSESLint } from '@typescript-eslint/utils';
+import tseslint from 'typescript-eslint';
 
-export default {
+export const eslintVitestConfigRestrictImports: TSESLint.FlatConfig.Config = {
+	files: ['*.spec.{ts,js,cts,cjs,mts,mjs,tsx,jsx}'],
 	rules: {
 		'no-restricted-imports': [
 			'error',
@@ -9,4 +11,6 @@ export default {
 			},
 		],
 	},
-} as Linter.Config;
+};
+
+export default tseslint.config(eslintVitestConfigRestrictImports);

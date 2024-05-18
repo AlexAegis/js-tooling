@@ -6,7 +6,7 @@ import { join } from 'node:path';
 const prettierCommand = 'prettier --check';
 const tscCommand = 'tsc --noEmit';
 
-const eslintSingleFileCommand = 'eslint --max-warnings=0 --no-ignore';
+const eslintSingleFileCommand = 'eslint --max-warnings=0 --no-warn-ignored';
 const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
 
 // TODO: explore more optimal settings since eslint is slow when used on files 1 by 1

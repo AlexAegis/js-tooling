@@ -32,9 +32,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						'engine-strict': true,
 					},
 					engines: {
-						node: '>=18.10.0',
+						node: '>=20.12.0',
 						npm: undefined,
-						pnpm: '>=8.0.0',
+						pnpm: '>=9.1.1',
 					},
 					packageManager: rootPackageJson.packageManager,
 					workspaces: ['apps/*', 'examples/*', 'fixtures/*', 'libs/*', 'packages/*'], // Some tools like typedoc will only read this field even though the same information is defined in pnpm-workspace.yaml

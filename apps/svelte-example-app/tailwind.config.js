@@ -5,7 +5,6 @@ export default {
 	darkMode: 'class',
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
-		// eslint-disable-next-line unicorn/prefer-module
 		path.join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}'),
 	],
 	theme: {

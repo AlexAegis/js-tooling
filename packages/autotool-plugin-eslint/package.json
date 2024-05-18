@@ -48,10 +48,8 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
-		"./eslintignore": "./static/eslintignore.txt",
-		"./package-eslintrc.cjs": "./static/package-eslintrc.cjs.txt",
-		"./readme": "./readme.md",
-		"./workspace-eslintrc": "./static/workspace-eslintrc.cjs"
+		"./eslint.config.js": "./static/eslint.config.js.txt",
+		"./readme": "./readme.md"
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.9.1",

@@ -48,17 +48,27 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./ambient": {
+			"types": "./src/ambient.d.ts",
+			"import": "./dist/ambient.js",
+			"require": "./dist/ambient.cjs",
+			"default": "./dist/ambient.js"
+		},
+		"./eslint-plugin-svelte": {
+			"types": "./src/eslint-plugin-svelte.d.ts",
+			"import": "./dist/eslint-plugin-svelte.js",
+			"require": "./dist/eslint-plugin-svelte.cjs",
+			"default": "./dist/eslint-plugin-svelte.js"
+		},
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "8.0.0-alpha.13",
 		"@typescript-eslint/parser": "8.0.0-alpha.13",
-		"eslint": "^8.57.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-config-turbo": "^1.13.3",
+		"eslint": "^9.3.0",
 		"eslint-plugin-svelte": "^2.39.0",
-		"eslint-plugin-unicorn": "^53.0.0",
-		"typescript": "^5.4.5"
+		"typescript": "^5.4.5",
+		"typescript-eslint": "8.0.0-alpha.13"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
