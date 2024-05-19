@@ -53,7 +53,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "^0.9.1",
-		"autotool-plugin": "^0.5.0",
+		"autotool-plugin": "^0.6.0",
 		"npm-check-updates": "^16.14.20"
 	},
 	"devDependencies": {

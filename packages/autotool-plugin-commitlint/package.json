@@ -59,7 +59,7 @@
 	"dependencies": {
 		"@alexaegis/commitlint-config": "workspace:^0.10.4",
 		"@alexaegis/logging": "^0.9.1",
-		"autotool-plugin": "^0.5.0",
+		"autotool-plugin": "^0.6.0",
 		"commitlint": "^19.2.1"
 	},
 	"devDependencies": {
