@@ -58,6 +58,7 @@ const unicornConfig: TSESLint.FlatConfig.Config = {
 		'unicorn/prefer-top-level-await': 'off', // Until ES2022 is used as target
 		'unicorn/no-useless-undefined': 'off', // for .catch(() => undefined)
 		'unicorn/no-for-loop': 'off', // Seriously?
+		'unicorn/import-style': 'off', // Forces you to use default imports for node: modules
 	},
 };
 const useSingleQuotes: TSESLint.FlatConfig.Config = {

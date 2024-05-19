@@ -64,7 +64,7 @@
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "8.0.0-alpha.13",
-		"@typescript-eslint/parser": "8.0.0-alpha.13",
+		"@typescript-eslint/parser": "8.0.0-alpha.14",
 		"eslint": "^9.3.0",
 		"eslint-plugin-svelte": "^2.39.0",
 		"typescript": "^5.4.5",

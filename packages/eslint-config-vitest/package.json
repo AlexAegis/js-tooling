@@ -51,7 +51,7 @@
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "8.0.0-alpha.13",
-		"@typescript-eslint/parser": "8.0.0-alpha.13",
+		"@typescript-eslint/parser": "8.0.0-alpha.14",
 		"eslint": "^9.3.0",
 		"eslint-config-turbo": "^1.13.3",
 		"eslint-plugin-unicorn": "^53.0.0",
