@@ -73,7 +73,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
-		"@alexaegis/ts": "^0.10.4",
+		"@alexaegis/ts": "workspace:^0.10.4",
 		"@alexaegis/vite": "workspace:^0.10.4",
 		"@alexaegis/vitest": "workspace:^0.10.4",
 		"@eslint/js": "^9.3.0",
