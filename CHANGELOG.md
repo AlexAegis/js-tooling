@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.2](https://github.com/AlexAegis/js-tooling/compare/v0.11.1...v0.11.2) (2024-05-19)
+
+
+### Features
+
+* import packageJson instead of letting vite bundle it ([0894706](https://github.com/AlexAegis/js-tooling/commit/08947065bd084f49385e0c6992652445bb233916))
+
 ## [0.11.1](https://github.com/AlexAegis/js-tooling/compare/v0.11.0...v0.11.1) (2024-05-19)
 
 
