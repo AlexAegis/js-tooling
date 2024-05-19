@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-typedoc",
 	"description": "My typedoc config",
-	"version": "0.10.4",
+	"version": "0.11.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -59,10 +59,10 @@
 		"typedoc": "^0.25.13"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "workspace:^0.10.4",
-		"@alexaegis/ts": "workspace:^0.10.4",
-		"@alexaegis/vite": "workspace:^0.10.4",
-		"@alexaegis/vitest": "workspace:^0.10.4",
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/ts": "workspace:^",
+		"@alexaegis/vite": "workspace:^",
+		"@alexaegis/vitest": "workspace:^",
 		"@types/node": "^20.12.12",
 		"publint": "^0.2.8",
 		"typescript": "^5.4.5",

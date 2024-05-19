@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.0](https://github.com/AlexAegis/js-tooling/compare/v0.10.4...v0.11.0) (2024-05-19)
+
+
+### Features
+
+* allow numbers and booleans in template expressions in svelte files too ([e4ef258](https://github.com/AlexAegis/js-tooling/commit/e4ef2581aea9f12c0ddd42438b6423a6ec08e675))
+* **autotool-plugin-github:** do not run github page related steps when its not enabled ([d114dbe](https://github.com/AlexAegis/js-tooling/commit/d114dbea471bc31852040195e3821d27ecb5a52e))
+* **eslint-config-core:** migrated to flat eslint configs ([2ec3fdc](https://github.com/AlexAegis/js-tooling/commit/2ec3fdc2dabb3eefcc7c762d1fb571cc466f3474))
+
 ## [0.10.4](https://github.com/AlexAegis/js-tooling/compare/v0.10.3...v0.10.4) (2024-03-23)
 
 
