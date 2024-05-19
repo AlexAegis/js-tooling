@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/vitest",
 	"description": "My vitest config",
-	"version": "0.11.0",
+	"version": "0.11.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -75,7 +75,7 @@
 		"vitest": "^1.6.0"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "workspace:^0.11.0",
+		"@alexaegis/vite": "workspace:^",
 		"publint": "^0.2.8",
 		"vite": "^5.2.11"
 	}

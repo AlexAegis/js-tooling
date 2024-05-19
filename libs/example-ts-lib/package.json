@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/example-ts-lib",
 	"description": "Example package to be used in an app",
-	"version": "0.11.0",
+	"version": "0.11.1",
 	"license": "MIT",
 	"private": true,
 	"archetype": {
@@ -50,10 +50,10 @@
 		"./readme": "./readme.md"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-vitest": "workspace:^0.11.0",
-		"@alexaegis/ts": "workspace:^0.11.0",
-		"@alexaegis/vite": "workspace:^0.11.0",
-		"@alexaegis/vitest": "workspace:^0.11.0",
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/ts": "workspace:^",
+		"@alexaegis/vite": "workspace:^",
+		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^8.56.10",
 		"@types/node": "^20.12.12",
 		"vite": "^5.2.11",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.1](https://github.com/AlexAegis/js-tooling/compare/v0.11.0...v0.11.1) (2024-05-19)
+
+
+### Bug Fixes
+
+* version numbers ([eafb8e9](https://github.com/AlexAegis/js-tooling/commit/eafb8e97c69c65ec98e466292d72d3a8d30391f3))
+
 ## [0.11.0](https://github.com/AlexAegis/js-tooling/compare/v0.10.4...v0.11.0) (2024-05-19)
 
 
