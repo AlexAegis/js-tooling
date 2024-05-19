@@ -47,18 +47,18 @@
 		"start:no-watch": "turbo run start_ --concurrency 16 --cache-dir .cache/turbo --filter @alexaegis/svelte-example-app"
 	},
 	"dependencies": {
-		"@alexaegis/example-svelte-lib": "workspace:^"
+		"@alexaegis/example-svelte-lib": "workspace:^0.11.0"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "workspace:^",
-		"@alexaegis/eslint-config-vitest": "workspace:^",
-		"@alexaegis/prettier-config": "workspace:^",
-		"@alexaegis/stylelint-config": "workspace:^",
-		"@alexaegis/svelte-config": "workspace:^",
-		"@alexaegis/ts": "workspace:^",
-		"@alexaegis/turbowatch": "workspace:^",
-		"@alexaegis/vite": "workspace:^",
-		"@alexaegis/vitest": "workspace:^",
+		"@alexaegis/eslint-config-svelte": "workspace:^0.11.0",
+		"@alexaegis/eslint-config-vitest": "workspace:^0.11.0",
+		"@alexaegis/prettier-config": "workspace:^0.11.0",
+		"@alexaegis/stylelint-config": "workspace:^0.11.0",
+		"@alexaegis/svelte-config": "workspace:^0.11.0",
+		"@alexaegis/ts": "workspace:^0.11.0",
+		"@alexaegis/turbowatch": "workspace:^0.11.0",
+		"@alexaegis/vite": "workspace:^0.11.0",
+		"@alexaegis/vitest": "workspace:^0.11.0",
 		"@skeletonlabs/skeleton": "^2.10.0",
 		"@skeletonlabs/tw-plugin": "^0.4.0",
 		"@sveltejs/adapter-auto": "^3.2.0",

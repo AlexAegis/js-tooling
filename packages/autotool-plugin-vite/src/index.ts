@@ -141,7 +141,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 					},
 					devDependencies: {
 						turbowatch: packageJson.devDependencies.turbowatch,
-						'@alexaegis/turbowatch': packageJson.version, // versioned together
+						'@alexaegis/turbowatch': `^${packageJson.version}`, // versioned together
 					},
 				},
 			},
