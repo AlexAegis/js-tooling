@@ -52,6 +52,7 @@
 			"require": "./dist/local-node-modules.cjs",
 			"default": "./dist/local-node-modules.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

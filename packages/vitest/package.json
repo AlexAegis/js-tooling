@@ -47,6 +47,7 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./vitest-node.config": {
 			"types": "./src/vitest-node.config.ts",

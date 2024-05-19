@@ -1,7 +1,7 @@
+import packageJson from '@alexaegis/autotool-plugin-vite/package.json' assert { type: 'json' };
 import { and, contains, equal, not } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
-import packageJson from '../package.json';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {

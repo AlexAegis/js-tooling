@@ -49,11 +49,12 @@
 			"default": "./dist/index.js"
 		},
 		"./example": "./static/example.json",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
 		"vite": "^5.2.11",
-		"vite-plugin-pakk": "^0.10.0"
+		"vite-plugin-pakk": "^0.12.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",

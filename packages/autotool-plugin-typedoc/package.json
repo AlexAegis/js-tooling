@@ -49,6 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./package-typedoc": "./static/package-typedoc.json",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./typedoc.base": "./static/typedoc.base.json",
 		"./workspace-typedoc": "./static/workspace-typedoc.json"

@@ -50,6 +50,7 @@
 		},
 		"./gitattributes": "./static/gitattributes",
 		"./gitignore": "./static/gitignore",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

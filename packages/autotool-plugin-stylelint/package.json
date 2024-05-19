@@ -48,6 +48,7 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./stylelint.config": "./static/stylelint.config.js",
 		"./stylelintignore": "./static/stylelintignore"

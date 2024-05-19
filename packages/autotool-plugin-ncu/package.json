@@ -49,6 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./ncurc": "./static/ncurc.json",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

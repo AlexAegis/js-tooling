@@ -1,6 +1,6 @@
+import packageJson from '@alexaegis/autotool-plugin-standard-version/package.json' assert { type: 'json' };
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
-import packageJson from '../package.json';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {

@@ -49,6 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./editorconfig": "./static/editorconfig",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

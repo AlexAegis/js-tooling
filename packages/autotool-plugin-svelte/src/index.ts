@@ -1,7 +1,7 @@
+import packageJson from '@alexaegis/autotool-plugin-svelte/package.json' assert { type: 'json' };
 import { contains } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
-import packageJson from '../package.json';
 
 /**
  * For any kind of svelte package regardless of being a library, an app, using kit or not

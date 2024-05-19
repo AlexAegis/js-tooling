@@ -53,6 +53,7 @@
 		"./package-composite-tsconfig": "./static/package-composite-tsconfig.json",
 		"./package-simple-tsconfig": "./static/package-simple-tsconfig.json",
 		"./package-spec-vitest-tsconfig": "./static/package-spec-vitest-tsconfig.json",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./workspace-tsconfig": "./static/workspace-tsconfig.json"
 	},

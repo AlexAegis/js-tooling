@@ -51,6 +51,7 @@
 		"./commit-msg": "./static/.husky/commit-msg",
 		"./commitlint.config": "./static/commitlint.config.cjs",
 		"./lint-staged.config": "./static/lint-staged.config.js",
+		"./package.json": "./package.json",
 		"./pre-commit": "./static/.husky/pre-commit",
 		"./readme": "./readme.md"
 	},

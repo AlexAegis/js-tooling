@@ -1,7 +1,7 @@
+import packageJson from '@alexaegis/autotool-plugin-vitest/package.json' assert { type: 'json' };
 import { contains, equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
-import packageJson from '../package.json';
 
 const appOrLib = or(equal('app'), equal('lib'));
 

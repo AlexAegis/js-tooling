@@ -54,6 +54,7 @@
 			"require": "./dist/config.cjs",
 			"default": "./dist/config.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./versionrc.cjs": "./static/versionrc.cjs.txt"
 	},

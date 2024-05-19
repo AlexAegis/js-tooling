@@ -49,6 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./depcheckrc": "./static/depcheckrc.json",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

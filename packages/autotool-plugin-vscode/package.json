@@ -50,6 +50,7 @@
 		},
 		"./extensions": "./static/extensions.json",
 		"./launch": "./static/launch.json",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./settings": "./static/settings.json",
 		"./tasks": "./static/tasks.json"

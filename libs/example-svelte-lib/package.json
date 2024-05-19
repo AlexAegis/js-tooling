@@ -54,6 +54,7 @@
 			"svelte": "./src/direct.svelte",
 			"default": "./src/direct.svelte"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
@@ -67,7 +68,7 @@
 		"@alexaegis/svelte-config": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@pakk/cli": "^0.10.0",
+		"@pakk/cli": "^0.12.0",
 		"@sveltejs/package": "^2.3.1",
 		"@types/node": "^20.12.12",
 		"stylelint": "^16.5.0",

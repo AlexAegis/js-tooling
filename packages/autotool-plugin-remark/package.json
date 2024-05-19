@@ -50,6 +50,7 @@
 		},
 		"./dot-remarkignore": "./static/dot-remarkignore",
 		"./dot-remarkrc": "./static/dot-remarkrc.js",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./remark-preset": {
 			"types": "./src/remark-preset.ts",

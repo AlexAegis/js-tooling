@@ -49,6 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./eslint.config.js": "./static/eslint.config.js.txt",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

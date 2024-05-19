@@ -53,6 +53,7 @@
 			"require": "./dist/internal.cjs",
 			"default": "./dist/internal.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

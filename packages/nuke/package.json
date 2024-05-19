@@ -47,6 +47,7 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"bin": {

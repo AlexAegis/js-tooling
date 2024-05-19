@@ -1,7 +1,7 @@
+import packageJson from '@alexaegis/autotool-plugin-eslint/package.json' assert { type: 'json' };
 import { contains, equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
-import packageJson from '../package.json';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
@@ -91,22 +91,21 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 					},
 				},
 			},
-			// TODO: Fix: https://github.com/AlexAegis/autotool/issues/7
-			//{
-			//	description: 'package eslint dependencies (svelte)',
-			//	executor: 'packageJson',
-			//	packageKind: 'regular',
-			//	packageJsonFilter: {
-			//		archetype: {
-			//			framework: 'svelte',
-			//		},
-			//	},
-			//	data: {
-			//		devDependencies: {
-			//			'@alexaegis/eslint-config-svelte': `^${packageJson.version}`, // Versioned together, it's fine
-			//		},
-			//	},
-			//},
+			{
+				description: 'package eslint dependencies (svelte)',
+				executor: 'packageJson',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					archetype: {
+						framework: 'svelte',
+					},
+				},
+				data: {
+					devDependencies: {
+						'@alexaegis/eslint-config-svelte': `^${packageJson.version}`, // Versioned together, it's fine
+					},
+				},
+			},
 			{
 				description: 'package eslint config (For @alexaegis/vitest only)',
 				executor: 'fileCopy',

@@ -50,6 +50,7 @@
 		"./angular": "./angular.json",
 		"./base": "./base.json",
 		"./node": "./node.json",
+		"./package.json": "./package.json",
 		"./svelte": "./svelte.json",
 		"./web": "./web.json"
 	},

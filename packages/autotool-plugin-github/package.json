@@ -52,6 +52,7 @@
 		"./cicd": "./static/cicd.yml",
 		"./feature_request": "./static/feature_request.yml",
 		"./funding": "./static/funding.yml",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {

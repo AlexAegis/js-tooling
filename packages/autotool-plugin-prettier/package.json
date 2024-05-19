@@ -48,6 +48,7 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./package.json": "./package.json",
 		"./prettier-config": {
 			"types": "./src/prettier-config.ts",
 			"import": "./dist/prettier-config.js",

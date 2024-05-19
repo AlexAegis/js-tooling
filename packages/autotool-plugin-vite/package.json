@@ -49,6 +49,7 @@
 			"default": "./dist/index.js"
 		},
 		"./dev.js": "./static/dev.js.txt",
+		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./vite-jslib.config": "./static/vite-jslib.config.ts",
 		"./vite-lib.config": "./static/vite-lib.config.ts"

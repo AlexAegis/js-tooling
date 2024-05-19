@@ -48,6 +48,7 @@
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
 		},
+		"./package.json": "./package.json",
 		"./package.sort": "./static/package.sort.json",
 		"./pnpm-workspace": "./static/pnpm-workspace.yaml",
 		"./readme": "./readme.md"

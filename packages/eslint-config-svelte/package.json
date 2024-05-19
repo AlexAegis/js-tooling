@@ -60,6 +60,7 @@
 			"require": "./dist/eslint-plugin-svelte.cjs",
 			"default": "./dist/eslint-plugin-svelte.js"
 		},
+		"./package.json": "./package.json",
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
