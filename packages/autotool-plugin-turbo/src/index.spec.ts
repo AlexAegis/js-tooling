@@ -2,6 +2,7 @@ import { createMockLogger } from '@alexaegis/logging/mocks';
 import type {
 	AutotoolPluginFactory,
 	NormalizedAutotoolPluginOptions,
+	PackageManager,
 	WorkspacePackage,
 } from 'autotool-plugin';
 import { describe, expect, it, vi } from 'vitest';
@@ -19,12 +20,19 @@ describe('autotool-plugin-turbo', () => {
 
 	const { logger } = createMockLogger(vi);
 
+	const packageManager: PackageManager = {
+		installCommand: 'pnpm i',
+		name: 'pnpm',
+	};
+
 	const defaultOptions: NormalizedAutotoolPluginOptions = {
 		cwd: '/projects/foo',
 		dry: true,
 		force: false,
 		logger,
 		rootWorkspacePackage,
+		allWorkspacePackages: [rootWorkspacePackage],
+		packageManager,
 	};
 
 	it('should be defined', () => {
