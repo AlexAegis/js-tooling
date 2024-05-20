@@ -54,8 +54,8 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.9.1",
-		"autotool-plugin": "^0.6.0"
+		"@alexaegis/logging": "^0.10.0",
+		"autotool-plugin": "^0.6.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",

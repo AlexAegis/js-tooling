@@ -55,9 +55,9 @@
 		"./vite-lib.config": "./static/vite-lib.config.ts"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.9.1",
-		"@alexaegis/predicate": "^0.9.1",
-		"autotool-plugin": "^0.6.0",
+		"@alexaegis/logging": "^0.10.0",
+		"@alexaegis/predicate": "^0.10.0",
+		"autotool-plugin": "^0.6.1",
 		"vite": "^5.2.11"
 	},
 	"devDependencies": {

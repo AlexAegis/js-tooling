@@ -61,9 +61,9 @@
 		"./workspace-only": "./static/workspace-only.prettierignore"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.9.1",
+		"@alexaegis/logging": "^0.10.0",
 		"@alexaegis/prettier-config": "workspace:^",
-		"autotool-plugin": "^0.6.0",
+		"autotool-plugin": "^0.6.1",
 		"prettier": "^3.2.5",
 		"prettier-plugin-svelte": "^3.2.3",
 		"prettier-plugin-tailwindcss": "^0.5.14"
