@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/lint-staged-config",
 	"description": "Lint staged config",
-	"version": "0.11.3",
+	"version": "0.11.4",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

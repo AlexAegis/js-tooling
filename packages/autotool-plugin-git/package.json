@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-git",
 	"description": "Git stuff",
-	"version": "0.11.3",
+	"version": "0.11.4",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

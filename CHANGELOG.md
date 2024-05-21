@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.4](https://github.com/AlexAegis/js-tooling/compare/v0.11.3...v0.11.4) (2024-05-21)
+
+
+### Features
+
+* simplify engine requirements ([c92dd27](https://github.com/AlexAegis/js-tooling/commit/c92dd27dc753f63002e7ddecd7bf5b358a0c8141))
+* **vitest:** add the svelte testing library ([23ae364](https://github.com/AlexAegis/js-tooling/commit/23ae3646f7d6273eb56b6741c01abd18d50fa841))
+
 ## [0.11.3](https://github.com/AlexAegis/js-tooling/compare/v0.11.2...v0.11.3) (2024-05-20)
 
 ## [0.11.2](https://github.com/AlexAegis/js-tooling/compare/v0.11.1...v0.11.2) (2024-05-19)
