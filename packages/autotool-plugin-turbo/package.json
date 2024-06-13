@@ -61,12 +61,12 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^20.12.12",
+		"@types/node": "^20.14.2",
 		"publint": "^0.2.8",
-		"turbo": "^1.13.3",
-		"turbo-ignore": "^1.13.3",
+		"turbo": "^2.0.3",
+		"turbo-ignore": "^2.0.3",
 		"typescript": "^5.4.5",
-		"vite": "^5.2.11",
+		"vite": "^5.3.0",
 		"vitest": "^1.6.0"
 	}
 }

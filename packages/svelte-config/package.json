@@ -50,24 +50,24 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-auto": "^3.2.0",
-		"@sveltejs/adapter-node": "^5.0.1",
-		"@sveltejs/adapter-static": "^3.0.1",
-		"@sveltejs/adapter-vercel": "^5.3.0",
-		"@sveltejs/kit": "~2.5.9",
-		"@sveltejs/vite-plugin-svelte": "^3.1.0",
-		"svelte-preprocess": "^5.1.4"
+		"@sveltejs/adapter-auto": "^3.2.2",
+		"@sveltejs/adapter-node": "^5.0.2",
+		"@sveltejs/adapter-static": "^3.0.2",
+		"@sveltejs/adapter-vercel": "^5.3.2",
+		"@sveltejs/kit": "~2.5.11",
+		"@sveltejs/vite-plugin-svelte": "^3.1.1",
+		"svelte-preprocess": "^6.0.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^20.12.12",
+		"@types/node": "^20.14.2",
 		"publint": "^0.2.8",
-		"stylelint": "^16.5.0",
+		"stylelint": "^16.6.1",
 		"typescript": "^5.4.5",
-		"vite": "^5.2.11",
+		"vite": "^5.3.0",
 		"vitest": "^1.6.0"
 	}
 }

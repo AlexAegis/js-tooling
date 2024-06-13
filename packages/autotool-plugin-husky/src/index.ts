@@ -1,5 +1,5 @@
 import packageJson from '@alexaegis/autotool-plugin-husky/package.json' assert { type: 'json' };
-import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
+import type { AutotoolPlugin, AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {

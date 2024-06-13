@@ -1,5 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess.js';
+import { default as sveltePreprocess } from 'svelte-preprocess';
 import { normalizePlatform, pickAdapter } from './pick-adapter.function.js';
 import { toBaseHref } from './to-base-href.function.js';
 
@@ -9,6 +9,7 @@ import { toBaseHref } from './to-base-href.function.js';
  * @type {import('./types.js').Config}
  */
 export const libConfiguration = {
+	// @ts-ignore TODO: Remove me when it no longer errors
 	preprocess: sveltePreprocess(),
 };
 
