@@ -63,14 +63,14 @@
 		"@alexaegis/predicate": "^0.10.0",
 		"@alexaegis/workspace-tools": "^0.10.0",
 		"autotool-plugin": "^0.6.1",
-		"typescript": "^5.4.5"
+		"typescript": "^5.5.2"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^20.14.2",
+		"@types/node": "^20.14.8",
 		"publint": "^0.2.8",
 		"ts-node": "^10.9.2",
 		"vite": "^5.3.1",

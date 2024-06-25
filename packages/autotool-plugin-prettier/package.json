@@ -65,17 +65,17 @@
 		"@alexaegis/prettier-config": "workspace:^",
 		"autotool-plugin": "^0.6.1",
 		"prettier": "^3.3.2",
-		"prettier-plugin-svelte": "^3.2.4",
-		"prettier-plugin-tailwindcss": "^0.6.4"
+		"prettier-plugin-svelte": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.6.5"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^20.14.2",
+		"@types/node": "^20.14.8",
 		"publint": "^0.2.8",
-		"typescript": "^5.4.5",
+		"typescript": "^5.5.2",
 		"vite": "^5.3.1",
 		"vitest": "^1.6.0"
 	}

@@ -64,10 +64,10 @@
 		"vite-plugin-pakk": "^0.12.1"
 	},
 	"devDependencies": {
-		"@types/node": "^20.14.2",
+		"@types/node": "^20.14.8",
 		"publint": "^0.2.8",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.4.5",
+		"typescript": "^5.5.2",
 		"vitest": "^1.6.0"
 	}
 }

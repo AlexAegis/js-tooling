@@ -57,16 +57,16 @@
 	"dependencies": {
 		"@alexaegis/logging": "^0.10.0",
 		"autotool-plugin": "^0.6.1",
-		"typedoc": "^0.25.13"
+		"typedoc": "^0.26.2"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^20.14.2",
+		"@types/node": "^20.14.8",
 		"publint": "^0.2.8",
-		"typescript": "^5.4.5",
+		"typescript": "^5.5.2",
 		"vite": "^5.3.1",
 		"vitest": "^1.6.0"
 	}
