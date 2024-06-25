@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-typedoc",
 	"description": "My typedoc config",
-	"version": "0.11.4",
+	"version": "0.11.5",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

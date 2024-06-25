@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.5](https://github.com/AlexAegis/js-tooling/compare/v0.11.4...v0.11.5) (2024-06-25)
+
+
+### Bug Fixes
+
+* use the new named export of svelte-preprocess 6.0.1 ([640f5e4](https://github.com/AlexAegis/js-tooling/commit/640f5e403026b1dafc97c0630d13aebb4d4e7dc5))
+
 ## [0.11.4](https://github.com/AlexAegis/js-tooling/compare/v0.11.3...v0.11.4) (2024-05-21)
 
 
