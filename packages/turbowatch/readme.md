@@ -61,7 +61,7 @@ repository.
 ```json
 {
   "$schema": "https://turborepo.org/schema.json",
-  "pipeline": {
+  "tasks": {
     "build-app_": {
       "dependsOn": ["^build-lib_"],
       "outputs": ["dist/**"]

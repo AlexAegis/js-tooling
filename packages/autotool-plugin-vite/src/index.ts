@@ -45,11 +45,9 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						build: 'turbo run build-lib_ build-app_ --concurrency 16 --cache-dir .cache/turbo',
-						'build-lib':
-							'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo',
-						'build-app':
-							'turbo run build-app_ --concurrency 16 --cache-dir .cache/turbo',
+						build: 'turbo run build-lib_ build-app_ --concurrency 16',
+						'build-lib': 'turbo run build-lib_ --concurrency 16',
+						'build-app': 'turbo run build-app_ --concurrency 16',
 					},
 				},
 			},
@@ -100,7 +98,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 				data: {
 					scripts: {
-						build: 'turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						build: 'turbo run build-lib_ --concurrency 16 --filter ${packageName}',
 						'build-lib_': 'vite build',
 					},
 				},
@@ -130,12 +128,12 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 				data: {
 					scripts: {
-						build: 'turbo run build-app_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						build: 'turbo run build-app_ --concurrency 16 --filter ${packageName}',
 						'build-app_': 'vite build',
 						start_: "TARGET_ENV='local' vite", // This could later be changed to a start command that is not a dev server, but reflects a more production state
 						'build:dependencies':
-							"TARGET_ENV='local' turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName} # used by turbowatch",
-						start: 'turbo run start_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+							"TARGET_ENV='local' turbo run build-lib_ --concurrency 16 --filter ${packageName} # used by turbowatch",
+						start: 'turbo run start_ --concurrency 16 --filter ${packageName}',
 						dev: 'turbowatch dev.js',
 						dev_: "TARGET_ENV='local' vite",
 					},

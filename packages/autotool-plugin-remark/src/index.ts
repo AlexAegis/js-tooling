@@ -12,7 +12,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						'lint:md': 'turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo',
+						'lint:md': 'turbo run lint:md_ --concurrency 16',
 						'lint:md_':
 							'remark --frail --no-stdout --silently-ignore --ignore-pattern packages --ignore-pattern libs --ignore-pattern apps .', // ? I would've like to use a .config/workspace-only.remarkignore file but remark didn't use it when passed with --ignore-path, maybe a bug?
 					},
@@ -28,8 +28,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				data: {
 					scripts: {
-						'lint:md':
-							'turbo run lint:md_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						'lint:md': 'turbo run lint:md_ --concurrency 16 --filter ${packageName}',
 						'lint:md_': 'remark --frail --no-stdout --silently-ignore .',
 					},
 				},

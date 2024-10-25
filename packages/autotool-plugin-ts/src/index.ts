@@ -37,7 +37,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						'lint:tsc': 'turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo',
+						'lint:tsc': 'turbo run lint:tsc_ --concurrency 16',
 					},
 					devDependencies: {
 						'@alexaegis/ts': `^${packageJson.version}`, // For the root tsConfig
@@ -57,8 +57,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 				data: {
 					scripts: {
-						'lint:tsc':
-							'turbo run lint:tsc_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						'lint:tsc': 'turbo run lint:tsc_ --concurrency 16 --filter ${packageName}',
 						'lint:tsc_': 'tsc --noEmit',
 					},
 				},

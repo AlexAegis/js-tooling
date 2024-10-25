@@ -22,7 +22,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						typedoc: 'turbo run typedoc_ --concurrency 16 --cache-dir .cache/turbo',
+						typedoc: 'turbo run typedoc_ --concurrency 16',
 						typedoc_: 'typedoc',
 					},
 					devDependencies: {

@@ -15,7 +15,7 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="{packageJson.homepage}"
+					href={packageJson.homepage}
 					target="_blank"
 					rel="noreferrer"
 				>

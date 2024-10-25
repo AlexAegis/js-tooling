@@ -13,8 +13,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						'lint:depcheck':
-							'turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo',
+						'lint:depcheck': 'turbo run lint:depcheck_ --concurrency 16',
 						'lint:depcheck_': 'depcheck',
 					},
 				},
@@ -31,7 +30,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				data: {
 					scripts: {
 						'lint:depcheck':
-							'turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+							'turbo run lint:depcheck_ --concurrency 16 --filter ${packageName}',
 						'lint:depcheck_': 'depcheck',
 					},
 				},

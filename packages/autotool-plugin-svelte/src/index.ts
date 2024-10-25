@@ -20,8 +20,7 @@ export const svelteCommonSetupPlugin: AutotoolPluginObject = {
 			packageKind: 'root',
 			data: {
 				scripts: {
-					'lint:svelte':
-						'turbo run lint:svelte_ --concurrency 16 --cache-dir .cache/turbo',
+					'lint:svelte': 'turbo run lint:svelte_ --concurrency 16',
 				},
 				devDependencies: {
 					'svelte-check': packageJson.devDependencies['svelte-check'], // added to the root for lint-staged
@@ -35,7 +34,7 @@ export const svelteCommonSetupPlugin: AutotoolPluginObject = {
 			data: {
 				scripts: {
 					'lint:svelte':
-						'turbo run lint:svelte_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						'turbo run lint:svelte_ --concurrency 16 --filter ${packageName}',
 					'lint:svelte_': 'svelte-check --tsconfig ./tsconfig.json',
 				},
 				devDependencies: {

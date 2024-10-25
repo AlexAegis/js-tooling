@@ -13,13 +13,13 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'regular',
 				data: {
 					scripts: {
-						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						format: 'turbo run format_ --concurrency 16 --filter ${packageName}',
 						format_:
 							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .', // TODO: Remove plugin arguments from here once https://github.com/prettier/prettier/issues/15079 is resolved
 						'lint:format_':
 							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .',
 						'lint:format':
-							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+							'turbo run lint:format_ --concurrency 16 --filter ${packageName}',
 					},
 				},
 			},
@@ -30,13 +30,12 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				packageKind: 'root',
 				data: {
 					scripts: {
-						format: 'turbo run format_ --concurrency 16 --cache-dir .cache/turbo',
+						format: 'turbo run format_ --concurrency 16',
 						format_:
 							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --write .', // TODO: Remove plugin arguments from here once https://github.com/prettier/prettier/issues/15079 is resolved
 						'lint:format_':
 							'prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --check .', // Only check files not under a package
-						'lint:format':
-							'turbo run lint:format_ --concurrency 16 --cache-dir .cache/turbo',
+						'lint:format': 'turbo run lint:format_ --concurrency 16',
 					},
 					devDependencies: {
 						prettier: packageJson.dependencies.prettier,

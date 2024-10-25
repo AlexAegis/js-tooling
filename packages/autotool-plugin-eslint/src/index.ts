@@ -141,7 +141,7 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 				packageKind: 'root',
 				data: {
 					scripts: {
-						'lint:es': 'turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo',
+						'lint:es': 'turbo run lint:es_ --concurrency 16',
 					},
 				},
 			},
@@ -151,8 +151,7 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 				packageKind: 'regular',
 				data: {
 					scripts: {
-						'lint:es':
-							'turbo run lint:es_ --concurrency 16 --cache-dir .cache/turbo --filter ${packageName}',
+						'lint:es': 'turbo run lint:es_ --concurrency 16 --filter ${packageName}',
 						'lint:es_':
 							'eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .',
 					},

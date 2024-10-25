@@ -10,6 +10,7 @@
 		"pnpm-lock.yaml",
 		"tsconfig.json"
 	],
+	"cacheDir": ".cache/turbo",
 	"globalPassThroughEnv": ["GITHUB_TOKEN"],
 	"tasks": {
 		"//#all_": {
