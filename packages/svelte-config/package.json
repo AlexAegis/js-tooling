@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/svelte-config",
 	"description": "Svelte config",
-	"version": "0.11.5",
+	"version": "0.11.6",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

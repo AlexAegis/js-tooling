@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-remark",
 	"description": "My markdown linting config",
-	"version": "0.11.5",
+	"version": "0.11.6",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
