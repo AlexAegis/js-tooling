@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/example-ts-lib",
 	"description": "Example package to be used in an app",
-	"version": "0.11.6",
+	"version": "0.12.0",
 	"license": "MIT",
 	"private": true,
 	"archetype": {
