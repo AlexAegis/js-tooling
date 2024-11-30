@@ -68,7 +68,7 @@
 		"@alexaegis/svelte-config": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@pakk/cli": "^0.13.0",
+		"@pakk/cli": "^0.13.1",
 		"@sveltejs/package": "^2.3.7",
 		"@types/node": "^22.10.1",
 		"stylelint": "^16.11.0",

@@ -54,7 +54,7 @@
 	},
 	"dependencies": {
 		"vite": "^6.0.1",
-		"vite-plugin-pakk": "^0.13.0"
+		"vite-plugin-pakk": "^0.13.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",

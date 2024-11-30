@@ -55,7 +55,7 @@
 		"./workspace-typedoc": "./static/workspace-typedoc.json"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.10.1",
+		"@alexaegis/logging": "^0.11.0",
 		"autotool-plugin": "^0.6.1",
 		"typedoc": "^0.27.2"
 	},
