@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-depcheck",
 	"description": "My depcheck setup",
-	"version": "0.13.0",
+	"version": "0.14.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

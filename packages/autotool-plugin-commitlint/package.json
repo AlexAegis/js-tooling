@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-commitlint",
 	"description": "My commitlint config provided as an autotool plugin",
-	"version": "0.13.0",
+	"version": "0.14.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
