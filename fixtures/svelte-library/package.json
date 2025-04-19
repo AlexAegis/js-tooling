@@ -1,0 +1,83 @@
+{
+	"name": "@pakk/fixture-svelte-library",
+	"description": "Showcasing svelte mode for defining svelte export conditions",
+	"version": "0.13.1",
+	"license": "MIT",
+	"private": true,
+	"archetype": {
+		"platform": "node",
+		"framework": "svelte",
+		"language": "ts",
+		"kind": "library"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"managed-by-autotool",
+		"ts",
+		"typescript"
+	],
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --cache-dir .cache/turbo --filter @pakk/fixture-svelte-library",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:svelte": "turbo run lint:svelte_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"lint:svelte_": "svelte-check --tsconfig ./tsconfig.json",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"lint:tsc_": "tsc --noEmit",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @pakk/fixture-svelte-library",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @pakk/fixture-svelte-library",
+		"build-lib_": "pakk --svelte --target-package-json-kind development && svelte-package --input src && pakk --svelte --target-package-json-kind distribution",
+		"format": "turbo run format_ --concurrency 16 --filter @pakk/fixture-svelte-library",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
+		"start": "TARGET_ENV='local' vite",
+		"vite": "vite"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.js",
+			"svelte": "./src/index.js",
+			"default": "./src/index.js"
+		},
+		"./direct": {
+			"types": "./dist/direct.svelte.d.ts",
+			"svelte": "./src/direct.svelte",
+			"default": "./src/direct.svelte"
+		},
+		"./package.json": "./package.json",
+		"./readme": "./readme.md"
+	},
+	"dependencies": {
+		"svelte": "^5.2.12"
+	},
+	"peerDependencies": {
+		"svelte": "^5.28.1"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-svelte": "workspace:^0.14.0",
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/svelte-config": "workspace:^0.14.0",
+		"@alexaegis/ts": "workspace:^0.14.0",
+		"@pakk/cli": "workspace:^",
+		"@sveltejs/package": "^2.3.11",
+		"@types/node": "^22.14.1",
+		"@vitest/coverage-v8": "^3.1.1",
+		"svelte": "^5.28.1",
+		"svelte-check": "^4.1.6",
+		"svelte-preprocess": "^6.0.3",
+		"vitest": "^3.1.1"
+	}
+}

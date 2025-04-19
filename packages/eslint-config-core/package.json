@@ -80,7 +80,6 @@
 		"@alexaegis/vitest": "workspace:^",
 		"@eslint/js": "^9.25.0",
 		"@types/eslint": "^9.6.1",
-		"@types/eslint__js": "^9.14.0",
 		"@types/node": "^22.14.1",
 		"publint": "^0.3.12",
 		"vite": "^6.3.2",

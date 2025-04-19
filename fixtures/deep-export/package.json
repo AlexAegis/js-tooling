@@ -1,0 +1,67 @@
+{
+	"name": "@pakk/fixture-deep-export",
+	"description": "Showcasing custom src and exportBaseDir options with deep exports",
+	"version": "0.13.1",
+	"license": "MIT",
+	"private": true,
+	"archetype": {
+		"platform": "node",
+		"language": "ts",
+		"kind": "fixture"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"managed-by-autotool",
+		"ts",
+		"typescript"
+	],
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"lint:tsc_": "tsc --noEmit",
+		"test": "turbo run test_ --concurrency 16 --cache-dir .cache/turbo --filter @pakk/fixture-deep-export",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"build": "turbo run build-lib_ --concurrency 16 --cache-dir .cache/turbo --filter @pakk/fixture-deep-export",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --filter @pakk/fixture-deep-export",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write ."
+	},
+	"exports": {
+		"./bar/yod/": {
+			"types": "./source/api/bar/yod/index.ts",
+			"import": "./dist/bar/yod/index.js",
+			"require": "./dist/bar/yod/index.cjs",
+			"default": "./dist/bar/yod/index.js"
+		},
+		"./bar/yod/zed": {
+			"types": "./source/api/bar/yod/zed.ts",
+			"import": "./dist/bar/yod/zed.js",
+			"require": "./dist/bar/yod/zed.cjs",
+			"default": "./dist/bar/yod/zed.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/ts": "workspace:^0.14.0",
+		"@types/node": "^22.10.1",
+		"@vitest/coverage-v8": "^3.1.1",
+		"vite": "^6.0.1",
+		"vite-plugin-pakk": "workspace:^",
+		"vitest": "^3.1.1"
+	}
+}

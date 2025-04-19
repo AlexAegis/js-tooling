@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@alexaegis/ts/svelte",
+	"compilerOptions": {
+		"rootDir": "../../",
+		"allowJs": true,
+		"checkJs": true,
+		"outDir": "./dist/out-tsc"
+	},
+	"files": ["package.json", "../../package.json"],
+	"include": [
+		"src/**/*",
+		"src/**/*.svelte",
+		"static/**/*",
+		"__mocks__/**/*",
+		".*",
+		"*",
+		"*.json",
+		"**/*.json"
+	],
+	"exclude": ["node_modules", "dist", "coverage", "typedoc", "vite*.config.ts.timestamp-*"]
+}
