@@ -62,11 +62,11 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^22.10.1",
-		"publint": "^0.2.12",
-		"stylelint": "^16.11.0",
-		"typescript": "^5.7.2",
-		"vite": "^6.0.1",
-		"vitest": "^2.1.6"
+		"@types/node": "^22.14.1",
+		"publint": "^0.3.12",
+		"stylelint": "^16.18.0",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.2",
+		"vitest": "^3.1.1"
 	}
 }

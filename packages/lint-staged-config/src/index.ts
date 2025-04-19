@@ -1,6 +1,6 @@
 // For the glob features check out https://github.com/micromatch/micromatch
 import { groupByCommonNearestFile } from '@alexaegis/fs';
-import type { Config } from 'lint-staged';
+import type { Configuration } from 'lint-staged';
 import { join } from 'node:path';
 
 const prettierCommand = 'prettier --check';
@@ -38,7 +38,7 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
  * const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
  * ```
  */
-export const lintStagedConfig: Config = {
+export const lintStagedConfig: Configuration = {
 	'**/!(shims)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': (
 		filenames: string[],
 	): string[] => {

@@ -1,0 +1,95 @@
+{
+	"name": "@pakk/cli",
+	"description": "The standalone cli of pakk, that can manage your package.json for library development.",
+	"version": "0.13.1",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"managed-by-autotool",
+		"ts",
+		"typescript"
+	],
+	"homepage": "https://www.github.com/AlexAegis/js-tooling#readme",
+	"type": "module",
+	"config": {
+		"engine-strict": false
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @pakk/cli",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @pakk/cli",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --filter @pakk/cli",
+		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --filter @pakk/cli",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @pakk/cli",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @pakk/cli",
+		"publint_": "publint dist",
+		"test": "turbo run test_ --concurrency 16 --filter @pakk/cli",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --filter @pakk/cli",
+		"build": "turbo run build-lib_ --concurrency 16 --filter @pakk/cli",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --filter @pakk/cli",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write ."
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.js",
+			"require": "./src/index.cjs",
+			"default": "./src/index.js"
+		},
+		"./package.json": "./package.json",
+		"./readme": "./readme.md",
+		"./unicorn-magic": {
+			"types": "./src/unicorn-magic.js",
+			"import": "./src/unicorn-magic.js",
+			"require": "./src/unicorn-magic.cjs",
+			"default": "./src/unicorn-magic.js"
+		}
+	},
+	"bin": {
+		"pakk": "./shims/pakk.js",
+		"sort-json": "./shims/sort-json.js"
+	},
+	"dependencies": {
+		"@alexaegis/cli-tools": "^0.11.0",
+		"@alexaegis/common": "^0.11.0",
+		"@alexaegis/fs": "^0.11.0",
+		"@alexaegis/logging": "^0.11.0",
+		"@alexaegis/workspace-tools": "^0.11.0",
+		"@pakk/core": "workspace:^",
+		"@types/node": "^22.14.1",
+		"prettier": "^3.5.3",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.2",
+		"yargs": "^17.7.2"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/ts": "workspace:^",
+		"@alexaegis/vite": "workspace:^",
+		"@alexaegis/vitest": "workspace:^",
+		"@types/node": "^22.14.1",
+		"@types/yargs": "^17.0.33",
+		"publint": "^0.3.12",
+		"vite": "^6.3.2",
+		"vite-plugin-pakk": "workspace:^",
+		"vitest": "^3.1.1"
+	}
+}

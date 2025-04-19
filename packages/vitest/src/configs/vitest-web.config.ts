@@ -1,4 +1,3 @@
-import type { UserConfig } from 'vitest/config';
 import { vitestCoverage } from './base-vitest.config.js';
 
 export const vitestWebConfig = {
@@ -9,4 +8,4 @@ export const vitestWebConfig = {
 		environment: 'jsdom',
 		coverage: vitestCoverage,
 	},
-} satisfies UserConfig;
+};

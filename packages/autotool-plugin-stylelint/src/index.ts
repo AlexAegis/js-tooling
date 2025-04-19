@@ -1,10 +1,10 @@
-import packageJson from '@alexaegis/autotool-plugin-stylelint/package.json' assert { type: 'json' };
 import {
 	type AutotoolPlugin,
 	type AutotoolPluginObject,
 	type PackageJsonFilter,
 } from 'autotool-plugin';
 import { join } from 'node:path';
+import packageJson from '../package.json' with { type: 'json' };
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	const packageJsonFilter: PackageJsonFilter = {

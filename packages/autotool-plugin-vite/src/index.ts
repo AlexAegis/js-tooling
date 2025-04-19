@@ -1,7 +1,7 @@
-import packageJson from '@alexaegis/autotool-plugin-vite/package.json' assert { type: 'json' };
-import { and, contains, equal, not } from '@alexaegis/predicate';
+import { and, contains, equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
+import packageJson from '../package.json' with { type: 'json' };
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
@@ -56,7 +56,13 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
-					name: not(equal('@alexaegis/vite')), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
+					name: not(
+						or(
+							equal('@alexaegis/vite'),
+							equal('vite-plugin-pakk'),
+							equal('@pakk/core'),
+						),
+					), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
 					archetype: {
 						kind: equal('lib'),
 						framework: not(contains('svelte')), // svelte libraries don't use vite, they use svelte-package

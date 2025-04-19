@@ -1,13 +1,13 @@
-import packageJson from '@alexaegis/autotool-plugin-husky/package.json' assert { type: 'json' };
 import type { AutotoolPlugin, AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
+import packageJson from '../package.json' with { type: 'json' };
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
 		elements: [
 			{
-				description: 'add husky as a workspace devDependenecy',
+				description: 'add husky as a workspace devDependency',
 				executor: 'packageJson',
 				packageKind: 'root',
 				data: {
@@ -17,12 +17,23 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				},
 			},
 			{
-				description: 'add lint-staged as a workspace devDependenecy',
+				description: 'add lint-staged as a workspace devDependency',
 				executor: 'packageJson',
 				packageKind: 'root',
 				data: {
 					devDependencies: {
 						'lint-staged': packageJson.dependencies['lint-staged'],
+					},
+				},
+			},
+			{
+				description: 'add @commitlint/config-conventional as a workspace devDependency',
+				executor: 'packageJson',
+				packageKind: 'root',
+				data: {
+					devDependencies: {
+						'@commitlint/config-conventional':
+							packageJson.dependencies['@commitlint/config-conventional'],
 					},
 				},
 			},
@@ -34,12 +45,6 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 				targetFile: 'lint-staged.config.js',
 				sourcePluginPackageName: packageJson.name,
 				sourceFile: join('static', 'lint-staged.config.js'),
-			},
-			{
-				description: 'remove mjs root lint-staged config in favor of js', // TODO: remove once propagated
-				executor: 'fileRemove',
-				packageKind: 'root',
-				targetFile: 'lint-staged.config.mjs',
 			},
 			{
 				description: 'husky commit-msg hook',

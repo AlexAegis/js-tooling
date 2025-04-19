@@ -56,8 +56,8 @@
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
-		"@types/node": "^22.10.1",
-		"vite": "^6.0.1",
-		"vitest": "^2.1.6"
+		"@types/node": "^22.14.1",
+		"vite": "^6.3.2",
+		"vitest": "^3.1.1"
 	}
 }

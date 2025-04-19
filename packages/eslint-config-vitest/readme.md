@@ -1,6 +1,6 @@
 # @alexaegis/eslint-config-vitest
 
-TODO: separate entry points (subpackages) for different kind of projects
+TODO: separate entry points (sub-packages) for different kind of projects
 
 - base
 - root

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"extends": ["//"],
+	"tasks": {
+		"build-lib_": {
+			"dependsOn": ["^build-lib_", "@pakk/core#prebuild_"]
+		},
+		"prebuild_": {
+			"env": ["TARGET_ENV"],
+			"dependsOn": ["^build-lib_"],
+			"inputs": [
+				"{src,static,public}/**/*",
+				"*.*",
+				"!{src,static,public}/**/*.spec.{ts,js,tsx,jsx}",
+				"!vite*.config.*.*"
+			],
+			"outputs": ["{dist,build,.svelte-kit}/**/*"]
+		}
+	}
+}

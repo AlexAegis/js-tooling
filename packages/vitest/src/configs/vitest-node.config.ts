@@ -1,4 +1,4 @@
-import type { UserConfig } from 'vitest/config';
+import type { ViteUserConfig } from 'vitest/config';
 import { vitestCoverage } from './base-vitest.config.js';
 
 export const vitestNodeConfig = {
@@ -8,4 +8,4 @@ export const vitestNodeConfig = {
 		environment: 'node',
 		coverage: vitestCoverage,
 	},
-} satisfies UserConfig;
+} satisfies ViteUserConfig;

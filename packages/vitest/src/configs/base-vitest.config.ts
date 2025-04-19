@@ -1,4 +1,4 @@
-import type { CoverageOptions, CoverageReporter } from 'vitest';
+import type { CoverageOptions, CoverageReporter } from 'vitest/node';
 
 export const vitestReporters: CoverageReporter[] = ['text', 'json', 'html', 'lcov'];
 

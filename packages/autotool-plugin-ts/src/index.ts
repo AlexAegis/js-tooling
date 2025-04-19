@@ -1,4 +1,3 @@
-import packageJson from '@alexaegis/autotool-plugin-ts/package.json' assert { type: 'json' };
 import type { JsonMatcherFrom } from '@alexaegis/match';
 import { contains, equal, not, or } from '@alexaegis/predicate';
 import { getEncodedArchetype, type PackageArchetype } from '@alexaegis/workspace-tools';
@@ -8,6 +7,7 @@ import type {
 	AutotoolPluginObject,
 } from 'autotool-plugin';
 import { join } from 'node:path';
+import packageJson from '../package.json' with { type: 'json' };
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	// Plan js libs also matched to be able to lint:tsc JSDoc style types
@@ -86,6 +86,8 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 							equal('@alexaegis/vite'),
 							equal('@alexaegis/vitest'),
 							equal('@alexaegis/eslint-config-vitest'),
+							equal('vite-plugin-pakk'),
+							equal('@pakk/core'),
 						),
 					), // Don't add a dependency for itself, and other packages where it would result in a circle
 				},

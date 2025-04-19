@@ -1,7 +1,7 @@
-import packageJson from '@alexaegis/autotool-plugin-eslint/package.json' assert { type: 'json' };
 import { contains, equal, not, or } from '@alexaegis/predicate';
 import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
 import { join } from 'node:path';
+import packageJson from '../package.json' with { type: 'json' };
 
 export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 	return {
@@ -81,6 +81,8 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 							equal('@alexaegis/eslint-config-vitest'),
 							equal('@alexaegis/vite'),
 							equal('@alexaegis/vitest'),
+							equal('vite-plugin-pakk'),
+							equal('@pakk/core'),
 						),
 					),
 				},

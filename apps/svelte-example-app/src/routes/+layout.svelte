@@ -1,40 +1,26 @@
 <script lang="ts">
-	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
-	import '../app.postcss';
-	// Most of your app wide CSS should be put in this file
-	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import packageJson from '../../../../package.json';
+	import '../app.css';
 </script>
 
-<AppShell>
-	<svelte:fragment slot="header">
-		<AppBar>
-			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Example</strong>
-			</svelte:fragment>
-			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href={packageJson.homepage}
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment>
-		</AppBar>
-	</svelte:fragment>
-
-	<div class="main-layout">
+<div class="grid h-screen grid-rows-[auto_1fr_auto]">
+	<!-- Header -->
+	<header class="bg-red-500 p-4">
+		<strong class="text-xl uppercase">Example</strong>
+	</header>
+	<!-- Main -->
+	<main class="space-y-4 bg-green-500 p-4">
 		<slot />
-	</div>
-</AppShell>
-
-<style>
-	.main-layout {
-		padding: 1em;
-		max-width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-</style>
+	</main>
+	<!-- Footer -->
+	<footer class="bg-blue-500 p-4">
+		<a
+			class="btn btn-sm preset-tonal-surface border-surface-500 border"
+			href={packageJson.homepage}
+			target="_blank"
+			rel="noreferrer"
+		>
+			GitHub
+		</a>
+	</footer>
+</div>
