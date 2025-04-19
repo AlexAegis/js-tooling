@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-standard-version",
 	"description": "Exports custom updaters for standard-version",
-	"version": "0.14.0",
+	"version": "0.14.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

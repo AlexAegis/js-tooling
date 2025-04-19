@@ -286,7 +286,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.0
+        specifier: workspace:^
         version: link:../../packages/ts
       '@types/node':
         specifier: ^22.10.1
@@ -310,7 +310,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.0
+        specifier: workspace:^
         version: link:../../packages/ts
       '@types/node':
         specifier: ^22.10.1
@@ -335,16 +335,16 @@ importers:
         version: 5.28.1
     devDependencies:
       '@alexaegis/eslint-config-svelte':
-        specifier: workspace:^0.14.0
+        specifier: workspace:^
         version: link:../../packages/eslint-config-svelte
       '@alexaegis/eslint-config-vitest':
         specifier: workspace:^
         version: link:../../packages/eslint-config-vitest
       '@alexaegis/svelte-config':
-        specifier: workspace:^0.14.0
+        specifier: workspace:^
         version: link:../../packages/svelte-config
       '@alexaegis/ts':
-        specifier: workspace:^0.14.0
+        specifier: workspace:^
         version: link:../../packages/ts
       '@pakk/cli':
         specifier: workspace:^

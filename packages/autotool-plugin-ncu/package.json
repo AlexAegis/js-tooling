@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-ncu",
 	"description": "ncu config and scripts",
-	"version": "0.14.0",
+	"version": "0.14.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

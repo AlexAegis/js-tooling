@@ -1,7 +1,7 @@
 {
 	"name": "@pakk/fixture-svelte-library",
 	"description": "Showcasing svelte mode for defining svelte export conditions",
-	"version": "0.13.1",
+	"version": "0.14.1",
 	"license": "MIT",
 	"private": true,
 	"archetype": {
@@ -67,10 +67,10 @@
 		"svelte": "^5.28.1"
 	},
 	"devDependencies": {
-		"@alexaegis/eslint-config-svelte": "workspace:^0.14.0",
+		"@alexaegis/eslint-config-svelte": "workspace:^",
 		"@alexaegis/eslint-config-vitest": "workspace:^",
-		"@alexaegis/svelte-config": "workspace:^0.14.0",
-		"@alexaegis/ts": "workspace:^0.14.0",
+		"@alexaegis/svelte-config": "workspace:^",
+		"@alexaegis/ts": "workspace:^",
 		"@pakk/cli": "workspace:^",
 		"@sveltejs/package": "^2.3.11",
 		"@types/node": "^22.14.1",
