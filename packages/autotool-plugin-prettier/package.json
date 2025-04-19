@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/autotool-plugin-prettier",
 	"description": "My prettier config distributor",
-	"version": "0.12.0",
+	"version": "0.13.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

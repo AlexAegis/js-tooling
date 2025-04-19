@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.13.0](https://github.com/AlexAegis/js-tooling/compare/v0.12.0...v0.13.0) (2025-04-19)
+
+
+### Features
+
+* moved pakk into the repo, updated packages ([06e36e5](https://github.com/AlexAegis/js-tooling/commit/06e36e5f50a320a61ad263986ad503873315f5a2))
+
 ## [0.12.0](https://github.com/AlexAegis/js-tooling/compare/v0.11.6...v0.12.0) (2024-11-30)
 
 ## [0.11.6](https://github.com/AlexAegis/js-tooling/compare/v0.11.5...v0.11.6) (2024-10-25)

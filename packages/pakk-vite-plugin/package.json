@@ -1,7 +1,7 @@
 {
 	"name": "vite-plugin-pakk",
 	"description": "Automatically fills out your package.json for both local and published version",
-	"version": "0.13.1",
+	"version": "0.13.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
