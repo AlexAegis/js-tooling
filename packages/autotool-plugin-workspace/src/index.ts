@@ -49,7 +49,7 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 						nuke: 'nuke',
 					},
 					devDependencies: {
-						'@alexaegis/nuke': packageJson.devDependencies['@alexaegis/nuke'],
+						'@alexaegis/nuke': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-commitlint': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-depcheck': `^${packageJson.version}`, // versioned together
 						'@alexaegis/autotool-plugin-editorconfig': `^${packageJson.version}`, // versioned together
