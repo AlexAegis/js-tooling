@@ -59,20 +59,20 @@
 		"./versionrc.cjs": "./static/versionrc.cjs.txt"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.11.0",
+		"@alexaegis/logging": "workspace:^",
 		"@alexaegis/standard-version": "workspace:^",
 		"autotool-plugin": "^0.6.1",
-		"commit-and-tag-version": "^12.5.1"
+		"commit-and-tag-version": "^12.6.1"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^22.14.1",
-		"publint": "^0.3.12",
-		"typescript": "^5.8.3",
-		"vite": "^6.3.2",
-		"vitest": "^3.1.1"
+		"@types/node": "^24.10.1",
+		"publint": "^0.3.15",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.6",
+		"vitest": "^4.0.15"
 	}
 }

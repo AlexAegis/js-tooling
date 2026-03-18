@@ -74,7 +74,8 @@ export interface PakkContext extends CurrentWorkspacePackageWithRoot, CwdOption,
 export type NormalizedPakkContext = Defined<PakkContext>;
 
 export interface PakkOptions
-	extends WriteJsonOptions,
+	extends
+		WriteJsonOptions,
 		CwdOption,
 		LoggerOption,
 		LogLevelOption,

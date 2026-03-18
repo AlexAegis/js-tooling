@@ -1,9 +1,15 @@
 import { and, contains, equal, not, or } from '@alexaegis/predicate';
-import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
+import {
+	type AutotoolPlugin,
+	type AutotoolPluginObject,
+	type NormalizedAutotoolPluginOptions,
+} from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
-export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
+export const plugin: AutotoolPlugin = (
+	_options: NormalizedAutotoolPluginOptions,
+): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
 		elements: [
@@ -61,6 +67,17 @@ export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
 							equal('@alexaegis/vite'),
 							equal('vite-plugin-pakk'),
 							equal('@pakk/core'),
+							// These packages have standalone vite configs due to circular dependencies through pakk-vite-plugin
+							equal('@alexaegis/common'),
+							equal('@alexaegis/eslint-config-vitest'),
+							equal('@alexaegis/fs'),
+							equal('@alexaegis/logging'),
+							equal('@alexaegis/match'),
+							equal('@alexaegis/predicate'),
+							equal('@alexaegis/ts'),
+							equal('@alexaegis/vitest'),
+							equal('@alexaegis/workspace-tools'),
+							equal('@pakk/cli'),
 						),
 					), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
 					archetype: {

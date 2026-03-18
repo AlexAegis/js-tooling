@@ -1,5 +1,7 @@
-import { pakk } from '@alexaegis/vite';
+// Intentionally imported across packages, this isn't source code so it's fine.
+// It is to avoid cyclic dependencies.
 import { defineConfig } from 'vite';
+import { pakk } from '../pakk-vite-plugin/src/index.js';
 
 export default defineConfig({
 	plugins: [

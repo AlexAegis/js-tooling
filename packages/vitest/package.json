@@ -30,7 +30,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/vitest",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/vitest",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/vitest",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -69,16 +69,15 @@
 		}
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^5.0.3",
-		"@testing-library/svelte": "^5.2.7",
-		"@vitest/coverage-v8": "^3.1.1",
-		"@vitest/ui": "^3.1.1",
-		"jsdom": "26.1.0",
-		"vitest": "^3.1.1"
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@testing-library/svelte": "^5.2.9",
+		"@vitest/coverage-v8": "^4.0.15",
+		"@vitest/ui": "^4.0.15",
+		"jsdom": "27.2.0",
+		"vitest": "^4.0.15"
 	},
 	"devDependencies": {
-		"@alexaegis/vite": "workspace:^",
-		"publint": "^0.3.12",
-		"vite": "^6.3.2"
+		"publint": "^0.3.15",
+		"vite": "^7.2.6"
 	}
 }

@@ -40,9 +40,9 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
  */
 export const lintStagedConfig: Configuration = {
 	'**/!(shims)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': (
-		filenames: string[],
+		filenames: readonly string[],
 	): string[] => {
-		const groups = groupByCommonNearestFile(filenames, 'tsconfig.json');
+		const groups = groupByCommonNearestFile(filenames as string[], 'tsconfig.json');
 		return Object.keys(groups).map(
 			(tsRoot) => `${tscCommand} --project ${join(tsRoot, 'tsconfig.json')}`,
 		);

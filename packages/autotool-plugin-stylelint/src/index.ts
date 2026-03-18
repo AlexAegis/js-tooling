@@ -1,12 +1,15 @@
 import {
 	type AutotoolPlugin,
 	type AutotoolPluginObject,
+	type NormalizedAutotoolPluginOptions,
 	type PackageJsonFilter,
 } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
-export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
+export const plugin: AutotoolPlugin = (
+	_options: NormalizedAutotoolPluginOptions,
+): AutotoolPluginObject => {
 	const packageJsonFilter: PackageJsonFilter = {
 		archetype: {
 			platform: 'web',

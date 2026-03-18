@@ -3,11 +3,22 @@
 	"extends": ["//"],
 	"tasks": {
 		"build-lib_": {
-			"dependsOn": ["^build-lib_", "@pakk/core#prebuild_"]
+			"dependsOn": [
+				"@alexaegis/common#build-lib_",
+				"@alexaegis/fs#build-lib_",
+				"@alexaegis/logging#build-lib_",
+				"@alexaegis/workspace-tools#build-lib_",
+				"@pakk/core#prebuild_"
+			]
 		},
 		"prebuild_": {
 			"env": ["TARGET_ENV"],
-			"dependsOn": ["^build-lib_"],
+			"dependsOn": [
+				"@alexaegis/common#build-lib_",
+				"@alexaegis/fs#build-lib_",
+				"@alexaegis/logging#build-lib_",
+				"@alexaegis/workspace-tools#build-lib_"
+			],
 			"inputs": [
 				"{src,static,public}/**/*",
 				"*.*",

@@ -1,0 +1,93 @@
+{
+	"name": "@alexaegis/workspace-tools",
+	"description": "Tools for working with javascript workspaces",
+	"version": "0.11.0",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"managed-by-autotool",
+		"ts",
+		"typescript"
+	],
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"publint_": "publint",
+		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"turbo:test": "turbo --color --filter @alexaegis/workspace-tools test",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"build": "turbo run build-lib_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --filter @alexaegis/workspace-tools",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
+		"typedoc": "typedoc ./src/index.ts --excludeExternals --externalPattern '**/node_modules/**' --out ./dist/typedoc"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
+		},
+		"./monorepo": {
+			"types": "./src/monorepo.ts",
+			"import": "./dist/monorepo.js",
+			"require": "./dist/monorepo.cjs",
+			"default": "./dist/monorepo.js"
+		},
+		"./npm": {
+			"types": "./src/npm.ts",
+			"import": "./dist/npm.js",
+			"require": "./dist/npm.cjs",
+			"default": "./dist/npm.js"
+		},
+		"./package.json": "./package.json",
+		"./readme": "./readme.md",
+		"./sort": {
+			"types": "./src/sort.ts",
+			"import": "./dist/sort.js",
+			"require": "./dist/sort.cjs",
+			"default": "./dist/sort.js"
+		}
+	},
+	"dependencies": {
+		"@alexaegis/common": "workspace:^",
+		"@alexaegis/fs": "workspace:^",
+		"@alexaegis/logging": "workspace:^",
+		"@alexaegis/match": "workspace:^",
+		"@schemastore/package": "^0.0.10",
+		"globby": "^16.0.0"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/ts": "workspace:^",
+		"@alexaegis/vitest": "workspace:^",
+		"@types/node": "^24.10.1",
+		"publint": "^0.3.15",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.6",
+		"vitest": "^4.0.15"
+	}
+}

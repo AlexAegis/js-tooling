@@ -1,0 +1,70 @@
+{
+	"name": "@alexaegis/rx",
+	"description": "RxJS Utilities",
+	"version": "0.11.0",
+	"license": "MIT",
+	"private": false,
+	"archetype": {
+		"platform": "node",
+		"language": "ts",
+		"kind": "lib"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"managed-by-autotool",
+		"ts",
+		"typescript"
+	],
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/rx",
+		"lint:depcheck_": "depcheck",
+		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @alexaegis/rx",
+		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",
+		"lint:format": "turbo run lint:format_ --concurrency 16 --filter @alexaegis/rx",
+		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --check .",
+		"lint:md": "turbo run lint:md_ --concurrency 16 --filter @alexaegis/rx",
+		"lint:md_": "remark --frail --no-stdout --silently-ignore .",
+		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/rx",
+		"lint:tsc_": "tsc --noEmit",
+		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/rx",
+		"publint_": "publint dist",
+		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/rx",
+		"test_": "vitest --passWithNoTests --coverage --run",
+		"test:watch": "vitest --passWithNoTests --coverage",
+		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16 --filter @alexaegis/rx",
+		"build": "turbo run build-lib_ --concurrency 16 --filter @alexaegis/rx",
+		"build-lib_": "vite build",
+		"format": "turbo run format_ --concurrency 16 --filter @alexaegis/rx",
+		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
+		"typedoc": "typedoc ./src/index.ts --excludeExternals --externalPattern '**/node_modules/**' --out ./dist/typedoc"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./readme": "./readme.md"
+	},
+	"dependencies": {
+		"rxjs": "^7.8.2"
+	},
+	"devDependencies": {
+		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/ts": "workspace:^0.14.1",
+		"@alexaegis/vite": "workspace:^",
+		"@alexaegis/vitest": "workspace:^",
+		"@types/node": "^24.10.1",
+		"publint": "^0.3.15",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.6",
+		"vitest": "^4.0.15"
+	}
+}

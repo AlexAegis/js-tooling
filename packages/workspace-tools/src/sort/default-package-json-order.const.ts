@@ -1,0 +1,35 @@
+import type { ObjectKeyOrder } from '@alexaegis/common';
+
+export const DEFAULT_PACKAGE_JSON_SORTING_PREFERENCE: ObjectKeyOrder = [
+	'name',
+	'description',
+	'version',
+	'license',
+	'private',
+	{
+		key: 'archetype',
+		order: ['platform', 'framework', 'language', 'kind', 'bundler', 'testing'],
+	},
+	'keywords',
+	'author',
+	'homepage',
+	{
+		key: 'repository',
+		order: ['url', 'type', 'directory'],
+	},
+	'bugs',
+	'type',
+	'config',
+	'publishConfig',
+	'.*',
+	'engines',
+	'packageManager',
+	'workspaces',
+	{ key: 'scripts', order: ['^build.*', '^lint.*', '^test.*'] },
+	{ key: 'exports', order: [{ key: '.*', order: ['types', '.*', 'default'] }] },
+	'bin',
+	'dependencies',
+	'peerDependencies',
+	'optionalDependencies',
+	'devDependencies',
+];

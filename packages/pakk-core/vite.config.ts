@@ -1,18 +1,48 @@
-import { mergeConfig } from 'vite';
-
-// Intentionally imported across packages, this isn't source code so it's fine.
-// It is to avoid cyclic dependencies.
-import { pakk } from '../pakk-vite-plugin/src/index.js';
-
-import {
-	collectFileDirnamePathsUpDirectoryTree,
-	PACKAGE_JSON_NAME,
-	type PackageJson,
-} from '@alexaegis/workspace-tools';
-import { readFileSync } from 'node:fs';
+// Standalone vite config — this package is a transitive dependency of
+// pakk-vite-plugin, so it cannot import from pakk-vite-plugin source.
+import { existsSync, readFileSync } from 'node:fs';
 import { builtinModules } from 'node:module';
-import p from 'node:path';
-import { type LibraryFormats, type UserConfig } from 'vite';
+import p, { join, normalize } from 'node:path';
+import { mergeConfig, type LibraryFormats, type UserConfig } from 'vite';
+
+const PACKAGE_JSON_NAME = 'package.json';
+interface PackageJson {
+	name?: string;
+	dependencies?: Record<string, string>;
+	devDependencies?: Record<string, string>;
+	peerDependencies?: Record<string, string>;
+	optionalDependencies?: Record<string, string>;
+}
+
+const collectFileDirnamePathsUpDirectoryTree = (
+	fileName: string,
+	options?: { cwd?: string; depth?: number; maxPackages?: number; maxResults?: number },
+): string[] => {
+	const cwd = options?.cwd ?? process.cwd();
+	const maxPackages = options?.maxPackages ?? 2;
+	const maxResults = options?.maxResults ?? Number.POSITIVE_INFINITY;
+	const maxDepth = options?.depth ?? Number.POSITIVE_INFINITY;
+
+	const results: string[] = [];
+	const packages: string[] = [];
+	let current = normalize(cwd);
+	let depth = maxDepth;
+
+	while (packages.length < maxPackages && results.length < maxResults && depth > 0) {
+		if (existsSync(join(current, fileName))) {
+			results.unshift(current);
+		}
+		if (existsSync(join(current, PACKAGE_JSON_NAME))) {
+			packages.unshift(current);
+		}
+		const parent = join(current, '..');
+		if (parent === current) break;
+		current = parent;
+		depth--;
+	}
+
+	return results;
+};
 
 export const DEFAULT_OUT_DIR = 'dist';
 export const DEFAULT_ENTRY = ['src/index.ts'];
@@ -89,7 +119,7 @@ const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 			treeshake: true,
 		},
 		lib: {
-			entry: DEFAULT_ENTRY,
+			entry: [...DEFAULT_ENTRY, 'src/unicorn-magic.js'],
 			formats: DEFAULT_EXPORT_FORMATS,
 		},
 	},
@@ -100,6 +130,4 @@ const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 	},
 } satisfies UserConfig);
 
-export default mergeConfig(DEFAULT_VITE_LIB_CONFIG, {
-	plugins: [pakk()],
-});
+export default mergeConfig(DEFAULT_VITE_LIB_CONFIG, {});

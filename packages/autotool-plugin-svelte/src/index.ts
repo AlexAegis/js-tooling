@@ -1,5 +1,9 @@
 import { contains } from '@alexaegis/predicate';
-import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
+import {
+	type AutotoolPlugin,
+	type AutotoolPluginObject,
+	type NormalizedAutotoolPluginOptions,
+} from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
@@ -332,7 +336,7 @@ export const svelteLibarySetupPlugin: AutotoolPluginObject = {
 	],
 };
 
-export const plugin: AutotoolPlugin = (_options) => {
+export const plugin: AutotoolPlugin = (_options: NormalizedAutotoolPluginOptions) => {
 	return [
 		svelteCommonSetupPlugin,
 		svelteAppCommonSetupPlugin,

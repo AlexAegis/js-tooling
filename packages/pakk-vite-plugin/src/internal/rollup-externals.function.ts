@@ -46,16 +46,18 @@ export const createLazyAutoExternalsFunction = () => {
 		| undefined;
 
 	return (source: string, importer: string | undefined, isResolved: boolean): boolean => {
-		externalsFn ??= createRollupExternalsFn(
-			...collectFileDirnamePathsUpDirectoryTree(PACKAGE_JSON_NAME, {
-				maxPackages: 2,
-			}).map(
-				(path) =>
-					JSON.parse(
-						readFileSync(p.join(path, PACKAGE_JSON_NAME), { encoding: 'utf8' }),
-					) as PackageJson,
-			),
-		);
+		if (!externalsFn) {
+			externalsFn = createRollupExternalsFn(
+				...collectFileDirnamePathsUpDirectoryTree(PACKAGE_JSON_NAME, {
+					maxPackages: 2,
+				}).map(
+					(path) =>
+						JSON.parse(
+							readFileSync(p.join(path, PACKAGE_JSON_NAME), { encoding: 'utf8' }),
+						) as PackageJson,
+				),
+			);
+		}
 
 		return externalsFn(source, importer, isResolved);
 	};

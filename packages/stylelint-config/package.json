@@ -52,19 +52,19 @@
 	},
 	"dependencies": {
 		"stylelint-config-html": "^1.1.0",
-		"stylelint-config-standard": "^38.0.0",
-		"stylelint-config-standard-scss": "^14.0.0"
+		"stylelint-config-standard": "^39.0.1",
+		"stylelint-config-standard-scss": "^16.0.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^22.14.1",
-		"publint": "^0.3.12",
-		"stylelint": "^16.18.0",
-		"typescript": "^5.8.3",
-		"vite": "^6.3.2",
-		"vitest": "^3.1.1"
+		"@types/node": "^24.10.1",
+		"publint": "^0.3.15",
+		"stylelint": "^16.26.1",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.6",
+		"vitest": "^4.0.15"
 	}
 }

@@ -1,11 +1,17 @@
 import { contains, equal, not, or } from '@alexaegis/predicate';
-import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
+import {
+	type AutotoolPlugin,
+	type AutotoolPluginObject,
+	type NormalizedAutotoolPluginOptions,
+} from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
 const appOrLib = or(equal('app'), equal('lib'));
 
-export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
+export const plugin: AutotoolPlugin = (
+	_options: NormalizedAutotoolPluginOptions,
+): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
 		elements: [

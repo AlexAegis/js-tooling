@@ -30,7 +30,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/ts",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/ts",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/ts",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -55,18 +55,16 @@
 		"./web": "./web.json"
 	},
 	"dependencies": {
-		"@alexaegis/vite": "workspace:^",
-		"@types/node": "^22.14.1",
+		"@types/node": "^24.10.1",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.8.3",
-		"vite": "^6.3.2"
+		"typescript": "^5.9.3",
+		"vite": "^7.2.6"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
-		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"publint": "^0.3.12",
-		"vite": "^6.3.2",
-		"vitest": "^3.1.1"
+		"publint": "^0.3.15",
+		"vite": "^7.2.6",
+		"vitest": "^4.0.15"
 	}
 }

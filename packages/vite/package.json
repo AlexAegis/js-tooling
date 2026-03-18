@@ -18,6 +18,11 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"peerDependenciesMeta": {
+		"vite-plugin-pakk": {
+			"optional": true
+		}
+	},
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/vite",
 		"lint:depcheck_": "depcheck",
@@ -59,15 +64,16 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@alexaegis/logging": "^0.11.0",
-		"vite": "^6.3.2",
+		"vite": "^7.2.6"
+	},
+	"peerDependencies": {
 		"vite-plugin-pakk": "workspace:^"
 	},
 	"devDependencies": {
-		"@types/node": "^22.14.1",
-		"publint": "^0.3.12",
+		"@types/node": "^24.10.1",
+		"publint": "^0.3.15",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.8.3",
-		"vitest": "^3.1.1"
+		"typescript": "^5.9.3",
+		"vitest": "^4.0.15"
 	}
 }

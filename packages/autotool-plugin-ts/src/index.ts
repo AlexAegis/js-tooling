@@ -5,11 +5,14 @@ import type {
 	AutotoolElementFileCopy,
 	AutotoolPlugin,
 	AutotoolPluginObject,
+	NormalizedAutotoolPluginOptions,
 } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
-export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
+export const plugin: AutotoolPlugin = (
+	_options: NormalizedAutotoolPluginOptions,
+): AutotoolPluginObject => {
 	// Plan js libs also matched to be able to lint:tsc JSDoc style types
 	const languageMatcher = /^(ts|js)$/;
 

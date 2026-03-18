@@ -1,9 +1,15 @@
-import { type AutotoolPlugin, type AutotoolPluginObject } from 'autotool-plugin';
+import type {
+	AutotoolPlugin,
+	AutotoolPluginObject,
+	NormalizedAutotoolPluginOptions,
+} from 'autotool-plugin';
 import { join } from 'node:path';
 import rootPackageJson from '../../../package.json' with { type: 'json' };
 import packageJson from '../package.json' with { type: 'json' };
 
-export const plugin: AutotoolPlugin = (_options): AutotoolPluginObject => {
+export const plugin: AutotoolPlugin = (
+	_options: NormalizedAutotoolPluginOptions,
+): AutotoolPluginObject => {
 	return {
 		name: packageJson.name,
 		elements: [
