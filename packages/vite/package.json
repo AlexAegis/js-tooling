@@ -64,16 +64,16 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"vite": "^7.2.6"
+		"vite": "^8.0.1"
 	},
 	"peerDependencies": {
 		"vite-plugin-pakk": "workspace:^"
 	},
 	"devDependencies": {
-		"@types/node": "^24.10.1",
-		"publint": "^0.3.15",
+		"@types/node": "^25.5.0",
+		"publint": "^0.3.18",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3",
-		"vitest": "^4.0.15"
+		"vitest": "^4.1.0"
 	}
 }

@@ -51,7 +51,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-svelte": "^3.5.1",
 		"prettier-plugin-tailwindcss": "^0.7.2"
 	},
 	"devDependencies": {
@@ -59,10 +59,10 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^24.10.1",
-		"prettier": "^3.7.4",
-		"publint": "^0.3.15",
-		"vite": "^7.2.6",
-		"vitest": "^4.0.15"
+		"@types/node": "^25.5.0",
+		"prettier": "^3.8.1",
+		"publint": "^0.3.18",
+		"vite": "^8.0.1",
+		"vitest": "^4.1.0"
 	}
 }

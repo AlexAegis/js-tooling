@@ -64,8 +64,8 @@
 		"@alexaegis/logging": "workspace:^",
 		"@alexaegis/prettier-config": "workspace:^",
 		"autotool-plugin": "^0.6.1",
-		"prettier": "^3.7.4",
-		"prettier-plugin-svelte": "^3.4.0",
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.5.1",
 		"prettier-plugin-tailwindcss": "^0.7.2"
 	},
 	"devDependencies": {
@@ -73,10 +73,10 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^24.10.1",
-		"publint": "^0.3.15",
+		"@types/node": "^25.5.0",
+		"publint": "^0.3.18",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.6",
-		"vitest": "^4.0.15"
+		"vite": "^8.0.1",
+		"vitest": "^4.1.0"
 	}
 }

@@ -64,11 +64,11 @@
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
-		"@types/node": "^24.10.1",
-		"eslint": "^9.39.1",
-		"publint": "^0.3.15",
+		"@types/node": "^25.5.0",
+		"eslint": "^10.0.3",
+		"publint": "^0.3.18",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.6",
-		"vitest": "^4.0.15"
+		"vite": "^8.0.1",
+		"vitest": "^4.1.0"
 	}
 }

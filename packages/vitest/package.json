@@ -69,15 +69,15 @@
 		}
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"@testing-library/svelte": "^5.2.9",
-		"@vitest/coverage-v8": "^4.0.15",
-		"@vitest/ui": "^4.0.15",
-		"jsdom": "27.2.0",
-		"vitest": "^4.0.15"
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
+		"@testing-library/svelte": "^5.3.1",
+		"@vitest/coverage-v8": "^4.1.0",
+		"@vitest/ui": "^4.1.0",
+		"jsdom": "29.0.0",
+		"vitest": "^4.1.0"
 	},
 	"devDependencies": {
-		"publint": "^0.3.15",
-		"vite": "^7.2.6"
+		"publint": "^0.3.18",
+		"vite": "^8.0.1"
 	}
 }
