@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/workspace-tools",
 	"description": "Tools for working with javascript workspaces",
-	"version": "0.11.0",
+	"version": "0.15.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {

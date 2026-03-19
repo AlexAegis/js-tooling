@@ -1448,7 +1448,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vite':
         specifier: workspace:^
@@ -1515,7 +1515,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vitest':
         specifier: workspace:^
@@ -1555,7 +1555,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vite':
         specifier: workspace:^
@@ -1754,7 +1754,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vitest':
         specifier: workspace:^
@@ -1838,7 +1838,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vitest':
         specifier: workspace:^
@@ -1868,7 +1868,7 @@ importers:
         specifier: workspace:^
         version: link:../predicate
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vitest':
         specifier: workspace:^
@@ -2094,7 +2094,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vitest':
         specifier: workspace:^
@@ -2239,7 +2239,7 @@ importers:
         specifier: workspace:^
         version: link:../eslint-config-vitest
       '@alexaegis/ts':
-        specifier: workspace:^0.14.1
+        specifier: workspace:^
         version: link:../ts
       '@alexaegis/vite':
         specifier: workspace:^
@@ -2444,7 +2444,7 @@ importers:
         specifier: workspace:^
         version: link:../fs
       '@alexaegis/workspace-tools':
-        specifier: workspace:^0.11.0
+        specifier: workspace:^
         version: link:../workspace-tools
     devDependencies:
       '@alexaegis/eslint-config-vitest':

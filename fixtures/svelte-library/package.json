@@ -1,7 +1,7 @@
 {
 	"name": "@pakk/fixture-svelte-library",
 	"description": "Showcasing svelte mode for defining svelte export conditions",
-	"version": "0.14.1",
+	"version": "0.15.0",
 	"license": "MIT",
 	"private": true,
 	"archetype": {
