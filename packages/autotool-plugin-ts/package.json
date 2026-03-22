@@ -19,8 +19,26 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package-composite-tsconfig": "./static/package-composite-tsconfig.json",
+			"./package-simple-tsconfig": "./static/package-simple-tsconfig.json",
+			"./package-spec-vitest-tsconfig": "./static/package-spec-vitest-tsconfig.json",
+			"./package.json": "./package.json",
+			"./readme": "./readme.md",
+			"./workspace-tsconfig": "./static/workspace-tsconfig.json"
+		}
 	},
+	"files": [
+		"dist",
+		"static"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/autotool-plugin-ts",
 		"lint:depcheck_": "depcheck",
@@ -33,7 +51,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/autotool-plugin-ts",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/autotool-plugin-ts",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/autotool-plugin-ts",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -74,6 +92,7 @@
 		"publint": "^0.3.18",
 		"ts-node": "^10.9.2",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

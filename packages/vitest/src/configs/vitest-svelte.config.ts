@@ -8,5 +8,5 @@ import { vitestWebConfig } from './vitest-web.config.js';
  * and the svelteTesting plugin from @testing-library/svelte/vite
  */
 export const vitestSvelteConfig = mergeConfig(vitestWebConfig, {
-	plugins: [svelte({ hot: !process.env['VITEST'] }), svelteTesting()],
+	plugins: [svelte(), svelteTesting()],
 });

@@ -16,8 +16,30 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./angular": "./angular.json",
+			"./base": "./base.json",
+			"./node": "./node.json",
+			"./package.json": "./package.json",
+			"./svelte": "./svelte.json",
+			"./web": "./web.json"
+		}
 	},
+	"files": [
+		"dist",
+		"angular.json",
+		"base.json",
+		"node.json",
+		"svelte.json",
+		"web.json"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/ts",
 		"lint:depcheck_": "depcheck",
@@ -62,9 +84,11 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"publint": "^0.3.18",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

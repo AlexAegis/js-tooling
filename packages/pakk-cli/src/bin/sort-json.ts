@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { defaultYargsFromPackageJson, yargsForDryOption } from '@alexaegis/cli-tools';
 import { createLogger } from '@alexaegis/logging';
 import type { PackageJson } from '@alexaegis/workspace-tools';

@@ -17,8 +17,23 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package.json": "./package.json",
+			"./readme": "./readme.md",
+			"./turbo": "./static/turbo.json"
+		}
 	},
+	"files": [
+		"dist",
+		"static"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/autotool-plugin-turbo",
 		"lint:depcheck_": "depcheck",
@@ -31,7 +46,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/autotool-plugin-turbo",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/autotool-plugin-turbo",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/autotool-plugin-turbo",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -67,6 +82,7 @@
 		"turbo-ignore": "^2.8.20",
 		"typescript": "^5.9.3",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

@@ -18,8 +18,39 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./monorepo": {
+				"types": "./dist/monorepo.d.ts",
+				"import": "./dist/monorepo.js",
+				"require": "./dist/monorepo.cjs",
+				"default": "./dist/monorepo.js"
+			},
+			"./npm": {
+				"types": "./dist/npm.d.ts",
+				"import": "./dist/npm.js",
+				"require": "./dist/npm.cjs",
+				"default": "./dist/npm.js"
+			},
+			"./package.json": "./package.json",
+			"./readme": "./readme.md",
+			"./sort": {
+				"types": "./dist/sort.d.ts",
+				"import": "./dist/sort.js",
+				"require": "./dist/sort.cjs",
+				"default": "./dist/sort.js"
+			}
+		}
 	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/workspace-tools",
 		"lint:depcheck_": "depcheck",
@@ -83,11 +114,13 @@
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
+		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/node": "^25.5.0",
 		"publint": "^0.3.18",
 		"typescript": "^5.9.3",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

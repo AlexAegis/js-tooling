@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { nuke } from '../functions/index.js';
 
 import {

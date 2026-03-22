@@ -17,8 +17,31 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package.json": "./package.json",
+			"./prettier-config": {
+				"types": "./dist/prettier-config.d.ts",
+				"import": "./dist/prettier-config.js",
+				"require": "./dist/prettier-config.cjs",
+				"default": "./dist/prettier-config.js"
+			},
+			"./prettierrc.js": "./static/prettierrc.js.txt",
+			"./readme": "./readme.md",
+			"./workspace": "./static/workspace.prettierignore",
+			"./workspace-only": "./static/workspace-only.prettierignore"
+		}
 	},
+	"files": [
+		"dist",
+		"static"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/autotool-plugin-prettier",
 		"lint:depcheck_": "depcheck",
@@ -31,7 +54,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/autotool-plugin-prettier",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/autotool-plugin-prettier",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/autotool-plugin-prettier",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -77,6 +100,7 @@
 		"publint": "^0.3.18",
 		"typescript": "^5.9.3",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

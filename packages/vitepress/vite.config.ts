@@ -1,12 +1,14 @@
-// autotool:not-managed
+// managed-by-autotool
 
-import { defineConfig } from 'vite';
-import { pakk } from 'vite-plugin-pakk';
+import { DEFAULT_VITE_LIB_CONFIG } from '@alexaegis/vite';
+import { defineConfig, mergeConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
-export default defineConfig({
-	plugins: [
-		pakk({
-			dts: process.env['BUILD_REASON'] === 'publish',
-		}),
-	],
-});
+export default mergeConfig(
+	DEFAULT_VITE_LIB_CONFIG,
+	defineConfig({
+		plugins: [
+			...(process.env['BUILD_REASON'] === 'publish' ? [dts({ entryRoot: 'src' })] : []),
+		],
+	}),
+);

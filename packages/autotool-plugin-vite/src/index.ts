@@ -1,4 +1,4 @@
-import { and, contains, equal, not, or } from '@alexaegis/predicate';
+import { and, contains, equal, not } from '@alexaegis/predicate';
 import {
 	type AutotoolPlugin,
 	type AutotoolPluginObject,
@@ -62,24 +62,7 @@ export const plugin: AutotoolPlugin = (
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
-					name: not(
-						or(
-							equal('@alexaegis/vite'),
-							equal('vite-plugin-pakk'),
-							equal('@pakk/core'),
-							// These packages have standalone vite configs due to circular dependencies through pakk-vite-plugin
-							equal('@alexaegis/common'),
-							equal('@alexaegis/eslint-config-vitest'),
-							equal('@alexaegis/fs'),
-							equal('@alexaegis/logging'),
-							equal('@alexaegis/match'),
-							equal('@alexaegis/predicate'),
-							equal('@alexaegis/ts'),
-							equal('@alexaegis/vitest'),
-							equal('@alexaegis/workspace-tools'),
-							equal('@pakk/cli'),
-						),
-					), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
+					name: not(equal('@alexaegis/vite')), // Don't add it for itself, `vite` itself is a regular dependency of it anyway
 					archetype: {
 						kind: equal('lib'),
 						framework: not(contains('svelte')), // svelte libraries don't use vite, they use svelte-package
@@ -89,6 +72,7 @@ export const plugin: AutotoolPlugin = (
 					devDependencies: {
 						['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
 						vite: packageJson.dependencies.vite,
+						'vite-plugin-dts': packageJson.devDependencies['vite-plugin-dts'],
 					},
 				},
 			},

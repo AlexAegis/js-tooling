@@ -2,9 +2,6 @@
 	"$schema": "https://turborepo.org/schema.json",
 	"extends": ["//"],
 	"tasks": {
-		"build-lib_": {
-			"dependsOn": ["vite-plugin-pakk#build-lib_"]
-		},
 		"build-app_": {
 			"dependsOn": ["^build-lib_", "@alexaegis/vite#build-lib_"]
 		},

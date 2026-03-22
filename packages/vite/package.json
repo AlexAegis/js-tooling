@@ -16,13 +16,29 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
-	},
-	"peerDependenciesMeta": {
-		"vite-plugin-pakk": {
-			"optional": true
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./base-vite.config": {
+				"types": "./dist/base-vite.config.d.ts",
+				"import": "./dist/base-vite.config.js",
+				"require": "./dist/base-vite.config.cjs",
+				"default": "./dist/base-vite.config.js"
+			},
+			"./example": "./static/example.json",
+			"./package.json": "./package.json",
+			"./readme": "./readme.md"
 		}
 	},
+	"files": [
+		"dist",
+		"static"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/vite",
 		"lint:depcheck_": "depcheck",
@@ -35,7 +51,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/vite",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/vite",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/vite",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -66,14 +82,12 @@
 	"dependencies": {
 		"vite": "^8.0.1"
 	},
-	"peerDependencies": {
-		"vite-plugin-pakk": "workspace:^"
-	},
 	"devDependencies": {
 		"@types/node": "^25.5.0",
 		"publint": "^0.3.18",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

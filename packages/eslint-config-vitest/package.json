@@ -16,8 +16,21 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package.json": "./package.json",
+			"./readme": "./readme.md"
+		}
 	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/eslint-config-vitest",
 		"lint:depcheck_": "depcheck",
@@ -61,11 +74,13 @@
 		"typescript-eslint": "8.57.1"
 	},
 	"devDependencies": {
+		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
 		"@types/node": "^25.5.0",
 		"publint": "^0.3.18",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

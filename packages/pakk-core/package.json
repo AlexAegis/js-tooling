@@ -21,8 +21,27 @@
 		"engine-strict": false
 	},
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package.json": "./package.json",
+			"./readme": "./readme.md",
+			"./unicorn-magic": {
+				"types": "./dist/unicorn-magic.d.ts",
+				"import": "./dist/unicorn-magic.js",
+				"require": "./dist/unicorn-magic.cjs",
+				"default": "./dist/unicorn-magic.js"
+			}
+		}
 	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @pakk/core",
 		"lint:depcheck_": "depcheck",
@@ -78,11 +97,13 @@
 		"vite": "^8.0.1"
 	},
 	"devDependencies": {
+		"@alexaegis/vite": "workspace:^",
 		"@types/node": "^25.5.0",
 		"@types/yargs": "^17.0.35",
 		"publint": "^0.3.18",
 		"typescript-eslint": "^8.57.1",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }

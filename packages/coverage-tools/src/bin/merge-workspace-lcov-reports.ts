@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { createLogger } from '@alexaegis/logging';
 import { getWorkspaceRoot } from '@alexaegis/workspace-tools';
 import { mkdir, writeFile } from 'node:fs/promises';

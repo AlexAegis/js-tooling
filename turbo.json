@@ -145,11 +145,11 @@
 			"outputLogs": "new-only"
 		},
 		"lint:es_": {
-			"dependsOn": [],
+			"dependsOn": ["build-lib_"],
 			"outputLogs": "new-only"
 		},
 		"lint:format_": {
-			"dependsOn": [],
+			"dependsOn": ["build-lib_"],
 			"env": [],
 			"inputs": [
 				"!vite*.config.*.*",
@@ -160,7 +160,7 @@
 			"outputLogs": "new-only"
 		},
 		"lint:md_": {
-			"dependsOn": [],
+			"dependsOn": ["build-lib_"],
 			"inputs": ["!vite*.config.*.*", "!{.turbo,.cache}/**/*", "**/*.md", "package.json"],
 			"outputs": [],
 			"outputLogs": "new-only"
@@ -193,7 +193,7 @@
 			"outputLogs": "new-only"
 		},
 		"lint:tsc_": {
-			"dependsOn": [],
+			"dependsOn": ["build-lib_"],
 			"outputs": [".cache/tsc/**"],
 			"outputLogs": "new-only"
 		},

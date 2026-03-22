@@ -64,7 +64,9 @@ export const mapPathMapToFormat = (
 			const dir = dirname(path);
 			return posix.join(
 				dir,
-				format === 'SOURCE' ? fileName : fileNameFn(format, extensionlessFileName),
+				format === 'SOURCE'
+					? fileName
+					: fileNameFn(format as Parameters<ViteFileNameFn>[0], extensionlessFileName),
 			);
 		});
 	});

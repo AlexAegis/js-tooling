@@ -17,8 +17,26 @@
 	],
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.ts",
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./bug_report": "./static/bug_report.yml",
+			"./cicd": "./static/cicd.yml",
+			"./feature_request": "./static/feature_request.yml",
+			"./funding": "./static/funding.yml",
+			"./package.json": "./package.json",
+			"./readme": "./readme.md"
+		}
 	},
+	"files": [
+		"dist",
+		"static"
+	],
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/autotool-plugin-github",
 		"lint:depcheck_": "depcheck",
@@ -31,7 +49,7 @@
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16 --filter @alexaegis/autotool-plugin-github",
 		"lint:tsc_": "tsc --noEmit",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16 --filter @alexaegis/autotool-plugin-github",
-		"publint_": "publint dist",
+		"publint_": "publint",
 		"test": "turbo run test_ --concurrency 16 --filter @alexaegis/autotool-plugin-github",
 		"test_": "vitest --passWithNoTests --coverage --run",
 		"test:watch": "vitest --passWithNoTests --coverage",
@@ -68,6 +86,7 @@
 		"publint": "^0.3.18",
 		"typescript": "^5.9.3",
 		"vite": "^8.0.1",
+		"vite-plugin-dts": "^4.5.4",
 		"vitest": "^4.1.0"
 	}
 }
