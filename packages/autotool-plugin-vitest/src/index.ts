@@ -53,14 +53,7 @@ export const plugin: AutotoolPlugin = (
 				executor: 'packageJson',
 				packageKind: 'regular',
 				packageJsonFilter: {
-					name: not(
-						or(
-							equal('@alexaegis/vite'),
-							equal('@alexaegis/vitest'),
-							equal('vite-plugin-pakk'),
-							equal('@pakk/core'),
-						),
-					), // Don't add it for itself and 'vite' it would cause a circle
+					name: not(or(equal('@alexaegis/vite'), equal('@alexaegis/vitest'))), // Don't add it for itself and 'vite' it would cause a circle
 					archetype: {
 						kind: appOrLib,
 					},

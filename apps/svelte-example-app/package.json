@@ -41,7 +41,7 @@
 		"format": "turbo run format_ --concurrency 16 --filter @alexaegis/svelte-example-app",
 		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
 		"kit:sync": "svelte-kit sync",
-		"postinstall": "svelte-kit sync # pakk:not-distributed",
+		"postinstall": "svelte-kit sync",
 		"start": "turbo run start_ --concurrency 16 --filter @alexaegis/svelte-example-app",
 		"start_": "TARGET_ENV='local' vite",
 		"start:no-watch": "turbo run start_ --concurrency 16 --filter @alexaegis/svelte-example-app"

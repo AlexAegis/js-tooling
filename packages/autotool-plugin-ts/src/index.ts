@@ -89,8 +89,6 @@ export const plugin: AutotoolPlugin = (
 							equal('@alexaegis/vite'),
 							equal('@alexaegis/vitest'),
 							equal('@alexaegis/eslint-config-vitest'),
-							equal('vite-plugin-pakk'),
-							equal('@pakk/core'),
 						),
 					), // Don't add a dependency for itself, and other packages where it would result in a circle
 				},

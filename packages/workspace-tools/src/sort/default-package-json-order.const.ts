@@ -20,7 +20,14 @@ export const DEFAULT_PACKAGE_JSON_SORTING_PREFERENCE: ObjectKeyOrder = [
 	'bugs',
 	'type',
 	'config',
-	'publishConfig',
+	{
+		key: 'publishConfig',
+		order: [
+			'access',
+			{ key: 'exports', order: [{ key: '.*', order: ['types', '.*', 'default'] }] },
+			'.*',
+		],
+	},
 	'.*',
 	'engines',
 	'packageManager',

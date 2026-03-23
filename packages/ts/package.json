@@ -33,9 +33,9 @@
 		}
 	},
 	"files": [
-		"dist",
 		"angular.json",
 		"base.json",
+		"dist",
 		"node.json",
 		"svelte.json",
 		"web.json"

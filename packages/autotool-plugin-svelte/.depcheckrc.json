@@ -3,7 +3,6 @@
 	"ignores": [
 		"@alexaegis/coverage-tools",
 		"@alexaegis/ts",
-		"@pakk/cli",
 		"@sveltejs/*",
 		"publint",
 		"svelte-check",

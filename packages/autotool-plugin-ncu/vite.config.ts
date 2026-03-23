@@ -1,8 +1,8 @@
 // managed-by-autotool
 
 import { DEFAULT_VITE_LIB_CONFIG } from '@alexaegis/vite';
+import { defineConfig, mergeConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { mergeConfig, defineConfig } from 'vite';
 
 export default mergeConfig(
 	DEFAULT_VITE_LIB_CONFIG,
