@@ -17,9 +17,6 @@
 	"type": "module",
 	"publishConfig": {
 		"access": "public",
-		"bin": {
-			"nuke": "./dist/bin/nuke.js"
-		},
 		"exports": {
 			".": {
 				"types": "./dist/index.d.ts",
@@ -29,6 +26,9 @@
 			},
 			"./package.json": "./package.json",
 			"./readme": "./readme.md"
+		},
+		"bin": {
+			"nuke": "./dist/bin/nuke.js"
 		}
 	},
 	"files": [
@@ -67,7 +67,7 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"nuke": "./shims/nuke.js"
+		"nuke": "./dist/bin/nuke.js"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "workspace:^",

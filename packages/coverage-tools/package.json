@@ -19,9 +19,6 @@
 	"type": "module",
 	"publishConfig": {
 		"access": "public",
-		"bin": {
-			"merge-workspace-lcov-reports": "./dist/bin/merge-workspace-lcov-reports.js"
-		},
 		"exports": {
 			".": {
 				"types": "./dist/index.d.ts",
@@ -31,6 +28,9 @@
 			},
 			"./package.json": "./package.json",
 			"./readme": "./readme.md"
+		},
+		"bin": {
+			"merge-workspace-lcov-reports": "./dist/bin/merge-workspace-lcov-reports.js"
 		}
 	},
 	"files": [
@@ -69,7 +69,7 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"merge-workspace-lcov-reports": "./shims/merge-workspace-lcov-reports.js"
+		"merge-workspace-lcov-reports": "./dist/bin/merge-workspace-lcov-reports.js"
 	},
 	"dependencies": {
 		"@alexaegis/common": "workspace:^",

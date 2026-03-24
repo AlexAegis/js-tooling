@@ -11,7 +11,6 @@ const commonIgnores: string[] = [
 	'**/vite.config.ts.*',
 	'**/vitest.config.ts.*',
 	'**/.vitepress',
-	'**/shims',
 	'**/typedoc',
 	'**/.svelte-kit',
 	'**/.vercel',
@@ -20,7 +19,6 @@ const commonIgnores: string[] = [
 	'**/coverage',
 	'**/.turbo',
 	'**/tmp',
-	'**/shims',
 ];
 
 const ignoreConfig: TSESLint.FlatConfig.Config = {

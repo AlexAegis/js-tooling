@@ -3,7 +3,7 @@
 	"extends": ["//"],
 	"tasks": {
 		"build-lib_": {
-			"dependsOn": []
+			"dependsOn": ["@alexaegis/vite#build-lib_"]
 		},
 		"test_": {
 			"dependsOn": ["@alexaegis/coverage-tools#build-lib_"]

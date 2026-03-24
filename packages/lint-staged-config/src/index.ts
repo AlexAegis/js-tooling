@@ -13,8 +13,8 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
 /**
  * Peek
  * ```js
- *	'!(shims)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': tsc,
- *	'!(shims)/*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
+ *	'*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': tsc,
+ *	'*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
  *	'*.css': ['stylelint', prettierCommand],
  *	'*.scss': ['stylelint --customSyntax=postcss-scss', prettierCommand],
  *	'*.(html|svelte|vue|astro|xml|php)': ['stylelint --customSyntax=postcss-html'],
@@ -39,7 +39,7 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
  * ```
  */
 export const lintStagedConfig: Configuration = {
-	'**/!(shims)/(*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': (
+	'**/*.(ts|js|cts|cjs|mts|mjs|jsx|tsx|tsconfig*.json)?(x)': (
 		filenames: readonly string[],
 	): string[] => {
 		const groups = groupByCommonNearestFile(filenames as string[], 'tsconfig.json');
@@ -47,7 +47,7 @@ export const lintStagedConfig: Configuration = {
 			(tsRoot) => `${tscCommand} --project ${join(tsRoot, 'tsconfig.json')}`,
 		);
 	},
-	'**/!(shims)/*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
+	'**/*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
 	'*.css': ['stylelint', prettierCommand],
 	'*.scss': ['stylelint --customSyntax=postcss-scss', prettierCommand],
 	'*.(html|svelte|vue|astro|xml|php)': ['stylelint --customSyntax=postcss-html'],
