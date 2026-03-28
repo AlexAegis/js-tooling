@@ -3,8 +3,8 @@ import { createLogger } from '@alexaegis/logging';
 import { getWorkspaceRoot } from '@alexaegis/workspace-tools';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { LCOV_INFO_FILE_NAME } from '../index.js';
-import { mergeLcovReportsInWorkspace } from '../lcov/merge-lcov-reports-in-workspace.function.js';
+import { LCOV_INFO_FILE_NAME } from '../index.ts';
+import { mergeLcovReportsInWorkspace } from '../lcov/merge-lcov-reports-in-workspace.function.ts';
 
 const mergeWorkspaceLcovReports = async () => {
 	const logger = createLogger({ name: 'merge-lcov' });

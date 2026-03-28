@@ -1,5 +1,5 @@
 import type { CollectWorkspacePackagesOptions } from '@alexaegis/workspace-tools';
-import { mockProjectRoot } from '../../../__mocks__/globby.js';
+import { mockProjectRoot } from '../../../__mocks__/globby.ts';
 
 export const collectLcovReportPaths = (rawOptions?: CollectWorkspacePackagesOptions): string[] => {
 	const defaultCwd = mockProjectRoot;

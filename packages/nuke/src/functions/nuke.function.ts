@@ -4,7 +4,7 @@ import { globby } from 'globby';
 import { existsSync } from 'node:fs';
 import { rm } from 'node:fs/promises';
 import { join, relative } from 'node:path';
-import { normalizeNukeOptions, type NukeOptions } from './nuke.function.options.js';
+import { normalizeNukeOptions, type NukeOptions } from './nuke.function.options.ts';
 
 /**
  * Removes a bunch of stuff from packages for cleaning.

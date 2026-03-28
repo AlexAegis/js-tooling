@@ -36,6 +36,7 @@
 		"noUnusedParameters": true,
 		"forceConsistentCasingInFileNames": true,
 		"verbatimModuleSyntax": true,
+		"rewriteRelativeImportExtensions": true,
 		"incremental": true
 	},
 	"include": [],

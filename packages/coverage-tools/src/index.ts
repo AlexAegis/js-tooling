@@ -1,1 +1,1 @@
-export * from './lcov/index.js';
+export * from './lcov/index.ts';

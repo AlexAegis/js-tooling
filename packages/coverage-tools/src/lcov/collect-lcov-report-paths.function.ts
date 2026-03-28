@@ -8,7 +8,7 @@ import { globby } from 'globby';
 import {
 	normalizeCollectLcovReportPathsOptions,
 	type CollectLcovReportPathsOptions,
-} from './collect-lcov-report-paths.function.options.js';
+} from './collect-lcov-report-paths.function.options.ts';
 
 export const LCOV_INFO_FILE_NAME = 'lcov.info';
 

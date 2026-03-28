@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { nuke } from '../functions/index.js';
+import { nuke } from '../functions/index.ts';
 
 import {
 	YargsBuilder,
@@ -9,7 +9,7 @@ import {
 import { createLogger } from '@alexaegis/logging';
 import type { PackageJson } from '@alexaegis/workspace-tools';
 import packageJson from '../../package.json' with { type: 'json' };
-import { DEFAULT_NUKE_GLOBS, DEFAULT_NUKE_LIST } from '../functions/nuke.function.options.js';
+import { DEFAULT_NUKE_GLOBS, DEFAULT_NUKE_LIST } from '../functions/nuke.function.options.ts';
 
 const yarguments = YargsBuilder.withDefaults(packageJson as PackageJson)
 	.add(yargsForCollectWorkspacePackagesOptions)

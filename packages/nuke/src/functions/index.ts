@@ -1,2 +1,2 @@
-export * from './nuke.function.js';
-export * from './nuke.function.options.js';
+export * from './nuke.function.options.ts';
+export * from './nuke.function.ts';

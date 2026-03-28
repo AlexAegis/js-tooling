@@ -1,10 +1,10 @@
 import { createMockLogger } from '@alexaegis/logging/mocks';
 import { afterAll, describe, expect, it, vi } from 'vitest';
-import { mergeLcovReportsInWorkspace } from './merge-lcov-reports-in-workspace.function.js';
+import { mergeLcovReportsInWorkspace } from './merge-lcov-reports-in-workspace.function.ts';
 
 vi.mock('node:fs/promises');
 vi.mock('globby');
-vi.mock('./collect-lcov-report-paths.function.js');
+vi.mock('./collect-lcov-report-paths.function.ts');
 
 describe('mergeLcovReportsInWorkspace', () => {
 	const { logger } = createMockLogger(vi);

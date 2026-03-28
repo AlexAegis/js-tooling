@@ -67,7 +67,7 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"nuke": "./dist/bin/nuke.js"
+		"nuke": "./src/bin/nuke.ts"
 	},
 	"dependencies": {
 		"@alexaegis/cli-tools": "workspace:^",

@@ -5,8 +5,8 @@ import {
 } from '@alexaegis/workspace-tools';
 import { join } from 'node:path/posix';
 import { afterAll, describe, expect, it, vi } from 'vitest';
-import { mockProjectRoot } from '../../__mocks__/globby.js';
-import { collectLcovReportPaths } from './collect-lcov-report-paths.function.js';
+import { mockProjectRoot } from '../../__mocks__/globby.ts';
+import { collectLcovReportPaths } from './collect-lcov-report-paths.function.ts';
 
 vi.mock('globby');
 

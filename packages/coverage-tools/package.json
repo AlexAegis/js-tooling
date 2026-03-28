@@ -69,7 +69,7 @@
 		"./readme": "./readme.md"
 	},
 	"bin": {
-		"merge-workspace-lcov-reports": "./dist/bin/merge-workspace-lcov-reports.js"
+		"merge-workspace-lcov-reports": "./src/bin/merge-workspace-lcov-reports.ts"
 	},
 	"dependencies": {
 		"@alexaegis/common": "workspace:^",
