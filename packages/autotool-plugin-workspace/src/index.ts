@@ -38,7 +38,7 @@ export const plugin: AutotoolPlugin = (
 						'engine-strict': true,
 					},
 					engines: {
-						node: '>=20',
+						node: '>=22.6.0',
 						npm: undefined,
 						pnpm: '>=9',
 					},
