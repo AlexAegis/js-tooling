@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/fs",
 	"description": "Filesystem tools",
-	"version": "0.11.0",
+	"version": "0.15.0",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
@@ -89,7 +89,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
-		"@alexaegis/ts": "workspace:^0.14.1",
+		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/js-yaml": "^4.0.9",
