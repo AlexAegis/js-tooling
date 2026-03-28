@@ -13,6 +13,10 @@
 		"managed-by-autotool",
 		"svelte"
 	],
+	"repository": {
+		"url": "git+https://github.com/AlexAegis/js-tooling",
+		"type": "git"
+	},
 	"type": "module",
 	"publishConfig": {
 		"access": "public",

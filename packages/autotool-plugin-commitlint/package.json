@@ -14,6 +14,10 @@
 		"commitlint",
 		"managed-by-autotool"
 	],
+	"repository": {
+		"url": "git+https://github.com/AlexAegis/js-tooling",
+		"type": "git"
+	},
 	"type": "module",
 	"publishConfig": {
 		"access": "public",

@@ -12,6 +12,10 @@
 		"managed-by-autotool",
 		"svelte"
 	],
+	"repository": {
+		"url": "git+https://github.com/AlexAegis/js-tooling",
+		"type": "git"
+	},
 	"type": "module",
 	"scripts": {
 		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @alexaegis/example-svelte-lib",

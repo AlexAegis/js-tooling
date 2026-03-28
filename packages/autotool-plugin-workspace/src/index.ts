@@ -88,6 +88,16 @@ export const plugin: AutotoolPlugin = (
 					type: 'module',
 				},
 			},
+			{
+				description: 'repository metadata for trusted publishing',
+				executor: 'packageJson',
+				data: {
+					repository: {
+						type: 'git',
+						url: rootPackageJson.repository.url,
+					},
+				},
+			},
 		],
 	};
 };
