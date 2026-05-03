@@ -112,19 +112,19 @@
 		"@alexaegis/fs": "workspace:^",
 		"@alexaegis/logging": "workspace:^",
 		"@alexaegis/match": "workspace:^",
-		"@schemastore/package": "^1.0.1",
-		"globby": "^16.1.1"
+		"@schemastore/package": "^1.0.4",
+		"globby": "^16.2.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.6.0",
 		"publint": "^0.3.18",
-		"typescript": "^5.9.3",
-		"vite": "^8.0.1",
-		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^4.1.0"
+		"typescript": "^6.0.3",
+		"vite": "^8.0.10",
+		"vite-plugin-dts": "^5.0.0",
+		"vitest": "^4.1.5"
 	}
 }

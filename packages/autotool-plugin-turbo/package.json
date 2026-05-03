@@ -80,13 +80,13 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.6.0",
 		"publint": "^0.3.18",
-		"turbo": "^2.8.20",
-		"turbo-ignore": "^2.8.20",
-		"typescript": "^5.9.3",
-		"vite": "^8.0.1",
-		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^4.1.0"
+		"turbo": "^2.9.8",
+		"turbo-ignore": "^2.9.8",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.10",
+		"vite-plugin-dts": "^5.0.0",
+		"vitest": "^4.1.5"
 	}
 }

@@ -70,7 +70,7 @@
 	"dependencies": {
 		"@alexaegis/fs": "workspace:^",
 		"lint-staged": "16.4.0",
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.3"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
@@ -79,10 +79,10 @@
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
 		"@types/lint-staged": "^14.0.0",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.6.0",
 		"publint": "^0.3.18",
-		"vite": "^8.0.1",
-		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^4.1.0"
+		"vite": "^8.0.10",
+		"vite-plugin-dts": "^5.0.0",
+		"vitest": "^4.1.5"
 	}
 }

@@ -68,23 +68,23 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^8.57.1",
-		"@typescript-eslint/parser": "^8.57.1",
-		"@typescript-eslint/utils": "^8.57.1",
-		"eslint": "^10.0.3",
-		"eslint-config-turbo": "^2.8.20",
-		"eslint-plugin-unicorn": "^63.0.0",
-		"typescript": "^5.9.3",
-		"typescript-eslint": "8.57.1"
+		"@typescript-eslint/eslint-plugin": "^8.59.1",
+		"@typescript-eslint/parser": "^8.59.1",
+		"@typescript-eslint/utils": "^8.59.1",
+		"eslint": "^10.3.0",
+		"eslint-config-turbo": "^2.9.8",
+		"eslint-plugin-unicorn": "^64.0.0",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "8.59.1"
 	},
 	"devDependencies": {
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.6.0",
 		"publint": "^0.3.18",
-		"vite": "^8.0.1",
-		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^4.1.0"
+		"vite": "^8.0.10",
+		"vite-plugin-dts": "^5.0.0",
+		"vitest": "^4.1.5"
 	}
 }

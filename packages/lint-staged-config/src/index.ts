@@ -16,8 +16,8 @@ const markdownCommand = 'remark --frail --no-stdout --silently-ignore';
  *	'*.(ts|js|cts|cjs|mts|mjs|jsx|tsx)|tsconfig*.json)?(x)': tsc,
  *	'*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
  *	'*.css': ['stylelint', prettierCommand],
- *	'*.scss': ['stylelint --customSyntax=postcss-scss', prettierCommand],
- *	'*.(html|svelte|vue|astro|xml|php)': ['stylelint --customSyntax=postcss-html'],
+ *	'*.scss': ['stylelint', prettierCommand],
+ *	'*.(html|svelte|vue|astro|xml|php)': ['stylelint'],
  *	'*.(html|vue|astro|xml)': [prettierCommand],
  *	'(*.json|.eslintrc|.prettierrc|.stylelintrc|.markdownlintrc)': [
  *		eslintSingleFileCommand,
@@ -49,8 +49,8 @@ export const lintStagedConfig: Configuration = {
 	},
 	'**/*.(ts|js|cts|cjs|mts|mjs)': [eslintSingleFileCommand, prettierCommand],
 	'*.css': ['stylelint', prettierCommand],
-	'*.scss': ['stylelint --customSyntax=postcss-scss', prettierCommand],
-	'*.(html|svelte|vue|astro|xml|php)': ['stylelint --customSyntax=postcss-html'],
+	'*.scss': ['stylelint', prettierCommand],
+	'*.(html|svelte|vue|astro|xml|php)': ['stylelint'],
 	'*.(html|vue|astro|xml)': [prettierCommand],
 	'(*.json|.eslintrc|.prettierrc|.stylelintrc|.markdownlintrc)': [
 		eslintSingleFileCommand,

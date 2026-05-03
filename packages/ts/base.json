@@ -20,7 +20,6 @@
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"preserveWatchOutput": true,
-		"baseUrl": ".",
 		"strict": true,
 		"checkJs": true,
 		"allowJs": true,

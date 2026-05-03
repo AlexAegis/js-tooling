@@ -71,11 +71,11 @@ export const plugin: AutotoolPlugin = (
 						'lint:style:scss':
 							'turbo run lint:style:scss_ --concurrency 16 --filter ${packageName}',
 						'lint:style:scss_':
-							"stylelint --customSyntax=postcss-scss --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss --allow-empty-input '**/*.scss'",
+							"stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-scss --allow-empty-input '**/*.scss'",
 						'lint:style:html':
 							'turbo run lint:style:html_ --concurrency 16 --filter ${packageName}',
 						'lint:style:html_':
-							"stylelint --customSyntax=postcss-html --cache true --cache-strategy content --cache-location .cache/stylelintcache-html --allow-empty-input '**/*.{html,svelte,vue,astro,xml,php}'",
+							"stylelint --cache true --cache-strategy content --cache-location .cache/stylelintcache-html --allow-empty-input '**/*.{html,svelte,vue,astro,xml,php}'",
 					},
 					devDependencies: {
 						'@alexaegis/stylelint-config': `^${packageJson.version}`,
