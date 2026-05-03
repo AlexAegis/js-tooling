@@ -462,5 +462,7 @@ jobs:
         run: corepack enable && corepack prepare npm@latest --activate
       - name: |
           release ${{ matrix.package.package_name }}@${{ matrix.package.package_version }} on npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm publish --access public ${{ matrix.package.package_path_from_root_package }}
