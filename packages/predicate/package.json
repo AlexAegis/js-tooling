@@ -1,7 +1,7 @@
 {
 	"name": "@alexaegis/predicate",
 	"description": "Dead simple declarative predicates",
-	"version": "0.15.0",
+	"version": "0.15.1",
 	"license": "MIT",
 	"private": false,
 	"archetype": {
