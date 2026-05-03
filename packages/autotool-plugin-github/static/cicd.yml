@@ -459,7 +459,7 @@ jobs:
         run: |
           npx turbo run publint_ --filter="${{ matrix.package.package_name }}" --concurrency 16 --cache-dir=.cache/turbo
       - name: install npm 11
-        run: npm install -g npm@11
+        run: corepack enable && corepack prepare npm@latest --activate
       - name: |
           release ${{ matrix.package.package_name }}@${{ matrix.package.package_version }} on npm
         run: |
