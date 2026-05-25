@@ -70,7 +70,7 @@ export const plugin: AutotoolPlugin = (
 				},
 				data: {
 					devDependencies: {
-						['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
+						['@alexaegis/vite']: `^${packageJson.version}`,
 						vite: packageJson.dependencies.vite,
 						'vite-plugin-dts': packageJson.devDependencies['vite-plugin-dts'],
 					},
@@ -88,7 +88,7 @@ export const plugin: AutotoolPlugin = (
 				},
 				data: {
 					devDependencies: {
-						['@alexaegis/vite']: packageJson.devDependencies['@alexaegis/vite'],
+						['@alexaegis/vite']: `^${packageJson.version}`,
 						vite: packageJson.dependencies.vite,
 					},
 				},

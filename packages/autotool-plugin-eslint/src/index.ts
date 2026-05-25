@@ -92,8 +92,7 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 				},
 				data: {
 					devDependencies: {
-						'@alexaegis/eslint-config-vitest':
-							packageJson.devDependencies['@alexaegis/eslint-config-vitest'],
+						'@alexaegis/eslint-config-vitest': `^${packageJson.version}`,
 					},
 				},
 			},
@@ -134,8 +133,7 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 				packageKind: 'root',
 				data: {
 					devDependencies: {
-						'@alexaegis/eslint-config-core':
-							packageJson.devDependencies['@alexaegis/eslint-config-core'],
+						'@alexaegis/eslint-config-core': `^${packageJson.version}`,
 						eslint: packageJson.devDependencies.eslint,
 						'@types/eslint': packageJson.devDependencies['@types/eslint'],
 					},

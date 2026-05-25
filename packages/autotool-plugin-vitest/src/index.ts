@@ -26,8 +26,7 @@ export const plugin: AutotoolPlugin = (
 					devDependencies: {
 						'@vitest/coverage-v8': packageJson.devDependencies['@vitest/coverage-v8'],
 						'@lcov-viewer/cli': packageJson.devDependencies['@lcov-viewer/cli'],
-						'@alexaegis/coverage-tools':
-							packageJson.dependencies['@alexaegis/coverage-tools'],
+						'@alexaegis/coverage-tools': `^${packageJson.version}`,
 					},
 				},
 			},
@@ -60,7 +59,7 @@ export const plugin: AutotoolPlugin = (
 				},
 				data: {
 					devDependencies: {
-						'@alexaegis/vitest': packageJson.devDependencies['@alexaegis/vitest'],
+						'@alexaegis/vitest': `^${packageJson.version}`,
 						vitest: packageJson.devDependencies.vitest,
 					},
 				},
