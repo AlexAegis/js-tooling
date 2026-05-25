@@ -84,14 +84,14 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"vite": "^8.0.10"
+		"vite": "^8.0.14"
 	},
 	"devDependencies": {
-		"@types/node": "^25.6.0",
-		"publint": "^0.3.18",
+		"@types/node": "^25.9.1",
+		"publint": "^0.3.21",
 		"ts-node": "^10.9.2",
 		"typescript": "^6.0.3",
-		"vite-plugin-dts": "^5.0.0",
-		"vitest": "^4.1.5"
+		"vite-plugin-dts": "^5.0.1",
+		"vitest": "^4.1.7"
 	}
 }

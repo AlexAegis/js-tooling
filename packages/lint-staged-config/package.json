@@ -69,7 +69,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/fs": "workspace:^",
-		"lint-staged": "16.4.0",
+		"lint-staged": "17.0.5",
 		"typescript": "^6.0.3"
 	},
 	"devDependencies": {
@@ -79,10 +79,10 @@
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
 		"@types/lint-staged": "^14.0.0",
-		"@types/node": "^25.6.0",
-		"publint": "^0.3.18",
-		"vite": "^8.0.10",
-		"vite-plugin-dts": "^5.0.0",
-		"vitest": "^4.1.5"
+		"@types/node": "^25.9.1",
+		"publint": "^0.3.21",
+		"vite": "^8.0.14",
+		"vite-plugin-dts": "^5.0.1",
+		"vitest": "^4.1.7"
 	}
 }
