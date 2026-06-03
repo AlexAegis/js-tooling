@@ -11,10 +11,13 @@
 		"managed-by-autotool"
 	],
 	"repository": {
-		"url": "git+https://github.com/AlexAegis/js-tooling",
+		"url": "git+https://github.com/AlexAegis/js-tooling.git",
 		"type": "git"
 	},
 	"type": "module",
+	"engines": {
+		"node": ">=22.6.0"
+	},
 	"scripts": {
 		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @alexaegis/svelte-example-app",
 		"lint:es_": "eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .",

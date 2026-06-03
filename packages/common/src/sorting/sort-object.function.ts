@@ -15,8 +15,8 @@ const regexpSorterOne = (a: RegExp, b: RegExp): number =>
 
 /**
  *
- * Among multiple @param matchers like ['.*', 'b', '.*'], when trying to fit in
- * a @param key, which slot would maintain order the best? For example fitting
+ * Among multiple `matchers` like ['.*', 'b', '.*'], when trying to fit in
+ * a `key`, which slot would maintain order the best? For example fitting
  * 'a' into the above matcher order, it should go to the left slot, but fitting
  * 'c' should make it go to the right slot.
  */

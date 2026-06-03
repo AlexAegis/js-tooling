@@ -10,7 +10,7 @@ import { HASH_COMMENT, NEWLINE } from '@alexaegis/fs';
  *
  * @example a file like
  *
- * ```gitignore
+ * ```text
  *		foo
  *		bar
  *

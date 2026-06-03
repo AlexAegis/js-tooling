@@ -16,7 +16,7 @@
 		"managed-by-autotool"
 	],
 	"repository": {
-		"url": "git+https://github.com/AlexAegis/js-tooling",
+		"url": "git+https://github.com/AlexAegis/js-tooling.git",
 		"type": "git"
 	},
 	"type": "module",
@@ -38,6 +38,9 @@
 		"dist",
 		"static"
 	],
+	"engines": {
+		"node": ">=22.6.0"
+	},
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/autotool-plugin-editorconfig",
 		"lint:depcheck_": "depcheck",

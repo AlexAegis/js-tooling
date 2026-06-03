@@ -15,6 +15,3 @@ verifyDepsBeforeRun: false
 allowBuilds:
   esbuild: true
   svelte-preprocess: true
-
-minimumReleaseAgeExclude:
-  - npm-check-updates@22.2.2

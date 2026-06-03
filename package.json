@@ -21,7 +21,7 @@
 	},
 	"homepage": "https://github.com/AlexAegis/js-tooling",
 	"repository": {
-		"url": "git+https://github.com/AlexAegis/js-tooling",
+		"url": "git+https://github.com/AlexAegis/js-tooling.git",
 		"type": "git"
 	},
 	"bugs": {
@@ -39,8 +39,6 @@
 	"packageManager": "pnpm@11.5.1",
 	"workspaces": [
 		"apps/*",
-		"examples/*",
-		"fixtures/*",
 		"libs/*",
 		"packages/*"
 	],

@@ -10,9 +10,14 @@ import packageJson from '../package.json' with { type: 'json' };
 export const plugin: AutotoolPlugin = (
 	_options: NormalizedAutotoolPluginOptions,
 ): AutotoolPluginObject => {
-	const packageJsonFilter: PackageJsonFilter = {
+	const tsPackageJsonFilter: PackageJsonFilter = {
 		archetype: {
-			language: /^(ts|js)$/, // Typedoc can process JSDoc too
+			language: 'ts',
+		},
+	};
+	const jsPackageJsonFilter: PackageJsonFilter = {
+		archetype: {
+			language: 'js', // Typedoc can process JSDoc too
 		},
 	};
 
@@ -34,12 +39,22 @@ export const plugin: AutotoolPlugin = (
 				},
 			},
 			{
-				description: 'package typedoc config file',
+				description: 'package typedoc config file (ts)',
 				executor: 'fileCopy',
-				packageJsonFilter,
+				packageJsonFilter: tsPackageJsonFilter,
 				packageKind: 'regular',
 				formatWithPrettier: true,
 				sourceFile: join('static', 'package-typedoc.json'),
+				targetFile: 'typedoc.json',
+				sourcePluginPackageName: packageJson.name,
+			},
+			{
+				description: 'package typedoc config file (js)',
+				executor: 'fileCopy',
+				packageJsonFilter: jsPackageJsonFilter,
+				packageKind: 'regular',
+				formatWithPrettier: true,
+				sourceFile: join('static', 'package-typedoc-js.json'),
 				targetFile: 'typedoc.json',
 				sourcePluginPackageName: packageJson.name,
 			},

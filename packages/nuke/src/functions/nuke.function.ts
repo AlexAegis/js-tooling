@@ -8,8 +8,6 @@ import { normalizeNukeOptions, type NukeOptions } from './nuke.function.options.
 
 /**
  * Removes a bunch of stuff from packages for cleaning.
- * @param path
- * @param options
  */
 export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	const options = normalizeNukeOptions(rawOptions);

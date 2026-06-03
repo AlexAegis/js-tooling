@@ -43,7 +43,7 @@ export const plugin: AutotoolPlugin = (
 						pnpm: '>=9',
 					},
 					packageManager: rootPackageJson.packageManager,
-					workspaces: ['apps/*', 'examples/*', 'fixtures/*', 'libs/*', 'packages/*'], // Some tools like typedoc will only read this field even though the same information is defined in pnpm-workspace.yaml
+					workspaces: ['apps/*', 'libs/*', 'packages/*'], // Some tools like typedoc will only read this field even though the same information is defined in pnpm-workspace.yaml
 				},
 			},
 			{
@@ -95,6 +95,15 @@ export const plugin: AutotoolPlugin = (
 					repository: {
 						type: 'git',
 						url: rootPackageJson.repository.url,
+					},
+				},
+			},
+			{
+				description: 'engines.node minimum on every package',
+				executor: 'packageJson',
+				data: {
+					engines: {
+						node: '>=22.6.0',
 					},
 				},
 			},

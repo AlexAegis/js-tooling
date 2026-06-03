@@ -7,7 +7,7 @@ import {
 	type NormalizedGetRootPackageJsonOptions,
 } from '../npm/get-root-package-json.function.options.js';
 
-interface CollectWorkspaceOnlyOptions {
+export interface CollectWorkspaceOnlyOptions {
 	/**
 	 * Only return the root workspace package
 	 *

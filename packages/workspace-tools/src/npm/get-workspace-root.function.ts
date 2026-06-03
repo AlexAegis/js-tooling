@@ -6,9 +6,6 @@ import type { CollectFileDirnamesUpDirectoryTreeOptions } from './collect-file-d
  * Returns the furthest folder where a package.json file is present
  *
  * (If you're searching for the nearest, use the getWorkspaceRoot function)
- *
- * @param cwd process.cwd()
- * @returns
  */
 export const getWorkspaceRoot = (
 	rawOptions?: CollectFileDirnamesUpDirectoryTreeOptions,
