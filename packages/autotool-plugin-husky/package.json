@@ -83,7 +83,7 @@
 		"@commitlint/config-conventional": "^19.1.0",
 		"autotool-plugin": "^0.6.1",
 		"husky": "^9.1.7",
-		"lint-staged": "^17.0.5"
+		"lint-staged": "^17.0.7"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
@@ -93,8 +93,8 @@
 		"@types/node": "^25.9.1",
 		"publint": "^0.3.21",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.14",
-		"vite-plugin-dts": "^5.0.1",
-		"vitest": "^4.1.7"
+		"vite": "^8.0.16",
+		"vite-plugin-dts": "^5.0.2",
+		"vitest": "^4.1.8"
 	}
 }

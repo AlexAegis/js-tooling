@@ -69,7 +69,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/fs": "workspace:^",
-		"lint-staged": "17.0.5",
+		"lint-staged": "17.0.7",
 		"typescript": "^6.0.3"
 	},
 	"devDependencies": {
@@ -81,8 +81,8 @@
 		"@types/lint-staged": "^14.0.0",
 		"@types/node": "^25.9.1",
 		"publint": "^0.3.21",
-		"vite": "^8.0.14",
-		"vite-plugin-dts": "^5.0.1",
-		"vitest": "^4.1.7"
+		"vite": "^8.0.16",
+		"vite-plugin-dts": "^5.0.2",
+		"vitest": "^4.1.8"
 	}
 }

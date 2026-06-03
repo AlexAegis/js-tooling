@@ -68,7 +68,7 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"prettier-plugin-svelte": "^4.0.1",
+		"prettier-plugin-svelte": "^4.1.0",
 		"prettier-plugin-tailwindcss": "^0.8.0"
 	},
 	"devDependencies": {
@@ -79,8 +79,8 @@
 		"@types/node": "^25.9.1",
 		"prettier": "^3.8.3",
 		"publint": "^0.3.21",
-		"vite": "^8.0.14",
-		"vite-plugin-dts": "^5.0.1",
-		"vitest": "^4.1.7"
+		"vite": "^8.0.16",
+		"vite-plugin-dts": "^5.0.2",
+		"vitest": "^4.1.8"
 	}
 }

@@ -6,8 +6,12 @@ packages:
   - libs/*
   - packages/*
 
-link-workspace-packages: deep
+# Prevent recursive `pnpm install` from being triggered by lifecycle/run scripts
+# (e.g. `vite build` inside `postinstall`), which would re-enter `postinstall`.
+verifyDepsBeforeRun: false
 
-onlyBuiltDependencies:
-  - esbuild
-  - svelte-preprocess
+# pnpm 10+ requires explicit approval for build/lifecycle scripts of dependencies.
+# Map of package name -> boolean. `true` = run the package's install scripts.
+allowBuilds:
+  esbuild: true
+  svelte-preprocess: true

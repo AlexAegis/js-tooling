@@ -82,11 +82,11 @@
 		"@alexaegis/vitest": "workspace:^",
 		"@types/node": "^25.9.1",
 		"publint": "^0.3.21",
-		"turbo": "^2.9.14",
-		"turbo-ignore": "^2.9.14",
+		"turbo": "^2.9.16",
+		"turbo-ignore": "^2.9.16",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.14",
-		"vite-plugin-dts": "^5.0.1",
-		"vitest": "^4.1.7"
+		"vite": "^8.0.16",
+		"vite-plugin-dts": "^5.0.2",
+		"vitest": "^4.1.8"
 	}
 }
