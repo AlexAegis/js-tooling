@@ -7,29 +7,30 @@ const testJson = {
 	foo: { bar: 1, zed: 'hello' },
 };
 
+vi.mock('node:fs/promises', () => {
+	return {
+		readFile: vi.fn(
+			async (path: PathLike): Promise<string | undefined> =>
+				new Promise((resolve, reject) => {
+					if (path.toString().endsWith('.json')) {
+						resolve(JSON.stringify(testJson));
+					} else if (path.toString().endsWith('.txt')) {
+						resolve('hello world!');
+					} else if (path.toString() === 'error') {
+						reject(new Error('File error!'));
+					} else {
+						resolve(undefined);
+					}
+				}),
+		),
+	};
+});
+
 describe('readJson', () => {
 	const { logger, mockLogger } = createMockLogger(vi);
 
 	beforeAll(() => {
 		vi.spyOn(console, 'error').mockImplementation(() => undefined);
-		vi.mock('node:fs/promises', () => {
-			return {
-				readFile: vi.fn(
-					async (path: PathLike): Promise<string | undefined> =>
-						new Promise((resolve, reject) => {
-							if (path.toString().endsWith('.json')) {
-								resolve(JSON.stringify(testJson));
-							} else if (path.toString().endsWith('.txt')) {
-								resolve('hello world!');
-							} else if (path.toString() === 'error') {
-								reject(new Error('File error!'));
-							} else {
-								resolve(undefined);
-							}
-						}),
-				),
-			};
-		});
 	});
 
 	afterEach(() => {

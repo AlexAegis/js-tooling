@@ -81,7 +81,6 @@
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
-		"@types/lint-staged": "^14.0.0",
 		"@types/node": "^25.9.1",
 		"publint": "^0.3.21",
 		"vite": "^8.0.16",

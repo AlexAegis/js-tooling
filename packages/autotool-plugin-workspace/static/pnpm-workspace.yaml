@@ -15,3 +15,5 @@ verifyDepsBeforeRun: false
 allowBuilds:
   esbuild: true
   svelte-preprocess: true
+
+minimumReleaseAge: 120

@@ -192,6 +192,14 @@ export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 		rollupOptions: {
 			external: createLazyAutoExternalsFunction(), // I'm always using this, but autolib also adds it with the other defaults if they are not defined
 			treeshake: true,
+			output: {
+				// Plugins in this repo intentionally re-export their `plugin`
+				// const as `default` so consumers can do `import plugin from
+				// 'pkg'`. Declaring `exports: 'named'` acknowledges that intent
+				// and silences Rollup's MIXED_EXPORTS warning. Output shape is
+				// unchanged from Rollup's auto-detect default for this case.
+				exports: 'named',
+			},
 		},
 		lib: {
 			entry: getLibEntryFromExports(),

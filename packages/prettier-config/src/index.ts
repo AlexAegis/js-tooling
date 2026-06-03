@@ -29,7 +29,6 @@ export const prettierConfig = {
 			files: '*.svelte',
 			options: {
 				parser: 'svelte',
-				svelteStrictMode: true,
 				svelteSortOrder: 'options-scripts-markup-styles',
 			} as Options,
 		},
