@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.2](https://github.com/AlexAegis/js-tooling/compare/v0.15.1...v0.15.2) (2026-06-04)
+
+
+### Bug Fixes
+
+* ci node token ([facb3b3](https://github.com/AlexAegis/js-tooling/commit/facb3b356571a3cbbb3d59b6e7120b802674af1d))
+* fix remaining warnings ([2d07ae3](https://github.com/AlexAegis/js-tooling/commit/2d07ae38608b595f53d2a2591f319833b9118d98))
+* fixed typedoc warnings ([66f9f18](https://github.com/AlexAegis/js-tooling/commit/66f9f18f7d07cfc71e22e3a800bf0955cc804e2a))
+* inter dependencies versions ([c4c1937](https://github.com/AlexAegis/js-tooling/commit/c4c1937fd11ed83cf49509ba00d51cb84a8f1ad2))
+* solved infinite looping postinstall scripts with pnpm 10+ ([087f6fa](https://github.com/AlexAegis/js-tooling/commit/087f6fa3e0e5a6ee9b5ff7a5bd0b024d4149930d))
+
 ## [0.15.1](https://github.com/AlexAegis/js-tooling/compare/v0.15.0...v0.15.1) (2026-05-03)
 
 
