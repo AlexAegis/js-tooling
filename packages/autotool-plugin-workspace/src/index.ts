@@ -3,13 +3,61 @@ import type {
 	AutotoolPluginObject,
 	NormalizedAutotoolPluginOptions,
 } from 'autotool-plugin';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import rootPackageJson from '../../../package.json' with { type: 'json' };
 import packageJson from '../package.json' with { type: 'json' };
 
+/**
+ * Resolves the repository url from the git `origin` remote of the workspace it's
+ * running in, normalized to the `git+https://host/owner/repo.git` form npm
+ * expects. Returns undefined when there's no git repository or no `origin`
+ * remote, so the `repository` field can be left untouched instead of being
+ * polluted with the wrong url.
+ */
+const resolveRepositoryUrlFromGitOrigin = (cwd: string): string | undefined => {
+	let raw: string;
+	try {
+		raw = execFileSync('git', ['remote', 'get-url', 'origin'], {
+			cwd,
+			encoding: 'utf8',
+			stdio: ['ignore', 'pipe', 'ignore'],
+		}).trim();
+	} catch {
+		return undefined;
+	}
+
+	if (!raw) {
+		return undefined;
+	}
+
+	// git@host:owner/repo(.git) -> https://host/owner/repo(.git)
+	const sshMatch = /^git@([^:]+):(.+)$/.exec(raw);
+	let httpsUrl = sshMatch ? `https://${sshMatch[1]}/${sshMatch[2]}` : raw;
+
+	// ssh://git@host/owner/repo(.git) -> https://host/owner/repo(.git)
+	httpsUrl = httpsUrl.replace(/^ssh:\/\/git@/, 'https://');
+
+	if (!httpsUrl.endsWith('.git')) {
+		httpsUrl = `${httpsUrl}.git`;
+	}
+
+	return httpsUrl.startsWith('git+') ? httpsUrl : `git+${httpsUrl}`;
+};
+
 export const plugin: AutotoolPlugin = (
-	_options: NormalizedAutotoolPluginOptions,
+	options: NormalizedAutotoolPluginOptions,
 ): AutotoolPluginObject => {
+	const rootRepository = options.rootWorkspacePackage.packageJson.repository as
+		| { type?: string; url?: string }
+		| string
+		| undefined;
+	const rootRepositoryUrlFromPackageJson =
+		typeof rootRepository === 'string' ? rootRepository : rootRepository?.url;
+	const rootRepositoryUrl =
+		resolveRepositoryUrlFromGitOrigin(options.rootWorkspacePackage.packagePath) ??
+		rootRepositoryUrlFromPackageJson;
+
 	return {
 		name: packageJson.name,
 		elements: [
@@ -88,16 +136,20 @@ export const plugin: AutotoolPlugin = (
 					type: 'module',
 				},
 			},
-			{
-				description: 'repository metadata for trusted publishing',
-				executor: 'packageJson',
-				data: {
-					repository: {
-						type: 'git',
-						url: rootPackageJson.repository.url,
-					},
-				},
-			},
+			...(rootRepositoryUrl
+				? [
+						{
+							description: 'repository metadata for trusted publishing',
+							executor: 'packageJson' as const,
+							data: {
+								repository: {
+									type: 'git',
+									url: rootRepositoryUrl,
+								},
+							},
+						},
+					]
+				: []),
 			{
 				description: 'engines.node minimum on every package',
 				executor: 'packageJson',
