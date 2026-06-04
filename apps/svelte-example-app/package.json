@@ -1,6 +1,6 @@
 {
 	"name": "@alexaegis/svelte-example-app",
-	"version": "0.15.1",
+	"version": "0.15.2",
 	"archetype": {
 		"platform": "web",
 		"framework": "sveltekit",
