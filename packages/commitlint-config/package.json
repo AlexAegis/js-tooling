@@ -16,7 +16,12 @@
 	],
 	"repository": {
 		"url": "git+https://github.com/AlexAegis/js-tooling.git",
-		"type": "git"
+		"type": "git",
+		"directory": "packages/commitlint-config"
+	},
+	"homepage": "https://github.com/AlexAegis/js-tooling/tree/master/packages/commitlint-config#readme",
+	"bugs": {
+		"url": "https://github.com/AlexAegis/js-tooling/issues"
 	},
 	"type": "module",
 	"publishConfig": {
