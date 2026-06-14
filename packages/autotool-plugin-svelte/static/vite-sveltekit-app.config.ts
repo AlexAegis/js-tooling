@@ -1,5 +1,4 @@
 // managed-by-autotool
-import { DEFAULT_BUILD_TARGET } from '@alexaegis/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { mergeConfig } from 'vite';
@@ -7,7 +6,10 @@ import { mergeConfig } from 'vite';
 export default mergeConfig(
 	{
 		build: {
-			target: DEFAULT_BUILD_TARGET,
+			// Keep in sync with @alexaegis/vite DEFAULT_BUILD_TARGET.
+			// This is intentionally inlined so `svelte-kit sync` works during clean install
+			// before @alexaegis/vite dist files are built.
+			target: 'es2022',
 		},
 	},
 	{

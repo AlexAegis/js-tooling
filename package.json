@@ -36,7 +36,7 @@
 		"node": ">=22.6.0",
 		"pnpm": ">=9"
 	},
-	"packageManager": "pnpm@11.5.1",
+	"packageManager": "pnpm@11.6.0",
 	"workspaces": [
 		"apps/*",
 		"libs/*",
@@ -71,7 +71,7 @@
 		"format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --write .",
 		"ncu": "ncu --configFilePath ./.config/ && pnpm up",
 		"nuke": "nuke",
-		"postinstall": "if [ -n \"$JS_TOOLING_POSTINSTALL\" ]; then echo 'postinstall: nested invocation detected, skipping' >&2; else JS_TOOLING_POSTINSTALL=1 sh -c 'husky install && turbo run build-lib_ --concurrency 16 --filter @alexaegis/vite --filter @alexaegis/eslint-config* --filter @alexaegis/prettier-config* --filter @alexaegis/autotool-plugin-* --filter @alexaegis/stylelint-* && autotool'; fi",
+		"postinstall": "husky install && turbo run build-lib_ --concurrency 16 --filter @alexaegis/vite --filter @alexaegis/eslint-config* --filter @alexaegis/prettier-config* --filter @alexaegis/autotool-plugin-* --filter @alexaegis/stylelint-* && autotool",
 		"release": "commit-and-tag-version --sign --commit-all",
 		"release:major": "commit-and-tag-version --sign --commit-all --release-as major",
 		"release:minor": "commit-and-tag-version --sign --commit-all --release-as minor",
