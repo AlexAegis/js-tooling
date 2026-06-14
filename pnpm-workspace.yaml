@@ -16,4 +16,7 @@ allowBuilds:
   esbuild: true
   svelte-preprocess: true
 
-minimumReleaseAge: 120
+# pnpm 11+ defaults `minimumReleaseAge` to 1440 (24h), which delays freshly
+# published packages and makes pnpm auto-write a `minimumReleaseAgeExclude` list
+# on install. Set to 0 to opt out of that supply-chain delay entirely.
+minimumReleaseAge: 0
