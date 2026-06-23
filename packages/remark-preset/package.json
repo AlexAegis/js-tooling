@@ -87,18 +87,18 @@
 		"unified-prettier": "^2.0.1"
 	},
 	"optionalDependencies": {
-		"prettier": "^3.8.3"
+		"prettier": "^3.8.4"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^25.9.1",
+		"@types/node": "^26.0.0",
 		"publint": "^0.3.21",
 		"unified": "^11.0.5",
-		"vite": "^8.0.16",
+		"vite": "^8.1.0",
 		"vite-plugin-dts": "^5.0.2",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.9"
 	}
 }

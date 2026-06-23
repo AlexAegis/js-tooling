@@ -80,12 +80,12 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^25.9.1",
+		"@types/node": "^26.0.0",
 		"publint": "^0.3.21",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.16",
+		"vite": "^8.1.0",
 		"vite-plugin-dts": "^5.0.2",
 		"vitepress": "1.6.4",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.9"
 	}
 }

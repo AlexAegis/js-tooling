@@ -71,10 +71,10 @@
 	},
 	"dependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/adapter-node": "^5.5.4",
+		"@sveltejs/adapter-node": "^5.5.6",
 		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/adapter-vercel": "^6.3.3",
-		"@sveltejs/kit": "^2.63.0",
+		"@sveltejs/adapter-vercel": "^6.3.4",
+		"@sveltejs/kit": "^2.67.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
 		"svelte-preprocess": "^6.0.5"
 	},
@@ -83,12 +83,12 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^25.9.1",
+		"@types/node": "^26.0.0",
 		"publint": "^0.3.21",
-		"stylelint": "^17.12.0",
+		"stylelint": "^17.13.0",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.16",
+		"vite": "^8.1.0",
 		"vite-plugin-dts": "^5.0.2",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.9"
 	}
 }
