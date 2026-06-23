@@ -1,6 +1,8 @@
 import { collectPackages } from '@alexaegis/standard-version';
 import type { UserConfig } from '@commitlint/types';
 
+export type { UserConfig } from '@commitlint/types';
+
 const getPackageJsonNameWithoutOrg = (packageName = ''): string => {
 	let packageNameWithoutOrg: string = packageName;
 	if (packageName.includes('/')) {
