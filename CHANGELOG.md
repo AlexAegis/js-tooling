@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.3](https://github.com/AlexAegis/js-tooling/compare/v0.15.2...v0.15.3) (2026-06-23)
+
+
+### Features
+
+* expose commitlint UserConfig type ([5f17991](https://github.com/AlexAegis/js-tooling/commit/5f17991b0469756de6a1a808603530f95fdcf524))
+* use the origin when filling out the git repo link in package.json ([f6e4cc0](https://github.com/AlexAegis/js-tooling/commit/f6e4cc0b30fddbd6bcbaa75884ae14d2a091172f))
+
 ## [0.15.2](https://github.com/AlexAegis/js-tooling/compare/v0.15.1...v0.15.2) (2026-06-04)
 
 
