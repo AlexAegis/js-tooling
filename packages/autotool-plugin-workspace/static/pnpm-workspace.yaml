@@ -16,7 +16,11 @@ allowBuilds:
   esbuild: true
   svelte-preprocess: true
 
-# pnpm 11+ defaults `minimumReleaseAge` to 1440 (24h), which delays freshly
-# published packages and makes pnpm auto-write a `minimumReleaseAgeExclude` list
-# on install. Set to 0 to opt out of that supply-chain delay entirely.
-minimumReleaseAge: 0
+# pnpm 11+ defaults `minimumReleaseAge` to 1440 (24h): freshly published
+# packages are delayed before they can be installed, mitigating supply-chain
+# attacks that rely on a compromised version being pulled in immediately.
+# Keep the delay for third-party packages, but exclude our own `@alexaegis`
+# scope so our just-published packages propagate across repos without waiting.
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - '@alexaegis/*'
