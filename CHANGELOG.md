@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.4](https://github.com/AlexAegis/js-tooling/compare/v0.15.3...v0.15.4) (2026-07-11)
+
+
+### Bug Fixes
+
+* **autotool-plugin-commitlint:** ship /config as flat CJS for commitlint 21 ([7718c46](https://github.com/AlexAegis/js-tooling/commit/7718c463c6c2cf5278c429ee521d5e6b8af1b685))
+
 ## [0.15.3](https://github.com/AlexAegis/js-tooling/compare/v0.15.2...v0.15.3) (2026-06-23)
 
 
