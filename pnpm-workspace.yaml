@@ -22,7 +22,7 @@ allowBuilds:
 # Keep the delay for third-party packages, but exclude the scopes and packages
 # we own and publish ourselves: they are trusted, so our just-published
 # packages can propagate across repos without waiting.
-minimumReleaseAge: 1440
+minimumReleaseAge: 480
 minimumReleaseAgeExclude:
   - '@aegis-auth/*'
   - '@alexaegis/*'
