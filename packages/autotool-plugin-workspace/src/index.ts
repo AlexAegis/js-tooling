@@ -49,9 +49,7 @@ export const plugin: AutotoolPlugin = (
 	options: NormalizedAutotoolPluginOptions,
 ): AutotoolPluginObject => {
 	const rootRepository = options.rootWorkspacePackage.packageJson.repository as
-		| { type?: string; url?: string }
-		| string
-		| undefined;
+		{ type?: string; url?: string } | string | undefined;
 	const rootRepositoryUrlFromPackageJson =
 		typeof rootRepository === 'string' ? rootRepository : rootRepository?.url;
 	const rootRepositoryUrl =

@@ -10,9 +10,8 @@ export const symlinkMock: ReturnType<typeof vi.fn<(a: string, b: string) => Prom
 	(a: string, b: string) => Promise<void>
 >(() => Promise.resolve());
 export const readFileMock: ReturnType<typeof vi.fn<(p: PathLike) => Promise<string | undefined>>> =
-	vi.fn(
-		(_path: PathLike): Promise<string | undefined> =>
-			Promise.resolve('content ${relativePathFromPackageToRoot}'),
+	vi.fn((_path: PathLike): Promise<string | undefined> =>
+		Promise.resolve('content ${relativePathFromPackageToRoot}'),
 	);
 export const writeFileMock: ReturnType<typeof vi.fn<(p: PathLike, s: string) => Promise<void>>> =
 	vi.fn((_path: PathLike, _content: string): Promise<void> => Promise.resolve(undefined));

@@ -14,9 +14,7 @@ export type JsonLeafMatcher = string | number | boolean | RegExp | CustomJsonVal
 
 export interface JsonObjectMatcher {
 	[key: string | number]:
-		| JsonObjectMatcher
-		| JsonLeafMatcher
-		| (JsonObjectMatcher | JsonLeafMatcher)[];
+		JsonObjectMatcher | JsonLeafMatcher | (JsonObjectMatcher | JsonLeafMatcher)[];
 }
 
 export type JsonMatcher = JsonObjectMatcher[keyof JsonObjectMatcher];

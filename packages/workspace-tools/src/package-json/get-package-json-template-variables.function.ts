@@ -1,9 +1,7 @@
 import type { PackageJson } from './package-json.interface.js';
 
 export type PackageJsonTemplateVariableNames =
-	| 'packageName'
-	| 'packageOrg'
-	| 'packageNameWithoutOrg';
+	'packageName' | 'packageOrg' | 'packageNameWithoutOrg';
 
 export type PackageJsonTemplateVariables = Record<PackageJsonTemplateVariableNames, string>;
 

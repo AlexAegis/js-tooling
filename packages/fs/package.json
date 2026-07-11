@@ -89,10 +89,10 @@
 	"dependencies": {
 		"@alexaegis/common": "workspace:^",
 		"@alexaegis/logging": "workspace:^",
-		"js-yaml": "^5.1.0"
+		"js-yaml": "^5.2.1"
 	},
 	"optionalDependencies": {
-		"prettier": "^3.8.4"
+		"prettier": "^3.9.5"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
@@ -100,11 +100,11 @@
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/js-yaml": "^4.0.9",
-		"@types/node": "^26.0.0",
+		"@types/node": "^26.1.1",
 		"publint": "^0.3.21",
 		"typescript": "^6.0.3",
-		"vite": "^8.1.0",
-		"vite-plugin-dts": "^5.0.2",
-		"vitest": "^4.1.9"
+		"vite": "^8.1.4",
+		"vite-plugin-dts": "^5.0.3",
+		"vitest": "^4.1.10"
 	}
 }
