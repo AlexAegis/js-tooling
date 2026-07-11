@@ -93,7 +93,7 @@
 	"dependencies": {
 		"@alexaegis/logging": "workspace:^",
 		"@alexaegis/prettier-config": "workspace:^",
-		"autotool-plugin": "^0.6.1",
+		"autotool-plugin": "^0.8.0",
 		"prettier": "^3.9.5",
 		"prettier-plugin-svelte": "^4.1.1",
 		"prettier-plugin-tailwindcss": "^0.8.0"

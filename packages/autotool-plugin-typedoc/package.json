@@ -80,7 +80,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "workspace:^",
-		"autotool-plugin": "^0.6.1",
+		"autotool-plugin": "^0.8.0",
 		"typedoc": "^0.28.20"
 	},
 	"devDependencies": {

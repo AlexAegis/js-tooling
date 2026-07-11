@@ -76,7 +76,7 @@
 	},
 	"dependencies": {
 		"@alexaegis/logging": "workspace:^",
-		"autotool-plugin": "^0.6.1"
+		"autotool-plugin": "^0.8.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
