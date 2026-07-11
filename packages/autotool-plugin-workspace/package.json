@@ -86,6 +86,7 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
+		"@alexaegis/workspace-tools": "workspace:^",
 		"@types/node": "^26.1.1",
 		"publint": "^0.3.21",
 		"typescript": "^6.0.3",

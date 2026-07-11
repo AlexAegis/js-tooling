@@ -1,3 +1,4 @@
+import type { PackageJson } from '@alexaegis/workspace-tools';
 import type {
 	AutotoolPlugin,
 	AutotoolPluginObject,
@@ -88,7 +89,9 @@ export const plugin: AutotoolPlugin = (
 						npm: undefined,
 						pnpm: '>=9',
 					},
-					packageManager: rootPackageJson.packageManager,
+					packageManager: rootPackageJson.packageManager as NonNullable<
+						PackageJson['packageManager']
+					>,
 					workspaces: ['apps/*', 'libs/*', 'packages/*'], // Some tools like typedoc will only read this field even though the same information is defined in pnpm-workspace.yaml
 				},
 			},
