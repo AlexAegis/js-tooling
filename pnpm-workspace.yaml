@@ -19,8 +19,15 @@ allowBuilds:
 # pnpm 11+ defaults `minimumReleaseAge` to 1440 (24h): freshly published
 # packages are delayed before they can be installed, mitigating supply-chain
 # attacks that rely on a compromised version being pulled in immediately.
-# Keep the delay for third-party packages, but exclude our own `@alexaegis`
-# scope so our just-published packages propagate across repos without waiting.
+# Keep the delay for third-party packages, but exclude the scopes and packages
+# we own and publish ourselves: they are trusted, so our just-published
+# packages can propagate across repos without waiting.
 minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
+  - '@aegis-auth/*'
   - '@alexaegis/*'
+  - '@tinyslice/*'
+  - autotool
+  - autotool-plugin
+  - autotool-plugin-default
+  - svelte-rxjs-observer
