@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.5](https://github.com/AlexAegis/js-tooling/compare/v0.15.4...v0.15.5) (2026-07-11)
+
+
+### Bug Fixes
+
+* **autotool-plugin-workspace:** type packageManager with PackageJson ([a9e8c00](https://github.com/AlexAegis/js-tooling/commit/a9e8c002f46d8321c1b19c92a4d0c34c8f97ca5e))
+
 ## [0.15.4](https://github.com/AlexAegis/js-tooling/compare/v0.15.3...v0.15.4) (2026-07-11)
 
 
