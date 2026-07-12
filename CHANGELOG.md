@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.6](https://github.com/AlexAegis/js-tooling/compare/v0.15.5...v0.15.6) (2026-07-12)
+
+
+### Features
+
+* **vite:** add defineViteLibConfig factory for overridable formats and entry ([77ddc7a](https://github.com/AlexAegis/js-tooling/commit/77ddc7aa177728fad43871a6c3a2563263721a5b))
+
+
+### Bug Fixes
+
+* **autotool-plugin-svelte:** tolerate invalid vendor css during minification ([00b9a74](https://github.com/AlexAegis/js-tooling/commit/00b9a74fcf0395c1ba61c33d58c83ac6aa4e783e))
+* **autotool-plugin-workspace:** acknowledge the @parcel/watcher build script ([e60fed4](https://github.com/AlexAegis/js-tooling/commit/e60fed49d62450cbea65802c9a17c53913698a7b))
+* lightningcss enable errorRecovery ([32273b2](https://github.com/AlexAegis/js-tooling/commit/32273b2fd6a8ae6a1e30c0a3ddb50848f5618f55))
+
 ## [0.15.5](https://github.com/AlexAegis/js-tooling/compare/v0.15.4...v0.15.5) (2026-07-11)
 
 
