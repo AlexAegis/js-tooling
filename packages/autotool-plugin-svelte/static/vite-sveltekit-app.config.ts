@@ -14,6 +14,15 @@ export default mergeConfig(
 	},
 	{
 		plugins: [tailwindcss(), sveltekit()],
+		css: {
+			// rolldown-vite minifies css with lightningcss, which hard-errors on
+			// invalid css shipped by third-party dependencies (e.g. the malformed
+			// `@media (not(hover))` query in 98.css). Apps bundle vendor css they
+			// do not control; report it as a warning instead of failing the build.
+			lightningcss: {
+				errorRecovery: true,
+			},
+		},
 		test: {
 			include: ['src/**/*.{test,spec}.{js,ts}'],
 		},
