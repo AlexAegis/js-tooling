@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { builtinModules } from 'node:module';
 import p, { join, normalize } from 'node:path';
-import type { LibraryFormats } from 'vite';
+import type { LibraryFormats, LibraryOptions } from 'vite';
 import { mergeConfig, type UserConfig } from 'vite';
 import { toBaseHref } from '../helpers/to-base-href.function.js';
 
@@ -179,34 +179,71 @@ export const DEFAULT_VITE_APP_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 } as UserConfig);
 
 /**
- * Vite configuration for building libraries
+ * Options for {@link defineViteLibConfig}.
+ */
+export interface ViteLibConfigOptions {
+	/**
+	 * Output formats for the library build.
+	 *
+	 * Defaults to {@link DEFAULT_EXPORT_FORMATS} (`['es', 'cjs']`). Pass
+	 * `['es']` for an ESM-only library, for example when the entrypoints use
+	 * top-level `await`, which is invalid in a CommonJS bundle.
+	 */
+	formats?: LibraryFormats[];
+	/**
+	 * Library entrypoints.
+	 *
+	 * Defaults to the entries derived from the nearest `package.json` `exports`
+	 * via {@link getLibEntryFromExports}.
+	 */
+	entry?: LibraryOptions['entry'];
+}
+
+/**
+ * Builds a Vite configuration for a library, with overridable output `formats`
+ * and `entry`.
+ *
+ * This is the factory behind {@link DEFAULT_VITE_LIB_CONFIG}; calling it with no
+ * arguments produces the same configuration. Prefer it over merging on top of
+ * `DEFAULT_VITE_LIB_CONFIG` when you need to change `formats`, because Vite's
+ * `mergeConfig` concatenates arrays and therefore cannot shrink `['es', 'cjs']`
+ * back down to `['es']`.
  *
  * esbuild does not need to be disabled here to preserve comments as it's
  * expected to generate d.ts files from the ts files when publishing and
  * those will preserve the comments in the d.ts files.
  */
-export const DEFAULT_VITE_LIB_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
-	build: {
-		minify: false,
-		sourcemap: true,
-		rollupOptions: {
-			external: createLazyAutoExternalsFunction(), // I'm always using this, but autolib also adds it with the other defaults if they are not defined
-			treeshake: true,
-			output: {
-				// Plugins in this repo intentionally re-export their `plugin`
-				// const as `default` so consumers can do `import plugin from
-				// 'pkg'`. Declaring `exports: 'named'` acknowledges that intent
-				// and silences Rollup's MIXED_EXPORTS warning. Output shape is
-				// unchanged from Rollup's auto-detect default for this case.
-				exports: 'named',
+export const defineViteLibConfig = (options: ViteLibConfigOptions = {}): UserConfig =>
+	mergeConfig(DEFAULT_VITE_CONFIG, {
+		build: {
+			minify: false,
+			sourcemap: true,
+			rollupOptions: {
+				external: createLazyAutoExternalsFunction(), // I'm always using this, but autolib also adds it with the other defaults if they are not defined
+				treeshake: true,
+				output: {
+					// Plugins in this repo intentionally re-export their `plugin`
+					// const as `default` so consumers can do `import plugin from
+					// 'pkg'`. Declaring `exports: 'named'` acknowledges that intent
+					// and silences Rollup's MIXED_EXPORTS warning. Output shape is
+					// unchanged from Rollup's auto-detect default for this case.
+					exports: 'named',
+				},
+			},
+			lib: {
+				entry: options.entry ?? getLibEntryFromExports(),
+				formats: options.formats ?? DEFAULT_EXPORT_FORMATS,
 			},
 		},
-		lib: {
-			entry: getLibEntryFromExports(),
-			formats: DEFAULT_EXPORT_FORMATS,
-		},
-	},
-} satisfies UserConfig);
+	} satisfies UserConfig);
+
+/**
+ * Vite configuration for building libraries.
+ *
+ * Equivalent to `defineViteLibConfig()`. Use {@link defineViteLibConfig} when
+ * you need to override `formats` (e.g. ESM-only) or `entry`.
+ */
+export const DEFAULT_VITE_LIB_CONFIG = defineViteLibConfig();
 
 /**
  * Vite configuration for building plain JS libraries
