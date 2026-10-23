@@ -24,8 +24,7 @@ export interface MockLogger {
  * one with the mock type to let you use them as mocks, and one with the real
  * Logger type so you can pass it around. Both are the same object instance.
  *
- * The real Logger type can be overridden with `L` when the consumer expects
- * a Logger from a different version of this package or of tslog.
+ * Set `L` when the consumer uses another version of this package or of tslog.
  */
 export const createMockLogger = <L = Logger<unknown>>(
 	vi: typeof import('vitest').vi,

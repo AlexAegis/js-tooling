@@ -34,12 +34,11 @@ export const normalizeLoggerOptions = <L = unknown>(
 };
 
 export const createLogger = <L = unknown>(options?: LoggerOptions<L>): Logger<L> => {
-	// tslog warns about every setting that it does not know
+	// tslog warns about unknown settings
 	const { timestamps: _timestamps, ...settings } = normalizeLoggerOptions(options);
 
-	// A minLevel outside of the default levels makes tslog warn, or throw with
-	// strictConfig, in the logger and in each of its sub-loggers. Sub-loggers
-	// inherit middleware, so a middleware that drops every log keeps them off.
+	// tslog warns on a minLevel outside its default levels and throws if strictConfig is set.
+	// Sub-loggers inherit middleware, so a middleware that drops every log also silences them.
 	if (settings.minLevel === LogLevel.OFF) {
 		settings.minLevel = LogLevel.FATAL;
 		settings.middleware = [() => null, ...(settings.middleware ?? [])];

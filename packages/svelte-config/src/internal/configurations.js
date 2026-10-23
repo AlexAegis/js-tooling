@@ -35,14 +35,11 @@ export const spaConfiguration = {
 };
 
 /**
- * Options for the `sveltekit()` vite plugin. SvelteKit does not read
- * `svelte.config.js`.
- *
- * - Enables the vite inspector on `shift`
- * - Uses `vitePreprocess` as the svelte preprocessor
- * - Sets the base href to the value of `process.env['BASE_HREF']`
- * - Picks the adapter based on `process.env['PLATFORM']`. Valid values are
- *   'vercel', 'node', 'github-pages' and 'auto', which is the default
+ * Options for the `sveltekit()` vite plugin (SvelteKit 3 does not read `svelte.config.js`):
+ * - vite inspector on `shift`
+ * - `vitePreprocess` as the preprocessor
+ * - base href from `process.env['BASE_HREF']`
+ * - adapter from `process.env['PLATFORM']`: 'vercel', 'node', 'github-pages' or 'auto' (default)
  *
  * @type {import('./types.js').KitConfig}
  */

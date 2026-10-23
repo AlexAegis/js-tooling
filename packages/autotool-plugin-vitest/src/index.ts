@@ -14,10 +14,7 @@ interface ArchetypeFields {
 	framework?: string;
 }
 
-/**
- * SvelteKit apps have no `svelte.config.js`, so they get their own vitest
- * config. SvelteKit libraries keep one and use the svelte vitest config.
- */
+// Only SvelteKit apps lack a `svelte.config.js`, so only they get the SvelteKit vitest config
 const isSvelteKitApp = (archetype?: ArchetypeFields): boolean =>
 	archetype?.kind === 'app' && archetype.framework === 'sveltekit';
 

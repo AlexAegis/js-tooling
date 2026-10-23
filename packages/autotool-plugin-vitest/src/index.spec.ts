@@ -73,12 +73,15 @@ describe('autotool-plugin-vitest', () => {
 			{ archetype: { kind: 'lib', framework: 'svelte' }, svelte: true, svelteKit: false },
 			{ archetype: { kind: 'lib', framework: 'svelte-lib' }, svelte: true, svelteKit: false },
 			{ archetype: { kind: 'lib', platform: 'node' }, svelte: false, svelteKit: false },
-		])('should match $archetype', async ({ archetype, svelte, svelteKit }) => {
-			const isSvelte = await archetypeFilterOf('package-svelte-vitest.config.ts');
-			const isSvelteKit = await archetypeFilterOf('package-sveltekit-vitest.config.ts');
+		])(
+			'should select the matching config for $archetype',
+			async ({ archetype, svelte, svelteKit }) => {
+				const isSvelte = await archetypeFilterOf('package-svelte-vitest.config.ts');
+				const isSvelteKit = await archetypeFilterOf('package-sveltekit-vitest.config.ts');
 
-			expect(isSvelte(archetype)).toBe(svelte);
-			expect(isSvelteKit(archetype)).toBe(svelteKit);
-		});
+				expect(isSvelte(archetype)).toBe(svelte);
+				expect(isSvelteKit(archetype)).toBe(svelteKit);
+			},
+		);
 	});
 });

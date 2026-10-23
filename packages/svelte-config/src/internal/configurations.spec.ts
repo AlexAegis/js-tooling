@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { kitConfiguration } from './configurations.js';
 
 describe('kitConfiguration', () => {
-	it('should hold the options of the sveltekit plugin without nesting', () => {
+	it('should contain the sveltekit plugin options at the top level', () => {
 		expect(kitConfiguration).not.toHaveProperty('kit');
 		expect(kitConfiguration).not.toHaveProperty('vitePlugin');
 		expect(kitConfiguration.adapter).toBeDefined();

@@ -9,8 +9,8 @@ export const vitestCoverage: CoverageOptions = {
 };
 
 /**
- * By default vitest keeps its module cache in the node_modules of the
- * workspace root and removes it when the lockfile changes. Packages tested
- * in parallel would remove it under each other, so each package gets its own.
+ * Per-package module cache. vitest removes its default cache in the workspace root
+ * when the lockfile hash changes. Packages tested in parallel would then remove
+ * the cache while another package uses it.
  */
 export const vitestFsModuleCachePath = 'node_modules/.vitest-cache';

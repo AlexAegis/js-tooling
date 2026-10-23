@@ -4,7 +4,7 @@
 	"compilerOptions": {
 		"rootDir": "${relativePathFromPackageToRoot}/",
 		"outDir": ".cache/tsc",
-		// the types of @alexaegis/ts/svelte would override the ones sveltekit requires
+		// Set here because @alexaegis/ts/svelte replaces the types of $app/tsconfig
 		"types": ["$app/types", "svelte", "node"]
 	},
 	"files": ["package.json", "${relativePathFromPackageToRoot}/package.json"],
@@ -21,7 +21,7 @@
 		"**/*.json"
 	],
 	"exclude": [
-		// a service worker needs its own tsconfig that extends $app/tsconfig/service-worker
+		// A service worker needs its own tsconfig that extends $app/tsconfig/service-worker
 		"src/service-worker",
 		"src/service-worker.js",
 		"src/service-worker.ts",

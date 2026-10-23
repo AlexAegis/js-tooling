@@ -12,9 +12,8 @@ export const vitestSvelteConfig = mergeConfig(vitestWebConfig, {
 });
 
 /**
- * The vitest config for SvelteKit apps. SvelteKit apps have no
- * `svelte.config.js` to read the preprocessor from, so this config sets the
- * same preprocessor as `kitConfiguration` in `@alexaegis/svelte-config`.
+ * For SvelteKit apps, which have no `svelte.config.js` to read the preprocessor
+ * from. Uses the same preprocessor as `kitConfiguration` of `@alexaegis/svelte-config`.
  */
 export const vitestSvelteKitConfig = mergeConfig(vitestWebConfig, {
 	plugins: [svelte({ configFile: false, preprocess: vitePreprocess() }), svelteTesting()],

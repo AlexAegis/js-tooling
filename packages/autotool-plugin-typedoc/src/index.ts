@@ -8,15 +8,9 @@ import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
-/**
- * The workspace folders whose packages are documented
- */
 const documentedWorkspaceFolders = ['libs', 'packages'];
 
-/**
- * Matches the folders that typedoc expands `${folder}/*` to: directories
- * that are not symlinks, hidden or `node_modules`.
- */
+// Same folders that typedoc expands `${folder}/*` to: no symlinks, dot folders or node_modules
 const containsPackage = (folder: string): boolean =>
 	existsSync(folder) &&
 	statSync(folder).isDirectory() &&
@@ -29,10 +23,9 @@ const containsPackage = (folder: string): boolean =>
 	);
 
 /**
- * typedoc warns about every package glob that matches no package, so only
- * the documented folders that contain packages become entry points. Without
- * any, the entry point is the root package. typedoc then expands the globs in
- * its `workspaces` field.
+ * typedoc warns about each glob that matches no package, so only the documented
+ * folders with packages are entry points. Without such folders, the entry point
+ * is the root package.
  */
 export const getWorkspaceTypedocEntryPoints = (rootPath: string): string[] => {
 	const entryPoints = documentedWorkspaceFolders
@@ -46,8 +39,7 @@ export const transformWorkspaceTypedocConfig = (content: string, rootPath: strin
 		{
 			...(JSON.parse(content) as Record<string, unknown>),
 			entryPoints: getWorkspaceTypedocEntryPoints(rootPath),
-			// These entry points make typedoc use the root readme as the index
-			// page. Each of its links to a package folder causes a warning.
+			// Otherwise typedoc renders the root readme and warns on each package link in it
 			readme: 'none',
 		},
 		undefined,
