@@ -218,7 +218,7 @@ export const defineViteLibConfig = (options: ViteLibConfigOptions = {}): UserCon
 		build: {
 			minify: false,
 			sourcemap: true,
-			rollupOptions: {
+			rolldownOptions: {
 				external: createLazyAutoExternalsFunction(), // I'm always using this, but autolib also adds it with the other defaults if they are not defined
 				treeshake: true,
 				output: {
@@ -249,12 +249,12 @@ export const DEFAULT_VITE_LIB_CONFIG = defineViteLibConfig();
  * Vite configuration for building plain JS libraries
  *
  * Disables esbuild to preserve jsdoc comments, and also enables
- * build.rollupOptions.output.preserveModules not to interfere with the paths
+ * build.rolldownOptions.output.preserveModules not to interfere with the paths
  * expected by `vite-plugin-dts`
  */
 export const DEFAULT_VITE_JS_LIB_CONFIG = mergeConfig(DEFAULT_VITE_LIB_CONFIG, {
 	build: {
-		rollupOptions: {
+		rolldownOptions: {
 			output: {
 				preserveModules: true, // Otherwise type paths would be mangled
 			},

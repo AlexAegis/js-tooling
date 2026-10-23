@@ -13,7 +13,7 @@ export default mergeConfig(
 		build: {
 			minify: false,
 			sourcemap: true,
-			rollupOptions: {
+			rolldownOptions: {
 				external: createLazyAutoExternalsFunction(),
 				treeshake: true,
 				output: {
