@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.16.0](https://github.com/AlexAegis/js-tooling/compare/v0.15.6...v0.16.0) (2026-10-23)
+
+### ⚠ BREAKING CHANGES
+
+* **svelte-config:** migrate to sveltekit 3
+* **logging:** migrate to tslog 5
+
+### Features
+
+* **logging:** migrate to tslog 5 ([d5c7e34](https://github.com/AlexAegis/js-tooling/commit/d5c7e3433f4f0f31ec9e72b1dbb9cb3b2e7ed85c))
+* **svelte-config:** migrate to sveltekit 3 ([99c06c8](https://github.com/AlexAegis/js-tooling/commit/99c06c875898edf3b3bd3a00ecce7ca8bbfa17cc))
+
+### Bug Fixes
+
+* **autotool-plugin-typedoc:** use only workspace folders with packages as entry points ([a994ca0](https://github.com/AlexAegis/js-tooling/commit/a994ca0f6578cb93b9fec521d928a2d69ca260a1))
+* **autotool-plugin-workspace:** list examples and fixtures in workspaces ([87167f1](https://github.com/AlexAegis/js-tooling/commit/87167f1d3b203263fcfaa718537d6ea20b16cfba))
+* **standard-version:** load the changelog preset of the installed commit-and-tag-version ([83b3096](https://github.com/AlexAegis/js-tooling/commit/83b3096c1546d6d703d5204f5224381c2df4a205))
+* **vitest:** keep the module cache per package ([14f403c](https://github.com/AlexAegis/js-tooling/commit/14f403c27825ec16eac63e415f6e2d284cbc6609))
+* **vite:** use rolldownOptions ([004694c](https://github.com/AlexAegis/js-tooling/commit/004694ca7fbd01dde674c078351f8b4592f41c95))
+
 ## [0.15.6](https://github.com/AlexAegis/js-tooling/compare/v0.15.5...v0.15.6) (2026-07-12)
 
 
