@@ -1359,12 +1359,21 @@ importers:
 
   packages/autotool-plugin-vite:
     dependencies:
+      '@alexaegis/common':
+        specifier: workspace:^
+        version: link:../common
+      '@alexaegis/fs':
+        specifier: workspace:^
+        version: link:../fs
       '@alexaegis/logging':
         specifier: workspace:^
         version: link:../logging
       '@alexaegis/predicate':
         specifier: workspace:^
         version: link:../predicate
+      '@alexaegis/workspace-tools':
+        specifier: workspace:^
+        version: link:../workspace-tools
       autotool-plugin:
         specifier: ^0.8.0
         version: 0.8.0

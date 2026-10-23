@@ -1,4 +1,8 @@
+import { dropKeys, sortObject } from '@alexaegis/common';
+import { readJson, writeJson } from '@alexaegis/fs';
 import { and, contains, equal, not } from '@alexaegis/predicate';
+import { PACKAGE_JSON_NAME, type PackageJson } from '@alexaegis/workspace-tools';
+import { createJsonSortingPreferenceNormalizer } from '@alexaegis/workspace-tools/sort';
 import {
 	type AutotoolPlugin,
 	type AutotoolPluginObject,
@@ -6,6 +10,7 @@ import {
 } from 'autotool-plugin';
 import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
+import { derivePublishedPackageFields } from './derive-published-package-fields.function.js';
 
 export const plugin: AutotoolPlugin = (
 	_options: NormalizedAutotoolPluginOptions,
@@ -108,6 +113,54 @@ export const plugin: AutotoolPlugin = (
 						build: 'turbo run build-lib_ --concurrency 16 --filter ${packageName}',
 						'build-lib_': 'vite build',
 					},
+				},
+			},
+			{
+				description: 'package files and publishConfig.exports for public libraries',
+				executor: 'custom',
+				packageKind: 'regular',
+				packageJsonFilter: {
+					private: false,
+					archetype: {
+						kind: 'lib',
+						framework: not(contains('svelte')),
+					},
+				},
+				apply: async (_element, target, options) => {
+					const packageJsonPath = target.targetPackage.packageJsonPath;
+					const targetPackageJson = await readJson<PackageJson>(packageJsonPath);
+					if (!targetPackageJson) {
+						throw new Error("Can't read packageJson!");
+					}
+
+					const publishedFields = derivePublishedPackageFields(targetPackageJson);
+					if (!publishedFields) {
+						options.logger.warn(
+							`unsupported exports or files in ${packageJsonPath}, files and publishConfig.exports left unchanged`,
+						);
+						return;
+					}
+
+					const { files, publishConfigExports } = publishedFields;
+					// without `files`, pnpm 12 does not pack gitignored paths such as dist
+					targetPackageJson.files = files;
+					if (publishConfigExports) {
+						targetPackageJson.publishConfig = {
+							...targetPackageJson.publishConfig,
+							exports: publishConfigExports,
+						};
+					}
+
+					const sortingPreferenceNormalizer = await createJsonSortingPreferenceNormalizer(
+						PACKAGE_JSON_NAME,
+						{ cwd: target.rootPackage.packagePath },
+					);
+
+					await writeJson(
+						sortObject(dropKeys(targetPackageJson), sortingPreferenceNormalizer()),
+						packageJsonPath,
+						{ dry: options.dry },
+					);
 				},
 			},
 			{
