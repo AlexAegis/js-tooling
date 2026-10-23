@@ -1,5 +1,5 @@
 import type { ViteUserConfig } from 'vitest/config';
-import { vitestCoverage } from './base-vitest.config.js';
+import { vitestCoverage, vitestFsModuleCachePath } from './base-vitest.config.js';
 
 export const vitestNodeConfig = {
 	plugins: [],
@@ -7,5 +7,6 @@ export const vitestNodeConfig = {
 		globals: true,
 		environment: 'node',
 		coverage: vitestCoverage,
+		fsModuleCachePath: vitestFsModuleCachePath,
 	},
 } satisfies ViteUserConfig;

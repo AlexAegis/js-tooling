@@ -1,4 +1,4 @@
-import { vitestCoverage } from './base-vitest.config.js';
+import { vitestCoverage, vitestFsModuleCachePath } from './base-vitest.config.js';
 
 export const vitestWebConfig = {
 	plugins: [],
@@ -7,5 +7,6 @@ export const vitestWebConfig = {
 		globals: true,
 		environment: 'jsdom',
 		coverage: vitestCoverage,
+		fsModuleCachePath: vitestFsModuleCachePath,
 	},
 };
