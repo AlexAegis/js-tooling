@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.16.1](https://github.com/AlexAegis/js-tooling/compare/v0.16.0...v0.16.1) (2026-10-23)
+
+### Bug Fixes
+
+* **autotool-plugin-vite:** set files and publishConfig.exports on public libraries ([5225d64](https://github.com/AlexAegis/js-tooling/commit/5225d64eeee7ea207bc27a97d1a1cb9208968dfc))
+* **svelte-config:** publish the handwritten types.d.ts ([cc1d0e2](https://github.com/AlexAegis/js-tooling/commit/cc1d0e2831de18babda7288b8118e383111b57a1))
+
 ## [0.16.0](https://github.com/AlexAegis/js-tooling/compare/v0.15.6...v0.16.0) (2026-10-23)
 
 ### ⚠ BREAKING CHANGES
