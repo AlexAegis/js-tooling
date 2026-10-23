@@ -34,7 +34,6 @@
 			"./package.json": "./package.json",
 			"./readme": "./readme.md",
 			"./svelte.config": "./static/svelte.config.txt",
-			"./sveltekit.config": "./static/sveltekit.config.txt",
 			"./sveltelib.config": "./static/sveltelib.config.txt",
 			"./vite-svelte-app.config": "./static/vite-svelte-app.config.ts",
 			"./vite-sveltekit-app.config": "./static/vite-sveltekit-app.config.ts"
@@ -81,7 +80,6 @@
 		"./package.json": "./package.json",
 		"./readme": "./readme.md",
 		"./svelte.config": "./static/svelte.config.txt",
-		"./sveltekit.config": "./static/sveltekit.config.txt",
 		"./sveltelib.config": "./static/sveltelib.config.txt",
 		"./vite-svelte-app.config": "./static/vite-svelte-app.config.ts",
 		"./vite-sveltekit-app.config": "./static/vite-sveltekit-app.config.ts"
@@ -94,6 +92,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/svelte-config": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",

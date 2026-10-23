@@ -46,4 +46,14 @@ describe('autotool-plugin-svelte', () => {
 
 		expect(plugin).toBeDefined();
 	});
+
+	it('should remove svelte.config.js from sveltekit apps instead of copying one', () => {
+		const svelteConfigExecutors = (library.svelteKitAppSetupPlugin.elements ?? [])
+			.filter(
+				(element) => 'targetFile' in element && element.targetFile === 'svelte.config.js',
+			)
+			.map((element) => element.executor);
+
+		expect(svelteConfigExecutors).toEqual(['fileRemove']);
+	});
 });

@@ -1,4 +1,5 @@
 // managed-by-autotool
+import { kitConfiguration } from '@alexaegis/svelte-config';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { mergeConfig } from 'vite';
@@ -13,7 +14,7 @@ export default mergeConfig(
 		},
 	},
 	{
-		plugins: [tailwindcss(), sveltekit()],
+		plugins: [tailwindcss(), sveltekit(kitConfiguration)],
 		css: {
 			// rolldown-vite minifies css with lightningcss, which hard-errors on
 			// invalid css shipped by third-party dependencies. Apps bundle vendor css they

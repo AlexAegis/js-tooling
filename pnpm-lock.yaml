@@ -1152,6 +1152,9 @@ importers:
       '@alexaegis/eslint-config-vitest':
         specifier: workspace:^
         version: link:../eslint-config-vitest
+      '@alexaegis/svelte-config':
+        specifier: workspace:^
+        version: link:../svelte-config
       '@alexaegis/ts':
         specifier: workspace:^
         version: link:../ts

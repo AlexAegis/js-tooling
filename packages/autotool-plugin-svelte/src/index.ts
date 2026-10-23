@@ -214,13 +214,11 @@ export const svelteKitAppSetupPlugin: AutotoolPluginObject = {
 			},
 		},
 		{
-			description: 'package svelte.config.js file for kit',
-			executor: 'fileCopy',
+			description:
+				'remove svelte.config.js because sveltekit is configured in the vite config',
+			executor: 'fileRemove',
 			packageKind: 'regular',
-			formatWithPrettier: true,
-			sourceFile: join('static', 'sveltekit.config.txt'),
 			targetFile: 'svelte.config.js',
-			sourcePluginPackageName: packageJson.name,
 		},
 		{
 			description: 'sveltekit adapters',

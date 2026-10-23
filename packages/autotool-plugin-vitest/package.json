@@ -31,6 +31,7 @@
 			},
 			"./package-node-vitest.config": "./static/package-node-vitest.config.ts",
 			"./package-svelte-vitest.config": "./static/package-svelte-vitest.config.ts",
+			"./package-sveltekit-vitest.config": "./static/package-sveltekit-vitest.config.ts",
 			"./package-web-vitest.config": "./static/package-web-vitest.config.ts",
 			"./package.json": "./package.json",
 			"./readme": "./readme.md"
@@ -74,6 +75,7 @@
 		},
 		"./package-node-vitest.config": "./static/package-node-vitest.config.ts",
 		"./package-svelte-vitest.config": "./static/package-svelte-vitest.config.ts",
+		"./package-sveltekit-vitest.config": "./static/package-sveltekit-vitest.config.ts",
 		"./package-web-vitest.config": "./static/package-web-vitest.config.ts",
 		"./package.json": "./package.json",
 		"./readme": "./readme.md"

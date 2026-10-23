@@ -1,13 +1,14 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig?mark=managed-by-autotool",
-	"extends": ["./.svelte-kit/tsconfig.json", "@alexaegis/ts/svelte"],
+	"extends": ["$app/tsconfig", "@alexaegis/ts/svelte"],
 	"compilerOptions": {
 		"rootDir": "${relativePathFromPackageToRoot}/",
-		"outDir": ".cache/tsc"
+		"outDir": ".cache/tsc",
+		// the types of @alexaegis/ts/svelte would override the ones sveltekit requires
+		"types": ["$app/types", "svelte", "node"]
 	},
 	"files": ["package.json", "${relativePathFromPackageToRoot}/package.json"],
 	"include": [
-		".svelte-kit/ambient.d.ts",
 		".svelte-kit/types/**/$types.d.ts",
 		"src/**/*",
 		"src/**/*.svelte",
@@ -20,8 +21,8 @@
 		"**/*.json"
 	],
 	"exclude": [
-		// extends doesn't combine fields, so this has been copied from .svelte-kit
-		".svelte-kit/[!ambient.d.ts]**",
+		// a service worker needs its own tsconfig that extends $app/tsconfig/service-worker
+		"src/service-worker",
 		"src/service-worker.js",
 		"src/service-worker.ts",
 		"src/service-worker.d.ts",

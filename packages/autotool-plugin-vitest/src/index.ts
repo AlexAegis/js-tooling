@@ -9,6 +9,23 @@ import packageJson from '../package.json' with { type: 'json' };
 
 const appOrLib = or(equal('app'), equal('lib'));
 
+interface ArchetypeFields {
+	kind?: string;
+	framework?: string;
+}
+
+/**
+ * SvelteKit apps have no `svelte.config.js`, so they get their own vitest
+ * config. SvelteKit libraries keep one and use the svelte vitest config.
+ */
+const isSvelteKitApp = (archetype?: ArchetypeFields): boolean =>
+	archetype?.kind === 'app' && archetype.framework === 'sveltekit';
+
+const isSvelteButNotSvelteKitApp = (archetype?: ArchetypeFields): boolean =>
+	appOrLib(archetype?.kind) &&
+	/^svelte/.test(archetype?.framework ?? '') &&
+	!isSvelteKitApp(archetype);
+
 export const plugin: AutotoolPlugin = (
 	_options: NormalizedAutotoolPluginOptions,
 ): AutotoolPluginObject => {
@@ -101,14 +118,23 @@ export const plugin: AutotoolPlugin = (
 				description: 'package vitest config file for svelte packages',
 				executor: 'fileCopy',
 				packageJsonFilter: {
-					archetype: {
-						kind: appOrLib,
-						framework: 'svelte',
-					},
+					archetype: isSvelteButNotSvelteKitApp,
 				},
 				packageKind: 'regular',
 				formatWithPrettier: true,
 				sourceFile: join('static', 'package-svelte-vitest.config.ts'),
+				targetFile: 'vitest.config.ts',
+				sourcePluginPackageName: packageJson.name,
+			},
+			{
+				description: 'package vitest config file for sveltekit apps',
+				executor: 'fileCopy',
+				packageJsonFilter: {
+					archetype: isSvelteKitApp,
+				},
+				packageKind: 'regular',
+				formatWithPrettier: true,
+				sourceFile: join('static', 'package-sveltekit-vitest.config.ts'),
 				targetFile: 'vitest.config.ts',
 				sourcePluginPackageName: packageJson.name,
 			},
