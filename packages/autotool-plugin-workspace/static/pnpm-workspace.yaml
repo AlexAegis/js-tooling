@@ -11,9 +11,11 @@ packages:
 verifyDepsBeforeRun: false
 
 # pnpm 10+ requires explicit approval for build/lifecycle scripts of dependencies.
-# Map of package name -> boolean. `true` = run the package's install scripts,
-# `false` = acknowledge the package but skip its scripts (without an entry pnpm
-# fails fresh installs with ERR_PNPM_IGNORED_BUILDS, breaking CI).
+# Map of package name -> boolean:
+# - `true`: run the package's install scripts
+# - `false`: acknowledge the package but skip its scripts
+# Without an entry, pnpm fails fresh installs with ERR_PNPM_IGNORED_BUILDS,
+# breaking CI.
 allowBuilds:
   esbuild: true
   svelte-preprocess: true
