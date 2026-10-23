@@ -39,6 +39,8 @@
 	"packageManager": "pnpm@12.15.0",
 	"workspaces": [
 		"apps/*",
+		"examples/*",
+		"fixtures/*",
 		"libs/*",
 		"packages/*"
 	],

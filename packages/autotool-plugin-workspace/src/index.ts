@@ -92,7 +92,7 @@ export const plugin: AutotoolPlugin = (
 					packageManager: rootPackageJson.packageManager as NonNullable<
 						PackageJson['packageManager']
 					>,
-					workspaces: ['apps/*', 'libs/*', 'packages/*'], // Some tools like typedoc will only read this field even though the same information is defined in pnpm-workspace.yaml
+					workspaces: ['apps/*', 'examples/*', 'fixtures/*', 'libs/*', 'packages/*'], // Some tools only read this field even though the same information is defined in pnpm-workspace.yaml. pnpm warns when the two differ.
 				},
 			},
 			{

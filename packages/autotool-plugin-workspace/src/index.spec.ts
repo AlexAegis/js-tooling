@@ -1,10 +1,13 @@
 import { createMockLogger } from '@alexaegis/logging/mocks';
 import type {
 	AutotoolPluginFactory,
+	AutotoolPluginObject,
 	NormalizedAutotoolPluginOptions,
 	PackageManager,
 	WorkspacePackage,
 } from 'autotool-plugin';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 import * as library from './index.js';
 
@@ -45,5 +48,26 @@ describe('autotool-plugin-workspace', () => {
 		const plugin = await (library.default as AutotoolPluginFactory)(defaultOptions);
 
 		expect(plugin).toBeDefined();
+	});
+
+	it('should list the same workspace globs as the pnpm-workspace.yaml template', async () => {
+		const plugin = (await (library.default as AutotoolPluginFactory)(
+			defaultOptions,
+		)) as AutotoolPluginObject;
+		const elements = plugin.elements as unknown as { data?: { workspaces?: string[] } }[];
+		const workspaces = elements.flatMap((element) => element.data?.workspaces ?? []);
+
+		const template = readFileSync(
+			join(import.meta.dirname, '..', 'static', 'pnpm-workspace.yaml'),
+			'utf8',
+		);
+		const packages = /^packages:\n((?: {2}- .+\n)+)/m
+			.exec(template)?.[1]
+			?.split('\n')
+			.filter((line) => line.length > 0)
+			.map((line) => line.replace(/^ {2}- /, ''));
+
+		expect(workspaces.length).toBeGreaterThan(0);
+		expect(new Set(workspaces)).toEqual(new Set(packages));
 	});
 });
