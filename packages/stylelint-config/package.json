@@ -71,9 +71,9 @@
 		"./readme": "./readme.md"
 	},
 	"dependencies": {
-		"postcss-html": "^1.8.1",
+		"postcss-html": "^2.0.0",
 		"postcss-scss": "^4.0.9",
-		"stylelint-config-html": "^1.1.0",
+		"stylelint-config-html": "^2.0.0",
 		"stylelint-config-standard": "^40.0.0",
 		"stylelint-config-standard-scss": "^17.0.0"
 	},
@@ -82,12 +82,12 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^26.1.1",
-		"publint": "^0.3.21",
-		"stylelint": "^17.14.0",
+		"@types/node": "^26.6.5",
+		"publint": "^0.3.25",
+		"stylelint": "^17.16.0",
 		"typescript": "^6.0.3",
-		"vite": "^8.1.4",
-		"vite-plugin-dts": "^5.0.3",
-		"vitest": "^4.1.10"
+		"vite": "^8.3.5",
+		"vite-plugin-dts": "^5.1.2",
+		"vitest": "^5.0.5"
 	}
 }

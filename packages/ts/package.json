@@ -84,18 +84,18 @@
 		"./web": "./web.json"
 	},
 	"dependencies": {
-		"@types/node": "^26.1.1",
+		"@types/node": "^26.6.5",
 		"ts-node": "^10.9.2",
 		"typescript": "^6.0.3",
-		"vite": "^8.1.4"
+		"vite": "^8.3.5"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"publint": "^0.3.21",
-		"vite": "^8.1.4",
-		"vite-plugin-dts": "^5.0.3",
-		"vitest": "^4.1.10"
+		"publint": "^0.3.25",
+		"vite": "^8.3.5",
+		"vite-plugin-dts": "^5.1.2",
+		"vitest": "^5.0.5"
 	}
 }

@@ -92,15 +92,15 @@
 	},
 	"dependencies": {
 		"@eslint/js": "^10.0.1",
-		"@typescript-eslint/eslint-plugin": "^8.63.0",
-		"@typescript-eslint/parser": "^8.63.0",
-		"@typescript-eslint/utils": "^8.63.0",
-		"eslint": "^10.7.0",
-		"eslint-config-turbo": "^2.10.4",
-		"eslint-plugin-unicorn": "^71.1.0",
-		"globals": "^17.7.0",
+		"@typescript-eslint/eslint-plugin": "^8.72.0",
+		"@typescript-eslint/parser": "^8.72.0",
+		"@typescript-eslint/utils": "^8.72.0",
+		"eslint": "^10.13.0",
+		"eslint-config-turbo": "^2.11.10",
+		"eslint-plugin-unicorn": "^78.0.0",
+		"globals": "^17.13.0",
 		"typescript": "^6.0.3",
-		"typescript-eslint": "8.63.0"
+		"typescript-eslint": "8.72.0"
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
@@ -108,10 +108,10 @@
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@types/eslint": "^9.6.1",
-		"@types/node": "^26.1.1",
-		"publint": "^0.3.21",
-		"vite": "^8.1.4",
-		"vite-plugin-dts": "^5.0.3",
-		"vitest": "^4.1.10"
+		"@types/node": "^26.6.5",
+		"publint": "^0.3.25",
+		"vite": "^8.3.5",
+		"vite-plugin-dts": "^5.1.2",
+		"vitest": "^5.0.5"
 	}
 }
