@@ -1,8 +1,9 @@
 {
 	"$schema": "https://typedoc.org/schema.json?mark=managed-by-autotool",
 	"extends": ["./.config/typedoc.base.json"],
-	"entryPoints": ["."],
+	"entryPoints": ["libs/*", "packages/*"],
 	"exclude": ["apps/*", "examples/*", "fixtures/*"],
 	"out": "./.cache/typedoc",
-	"entryPointStrategy": "packages"
+	"entryPointStrategy": "packages",
+	"readme": "none"
 }
