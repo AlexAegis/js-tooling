@@ -23,10 +23,13 @@ export interface MockLogger {
  * It will return a logger wrapped in an object, under two keys:
  * one with the mock type to let you use them as mocks, and one with the real
  * Logger type so you can pass it around. Both are the same object instance.
+ *
+ * The real Logger type can be overridden with `L` when the consumer expects
+ * a Logger from a different version of this package or of tslog.
  */
-export const createMockLogger = (
+export const createMockLogger = <L = Logger<unknown>>(
 	vi: typeof import('vitest').vi,
-): { mockLogger: MockLogger; logger: Logger<unknown> } => {
+): { mockLogger: MockLogger; logger: L } => {
 	const mockLogger: MockLogger = {
 		silly: vi.fn(),
 		trace: vi.fn(),
@@ -40,5 +43,5 @@ export const createMockLogger = (
 		getSubLogger: vi.fn(),
 	};
 
-	return { logger: mockLogger as unknown as Logger<unknown>, mockLogger };
+	return { logger: mockLogger as unknown as L, mockLogger };
 };

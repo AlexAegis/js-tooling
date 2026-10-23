@@ -18,7 +18,7 @@ describe('autotool-plugin-editorconfig', () => {
 		packagePathFromRootPackage: '.',
 	};
 
-	const { logger } = createMockLogger(vi);
+	const { logger } = createMockLogger<NormalizedAutotoolPluginOptions['logger']>(vi);
 
 	const packageManager: PackageManager = {
 		installCommand: 'pnpm i',
