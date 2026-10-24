@@ -38,6 +38,7 @@
 		"turbo-ignore",
 		"typedoc",
 		"typescript",
+		"vite",
 		"vitest"
 	],
 	"skip-missing": true

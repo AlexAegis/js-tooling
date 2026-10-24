@@ -41,6 +41,8 @@ export const plugin: AutotoolPlugin = (
 						'@vitest/coverage-v8': packageJson.devDependencies['@vitest/coverage-v8'],
 						'@lcov-viewer/cli': packageJson.devDependencies['@lcov-viewer/cli'],
 						'@alexaegis/coverage-tools': `^${packageJson.version}`,
+						// without it, the vitest of @vitest/coverage-v8 resolves the vite of another package, like the vite 5 of vitepress
+						vite: packageJson.devDependencies.vite,
 					},
 				},
 			},

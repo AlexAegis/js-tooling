@@ -138,6 +138,7 @@
 		"turbo-ignore": "^2.11.10",
 		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3",
+		"vite": "^8.3.5",
 		"vitepress": "1.6.4",
 		"vitest": "^5.0.5"
 	}

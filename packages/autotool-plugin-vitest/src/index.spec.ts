@@ -1,4 +1,5 @@
 import { createMockLogger } from '@alexaegis/logging/mocks';
+import vitePackageJson from '@alexaegis/vite/package.json' with { type: 'json' };
 import type {
 	AutotoolPluginFactory,
 	AutotoolPluginObject,
@@ -47,6 +48,22 @@ describe('autotool-plugin-vitest', () => {
 		const plugin = await (library.default as AutotoolPluginFactory)(defaultOptions);
 
 		expect(plugin).toBeDefined();
+	});
+
+	it('should add the vite of @alexaegis/vite to the workspace root', async () => {
+		const pluginObject = (await (library.plugin as AutotoolPluginFactory)(
+			defaultOptions,
+		)) as AutotoolPluginObject;
+		const elements = pluginObject.elements as unknown as {
+			packageKind?: string;
+			data?: { devDependencies?: Record<string, string> };
+		}[];
+		const rootVite = elements
+			.filter((element) => element.packageKind === 'root')
+			.map((element) => element.data?.devDependencies?.['vite'])
+			.filter((range) => range !== undefined);
+
+		expect(rootVite).toEqual([vitePackageJson.dependencies.vite]);
 	});
 
 	describe('svelte vitest configs', () => {
