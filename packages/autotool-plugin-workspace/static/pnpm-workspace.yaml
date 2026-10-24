@@ -38,3 +38,9 @@ minimumReleaseAgeExclude:
   - autotool-plugin
   - autotool-plugin-default
   - svelte-rxjs-observer
+
+# Resolves every `@types/node` range (direct, transitive and peer) to the major
+# version of `engines.node`. autotool does not lower a declared version, so the
+# override also applies where a package.json still declares a newer major.
+overrides:
+  '@types/node': ^24.19.2

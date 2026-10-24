@@ -70,4 +70,25 @@ describe('autotool-plugin-workspace', () => {
 		expect(workspaces.length).toBeGreaterThan(0);
 		expect(new Set(workspaces)).toEqual(new Set(packages));
 	});
+
+	it('should keep the @types/node override on the major of engines.node', async () => {
+		const plugin = (await (library.default as AutotoolPluginFactory)(
+			defaultOptions,
+		)) as AutotoolPluginObject;
+		const elements = plugin.elements as unknown as { data?: { engines?: { node?: string } } }[];
+		const engineMajors = elements
+			.map((element) => element.data?.engines?.node)
+			.filter((range) => range !== undefined)
+			.map((range) => /^>=(\d+)\./.exec(range)?.[1]);
+
+		const template = readFileSync(
+			join(import.meta.dirname, '..', 'static', 'pnpm-workspace.yaml'),
+			'utf8',
+		);
+		const overrideMajor = /^ {2}'@types\/node': \^(\d+)\./m.exec(template)?.[1];
+
+		expect(overrideMajor).toBeDefined();
+		expect(engineMajors.length).toBeGreaterThan(0);
+		expect(new Set(engineMajors)).toEqual(new Set([overrideMajor]));
+	});
 });

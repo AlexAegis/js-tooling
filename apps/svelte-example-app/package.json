@@ -76,7 +76,7 @@
 		"@sveltejs/kit": "^3.1.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@tailwindcss/vite": "^4.3.3",
-		"@types/node": "^26.6.5",
+		"@types/node": "^24.19.2",
 		"autoprefixer": "^10.6.1",
 		"eslint-config-turbo": "^2.11.10",
 		"eslint-plugin-svelte": "^3.23.1",

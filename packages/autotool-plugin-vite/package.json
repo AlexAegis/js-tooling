@@ -94,7 +94,7 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
-		"@types/node": "^26.6.5",
+		"@types/node": "^24.19.2",
 		"publint": "^0.3.25",
 		"turbowatch": "^2.30.0",
 		"typescript": "^6.0.3",

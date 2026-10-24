@@ -9,6 +9,10 @@ import { join } from 'node:path';
 import rootPackageJson from '../../../package.json' with { type: 'json' };
 import packageJson from '../package.json' with { type: 'json' };
 
+// keep the @types/node major (every package.json, static/pnpm-workspace.yaml) and the CI
+// node-version of autotool-plugin-github on the major of this range
+const ENGINES_NODE_RANGE = '>=24.0.0';
+
 /**
  * Resolves the repository url from the git `origin` remote of the workspace it's
  * running in, normalized to the `git+https://host/owner/repo.git` form npm
@@ -84,7 +88,7 @@ export const plugin: AutotoolPlugin = (
 						'engine-strict': true,
 					},
 					engines: {
-						node: '>=24.0.0',
+						node: ENGINES_NODE_RANGE,
 						npm: undefined,
 						pnpm: '>=9',
 					},
@@ -157,7 +161,7 @@ export const plugin: AutotoolPlugin = (
 				executor: 'packageJson',
 				data: {
 					engines: {
-						node: '>=24.0.0',
+						node: ENGINES_NODE_RANGE,
 					},
 				},
 			},

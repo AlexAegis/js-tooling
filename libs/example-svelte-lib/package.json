@@ -78,7 +78,7 @@
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vitest": "workspace:^",
 		"@sveltejs/package": "^3.0.1",
-		"@types/node": "^26.6.5",
+		"@types/node": "^24.19.2",
 		"stylelint": "^17.16.0",
 		"svelte": "^5.57.2",
 		"svelte-check": "^4.7.7",
