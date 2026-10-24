@@ -49,6 +49,7 @@
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16",
 		"lint:depcheck_": "depcheck",
 		"lint:es": "turbo run lint:es_ --concurrency 16",
+		"lint:es:fix": "turbo run lint:es:fix_ --concurrency 16",
 		"lint:format": "turbo run lint:format_ --concurrency 16",
 		"lint:format_": "prettier --cache-location .cache/prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .config/workspace-only.prettierignore --check .",
 		"lint:md": "turbo run lint:md_ --concurrency 16",

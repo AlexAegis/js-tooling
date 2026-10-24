@@ -21,7 +21,7 @@ export const plugin: AutotoolPlugin = (
 				targetFile: 'eslint.config.js',
 				sourcePluginPackageName: packageJson.name,
 				templateVariables: {
-					imports: `import eslintConfigCore from '@alexaegis/eslint-config-core';`,
+					imports: "import eslintConfigCore from '@alexaegis/eslint-config-core';",
 					configs: '[...eslintConfigCore]',
 				},
 				sourceFile: join('static', 'eslint.config.js.txt'),
@@ -121,7 +121,7 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 					name: /^@alexaegis\/vite(st)?$/,
 				},
 				templateVariables: {
-					imports: `import eslintConfigCore from '@alexaegis/eslint-config-core';`,
+					imports: "import eslintConfigCore from '@alexaegis/eslint-config-core';",
 					configs: '[...eslintConfigCore]',
 				},
 				sourcePluginPackageName: packageJson.name,
@@ -146,6 +146,7 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 				data: {
 					scripts: {
 						'lint:es': 'turbo run lint:es_ --concurrency 16',
+						'lint:es:fix': 'turbo run lint:es:fix_ --concurrency 16',
 					},
 				},
 			},
@@ -156,8 +157,10 @@ import eslintConfigVitest from "@alexaegis/eslint-config-vitest";`,
 				data: {
 					scripts: {
 						'lint:es': 'turbo run lint:es_ --concurrency 16 --filter ${packageName}',
-						'lint:es_':
-							'eslint --max-warnings=0 --fix --no-error-on-unmatched-pattern .',
+						'lint:es_': 'eslint --max-warnings=0 --no-error-on-unmatched-pattern .', // no --fix to make CI fail
+						'lint:es:fix':
+							'turbo run lint:es:fix_ --concurrency 16 --filter ${packageName}',
+						'lint:es:fix_': 'eslint --fix --no-error-on-unmatched-pattern .',
 					},
 				},
 			},

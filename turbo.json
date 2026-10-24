@@ -144,6 +144,11 @@
 			"outputs": [],
 			"outputLogs": "new-only"
 		},
+		"lint:es:fix_": {
+			"cache": false,
+			"dependsOn": [],
+			"outputLogs": "new-only"
+		},
 		"lint:es_": {
 			"dependsOn": [],
 			"outputLogs": "new-only"
