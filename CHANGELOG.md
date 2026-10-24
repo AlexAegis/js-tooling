@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.17.0](https://github.com/AlexAegis/js-tooling/compare/v0.16.1...v0.17.0) (2026-10-24)
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config-core:** lint files in subfolders and enable the recommended unicorn rules
+* **autotool-plugin-eslint:** lint without --fix and add lint:es:fix
+* pin @types/node to the minimum node version
+* require node 24 and target es2025
+
+### Features
+
+* **common:** add compareByCodeUnit ([248839d](https://github.com/AlexAegis/js-tooling/commit/248839da876ec33cd6dddb22ae361f14c4936edb))
+* require node 24 and target es2025 ([193ab5f](https://github.com/AlexAegis/js-tooling/commit/193ab5f36bf57ffd38fd65c16f7e49f8210d2312))
+
+### Bug Fixes
+
+* **autotool-plugin-eslint:** lint without --fix and add lint:es:fix ([202929b](https://github.com/AlexAegis/js-tooling/commit/202929b5fd71eeb059c3f6cf6031b1ebcc6225cb))
+* **autotool-plugin-vitest:** add vite to the workspace root ([3f5942b](https://github.com/AlexAegis/js-tooling/commit/3f5942b446a8b0ea5426a517d4f6dce3de1accbf))
+* **common:** fix bugs in bufferedAllSettled, deepMerge, the template fill and sortObject ([2d37234](https://github.com/AlexAegis/js-tooling/commit/2d37234447f9789c570535cce2809358de7bac5d))
+* **eslint-config-core:** lint files in subfolders and enable the recommended unicorn rules ([52424d6](https://github.com/AlexAegis/js-tooling/commit/52424d690681ac1a33f4807083ebf2eddf819c71))
+* **eslint-config-svelte:** use svelte/prefer-const and allow state assignments in svelte files ([a89e99b](https://github.com/AlexAegis/js-tooling/commit/a89e99b1f96f9044113ef894caeaaf70a12965d1))
+* pin @types/node to the minimum node version ([f1478de](https://github.com/AlexAegis/js-tooling/commit/f1478de31aaee3006e2646a522642f0e52b81d71))
+* **standard-version:** replace only the version after a package name ([7388696](https://github.com/AlexAegis/js-tooling/commit/73886966de9bde4971979f5e5caef70cf4097451))
+
 ## [0.16.1](https://github.com/AlexAegis/js-tooling/compare/v0.16.0...v0.16.1) (2026-10-23)
 
 ### Bug Fixes
