@@ -23,16 +23,15 @@ resulting in a runtime error.
 
 TODO: Explore `"moduleResolution": "bundler",`
 
-### `"target": "es2020",`
+### `"target": "ES2025",`
 
 In vite projects this is not used, make sure that the vite config uses the
 target that you want
 
-### No `include` or `files` field
+### `"include": []`
 
-When both of these options are missing typescript will just import everything it
-can within its folder except what you're excluding. And that's exactly what we
-need.
+The base config includes no files, so a tsconfig that extends it lists its own
+files with `include` or `files`. Without them, `tsc` fails with TS18003.
 
 ## Development Troubleshooting
 

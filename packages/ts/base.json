@@ -3,10 +3,10 @@
 	"compileOnSave": false,
 	"compilerOptions": {
 		"composite": false,
-		"target": "ES2022",
+		"target": "ES2025",
 		"module": "nodenext",
 		"moduleResolution": "nodenext",
-		"lib": ["ES2022"],
+		"lib": ["ES2025"],
 		"sourceMap": true,
 		"declaration": true,
 		"declarationMap": true,

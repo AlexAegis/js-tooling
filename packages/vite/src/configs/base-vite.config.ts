@@ -160,11 +160,11 @@ export const DEFAULT_OUT_DIR = 'dist';
  */
 export const DEFAULT_ENTRY = ['src/index.ts'];
 export const DEFAULT_EXPORT_FORMATS: LibraryFormats[] = ['es', 'cjs'];
-export const DEFAULT_BUILD_TARGET = 'es2022';
+export const DEFAULT_BUILD_TARGET = 'es2025';
 
 /**
  * Common Vite configuration defining
- * - build.target: es2022
+ * - build.target: es2025
  * - build.outDir: 'dist'
  * https://vitejs.dev/config/
  */
@@ -178,7 +178,7 @@ export const DEFAULT_VITE_CONFIG: UserConfig = {
 
 /**
  * A Vite configuration for apps, containing
- * - build.target: es2022
+ * - build.target: es2025
  * - build.outDir: 'dist'
  * from DEFAULT_VITE_CONFIG, and
  * - base: toBaseHref(process.env['BASE_HREF']),

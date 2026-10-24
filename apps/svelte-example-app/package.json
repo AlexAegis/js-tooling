@@ -16,7 +16,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=22.6.0"
+		"node": ">=24.0.0"
 	},
 	"scripts": {
 		"lint:es": "turbo run lint:es_ --concurrency 16 --filter @alexaegis/svelte-example-app",

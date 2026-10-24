@@ -44,7 +44,7 @@
 		"src/eslint-plugin-unicorn.d.ts"
 	],
 	"engines": {
-		"node": ">=22.6.0"
+		"node": ">=24.0.0"
 	},
 	"scripts": {
 		"lint:depcheck": "turbo run lint:depcheck_ --concurrency 16 --filter @alexaegis/eslint-config-core",

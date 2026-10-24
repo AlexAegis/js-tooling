@@ -84,7 +84,7 @@ export const plugin: AutotoolPlugin = (
 						'engine-strict': true,
 					},
 					engines: {
-						node: '>=22.6.0',
+						node: '>=24.0.0',
 						npm: undefined,
 						pnpm: '>=9',
 					},
@@ -157,7 +157,7 @@ export const plugin: AutotoolPlugin = (
 				executor: 'packageJson',
 				data: {
 					engines: {
-						node: '>=22.6.0',
+						node: '>=24.0.0',
 					},
 				},
 			},

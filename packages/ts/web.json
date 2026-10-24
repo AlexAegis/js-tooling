@@ -4,6 +4,6 @@
 	"compilerOptions": {
 		"module": "nodenext",
 		"moduleResolution": "nodenext",
-		"lib": ["es2022", "esnext", "DOM", "DOM.Iterable"]
+		"lib": ["es2025", "esnext", "DOM", "DOM.Iterable"]
 	}
 }

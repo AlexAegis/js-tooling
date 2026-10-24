@@ -10,7 +10,7 @@ export default mergeConfig(
 			// Keep in sync with @alexaegis/vite DEFAULT_BUILD_TARGET.
 			// This is intentionally inlined so `svelte-kit sync` works during clean install
 			// before @alexaegis/vite dist files are built.
-			target: 'es2022',
+			target: 'es2025',
 		},
 	},
 	{
