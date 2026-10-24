@@ -92,6 +92,14 @@ export const eslintSvelteConfig: TSESLint.FlatConfig.ConfigArray = [
 			'@typescript-eslint/no-unnecessary-condition': 'off', // @typescript-eslint doesn't know if a field can changed by svelte, like an input field, so a field like export let isEnabled: boolean = true; will always be seen as just true by the linter.
 		},
 	},
+	{
+		files: ['**/*.svelte', '**/*.svelte.{js,ts}', '**/*.svelte.*.{js,ts}'],
+		rules: {
+			'prefer-const': 'off',
+			'svelte/prefer-const': ['error', { destructuring: 'all' }], // the prefer-const of eslint-config-core, but it skips the `let` of $props and $derived
+			'unicorn/no-top-level-assignment-in-function': 'off', // the rule cannot tell svelte state, which event handlers assign, from other top-level variables
+		},
+	},
 ];
 
 export default eslintSvelteConfig;

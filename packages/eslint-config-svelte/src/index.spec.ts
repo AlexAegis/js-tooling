@@ -52,6 +52,26 @@ describe('eslintConfigSvelte', () => {
 		expect(config?.languageOptions?.parserOptions?.extraFileExtensions).toEqual(['.svelte']);
 	});
 
+	it.each([
+		'src/lib/component.svelte',
+		'src/lib/state.svelte.ts',
+		'src/lib/counter.svelte.spec.ts',
+	])(
+		'should replace prefer-const with svelte/prefer-const and allow state assignments in %s',
+		async (filePath) => {
+			expect(await getRuleSeverity(filePath, 'prefer-const')).toBe(0);
+			expect(await getRuleSeverity(filePath, 'svelte/prefer-const')).toBe(2);
+			expect(
+				await getRuleSeverity(filePath, 'unicorn/no-top-level-assignment-in-function'),
+			).toBe(0);
+		},
+	);
+
+	it('should leave prefer-const to eslint-config-core in ts files', async () => {
+		expect(await getRuleSeverity('src/lib/index.ts', 'prefer-const')).toBeUndefined();
+		expect(await getRuleSeverity('src/lib/index.ts', 'svelte/prefer-const')).toBeUndefined();
+	});
+
 	it('should let the ts files share their program with the svelte files', async () => {
 		const config = await getConfig('src/lib/index.ts');
 
