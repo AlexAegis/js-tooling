@@ -20,7 +20,7 @@ describe('autotool-plugin-vitest', () => {
 		packagePathFromRootPackage: '.',
 	};
 
-	const { logger } = createMockLogger<NormalizedAutotoolPluginOptions['logger']>(vi);
+	const { logger } = createMockLogger(vi);
 
 	const packageManager: PackageManager = {
 		installCommand: 'pnpm i',

@@ -18,7 +18,7 @@ describe('autotool-plugin-commitlint', () => {
 		packagePathFromRootPackage: '.',
 	};
 
-	const { logger } = createMockLogger<NormalizedAutotoolPluginOptions['logger']>(vi);
+	const { logger } = createMockLogger(vi);
 
 	const packageManager: PackageManager = {
 		installCommand: 'pnpm i',
