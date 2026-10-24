@@ -276,6 +276,14 @@ describe('reorderObject', () => {
 		);
 	});
 
+	it('should put a key first when only the first RegExp like string matches it', () => {
+		expect(Object.keys(sortObject({ m: 3, a: 2, zed: 1 }, ['^z', 'a']))).toEqual([
+			'zed',
+			'a',
+			'm',
+		]);
+	});
+
 	it('should order subobjects even if they are not mentioned in detail', () => {
 		const from = {
 			zed: 'zed',

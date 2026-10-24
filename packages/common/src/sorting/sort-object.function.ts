@@ -27,13 +27,11 @@ export const findMostSensibleMatch = (matchers: RegExp[], key: string): number =
 		.filter(isNotNullish);
 
 	const deviations = matcherIndices.map((matcherIndice) => {
-		const scenario = [...matchers];
 		// It is definitely in it
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-		const originalMatcher = scenario[matcherIndice]!;
+		const originalMatcher = matchers[matcherIndice]!;
 		const matcherSpecificity = measureRegExpSpecificity(originalMatcher.source, key);
-		scenario[matcherIndice] = new RegExp(key);
-		scenario.sort(regexpSorterOne);
+		const scenario = matchers.with(matcherIndice, new RegExp(key)).toSorted(regexpSorterOne);
 		const scenarioSortIndex = scenario.findIndex((v) => v.source === key);
 		const deviation = Math.abs(scenarioSortIndex - matcherIndice);
 
@@ -85,21 +83,15 @@ export const sortObject = <T extends object | unknown[]>(
 	const regexpLevelOrder = plainLevelOrder.map((pref) => new RegExp(pref));
 	// Turn arrays into objects too, they will be turned back into arrays
 	const isArray = Array.isArray(o);
-	let obj: T = o;
-	if (isArray) {
-		obj = arrayToObject(o) as T;
-	}
+	const obj: T = isArray ? (arrayToObject(o) as T) : o;
 
 	const ordered = Object.entries(obj)
 		.map<[string, unknown, number]>(([key, value]) => {
 			// Could fill multiple spots
-			let order = Number.POSITIVE_INFINITY;
+			let order = Infinity;
 
 			const plainIndex = plainLevelOrder.indexOf(key);
-			if (plainIndex >= 0) {
-				// If it's directly there, use that
-				order = plainIndex;
-			} else {
+			if (plainIndex === -1) {
 				const regexpIndices = regexpLevelOrder
 					.map((orderingRegExp, i) => (orderingRegExp.test(key) ? i : -1))
 					.filter((index) => index > -1);
@@ -107,9 +99,12 @@ export const sortObject = <T extends object | unknown[]>(
 				// If not, let's find the closest match, the sorting order itself is sorted
 				if (regexpIndices.length > 1) {
 					order = findMostSensibleMatch(regexpLevelOrder, key);
-				} else if (regexpIndices[0]) {
+				} else if (regexpIndices[0] !== undefined) {
 					order = regexpIndices[0];
 				}
+			} else {
+				// If it's directly there, use that
+				order = plainIndex;
 			}
 
 			if (value !== undefined && value !== null && typeof value === 'object') {
@@ -117,12 +112,11 @@ export const sortObject = <T extends object | unknown[]>(
 					.filter((pref): pref is DetailedObjectKeyOrder => typeof pref === 'object')
 					.find((preference) => new RegExp(preference.key).test(key));
 				return [key, sortObject(value, subOrdering?.order), order];
-			} else {
-				return [key, value, order];
 			}
+			return [key, value, order];
 		})
-		.sort(([ak, _av, aOrder], [bk, _bv, bOrder]) => {
-			return aOrder >= 0 && bOrder >= 0 && aOrder !== bOrder
+		.toSorted(([ak, _av, aOrder], [bk, _bv, bOrder]) => {
+			return aOrder !== bOrder && aOrder >= 0 && bOrder >= 0
 				? aOrder - bOrder
 				: ak.localeCompare(bk);
 		});

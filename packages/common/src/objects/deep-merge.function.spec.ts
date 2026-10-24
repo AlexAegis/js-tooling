@@ -145,4 +145,39 @@ describe('deepMerge', () => {
 		expect(result).toEqual(expected);
 		expect(Object.hasOwn(result.devDependencies, '@org/bar')).toBeFalsy();
 	});
+
+	it('should merge an own key that has the name of an Object.prototype member', () => {
+		const source = JSON.parse('{"constructor":{"b":2}}') as Record<string, unknown>;
+
+		const result = deepMerge([{ a: 1 }, source]);
+
+		expect(result).toEqual({ a: 1, constructor: { b: 2 } });
+	});
+
+	it('should merge a __proto__ key as an own key without changing the prototype', () => {
+		const source = JSON.parse('{"__proto__":{"polluted":1}}') as Record<string, unknown>;
+
+		const result = deepMerge([{ a: 1 }, source]);
+
+		expect(Object.getPrototypeOf(result)).toBe(Object.prototype);
+		expect(Object.keys(result)).toEqual(['a', '__proto__']);
+		expect('polluted' in result).toBeFalsy();
+	});
+
+	it('should not change the array of sources', () => {
+		const sources = [{ a: 1 }, { b: 2 }];
+
+		deepMerge(sources);
+
+		expect(sources).toEqual([{ a: 1 }, { b: 2 }]);
+	});
+
+	it('should keep a key that a later source sets to undefined', () => {
+		const source: { a: number | undefined } = { a: undefined };
+
+		const result = deepMerge([{ a: 1 }, source]);
+
+		expect(Object.hasOwn(result, 'a')).toBeTruthy();
+		expect(result.a).toBeUndefined();
+	});
 });

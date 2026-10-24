@@ -24,6 +24,16 @@ export interface DeepMergeOptions {
 	dropKeys?: boolean | DropKeyMatcher;
 }
 
+// an assignment to a __proto__ key would replace the prototype instead
+const setOwnProperty = (target: object, key: string, value: unknown): void => {
+	Object.defineProperty(target, key, {
+		value,
+		writable: true,
+		enumerable: true,
+		configurable: true,
+	});
+};
+
 const deepMergeInternal = <T extends unknown[]>(
 	sources: [...T],
 	options?: DeepMergeOptions,
@@ -55,17 +65,19 @@ const deepMergeInternal = <T extends unknown[]>(
 				}
 
 				if (isObject(sourceValue)) {
-					if (merged[key]) {
+					// an inherited value, like Object.prototype.constructor, is shadowed, not merged into
+					const mergedValue = Object.hasOwn(merged, key) ? merged[key] : undefined;
+					if (mergedValue) {
 						merged[key] = deepMergeInternal(
-							[merged[key] as T, structuredClone(sourceValue)],
+							[mergedValue as T, structuredClone(sourceValue)],
 							options,
 							visited,
 						);
 					} else {
-						Object.assign(merged, { [key]: structuredClone(sourceValue) });
+						setOwnProperty(merged, key, structuredClone(sourceValue));
 					}
 				} else {
-					Object.assign(merged, { [key]: structuredClone(sourceValue) });
+					setOwnProperty(merged, key, structuredClone(sourceValue));
 				}
 			}
 		}
@@ -81,15 +93,15 @@ const deepMergeInternal = <T extends unknown[]>(
 };
 
 /**
- * Merges multiple objects in order into the first argument.
- * It mutates the target! Arrays are merged naively using === equality.
+ * Merges multiple objects in order into a copy of the first one.
+ * Arrays are merged naively using === equality.
  *
- * Keys that are explicitly set to `undefined` among sources are dropped from
- * the target object.
+ * A key that a later source sets to `undefined` is `undefined` in the result,
+ * unless the `dropKeys` option drops it.
  */
 export const deepMerge = <T extends unknown[]>(
 	sources: [...T],
 	options?: DeepMergeOptions,
 ): MergeTuple<T> => {
-	return deepMergeInternal(sources, options);
+	return deepMergeInternal([...sources], options); // a copy, deepMergeInternal shifts it
 };

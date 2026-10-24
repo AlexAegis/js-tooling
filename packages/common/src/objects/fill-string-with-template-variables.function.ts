@@ -10,7 +10,8 @@ export const fillStringWithTemplateVariables = <VariableKeys extends SimpleObjec
 	value: string,
 	variables: Record<VariableKeys, string>,
 ): string => {
-	return Object.entries<string>(variables).reduce((acc, [variableKey, variableValue]) => {
-		return acc.replaceAll('${' + variableKey + '}', variableValue);
-	}, value);
+	// one pass, so a value is inserted as it is, also when it contains ${...}
+	return value.replaceAll(/\$\{([^{}]*)\}/g, (match, key: string) =>
+		Object.hasOwn(variables, key) ? variables[key as VariableKeys] : match,
+	);
 };
