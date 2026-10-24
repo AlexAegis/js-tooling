@@ -1,8 +1,7 @@
 import { TSESLint } from '@typescript-eslint/utils';
-import tseslint from 'typescript-eslint';
 
 export const eslintVitestConfigRestrictImports: TSESLint.FlatConfig.Config = {
-	files: ['*.spec.{ts,js,cts,cjs,mts,mjs,tsx,jsx}'],
+	files: ['**/*.spec.{ts,js,cts,cjs,mts,mjs,tsx,jsx}'],
 	rules: {
 		'no-restricted-imports': [
 			'error',
@@ -13,4 +12,6 @@ export const eslintVitestConfigRestrictImports: TSESLint.FlatConfig.Config = {
 	},
 };
 
-export default tseslint.config(eslintVitestConfigRestrictImports);
+const eslintVitestConfig: TSESLint.FlatConfig.ConfigArray = [eslintVitestConfigRestrictImports];
+
+export default eslintVitestConfig;

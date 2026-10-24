@@ -28,20 +28,12 @@
 				"require": "./dist/index.cjs",
 				"default": "./dist/index.js"
 			},
-			"./ambient": {
-				"types": "./src/ambient.d.ts"
-			},
-			"./eslint-plugin-unicorn": {
-				"types": "./src/eslint-plugin-unicorn.d.ts"
-			},
 			"./package.json": "./package.json",
 			"./readme": "./readme.md"
 		}
 	},
 	"files": [
-		"dist",
-		"src/ambient.d.ts",
-		"src/eslint-plugin-unicorn.d.ts"
+		"dist"
 	],
 	"engines": {
 		"node": ">=24.0.0"
@@ -76,18 +68,6 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
-		},
-		"./ambient": {
-			"types": "./src/ambient.d.ts",
-			"import": "./dist/ambient.js",
-			"require": "./dist/ambient.cjs",
-			"default": "./dist/ambient.js"
-		},
-		"./eslint-plugin-unicorn": {
-			"types": "./src/eslint-plugin-unicorn.d.ts",
-			"import": "./dist/eslint-plugin-unicorn.js",
-			"require": "./dist/eslint-plugin-unicorn.cjs",
-			"default": "./dist/eslint-plugin-unicorn.js"
 		},
 		"./package.json": "./package.json",
 		"./readme": "./readme.md"

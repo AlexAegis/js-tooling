@@ -29,20 +29,12 @@
 				"require": "./dist/index.cjs",
 				"default": "./dist/index.js"
 			},
-			"./ambient": {
-				"types": "./src/ambient.d.ts"
-			},
-			"./eslint-plugin-svelte": {
-				"types": "./src/eslint-plugin-svelte.d.ts"
-			},
 			"./package.json": "./package.json",
 			"./readme": "./readme.md"
 		}
 	},
 	"files": [
-		"dist",
-		"src/ambient.d.ts",
-		"src/eslint-plugin-svelte.d.ts"
+		"dist"
 	],
 	"engines": {
 		"node": ">=24.0.0"
@@ -77,18 +69,6 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.js"
-		},
-		"./ambient": {
-			"types": "./src/ambient.d.ts",
-			"import": "./dist/ambient.js",
-			"require": "./dist/ambient.cjs",
-			"default": "./dist/ambient.js"
-		},
-		"./eslint-plugin-svelte": {
-			"types": "./src/eslint-plugin-svelte.d.ts",
-			"import": "./dist/eslint-plugin-svelte.js",
-			"require": "./dist/eslint-plugin-svelte.cjs",
-			"default": "./dist/eslint-plugin-svelte.js"
 		},
 		"./package.json": "./package.json",
 		"./readme": "./readme.md"

@@ -3,31 +3,43 @@ import eslintPluginSvelte from 'eslint-plugin-svelte';
 import tseslint from 'typescript-eslint';
 
 export const eslintSvelteConfig: TSESLint.FlatConfig.ConfigArray = [
-	{
-		...eslintPluginSvelte.configs['flat/recommended'],
-		files: ['*.svelte'],
-	},
-	{
-		...eslintPluginSvelte.configs['flat/prettier'],
-		files: ['*.svelte'],
-	},
 	...tseslint.configs.recommendedTypeChecked.map((config) => ({
 		...config,
-		files: ['*.svelte'],
+		files: ['**/*.svelte'],
 	})),
 	...tseslint.configs.strictTypeChecked.map((config) => ({
 		...config,
-		files: ['*.svelte'],
+		files: ['**/*.svelte'],
 	})),
 	...tseslint.configs.stylisticTypeChecked.map((config) => ({
 		...config,
-		files: ['*.svelte'],
+		files: ['**/*.svelte'],
 	})),
+	// after the typescript-eslint presets, so svelte-eslint-parser stays the parser of svelte files
+	...eslintPluginSvelte.configs['flat/recommended'],
+	...eslintPluginSvelte.configs['flat/prettier'],
 	{
-		files: ['*.svelte'],
+		// ts files share their typescript program with the svelte files, so that program has to know .svelte
+		files: ['**/*.{ts,tsx,cts,mts}'],
 		languageOptions: {
-			parser: tseslint.parser,
 			parserOptions: {
+				extraFileExtensions: ['.svelte'],
+			},
+		},
+	},
+	{
+		files: ['**/*.svelte.{js,ts}'],
+		languageOptions: {
+			parserOptions: {
+				parser: tseslint.parser, // svelte-eslint-parser hands the scripts to this parser
+			},
+		},
+	},
+	{
+		files: ['**/*.svelte'],
+		languageOptions: {
+			parserOptions: {
+				parser: tseslint.parser,
 				project: true,
 				extraFileExtensions: ['.svelte'],
 			},
@@ -67,7 +79,11 @@ export const eslintSvelteConfig: TSESLint.FlatConfig.ConfigArray = [
 			],
 			'@typescript-eslint/no-unused-vars': [
 				'warn',
-				{ varsIgnorePattern: '$$', argsIgnorePattern: '_' }, // To let $$Slot be defined
+				{
+					varsIgnorePattern: String.raw`^\$\$`,
+					argsIgnorePattern: '^_',
+					ignoreRestSiblings: true,
+				}, // To let $$Slot be defined
 			],
 			'no-undef': 'off', // TODO: the new generics feature doesn't like this https://github.com/sveltejs/eslint-plugin-svelte/issues/521
 			'@typescript-eslint/dot-notation': 'off', // Conflicts with: "Property comes from an index signature, so it must be accessed with [].js(4111)"
@@ -78,4 +94,4 @@ export const eslintSvelteConfig: TSESLint.FlatConfig.ConfigArray = [
 	},
 ];
 
-export default tseslint.config(...eslintSvelteConfig);
+export default eslintSvelteConfig;
