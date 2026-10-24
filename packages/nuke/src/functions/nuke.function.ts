@@ -1,4 +1,4 @@
-import { dry } from '@alexaegis/common';
+import { compareByCodeUnit, dry } from '@alexaegis/common';
 import { collectWorkspacePackages } from '@alexaegis/workspace-tools';
 import { globby } from 'globby';
 import { existsSync } from 'node:fs';
@@ -21,13 +21,13 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	const nukeList = [...options.nukeList, ...options.nukeMore];
 	const nukeGlobs = [...options.nukeGlobs, ...options.nukeMoreGlobs];
 
-	const nonSkippedWorkspacePackages = allWorkspacePackages.filter(
-		(workspacePackage) =>
-			!options.dontNukeIn.some((skip) =>
-				typeof skip === 'string'
+	const nonSkippedWorkspacePackages = allWorkspacePackages.filter((workspacePackage) =>
+		options.dontNukeIn.every(
+			(skip) =>
+				!(typeof skip === 'string'
 					? skip === workspacePackage.packagePath
-					: skip.test(workspacePackage.packagePath),
-			),
+					: skip.test(workspacePackage.packagePath)),
+		),
 	);
 
 	const rootPackage = allWorkspacePackages.find(
@@ -44,27 +44,35 @@ export const nuke = async (rawOptions?: NukeOptions): Promise<void> => {
 	);
 
 	const packageGlobNukeTargets = await Promise.all(
-		nonSkippedWorkspacePackages.map((packageDirectory) =>
-			globby(nukeGlobs, {
+		nonSkippedWorkspacePackages.map(async (packageDirectory) => {
+			const paths = await globby(nukeGlobs, {
 				cwd: packageDirectory.packagePath,
 				dot: true,
 				followSymbolicLinks: false,
 				expandDirectories: false,
-			}).then((paths) => paths.map((path) => join(packageDirectory.packagePath, path))),
-		),
+			});
+			return paths.map((path) => join(packageDirectory.packagePath, path));
+		}),
 	);
 
-	const everyNukeTarget = [...packageFlatNukeTargets, ...packageGlobNukeTargets.flat()].sort();
+	const everyNukeTarget = [...packageFlatNukeTargets, ...packageGlobNukeTargets.flat()].toSorted(
+		compareByCodeUnit,
+	);
 	const dryRm = dry(options.dry, rm);
 
 	await Promise.allSettled(
 		everyNukeTarget
 			.filter((nukeTarget) => existsSync(nukeTarget))
-			.map((nukeTarget) => {
+			.map(async (nukeTarget) => {
 				options.logger.warn(
 					'obliterating: ' + relative(rootPackage.packagePath, nukeTarget),
 				);
-				return dryRm(nukeTarget, { recursive: true }).catch(() => false);
+				try {
+					await dryRm(nukeTarget, { recursive: true });
+					return undefined;
+				} catch {
+					return false;
+				}
 			}),
 	);
 };

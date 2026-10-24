@@ -1,3 +1,4 @@
+import { compareByCodeUnit } from '@alexaegis/common';
 import type {
 	PackageJson,
 	PackageJsonExportConditions,
@@ -24,6 +25,9 @@ const isAlwaysPacked = (path: string): boolean =>
 
 const isPlainObject = (value: unknown): value is Record<string, unknown> =>
 	typeof value === 'object' && value !== null && !Array.isArray(value);
+
+const isStringArray = (value: unknown): value is string[] =>
+	Array.isArray(value) && value.every((item) => typeof item === 'string');
 
 const isSupportedPath = (path: unknown, condition?: string): path is string =>
 	typeof path === 'string' &&
@@ -62,9 +66,10 @@ const toDistPath = (path: string, condition?: string): string => {
 	}
 
 	const pathInSource = path.slice(SOURCE_PREFIX.length);
-	return isTypesCondition(condition)
-		? DIST_PREFIX + pathInSource.replace(/\.(ts|js)$/, '.d.ts')
-		: DIST_PREFIX + pathInSource.replace(/\.ts$/, '.js');
+	const pathInDist = isTypesCondition(condition)
+		? pathInSource.replace(/\.(ts|js)$/, '.d.ts')
+		: pathInSource.replace(/\.ts$/, '.js');
+	return DIST_PREFIX + pathInDist;
 };
 
 const toPublishedExport = (
@@ -97,8 +102,7 @@ export const derivePublishedPackageFields = (
 ): PublishedPackageFields | undefined => {
 	const existingFiles: unknown = packageJson.files ?? [];
 	if (
-		!Array.isArray(existingFiles) ||
-		!existingFiles.every((file) => typeof file === 'string') ||
+		!isStringArray(existingFiles) ||
 		(packageJson.exports !== undefined && !isSupportedExports(packageJson.exports))
 	) {
 		return undefined;
@@ -115,16 +119,18 @@ export const derivePublishedPackageFields = (
 
 	const exportedPaths = Object.values(publishConfigExports ?? {})
 		.flatMap((exportTarget) =>
-			typeof exportTarget === 'string' ? [exportTarget] : Object.values(exportTarget),
+			typeof exportTarget === 'string' ? exportTarget : Object.values(exportTarget),
 		)
 		.filter((path) => !isAlwaysPacked(path))
 		.map((path) => {
 			const relativePath = path.replace(/^\.\//, '');
-			return relativePath.startsWith('src/') ? relativePath : relativePath.split('/')[0];
+			return relativePath.startsWith('src/') ? relativePath : relativePath.split('/', 1)[0];
 		})
 		.filter((path): path is string => !!path);
 
-	const files = [...new Set([...(existingFiles as string[]), 'dist', ...exportedPaths])].sort();
+	const files = [...new Set([...existingFiles, 'dist', ...exportedPaths])].toSorted(
+		compareByCodeUnit,
+	);
 
 	return { files, publishConfigExports };
 };
