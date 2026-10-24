@@ -16,11 +16,8 @@ export interface MockPrettierReturn {
 
 export const mockPrettier = (vi: typeof import('vitest').vi): MockPrettierReturn => {
 	const mock = {
-		format: vi.fn<(s: string, o: Options) => Promise<string | undefined>>(
-			(_data: string) =>
-				new Promise((resolve) => {
-					resolve(mockDefaultPrettifiedJsonOutput);
-				}),
+		format: vi.fn<(s: string, o: Options) => Promise<string | undefined>>((_data: string) =>
+			Promise.resolve(mockDefaultPrettifiedJsonOutput),
 		),
 		resolveConfig: vi.fn<(_: string) => Promise<Options>>(),
 	};

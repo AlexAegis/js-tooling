@@ -39,21 +39,24 @@ export const collectWorkspacePackages = async (
 			cwd: rootPackage.packagePath,
 		});
 
-		const subPackages = await asyncFilterMap(paths, (path) => {
+		const subPackages = await asyncFilterMap(paths, async (path) => {
 			const packageJsonPath = join(path, PACKAGE_JSON_NAME);
-			return readJson<PackageJson>(packageJsonPath)
-				.catch(() => undefined)
-				.then((packageJson) =>
-					packageJson
-						? ({
-								packageKind: 'regular',
-								packageJson,
-								packagePath: path,
-								packagePathFromRootPackage: relative(rootPackage.packagePath, path),
-								packageJsonPath,
-							} as RegularWorkspacePackage)
-						: undefined,
-				);
+			let packageJson: PackageJson | undefined;
+			try {
+				packageJson = await readJson<PackageJson>(packageJsonPath);
+			} catch {
+				return undefined;
+			}
+
+			return packageJson
+				? ({
+						packageKind: 'regular',
+						packageJson,
+						packagePath: path,
+						packagePathFromRootPackage: relative(rootPackage.packagePath, path),
+						packageJsonPath,
+					} satisfies RegularWorkspacePackage)
+				: undefined;
 		});
 
 		if (!options.onlyWorkspaceRoot) {

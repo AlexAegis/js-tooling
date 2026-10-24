@@ -10,7 +10,7 @@ describe('normalizeLogLevelOption', () => {
 	it('should have a default when not defined', () => {
 		expect(normalizeLogLevelOption()).toEqual({
 			logLevel: LogLevel.INFO,
-		} as NormalizedLogLevelOption);
+		} satisfies NormalizedLogLevelOption);
 	});
 
 	it('should use the provided values when defined', () => {

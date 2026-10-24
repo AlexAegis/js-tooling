@@ -65,13 +65,13 @@ export const collectPackages = (): {
 			try {
 				return {
 					packageKind: 'regular',
-					packagePath: packagePath.toString(),
+					packagePath,
 					packageJsonPath,
 					packageJson: JSON.parse(
 						readFileSync(packageJsonPath, { encoding: 'utf8' }),
 					) as PackageJson,
 					packagePathFromRootPackage: relative(workspaceRoot, dirname(packageJsonPath)),
-				} as WorkspacePackage;
+				};
 			} catch {
 				return undefined;
 			}
@@ -100,11 +100,9 @@ const collectPackageJsonPathsUpDirectoryTreeInternal = (
 	}
 
 	const parentPath = join(path, '..');
-	if (parentPath !== path) {
-		return collectPackageJsonPathsUpDirectoryTreeInternal(parentPath, collection);
-	}
-
-	return collection;
+	return parentPath === path
+		? collection
+		: collectPackageJsonPathsUpDirectoryTreeInternal(parentPath, collection);
 };
 
 const normalizePackageJsonWorkspacesField = (
@@ -112,12 +110,12 @@ const normalizePackageJsonWorkspacesField = (
 ): string[] => {
 	if (Array.isArray(packageJsonWorkspaces)) {
 		return packageJsonWorkspaces;
-	} else if (packageJsonWorkspaces) {
+	}
+	if (packageJsonWorkspaces) {
 		return [
 			...(packageJsonWorkspaces.packages ?? []),
 			...(packageJsonWorkspaces.nohoist ?? []),
 		];
-	} else {
-		return [];
 	}
+	return [];
 };

@@ -12,7 +12,7 @@ describe('isNotNullish', () => {
 		if (isNotNullish(optionalFoo)) {
 			fun();
 		}
-		expect(fun).not.toBeCalled();
+		expect(fun).not.toHaveBeenCalled();
 	});
 
 	it('should not call the function if the field is null', () => {
@@ -22,7 +22,7 @@ describe('isNotNullish', () => {
 		if (isNotNullish(optionalFoo)) {
 			fun();
 		}
-		expect(fun).not.toBeCalled();
+		expect(fun).not.toHaveBeenCalled();
 	});
 
 	it('should call the function if the field is not nullish', () => {
@@ -31,7 +31,7 @@ describe('isNotNullish', () => {
 		if (isNotNullish(optionalFoo)) {
 			fun();
 		}
-		expect(fun).toBeCalled();
+		expect(fun).toHaveBeenCalled();
 	});
 
 	afterEach(() => {

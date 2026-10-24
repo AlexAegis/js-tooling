@@ -14,12 +14,12 @@ export const mockProcessCwd = (): MockInstance<() => string> => {
 describe('normalizeCollectIgnoreEntriesOptions', () => {
 	it('should default Infinity when not defined', () => {
 		expect(normalizeCollectIgnoreEntriesOptions()).toEqual({
-			depth: Number.POSITIVE_INFINITY,
+			depth: Infinity,
 			cwd: process.cwd(),
 			maxPackages: 2,
-			maxResults: Number.POSITIVE_INFINITY,
+			maxResults: Infinity,
 			ignoreFileName: GITIGNORE_FILENAME,
-		} as CollectIgnoreEntriesOptions);
+		} satisfies CollectIgnoreEntriesOptions);
 	});
 
 	it('should keep the overrides', () => {
@@ -36,8 +36,8 @@ describe('normalizeCollectIgnoreEntriesOptions', () => {
 			depth: depthOverride,
 			cwd: process.cwd(),
 			maxPackages: maxPackagesOverride,
-			maxResults: Number.POSITIVE_INFINITY,
+			maxResults: Infinity,
 			ignoreFileName: ignoreFileNameOverride,
-		} as CollectIgnoreEntriesOptions);
+		} satisfies CollectIgnoreEntriesOptions);
 	});
 });

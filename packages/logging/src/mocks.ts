@@ -26,7 +26,10 @@ export interface MockLogger {
  *
  * Set `L` when the consumer uses another version of this package or of tslog.
  */
-export const createMockLogger = <L = Logger<unknown>>(
+export const createMockLogger = <
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters -- public API, consumers set L to their own Logger type
+	L = Logger<unknown>,
+>(
 	vi: typeof import('vitest').vi,
 ): { mockLogger: MockLogger; logger: L } => {
 	const mockLogger: MockLogger = {

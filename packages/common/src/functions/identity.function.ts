@@ -7,6 +7,7 @@ export const identity = <V>(r?: V) => r;
  * Returns whatever you pass to it. Asynchronously. While the regular
  * `identity` function is already awaitable, this one is always thenable.
  */
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters -- removing V would break callers that pass a type argument
 export const identityAsync = async <V>(value?: V, mode: 'micro' | 'macro' = 'micro') =>
 	new Promise((resolve) => {
 		if (mode === 'micro') {

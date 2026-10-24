@@ -13,7 +13,7 @@ export const createStandardVersionConfig = () => {
 	return {
 		// commit-and-tag-version then ignores preset options such as `types`
 		// from package.json or the command line
-		...(changelogPreset ? { preset: changelogPreset } : {}),
+		...(changelogPreset && { preset: changelogPreset }),
 		scripts: {
 			postbump: 'pnpm install',
 			prechangelog: 'git add pnpm-lock.yaml',

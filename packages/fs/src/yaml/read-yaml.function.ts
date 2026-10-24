@@ -6,12 +6,15 @@ export const readYaml = async <T>(path: string | undefined): Promise<T | undefin
 		return undefined;
 	}
 
-	const rawYaml = await readFile(path, {
-		encoding: 'utf8',
-	}).catch((error: unknown) => {
+	let rawYaml: string;
+	try {
+		rawYaml = await readFile(path, {
+			encoding: 'utf8',
+		});
+	} catch (error) {
 		console.error('error reading yaml', error);
 		return undefined;
-	});
+	}
 
 	if (!rawYaml) {
 		return undefined;
@@ -20,9 +23,5 @@ export const readYaml = async <T>(path: string | undefined): Promise<T | undefin
 	const result = load(rawYaml) as T;
 
 	// If it's non-yaml it returns the raw string instead of throwing an error
-	if (typeof result === 'string') {
-		return undefined;
-	}
-
-	return result;
+	return typeof result === 'string' ? undefined : result;
 };

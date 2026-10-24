@@ -21,7 +21,7 @@ describe('cwdOption', () => {
 	it('should default to process.cwd() when not defined', () => {
 		expect(normalizeCwdOption()).toEqual({
 			cwd: mockProcessCwdValue,
-		} as NormalizedCwdOption);
+		} satisfies NormalizedCwdOption);
 
 		expect(processCwdSpy).toHaveBeenCalled();
 	});
@@ -30,7 +30,7 @@ describe('cwdOption', () => {
 		const cwdOverride = './foo';
 		expect(normalizeCwdOption({ cwd: cwdOverride })).toEqual({
 			cwd: cwdOverride,
-		} as NormalizedCwdOption);
+		} satisfies NormalizedCwdOption);
 
 		expect(processCwdSpy).not.toHaveBeenCalled();
 	});

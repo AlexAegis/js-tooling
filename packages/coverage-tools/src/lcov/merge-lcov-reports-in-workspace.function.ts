@@ -16,11 +16,15 @@ export const mergeLcovReportsInWorkspace = async (
 		`found the following lcov files in the workpace:\n\t- ${lcovPaths.join('\n\t- ')}`,
 	);
 
-	const allLcovReports = await asyncFilterMap(lcovPaths, (path) =>
-		readFile(path, {
-			encoding: 'utf8',
-		}).catch(() => undefined),
-	);
+	const allLcovReports = await asyncFilterMap(lcovPaths, async (path) => {
+		try {
+			return await readFile(path, {
+				encoding: 'utf8',
+			});
+		} catch {
+			return undefined;
+		}
+	});
 
 	return allLcovReports.join('\n');
 };

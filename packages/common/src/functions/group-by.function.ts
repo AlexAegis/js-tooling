@@ -17,13 +17,11 @@ export const groupBy = <T, K extends string>(
 	return elements.reduce<Record<string, T[]>>((acc, next) => {
 		const key = groupKey(next);
 		if (key) {
-			let group: T[] | undefined = acc[key];
+			const group = acc[key];
 			if (group) {
 				group.push(next);
 			} else {
-				const newGroup: T[] = [next];
-				group = newGroup;
-				acc[key] = newGroup;
+				acc[key] = [next];
 			}
 		}
 		return acc;

@@ -41,7 +41,7 @@ export const createLogger = <L = unknown>(options?: LoggerOptions<L>): Logger<L>
 	// Sub-loggers inherit middleware, so a middleware that drops every log also silences them.
 	if (settings.minLevel === LogLevel.OFF) {
 		settings.minLevel = LogLevel.FATAL;
-		settings.middleware = [() => null, ...(settings.middleware ?? [])];
+		settings.middleware = [() => false, ...(settings.middleware ?? [])];
 	}
 
 	return new Logger(settings);

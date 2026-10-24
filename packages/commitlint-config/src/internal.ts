@@ -26,6 +26,7 @@ export const createCommitlintConfig = (): UserConfig => {
 		extends: ['@commitlint/config-conventional'],
 		type: ['feat', 'fix', 'test', 'docs', 'refactor', 'build', 'ci', 'perf', 'revert', 'style'],
 		rules: {
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-enum-assignment -- 2 is RuleConfigSeverity.Error, the enum is only in a devDependency
 			'scope-enum': [2, 'always', [...genericScopes, ...localPackageNames]],
 		},
 	};

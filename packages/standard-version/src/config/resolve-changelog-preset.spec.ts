@@ -18,7 +18,8 @@ describe('resolveChangelogPreset', () => {
 	let releaseToolPath: string;
 
 	beforeEach(() => {
-		workspaceRoot = realpathSync(mkdtempSync(join(tmpdir(), 'standard-version-')));
+		const temporaryDirectory = mkdtempSync(join(tmpdir(), 'standard-version-'));
+		workspaceRoot = realpathSync(temporaryDirectory);
 		nodeModulesPath = join(workspaceRoot, 'node_modules');
 		releaseToolPath = writePackageJson(join(nodeModulesPath, 'commit-and-tag-version'), {});
 		const specPath = writePackageJson(

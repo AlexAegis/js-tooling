@@ -4,8 +4,8 @@ import { defaultYargsFromPackageJson } from './default-yargs.function.js';
 
 describe('defaultYargs', () => {
 	let yargsInstance!: Argv;
-	let versionSpy: MockInstance<(_: string) => Argv<{}>>;
-	let epilogueSpy: MockInstance<(_: string) => Argv<{}>>;
+	let versionSpy: MockInstance<(_: string) => Argv>;
+	let epilogueSpy: MockInstance<(_: string) => Argv>;
 
 	beforeEach(() => {
 		yargsInstance = yargs([]);

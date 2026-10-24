@@ -6,8 +6,6 @@ import { defaultYargsFromPackageJson } from '../index.js';
 export type YargsMutator<T, R> = (yargs: Argv<T>) => Argv<T & R>;
 
 export class YargsBuilder<T> {
-	private mutators: YargsMutator<object, T>[] = [];
-
 	static empty(): YargsBuilder<object> {
 		return new YargsBuilder();
 	}
@@ -21,9 +19,12 @@ export class YargsBuilder<T> {
 	 *
 	 * It does not add any options
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters -- public API, removing T breaks calls that pass a type argument
 	static withDefaults<T extends PackageJson>(packageJson?: T): YargsBuilder<object> {
 		return new YargsBuilder().add(defaultYargsFromPackageJson(packageJson));
 	}
+
+	private mutators: YargsMutator<object, T>[] = [];
 
 	add<R>(mutator: YargsMutator<T, R>): YargsBuilder<T & R> {
 		if (typeof mutator === 'function') {
@@ -38,11 +39,11 @@ export class YargsBuilder<T> {
 	 */
 	build(
 		args: string | readonly string[] | undefined = process.argv.splice(2),
-		cwd?: string | undefined,
+		cwd?: string,
 	): Argv<T> {
 		let y = yargs(args, cwd) as Argv<T>;
 		for (const mutator of this.mutators) {
-			y = mutator(y) as Argv<T>;
+			y = mutator(y);
 		}
 		return y;
 	}

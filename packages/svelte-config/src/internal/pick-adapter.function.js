@@ -4,16 +4,16 @@ import staticAdapter from '@sveltejs/adapter-static';
 import vercelAdapter from '@sveltejs/adapter-vercel';
 
 /**
+ * @type {ReadonlySet<string | undefined>}
+ */
+const platforms = new Set(['vercel', 'node', 'github-pages', 'auto']);
+
+/**
  * @param {string | undefined} platform
  * @returns {platform is import('./types.js').Platform}
  */
 export const isPlatform = (platform) => {
-	return (
-		platform === 'vercel' ||
-		platform === 'node' ||
-		platform === 'github-pages' ||
-		platform === 'auto'
-	);
+	return platforms.has(platform);
 };
 
 /**

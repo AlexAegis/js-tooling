@@ -39,19 +39,15 @@ const collectFileDirnamePathsUpDirectoryTreeInternal = (
 	}
 
 	const parentPath = join(path, '..');
-	if (
-		parentPath !== path &&
+	return parentPath !== path &&
 		options.depth > 0 &&
 		packageJsonCollection.length < options.maxPackages &&
 		resultCollection.length < options.maxResults
-	) {
-		return collectFileDirnamePathsUpDirectoryTreeInternal(
-			fileName,
-			{ ...options, depth: options.depth - 1, cwd: parentPath },
-			resultCollection,
-			packageJsonCollection,
-		);
-	}
-
-	return resultCollection;
+		? collectFileDirnamePathsUpDirectoryTreeInternal(
+				fileName,
+				{ ...options, depth: options.depth - 1, cwd: parentPath },
+				resultCollection,
+				packageJsonCollection,
+			)
+		: resultCollection;
 };

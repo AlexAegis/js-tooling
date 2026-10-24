@@ -13,7 +13,7 @@ describe('WriteJsonFunctionOptions', () => {
 			dry: false,
 			cwd: process.cwd(),
 			logger: noopLogger,
-		} as NormalizedWriteJsonOptions);
+		} satisfies NormalizedWriteJsonOptions);
 	});
 
 	it('should use the provided values when defined', () => {

@@ -20,7 +20,7 @@ describe('LogLevel', () => {
 		});
 
 		it('should tell for every non used logLevel value that it is not a logLevel', () => {
-			expect(isLogLevelEnumValue(Number.NEGATIVE_INFINITY)).toBeFalsy();
+			expect(isLogLevelEnumValue(-Infinity)).toBeFalsy();
 			expect(isLogLevelEnumValue(7)).toBeFalsy();
 		});
 

@@ -9,12 +9,15 @@ export const readJson = async <T = unknown>(
 		return undefined;
 	}
 
-	const rawJson = await readFile(path, {
-		encoding: 'utf8',
-	}).catch((error: unknown) => {
+	let rawJson: string;
+	try {
+		rawJson = await readFile(path, {
+			encoding: 'utf8',
+		});
+	} catch (error) {
 		options?.logger?.error('error reading json', error);
 		return undefined;
-	});
+	}
 
 	if (!rawJson) {
 		return undefined;

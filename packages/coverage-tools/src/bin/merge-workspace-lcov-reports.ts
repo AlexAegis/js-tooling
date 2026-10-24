@@ -21,7 +21,6 @@ const mergeWorkspaceLcovReports = async () => {
 		await writeFile(join(workspaceRoot, 'coverage', LCOV_INFO_FILE_NAME), mergedLcov);
 	} else {
 		logger.error('Not in a workspace!');
-		// eslint-disable-next-line unicorn/no-process-exit
 		process.exit(1);
 	}
 };

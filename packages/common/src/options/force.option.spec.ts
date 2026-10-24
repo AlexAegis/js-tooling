@@ -9,7 +9,7 @@ describe('normalizeForceOption', () => {
 	it('should have a default when not defined', () => {
 		expect(normalizeForceOption()).toEqual({
 			force: false,
-		} as NormalizedForceOption);
+		} satisfies NormalizedForceOption);
 	});
 
 	it('should use the provided values when defined', () => {

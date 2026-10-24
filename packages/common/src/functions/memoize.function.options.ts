@@ -30,7 +30,7 @@ export const normalizeMemoizeOptions = <F extends (...args: any) => unknown, T>(
 	return {
 		argHasher: options?.argHasher ?? JSON.stringify,
 		thisContext: options?.thisContext,
-		maxCacheEntries: options?.maxCacheEntries ?? Number.POSITIVE_INFINITY,
+		maxCacheEntries: options?.maxCacheEntries ?? Infinity,
 		cache: options?.cache ?? new Map<string, ReturnType<F>>(),
 	};
 };

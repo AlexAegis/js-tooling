@@ -17,10 +17,12 @@ export function shuffleArray<T>(array: T[]): T[] {
 		// And swap it with the current element.
 		const temporaryValue = array[currentIndex];
 		const randomValue = array[randomIndex];
-		if (isNotNullish(temporaryValue) && isNotNullish(randomValue)) {
-			array[currentIndex] = randomValue;
-			array[randomIndex] = temporaryValue;
+		if (!(isNotNullish(temporaryValue) && isNotNullish(randomValue))) {
+			continue;
 		}
+
+		array[currentIndex] = randomValue;
+		array[randomIndex] = temporaryValue;
 	}
 
 	return array;

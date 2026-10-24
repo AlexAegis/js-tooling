@@ -1,5 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { default as defaultSveltePreprocess, sveltePreprocess } from 'svelte-preprocess';
+import defaultSveltePreprocess, { sveltePreprocess } from 'svelte-preprocess';
 import { normalizePlatform, pickAdapter } from './pick-adapter.function.js';
 import { toBaseHref } from './to-base-href.function.js';
 

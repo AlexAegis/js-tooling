@@ -15,7 +15,7 @@ describe('normalizeTurnIntoExecutableOptions', () => {
 		expect(normalizeTurnIntoExecutableOptions()).toEqual({
 			cwd: mockProcessCwdValue,
 			logger: noopLogger,
-		} as NormalizedTurnIntoExecutableOptions);
+		} satisfies NormalizedTurnIntoExecutableOptions);
 	});
 
 	it('should use the provided values when defined', () => {

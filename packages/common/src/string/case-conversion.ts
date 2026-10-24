@@ -15,8 +15,8 @@ export const splitByCasing = (input: string): string[] => {
  * Turns an input string to camelCase from any input casing
  */
 export function camelCase(input: string): string {
-	const [first, ...rest] = splitByCasing(input);
-	return (first ?? '') + rest.map(capitalize).join('');
+	const [first = '', ...rest] = splitByCasing(input);
+	return first + rest.map(capitalize).join('');
 }
 
 /**

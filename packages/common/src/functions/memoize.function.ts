@@ -25,20 +25,20 @@ export const memoize = <F extends (...args: never) => unknown, T = unknown>(
 		if (options.cache.has(hash)) {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			return options.cache.get(hash)!;
-		} else {
-			const result = fn.apply(options.thisContext, args as never) as ReturnType<F>;
-			options.cache.set(hash, result);
-
-			if (options.maxCacheEntries > 0 && options.maxCacheEntries < Number.POSITIVE_INFINITY) {
-				dropQueue.push(hash);
-				if (dropQueue.length > options.maxCacheEntries) {
-					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-					const cacheToDrop = dropQueue.shift()!;
-					options.cache.delete(cacheToDrop);
-				}
-			}
-
-			return result;
 		}
+
+		const result = fn.apply(options.thisContext, args as never) as ReturnType<F>;
+		options.cache.set(hash, result);
+
+		if (options.maxCacheEntries > 0 && options.maxCacheEntries < Infinity) {
+			dropQueue.push(hash);
+			if (dropQueue.length > options.maxCacheEntries) {
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				const cacheToDrop = dropQueue.shift()!;
+				options.cache.delete(cacheToDrop);
+			}
+		}
+
+		return result;
 	};
 };

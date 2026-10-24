@@ -7,14 +7,14 @@ import {
 describe('normalizeDepthOption', () => {
 	it('should default Infinity when not defined', () => {
 		expect(normalizeDirectoryDepthOption()).toEqual({
-			depth: Number.POSITIVE_INFINITY,
-		} as NormalizedDirectoryDepthOption);
+			depth: Infinity,
+		} satisfies NormalizedDirectoryDepthOption);
 	});
 
 	it('cwd: process.cwd()', () => {
 		const depthOverride = 2;
 		expect(normalizeDirectoryDepthOption({ depth: depthOverride })).toEqual({
 			depth: depthOverride,
-		} as NormalizedDirectoryDepthOption);
+		} satisfies NormalizedDirectoryDepthOption);
 	});
 });

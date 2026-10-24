@@ -114,6 +114,7 @@ describe('derivePublishedPackageFields', () => {
 		['a string', './dist/index.js'],
 		['top level conditions', { types: './src/index.ts', default: './dist/index.js' }],
 		['nested conditions', { '.': { import: { types: './src/index.ts' } } }],
+		// eslint-disable-next-line unicorn/no-null -- package.json exports use null to exclude a subpath
 		['a null target', { './internal/*': null }],
 		['an array fallback', { '.': ['./dist/index.js'] }],
 		['an mts source', { '.': { types: './src/index.mts' } }],

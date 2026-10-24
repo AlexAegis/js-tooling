@@ -18,7 +18,7 @@
 			class="btn btn-sm preset-tonal-surface border-surface-500 border"
 			href={packageJson.homepage}
 			target="_blank"
-			rel="noreferrer"
+			rel="external noreferrer"
 		>
 			GitHub
 		</a>

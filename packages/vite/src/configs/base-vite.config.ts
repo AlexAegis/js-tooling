@@ -13,7 +13,8 @@ interface MinimalPackageJson {
 	devDependencies?: Record<string, string>;
 	peerDependencies?: Record<string, string>;
 	optionalDependencies?: Record<string, string>;
-	exports?: Record<string, string | Record<string, string>>;
+	// a null target excludes a subpath
+	exports?: Record<string, string | Record<string, string> | null>;
 	bin?: string | Record<string, string>;
 	publishConfig?: {
 		bin?: string | Record<string, string>;
@@ -114,28 +115,36 @@ export const getLibEntryFromExports = (options?: { cwd?: string }): Record<strin
 	const exports = pkg.exports;
 	if (exports) {
 		for (const [key, value] of Object.entries(exports)) {
-			if (typeof value === 'object' && value !== null && 'types' in value) {
-				const typesPath = value['types'];
-				if (typeof typesPath === 'string' && typesPath.startsWith('./src/')) {
-					const name = key === '.' ? 'index' : key.replace(/^\.\//, '');
-					entry[name] = typesPath.replace(/^\.\//, '');
-				}
+			if (typeof value !== 'object' || value === null || !('types' in value)) {
+				continue;
 			}
+
+			const typesPath = value['types'];
+			if (typeof typesPath !== 'string' || !typesPath.startsWith('./src/')) {
+				continue;
+			}
+
+			const name = key === '.' ? 'index' : key.replace(/^\.\//, '');
+			entry[name] = typesPath.replace(/^\.\//, '');
 		}
 	}
 
 	// Derive bin entries from publishConfig.bin
 	const publishBin = pkg.publishConfig?.bin;
 	if (publishBin && typeof publishBin === 'object') {
-		for (const [, distPath] of Object.entries(publishBin)) {
-			if (typeof distPath === 'string' && distPath.startsWith('./dist/')) {
-				// ./dist/bin/nuke.js -> src/bin/nuke.ts
-				const srcPath = distPath.replace(/^\.\/dist\//, 'src/').replace(/\.js$/, '.ts');
-				if (existsSync(p.join(cwd, srcPath))) {
-					const name = srcPath.replace(/^src\//, '').replace(/\.ts$/, '');
-					entry[name] = srcPath;
-				}
+		for (const distPath of Object.values(publishBin)) {
+			if (typeof distPath !== 'string' || !distPath.startsWith('./dist/')) {
+				continue;
 			}
+
+			// ./dist/bin/nuke.js -> src/bin/nuke.ts
+			const srcPath = distPath.replace(/^\.\/dist\//, 'src/').replace(/\.js$/, '.ts');
+			if (!existsSync(p.join(cwd, srcPath))) {
+				continue;
+			}
+
+			const name = srcPath.replace(/^src\//, '').replace(/\.ts$/, '');
+			entry[name] = srcPath;
 		}
 	}
 
@@ -176,7 +185,7 @@ export const DEFAULT_VITE_CONFIG: UserConfig = {
  */
 export const DEFAULT_VITE_APP_CONFIG = mergeConfig(DEFAULT_VITE_CONFIG, {
 	base: toBaseHref(process.env['BASE_HREF']),
-} as UserConfig);
+});
 
 /**
  * Options for {@link defineViteLibConfig}.
@@ -209,8 +218,8 @@ export interface ViteLibConfigOptions {
  * `mergeConfig` concatenates arrays and therefore cannot shrink `['es', 'cjs']`
  * back down to `['es']`.
  *
- * esbuild does not need to be disabled here to preserve comments as it's
- * expected to generate d.ts files from the ts files when publishing and
+ * The Oxc transform does not need to be disabled here to preserve comments as
+ * it's expected to generate d.ts files from the ts files when publishing and
  * those will preserve the comments in the d.ts files.
  */
 export const defineViteLibConfig = (options: ViteLibConfigOptions = {}): UserConfig =>
@@ -248,9 +257,9 @@ export const DEFAULT_VITE_LIB_CONFIG = defineViteLibConfig();
 /**
  * Vite configuration for building plain JS libraries
  *
- * Disables esbuild to preserve jsdoc comments, and also enables
- * build.rolldownOptions.output.preserveModules not to interfere with the paths
- * expected by `vite-plugin-dts`
+ * The Oxc transform skips .js files, so jsdoc comments are preserved. Also
+ * enables build.rolldownOptions.output.preserveModules not to interfere with
+ * the paths expected by `vite-plugin-dts`
  */
 export const DEFAULT_VITE_JS_LIB_CONFIG = mergeConfig(DEFAULT_VITE_LIB_CONFIG, {
 	build: {
@@ -260,5 +269,4 @@ export const DEFAULT_VITE_JS_LIB_CONFIG = mergeConfig(DEFAULT_VITE_LIB_CONFIG, {
 			},
 		},
 	},
-	esbuild: false, // esbuild always removes comments, and JSDoc wouldn't work
 } satisfies UserConfig);

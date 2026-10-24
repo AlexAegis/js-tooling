@@ -20,7 +20,7 @@ const isSvelteKitApp = (archetype?: ArchetypeFields): boolean =>
 
 const isSvelteButNotSvelteKitApp = (archetype?: ArchetypeFields): boolean =>
 	appOrLib(archetype?.kind) &&
-	/^svelte/.test(archetype?.framework ?? '') &&
+	(archetype?.framework ?? '').startsWith('svelte') &&
 	!isSvelteKitApp(archetype);
 
 export const plugin: AutotoolPlugin = (

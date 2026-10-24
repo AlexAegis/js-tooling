@@ -10,7 +10,7 @@ export const deepFreeze = <T>(object: T, dontFreeze = new Set()): T => {
 		const value = (object as Record<string | number | symbol, unknown>)[name];
 
 		if (
-			((value && typeof value === 'object') || typeof value === 'function') &&
+			(typeof value === 'function' || (value && typeof value === 'object')) &&
 			!dontFreeze.has(value)
 		) {
 			deepFreeze(value as T, dontFreeze);

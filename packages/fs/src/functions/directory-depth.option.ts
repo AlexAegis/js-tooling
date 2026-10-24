@@ -15,6 +15,6 @@ export const normalizeDirectoryDepthOption = (
 	options?: DirectoryDepthOption,
 ): NormalizedDirectoryDepthOption => {
 	return {
-		depth: options?.depth ?? Number.POSITIVE_INFINITY,
+		depth: options?.depth ?? Infinity,
 	};
 };

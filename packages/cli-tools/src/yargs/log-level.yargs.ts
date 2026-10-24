@@ -10,14 +10,12 @@ export const yargsForLogLevelOption = <T>(yargs: Argv<T>): Argv<T & NormalizedLo
 			description: 'Minimum logLevel',
 			default: LogLevel.INFO,
 			coerce: (value: string): LogLevel => {
+				// eslint-disable-next-line unicorn/prefer-number-coercion -- Number('') is 0 (SILLY) where parseInt falls back to INFO
 				const i = Number.parseInt(value, 10);
 				if (!Number.isNaN(i) && isLogLevelEnumValue(i)) {
 					return i;
-				} else if (isLogLevelEnumKey(value)) {
-					return LogLevel[value];
-				} else {
-					return LogLevel.INFO;
 				}
+				return isLogLevelEnumKey(value) ? LogLevel[value] : LogLevel.INFO;
 			},
 		})
 		.option('quiet', {
@@ -36,10 +34,7 @@ export const yargsForLogLevelOption = <T>(yargs: Argv<T>): Argv<T & NormalizedLo
 	return logLevelYargs.middleware(((args: Awaited<typeof logLevelYargs.argv>) => {
 		if (args.quiet) {
 			return { logLevel: LogLevel.OFF };
-		} else if (args.verbose) {
-			return { logLevel: LogLevel.TRACE };
-		} else {
-			return undefined;
 		}
+		return args.verbose ? { logLevel: LogLevel.TRACE } : undefined;
 	}) as MiddlewareFunction);
 };

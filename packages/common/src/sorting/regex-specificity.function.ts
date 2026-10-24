@@ -7,5 +7,6 @@
  * For RegExp's pass in the `.source`
  */
 export const measureRegExpSpecificity = (r: string, v: string): number => {
+	// eslint-disable-next-line @typescript-eslint/no-misused-spread -- the score counts code points, graphemes would change it
 	return [...v].filter((c) => r.includes(c)).length;
 };

@@ -18,7 +18,7 @@ describe('normalizeCollectWorkspacePackagesOptions', () => {
 			dependencyCriteria: [],
 			logger: noopLogger,
 			packageJsonMatcher: undefined,
-		} as NormalizedCollectWorkspacePackagesOptions);
+		} satisfies NormalizedCollectWorkspacePackagesOptions);
 	});
 
 	it('should use the provided values when defined', () => {

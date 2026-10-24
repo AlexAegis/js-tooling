@@ -9,15 +9,15 @@ const readJsonMock = vi.hoisted(() =>
 	vi.fn((fileName: string): SortingPreferenceJson | undefined => {
 		if (fileName === '/foo/.config/package.sort.json') {
 			return { sort: ['name'] };
-		} else if (fileName === '/foo/.config/custom.sort.json') {
-			return { sort: ['custom'] };
-		} else {
-			return undefined;
 		}
+		return fileName === '/foo/.config/custom.sort.json' ? { sort: ['custom'] } : undefined;
 	}),
 );
 
 vi.mock('@alexaegis/fs', async () => {
+	const actualAlexaegisFs =
+		await vi.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs');
+
 	return {
 		readJson: readJsonMock,
 		normalizeCwdOption: () => {
@@ -25,9 +25,7 @@ vi.mock('@alexaegis/fs', async () => {
 				cwd: '/foo',
 			};
 		},
-		normalizeDirectoryDepthOption: await vi
-			.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs')
-			.then((mod) => mod.normalizeDirectoryDepthOption),
+		normalizeDirectoryDepthOption: actualAlexaegisFs.normalizeDirectoryDepthOption,
 	};
 });
 

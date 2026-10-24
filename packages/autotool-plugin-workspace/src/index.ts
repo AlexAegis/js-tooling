@@ -33,14 +33,13 @@ const resolveRepositoryUrlFromGitOrigin = (cwd: string): string | undefined => {
 	}
 
 	// git@host:owner/repo(.git) -> https://host/owner/repo(.git)
-	const sshMatch = /^git@([^:]+):(.+)$/.exec(raw);
-	let httpsUrl = sshMatch ? `https://${sshMatch[1]}/${sshMatch[2]}` : raw;
+	let httpsUrl = raw.replace(/^git@([^:]+):(.+)$/, 'https://$1/$2');
 
 	// ssh://git@host/owner/repo(.git) -> https://host/owner/repo(.git)
 	httpsUrl = httpsUrl.replace(/^ssh:\/\/git@/, 'https://');
 
 	if (!httpsUrl.endsWith('.git')) {
-		httpsUrl = `${httpsUrl}.git`;
+		httpsUrl += '.git';
 	}
 
 	return httpsUrl.startsWith('git+') ? httpsUrl : `git+${httpsUrl}`;
@@ -50,7 +49,7 @@ export const plugin: AutotoolPlugin = (
 	options: NormalizedAutotoolPluginOptions,
 ): AutotoolPluginObject => {
 	const rootRepository = options.rootWorkspacePackage.packageJson.repository as
-		{ type?: string; url?: string } | string | undefined;
+		string | { type?: string; url?: string } | undefined;
 	const rootRepositoryUrlFromPackageJson =
 		typeof rootRepository === 'string' ? rootRepository : rootRepository?.url;
 	const rootRepositoryUrl =

@@ -49,30 +49,37 @@ export const match = <T = JsonValue>(
 ): boolean => {
 	if (typeof matcher === 'string') {
 		return typeof target === 'string' && new RegExp(matcher).test(target); // Treat every string filter as a RegExp
-	} else if (typeof matcher === 'number') {
-		return typeof target === 'number' && target === matcher;
-	} else if (typeof matcher === 'boolean') {
-		return typeof target === 'boolean' && target === matcher;
-	} else if (matcher === undefined) {
-		return target === undefined || target === null;
-	} else if (matcher === null) {
-		return target === null;
-	} else if (isCustomJsonValueMatcher<T>(matcher)) {
-		return matcher(target) ?? false;
-	} else if (matcher instanceof RegExp) {
-		return typeof target === 'string' && matcher.test(target);
-	} else if (Array.isArray(matcher)) {
-		return Array.isArray(target)
-			? matcher.every((itemMatcher, i) => match(target[i], itemMatcher))
-			: false;
-	} else {
-		return Object.entries(matcher).every(([filterKey, filter]) => {
-			return (
-				typeof target === 'object' &&
-				target !== null && // typeof null === 'object'
-				!Array.isArray(target) &&
-				match((target as Record<string | number, unknown>)[filterKey], filter)
-			);
-		});
 	}
+	if (typeof matcher === 'number') {
+		return typeof target === 'number' && target === matcher;
+	}
+	if (typeof matcher === 'boolean') {
+		return typeof target === 'boolean' && target === matcher;
+	}
+	if (matcher === undefined) {
+		return target === undefined || target === null;
+	}
+	if (matcher === null) {
+		return target === null;
+	}
+	if (isCustomJsonValueMatcher<T>(matcher)) {
+		return matcher(target) ?? false;
+	}
+	if (matcher instanceof RegExp) {
+		return typeof target === 'string' && matcher.test(target);
+	}
+	if (Array.isArray(matcher)) {
+		return (
+			Array.isArray(target) &&
+			matcher.every((itemMatcher, i) => match(target[i], itemMatcher))
+		);
+	}
+	return Object.entries(matcher).every(([filterKey, filter]) => {
+		return (
+			typeof target === 'object' &&
+			target !== null && // typeof null === 'object'
+			!Array.isArray(target) &&
+			match((target as Record<string | number, unknown>)[filterKey], filter)
+		);
+	});
 };

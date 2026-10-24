@@ -3,6 +3,8 @@ import { join } from 'node:path';
 import type { Options } from 'prettier';
 import { normalizePrettifyOptions, type PrettifyOptions } from './try-prettify.function.options.js';
 
+const passthroughFormatter = (content: string): string => content;
+
 /**
  * @returns a function that formats strings with prettier
  */
@@ -37,6 +39,6 @@ export const getPrettierFormatter = async (
 		};
 	} catch (error) {
 		options.logger.warn('loading prettier failed', error);
-		return (content) => content;
+		return passthroughFormatter;
 	}
 };

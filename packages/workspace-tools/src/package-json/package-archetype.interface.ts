@@ -55,9 +55,7 @@ export type PackageJsonArchetypeMatcher = JsonMatcherFrom<PackageArchetype>;
  * This will return names for when you want to denote the archetype in a
  * filename: `tsconfig.web-svelte-lib.json` or `tsconfig.node-lib.json`
  */
-export const getEncodedArchetype = (
-	archetypeMatcher?: PackageJsonArchetypeMatcher | undefined,
-): string => {
+export const getEncodedArchetype = (archetypeMatcher?: PackageJsonArchetypeMatcher): string => {
 	if (!archetypeMatcher || typeof archetypeMatcher === 'function') {
 		return '';
 	}

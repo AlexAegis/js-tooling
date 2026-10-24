@@ -5,7 +5,7 @@ describe('normalizeSafeOption', () => {
 	it('should have a default when not defined', () => {
 		expect(normalizeSafeOption()).toEqual({
 			safe: false,
-		} as NormalizedSafeOption);
+		} satisfies NormalizedSafeOption);
 	});
 
 	it('should use the provided values when defined', () => {

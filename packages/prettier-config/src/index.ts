@@ -1,5 +1,11 @@
 import type { Config, Options } from 'prettier';
 
+// typed as Options so that overrides can take any options
+const svelteOverrideOptions: Options = {
+	parser: 'svelte',
+	svelteSortOrder: 'options-scripts-markup-styles',
+};
+
 // The prettier VS Code extension doesn't really care about configs deeper in
 // the project structure, so the root config has to deal with everything
 export const prettierConfig = {
@@ -27,10 +33,7 @@ export const prettierConfig = {
 		},
 		{
 			files: '*.svelte',
-			options: {
-				parser: 'svelte',
-				svelteSortOrder: 'options-scripts-markup-styles',
-			} as Options,
+			options: svelteOverrideOptions,
 		},
 	],
 } satisfies Config;

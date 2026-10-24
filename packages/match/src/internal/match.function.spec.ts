@@ -43,14 +43,11 @@ describe('match', () => {
 	describe('nullish values', () => {
 		it('should match undefined to both undefined and null', () => {
 			expect(match(undefined, undefined)).toBeTruthy();
-			// eslint-disable-next-line unicorn/no-null
 			expect(match(null, undefined)).toBeTruthy();
 		});
 
 		it('should null should match to both undefined and null', () => {
-			// eslint-disable-next-line unicorn/no-null
 			expect(match(undefined, null)).toBeFalsy();
-			// eslint-disable-next-line unicorn/no-null
 			expect(match(null, null)).toBeTruthy();
 		});
 	});
@@ -195,7 +192,7 @@ describe('match', () => {
 
 			const result = match(target, {
 				foo: undefined,
-			} as unknown as JsonMatcher);
+			});
 
 			expect(result).toBeTruthy();
 		});
@@ -260,32 +257,32 @@ describe('match', () => {
 
 	describe('using predicates as custom matchers', () => {
 		it('should be able to used as a custom matcher', () => {
-			expect(
-				match<{ bar: number; foo?: string }>(
-					{
-						bar: 1,
-					},
-					{
-						bar: equal(1),
-						foo: not(equal('1')),
-					},
-				),
-			).toBeTruthy();
+			const result = match<{ bar: number; foo?: string }>(
+				{
+					bar: 1,
+				},
+				{
+					bar: equal(1),
+					foo: not(equal('1')),
+				},
+			);
+
+			expect(result).toBeTruthy();
 		});
 
 		it('should be able to used for nullish fields', () => {
-			expect(
-				match<{ bar: null; foo?: string | null }>(
-					{
-						bar: null,
-						foo: null,
-					},
-					{
-						bar: equal(null),
-						foo: not(equal('1')),
-					},
-				),
-			).toBeTruthy();
+			const result = match<{ bar: null; foo?: string | null }>(
+				{
+					bar: null,
+					foo: null,
+				},
+				{
+					bar: equal(null),
+					foo: not(equal('1')),
+				},
+			);
+
+			expect(result).toBeTruthy();
 		});
 	});
 });

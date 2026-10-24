@@ -13,11 +13,11 @@ export const mockProcessCwd = (): MockInstance<() => string> => {
 describe('normalizeDepthOption', () => {
 	it('should default Infinity when not defined', () => {
 		expect(normalizeCollectFileDirnamesUpDirectoryTreeOptions()).toEqual({
-			depth: Number.POSITIVE_INFINITY,
+			depth: Infinity,
 			cwd: process.cwd(),
 			maxPackages: 2,
-			maxResults: Number.POSITIVE_INFINITY,
-		} as NormalizedCollectFileDirnamesUpDirectoryTreeOptions);
+			maxResults: Infinity,
+		} satisfies NormalizedCollectFileDirnamesUpDirectoryTreeOptions);
 	});
 
 	it('should keep the overrides', () => {
@@ -33,7 +33,7 @@ describe('normalizeDepthOption', () => {
 			depth: depthOverride,
 			cwd: process.cwd(),
 			maxPackages: maxPackagesOverride,
-			maxResults: Number.POSITIVE_INFINITY,
-		} as NormalizedCollectFileDirnamesUpDirectoryTreeOptions);
+			maxResults: Infinity,
+		} satisfies NormalizedCollectFileDirnamesUpDirectoryTreeOptions);
 	});
 });

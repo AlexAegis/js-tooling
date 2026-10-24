@@ -9,9 +9,9 @@ describe('normalizeMemoizeOptions', () => {
 	it('should have a default when not defined', () => {
 		expect(normalizeMemoizeOptions()).toEqual({
 			argHasher: JSON.stringify,
-			maxCacheEntries: Number.POSITIVE_INFINITY,
+			maxCacheEntries: Infinity,
 			cache: new Map(),
-		} as NormalizedMemoizeOptions<() => unknown>);
+		} satisfies NormalizedMemoizeOptions<() => unknown>);
 	});
 
 	it('should use the provided values when defined', () => {

@@ -25,7 +25,6 @@ export const toBaseHref = (path = '') => {
 	const trimmed = path.replace(/\/$/, ''); // Must not end with '/'
 	if (trimmed) {
 		return isAbsolute(trimmed) ? trimmed : `/${trimmed}`;
-	} else {
-		return '';
 	}
+	return '';
 };

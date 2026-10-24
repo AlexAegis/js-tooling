@@ -22,7 +22,7 @@ describe('normalizePrettifyOptions', () => {
 			parser: 'babel',
 			dry: false,
 			logger: noopLogger,
-		} as NormalizedPrettifyOptions);
+		} satisfies NormalizedPrettifyOptions);
 	});
 
 	it('should use the provided values when defined', () => {

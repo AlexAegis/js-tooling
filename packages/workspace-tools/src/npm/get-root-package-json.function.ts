@@ -26,7 +26,12 @@ export const getRootPackageJson = async (
 	}
 
 	const packageJsonPath = join(rootWorkspace, PACKAGE_JSON_NAME);
-	const packageJson = await readJson<PackageJson>(packageJsonPath).catch(() => undefined);
+	let packageJson: PackageJson | undefined;
+	try {
+		packageJson = await readJson<PackageJson>(packageJsonPath);
+	} catch {
+		packageJson = undefined;
+	}
 
 	if (!packageJson) {
 		options.logger.error('Failed to read packageJson!', packageJsonPath);

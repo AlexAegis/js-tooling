@@ -43,6 +43,6 @@ export const normalizeCollectFileDirnamesUpDirectoryTreeOptions = (
 		...normalizeCwdOption(options),
 		...normalizeDirectoryDepthOption(options),
 		maxPackages: options?.maxPackages ?? 2,
-		maxResults: options?.maxResults ?? Number.POSITIVE_INFINITY,
+		maxResults: options?.maxResults ?? Infinity,
 	};
 };

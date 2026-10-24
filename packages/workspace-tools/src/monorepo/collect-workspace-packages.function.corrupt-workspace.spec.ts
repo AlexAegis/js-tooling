@@ -8,6 +8,9 @@ import { PACKAGE_JSON_NAME } from '../package-json/package-json.interface.js';
 import { collectWorkspacePackages } from './collect-workspace-packages.function.js';
 
 vi.mock('@alexaegis/fs', async () => {
+	const actualAlexaegisFs =
+		await vi.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs');
+
 	const mockReadJson = vi.fn<(_: string | undefined) => Promise<undefined>>((_path) =>
 		Promise.resolve(undefined),
 	);
@@ -19,12 +22,8 @@ vi.mock('@alexaegis/fs', async () => {
 	return {
 		readJson: mockReadJson,
 		readYaml: mockReadYaml,
-		normalizeCwdOption: await vi
-			.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs')
-			.then((mod) => mod.normalizeCwdOption),
-		normalizeDirectoryDepthOption: await vi
-			.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs')
-			.then((mod) => mod.normalizeDirectoryDepthOption),
+		normalizeCwdOption: actualAlexaegisFs.normalizeCwdOption,
+		normalizeDirectoryDepthOption: actualAlexaegisFs.normalizeDirectoryDepthOption,
 	};
 });
 

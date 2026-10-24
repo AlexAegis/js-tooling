@@ -17,7 +17,6 @@ export type NormalizedCollectLcovReportPathsOptions = Omit<
 export const normalizeCollectLcovReportPathsOptions = (
 	options?: CollectLcovReportPathsOptions,
 ): NormalizedCollectLcovReportPathsOptions => {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const { onlyWorkspaceRoot, skipWorkspaceRoot, ...rest } =
 		normalizeCollectWorkspacePackagesOptions(options);
 

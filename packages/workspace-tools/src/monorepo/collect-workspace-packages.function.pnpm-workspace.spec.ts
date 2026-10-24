@@ -16,6 +16,9 @@ const mockPackageJsonValue: PackageJson = {
 };
 
 vi.mock('@alexaegis/fs', async () => {
+	const actualAlexaegisFs =
+		await vi.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs');
+
 	const mockReadJson = vi.fn<(_: string | undefined) => Promise<PackageJson | undefined>>(
 		(path) =>
 			Promise.resolve(path?.endsWith(PACKAGE_JSON_NAME) ? mockPackageJsonValue : undefined),
@@ -35,12 +38,8 @@ vi.mock('@alexaegis/fs', async () => {
 	return {
 		readJson: mockReadJson,
 		readYaml: mockReadYaml,
-		normalizeCwdOption: await vi
-			.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs')
-			.then((mod) => mod.normalizeCwdOption),
-		normalizeDirectoryDepthOption: await vi
-			.importActual<typeof import('@alexaegis/fs')>('@alexaegis/fs')
-			.then((mod) => mod.normalizeDirectoryDepthOption),
+		normalizeCwdOption: actualAlexaegisFs.normalizeCwdOption,
+		normalizeDirectoryDepthOption: actualAlexaegisFs.normalizeDirectoryDepthOption,
 	};
 });
 

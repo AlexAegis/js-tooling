@@ -65,6 +65,18 @@ describe('getLibEntryFromExports', () => {
 		});
 	});
 
+	it('skips null export targets', () => {
+		writePackageJson(cwd, {
+			exports: {
+				'.': { types: './src/index.ts', import: './dist/index.js' },
+				// eslint-disable-next-line unicorn/no-null -- package.json exports use null to exclude a subpath
+				'./internal/*': null,
+			},
+		});
+
+		expect(getLibEntryFromExports({ cwd })).toEqual({ index: 'src/index.ts' });
+	});
+
 	it('adds published bin entries that map back to existing source files', () => {
 		writeEmptyFile(join(cwd, 'src', 'bin', 'nuke.ts'));
 		writeEmptyFile(join(cwd, 'bin', 'outside.ts'));
@@ -87,16 +99,16 @@ describe('getLibEntryFromExports', () => {
 	});
 });
 
+const filterExternals = (
+	isExternal: ReturnType<typeof createLazyAutoExternalsFunction>,
+	sources: string[],
+): string[] => sources.filter((source) => isExternal(source, undefined, false));
+
 describe('createLazyAutoExternalsFunction', () => {
 	let rootPath: string;
 
 	const addPackage = (packagePath: string, packageJson: object): string =>
 		writePackageJson(join(rootPath, packagePath), packageJson);
-
-	const filterExternals = (
-		isExternal: ReturnType<typeof createLazyAutoExternalsFunction>,
-		sources: string[],
-	): string[] => sources.filter((source) => isExternal(source, undefined, false));
 
 	beforeEach(() => {
 		rootPath = mkdtempSync(join(tmpdir(), 'vite-auto-externals-'));

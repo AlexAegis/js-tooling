@@ -10,9 +10,8 @@ export const globby = (patterns: string[], options: Options): string[] | undefin
 
 	if (patterns.some((pattern) => pattern.includes('zed'))) {
 		return [join(mockProjectRoot, 'packages/zed/coverage/lcov.info')];
-	} else if (patterns.some((pattern) => pattern.includes('zod'))) {
-		return [join(mockProjectRoot, 'packages/zod/coverage/lcov.info')];
-	} else {
-		return [];
 	}
+	return patterns.some((pattern) => pattern.includes('zod'))
+		? [join(mockProjectRoot, 'packages/zod/coverage/lcov.info')]
+		: [];
 };

@@ -5,12 +5,12 @@ export const normalizePackageJsonWorkspacesField = (
 ): string[] => {
 	if (Array.isArray(packageJsonWorkspaces)) {
 		return packageJsonWorkspaces;
-	} else if (packageJsonWorkspaces) {
+	}
+	if (packageJsonWorkspaces) {
 		return [
 			...(packageJsonWorkspaces.packages ?? []),
 			...(packageJsonWorkspaces.nohoist ?? []),
 		];
-	} else {
-		return [];
 	}
+	return [];
 };

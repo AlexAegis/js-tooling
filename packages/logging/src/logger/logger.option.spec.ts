@@ -11,7 +11,7 @@ describe('normalizeLoggerOption', () => {
 	it('should have a default when not defined', () => {
 		expect(normalizeLoggerOption()).toEqual({
 			logger: noopLogger,
-		} as NormalizedLoggerOption);
+		} satisfies NormalizedLoggerOption);
 	});
 
 	it('should use the provided values when defined', () => {
