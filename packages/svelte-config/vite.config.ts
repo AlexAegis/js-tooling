@@ -28,7 +28,18 @@ export default mergeConfig(
 		plugins: [
 			// src/internal/types.d.ts has no .js module, so dts copies it only with copyDtsFiles
 			...(process.env['BUILD_REASON'] === 'publish'
-				? [dts({ entryRoot: 'src', copyDtsFiles: true })]
+				? [
+						dts({
+							entryRoot: 'src',
+							include: ['src'],
+							exclude: [
+								'src/**/*.{spec,test}.?(c|m)[jt]s?(x)',
+								'src/**/__tests__/**',
+								'src/**/__mocks__/**',
+							],
+							copyDtsFiles: true,
+						}),
+					]
 				: []),
 		],
 	}),

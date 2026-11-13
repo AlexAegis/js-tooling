@@ -8,7 +8,19 @@ export default mergeConfig(
 	DEFAULT_VITE_LIB_CONFIG,
 	defineConfig({
 		plugins: [
-			...(process.env['BUILD_REASON'] === 'publish' ? [dts({ entryRoot: 'src' })] : []),
+			...(process.env['BUILD_REASON'] === 'publish'
+				? [
+						dts({
+							entryRoot: 'src',
+							include: ['src'],
+							exclude: [
+								'src/**/*.{spec,test}.?(c|m)[jt]s?(x)',
+								'src/**/__tests__/**',
+								'src/**/__mocks__/**',
+							],
+						}),
+					]
+				: []),
 		],
 	}),
 );
