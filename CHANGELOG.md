@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.18.0](https://github.com/AlexAegis/js-tooling/compare/v0.17.0...v0.18.0) (2026-11-14)
+
+### ⚠ BREAKING CHANGES
+
+* **ts:** replace the runtime dependencies with peer dependencies
+
+### Bug Fixes
+
+* **autotool-plugin-git:** ignore only the dist and tmp names ([a7d7fdf](https://github.com/AlexAegis/js-tooling/commit/a7d7fdff202ecf8ad2fbf192af1f41ca3649218c))
+* **autotool-plugin-vite:** emit declarations only for the source files ([f164929](https://github.com/AlexAegis/js-tooling/commit/f16492993ea2747ff1878c62dfcc182a065b770c))
+* **ts:** replace the runtime dependencies with peer dependencies ([ed99297](https://github.com/AlexAegis/js-tooling/commit/ed992976d06e94ed6aabf3d0f479aed0430e17d2))
+
 ## [0.17.0](https://github.com/AlexAegis/js-tooling/compare/v0.16.1...v0.17.0) (2026-10-24)
 
 ### ⚠ BREAKING CHANGES
