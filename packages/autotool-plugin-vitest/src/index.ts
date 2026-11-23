@@ -35,7 +35,7 @@ export const plugin: AutotoolPlugin = (
 				packageKind: 'root',
 				data: {
 					scripts: {
-						test: 'turbo run test_ --concurrency 16 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info',
+						test: 'turbo run test_ --concurrency 16 && merge-workspace-lcov-reports && if grep -qs . ./coverage/lcov.info; then lcov-viewer lcov -o ./coverage ./coverage/lcov.info; fi',
 					},
 					devDependencies: {
 						'@vitest/coverage-v8': packageJson.devDependencies['@vitest/coverage-v8'],

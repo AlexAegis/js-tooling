@@ -7,9 +7,28 @@ import type {
 	PackageManager,
 	WorkspacePackage,
 } from 'autotool-plugin';
+import { spawnSync } from 'node:child_process';
+import { chmodSync, existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 import * as library from './index.js';
+
+const rootTestScriptOf = async (
+	options: NormalizedAutotoolPluginOptions,
+): Promise<string | undefined> => {
+	const pluginObject = (await (library.plugin as AutotoolPluginFactory)(
+		options,
+	)) as AutotoolPluginObject;
+	const elements = pluginObject.elements as unknown as {
+		packageKind?: string;
+		data?: { scripts?: Record<string, string> };
+	}[];
+	return elements.find(
+		(element) =>
+			element.packageKind === 'root' && element.data?.scripts?.['test'] !== undefined,
+	)?.data?.scripts?.['test'];
+};
 
 describe('autotool-plugin-vitest', () => {
 	const rootWorkspacePackage: WorkspacePackage = {
@@ -64,6 +83,67 @@ describe('autotool-plugin-vitest', () => {
 			.filter((range) => range !== undefined);
 
 		expect(rootVite).toEqual([vitePackageJson.dependencies.vite]);
+	});
+
+	describe('root test script', () => {
+		const record = 'SF:a.ts\nend_of_record\n';
+
+		it.each([
+			{ name: 'an empty report', report: '', viewerStatus: 7, viewed: false, status: 0 },
+			{
+				name: 'a report of one blank line',
+				report: '\n',
+				viewerStatus: 7,
+				viewed: false,
+				status: 0,
+			},
+			{
+				name: 'a report with a record',
+				report: record,
+				viewerStatus: 0,
+				viewed: true,
+				status: 0,
+			},
+			{
+				name: 'a report that lcov-viewer fails on',
+				report: record,
+				viewerStatus: 7,
+				viewed: true,
+				status: 7,
+			},
+		])(
+			'should run lcov-viewer only on a merged report with content and keep its exit status, given $name',
+			async ({ report, viewerStatus, viewed, status }) => {
+				const script = await rootTestScriptOf(defaultOptions);
+				const reportStep = script?.split('merge-workspace-lcov-reports && ', 2)[1];
+				expect(reportStep).toBeDefined();
+
+				const folder = mkdtempSync(join(tmpdir(), 'autotool-plugin-vitest-'));
+				try {
+					mkdirSync(join(folder, 'bin'));
+					mkdirSync(join(folder, 'coverage'));
+					writeFileSync(
+						join(folder, 'bin', 'lcov-viewer'),
+						`#!/bin/sh\ntouch viewed\nexit ${viewerStatus.toString()}\n`,
+					);
+					chmodSync(join(folder, 'bin', 'lcov-viewer'), 0o755);
+					writeFileSync(join(folder, 'coverage', 'lcov.info'), report);
+
+					const result = spawnSync('sh', ['-c', reportStep ?? 'false'], {
+						cwd: folder,
+						env: {
+							...process.env,
+							PATH: `${join(folder, 'bin')}:${process.env['PATH'] ?? ''}`,
+						},
+					});
+
+					expect(result.status).toBe(status);
+					expect(existsSync(join(folder, 'viewed'))).toBe(viewed);
+				} finally {
+					rmSync(folder, { recursive: true, force: true });
+				}
+			},
+		);
 	});
 
 	describe('svelte vitest configs', () => {

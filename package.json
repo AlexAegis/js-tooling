@@ -61,7 +61,7 @@
 		"lint:svelte": "turbo run lint:svelte_ --concurrency 16",
 		"lint:tsc": "turbo run lint:tsc_ --concurrency 16",
 		"publint": "BUILD_REASON='publish' turbo run publint_ --concurrency 16",
-		"test": "turbo run test_ --concurrency 16 && merge-workspace-lcov-reports && lcov-viewer lcov -o ./coverage ./coverage/lcov.info",
+		"test": "turbo run test_ --concurrency 16 && merge-workspace-lcov-reports && if grep -qs . ./coverage/lcov.info; then lcov-viewer lcov -o ./coverage ./coverage/lcov.info; fi",
 		"all": "BUILD_REASON='publish' turbo run all_ --concurrency 16",
 		"build": "turbo run build-lib_ build-app_ --concurrency 16",
 		"build-app": "turbo run build-app_ --concurrency 16",
