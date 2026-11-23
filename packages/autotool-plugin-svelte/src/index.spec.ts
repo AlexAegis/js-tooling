@@ -1,6 +1,7 @@
 import { createMockLogger } from '@alexaegis/logging/mocks';
 import type {
 	AutotoolPluginFactory,
+	AutotoolPluginObject,
 	NormalizedAutotoolPluginOptions,
 	PackageManager,
 	WorkspacePackage,
@@ -45,6 +46,35 @@ describe('autotool-plugin-svelte', () => {
 		const plugin = await (library.default as AutotoolPluginFactory)(defaultOptions);
 
 		expect(plugin).toBeDefined();
+	});
+
+	it('should add the root lint:svelte script to every workspace, also one without svelte packages', async () => {
+		const pluginObjects = (await (library.plugin as AutotoolPluginFactory)(
+			defaultOptions,
+		)) as AutotoolPluginObject[];
+		const rootScriptElements = pluginObjects.flatMap((pluginObject) =>
+			(
+				(pluginObject.elements ?? []) as unknown as {
+					packageKind?: string;
+					packageJsonFilter?: unknown;
+					data?: { scripts?: Record<string, string> };
+				}[]
+			)
+				.filter(
+					(element) =>
+						element.packageKind === 'root' &&
+						element.data?.scripts?.['lint:svelte'] !== undefined,
+				)
+				.map((element) => ({
+					pluginKind: pluginObject.packageKind ?? 'all',
+					pluginFilter: pluginObject.packageJsonFilter,
+					elementFilter: element.packageJsonFilter,
+				})),
+		);
+
+		expect(rootScriptElements).toEqual([
+			{ pluginKind: 'all', pluginFilter: undefined, elementFilter: undefined },
+		]);
 	});
 
 	it('should remove svelte.config.js from sveltekit apps instead of copying one', () => {

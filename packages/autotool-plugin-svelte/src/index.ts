@@ -8,6 +8,25 @@ import { join } from 'node:path';
 import packageJson from '../package.json' with { type: 'json' };
 
 /**
+ * For every workspace, with or without svelte packages
+ */
+export const svelteWorkspaceSetupPlugin: AutotoolPluginObject = {
+	name: `${packageJson.name}-workspace`,
+	elements: [
+		{
+			description: 'workspace svelte-check script',
+			executor: 'packageJson',
+			packageKind: 'root',
+			data: {
+				scripts: {
+					'lint:svelte': 'turbo run lint:svelte_ --concurrency 16',
+				},
+			},
+		},
+	],
+};
+
+/**
  * For any kind of svelte package regardless of being a library, an app, using kit or not
  */
 export const svelteCommonSetupPlugin: AutotoolPluginObject = {
@@ -19,13 +38,10 @@ export const svelteCommonSetupPlugin: AutotoolPluginObject = {
 	},
 	elements: [
 		{
-			description: 'workspace svelte-check scripts and devDependencies',
+			description: 'workspace svelte-check devDependency',
 			executor: 'packageJson',
 			packageKind: 'root',
 			data: {
-				scripts: {
-					'lint:svelte': 'turbo run lint:svelte_ --concurrency 16',
-				},
 				devDependencies: {
 					'svelte-check': packageJson.devDependencies['svelte-check'], // added to the root for lint-staged
 				},
@@ -333,6 +349,7 @@ export const svelteLibarySetupPlugin: AutotoolPluginObject = {
 
 export const plugin: AutotoolPlugin = (_options: NormalizedAutotoolPluginOptions) => {
 	return [
+		svelteWorkspaceSetupPlugin,
 		svelteCommonSetupPlugin,
 		svelteAppCommonSetupPlugin,
 		svelteLibarySetupPlugin,
