@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.18.1](https://github.com/AlexAegis/js-tooling/compare/v0.18.0...v0.18.1) (2026-11-24)
+
+### Bug Fixes
+
+* **autotool-plugin-github:** build the vitepress site with docs:build ([98b8d13](https://github.com/AlexAegis/js-tooling/commit/98b8d13d65553dec15a8fa0d5390d487b5aef9e0))
+* **autotool-plugin-github:** let the build job read the pages check ([d2a47f9](https://github.com/AlexAegis/js-tooling/commit/d2a47f99f33db4950393d2efb4fb33a80aa83eb5))
+* **autotool-plugin-github:** release after skipped pages jobs ([3f11df1](https://github.com/AlexAegis/js-tooling/commit/3f11df1021fd3ee5b4bf0e7619f415c53312b062))
+* **autotool-plugin-svelte:** add the root svelte-check to every workspace with a svelte package ([626c7cf](https://github.com/AlexAegis/js-tooling/commit/626c7cfd538f61687cdc159872b87800651ba7b4))
+* **autotool-plugin-svelte:** write the root lint:svelte script into every workspace ([d685456](https://github.com/AlexAegis/js-tooling/commit/d6854560aa8fdd80b6bf7b3f64802d7864dec84c))
+* **autotool-plugin-vitest:** run lcov-viewer only on a merged report with content ([d080b0d](https://github.com/AlexAegis/js-tooling/commit/d080b0dff21138c1c508030ea0298f3ea380adea))
+* **autotool-plugin-workspace:** leave engines.node out of web packages ([58853c7](https://github.com/AlexAegis/js-tooling/commit/58853c710da17d8084d9bd2fda163cb764a7670b))
+* **stylelint-config:** accept the tailwind 4 directives ([81f9760](https://github.com/AlexAegis/js-tooling/commit/81f9760a92b9efb399b9ae172b4d6fbed47d4c81))
+
 ## [0.18.0](https://github.com/AlexAegis/js-tooling/compare/v0.17.0...v0.18.0) (2026-11-14)
 
 ### ⚠ BREAKING CHANGES
