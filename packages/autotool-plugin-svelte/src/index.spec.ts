@@ -77,6 +77,62 @@ describe('autotool-plugin-svelte', () => {
 		]);
 	});
 
+	it.each([
+		[undefined, false],
+		[{ platform: 'node', language: 'ts', kind: 'lib' }, false],
+		[{ platform: 'web', framework: 'react', language: 'ts', kind: 'app' }, false],
+		[{ platform: 'web', framework: 'svelte', language: 'ts', kind: 'lib' }, true],
+		[{ platform: 'web', framework: 'sveltekit', language: 'ts', kind: 'app' }, true],
+	])(
+		'should add the root svelte-check devDependency next to a package with the archetype %j: %s',
+		async (archetype, expected) => {
+			const workspacePackage: WorkspacePackage = {
+				packageJson: archetype === undefined ? {} : { archetype },
+				packageJsonPath: '/project/packages/a/package.json',
+				packageKind: 'regular',
+				packagePath: '/project/packages/a',
+				packagePathFromRootPackage: 'packages/a',
+			};
+			const pluginObjects = (await (library.plugin as AutotoolPluginFactory)({
+				...defaultOptions,
+				allWorkspacePackages: [rootWorkspacePackage, workspacePackage],
+			})) as AutotoolPluginObject[];
+			const rootCheckElements = pluginObjects.flatMap((pluginObject) =>
+				(
+					(pluginObject.elements ?? []) as unknown as {
+						packageKind?: string;
+						packageJsonFilter?: unknown;
+						data?: { devDependencies?: Record<string, string> };
+					}[]
+				)
+					.filter(
+						(element) =>
+							element.packageKind === 'root' &&
+							element.data?.devDependencies?.['svelte-check'] !== undefined,
+					)
+					.map((element) => ({
+						pluginName: pluginObject.name,
+						pluginKind: pluginObject.packageKind ?? 'all',
+						pluginFilter: pluginObject.packageJsonFilter,
+						elementFilter: element.packageJsonFilter,
+					})),
+			);
+
+			expect(rootCheckElements).toEqual(
+				expected
+					? [
+							{
+								pluginName: '@alexaegis/autotool-plugin-svelte-workspace-check',
+								pluginKind: 'all',
+								pluginFilter: undefined,
+								elementFilter: undefined,
+							},
+						]
+					: [],
+			);
+		},
+	);
+
 	it('should remove svelte.config.js from sveltekit apps instead of copying one', () => {
 		const svelteConfigExecutors = (library.svelteKitAppSetupPlugin.elements ?? [])
 			.filter(

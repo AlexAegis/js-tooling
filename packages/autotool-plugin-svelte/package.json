@@ -89,6 +89,7 @@
 	"dependencies": {
 		"@alexaegis/coverage-tools": "workspace:^",
 		"@alexaegis/logging": "workspace:^",
+		"@alexaegis/match": "workspace:^",
 		"@alexaegis/predicate": "workspace:^",
 		"autotool-plugin": "^0.8.0"
 	},

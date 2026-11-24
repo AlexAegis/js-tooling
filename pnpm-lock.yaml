@@ -1148,6 +1148,9 @@ importers:
       '@alexaegis/logging':
         specifier: workspace:^
         version: link:../logging
+      '@alexaegis/match':
+        specifier: workspace:^
+        version: link:../match
       '@alexaegis/predicate':
         specifier: workspace:^
         version: link:../predicate

@@ -1,3 +1,4 @@
+import { match } from '@alexaegis/match';
 import { contains } from '@alexaegis/predicate';
 import {
 	type AutotoolPlugin,
@@ -26,16 +27,17 @@ export const svelteWorkspaceSetupPlugin: AutotoolPluginObject = {
 	],
 };
 
-/**
- * For any kind of svelte package regardless of being a library, an app, using kit or not
- */
-export const svelteCommonSetupPlugin: AutotoolPluginObject = {
-	name: `${packageJson.name}-common`,
-	packageJsonFilter: {
-		archetype: {
-			framework: /^svelte.*$/,
-		},
+const sveltePackageJsonFilter = {
+	archetype: {
+		framework: /^svelte.*$/,
 	},
+};
+
+/**
+ * For every workspace that has a svelte package
+ */
+export const svelteWorkspaceCheckPlugin: AutotoolPluginObject = {
+	name: `${packageJson.name}-workspace-check`,
 	elements: [
 		{
 			description: 'workspace svelte-check devDependency',
@@ -47,6 +49,16 @@ export const svelteCommonSetupPlugin: AutotoolPluginObject = {
 				},
 			},
 		},
+	],
+};
+
+/**
+ * For any kind of svelte package regardless of being a library, an app, using kit or not
+ */
+export const svelteCommonSetupPlugin: AutotoolPluginObject = {
+	name: `${packageJson.name}-common`,
+	packageJsonFilter: sveltePackageJsonFilter,
+	elements: [
 		{
 			description: 'package svelte-check scripts and devDependencies',
 			executor: 'packageJson',
@@ -347,9 +359,13 @@ export const svelteLibarySetupPlugin: AutotoolPluginObject = {
 	],
 };
 
-export const plugin: AutotoolPlugin = (_options: NormalizedAutotoolPluginOptions) => {
+export const plugin: AutotoolPlugin = (options: NormalizedAutotoolPluginOptions) => {
+	const hasSveltePackage = options.allWorkspacePackages.some((workspacePackage) =>
+		match(workspacePackage.packageJson, sveltePackageJsonFilter),
+	);
 	return [
 		svelteWorkspaceSetupPlugin,
+		...(hasSveltePackage ? [svelteWorkspaceCheckPlugin] : []),
 		svelteCommonSetupPlugin,
 		svelteAppCommonSetupPlugin,
 		svelteLibarySetupPlugin,
