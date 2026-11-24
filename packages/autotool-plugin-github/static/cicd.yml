@@ -209,7 +209,7 @@ jobs:
         run: pnpm install
       - name: vitepress
         if: vars.PAGES_DEPLOY_ARTIFACT_BUILDING_JOB == 'vitepress'
-        run: pnpm run vitepress
+        run: pnpm run docs:build
       - name: prepare pages (use index.html as 404.html)
         if: |
           needs.check-pages.outputs.pages_enabled == 'true' &&

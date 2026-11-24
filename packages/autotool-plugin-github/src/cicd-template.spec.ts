@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 interface WorkflowJob {
 	if?: string;
 	needs?: string | string[];
+	strategy?: { matrix?: Record<string, unknown> };
 }
 
 interface Workflow {
@@ -60,6 +61,25 @@ describe('cicd.yml template', () => {
 			for (const readJob of readJobs) {
 				expect(needsOf(job), `${jobName} reads ${String(readJob)}`).toContain(readJob);
 			}
+		}
+	});
+
+	it('should run only scripts that the root package.json of this repository defines', async () => {
+		const template = await readTemplate();
+		const { jobs } = parse(template) as Workflow;
+		const rootPackageJson = JSON.parse(
+			await readFile(new URL('../../../package.json', import.meta.url), 'utf8'),
+		) as { scripts: Record<string, string> };
+		const lintKinds = (jobs['lint']?.strategy?.matrix?.['lint-kind'] ?? []) as string[];
+		const runScripts = [
+			...template.matchAll(/pnpm run ([\w:-]+)$/gm).map((match) => match[1]),
+			...lintKinds.map((lintKind) => `lint:${lintKind}`),
+		];
+
+		expect(lintKinds).not.toHaveLength(0);
+		expect(runScripts).toContain('docs:build');
+		for (const script of runScripts) {
+			expect(Object.keys(rootPackageJson.scripts)).toContain(script);
 		}
 	});
 });
