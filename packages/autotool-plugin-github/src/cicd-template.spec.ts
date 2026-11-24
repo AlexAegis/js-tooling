@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises';
-import { parse } from 'yaml';
+import { parse, stringify } from 'yaml';
 import { describe, expect, it } from 'vitest';
 
 interface WorkflowJob {
@@ -47,5 +47,19 @@ describe('cicd.yml template', () => {
 			'github.ref_name == github.event.repository.default_branch',
 			"github.event_name != 'pull_request'",
 		]);
+	});
+
+	it('should need every job whose outputs or result a job reads', async () => {
+		const { jobs } = await readWorkflow();
+		for (const [jobName, job] of Object.entries(jobs)) {
+			const readJobs = new Set(
+				stringify(job)
+					.matchAll(/needs\.([\w-]+)\./g)
+					.map((match) => match[1]),
+			);
+			for (const readJob of readJobs) {
+				expect(needsOf(job), `${jobName} reads ${String(readJob)}`).toContain(readJob);
+			}
+		}
 	});
 });
