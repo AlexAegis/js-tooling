@@ -410,6 +410,13 @@ jobs:
     name: |
       release ${{ matrix.package.package_name }}@${{ matrix.package.package_version }}
     if: |
+      !cancelled() &&
+      needs.collect.result == 'success' &&
+      needs.build.result == 'success' &&
+      needs.test.result == 'success' &&
+      needs.lint.result == 'success' &&
+      (needs.typedoc.result == 'success' || needs.typedoc.result == 'skipped') &&
+      (needs.vitepress.result == 'success' || needs.vitepress.result == 'skipped') &&
       needs.collect.outputs.non_published_packages &&
       github.ref_name == github.event.repository.default_branch &&
       github.event_name != 'pull_request'
