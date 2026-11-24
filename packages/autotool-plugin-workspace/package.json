@@ -84,6 +84,7 @@
 	},
 	"devDependencies": {
 		"@alexaegis/eslint-config-vitest": "workspace:^",
+		"@alexaegis/match": "workspace:^",
 		"@alexaegis/nuke": "workspace:^",
 		"@alexaegis/ts": "workspace:^",
 		"@alexaegis/vite": "workspace:^",

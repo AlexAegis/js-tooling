@@ -1,4 +1,4 @@
-import type { PackageJson } from '@alexaegis/workspace-tools';
+import type { PackageArchetype, PackageJson } from '@alexaegis/workspace-tools';
 import type {
 	AutotoolPlugin,
 	AutotoolPluginObject,
@@ -157,8 +157,12 @@ export const plugin: AutotoolPlugin = (
 					]
 				: []),
 			{
-				description: 'engines.node minimum on every package',
+				description: 'engines.node minimum on every package that does not run in a browser',
 				executor: 'packageJson',
+				packageJsonFilter: {
+					archetype: (archetype: PackageArchetype | undefined) =>
+						archetype?.platform !== 'web',
+				},
 				data: {
 					engines: {
 						node: ENGINES_NODE_RANGE,

@@ -1,4 +1,6 @@
 import { createMockLogger } from '@alexaegis/logging/mocks';
+import { match, type JsonMatcherFrom } from '@alexaegis/match';
+import type { PackageJson } from '@alexaegis/workspace-tools';
 import type {
 	AutotoolPluginFactory,
 	AutotoolPluginObject,
@@ -69,6 +71,31 @@ describe('autotool-plugin-workspace', () => {
 
 		expect(workspaces.length).toBeGreaterThan(0);
 		expect(new Set(workspaces)).toEqual(new Set(packages));
+	});
+
+	it.each([
+		[{ archetype: { platform: 'node', kind: 'lib' } }, true],
+		[{ archetype: { kind: 'lib' } }, true],
+		[{}, true],
+		[{ archetype: { platform: 'web', kind: 'lib' } }, false],
+		[{ archetype: { platform: 'web', framework: 'svelte', kind: 'lib' } }, false],
+		[{ archetype: { platform: 'web', framework: 'sveltekit', kind: 'app' } }, false],
+	])('should write engines.node into %j: %s', async (targetPackageJson, expected) => {
+		const plugin = (await (library.default as AutotoolPluginFactory)(
+			defaultOptions,
+		)) as AutotoolPluginObject;
+		const engineElements = (
+			plugin.elements as unknown as {
+				packageKind?: string;
+				packageJsonFilter?: JsonMatcherFrom<PackageJson>;
+				data?: { engines?: { node?: string } };
+			}[]
+		).filter((element) => element.packageKind !== 'root' && element.data?.engines?.node);
+
+		const filter = engineElements[0]?.packageJsonFilter;
+
+		expect(engineElements).toHaveLength(1);
+		expect(filter === undefined || match(targetPackageJson, filter)).toBe(expected);
 	});
 
 	it('should keep the @types/node override on the major of engines.node', async () => {
